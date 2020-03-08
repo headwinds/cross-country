@@ -29,10 +29,16 @@ export default class Documentation extends Component {
           <Block>
             <SubHeadline text="Button" />
             <Paragraph text="a simple button that can used for interaction" />
-            <Button
-              text="click me"
-              customStyle={{ backgroundColor: "green", color: "white" }}
-            />
+            <Flex>
+              <Button
+                text="click me"
+                customStyle={{ backgroundColor: "green", color: "white" }}
+              />
+              <Button
+                text="click me"
+                customStyle={{ backgroundColor: "grey", color: "white" }}
+              />
+             </Flex>
             <Paragraph text={buttonFeedback} />
           </Block>
         </Flex>

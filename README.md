@@ -1,6 +1,6 @@
 # cross-country
 
-> an atomic react design systme for forest bathers
+> an atomic react design system for forest bathers
 
 [![NPM](https://img.shields.io/npm/v/cross-country.svg)](https://www.npmjs.com/package/cross-country) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -9,7 +9,7 @@
 ```
 yarn add cross-country
 ```
-or
+orcd ..
 ```
 npm install --save cross-country
 ```
