@@ -59,6 +59,7 @@
     "dist"
   ],
   "dependencies": {
-    "node-sass": "^4.13.1"
+    "node-sass": "^4.13.1",
+    "typescript": "^3.8.3"
   }
 }

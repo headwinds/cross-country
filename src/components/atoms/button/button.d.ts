@@ -2,8 +2,9 @@ import * as React from 'react';
 
 export interface ButtonProps {
   text: string;
+  label?: string;
   customStyle?: any;
-  clickHandler?: any
+  handleClick?: any
 }
 
 declare const Button: React.ComponentType<ButtonProps>;

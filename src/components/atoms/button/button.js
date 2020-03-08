@@ -4,13 +4,13 @@ Atom
 renders 1 native element
 */
 
-import React, { Component } from "react";
+import React from "react";
 import styles from "./button.scss";
 
-const Button = ({ text, clickHandler, customStyle }) => (
+const Button = ({ text, label, handleClick, customStyle }) => (
   <button
     style={customStyle}
-    onClick={clickHandler}
+    onClick={() => handleClick(label)}
     className={styles.button}
   >
     {text}
