@@ -1,0 +1,15 @@
+.block {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+
+    &__transparent {
+        background: transparent;
+    }
+
+    &__opaque {
+        background: #eee;
+        padding: 20px;
+    }
+    
+}

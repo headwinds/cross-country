@@ -1,0 +1,27 @@
+.ProductTile {
+  display: flex;
+  background: white;
+  @media (prefers-reduced-motion: no-preference) {
+    //
+  }
+
+  &.stacked {
+    display: initial;
+  }
+
+  &__Name {
+    font-size: 24px;
+  }
+
+  &__Price {
+    font-size: 18px;
+    color: red;
+  }
+
+  &__Btn {
+    border: none;
+    padding: 10px;
+    color: white;
+    background-color: black;
+  }
+}
