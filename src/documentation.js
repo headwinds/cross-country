@@ -36,7 +36,7 @@ export default class Documentation extends Component {
         <Flex>
           <Block>
             <SubHeadline text="Button" />
-            <Paragraph text="a simple button that can used for interaction" />
+            <Paragraph text="a simple button that be can used for interaction" />
             <Flex>
               <Button
                 handleClick={this.handleClick}
