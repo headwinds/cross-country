@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  Logo,
   Column,
   Button,
   Row,
@@ -38,6 +39,7 @@ export default class Documentation extends Component {
         <Row>
           <Column>
             <ul>
+              <li>Logo</li>
               <li>Button</li>
               <li>Text Headline</li>
               <li>Text SubHeadline</li>
@@ -48,6 +50,13 @@ export default class Documentation extends Component {
               <li>List</li>
               <li>Item</li>
             </ul>
+          </Column>
+          <Column>
+            <SubHeadline text="Logo" />
+            <Paragraph text="a simple logo for cross country" />
+            <Row>
+              <Logo />
+            </Row>
           </Column>
           <Column>
             <SubHeadline text="Button" />

@@ -1,4 +1,5 @@
 // atoms
+export { default as Logo } from './atoms/logo/logo';
 export { default as Column } from './atoms/column/column';
 export { default as Button } from './atoms/button/button';
 export { default as Row } from './atoms/row/row';
