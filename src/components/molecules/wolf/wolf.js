@@ -1,29 +1,18 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import Image from "../../atoms/image/image"
+import Column from '../../atoms/column/column';
+import SubHeadline from '../../atoms/text/subheadline/subheadline';
 
-export default class Wolf extends Component {
-  static propTypes = {
-    text: PropTypes.string
-  }
-
-  render() {
-    const {
-      text
-    } = this.props
-
-    const imageUrl = 'https://i.pinimg.com/originals/c2/99/c8/c299c825b1d9adf653a03760880c2d81.jpg';
-    const image = {
-        medium:imageUrl,
-        medium2x:imageUrl,
-        small2x:imageUrl,
-        small:imageUrl
-    }
-    const product = {badge: "new", name:"hello", price:"free", images: [image]};
-
+const Wolf = ({url, text}) => {
+// 'https://i.pinimg.com/originals/c2/99/c8/c299c825b1d9adf653a03760880c2d81.jpg'
+// 'https://i.pinimg.com/originals/3d/26/3e/3d263efde96d082aa041c923a0fe8b08.png'
     return (
-      <div>
-          <img src={image.medium} width="300px" /> 
-      </div>
+      <Column hasBackground={true}>
+        <SubHeadline text={text} />
+        <Image url={url} width="300" />
+      </Column>
     )
-  }
+
 }
+
+export default Wolf;

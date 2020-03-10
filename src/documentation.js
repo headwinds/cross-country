@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import {
-  Block,
+  Column,
   Button,
-  Flex,
+  Row,
   SubHeadline,
   Headline,
-  Paragraph
+  Paragraph,
+  Wolf
 } from "./components";
 
 export * from "./components";
 
 export default class Documentation extends Component {
-
   constructor(props) {
     super(props);
 
@@ -22,22 +22,37 @@ export default class Documentation extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(label){
+  handleClick(label) {
     const buttonFeedback = `${label} has been clicked!`;
-    this.setState({buttonFeedback})
+    this.setState({ buttonFeedback });
   }
 
   render() {
     const { buttonFeedback } = this.state;
-    
+
     return (
-      <Block isSolid={false}>
+      <Column hasBackground={false}>
         <Headline text="Cross-Country Design System" />
-        <Flex>
-          <Block>
+        <SubHeadline text="Atoms" />
+
+        <Row>
+          <Column>
+            <ul>
+              <li>Button</li>
+              <li>Text Headline</li>
+              <li>Text SubHeadline</li>
+              <li>Image</li>
+              <li>Column</li>
+              <li>Row</li>
+              <li>Line</li>
+              <li>List</li>
+              <li>Item</li>
+            </ul>
+          </Column>
+          <Column>
             <SubHeadline text="Button" />
             <Paragraph text="a simple button that be can used for interaction" />
-            <Flex>
+            <Row>
               <Button
                 handleClick={this.handleClick}
                 text="click me"
@@ -50,11 +65,31 @@ export default class Documentation extends Component {
                 handleClick={this.handleClick}
                 customStyle={{ backgroundColor: "grey", color: "white" }}
               />
-             </Flex>
+            </Row>
             <Paragraph text={buttonFeedback} />
-          </Block>
-        </Flex>
-      </Block>
+          </Column>
+        </Row>
+        <SubHeadline text="Molecules" />
+        <Row>
+          <Column>
+            <SubHeadline text="Text with Image" />
+            <Row>
+              <Wolf
+                url={
+                  "https://i.pinimg.com/originals/c2/99/c8/c299c825b1d9adf653a03760880c2d81.jpg"
+                }
+                text="Wolf"
+              />
+              <Wolf
+                url={
+                  "https://i.pinimg.com/originals/3d/26/3e/3d263efde96d082aa041c923a0fe8b08.png"
+                }
+                text="Princess"
+              />
+            </Row>
+          </Column>
+        </Row>
+      </Column>
     );
   }
 }
