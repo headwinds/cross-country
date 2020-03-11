@@ -25,7 +25,7 @@ import {Column, Row, Image, Headline, Paragraph, Wolf} from 'cross-country';
 const data = {
   headline: "My words needs another design system",
   image: {
-    url: "https://images.unsplash.com/photo-1512411233342-92208dfe81af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80',
+    url: "https://images.unsplash.com/photo-1512411233342-92208dfe81af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
     a11y: "a nice aframe from unsplash",
     width: 300
   },
