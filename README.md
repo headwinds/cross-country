@@ -20,25 +20,35 @@ npm install --save cross-country
 
 ```jsx
 import React, { Component } from 'react'
-import {Column, Row, Image, Headline, Paragraph, Wolf} from './components';
+import {Column, Row, Image, Headline, Paragraph, Wolf} from 'cross-country';
 
-import MyComponent from 'cross-country'
+const data = {
+  headline: "My words needs another design system",
+  image: {
+    url: "https://images.unsplash.com/photo-1512411233342-92208dfe81af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80',
+    a11y: "a nice aframe from unsplash",
+    width: 300
+  },
+  wolf: {
+    url: "https://images.unsplash.com/photo-1512411233342-92208dfe81af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+    text: "K-2SO & Jyn Erso" 
+    a11y: "K-2SO & Jyn Erso"
+}
 
-class Example extends Component {
-  render () {
-    return (
+const {headline, wolf, image } = data;
+
+const App = () => (
       <Column>
-          <Headline text="My words needs another design system" />
+          <Headline text={headline} />
           <Row>
-            <Image width="300" url='https://images.unsplash.com/photo-1512411233342-92208dfe81af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80' />
+            <Image {...image} />
             <Column>
-              <Wolf text={"K-2SO & Jyn Erso"} url="https://forallnerds.com/wp-content/uploads/2016/12/Rogue-One-A-Star-Wars-Story-Trailer-1-700x391.jpg" />
+              <Wolf config={wolf} />
             </Column>
           </Row>
         </Column>
     )
-  }
-}
+export default App; 
 ```
 
 ## License

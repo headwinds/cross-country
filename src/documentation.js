@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {
   Logo,
   Column,
+  Checkbox,
   Button,
   Row,
   SubHeadline,
@@ -10,7 +11,7 @@ import {
   Wolf
 } from "./components";
 
-export * from "./components";
+import logo from "./components/atoms/logo/cross-country.svg"
 
 export default class Documentation extends Component {
   constructor(props) {
@@ -35,27 +36,26 @@ export default class Documentation extends Component {
       <Column hasBackground={false}>
         <Headline text="Cross-Country Design System" />
         <SubHeadline text="Atoms" />
-
         <Row>
           <Column>
             <ul>
-              <li>Logo</li>
-              <li>Button</li>
-              <li>Text Headline</li>
-              <li>Text SubHeadline</li>
-              <li>Image</li>
-              <li>Column</li>
-              <li>Row</li>
-              <li>Line</li>
-              <li>List</li>
-              <li>Item</li>
+              <li><Checkbox />Logo</li>
+              <li><Checkbox />Button</li>
+              <li><Checkbox />Text Headline</li>
+              <li><Checkbox />Text SubHeadline</li>
+              <li><Checkbox />Image</li>
+              <li><Checkbox />Column</li>
+              <li><Checkbox />Row</li>
+              <li><Checkbox />Line</li>
+              <li><Checkbox />List</li>
+              <li><Checkbox />Item</li>
             </ul>
           </Column>
           <Column>
             <SubHeadline text="Logo" />
             <Paragraph text="a simple logo for cross country" />
             <Row>
-              <Logo />
+              <Logo url={logo} a11y="cross country logo" />
             </Row>
           </Column>
           <Column>
@@ -83,17 +83,13 @@ export default class Documentation extends Component {
           <Column>
             <SubHeadline text="Text with Image" />
             <Row>
-              <Wolf
-                url={
-                  "https://i.pinimg.com/originals/c2/99/c8/c299c825b1d9adf653a03760880c2d81.jpg"
-                }
-                text="Wolf"
+              <Wolf config={{url:"https://i.pinimg.com/originals/c2/99/c8/c299c825b1d9adf653a03760880c2d81.jpg",
+                            a11y: "wolf",
+                            text:"Wolf"}}
               />
-              <Wolf
-                url={
-                  "https://i.pinimg.com/originals/3d/26/3e/3d263efde96d082aa041c923a0fe8b08.png"
-                }
-                text="Princess"
+              <Wolf config={{url: "https://i.pinimg.com/originals/3d/26/3e/3d263efde96d082aa041c923a0fe8b08.png",
+                            a11y: "princess",
+                            text:"princess"}}
               />
             </Row>
           </Column>

@@ -1,6 +1,8 @@
 // atoms
+export { default as CrossCountryLogo } from './atoms/logo/cross-country';
 export { default as Logo } from './atoms/logo/logo';
 export { default as Column } from './atoms/column/column';
+export { default as Checkbox } from './atoms/checkbox/';
 export { default as Button } from './atoms/button/button';
 export { default as Row } from './atoms/row/row';
 export { default as Image } from './atoms/image/image';

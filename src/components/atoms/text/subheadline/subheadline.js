@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import styles from './subheadline.scss'
 
-const Subheadline = ({text}) => (<h2 className={styles.subheadline}>{text}</h2>);
+const SubHeadline = ({text, size = "large"}) => {
+  const key = `subheadline__${size}`;
+  const className =  `${styles.subheadline} ${styles[key]}`;
+  return (<h2 className={className}>{text}</h2>)
+};
 
-export default Subheadline;
+export default SubHeadline;
