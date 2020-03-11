@@ -51,6 +51,10 @@ const App = () => (
 export default App; 
 ```
 
+# Articles
+
+* [mobile-first media queries](https://medium.com/codeartisan/breakpoints-and-media-queries-in-scss-46e8f551e2f2)
+
 ## License
 
 MIT © [headwinds](https://github.com/headwinds)

@@ -13,7 +13,7 @@ export default class CrossCountry extends Component {
   render() {
     return (
       <Column hasBackground={false}>
-        <Documentation />
+        <Documentation name="documentation" />
         <SubHeadline text="Read Me" size="large" />
         <ReadMe />
       </Column>

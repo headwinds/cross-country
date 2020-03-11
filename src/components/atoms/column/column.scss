@@ -1,15 +1,36 @@
-.block {
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
+@import "../../styles.scss";
 
-    &__transparent {
-        background: transparent;
-    }
+.column {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
 
-    &__opaque {
-        background: #eee;
-        padding: 20px;
-    }
-    
+  &__transparent {
+    background: transparent;
+  }
+
+  &__opaque {
+    background: #eee;
+    padding: 20px;
+  }
+
+
+  max-width: 100vw;
+
+  // 576px window width and more
+  @include sm {
+    padding: 0 20px;
+  }
+  // 992px window width and more
+  @include lg {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1100px;
+  }
+  // 1400px window width and more
+  @include rwd(1400) {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
 }
