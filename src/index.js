@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import Documentation from "./documentation";
 import ReadMe from "./readme";
+
 import {
   Column,
-  SubHeadline
+  SubHeadline,
+  Paragraph
 } from "./components";
 
 export * from './components';
+export * from './utils';
 
 export default class CrossCountry extends Component {
 

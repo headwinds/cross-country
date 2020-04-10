@@ -3,6 +3,12 @@
 .paragraph {
     font-family: $font-paragraph;
     font-size: 16px;
-    max-width: 600px;
-    min-width: 300px;
+    width: 300px;
+    text-align: left;
+}
+
+@media only all and (min-width: 800px) {
+  p {
+    width: 600px;
+  }
 }

@@ -1,12 +1,11 @@
 import * as React from 'react';
 
-export interface ButtonProps {
+export interface CheckboxProps {
   text: string;
-  label?: string;
-  customStyle?: any;
-  handleClick?: any
+  id?:string;
+  handleChange?: any
 }
 
-declare const Button: React.ComponentType<ButtonProps>;
+declare const Checkbox: React.FunctionalComponent<CheckboxProps>;
 
-export default Button;
+export default Checkbox;

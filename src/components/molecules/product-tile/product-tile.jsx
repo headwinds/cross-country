@@ -12,8 +12,6 @@ const ProductTile = (props) => {
     setProductSelected(!isSelected)
   }
 
-  console.log('Images : ', images);
-
   const image = images[0];
 
   return (

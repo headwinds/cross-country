@@ -1,8 +1,12 @@
 import React, { Component } from "react";
+import getIsMobile from "./utils/mobile-detect";
 import {
   Logo,
+  Grid,
+  Link,
   Column,
-  Checkbox,
+  CheckboxLabel,
+  RadioGroup,
   Button,
   Row,
   SubHeadline,
@@ -10,18 +14,37 @@ import {
   Paragraph,
   Wolf
 } from "./components";
+import useDeviceDetection from "./hooks/useDeviceDetection/";
+import useTheme from "./hooks/useTheme/";
 
-import logo from "./components/atoms/logo/cross-country.svg"
+import logo from "./components/atoms/logo/cross-country.svg";
+
+const nationalparks = [
+  { id: 0, name: "Alqonquin" },
+  { id: 1, name: "Jasper" },
+  { id: 2, name: "Elk Island" },
+  { id: 3, name: "Rouge" }
+];
+
+const DeviceContext = React.createContext("device");
 
 export default class Documentation extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      buttonFeedback: ""
+      buttonFeedback: "",
+      logoComp: {
+        isChecked: false
+      },
+      radios: {
+        selectedId: 0
+      }
     };
 
     this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleRadioChange = this.handleRadioChange.bind(this);
   }
 
   handleClick(label) {
@@ -29,72 +52,157 @@ export default class Documentation extends Component {
     this.setState({ buttonFeedback });
   }
 
+  handleChange(e) {
+    this.setState({ logoComp: { isChecked: !this.state.logoComp.isChecked } });
+  }
+
+  handleRadioChange(e) {
+    this.setState({
+      radios: { selectedId: Number(event.target.dataset.value) }
+    });
+  }
+
   render() {
-    const { buttonFeedback } = this.state;
+    const {
+      buttonFeedback,
+      logoComp,
+      radios: { selectedId }
+    } = this.state;
+
+    const isMobile = getIsMobile();
+    const contextValue = isMobile ? "mobile" : "desktop";
+
+    const device = isMobile ? "Mobile" : "Desktop";
+    const hello = `This system will detect the device: ${device} and will respond accordingly providing pleasant UX for writing and reading technical articles as well as experimenting with javascript and svg.`;
 
     return (
-      <Column hasBackground={false}>
-        <Headline text="Cross-Country Design System" />
-        <SubHeadline text="Atoms" />
-        <Row>
-          <Column>
-            <ul>
-              <li><Checkbox />Logo</li>
-              <li><Checkbox />Button</li>
-              <li><Checkbox />Text Headline</li>
-              <li><Checkbox />Text SubHeadline</li>
-              <li><Checkbox />Image</li>
-              <li><Checkbox />Column</li>
-              <li><Checkbox />Row</li>
-              <li><Checkbox />Line</li>
-              <li><Checkbox />List</li>
-              <li><Checkbox />Item</li>
-            </ul>
-          </Column>
-          <Column>
-            <SubHeadline text="Logo" />
-            <Paragraph text="a simple logo for cross country" />
+      <DeviceContext.Provider value={contextValue}>
+        <Grid>
+          <Column hasBackground={false}>
+            <Headline text="Cross-Country" />
+            <SubHeadline text="Design System" />
+            <Paragraph
+              text={hello}
+              customStyle={{ padding: 20, textAlign: "center" }}
+            />
+            <SubHeadline text="Atoms" />
             <Row>
-              <Logo url={logo} a11y="cross country logo" />
+              <Column>
+                <ul>
+                  <li>
+                    <CheckboxLabel
+                      config={{
+                        text: "Logo",
+                        id: "logo",
+                        isChecked: logoComp.isChecked,
+                        handleChange: this.handleChange
+                      }}
+                    />
+                  </li>
+                  <li>
+                    <CheckboxLabel config={{ text: "Button", id: "button" }} />
+                  </li>
+                  <li>
+                    <CheckboxLabel
+                      config={{ text: "Headline", id: "headline" }}
+                    />
+                  </li>
+                  <li>
+                    <CheckboxLabel
+                      config={{ text: "SubHeadline", id: "subheadline" }}
+                    />
+                  </li>
+                  <li>
+                    <CheckboxLabel config={{ text: "Image", id: "image" }} />
+                  </li>
+                  <li>
+                    <CheckboxLabel config={{ text: "Column", id: "column" }} />
+                  </li>
+                  <li>
+                    <CheckboxLabel config={{ text: "Row", id: "row" }} />
+                  </li>
+                  <li>
+                    <CheckboxLabel config={{ text: "Line", id: "line" }} />
+                  </li>
+                  <li>
+                    <CheckboxLabel config={{ text: "List", id: "list" }} />
+                  </li>
+                  <li>
+                    <CheckboxLabel config={{ text: "Item", id: "item" }} />
+                  </li>
+                </ul>
+              </Column>
+              <Column hasChildrenCentered={false}>
+                <SubHeadline text="Link" />
+                <Paragraph text="a hyper link that wraps the anchor element" />
+                <Link
+                  text="Editorial Design Patterns With CSS Grid And Named Columns"
+                  url="https://www.smashingmagazine.com/2019/10/editorial-design-patterns-css-grid-subgrid-naming/"
+                />
+              </Column>
+              <Column>
+                <SubHeadline text="Radio Button" />
+                <Paragraph text="a radio button for cross country" />
+                <RadioGroup
+                  list={nationalparks}
+                  handleChange={this.handleRadioChange}
+                  selectedId={selectedId}
+                />
+              </Column>
+              <Column>
+                <SubHeadline text="Logo" />
+                <Paragraph text="a simple logo for cross country" />
+                <Row>
+                  <Logo url={logo} a11y="cross country logo" />
+                </Row>
+              </Column>
+              <Column>
+                <SubHeadline text="Button" />
+                <Paragraph text="a simple button that be can used for interaction" />
+                <Row>
+                  <Button
+                    handleClick={this.handleClick}
+                    text="click me"
+                    label="green"
+                    customStyle={{ backgroundColor: "green", color: "white" }}
+                  />
+                  <Button
+                    text="click me"
+                    label="grey"
+                    handleClick={this.handleClick}
+                    customStyle={{ backgroundColor: "blue", color: "white" }}
+                  />
+                </Row>
+                <Paragraph text={buttonFeedback} />
+              </Column>
+            </Row>
+            <SubHeadline text="Molecules" />
+            <Row>
+              <Column>
+                <SubHeadline text="Text with Image" />
+                <Row>
+                  <Wolf
+                    config={{
+                      url:
+                        "https://i.pinimg.com/originals/c2/99/c8/c299c825b1d9adf653a03760880c2d81.jpg",
+                      a11y: "wolf",
+                      text: "Wolf"
+                    }}
+                  />
+                  <Wolf
+                    config={{
+                      url:
+                        "https://i.pinimg.com/originals/3d/26/3e/3d263efde96d082aa041c923a0fe8b08.png",
+                      a11y: "princess",
+                      text: "princess"
+                    }}
+                  />
+                </Row>
+              </Column>
             </Row>
           </Column>
-          <Column>
-            <SubHeadline text="Button" />
-            <Paragraph text="a simple button that be can used for interaction" />
-            <Row>
-              <Button
-                handleClick={this.handleClick}
-                text="click me"
-                label="green"
-                customStyle={{ backgroundColor: "green", color: "white" }}
-              />
-              <Button
-                text="click me"
-                label="grey"
-                handleClick={this.handleClick}
-                customStyle={{ backgroundColor: "grey", color: "white" }}
-              />
-            </Row>
-            <Paragraph text={buttonFeedback} />
-          </Column>
-        </Row>
-        <SubHeadline text="Molecules" />
-        <Row>
-          <Column>
-            <SubHeadline text="Text with Image" />
-            <Row>
-              <Wolf config={{url:"https://i.pinimg.com/originals/c2/99/c8/c299c825b1d9adf653a03760880c2d81.jpg",
-                            a11y: "wolf",
-                            text:"Wolf"}}
-              />
-              <Wolf config={{url: "https://i.pinimg.com/originals/3d/26/3e/3d263efde96d082aa041c923a0fe8b08.png",
-                            a11y: "princess",
-                            text:"princess"}}
-              />
-            </Row>
-          </Column>
-        </Row>
-      </Column>
+        </Grid>
+      </DeviceContext.Provider>
     );
   }
 }

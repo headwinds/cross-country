@@ -1,0 +1,24 @@
+@import '../text.scss';
+
+.link {
+    font-family: $font-headline;
+    font-size: 22px;
+    font-weight: 500;
+    color: $black;
+    margin: 0px;
+    pointer-events: all;
+    word-wrap: break-word; 
+
+    &__large {
+        font-size: 24px; 
+    }
+
+    &__medium {
+        font-size: 20px; 
+    }
+
+    &__small {
+        font-size: 16px; 
+    }
+} 
+  

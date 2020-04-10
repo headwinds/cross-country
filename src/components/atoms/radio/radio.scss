@@ -1,0 +1,85 @@
+@import "../text/text.scss";
+
+.radio {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: white;
+  border: 2px solid blue;
+  cursor: pointer;
+  pointer-events: all;
+  margin: 2px 0;
+}
+
+.radioSelected {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: white;
+  border: 2px solid blue;
+  cursor: pointer;
+  margin: 2px 0;
+}
+
+.radio::after {
+  content: none;
+}
+
+.radioSelected::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: blue;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
+
+// MOBILE
+
+.radioMobile {
+  display: inline-block;
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  background-color: white;
+  border: 2px solid blue;
+  cursor: pointer;
+  pointer-events: all;
+  margin: 2px 0;
+}
+
+.radioMobileSelected {
+  display: inline-block;
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  background-color: white;
+  border: 2px solid blue;
+  cursor: pointer;
+  margin: 2px 0;
+}
+
+.radioMobile::after {
+  content: none;
+}
+
+.radioMobileSelected::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 7px;
+  left: 8px;
+  background: blue;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}

@@ -1,18 +1,19 @@
-/*
-Atom
-
-renders 1 native element
-*/
-
 import React from "react";
 import styles from "./checkbox.scss";
 
-const Checkbox = ({ value, isChecked }) => (
-  <input
-   className={styles.checkbox}
-    type="checkbox"
-    value={value}
-    checked={isChecked} />
-);
+const Checkbox = ({ isChecked, id, handleChange }) => {
+  const classNameSelected = isChecked ? "checkboxFormSelected::before" : "";
+  const className = `${styles.checkboxFunction} ${styles[classNameSelected]}`;
+  return (
+    <div
+      className={styles.checkbox}
+      role="checkbox"
+      id={id}
+      className={className}
+      checked={isChecked}
+      onChange={handleChange}
+    />
+  );
+};
 
 export default Checkbox;
