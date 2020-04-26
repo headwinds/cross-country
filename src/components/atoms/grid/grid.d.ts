@@ -4,7 +4,8 @@ export interface ColumnProps {
   children: ReactElement,
   hasBackground?:true,
   backgroundColor?: string
-  hasChildrenCentered?:boolean
+  hasChildrenCentered?:boolean,
+  customStyle?: any
 }
 
 declare const Column: React.ComponentType<ColumnProps>;

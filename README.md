@@ -68,7 +68,7 @@ export default App;
 
 ## Publish to NPM
 
-Make sure you have updated the version number before publishing usually `npm version patch`
+After you commit, make sure you have updated the version number before publishing usually `npm version patch`
 
 ```
 npm login
@@ -78,12 +78,17 @@ now-your-email
 npm publish
 ```
 
+## Docs
+
+`yarn docs`
+
 ## Help & Thanks
 
 * [create-react-library](https://www.npmjs.com/package/create-react-library)
 * [mobile-first media queries](https://medium.com/codeartisan/breakpoints-and-media-queries-in-scss-46e8f551e2f2)
 * [pure-css-accessible-checkboxes-and-radios-buttons](https://medium.com/claritydesignsystem/pure-css-accessible-checkboxes-and-radios-buttons-54063e759bb3)
 * [multiple-classnames-css-modules-react](https://zeph.co/multiple-classnames-css-modules-react)
+* [a-guide-to-js-docs-for-react-js](https://www.inkoop.io/blog/a-guide-to-js-docs-for-react-js/)
 
 ## License
 

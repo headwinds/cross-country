@@ -20,7 +20,8 @@
     "prepare": "yarn run build",
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build",
-    "plant": "node scripts/plant-component.js"
+    "plant": "node scripts/plant-component.js",
+    "docs": "jsdoc -c jsdoc.conf.json"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
@@ -63,6 +64,7 @@
     "better-docs": "^1.4.7",
     "clsx": "^1.1.0",
     "node-sass": "^4.13.1",
+    "prop-types": "^15.7.2",
     "typescript": "^3.8.3"
   }
 }
