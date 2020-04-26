@@ -1,8 +1,10 @@
-import React from 'react';
-import DeviceContext from './DeviceDetectionContext';
+import React, {useContext} from 'react';
+import { DeviceContext } from './DeviceDetectionContext';
 
 const useDeviceDetection = () => {
-	const state = React.useContext(DeviceContext);
+	// not sure why useContext isn't working here?!?!
+	//const state = useContext(DeviceContext);
+	const state = DeviceContext._currentValue;
 	return state;
 };
 

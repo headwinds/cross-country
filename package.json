@@ -60,6 +60,7 @@
     "dist"
   ],
   "dependencies": {
+    "better-docs": "^1.4.7",
     "clsx": "^1.1.0",
     "node-sass": "^4.13.1",
     "typescript": "^3.8.3"

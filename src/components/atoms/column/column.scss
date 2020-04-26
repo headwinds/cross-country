@@ -13,8 +13,7 @@
   }
 
   &__opaque {
-    background: #eee;
-    padding: 20px;
+    background: #eee
   }
 
 
@@ -22,7 +21,7 @@
 
   // 576px window width and more
   @include sm {
-    padding: 0 20px;
+    padding: 0px;
   }
   // 992px window width and more
   @include lg {

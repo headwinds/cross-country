@@ -66,6 +66,18 @@ const App = () => (
 export default App; 
 ```
 
+## Publish to NPM
+
+Make sure you have updated the version number before publishing usually `npm version patch`
+
+```
+npm login
+your-username-not-your-email
+your-password
+now-your-email
+npm publish
+```
+
 ## Help & Thanks
 
 * [create-react-library](https://www.npmjs.com/package/create-react-library)

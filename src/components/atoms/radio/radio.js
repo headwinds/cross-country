@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "./radio.scss";
+import useDeviceDetection from "../../../hooks/useDeviceDetection";
 
 const Radio = ({ isSelected, id, handleChange, tabIndex }) => {
+  const mobileState = useDeviceDetection();
 
-  const isMobile = true;
-  const key = isMobile ? "radioMobile" : "radio";
+  const key = "radio";
 
   const className = isSelected ? styles[`${key}Selected`] : styles[`${key}`];
 
@@ -17,7 +18,7 @@ const Radio = ({ isSelected, id, handleChange, tabIndex }) => {
       type="radio"
       checked={isSelected}
       onClick={handleChange}
-      onkeydown={handleChange}
+      onKeyDown={handleChange}
       tabIndex={tabIndex}
     />
   );

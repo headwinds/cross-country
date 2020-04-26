@@ -8,9 +8,10 @@ const Column = ({
   children,
   hasBackground = true,
   hasChildrenCentered = true,
-  backgroundColor = "#eee"
+  backgroundColor = "#eee",
+  customStyle = {}
 }) => {
-  const style = hasBackground ? { backgroundColor, alignItems: hasChildrenCentered } : {};
+  const style = hasBackground ? { backgroundColor, alignItems: hasChildrenCentered, ...customStyle } : customStyle;
   style["alignItems"] = hasChildrenCentered ? "center" : "flex-start";
   
   return(

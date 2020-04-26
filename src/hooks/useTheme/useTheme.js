@@ -1,8 +1,8 @@
 import React from 'react';
-import DeviceContext from './ThemeContext';
+import ThemeContext from './ThemeContext';
 
 const useTheme = () => {
-	const state = React.useContext(DeviceContext);
+	const state = React.useContext(ThemeContext);
 	return state;
 };
 
