@@ -10,7 +10,6 @@
     },
     "plugins": [
         "plugins/markdown",
-        "node_modules/better-docs/component",
         "node_modules/better-docs/category"
     ],
      "templates": {

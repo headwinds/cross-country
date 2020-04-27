@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 /**
  * Component for displaying elements in grid.
  * 
+ * @category Atoms
  * @component
  * @example
  * const children = [<Column><Row /></Column>]

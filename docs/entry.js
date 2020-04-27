@@ -22,11 +22,14 @@
 
     import './styles/iframe.css';
 
-  import Component0 from '../src/components/templates/documented.js';
-reactComponents['Documented'] = Component0;
+  import Component0 from '../src/components/organisms/garden/garden.js';
+reactComponents['Garden'] = Component0;
 
 import Component1 from '../src/components/atoms/grid/grid.js';
 reactComponents['Grid'] = Component1;
 
 import Component2 from '../src/components/atoms/text/input/text-input.js';
 reactComponents['TextInput'] = Component2;
+
+import Component3 from '../src/components/molecules/wolf/wolf.js';
+reactComponents['Wolf'] = Component3;

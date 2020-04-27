@@ -1,0 +1,19 @@
+.page-title {
+    display: none;
+}
+.top-navbar, .navbar {
+    background: cadetblue !important;
+}
+.active {
+    color: cadetblue !important;
+}
+
+.sidebar h3 {
+    display: none;
+}
+
+.top-navbar .navbar-brand h1 {
+    font-size: 30px;
+    font-family: monospace !important; 
+    font-weight: 600;
+}

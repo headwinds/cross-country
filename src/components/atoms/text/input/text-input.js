@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 /**
  * Allows the user to enter text
  *
+ * @category Atoms
  * @component
  * @param {function} onChangeHandler - A change handler function param
  * @param {object} customStyle - An object param
