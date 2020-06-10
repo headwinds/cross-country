@@ -17,3 +17,7 @@
     font-family: monospace !important; 
     font-weight: 600;
 }
+
+footer {
+    display: none;
+}

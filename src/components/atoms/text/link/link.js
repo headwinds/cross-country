@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import styles from './link.scss'
 
-const Link = ({ url, text, size = "small"}) => (
+const Link = ({ url, text, size = "small", target="_blank"}) => (
   <a
     href={url}
-    target="_blank"
+    target={target}
     rel="noopener, noreferrer"
     className={`${styles.link} ${styles[`link__${size}`]}`}
   >
