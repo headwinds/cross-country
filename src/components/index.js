@@ -12,12 +12,10 @@ export { default as Image } from './atoms/image/image';
 export { default as Headline } from './atoms/text/headline/headline';
 export { default as SubHeadline } from './atoms/text/subheadline/subheadline';
 export { default as Paragraph } from './atoms/text/paragraph/paragraph';
-export { default as Link } from './atoms/text/link';
+export { default as Link } from './atoms/link';
 
-// molecules 
+// molecules
 export { default as CheckboxLabel } from './molecules/checkboxlabel';
 export { default as Wolf } from './molecules/wolf/wolf';
 
-import './styles.scss';
-
-
+//import './styles.scss';

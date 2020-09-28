@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import Documentation from "./documentation";
-import World from "./world";
-import ReadMe from "./readme";
+import React, { Component } from 'react';
+import Documentation from './documentation';
+import World from './world';
+import ReadMe from './readme';
 
-import { Column, SubHeadline, Paragraph } from "./components";
+import { Column, SubHeadline, Paragraph } from './components';
 
-export * from "./components";
-export * from "./utils";
+export * from './components';
+export * from './utils';
 
-const selected = "world";
+const selected = 'documentation';
 function renderChoose(selected) {
   switch (selected) {
-    case "world":
+    case 'world':
       return <World />;
-    case "documentation":
+    case 'documentation':
       return (
         <section>
           <Documentation name="documentation" />

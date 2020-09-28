@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import getIsMobile from "./utils/mobile-detect";
+import React, { useState } from 'react';
+import getIsMobile from './utils/mobile-detect';
 import {
   Logo,
   Grid,
@@ -12,59 +12,53 @@ import {
   SubHeadline,
   Headline,
   Paragraph,
-  Wolf
-} from "./components";
-import useDeviceDetection from "./hooks/useDeviceDetection/";
-import useTheme from "./hooks/useTheme/";
+  Wolf,
+} from './components';
+import useDeviceDetection from './hooks/useDeviceDetection/';
+import useTheme from './hooks/useTheme/';
 
 /*
 1. Login or Sign
 */
 
-function CreateWorld(){
+function Login() {
   return (
     <Column>
-      <SubHeadline text="Create world" />
+      <SubHeadline text="Login" />
     </Column>
-  )
+  );
 }
 
 /*
 2. Create an Avatar or a selecting existing one
 */
 
-function CreateWorld(){
+function Avatar() {
   return (
     <Column>
-      <SubHeadline text="Create world" />
+      <SubHeadline text="Create Avatar" />
     </Column>
-  )
+  );
 }
 
 /*
 3. Create a world 
 */
 
-function CreateWorld(){
+function CreateWorld() {
   return (
     <Column>
       <SubHeadline text="Create world" />
     </Column>
-  )
+  );
 }
 
 export default function World() {
-  const [step, setStep] = React.useState("login");
-
-  
-
+  const [step, setStep] = useState('login');
 
   return (
     <Column>
       <CreateWorld />
     </Column>
-  )
+  );
 }
-
-
-

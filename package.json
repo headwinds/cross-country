@@ -61,6 +61,8 @@
     "dist"
   ],
   "dependencies": {
+    "@babel/compat-data": "^7.11.0",
+    "@babel/preset-env": "^7.11.5",
     "better-docs": "^1.4.7",
     "clsx": "^1.1.0",
     "node-sass": "^4.13.1",
