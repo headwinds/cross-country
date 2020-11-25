@@ -1,21 +1,20 @@
-import React, { Component } from "react";
-import Column from "../../atoms/column";
-import Radio from "../../atoms/radio";
+import React, { Component } from 'react';
+import Column from '../../atoms/column';
+import Row from '../../atoms/row';
+import Radio from '../../atoms/radio';
+import Label from '../../atoms/label';
 
 // https://www.w3.org/TR/2016/WD-wai-aria-practices-1.1-20160317/examples/radio/radio.html
 
 const RadioGroup = ({ handleChange, list, selectedId }) => {
-  const getSelected = radio => radio.id === selectedId;
-  const getTabIndex = radio => ((radio.id === selectedId) ? 0 : 1); 
+  const getSelected = id => id === selectedId;
+  const getTabIndex = id => (id === selectedId ? 0 : 1);
 
-  const radiobuttons = list.map(radio => (
-    <Radio
-      key={radio.id}
-      id={radio.id}
-      handleChange={handleChange}
-      isSelected={getSelected(radio)}
-      tabIndex={getTabIndex(radio)}
-    />
+  const radiobuttons = list.map(({ id, text }) => (
+    <Row>
+      <Radio key={id} id={id} handleChange={handleChange} isSelected={getSelected(id)} tabIndex={getTabIndex(id)} />
+      <Label text={text} forId={id} />
+    </Row>
   ));
 
   return <Column role="radiogroup">{radiobuttons}</Column>;
