@@ -66,6 +66,8 @@ const App = () => (
 export default App; 
 ```
 
+All the components are stateless functions. They do not use any state hooks. Your project's components will control the state, and you simply pass in the desire state change to each component to update them. 
+
 ## Publish to NPM
 
 After you commit, make sure you have updated the version number before publishing usually `npm version patch`

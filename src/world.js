@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import getIsMobile from './utils/mobile-detect';
 import {
   Logo,
   Grid,

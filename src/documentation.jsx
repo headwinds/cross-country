@@ -69,6 +69,7 @@ export default class Documentation extends Component {
       radios: { selectedId },
     } = this.state;
 
+    // make sure this done from the client not the server!
     const isMobile = getIsMobile();
     const contextValue = isMobile ? 'mobile' : 'desktop';
 
