@@ -1,32 +1,31 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import clsx from 'clsx';
-import styles from "./column.scss";
+import styles from './column.scss';
 
 // <ExampleComponent className={clsx(styles.examplecomponentstyle, "pa5 bg-yellow")}/>
 
 const Column = ({
   children,
-  hasBackground = true,
+  hasBackground = false,
   hasChildrenCentered = true,
-  backgroundColor = "#eee",
-  customStyle = {}
+  backgroundColor = '#eee',
+  customStyle = {},
 }) => {
   const style = hasBackground ? { backgroundColor, alignItems: hasChildrenCentered, ...customStyle } : customStyle;
-  style["alignItems"] = hasChildrenCentered ? "center" : "flex-start";
-  
-  return(
-  <div
-    className={
-      clsx(
-        { [styles.column]: true,
+  style['alignItems'] = hasChildrenCentered ? 'center' : 'flex-start';
+
+  return (
+    <div
+      className={clsx({
+        [styles.column]: true,
         [styles.column__opaque]: hasBackground,
-        [styles.column__transparent]: hasBackground }
-      )
-    }
-    style={style}
-  >
-    {children}
-  </div>)
-  };
+        [styles.column__transparent]: hasBackground,
+      })}
+      style={style}
+    >
+      {children}
+    </div>
+  );
+};
 
 export default Column;

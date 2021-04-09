@@ -16,11 +16,11 @@ export default function CrossCountry() {
         return <World />;
       case 'documentation':
         return (
-          <section>
+          <Column>
             <Documentation name="documentation" />
             <SubHeadline text="Read Me" size="large" />
             <ReadMe />
-          </section>
+          </Column>
         );
     }
   }

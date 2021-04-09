@@ -12,7 +12,10 @@ import {
   SubHeadline,
   Headline,
   Paragraph,
+  List,
+  ListItem,
   Wolf,
+  Login,
 } from './components';
 import useDeviceDetection from './hooks/useDeviceDetection/';
 import useTheme from './hooks/useTheme/';
@@ -79,15 +82,25 @@ export default class Documentation extends Component {
     return (
       <DeviceContext.Provider value={contextValue}>
         <Grid>
-          <Column hasBackground={false}>
+          <Column>
             <Headline text="Cross-Country" />
             <SubHeadline text="Design System" />
-            <Paragraph text={hello} customStyle={{ padding: 20, textAlign: 'center' }} />
-            <SubHeadline text="Atoms" />
-            <Row>
+            <Paragraph>{hello}</Paragraph>
+            <Column>
+              <Login
+                config={{
+                  url: 'https://i.pinimg.com/originals/c2/99/c8/c299c825b1d9adf653a03760880c2d81.jpg',
+                  a11y: 'wolf',
+                  text: 'Wolf',
+                }}
+              />
+            </Column>
+
+            <Column>
+              <SubHeadline text="Atoms" />
               <Column>
-                <ul>
-                  <li>
+                <List>
+                  <ListItem>
                     <CheckboxLabel
                       config={{
                         text: 'Logo',
@@ -96,35 +109,35 @@ export default class Documentation extends Component {
                         handleChange: this.handleChange,
                       }}
                     />
-                  </li>
-                  <li>
+                  </ListItem>
+                  <ListItem>
                     <CheckboxLabel config={{ text: 'Button', id: 'button' }} />
-                  </li>
-                  <li>
+                  </ListItem>
+                  <ListItem>
                     <CheckboxLabel config={{ text: 'Headline', id: 'headline' }} />
-                  </li>
-                  <li>
+                  </ListItem>
+                  <ListItem>
                     <CheckboxLabel config={{ text: 'SubHeadline', id: 'subheadline' }} />
-                  </li>
-                  <li>
+                  </ListItem>
+                  <ListItem>
                     <CheckboxLabel config={{ text: 'Image', id: 'image' }} />
-                  </li>
-                  <li>
+                  </ListItem>
+                  <ListItem>
                     <CheckboxLabel config={{ text: 'Column', id: 'column' }} />
-                  </li>
-                  <li>
+                  </ListItem>
+                  <ListItem>
                     <CheckboxLabel config={{ text: 'Row', id: 'row' }} />
-                  </li>
-                  <li>
+                  </ListItem>
+                  <ListItem>
                     <CheckboxLabel config={{ text: 'Line', id: 'line' }} />
-                  </li>
-                  <li>
+                  </ListItem>
+                  <ListItem>
                     <CheckboxLabel config={{ text: 'List', id: 'list' }} />
-                  </li>
-                  <li>
+                  </ListItem>
+                  <ListItem>
                     <CheckboxLabel config={{ text: 'Item', id: 'item' }} />
-                  </li>
-                </ul>
+                  </ListItem>
+                </List>
               </Column>
               <Column hasChildrenCentered={false}>
                 <SubHeadline text="Link" />
@@ -167,7 +180,7 @@ export default class Documentation extends Component {
                 </Row>
                 <Paragraph text={buttonFeedback} />
               </Column>
-            </Row>
+            </Column>
             <SubHeadline text="Molecules" />
             <Row>
               <Column>

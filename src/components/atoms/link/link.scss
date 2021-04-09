@@ -1,20 +1,21 @@
 @import '../text/text.scss';
 
 .link {
-    font-family: $font-headline;
-    font-size: 22px;
+    font-family: $font-common;
+    font-size: 16px;
     font-weight: 500;
     color: $teal;
     margin: 0px;
     pointer-events: all;
     word-wrap: break-word; 
+    text-decoration: none;
 
     &__large {
-        font-size: 24px; 
+        font-size: 16px; 
     }
 
     &__medium {
-        font-size: 20px; 
+        font-size: 16px; 
     }
 
     &__small {
