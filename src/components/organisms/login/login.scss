@@ -1,0 +1,29 @@
+@import "../../styles.scss";
+
+.login {
+  display: flex;
+  padding: 26px;
+  width: 300px;
+  
+  @include sm {
+    padding: 16px;
+  }
+
+  @include lg {
+  
+  }
+
+  @include rwd(1400) {
+
+  }
+
+  &__row {
+    justify-content: flex-end !important;
+  }
+
+  &__rowSend {
+    justify-content: flex-end !important;
+    margin: 8px;
+  }
+
+}

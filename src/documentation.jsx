@@ -50,7 +50,8 @@ export default class Documentation extends Component {
     this.handleRadioChange = this.handleRadioChange.bind(this);
   }
 
-  handleClick(label) {
+  handleClick(event, label) {
+    event.preventDefault();
     const buttonFeedback = `${label} has been clicked!`;
     this.setState({ buttonFeedback });
   }
@@ -77,7 +78,8 @@ export default class Documentation extends Component {
     const contextValue = isMobile ? 'mobile' : 'desktop';
 
     const device = isMobile ? 'Mobile' : 'Desktop';
-    const hello = `This system will detect the device: ${device} and will respond accordingly providing pleasant UX for writing and reading technical articles as well as experimenting with javascript and svg.`;
+    const hello = `By combining text and vector graphics, we can create posts, experiments and even worlds within a structure that will flow across devices.`;
+    const responsive = `This system will detect the device. In this case, you're on a ${device}, and will respond accordingly providing pleasant UX for writing and reading technical articles as well as experimenting with javascript and svg.`;
 
     return (
       <DeviceContext.Provider value={contextValue}>
@@ -86,12 +88,14 @@ export default class Documentation extends Component {
             <Headline text="Cross-Country" />
             <SubHeadline text="Design System" />
             <Paragraph>{hello}</Paragraph>
+            <Paragraph>{responsive}</Paragraph>
             <Column>
               <Login
                 config={{
                   url: 'https://i.pinimg.com/originals/c2/99/c8/c299c825b1d9adf653a03760880c2d81.jpg',
                   a11y: 'wolf',
                   text: 'Wolf',
+                  route: '/login',
                 }}
               />
             </Column>

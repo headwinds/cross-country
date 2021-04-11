@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import styles from "../text.scss";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import styles from '../text.scss';
+import PropTypes from 'prop-types';
 
 /**
  * Allows the user to enter text
@@ -18,27 +18,21 @@ import PropTypes from "prop-types";
  *   <TextInput onChangeHandler={onChangeHandler} customStyle={customStyle} value={value} />
  * )
  */
-const TextInput = ({ onChangeHandler, customStyle, value }) => {
+const TextInput = ({ onChangeHandler, customStyle, value, type = '' }) => {
   if (value) {
     return (
       <input
         type="text"
+        type={type}
         className={styles.textInput}
         style={customStyle}
         onChange={onChangeHandler}
-        value
+        value={value}
       />
     );
   }
 
-  return (
-    <input
-      type="text"
-      className={styles.textInput}
-      style={customStyle}
-      onChange={onChangeHandler}
-    />
-  );
+  return <input type="text" type={type} className={styles.textInput} style={customStyle} onChange={onChangeHandler} />;
 };
 
 TextInput.propTypes = {
@@ -53,7 +47,7 @@ TextInput.propTypes = {
   /**
    * TextInput's custom style
    */
-  customStyle: PropTypes.shape({})
+  customStyle: PropTypes.shape({}),
 };
 
 TextInput.defaultProps = {};

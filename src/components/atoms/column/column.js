@@ -10,17 +10,21 @@ const Column = ({
   hasChildrenCentered = true,
   backgroundColor = '#eee',
   customStyle = {},
+  customClass = '',
 }) => {
   const style = hasBackground ? { backgroundColor, alignItems: hasChildrenCentered, ...customStyle } : customStyle;
   style['alignItems'] = hasChildrenCentered ? 'center' : 'flex-start';
 
   return (
     <div
-      className={clsx({
-        [styles.column]: true,
-        [styles.column__opaque]: hasBackground,
-        [styles.column__transparent]: hasBackground,
-      })}
+      className={clsx(
+        {
+          [styles.column]: true,
+          [styles.column__opaque]: hasBackground,
+          [styles.column__transparent]: hasBackground,
+        },
+        customClass
+      )}
       style={style}
     >
       {children}

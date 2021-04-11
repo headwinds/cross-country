@@ -13,6 +13,7 @@ export { default as Headline } from './atoms/text/headline/headline';
 export { default as SubHeadline } from './atoms/text/subheadline/subheadline';
 export { default as Paragraph } from './atoms/text/paragraph/paragraph';
 export { default as TextInput } from './atoms/text/input';
+export { default as Label } from './atoms/text/label';
 export { default as Link } from './atoms/link';
 export { default as List } from './atoms/list/list';
 export { default as ListItem } from './atoms/list/list-item/list-item';
