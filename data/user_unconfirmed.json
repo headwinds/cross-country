@@ -1,0 +1,16 @@
+{
+  "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MTgxODk2NTgsIm5iZiI6MTYxODE4OTY1OCwianRpIjoiZjdlY2VmNDktNzE0YS00NjQ2LTg0YTYtYjYxMzEwZjU4OWE3IiwiZXhwIjoxNjE4MTkwNTU4LCJpZGVudGl0eSI6ImhlYWR3aW5kcyIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.QAl34y0ufrYv4rPMPIHhWIU3DIL291-nwknKifsvrMw",
+  "isAuthenticated": true,
+  "message": "success",
+  "refresh_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MTgxODk2NTgsIm5iZiI6MTYxODE4OTY1OCwianRpIjoiNmQyNTczMmEtN2YxOC00MjFkLWIzMDItMmE3NDMzMjc3OTAwIiwiZXhwIjoxNjIwNzgxNjU4LCJpZGVudGl0eSI6ImhlYWR3aW5kcyIsInR5cGUiOiJyZWZyZXNoIn0.s23TKAhUCjawi5ypIPvahyGIa0jYxE7Z0ewfaDF218Q",
+  "source": "api",
+  "status": 200,
+  "user_account": {
+    "admin": false,
+    "confirmed": false,
+    "confirmed_on": null,
+    "email": "brandonflowers@gmail.com",
+    "id": 1,
+    "username": "headwinds"
+  }
+}

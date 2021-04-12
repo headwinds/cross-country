@@ -73,9 +73,16 @@ export default class LoginContainer extends Component {
     this.onUsernameChange = this.onUsernameChange.bind(this);
     this.onPasswordChange = this.onPasswordChange.bind(this);
     this.login = this.login.bind(this);
+    this.onKeydownHandler = this.onKeydownHandler.bind(this);
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    window.addEventListener('keydown', this.onKeydownHandler, false);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keyPress', this.onKeydownHandler, false);
+  }
 
   componentDidUpdate() {}
 
@@ -87,12 +94,19 @@ export default class LoginContainer extends Component {
     this.setState({ password: value });
   }
 
-  login(event) {
+  onKeydownHandler(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      this.login();
+    }
+  }
+
+  login() {
     const {
       config: { route },
     } = this.props;
     const { username, password } = this.state;
-    event.preventDefault();
+
     if (username && password) {
       postLoginUser({ username, password }, route)
         .then(

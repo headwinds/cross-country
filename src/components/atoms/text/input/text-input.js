@@ -19,20 +19,16 @@ import PropTypes from 'prop-types';
  * )
  */
 const TextInput = ({ onChangeHandler, customStyle, value, type = '' }) => {
-  if (value) {
-    return (
-      <input
-        type="text"
-        type={type}
-        className={styles.textInput}
-        style={customStyle}
-        onChange={onChangeHandler}
-        value={value}
-      />
-    );
-  }
-
-  return <input type="text" type={type} className={styles.textInput} style={customStyle} onChange={onChangeHandler} />;
+  return (
+    <input
+      type="text"
+      type={type}
+      className={styles.textInput}
+      style={customStyle}
+      onChange={onChangeHandler}
+      value={value}
+    />
+  );
 };
 
 TextInput.propTypes = {
