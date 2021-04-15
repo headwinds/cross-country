@@ -8,7 +8,10 @@ import Label from '../../atoms/text/label';
 import Paragraph from '../../atoms/text/paragraph';
 import Button from '../../atoms/button/button';
 import { postLoginUser } from '../../../services/login-service';
+import { getUnsplashPhoto } from '../../../services/image-service';
+import clsx from 'clsx';
 import styles from './login.scss';
+import { privateConfig } from '../../../../cross-country-config-private';
 
 /**
  * Allows the user to enter text
@@ -30,10 +33,13 @@ const Login = ({
     callback,
     username,
     password,
+    response = null,
     handleClick,
     onUsernameChange,
     onPasswordChange,
     feedback,
+    customErrorClass = '',
+    crossCountryConfig = null,
   },
 }) => {
   return (
@@ -54,7 +60,16 @@ const Login = ({
         </Button>
       </Row>
       <Row>
-        <Paragraph>{feedback}</Paragraph>
+        {feedback !== '' && (
+          <Paragraph
+            customClass={clsx(
+              { [styles.login__error]: response.hasError, [styles.login__success]: response.isSuccessful },
+              customErrorClass
+            )}
+          >
+            {feedback}
+          </Paragraph>
+        )}
       </Row>
     </Column>
   );
@@ -68,6 +83,10 @@ export default class LoginContainer extends Component {
       username: '',
       password: '',
       feedback: '',
+      imageUrl: '',
+      crossCountryConfig: this.props.config.crossCountryConfig || privateConfig,
+      fetch: false,
+      response: null,
     };
 
     this.onUsernameChange = this.onUsernameChange.bind(this);
@@ -77,6 +96,21 @@ export default class LoginContainer extends Component {
   }
 
   componentDidMount() {
+    const { crossCountryConfig } = this.state;
+
+    getUnsplashPhoto(crossCountryConfig.UNSPLASH_API_KEY).then(result => {
+      if (result.errors) {
+        // handle error here
+        console.log('error occurred: ', result.errors[0]);
+      } else {
+        // handle success here
+        const {
+          urls: { small },
+        } = result.response;
+        this.setState({ imageUrl: small });
+      }
+    });
+
     window.addEventListener('keydown', this.onKeydownHandler, false);
   }
 
@@ -111,19 +145,21 @@ export default class LoginContainer extends Component {
       postLoginUser({ username, password }, route)
         .then(
           response => {
-            console.log('heard response: ', response);
+            console.log('Login heard response: ', response);
             return response.json();
           },
           error => {
-            console.log('heard error: ', error);
+            console.log('Login heard error: ', error);
           }
         )
         .then(json => {
-          console.log('heard json: ', json);
-          const { isAuthenticated, message, status } = json;
+          console.log('Login heard json: ', json);
+          const { isAuthenticated, message, status, access_token } = json;
           if (status === 200) {
             if (!isAuthenticated && message) {
-              this.setState({ feedback: message });
+              this.setState({ feedback: message, response: { hasError: true, isSuccessful: false } });
+            } else if (isAuthenticated && access_token) {
+              this.setState({ feedback: 'You are logged in!', response: { hasError: false, isSuccessful: true } });
             }
           }
         })
@@ -133,15 +169,17 @@ export default class LoginContainer extends Component {
 
   render() {
     const { config } = this.props;
-    const { username, password, feedback } = this.state;
+    const { username, password, feedback, imageUrl, response } = this.state;
     const loginConfig = {
       ...config,
+      url: imageUrl,
       username,
       password,
       feedback,
       handleClick: this.login,
       onUsernameChange: this.onUsernameChange,
       onPasswordChange: this.onPasswordChange,
+      response,
     };
     return <Login config={loginConfig} />;
   }

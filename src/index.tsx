@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Documentation from './documentation';
 import World from './world';
 import ReadMe from './readme';
-
 import { Column, SubHeadline, Paragraph } from './components';
 
 export * from './components';
@@ -18,7 +17,7 @@ export default function CrossCountry() {
         return (
           <Column>
             <Documentation name="documentation" />
-            <SubHeadline text="Read Me" size="large" />
+            <SubHeadline text="Try Me" size="large" />
             <ReadMe />
           </Column>
         );

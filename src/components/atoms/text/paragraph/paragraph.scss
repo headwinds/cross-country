@@ -6,8 +6,16 @@
     width: 90%;
     text-align: left;
 
-    @media only all and (min-width: 800px) {
-      width: 600px;
+    @media (min-width:320px) and (max-width:650px) { 
+      width: 80%;
+    }
+  
+    @media (min-width:651px) and (max-width:950px) { 
+      max-width: 450px;
+     }
+  
+    @media (min-width:951px) {  
+      max-width: 600px;
     }
 }
 

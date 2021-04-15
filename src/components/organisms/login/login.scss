@@ -26,4 +26,14 @@
     margin: 8px;
   }
 
+  &__error {
+    padding: 8px;
+    color: darkred;
+  }
+
+  &__success {
+    padding: 8px;
+    color: green;
+  }
+
 }
