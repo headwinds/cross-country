@@ -6,7 +6,7 @@
 
 Warning: at this point, the project shell is more interesting/valuable than the actual project
 
-[Cross Country Guide](https://cross-country.vercel.app)
+[Cross Country Guide](https://cross-country-guide.vercel.app)
 
 Tech 
 - react & react-spring 
