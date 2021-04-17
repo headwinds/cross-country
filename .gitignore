@@ -22,3 +22,6 @@ cross-country-config-private.js
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+storybook-static
+

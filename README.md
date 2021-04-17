@@ -4,7 +4,17 @@
 
 [![NPM](https://img.shields.io/npm/v/cross-country.svg)](https://www.npmjs.com/package/cross-country) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-[Guide](https://cross-country.now.sh)
+Warning: at this point, the project shell is more interesting/valuable than the actual project
+
+[Guide](https://cross-country.vercel.app)
+
+Tech 
+- react & react-spring 
+- scss modules
+- D3 
+
+Progress Complete 
+- 10% 
 
 ## Install
 
@@ -23,12 +33,20 @@ You want to run 2 directories
 yarn start
 ```
 
-2. where you see them working
+2. Storybook
+```
+yarn storybook
+```
+
+Open your browser to http://localhost:6006/
+
+To build & deploy storybook `yarn build-storybook`
+
+3. Example - you will need to link the library - if link fail, everything in the example is also available in the storybook
 ```
 cd example
 yarn start 
 ```
-
 
 Open your browser to http://localhost:3000/
 

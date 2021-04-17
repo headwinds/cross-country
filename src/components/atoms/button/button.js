@@ -7,6 +7,7 @@ renders 1 native element
 import React from 'react';
 import styles from './button.scss';
 
+console.log('styles: ', styles);
 const Button = ({ text, label, handleClick, customStyle, children }) => (
   <button
     style={customStyle}
