@@ -6,12 +6,13 @@
 
 Warning: at this point, the project shell is more interesting/valuable than the actual project
 
-[Guide](https://cross-country.vercel.app)
+[Cross Country Guide](https://cross-country.vercel.app)
 
 Tech 
 - react & react-spring 
 - scss modules
 - D3 
+- Storybook
 
 Progress Complete 
 - 10% 
@@ -98,10 +99,6 @@ your-password
 now-your-email
 npm publish
 ```
-
-## Docs
-
-`yarn docs`
 
 ## Help & Thanks
 
