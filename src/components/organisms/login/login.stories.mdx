@@ -1,0 +1,43 @@
+
+
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs/blocks';
+
+import Login from './login';
+
+<Meta title="organisms/login" />
+
+# Login
+
+<Subtitle>users can sign in into your application</Subtitle>
+
+```
+<Login
+    config={{
+        url:
+        "https://i.pinimg.com/originals/c2/99/c8/c299c825b1d9adf653a03760880c2d81.jpg",
+        a11y: "wolf",
+        text: "Wolf",
+        route: "/login",
+        crossCountryConfig: {
+        UNSPLASH_API_KEY:
+            "YOUR-API-KEY",
+        },
+    }}
+/>
+```
+
+<Canvas>
+  <Story name="basic">
+    <Login config={{
+        url:
+        "https://i.pinimg.com/originals/c2/99/c8/c299c825b1d9adf653a03760880c2d81.jpg",
+        a11y: "wolf",
+        text: "Wolf",
+        route: "/login",
+        crossCountryConfig: {
+        UNSPLASH_API_KEY:
+            "YOUR-API-KEY",
+        },
+    }}/>
+  </Story>
+</Canvas>
