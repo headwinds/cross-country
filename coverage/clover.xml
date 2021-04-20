@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1618782006079" clover="3.2.0">
+  <project timestamp="1618782006079" name="All files">
+    <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="4" methods="3" coveredmethods="3" elements="13" coveredelements="11" complexity="0" loc="4" ncloc="4" packages="1" files="1" classes="1"/>
+    <file name="button.js" path="/Users/braflow/cross-country/src/components/atoms/button/button.js">
+      <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <line num="3" count="1" type="cond" truecount="3" falsecount="1"/>
+      <line num="4" count="3" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

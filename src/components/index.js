@@ -6,7 +6,7 @@ export { default as Column } from './atoms/column/column';
 export { default as Checkbox } from './atoms/checkbox/';
 export { default as Radio } from './atoms/radio/';
 export { default as RadioGroup } from './molecules/radiogroup/';
-export { default as Button } from './atoms/button/button';
+export { default as Button } from './atoms/button/button-themed';
 export { default as Row } from './atoms/row/row';
 export { default as Image } from './atoms/image/image';
 export { default as Headline } from './atoms/text/headline/headline';
