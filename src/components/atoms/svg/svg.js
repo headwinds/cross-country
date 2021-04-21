@@ -1,13 +1,14 @@
 const SVG = ({
   width = 200,
-  height = 40,
+  height = 200,
   children = null,
   customStyle = {
-    border: '2px solid gold',
+    border: 'none',
+    backgroundColor: `#f1f1f1`,
   },
 }) => {
   return (
-    <svg style={customStyle} width={200} height={40}>
+    <svg style={customStyle} width={width} height={height}>
       {children}
     </svg>
   );

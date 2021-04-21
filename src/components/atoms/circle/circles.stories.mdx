@@ -1,0 +1,22 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs/blocks';
+import { STORYBOOK } from "../../../constants";
+import SVG from '../svg';
+import AnimatedCirclesStory from "./animated-circles-story";
+import Circle from "./circle";
+
+<Meta title="menu/atoms/circles" />
+
+# Circles
+
+<Subtitle>a collection of animated circle</Subtitle>
+
+<Canvas>
+  <Story name="circle">
+    <SVG>
+      <Circle />
+    </SVG>
+  </Story>
+  <Story name="animated circles">
+    <AnimatedCirclesStory />
+  </Story>
+</Canvas>

@@ -4773,6 +4773,14 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
+beautiful-react-hooks@^0.31.1:
+  version "0.31.1"
+  resolved "https://registry.yarnpkg.com/beautiful-react-hooks/-/beautiful-react-hooks-0.31.1.tgz#16651cd47d36f804a4dc3a9de4b2bcdad9ad9054"
+  integrity sha512-fanSUMCPCRYkTH7aPSKM47aVu6m1Uuaz6rLw0YDP6VUVUwXXuAmwCldRwB+AiNO2x/RV/LWh4izfNcfQRT/yVA==
+  dependencies:
+    lodash.debounce "^4.0.8"
+    lodash.throttle "^4.1.1"
+
 before-after-hook@^2.2.0:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/before-after-hook/-/before-after-hook-2.2.1.tgz#73540563558687586b52ed217dad6a802ab1549c"
