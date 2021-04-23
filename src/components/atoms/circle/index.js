@@ -1,1 +1,1 @@
-export { default } from './circles';
+export { default } from './circle';

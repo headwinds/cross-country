@@ -8,6 +8,67 @@ const generateDataset = () => {
     .map(() => [Math.random() * 180 + 10, Math.random() * 135 + 10]);
 };
 
+/*
+
+In this experiement, the transitions seem to get blown away each time instead apearing in sequence
+
+const exitSteps = [
+  {
+    duration: 1000,
+    fill: 'tomato',
+  },
+  {
+    duration: 1000,
+    fill: 'blue',
+  },
+  {
+    duration: 1000,
+    fill: 'green',
+  },
+];
+
+// https://stackoverflow.com/questions/39995354/how-to-chain-javascript-methods-natively-from-an-iterator
+
+const chain = (target, ...calls) => {
+  for(let {method, args} of calls) {
+    target = target[method](...args)
+  }
+  return obj
+}
+chain(target, [
+  {meth: 'transition', args: []},
+  {meth: 'duration', args: [arg]},
+   {meth: 'attr', args: [arg]}
+  ]})
+
+const chainExitTransition = (state, steps) => {
+  let chain = state;
+  steps.forEach(step => {
+    const { duration, fill } = step;
+    chain.transition().duration(duration).attr('fill', fill) ;
+    chain
+  });
+  state.transition().attr('r', 0).style('opacity', 0).remove();
+};
+*/
+
+const applyTransitions = state => {
+  state
+    .transition()
+    .duration(1000)
+    .attr('fill', 'tomato')
+    .transition()
+    .duration(1000)
+    .attr('fill', 'blue')
+    .transition()
+    .duration(1000)
+    .attr('fill', 'green')
+    .duration(1000)
+    .attr('r', 0)
+    .style('opacity', 0)
+    .remove();
+};
+
 const AnimatedCircles = () => {
   const dataset = generateDataset();
 
@@ -17,7 +78,7 @@ const AnimatedCircles = () => {
   useInterval(() => {
     const newDataset = generateDataset();
     setVisibleCircles(newDataset);
-  }, 1000);
+  }, 5000);
 
   const renderCirlces = () => {
     const svgElement = d3.select(ref.current);
@@ -31,21 +92,20 @@ const AnimatedCircles = () => {
             .attr('cx', d => d[0])
             .attr('cy', d => d[1])
             .attr('r', 0)
-            .attr('fill', 'grey')
+            .attr('fill', '#ddd')
             .call(enter =>
               enter
                 .transition()
-                .duration(1200)
+                .duration(1000)
                 .attr('cy', d => d[1] + Math.random() * 50)
-                .attr('r', Math.random() * 25)
-                .attr('fill', 'gold')
+                .attr('r', Math.random() * 25 + 25)
                 .style('opacity', 1)
+                .transition()
+                .duration(1000)
+                .attr('fill', 'gold')
             ),
         update => update.attr('fill', 'lightgrey'),
-        exit =>
-          exit
-            .attr('fill', 'tomato')
-            .call(exit => exit.transition().duration(1200).attr('r', 0).style('opacity', 0).remove())
+        exit => exit.call(exit => applyTransitions(exit))
       );
   };
 
@@ -53,7 +113,7 @@ const AnimatedCircles = () => {
     if (ref.current) {
       renderCirlces();
     }
-  }, [dataset]);
+  }, [visibleCircles]);
   return <g ref={ref} />;
 };
 

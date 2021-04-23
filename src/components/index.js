@@ -17,6 +17,10 @@ export { default as Label } from './atoms/text/label';
 export { default as Link } from './atoms/link';
 export { default as List } from './atoms/list/list';
 export { default as ListItem } from './atoms/list/list-item/list-item';
+// atoms / svg
+export { default as SVG } from './atoms/svg';
+export { default as Circle } from './atoms/circle';
+export { default as Group } from './atoms/group';
 
 // molecules
 export { default as CheckboxLabel } from './molecules/checkboxlabel';

@@ -109,6 +109,11 @@ npm publish
 * [a-guide-to-js-docs-for-react-js](https://www.inkoop.io/blog/a-guide-to-js-docs-for-react-js/)
 * [wattenberger react-and-d3](https://wattenberger.com/blog/react-and-d3)
 
+## Map Generators
+
+* [stygiangen](https://github.com/slashman/stygiangen/)
+* [Fantasy-Map-Generator](https://azgaar.github.io/Fantasy-Map-Generator/)
+
 ## License
 
 MIT © [headwinds](https://github.com/headwinds)
