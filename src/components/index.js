@@ -25,7 +25,8 @@ export { default as Group } from './atoms/group';
 
 // molecules
 export { default as CheckboxLabel } from './molecules/checkboxlabel';
-export { default as Wolf } from './molecules/wolf/wolf';
+export { default as Wolf } from './molecules/wolf';
+export { default as Bar } from './molecules/bar';
 
 // organisms
 export { default as Login } from './organisms/login';
