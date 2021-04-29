@@ -13,8 +13,7 @@ const Column = ({
   customClass = '',
   ...rest
 }) => {
-  const style = hasBackground ? { backgroundColor, alignItems: hasChildrenCentered, ...customStyle } : customStyle;
-  style['alignItems'] = hasChildrenCentered ? 'center' : 'flex-start';
+  //style['alignItems'] = hasChildrenCentered ? 'center' : 'flex-start';
 
   return (
     <div
@@ -27,7 +26,7 @@ const Column = ({
         },
         customClass
       )}
-      style={style}
+      style={customStyle}
     >
       {children}
     </div>

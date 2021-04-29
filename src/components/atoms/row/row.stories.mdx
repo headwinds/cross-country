@@ -1,0 +1,19 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs/blocks';
+import { STORYBOOK } from "../../../constants"
+import Row from './row';
+import styles from './row.scss';
+
+<Meta title="menu/atoms/row" />
+
+# Row
+
+<Subtitle>a row.</Subtitle>
+
+<Canvas>
+  <Story name="row">
+    <Row>hello I'm a row</Row>
+  </Story>
+    <Story name="bar">
+    <Row customStyle={{width: 300, backgroundColor: "green", color: "white", height: 30, alignItems: "center"}}>hello, I'm row that looks like a bar</Row>
+  </Story>
+</Canvas>
