@@ -8,3 +8,16 @@
     margin: 0px;
     padding: 0px;
 }
+
+.horizontalList {
+    display: flex;
+}
+
+.horizontalListItem {
+    padding: 8px;
+}
+
+.horizontalListWrap {
+    display: flex;
+    flex-flow: wrap;
+}

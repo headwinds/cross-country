@@ -11,12 +11,14 @@ const Column = ({
   backgroundColor = '#eee',
   customStyle = {},
   customClass = '',
+  ...rest
 }) => {
   const style = hasBackground ? { backgroundColor, alignItems: hasChildrenCentered, ...customStyle } : customStyle;
   style['alignItems'] = hasChildrenCentered ? 'center' : 'flex-start';
 
   return (
     <div
+      {...rest}
       className={clsx(
         {
           [styles.column]: true,

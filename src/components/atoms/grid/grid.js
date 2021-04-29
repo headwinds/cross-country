@@ -17,8 +17,12 @@ import PropTypes from 'prop-types';
  *   </Grid>
  * )
  */
-const Grid = ({ children, customStyle }) => {
-  return <div style={customStyle}>{children}</div>;
+const Grid = ({ children, customStyle, ...rest }) => {
+  return (
+    <div {...rest} style={customStyle}>
+      {children}
+    </div>
+  );
 };
 
 Grid.propTypes = {

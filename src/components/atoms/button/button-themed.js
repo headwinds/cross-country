@@ -10,7 +10,7 @@ import Button from './button';
 import clsx from 'clsx';
 
 const ButtonThemed = ({ text = '', handleClick, customClass = '', customStyle = {}, children = null }) => (
-  <Button className={clsx(styles.button, customClass)} text={text} handleClick={handleClick} style={customStyle}>
+  <Button customClass={clsx(styles.button, customClass)} text={text} handleClick={handleClick} style={customStyle}>
     {text || children}
   </Button>
 );
