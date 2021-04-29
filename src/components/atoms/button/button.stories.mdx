@@ -1,6 +1,7 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs/blocks';
 import {STORYBOOK} from "../../../constants"
 import Button from './button';
+import styles from './button.scss';
 
 <Meta title="menu/atoms/button" />
 
@@ -13,5 +14,8 @@ Click me with the mouse or press down on the keyboard and I will respond
 <Canvas>
   <Story name="basic">
     <Button>hello</Button>
+  </Story>
+    <Story name="with custom class and style">
+    <Button customClass={styles.storyButton} customStyle={{width: 120}}>hello</Button>
   </Story>
 </Canvas>

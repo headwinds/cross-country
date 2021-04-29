@@ -50,8 +50,6 @@ class Sketch extends Component {
   render() {
     const { backgroundColor } = this.props;
 
-    console.log('Sketch: ', this.props);
-
     return (
       <div
         className="Sketch"
