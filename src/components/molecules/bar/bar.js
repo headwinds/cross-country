@@ -1,5 +1,6 @@
 import React from 'react';
-import { Row, Label } from '../../';
+import Row from '../../atoms/row';
+import Label from '../../atoms/label';
 
 const defaultLabelStyle = {
   fontSize: 16,
