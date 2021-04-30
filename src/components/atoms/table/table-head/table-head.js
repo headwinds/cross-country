@@ -9,9 +9,9 @@ import styles from '../table.scss';
 import clsx from 'clsx';
 
 const TableHead = ({ children, customClass = '', customStyle = {}, ...rest }) => (
-  <th className={clsx(styles.tableHead, customClass)} style={customStyle} {...rest}>
+  <thead className={clsx(styles.tableHead, customClass)} style={customStyle} {...rest}>
     {children}
-  </th>
+  </thead>
 );
 
 export default TableHead;

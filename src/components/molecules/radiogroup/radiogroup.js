@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Column from '../../atoms/column';
 import Row from '../../atoms/row';
 import Radio from '../../atoms/radio';
-import Label from '../../atoms/label';
+import Label from '../../atoms/text/label';
 
 // https://www.w3.org/TR/2016/WD-wai-aria-practices-1.1-20160317/examples/radio/radio.html
 

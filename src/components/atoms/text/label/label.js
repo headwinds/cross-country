@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
-import styles from '../text.scss';
+import React from 'react';
+import styles from './label.scss';
+import clsx from 'clsx';
 
-const Label = ({ text, children, customStyle = {} }) => (
-  <p className={styles.label} style={customStyle}>
-    {text || children}
-  </p>
+const Label = ({ children, forId, customClass = '', customStyle = {}, ...rest }) => (
+  <label {...rest} className={clsx(styles.label, customClass)} htmlFor={forId} style={customStyle}>
+    {children}
+  </label>
 );
 
 export default Label;

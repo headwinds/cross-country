@@ -1,6 +1,6 @@
 import React from 'react';
-import Row from '../../atoms/row';
-import Label from '../../atoms/label';
+import Row from '../../atoms/row/row';
+import Label from '../../atoms/text/label/label';
 
 const defaultLabelStyle = {
   fontSize: 16,
@@ -10,7 +10,7 @@ const defaultLabelStyle = {
   fontFamily: 'Helvetica Neue',
 };
 const defaultBarStyle = {
-  width: () => 200,
+  width: 100,
   backgroundColor: 'salmon',
   color: 'white',
   alignItems: 'center',
@@ -22,7 +22,7 @@ const defaultNumStyle = {
   marginLeft: 8,
   color: 'black',
   textAlign: 'left',
-  width: 100,
+  width: 50,
   fontFamily: 'Helvetica Neue',
 };
 
@@ -33,12 +33,12 @@ const Bar = ({
   label = 'hello bar',
   num = 200,
 }) => (
-  <Row customStyle={{ alignItems: 'center', marginLeft: 8, color: 'black' }}>
+  <Row customStyle={{ alignItems: 'center', marginLeft: 8, color: 'black', flexWrap: 'nowrap' }}>
     <Row
       customStyle={{
         margin: 0,
         padding: 4,
-        width: 220,
+        width: 100,
         justifyContent: 'flex-end',
       }}
     >

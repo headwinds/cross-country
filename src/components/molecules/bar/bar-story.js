@@ -28,6 +28,8 @@ const customBarStyle = {
   paddingRight: 4,
 };
 
-const BarStory = () => <Bar barStyle={customBarStyle} labelStyle={customLabelStyle} />;
+const BarStory = ({ num = 300, label = 'gold' }) => (
+  <Bar label={label} num={num} barStyle={customBarStyle} labelStyle={customLabelStyle} />
+);
 
 export default BarStory;

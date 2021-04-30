@@ -3,6 +3,7 @@ import { STORYBOOK } from "../../../constants"
 import Table from './';
 import TableHead from './table-head';
 import TableRow from './table-row';
+import TableBody from './table-body';
 import TableData from './table-data';
 import styles from "./table.scss";
 
@@ -15,26 +16,30 @@ import styles from "./table.scss";
 <Canvas>
   <Story name="table">
     <Table>
-      <TableRow>
-        <TableHead>Item</TableHead>
-        <TableHead>Price</TableHead>
-      </TableRow>
-      <TableRow>
-         <TableData>Axe</TableData> 
-        <TableData>300</TableData>
-      </TableRow>
-      <TableRow>
-         <TableData>Coffee</TableData> 
-        <TableData>50</TableData>
-      </TableRow>
-      <TableRow>
-         <TableData>Wind Turbine</TableData> 
-        <TableData>2500</TableData>
-      </TableRow>
-      <TableRow>
-         <TableData>Fishing Lure</TableData> 
-        <TableData>25</TableData>
-      </TableRow>
+     <TableHead>
+        <TableRow>
+          <TableData isHead>Item</TableData>
+          <TableData isHead>Price</TableData>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        <TableRow>
+          <TableData>Axe</TableData> 
+          <TableData>300</TableData>
+        </TableRow>
+        <TableRow>
+          <TableData>Coffee</TableData> 
+          <TableData>50</TableData>
+        </TableRow>
+        <TableRow>
+          <TableData>Wind Turbine</TableData> 
+          <TableData>2500</TableData>
+        </TableRow>
+        <TableRow>
+          <TableData>Fishing Lure</TableData> 
+          <TableData>25</TableData>
+        </TableRow>
+       </TableBody>
     </Table>
   </Story>
 </Canvas>

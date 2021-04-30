@@ -20,6 +20,7 @@ export { default as List } from './atoms/list/list';
 export { default as ListItem } from './atoms/list/list-item/list-item';
 
 export { default as Table } from './atoms/table';
+export { default as TableBody } from './atoms/table/table-body';
 export { default as TableHead } from './atoms/table/table-head';
 export { default as TableRow } from './atoms/table/table-row';
 export { default as TableData } from './atoms/table/table-data';
