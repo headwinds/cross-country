@@ -8,9 +8,9 @@ import React, { Component } from 'react';
 import styles from './template.scss';
 import clsx from 'clsx';
 
-const Template = ({ message, ...rest }) => (
-  <div customClass={clsx(styles.template, customClass)} {...rest}>
-    {message}
+const Template = ({ children, customClass = '', customStyle = {}, ...rest }) => (
+  <div className={clsx(styles.template, customClass)} style={customStyle} {...rest}>
+    {children}
   </div>
 );
 

@@ -1,15 +1,3 @@
 .template {
-    font-family: Helvetica;
-
-    @include sm {
-     
-      }
-    
-      @include lg {
-       
-      }
-    
-      @include rwd(1400) {
-      
-      }
+  display: flex;
 }

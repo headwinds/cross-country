@@ -1,0 +1,16 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs/blocks';
+import { STORYBOOK } from "../../../../constants";
+import Headline from './headline';
+import styles from "./headline.scss";
+
+<Meta title="menu/atoms/headline" />
+
+# Headline
+
+<Subtitle>a headline for a post - this wraps an h1 so use one per post</Subtitle>
+
+<Canvas>
+  <Story name="headline">
+    <Headline customStyle={{color: "rebeccapurple"}}>War is Over</Headline>
+  </Story>
+</Canvas>

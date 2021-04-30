@@ -1,0 +1,16 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs/blocks';
+import { STORYBOOK } from "../../../../constants";
+import SubHeadline from './subheadline';
+import styles from "./subheadline.scss";
+
+<Meta title="menu/atoms/subheadline" />
+
+# Template
+
+<Subtitle>a post many have many sub headlines to title content sections</Subtitle>
+
+<Canvas>
+  <Story name="subheadline">
+    <SubHeadline customStyle={{color: "teal"}}>The Band Played On</SubHeadline>
+  </Story>
+</Canvas>
