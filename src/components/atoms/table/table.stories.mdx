@@ -1,0 +1,40 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs/blocks';
+import { STORYBOOK } from "../../../constants"
+import Table from './';
+import TableHead from './table-head';
+import TableRow from './table-row';
+import TableData from './table-data';
+import styles from "./table.scss";
+
+<Meta title="menu/atoms/table" />
+
+# Table
+
+<Subtitle>a table</Subtitle>
+
+<Canvas>
+  <Story name="table">
+    <Table>
+      <TableRow>
+        <TableHead>Item</TableHead>
+        <TableHead>Price</TableHead>
+      </TableRow>
+      <TableRow>
+         <TableData>Axe</TableData> 
+        <TableData>300</TableData>
+      </TableRow>
+      <TableRow>
+         <TableData>Coffee</TableData> 
+        <TableData>50</TableData>
+      </TableRow>
+      <TableRow>
+         <TableData>Wind Turbine</TableData> 
+        <TableData>2500</TableData>
+      </TableRow>
+      <TableRow>
+         <TableData>Fishing Lure</TableData> 
+        <TableData>25</TableData>
+      </TableRow>
+    </Table>
+  </Story>
+</Canvas>

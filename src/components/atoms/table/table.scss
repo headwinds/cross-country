@@ -1,0 +1,29 @@
+@import '../text/text.scss';
+
+.table {
+  display: flex;
+  flex-direction: column;
+  font-family: $font-table;
+}
+
+.tableRow {
+  display: flex;
+  font-family: $font-table;
+}
+
+.tableHead {
+  display: flex;
+  width: 200px;
+  font-family: $font-table;
+  font-weight: 700;
+  color: #666;
+}
+
+.tableData {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  font-family: $font-table;
+  font-weight: 500;
+  color: #737373;
+}
