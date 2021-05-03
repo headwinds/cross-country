@@ -1,0 +1,21 @@
+@import "../../styles.scss";
+
+.wallpaper {
+  width: 100vw;
+  height: 100vh;
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+  // 576px window width and more
+  @include sm {
+  
+  }
+  // 992px window width and more
+  @include lg {
+   
+  }
+  // 1400px window width and more
+  @include rwd(1400) {
+    
+  }
+}

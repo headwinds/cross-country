@@ -1,0 +1,22 @@
+
+
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs/blocks';
+import Wallpaper from './wallpaper';
+import WrapperStory from './wallpaper-story';
+
+<Meta title="menu/molecules/wallpaper" />
+
+# wallpaper
+
+<Subtitle>a background for your project</Subtitle>
+
+
+
+<Canvas>
+  <Story name="wallpaper">
+    <Wallpaper backgroundColor="mintcream" customStyle={{}} />
+  </Story>
+  <Story name="wallpaper with noise">
+    <WrapperStory />
+  </Story>
+</Canvas>
