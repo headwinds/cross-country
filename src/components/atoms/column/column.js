@@ -7,13 +7,13 @@ import styles from './column.scss';
 const Column = ({
   children,
   hasBackground = false,
-  hasChildrenCentered = true,
+  hasChildrenCentered = false,
   backgroundColor = '#eee',
   customStyle = {},
   customClass = '',
   ...rest
 }) => {
-  //style['alignItems'] = hasChildrenCentered ? 'center' : 'flex-start';
+  customStyle['alignItems'] = hasChildrenCentered ? 'center' : 'flex-start';
 
   return (
     <div

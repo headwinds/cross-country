@@ -1,7 +1,9 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs/blocks';
 import { STORYBOOK } from "../../../../constants";
 import Headline from './headline';
+import { SubHeadline, Column, Image } from '../../../';
 import styles from "./headline.scss";
+
 
 <Meta title="menu/atoms/headline" />
 
@@ -11,6 +13,14 @@ import styles from "./headline.scss";
 
 <Canvas>
   <Story name="headline">
-    <Headline customStyle={{color: "rebeccapurple"}}>War is Over</Headline>
+    <Headline color="lightslategrey">The First Footstep</Headline>
+  </Story>
+  <Story name="headline with subheadline">
+    <Column hasChildrenCentered>
+        <Image width="400" url="https://vintagenewsdaily.com/wp-content/uploads/2018/12/2.bp_.blogspot.compeace-for-christmas-unice-6499c7d88b9c85b0f0c495b76764615bb9e3d4ef-640x381.jpg" />
+        <Headline color="rebeccapurple">WAR IS OVER</Headline>
+        <SubHeadline color="rebeccapurple">IF YOU WANT IT</SubHeadline>
+        
+    </Column>
   </Story>
 </Canvas>
