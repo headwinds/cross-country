@@ -92,7 +92,7 @@ const AnimatedCircles = () => {
             .attr('cx', d => d[0])
             .attr('cy', d => d[1])
             .attr('r', 0)
-            .attr('fill', '#ddd')
+            .attr('fill', 'pink')
             .call(enter =>
               enter
                 .transition()

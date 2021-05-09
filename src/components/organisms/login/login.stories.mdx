@@ -2,6 +2,7 @@
 
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs/blocks';
 import Login from './login';
+import { privateConfig } from '../../../../cross-country-config-private';
 
 <Meta title="menu/organisms/login" />
 
@@ -12,14 +13,13 @@ import Login from './login';
 ```
 <Login
     config={{
-        url:
-        "https://i.pinimg.com/originals/c2/99/c8/c299c825b1d9adf653a03760880c2d81.jpg",
+        url: 'https://i.pinimg.com/originals/c2/99/c8/c299c825b1d9adf653a03760880c2d81.jpg',,
         a11y: "wolf",
         text: "Wolf",
         route: "/login",
         crossCountryConfig: {
-        UNSPLASH_API_KEY:
-            "YOUR-API-KEY",
+            UNSPLASH_API_KEY:
+                "YOUR-API-KEY",
         },
     }}
 />
@@ -29,14 +29,12 @@ import Login from './login';
 <Canvas>
   <Story name="login">
     <Login config={{
-        url:
-        "https://i.pinimg.com/originals/c2/99/c8/c299c825b1d9adf653a03760880c2d81.jpg",
+        url: 'https://i.pinimg.com/originals/c2/99/c8/c299c825b1d9adf653a03760880c2d81.jpg',
         a11y: "wolf",
         text: "Wolf",
         route: "/login",
-        crossCountryConfig: {
-        UNSPLASH_API_KEY:
-            "YOUR-API-KEY",
+        crossCountryConfig: privateConfig || {
+            UNSPLASH_API_KEY: "YOUR-API-KEY",
         },
     }}/>
   </Story>
