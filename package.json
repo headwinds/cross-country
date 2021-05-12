@@ -124,7 +124,7 @@
     "@storybook/addon-docs": "^6.2.8",
     "@storybook/preset-scss": "^1.0.3",
     "@testing-library/react": "^11.2.6",
-    "beautiful-react-hooks": "^0.31.1",
+    "beautiful-react-hooks": "^0.33.4",
     "clsx": "^1.1.0",
     "d3": "^6.7.0",
     "identity-obj-proxy": "^3.0.0",

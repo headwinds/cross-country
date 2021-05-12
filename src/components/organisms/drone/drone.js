@@ -56,7 +56,7 @@ const getPart = (layers, label, key) => {
  * @component
  * @param {object} config - configures the drone
  */
-const Drone = ({ config: { id, windowSize, tranformedState = 'compact' } }) => {
+const Drone = ({ config: { id, tranformedState = 'compact' } }) => {
   // shape - expanded or compacted
   //const [currentShape, setCurrrentState] = useState("expanded");
   const [currentPosition, setCurrrentPosition] = useState({ x: 0, y: 0 });
