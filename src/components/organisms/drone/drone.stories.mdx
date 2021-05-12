@@ -1,5 +1,6 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs/blocks';
 import { Paragraph } from "../../"
+import Drone from './drone';
 import DroneStory from './drone-story';
 
 <Meta title="menu/organisms/drone" />
@@ -12,6 +13,9 @@ import DroneStory from './drone-story';
 
 <Canvas>
   <Story name="drone">
+    <Drone config={{id: 0, tranformedState: 'compact'}} />
+  </Story>
+  <Story name="custom drone">
     <DroneStory />
   </Story>
 </Canvas>

@@ -13,14 +13,17 @@ const DroneStory = () => {
   };
   return (
     <Column>
-      <SVG customStyle={svgCustomStyle} width="400" height="400">
-        <Drone config={{ id: 0, tranformedState: droneTransformedState }} />
-      </SVG>
       <Paragraph>
-        I am in my <Hilight customStyle={{ color: 'teal', fontWeight: '700' }}>{droneTransformedState}</Hilight>{' '}
+        I am in my{' '}
+        <Hilight customStyle={{ color: droneTransformedState === 'compact' ? 'teal' : '#f537b0', fontWeight: '700' }}>
+          {droneTransformedState}
+        </Hilight>{' '}
         transformed state
       </Paragraph>
       <Button handleClick={handleClick}>transform</Button>
+      <SVG customStyle={svgCustomStyle} width="100vw" height="100vh">
+        <Drone config={{ id: 0, tranformedState: droneTransformedState }} />
+      </SVG>
     </Column>
   );
 };
