@@ -15,17 +15,16 @@
     background: #eee
   }
 
+  /*
+  let's let the Page molecule set the margin
   @include sm {
-    padding: 16px;
+    
   }
 
   @include lg {
-    margin-left: auto;
-    margin-right: auto;
+    
   }
 
   @include rwd(1400) {
-    margin-bottom: 20px;
-    margin-top: 20px;
-  }
+  */
 }

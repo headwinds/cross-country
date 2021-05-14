@@ -1,5 +1,11 @@
 import Tile from './tile';
+import { useState } from 'react';
 
-const TileStory = () => <Tile size="20px" fill="grey" />;
+const TileStory = () => {
+  const { isSelected, toggleSelected } = useState(false);
+  const { isInteractived, toggleSelected } = useState(false);
+
+  return <Tile size="20px" fill="grey" isSelected />;
+};
 
 export default TileStory;

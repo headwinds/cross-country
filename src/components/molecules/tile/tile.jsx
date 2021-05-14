@@ -12,7 +12,17 @@ Color mixing challenge - what is color is grass, dirt, the sky, etc to you?
 
 */
 
-const Tile = ({ customClass, size, fill, customStyle = {}, type, model = {}, ...rest }) => {
+const Tile = ({
+  isSelected = false,
+  isInteractive = false,
+  customClass,
+  size,
+  fill,
+  customStyle = {},
+  type,
+  model = {},
+  ...rest
+}) => {
   const finalCustomStyle = size ? { ...customStyle, width: size, height: size, backgroundColor: fill } : customStyle;
 
   if (type) {
