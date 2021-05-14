@@ -1,18 +1,28 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs/blocks';
 import Tile from './tile';
 import TileStory from './tile-story';
+import { Column, SubHeadline } from '../../'
+
 
 <Meta title="menu/molecules/tile" />
 
 # Tile
 
-<Subtitle>a bar for charting</Subtitle>
+<Subtitle>a tile is a buidling block</Subtitle>
+
+What can we do with a tile?
 
 <Canvas>
   <Story name="tile">
-    <Tile />
+    <Column>
+      <SubHeadline>A Basic Tile</SubHeadline>
+      <Tile />
+    </Column>
   </Story>
-  <Story name="custom tile">
-    <TileStory />
+  <Story name="iteractive tile">
+    <Column>
+      <SubHeadline>An Interactive Tile</SubHeadline>
+      <TileStory />
+    </Column>
   </Story>
 </Canvas>

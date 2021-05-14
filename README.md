@@ -4,7 +4,30 @@
 
 [![NPM](https://img.shields.io/npm/v/cross-country.svg)](https://www.npmjs.com/package/cross-country) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-Warning: at this point, the project shell is more interesting/valuable than the actual project
+The componennts within this library are designed responsively to be used write articles and create tile-based games; even better combine writing, gaming, with a sample dataset and tell a story.
+
+Are you a fan of the Sims, Starcraft, Chess, Dumgeons and Dragons and other table top games? Do you keep a sketch book and draw notes about games, and the general puzzles that make up life? This library is meant to translate your analog sketch book pages into a digital works that can be shared and explored by other like-minded individuals. 
+
+By wrapping html, each component is augmented for building accessible experiences across screens. A simple page may look like this:
+
+```
+<Wrapper>
+  <Page>
+    <Column>
+      <Paragraph>
+      By wrapping html, each component is augmented for building accessible experiences across screens.
+      </Paragraph>
+      <Paragraph>
+       A simple page may look like this with the default design settings.
+      </Paragraph>
+    </Column>
+    <Column>
+      <MyGameOrExperiementHere />
+    </Column>
+  </Page>
+  <Wallpaper />
+</Wrapper>
+```
 
 [Cross Country Guide](https://cross-country-guide.vercel.app)
 
@@ -15,7 +38,7 @@ Tech
 - Storybook
 
 Progress Complete 
-- 10% 
+- 20% 
 
 ## Install
 
@@ -108,6 +131,7 @@ npm publish
 * [multiple-classnames-css-modules-react](https://zeph.co/multiple-classnames-css-modules-react)
 * [a-guide-to-js-docs-for-react-js](https://www.inkoop.io/blog/a-guide-to-js-docs-for-react-js/)
 * [wattenberger react-and-d3](https://wattenberger.com/blog/react-and-d3)
+* [tile corner reticle](https://codepen.io/NyX/pen/JYOzWW)
 
 ## Map Generators
 
