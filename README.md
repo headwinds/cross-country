@@ -138,6 +138,10 @@ npm publish
 * [stygiangen](https://github.com/slashman/stygiangen/)
 * [Fantasy-Map-Generator](https://azgaar.github.io/Fantasy-Map-Generator/)
 
+## Functional Programming
+
+* [practical-functional-programming-in-javascript-side-effects-and-purity](https://dev.to/richytong/practical-functional-programming-in-javascript-side-effects-and-purity-revised-420h)
+ 
 ## License
 
 MIT © [headwinds](https://github.com/headwinds)

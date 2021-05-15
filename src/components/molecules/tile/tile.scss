@@ -1,0 +1,152 @@
+.tile {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  border: 1px dotted lightblue;
+}
+
+.innerTile {
+  display: flex;
+  flex-direction: column;
+  width: 90px;
+  height: 90px;
+  padding: 0px;
+  background-color: lightblue;
+}
+
+.grass {
+  background-color: green;
+}
+
+.dirt {
+  background-color: #92642b;
+}
+
+.cyan {
+  background-color: blue;
+}
+
+// settings
+$text-color: #FFB902;
+$line-color: #FFB902;
+$line-size: 7;
+
+$corner-color: cyan;
+$distance: 4;
+
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
+// general
+
+// credit: https://codepen.io/NyX/pen/JYOzWW
+
+//
+//  Corners mixin (MAGIC BE HERE!)
+//
+@mixin line-corners($line-color: $corner-color, $line-size: 7, $line-type: out, $line-distance: $distance) {
+  position: absolute;
+  width: 100%;
+  
+  transition-duration: 0.3s;
+  
+  // arrows
+  &:before,
+  &:after {
+    content: '';
+    
+    position: absolute;
+    
+    width: $line-size + px;
+    height: $line-size + px;
+    
+    border-color: $line-color;
+    border-style: solid;
+    
+    // will-change: transform, opacity;
+    transition-duration: 0.3s;
+    transform: translateZ(0);
+  }
+  
+  // top corners
+  &.top {
+    &:before { border-width: 1px 0 0 1px; }
+    &:after { border-width: 1px 1px 0 0; }
+  }
+  
+  // bottom corners
+  &.bottom {
+    &:before { border-width: 0 0 1px 1px; }
+    &:after { border-width: 0 1px 1px 0; }
+  }
+  
+  @if $line-type == out {
+    &:before { left: 0; }
+    &:after { right: 0; }
+    &.top { top: 0; }
+    &.bottom { bottom: $line-size + px; }    
+  }
+  
+  @if $line-type == in {
+    &:before { left: $line-distance + px; }
+    &:after { right: $line-distance + px; }
+    &.top { top: $line-distance + px; }
+    &.bottom { bottom: ($line-distance + $line-size) + px; }
+  }
+}
+
+@mixin line-corners-hover($line-size: 7, $line-type: out, $line-distance: $distance) {
+  @if $line-type == out {
+    &:before { left: 0; }
+    &:after { right: 0; }
+    &.top { top: 0; }
+    &.bottom { bottom: $line-size + px; }
+  }
+  
+  @if $line-type == in {
+    &:before { left: $line-distance + px; }
+    &:after { right: $line-distance + px; }
+    &.top { top: $line-distance + px; }
+    &.bottom { bottom: ($line-distance + $line-size) + px; }
+  }
+}
+
+// style: borders out (edge)
+@mixin line-corners-out($line-color: $corner-color, $line-size: 7) {
+  .corners { @include line-corners($line-color, $line-size, out); }
+  &:hover {
+    .corners { @include line-corners-hover($line-size, in); }
+  }
+}
+  
+// style: borders in
+@mixin line-corners-in($line-color: $corner-color, $line-size: 7) {
+  .corners { @include line-corners($line-color, $line-size, in); }
+  &:hover {
+    .corners { @include line-corners-hover($line-size, out); }
+  }
+}
+//
+// @end: Corners mixin
+//
+
+
+.bttn {
+  
+  &:hover {
+    cursor: pointer;
+  }
+  
+  // include corners
+  &.out {
+    @include line-corners-out(teal);
+  }
+  
+  &.in {
+    @include line-corners-in($line-color);
+  }
+}

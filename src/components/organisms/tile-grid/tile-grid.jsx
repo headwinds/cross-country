@@ -1,6 +1,6 @@
 import React from 'react';
 import Tile from '../../molecules/tile';
-import styles from './tile-grid.module.scss';
+import styles from './tile-grid.scss';
 import Column from '../../atoms/column';
 import Row from '../../atoms/row';
 
@@ -36,13 +36,19 @@ const TileGrid = ({
           count++;
         }
 
-        return <Tile model={tileModel} {...tileConfig} customStyle={{ margin: gapSize }} />;
+        const keyId = `${x}${y}`;
+
+        return <Tile key={keyId} model={tileModel} {...tileConfig} customStyle={{ margin: gapSize }} />;
       });
     };
 
     const createRow = (columns, x) => {
       const row = createColumns(columns, x);
-      return <Row style={styles.row}>{row}</Row>;
+      return (
+        <Row style={styles.row} key={x}>
+          {row}
+        </Row>
+      );
     };
 
     return grid.map((columns, x) => createRow(columns, x));

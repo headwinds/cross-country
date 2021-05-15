@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
 import styles from './link.scss';
 import PropTypes from 'prop-types';
+import clsx from 'clsx';
 
-const Link = ({ url, children, size, target }) => (
-  <a href={url} target={target} rel="noopener, noreferrer" className={`${styles.link} ${styles[`link__${size}`]}`}>
+const Link = ({ url, children, size, target, customClass = '', customStyle = {}, ...rest }) => (
+  <a
+    {...rest}
+    href={url}
+    target={target}
+    rel="noopener, noreferrer"
+    className={clsx(`${styles.link} ${styles[`link__${size}`]}`, customClass)}
+    style={customStyle}
+  >
     {children}
   </a>
 );
