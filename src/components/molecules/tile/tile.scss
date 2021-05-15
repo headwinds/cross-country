@@ -1,3 +1,5 @@
+$shallow-water: lightblue;
+
 .tile {
   display: flex;
   flex-direction: column;
@@ -6,7 +8,7 @@
   justify-content: center;
   align-items: center;
   padding: 0px;
-  border: 1px dotted lightblue;
+  //border: 1px dashed rgba($shallow-water, 0.2);
 }
 
 .innerTile {
@@ -15,11 +17,15 @@
   width: 90px;
   height: 90px;
   padding: 0px;
-  background-color: lightblue;
+  background-color: $shallow-water;
 }
 
 .grass {
   background-color: green;
+}
+
+.shallow-water {
+  background-color: $shallow-water;
 }
 
 .dirt {
@@ -27,28 +33,23 @@
 }
 
 .cyan {
-  background-color: blue;
+  background-color: cyan;
 }
 
+// corners
+// credit: https://codepen.io/NyX/pen/JYOzWW
 // settings
-$text-color: #FFB902;
-$line-color: #FFB902;
+$line-color: $shallow-water;
 $line-size: 7;
 
-$corner-color: cyan;
-$distance: 4;
+$corner-color: $shallow-water;
+$distance: 5;
+$border-width: 2px;
 
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 
-// general
-
-// credit: https://codepen.io/NyX/pen/JYOzWW
-
-//
-//  Corners mixin (MAGIC BE HERE!)
-//
-@mixin line-corners($line-color: $corner-color, $line-size: 7, $line-type: out, $line-distance: $distance) {
+@mixin line-corners($line-color: "inherit", $line-size: 7, $line-type: out, $line-distance: $distance) {
   position: absolute;
   width: 100%;
   
@@ -64,7 +65,7 @@ html { box-sizing: border-box; }
     width: $line-size + px;
     height: $line-size + px;
     
-    border-color: $line-color;
+    border-color: inherit;
     border-style: solid;
     
     // will-change: transform, opacity;
@@ -74,14 +75,14 @@ html { box-sizing: border-box; }
   
   // top corners
   &.top {
-    &:before { border-width: 1px 0 0 1px; }
-    &:after { border-width: 1px 1px 0 0; }
+    &:before { border-width: $border-width 0 0 $border-width; }
+    &:after { border-width: $border-width $border-width 0 0; }
   }
   
   // bottom corners
   &.bottom {
-    &:before { border-width: 0 0 1px 1px; }
-    &:after { border-width: 0 1px 1px 0; }
+    &:before { border-width: 0 0 $border-width $border-width; }
+    &:after { border-width: 0 $border-width $border-width 0; }
   }
   
   @if $line-type == out {
@@ -104,7 +105,7 @@ html { box-sizing: border-box; }
     &:before { left: 0; }
     &:after { right: 0; }
     &.top { top: 0; }
-    &.bottom { bottom: $line-size + px; }
+    &.bottom { bottom: $line-size + px }
   }
   
   @if $line-type == in {
@@ -130,12 +131,9 @@ html { box-sizing: border-box; }
     .corners { @include line-corners-hover($line-size, out); }
   }
 }
-//
-// @end: Corners mixin
-//
 
 
-.bttn {
+.corners {
   
   &:hover {
     cursor: pointer;
@@ -143,7 +141,7 @@ html { box-sizing: border-box; }
   
   // include corners
   &.out {
-    @include line-corners-out(teal);
+    @include line-corners-out($line-color);
   }
   
   &.in {

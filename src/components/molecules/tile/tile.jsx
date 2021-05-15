@@ -16,28 +16,30 @@ const Tile = ({
   isSelected = false,
   isInteractive = false,
   customClass,
-  size,
-  fill,
+  size = 100,
+  fill = '#eee',
+  cornerColor = '#999',
   customStyle = {},
   type,
   model = {},
+  sample = 'shallow-water',
   ...rest
 }) => {
-  const finalCustomStyle = size ? { ...customStyle, width: size, height: size, backgroundColor: fill } : customStyle;
-
-  if (type) {
-    switch (type) {
-      case 'grass':
-      default:
-        return <Column customClass={clsx(styles.tile, styles.bttn, styles.grass)} customStyle={finalCustomStyle} />;
-    }
-  }
+  const finalCustomStyle = { ...customStyle, width: size, height: size, backgroundColor: fill };
 
   return (
-    <Column customClass={clsx(styles.tile, styles.bttn, styles.out)} hasChildrenCentered>
-      <Column customClass={clsx(styles.innerTile)} hasChildrenCentered></Column>
-      <Row customClass={clsx(styles.corners, styles.top)} />
-      <Row customClass={clsx(styles.corners, styles.bottom)} />
+    <Column
+      customClass={clsx(styles.tile, styles.corners, styles.in)}
+      hasChildrenCentered
+      customStyle={{ ...finalCustomStyle, backgroundColor: 'tranparent', borderColor: fill }}
+    >
+      <Column
+        customClass={clsx(styles.innerTile, styles[sample])}
+        hasChildrenCentered
+        customStyle={{ ...finalCustomStyle, width: size - 10, height: size - 10 }}
+      ></Column>
+      <Row customClass={clsx(styles.corners, styles.top)} customStyle={{ color: cornerColor }} />
+      <Row customClass={clsx(styles.corners, styles.bottom)} customStyle={{ color: cornerColor }} />
     </Column>
   );
 };

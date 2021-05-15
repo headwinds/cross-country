@@ -3,15 +3,32 @@ import Tile from '../../molecules/tile';
 import styles from './tile-grid.scss';
 import Column from '../../atoms/column';
 import Row from '../../atoms/row';
+import ColorUtil from '../../../utils/ColorUtil';
+
+const DefaultTile = Tile;
+
+const createDemoModels = () => {
+  //const range = [...Array(64).keys()]; // chess!
+  const range = [...Array(12).keys()]; // chess!
+  return range.map(index => {
+    return { id: index };
+  });
+};
+
+const rgb = ColorUtil.hexToRgb('#ececec');
+const darkenColor = -0.1; // 10% darker
+const shadedColor = ColorUtil.getShadedColor(rgb, darkenColor);
+
+const demoModels = createDemoModels();
 
 const TileGrid = ({
   totalInRow = 6,
-  gapSize = 0.5,
-  models = [],
+  gapSize = 0,
+  models = demoModels,
   isDemo = false,
   width = 400,
-  Tile,
-  tileConfig = { size: 20, fill: '#eee' },
+  CustomTile = DefaultTile,
+  tileConfig = { size: 100, fill: '#eee', cornerColor: shadedColor },
 }) => {
   const size = Math.floor(width / totalInRow - gapSize);
   const totalTiles = models.length;
@@ -38,7 +55,7 @@ const TileGrid = ({
 
         const keyId = `${x}${y}`;
 
-        return <Tile key={keyId} model={tileModel} {...tileConfig} customStyle={{ margin: gapSize }} />;
+        return <CustomTile key={keyId} model={tileModel} {...tileConfig} customStyle={{ margin: gapSize }} />;
       });
     };
 
