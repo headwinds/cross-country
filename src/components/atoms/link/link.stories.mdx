@@ -1,0 +1,22 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs/blocks';
+import { STORYBOOK } from "../../../constants"
+import Link from './link';
+import { Paragraph, Image } from '../../';
+
+<Meta title="menu/atoms/link" />
+
+# Link
+
+<Subtitle>a hyperlink.</Subtitle>
+
+<Canvas>
+  <Story name="link">
+    <Link url="http://www.roguebasin.com/index.php?title=Cogmind">Cogmind</Link>
+  </Story>
+  <Story name="link within a paragraph">
+    <Image url="https://www.gridsagegames.com/images/cogmind/OP_media_150111/cogmind_parts.gif"  />
+    <Paragraph>
+        <Link url="http://www.roguebasin.com/index.php?title=Cogmind">Cogmind</Link> is a science fiction-themed traditional roguelike in which you play a robot that builds itself from components found or salvaged from other robots.
+    </Paragraph>
+  </Story>
+</Canvas>
