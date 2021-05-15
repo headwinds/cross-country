@@ -129,6 +129,7 @@
     "d3": "^6.7.0",
     "identity-obj-proxy": "^3.0.0",
     "mini-css-extract-plugin": "^1.4.1",
+    "nice-color-palettes": "^3.0.0",
     "prop-types": "^15.7.2",
     "react-spring": "^9.1.1",
     "storybook-css-modules-preset": "^1.0.8",
