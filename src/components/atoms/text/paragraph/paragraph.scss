@@ -6,6 +6,8 @@
     text-align: left;
     font-weight: 300;
     color: #666;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
     @media (min-width:320px) and (max-width:650px) { 
       width: 80%;

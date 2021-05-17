@@ -11,17 +11,33 @@ $shallow-water: lightblue;
   //border: 1px dashed rgba($shallow-water, 0.2);
 }
 
+.tileModal {
+  display: flex;
+  position: absolute;
+  box-shadow: 1px 1px 4px 0px rgba(67,67,67,0.75);
+  -webkit-box-shadow: 1px 1px 4px 0px rgba(67,67,67,0.75);
+  -moz-box-shadow: 1px 1px 4px 0px rgba(67,67,67,0.75);
+  width: 200px;
+  height: 300px;
+  top: 0px;
+  left: 0px;
+}
+
 .innerTile {
   display: flex;
   flex-direction: column;
-  width: 90px;
-  height: 90px;
+  width: 96px;
+  height: 96px;
   padding: 0px;
   background-color: $shallow-water;
 }
 
 .grass {
   background-color: green;
+}
+
+.metal {
+  background-color: rgb(179, 179, 179);
 }
 
 .shallow-water {
@@ -43,7 +59,7 @@ $line-color: $shallow-water;
 $line-size: 7;
 
 $corner-color: $shallow-water;
-$distance: 5;
+$distance: 2;
 $border-width: 2px;
 
 html { box-sizing: border-box; }
