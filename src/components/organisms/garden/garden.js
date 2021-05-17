@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import Image from "../../atoms/image/image"
+import React, { Component } from 'react';
+import Image from '../../atoms/image/image';
 import Column from '../../atoms/column/column';
 import SubHeadline from '../../atoms/text/subheadline/subheadline';
 
@@ -20,14 +20,13 @@ import SubHeadline from '../../atoms/text/subheadline/subheadline';
  *   <TextInput onChangeHandler={onChangeHandler} customStyle={customStyle} value={value} />
  * )
  */
-const Garden = ({config: {url, text, a11y, hasBackground }}) => {
-    return (
-      <Column hasBackground={hasBackground}>
-        <SubHeadline text={text} />
-        <Image url={url} width="300" a11y={a11y} />
-      </Column>
-    )
+const Garden = ({ config: { url, text, a11y, hasBackground } }) => {
+  return (
+    <Column hasBackground={hasBackground}>
+      <SubHeadline text={text} />
+      <Image url={url} width="300" a11y={a11y} />
+    </Column>
+  );
+};
 
-}
-
-export default Wolf;
+export default Garden;

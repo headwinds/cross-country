@@ -34,8 +34,15 @@ export { default as Group } from './atoms/group';
 export { default as CheckboxLabel } from './molecules/checkboxlabel';
 export { default as Wolf } from './molecules/wolf';
 export { default as Bar } from './molecules/bar';
+export { default as Wrapper } from './molecules/wrapper';
+export { default as Wallpaper } from './molecules/wallpaper';
+export { default as Tile } from './molecules/tile';
+export { default as Modal } from './molecules/modal';
 
 // organisms
 export { default as Login } from './organisms/login';
+export { default as TileGrid } from './organisms/tile-grid';
+export { default as Drone } from './organisms/drone';
+export { default as Garden } from './organisms/garden';
 
 //import './styles.scss';

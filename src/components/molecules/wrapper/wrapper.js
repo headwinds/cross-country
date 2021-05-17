@@ -3,6 +3,17 @@ import Column from '../../atoms/column/column';
 import styles from './wrapper.scss';
 import clsx from 'clsx';
 
+/*
+ provide context - each wrapper should be a store for the tree
+ the store can persist to localStorage
+ 
+  localStorage.setItem('store', JSON.stringify(store));
+  const store = JSON.parse(localStorage.getItem('store'));
+  localStorage.clear();
+  https://www.json.org/
+
+*/
+
 const Wrapper = ({ backgroundColor = '', customClass = '', customStyle = {}, ...rest }) => {
   return (
     <Column
