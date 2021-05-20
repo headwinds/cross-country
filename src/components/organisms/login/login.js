@@ -30,7 +30,7 @@ const Login = ({
     a11y,
     hasBackground,
     route,
-    callback,
+    callback = () => {},
     username,
     password,
     response = null,
@@ -145,15 +145,13 @@ export default class LoginContainer extends Component {
       postLoginUser({ username, password }, route)
         .then(
           response => {
-            console.log('Login heard response: ', response);
             return response.json();
           },
           error => {
-            console.log('Login heard error: ', error);
+            return callback(error);
           }
         )
         .then(json => {
-          console.log('Login heard json: ', json);
           const { isAuthenticated, message, status, access_token } = json;
           if (status === 200) {
             if (!isAuthenticated && message) {
@@ -161,9 +159,10 @@ export default class LoginContainer extends Component {
             } else if (isAuthenticated && access_token) {
               this.setState({ feedback: 'You are logged in!', response: { hasError: false, isSuccessful: true } });
             }
+            callback(json);
           }
         })
-        .catch(err => console.log('caught err: ', err));
+        .catch(error => callback(error));
     }
   }
 

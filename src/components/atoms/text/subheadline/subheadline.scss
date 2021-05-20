@@ -6,7 +6,7 @@
     font-weight: 500;
     color: $black;
     margin: 0px;
-    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: grayscale;
 
     &__large {

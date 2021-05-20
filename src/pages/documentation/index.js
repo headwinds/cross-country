@@ -81,12 +81,16 @@ export default class Documentation extends Component {
     const hello = `By combining text and vector graphics, we can create posts, experiments and even worlds within a structure that will flow across devices.`;
     const responsive = `This system will detect the device. In this case, you're on a ${device}, and will respond accordingly providing pleasant UX for writing and reading technical articles as well as experimenting with javascript and svg.`;
 
+    const subHeadlineStyle = { position: 'absolute', top: 60, left: 90, color: '#386775' };
+
     return (
       <DeviceContext.Provider value={contextValue}>
         <Grid>
           <Column>
-            <Headline text="Cross-Country" />
-            <SubHeadline text="Design System" />
+            <Column>
+              <Headline text="Cross-Country" color="#2996b7" />
+              <SubHeadline text="Design System" size="medium" customStyle={subHeadlineStyle} />
+            </Column>
             <Paragraph>{hello}</Paragraph>
             <Paragraph>{responsive}</Paragraph>
             <Column>
