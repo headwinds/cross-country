@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Electrolize');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
 
 $font-headline: 'Bree Serif', Helvetica, Arial;
 $font-common: 'Noto Sans JP', Helvetica, Arial, sans-serif;
 $font-paragraph: $font-common;
 $font-table: $font-common;
 
+$font-war: 'Roboto Condensed', Helvetica, Arial;
+
 $black:#2b2b2b;
 $teal: #308e8a;
+
 
 .textInput {
     padding: 8px;
