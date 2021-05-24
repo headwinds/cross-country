@@ -1,32 +1,13 @@
-import React, { Component } from 'react'
-import Image from "../../atoms/image/image"
-import Column from '../../atoms/column/column';
-import SubHeadline from '../../atoms/text/subheadline/subheadline';
+import React, { Component } from 'react';
+import { Image, Column, SubHeadline } from '../../';
 
-/**
- * Allows the user to enter text
- *
- * @category Molecules
- * @component
- * @param {function} onChangeHandler - A change handler function param
- * @param {object} customStyle - An object param
- * @param {string} value - A string param
- * @example
- * const onChangeHandler = e => {}
- * const customStyle = {width: 200}
- * const value = "hello world"
- * return (
- *   <TextInput onChangeHandler={onChangeHandler} customStyle={customStyle} value={value} />
- * )
- */
-const Wolf = ({config: {url, text, a11y, hasBackground }}) => {
-    return (
-      <Column hasBackground={hasBackground}>
-        <SubHeadline text={text} />
-        <Image url={url} width="300" a11y={a11y} />
-      </Column>
-    )
-
-}
+const Wolf = ({ config: { url, text, a11y, hasBackground } }) => {
+  return (
+    <Column hasBackground={hasBackground}>
+      <SubHeadline text={text} />
+      <Image url={url} width="300" a11y={a11y} />
+    </Column>
+  );
+};
 
 export default Wolf;

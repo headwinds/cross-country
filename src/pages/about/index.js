@@ -20,6 +20,8 @@ import {
 } from '../../components';
 import useDeviceDetection from '../../hooks/useDeviceDetection/';
 import useTheme from '../../hooks/useTheme/';
+import styles from './about.scss';
+import clsx from 'clsx';
 
 import logo from '../../components/atoms/logo/cross-country.svg';
 
@@ -89,17 +91,8 @@ export default class Documentation extends Component {
         <Grid>
           <Column>
             <Brand />
-            <Paragraph>{hello}</Paragraph>
-            <Paragraph>{responsive}</Paragraph>
             <Column>
-              <Login
-                config={{
-                  url: 'https://i.pinimg.com/originals/c2/99/c8/c299c825b1d9adf653a03760880c2d81.jpg',
-                  a11y: 'wolf',
-                  text: 'Wolf',
-                  route: '/login',
-                }}
-              />
+              <Paragraph>what?!</Paragraph>
             </Column>
           </Column>
         </Grid>

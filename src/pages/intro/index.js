@@ -16,10 +16,12 @@ import {
   ListItem,
   Wolf,
   Login,
-  Brand,
+  Stagger,
 } from '../../components';
 import useDeviceDetection from '../../hooks/useDeviceDetection/';
 import useTheme from '../../hooks/useTheme/';
+import styles from './intro.scss';
+import clsx from 'clsx';
 
 import logo from '../../components/atoms/logo/cross-country.svg';
 
@@ -32,7 +34,7 @@ const nationalparks = [
 
 const DeviceContext = React.createContext('device');
 
-export default class Documentation extends Component {
+export default class Intro extends Component {
   constructor(props) {
     super(props);
 
@@ -82,24 +84,16 @@ export default class Documentation extends Component {
     const hello = `By combining text and vector graphics, we can create posts, experiments and even worlds within a structure that will flow across devices.`;
     const responsive = `This system will detect the device. In this case, you're on a ${device}, and will respond accordingly providing pleasant UX for writing and reading technical articles as well as experimenting with javascript and svg.`;
 
-    const subHeadlineStyle = { position: 'absolute', top: 60, left: 90, color: '#386775' };
-
     return (
       <DeviceContext.Provider value={contextValue}>
         <Grid>
           <Column>
-            <Brand />
-            <Paragraph>{hello}</Paragraph>
-            <Paragraph>{responsive}</Paragraph>
+            <Stagger staggerText={["Let's", 'Create', 'Worlds']} stagger={{ key: 'marginLeft', value: 16 }} />
             <Column>
-              <Login
-                config={{
-                  url: 'https://i.pinimg.com/originals/c2/99/c8/c299c825b1d9adf653a03760880c2d81.jpg',
-                  a11y: 'wolf',
-                  text: 'Wolf',
-                  route: '/login',
-                }}
-              />
+              <SubHeadline customClass={styles.sketches}>
+                Bring your <span style={{ color: '#9972e2' }}>Sketches</span> into your{' '}
+                <span style={{ color: '#9972e2' }}>Game</span>!
+              </SubHeadline>
             </Column>
           </Column>
         </Grid>

@@ -2,7 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Electrolize');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
 
+$font-rubik: 'Rubik', Helvetica, Arial;
 $font-headline: 'Bree Serif', Helvetica, Arial;
 $font-common: 'Noto Sans JP', Helvetica, Arial, sans-serif;
 $font-paragraph: $font-common;
@@ -11,8 +13,14 @@ $font-table: $font-common;
 $font-war: 'Roboto Condensed', Helvetica, Arial;
 
 $black:#2b2b2b;
-$teal: #308e8a;
+$teal: #0cb4b4;
 
+:export {
+  colors: {
+    teal: $teal;
+    black: $black;
+  }
+}
 
 .textInput {
     padding: 8px;
@@ -27,4 +35,11 @@ $teal: #308e8a;
     margin: 4px;
     width: 100px;
     text-align: right;
+}
+
+$defaultShadowColor: rgb(12, 180, 180);
+@mixin boxshadow($color: $defaultShadowColor) {
+    box-shadow: 0px 0px 1px 1px $color;
+    outline-color: transparent;
+    outline-width: 1px;
 }

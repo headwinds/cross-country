@@ -1,10 +1,5 @@
-/* eslint-disable */
-//import globalVariable from '../config/variables';
+// SCSS THEME
 
-// top 100 palettes
-// https://github.com/mattdesl/nice-color-palettes
-
-// 100, 200, 500, 1000
 export function getColorPalettes(total) {
   const colors = require('nice-color-palettes');
   const palette = colors[10];
