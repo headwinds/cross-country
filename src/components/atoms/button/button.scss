@@ -4,20 +4,36 @@
   border: none;
   border-radius: 4px;
   padding: 10px 14px;
-  width: 100px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
-  font-family: "Helvetica";
+  font-family: "Electrolize";
   margin: 4px;
   cursor: pointer;
 }
 
+.button:focus {
+  @include boxshadow(rgb(12, 180, 180))
+}
+
+.defaultButton {
+  background-color: rgb(12, 180, 180);
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  color:rgb(254, 255, 255);
+  font-weight: 700;
+}
+
 .storyButton {
-  background-color: rgb(70, 211, 211);
+  background-color: rgb(176, 51, 180);
   padding: 8px;
   border: none;
   border-radius: 4px;
   color:rgb(254, 255, 255);
   font-weight: 700;
   font-size: 24px;
+}
+
+.storyButton:focus {
+  @include boxshadow(rgb(176, 51, 180))
 }

@@ -1,28 +1,11 @@
 import React, { Component } from 'react';
-import Image from '../../atoms/image/image';
-import Column from '../../atoms/column/column';
-import Row from '../../atoms/row/row';
-import SubHeadline from '../../atoms/text/subheadline/subheadline';
-import TextInput from '../../atoms/text/input';
-import Label from '../../atoms/text/label';
-import Paragraph from '../../atoms/text/paragraph';
-import Button from '../../atoms/button/button';
+import { Image, TextInput, Column, Row, Paragraph, Button, Label, SubHeadline } from '../../';
 import { postLoginUser } from '../../../services/login-service';
 import { getUnsplashPhoto } from '../../../services/image-service';
 import clsx from 'clsx';
 import styles from './login.scss';
 import { privateConfig } from '../../../../cross-country-config-private';
 
-/**
- * Allows the user to enter text
- *
- * @category Organisms
- * @namespace Organisms.Login
- * @component
- * @param {function} onChangeHandler - A change handler function param
- * @param {object} customStyle - An object param
- * @param {string} value - A string param
- */
 const Login = ({
   config: {
     url,

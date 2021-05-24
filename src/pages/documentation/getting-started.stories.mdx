@@ -1,0 +1,37 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs/blocks';
+import { STORYBOOK } from "../../constants"
+import { Paragraph, Headline, SubHeadline } from '../../components';
+import Documentation from './';
+
+<Meta title="menu/pages/documentation/getting-started" />
+
+# Hello World
+
+<Subtitle>how do I create my own world with my sketches?</Subtitle>
+
+<Canvas>
+  <Story name="getting-started">
+    <Column>
+    <Headline>Getting Started</Headline>
+    <Paragraph>Alright...let's create our first world!</Paragraph>
+    <Paragraph></Paragraph>
+    </Column>
+    <Column>
+      <SubHeadline>1. Registration</SubHeadline>
+       <Paragraph>Once your registration, you be provided with your custom url where you can safely build your world in private. Your world can always remain private unless you decide to publish it.</Paragraph> 
+       <Paragraph>Think of world building like blogging. It's completely up to you what you choose to share or not.</Paragraph>
+    </Column>
+    <Column>
+      <SubHeadline>2. Create a World</SubHeadline>
+    </Column>
+    <Column>
+      <SubHeadline>3. Add your Art</SubHeadline>
+    </Column>
+    <Column>
+      <SubHeadline>4. Decide how your Character Behaves</SubHeadline>
+    </Column>
+    <Column>
+      <SubHeadline>5. Play your Game</SubHeadline>
+    </Column>
+  </Story>
+</Canvas>

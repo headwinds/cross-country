@@ -38,6 +38,8 @@ export { default as Wrapper } from './molecules/wrapper';
 export { default as Wallpaper } from './molecules/wallpaper';
 export { default as Tile } from './molecules/tile';
 export { default as Modal } from './molecules/modal';
+export { default as Brand } from './molecules/brand';
+export { default as Stagger } from './molecules/stagger';
 
 // organisms
 export { default as Login } from './organisms/login';

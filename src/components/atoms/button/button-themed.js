@@ -11,7 +11,7 @@ import clsx from 'clsx';
 
 const ButtonThemed = ({ text = '', handleClick, customClass = '', customStyle = {}, children = null }) => (
   <Button
-    customClass={clsx(styles.button, customClass)}
+    customClass={clsx(styles.button, styles.defaultButton, customClass)}
     text={text}
     handleClick={handleClick}
     customStyle={customStyle}

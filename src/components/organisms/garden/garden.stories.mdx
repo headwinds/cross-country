@@ -1,0 +1,22 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs/blocks';
+import { Paragraph } from "../../"
+import Garden from './garden';
+
+<Meta title="menu/organisms/garden" />
+
+# Garden
+
+<Subtitle>a blog post</Subtitle>
+
+<Paragraph>a living document which should be re-visited from time to time</Paragraph>
+
+<Canvas>
+  <Story name="garden">
+    <Garden config={{
+                  url: 'https://i.pinimg.com/originals/c2/99/c8/c299c825b1d9adf653a03760880c2d81.jpg',
+                  a11y: 'wolf',
+                  text: 'Wolf',
+                  route: '/login',
+                }} />
+  </Story>
+</Canvas>
