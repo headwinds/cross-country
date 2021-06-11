@@ -132,16 +132,33 @@ npm publish
 * [a-guide-to-js-docs-for-react-js](https://www.inkoop.io/blog/a-guide-to-js-docs-for-react-js/)
 * [wattenberger react-and-d3](https://wattenberger.com/blog/react-and-d3)
 * [tile corner reticle](https://codepen.io/NyX/pen/JYOzWW)
+* [flexboxpatterns](https://www.flexboxpatterns.com/)
+
+## TILE
+* [mapeditor](https://www.mapeditor.org/)
+* [phase3 tile demo](https://itnext.io/modular-game-worlds-in-phaser-3-tilemaps-3-procedural-dungeon-3bc19b841cd)
+
+## MODELS & DATASETS
+* [tensorflowjs model](https://www.tensorflow.org/js/models)
+* [tidy models](https://www.tidymodels.org/)
+* [fivethirtyeight](https://fivethirtyeight.com/)
+## ALGORITHMS
+* [Javascript The Algorithms](https://github.com/TheAlgorithms/Javascript)
 
 ## Map Generators
-
 * [stygiangen](https://github.com/slashman/stygiangen/)
 * [Fantasy-Map-Generator](https://azgaar.github.io/Fantasy-Map-Generator/)
-
 ## Functional Programming
-
 * [practical-functional-programming-in-javascript-side-effects-and-purity](https://dev.to/richytong/practical-functional-programming-in-javascript-side-effects-and-purity-revised-420h)
- 
+
+## NLP & Machine Learning
+* [Spacey](https://spacy.io/)
+* [Open AI](https://openai.com/)
+* [Hugging Face](https://huggingface.co/)
+* [Kaggle](https://www.kaggle.com/)
+* [Rasa](https://rasa.com/
+* [Harvest Entities in Text with Wolfram](https://www.wolfram.com/language/12/natural-language-processing/harvest-entities-in-text.html?product=mathematica)
 ## License
 
 MIT © [headwinds](https://github.com/headwinds)
+
