@@ -1,5 +1,5 @@
 import React from 'react';
-import Column from '../../atoms/column/column';
+import { Column } from '../../';
 import styles from './modal.scss';
 import clsx from 'clsx';
 

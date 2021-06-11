@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Image, Column, SubHeadline } from '../../';
 
-const Wolf = ({ config: { url, text, a11y, hasBackground } }) => {
+export const Wolf = ({ config: { url, text, a11y, hasBackground } }) => {
   return (
     <Column hasBackground={hasBackground}>
       <SubHeadline text={text} />

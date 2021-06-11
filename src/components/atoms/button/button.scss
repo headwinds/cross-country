@@ -9,6 +9,8 @@
   font-family: "Electrolize";
   margin: 4px;
   cursor: pointer;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .button:focus {
