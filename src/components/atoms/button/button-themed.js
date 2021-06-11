@@ -1,9 +1,3 @@
-/*
-Atom
-
-renders 1 native element
-*/
-
 import React from 'react';
 import styles from './button.scss';
 import Button from './button';
