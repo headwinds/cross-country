@@ -27,7 +27,7 @@ const Login = ({
 }) => {
   return (
     <Column hasBackground={hasBackground} customClass={styles.login}>
-      <SubHeadline>Login</SubHeadline>
+      <SubHeadline font="Electr">Login</SubHeadline>
       <Image url={url} width="300" a11y={a11y} />
       <Row customClass={styles.login__row}>
         <Label>Username</Label>

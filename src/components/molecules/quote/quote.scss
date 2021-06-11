@@ -1,4 +1,4 @@
-@import '../text.scss';
+@import '../../atoms/text/text.scss';
 
 .paragraph {
   margin: 8px 0px;
@@ -22,6 +22,5 @@
   @media (min-width:951px) {  
     max-width: 600px;
   }
-
 }
 

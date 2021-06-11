@@ -1,23 +1,6 @@
 import React, { Component } from 'react';
 import getIsMobile from '../../utils/mobile-detect';
-import {
-  Logo,
-  Grid,
-  Link,
-  Column,
-  CheckboxLabel,
-  RadioGroup,
-  Button,
-  Row,
-  SubHeadline,
-  Headline,
-  Paragraph,
-  List,
-  ListItem,
-  Wolf,
-  Login,
-  Stagger,
-} from '../../components';
+import { Logo, Grid, Wallpaper, Column, SubHeadline, Headline, Paragraph } from '../../components';
 import useDeviceDetection from '../../hooks/useDeviceDetection/';
 import useTheme from '../../hooks/useTheme/';
 import styles from './intro.scss';
@@ -86,17 +69,16 @@ export default class Intro extends Component {
 
     return (
       <DeviceContext.Provider value={contextValue}>
-        <Grid>
-          <Column>
-            <Stagger staggerText={["Let's", 'Create', 'Worlds']} stagger={{ key: 'marginLeft', value: 16 }} />
+        <Wallpaper>
+          <Grid>
             <Column>
               <SubHeadline customClass={styles.sketches}>
-                Bring your <span style={{ color: '#9972e2' }}>Sketches</span> into your{' '}
-                <span style={{ color: '#9972e2' }}>Game</span>!
+                Turn your <span style={{ color: '#9972e2' }}>Sketches</span> into{' '}
+                <span style={{ color: '#9972e2' }}>Games</span>
               </SubHeadline>
             </Column>
-          </Column>
-        </Grid>
+          </Grid>
+        </Wallpaper>
       </DeviceContext.Provider>
     );
   }
