@@ -20,7 +20,7 @@
   }
   // 1400px window width and more
   @include rwd(1400) {
-    margin-bottom: 20px;
-    margin-top: 20px;
+    //margin-bottom: 20px; careful this affected tile!!!
+    //margin-top: 20px;
   }
 }

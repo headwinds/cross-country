@@ -28,7 +28,7 @@ const OneAcre = () => {
     <Wrapper>
       <Column hasChildrenCentered>
         {renderModal()}
-        <TileGrid models={demoModels} totalInRow={4} Tile={Tile} />
+        <TileGrid models={demoModels} totalInRow={4} Tile={Tile} isIsometric={true} />
         <SubHeadline size="large">$4,250</SubHeadline>
         <SubHeadline size="medium">Pick a plot and stake your claim!</SubHeadline>
       </Column>
