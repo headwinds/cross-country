@@ -28,6 +28,7 @@ const TileGrid = ({
   width = 400,
   CustomTile = DefaultTile,
   tileConfig = { size: 100, fill: '#67bd67', cornerColor: shadedColor },
+  isIsometric = false,
 }) => {
   const [tileSeleted, setSelected] = useState(null);
 
@@ -87,7 +88,7 @@ const TileGrid = ({
 
   const tiles = renderGrid(initialModelGrid);
 
-  return <Column customClass={styles.tileGrid}>{tiles}</Column>;
+  return <Column customClass={isIsometric ? styles.tileGridIso : styles.tileGrid}>{tiles}</Column>;
 };
 
 export default TileGrid;
