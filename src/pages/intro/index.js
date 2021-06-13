@@ -73,7 +73,7 @@ export default class Intro extends Component {
           <Grid>
             <Column>
               <SubHeadline customClass={styles.sketches}>
-                Turn your <span style={{ color: '#9972e2' }}>Sketches</span> into{' '}
+                Bring <span style={{ color: '#9972e2' }}>Sketches</span> into{' '}
                 <span style={{ color: '#9972e2' }}>Games</span>
               </SubHeadline>
             </Column>
