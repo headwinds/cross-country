@@ -20,7 +20,7 @@ const DroneStory = () => {
         </Hilight>{' '}
         transformed state
       </Paragraph>
-      <Button handleClick={handleClick}>transform</Button>
+      <Button onClick={handleClick}>transform</Button>
       <SVG customStyle={svgCustomStyle} width="100vw" height="100vh">
         <Drone config={{ id: 0, tranformedState: droneTransformedState }} />
       </SVG>

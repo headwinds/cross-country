@@ -31,14 +31,14 @@ const Login = ({
       <Image url={url} width="300" a11y={a11y} />
       <Row customClass={styles.login__row}>
         <Label>Username</Label>
-        <TextInput onChangeHandler={onUsernameChange} value={username} />
+        <TextInput onChange={onUsernameChange} value={username} />
       </Row>
       <Row customClass={styles.login__row}>
         <Label>Password</Label>
-        <TextInput onChangeHandler={onPasswordChange} value={password} type="password" />
+        <TextInput onChange={onPasswordChange} value={password} type="password" />
       </Row>
       <Row customClass={styles.login__rowSend}>
-        <Button label="login" handleClick={handleClick}>
+        <Button label="login" onClick={handleClick}>
           Send
         </Button>
       </Row>
