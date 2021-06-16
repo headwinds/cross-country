@@ -5,4 +5,5 @@ export const parameters = {
       order: ['menu', ['intro', 'atoms', 'molecules', 'organisms', 'pages', 'micro']],
     },
   },
+  xstate: true,
 };

@@ -1,32 +1,18 @@
 import React, { Component } from 'react';
 import styles from '../text.scss';
 import PropTypes from 'prop-types';
+import clsx from 'clsx';
 
-/**
- * Allows the user to enter text
- *
- * @category Atoms
- * @component
- * @param {function} onChangeHandler - A change handler function param
- * @param {object} customStyle - An object param
- * @param {string} value - A string param
- * @example
- * const onChangeHandler = e => {}
- * const customStyle = {width: 200}
- * const value = "hello world"
- * return (
- *   <TextInput onChangeHandler={onChangeHandler} customStyle={customStyle} value={value} />
- * )
- */
-const TextInput = ({ onChangeHandler, customStyle, value, type = '' }) => {
+const TextInput = ({ onChange, value, customClass = '', customStyle = {}, ...rest }) => {
   return (
     <input
+      {...rest}
       type="text"
-      type={type}
-      className={styles.textInput}
+      className={clsx(styles.textInput, customClass)}
       style={customStyle}
-      onChange={onChangeHandler}
+      onChange={onChange}
       value={value}
+      style={customStyle}
     />
   );
 };
