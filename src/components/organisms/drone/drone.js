@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Group, Circle } from '../../';
-import { useInterval } from 'beautiful-react-hooks';
+import useInterval from '../../../hooks/useInterval';
 import * as d3 from 'd3';
 
 // compact settings

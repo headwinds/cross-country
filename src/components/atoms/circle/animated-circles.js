@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
-import { useInterval } from 'beautiful-react-hooks';
+import useInterval from '../../../hooks/useInterval';
 import * as d3 from 'd3';
 
 const generateDataset = () => {

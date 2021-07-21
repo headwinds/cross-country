@@ -4,9 +4,10 @@ import styles from './sketch.scss';
 import { SketchModel } from './models/sketch-model';
 
 const Sketch = ({ config: { text, hasBackground } }) => {
-  
+  const sketchRef = useRef(null);
+
   return (
-    <Column hasBackground={hasBackground} customClass={styles.sketch} ref={}>
+    <Column hasBackground={hasBackground} customClass={styles.sketch} ref={sketchRef}>
       <SubHeadline text={text} />
     </Column>
   );
