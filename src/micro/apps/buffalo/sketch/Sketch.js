@@ -1,73 +1,5 @@
-/*
-import {TweenMax, Power2, TimelineLite, Draggable} from "gsap";
-const Snap = require( "imports-loader?this=>window,fix=>module.exports=0!snapsvg/dist/snap.svg.js" );
-
-const positions = [];
-
-const	curMouseX = 0;
-const	curMouseY = 0;
-
-const  bUseSVG = true; // vs html 
-const  toolPolygonPoints = []; 
-
-const  bLogSketch = true; 
-
-const  overlapThreshold = "99%";
-
-let paperChecker;
-
-const selectedWidth = 0;
-const selectedHeight = 0;
-const selectedColorRGB = 0; 
-
-let paper;
-let parts;
-
-let polygonSVGPoints;
-let curPolyStr = "";
-
-let bTriangleShape = true;
-
-let error = {}; 
-
-let detailsModel = {width: 500, height: 400}; 
-let rangeModel = {min: 0, max: 100, value: 30}; 
-*/
-
-import React, { Component } from 'react';
-import autoBind from 'react-autobind';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import './draw.scss';
-
-class Sketch extends Component {
-  constructor(props) {
-    super(props);
-
-    autoBind(this);
-  }
-
-  render() {
-    const { backgroundColor } = this.props;
-
-    return (
-      <div
-        className="Sketch"
-        style={{
-          display: 'block',
-          height: '100vh',
-          width: '80vw',
-          background: backgroundColor,
-        }}
-      >
-        sketch
-      </div>
-    );
-  }
-}
-
 // const matchStateToProps = state => ({ app });
-
+/*
 function mapStateToProps(state) {
   const { app } = state;
 
@@ -77,8 +9,10 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({ dispatch }, dispatch);
-
 export default connect(mapStateToProps, mapDispatchToProps)(Sketch);
+*/
+
+export default Sketch;
 
 /*
 import {Component, OnInit} from 'angular2/core';

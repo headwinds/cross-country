@@ -48,5 +48,6 @@ export { default as Login } from './organisms/login';
 export { default as TileGrid } from './organisms/tile-grid';
 export { default as Drone } from './organisms/drone';
 export { default as Garden } from './organisms/garden';
+export { default as Sketch } from './organisms/sketch';
 
 //import './styles.scss';

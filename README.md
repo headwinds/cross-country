@@ -123,7 +123,7 @@ now-your-email
 npm publish
 ```
 
-## Help & Thanks
+## Inspiration
 
 * [create-react-library](https://www.npmjs.com/package/create-react-library)
 * [mobile-first media queries](https://medium.com/codeartisan/breakpoints-and-media-queries-in-scss-46e8f551e2f2)
@@ -133,6 +133,7 @@ npm publish
 * [wattenberger react-and-d3](https://wattenberger.com/blog/react-and-d3)
 * [tile corner reticle](https://codepen.io/NyX/pen/JYOzWW)
 * [flexboxpatterns](https://www.flexboxpatterns.com/)
+* [nextra](https://nextra.vercel.app/)
 
 ## TILE
 * [mapeditor](https://www.mapeditor.org/)
@@ -151,6 +152,9 @@ npm publish
 ## Functional Programming
 * [practical-functional-programming-in-javascript-side-effects-and-purity](https://dev.to/richytong/practical-functional-programming-in-javascript-side-effects-and-purity-revised-420h)
 
+## Graph 
+* [networkx](https://networkx.org/documentation/stable/auto_examples/index.html)
+
 ## NLP & Machine Learning
 * [Spacey](https://spacy.io/)
 * [Open AI](https://openai.com/)
@@ -158,6 +162,8 @@ npm publish
 * [Kaggle](https://www.kaggle.com/)
 * [Rasa](https://rasa.com/
 * [Harvest Entities in Text with Wolfram](https://www.wolfram.com/language/12/natural-language-processing/harvest-entities-in-text.html?product=mathematica)
+* [Storytelling](https://pudding.cool/process/how-to-make-dope-shit-part-3/)
+* [Contextual Bandit](https://towardsdatascience.com/contextual-bandits-and-reinforcement-learning-6bdfeaece72a)
 ## License
 
 MIT © [headwinds](https://github.com/headwinds)
