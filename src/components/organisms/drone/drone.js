@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Group, Circle } from '../../';
-import { useInterval } from 'beautiful-react-hooks';
+import useInterval from '../../../hooks/useInterval';
 import * as d3 from 'd3';
 
 // compact settings
@@ -57,15 +57,11 @@ const getPart = (layers, label, key) => {
  * @param {object} config - configures the drone
  */
 const Drone = ({ config: { id, tranformedState = 'compact' } }) => {
-  // shape - expanded or compacted
-  //const [currentShape, setCurrrentState] = useState("expanded");
   const [currentPosition, setCurrrentPosition] = useState({ x: 0, y: 0 });
   const droneRef = useRef();
   const compactRef = useRef();
   const defaultModel = tranformedState === 'compact' ? compactDroneModel : expandedDroneModel;
   const [droneModel, setDroneModel] = useState(defaultModel);
-
-  //const [dataset, setDataset] = useState([droneModel]);
   const dataset = [droneModel];
 
   const transform = () => {};
@@ -86,7 +82,7 @@ const Drone = ({ config: { id, tranformedState = 'compact' } }) => {
   }, 2000);
 
   const renderDroneSkin = element => {
-    console.log('renderDroneSkin droneModel: ', droneModel);
+    //console.log('renderDroneSkin droneModel: ', droneModel);
     const group = element.append('g');
 
     // body
@@ -178,7 +174,7 @@ const Drone = ({ config: { id, tranformedState = 'compact' } }) => {
   };
 
   const exitDroneTransition = state => {
-    console.log('exitDroneTransition');
+    //console.log('exitDroneTransition');
   };
 
   const renderDrone = () => {

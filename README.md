@@ -4,7 +4,30 @@
 
 [![NPM](https://img.shields.io/npm/v/cross-country.svg)](https://www.npmjs.com/package/cross-country) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-Warning: at this point, the project shell is more interesting/valuable than the actual project
+The componennts within this library are designed responsively to be used write articles and create tile-based games; even better combine writing, gaming, with a sample dataset and tell a story.
+
+Are you a fan of the Sims, Starcraft, Chess, Dumgeons and Dragons and other table top games? Do you keep a sketch book and draw notes about games, and the general puzzles that make up life? This library is meant to translate your analog sketch book pages into a digital works that can be shared and explored by other like-minded individuals. 
+
+By wrapping html, each component is augmented for building accessible experiences across screens. A simple page may look like this:
+
+```
+<Wrapper>
+  <Page>
+    <Column>
+      <Paragraph>
+      By wrapping html, each component is augmented for building accessible experiences across screens.
+      </Paragraph>
+      <Paragraph>
+       A simple page may look like this with the default design settings.
+      </Paragraph>
+    </Column>
+    <Column>
+      <MyGameOrExperiementHere />
+    </Column>
+  </Page>
+  <Wallpaper />
+</Wrapper>
+```
 
 [Cross Country Guide](https://cross-country-guide.vercel.app)
 
@@ -15,7 +38,7 @@ Tech
 - Storybook
 
 Progress Complete 
-- 10% 
+- 20% 
 
 ## Install
 
@@ -100,7 +123,7 @@ now-your-email
 npm publish
 ```
 
-## Help & Thanks
+## Inspiration
 
 * [create-react-library](https://www.npmjs.com/package/create-react-library)
 * [mobile-first media queries](https://medium.com/codeartisan/breakpoints-and-media-queries-in-scss-46e8f551e2f2)
@@ -108,12 +131,40 @@ npm publish
 * [multiple-classnames-css-modules-react](https://zeph.co/multiple-classnames-css-modules-react)
 * [a-guide-to-js-docs-for-react-js](https://www.inkoop.io/blog/a-guide-to-js-docs-for-react-js/)
 * [wattenberger react-and-d3](https://wattenberger.com/blog/react-and-d3)
+* [tile corner reticle](https://codepen.io/NyX/pen/JYOzWW)
+* [flexboxpatterns](https://www.flexboxpatterns.com/)
+* [nextra](https://nextra.vercel.app/)
+
+## TILE
+* [mapeditor](https://www.mapeditor.org/)
+* [phase3 tile demo](https://itnext.io/modular-game-worlds-in-phaser-3-tilemaps-3-procedural-dungeon-3bc19b841cd)
+
+## MODELS & DATASETS
+* [tensorflowjs model](https://www.tensorflow.org/js/models)
+* [tidy models](https://www.tidymodels.org/)
+* [fivethirtyeight](https://fivethirtyeight.com/)
+## ALGORITHMS
+* [Javascript The Algorithms](https://github.com/TheAlgorithms/Javascript)
 
 ## Map Generators
-
 * [stygiangen](https://github.com/slashman/stygiangen/)
 * [Fantasy-Map-Generator](https://azgaar.github.io/Fantasy-Map-Generator/)
+## Functional Programming
+* [practical-functional-programming-in-javascript-side-effects-and-purity](https://dev.to/richytong/practical-functional-programming-in-javascript-side-effects-and-purity-revised-420h)
 
+## Graph 
+* [networkx](https://networkx.org/documentation/stable/auto_examples/index.html)
+
+## NLP & Machine Learning
+* [Spacey](https://spacy.io/)
+* [Open AI](https://openai.com/)
+* [Hugging Face](https://huggingface.co/)
+* [Kaggle](https://www.kaggle.com/)
+* [Rasa](https://rasa.com/
+* [Harvest Entities in Text with Wolfram](https://www.wolfram.com/language/12/natural-language-processing/harvest-entities-in-text.html?product=mathematica)
+* [Storytelling](https://pudding.cool/process/how-to-make-dope-shit-part-3/)
+* [Contextual Bandit](https://towardsdatascience.com/contextual-bandits-and-reinforcement-learning-6bdfeaece72a)
 ## License
 
 MIT © [headwinds](https://github.com/headwinds)
+

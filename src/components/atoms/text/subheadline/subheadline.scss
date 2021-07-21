@@ -6,9 +6,12 @@
     font-weight: 500;
     color: $black;
     margin: 0px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-bottom: 26px;
 
     &__large {
-        font-size: 24px; 
+        font-size: 34px; 
     }
 
     &__medium {

@@ -1,28 +1,11 @@
 import React, { Component } from 'react';
-import Image from '../../atoms/image/image';
-import Column from '../../atoms/column/column';
-import Row from '../../atoms/row/row';
-import SubHeadline from '../../atoms/text/subheadline/subheadline';
-import TextInput from '../../atoms/text/input';
-import Label from '../../atoms/text/label';
-import Paragraph from '../../atoms/text/paragraph';
-import Button from '../../atoms/button/button';
+import { Image, TextInput, Column, Row, Paragraph, Button, Label, SubHeadline } from '../../';
 import { postLoginUser } from '../../../services/login-service';
 import { getUnsplashPhoto } from '../../../services/image-service';
 import clsx from 'clsx';
 import styles from './login.scss';
 import { privateConfig } from '../../../../cross-country-config-private';
 
-/**
- * Allows the user to enter text
- *
- * @category Organisms
- * @namespace Organisms.Login
- * @component
- * @param {function} onChangeHandler - A change handler function param
- * @param {object} customStyle - An object param
- * @param {string} value - A string param
- */
 const Login = ({
   config: {
     url,
@@ -30,7 +13,7 @@ const Login = ({
     a11y,
     hasBackground,
     route,
-    callback,
+    callback = () => {},
     username,
     password,
     response = null,
@@ -44,18 +27,18 @@ const Login = ({
 }) => {
   return (
     <Column hasBackground={hasBackground} customClass={styles.login}>
-      <SubHeadline>Login</SubHeadline>
+      <SubHeadline font="Electr">Login</SubHeadline>
       <Image url={url} width="300" a11y={a11y} />
       <Row customClass={styles.login__row}>
         <Label>Username</Label>
-        <TextInput onChangeHandler={onUsernameChange} value={username} />
+        <TextInput onChange={onUsernameChange} value={username} />
       </Row>
       <Row customClass={styles.login__row}>
         <Label>Password</Label>
-        <TextInput onChangeHandler={onPasswordChange} value={password} type="password" />
+        <TextInput onChange={onPasswordChange} value={password} type="password" />
       </Row>
       <Row customClass={styles.login__rowSend}>
-        <Button label="login" handleClick={handleClick}>
+        <Button label="login" onClick={handleClick}>
           Send
         </Button>
       </Row>
@@ -145,15 +128,13 @@ export default class LoginContainer extends Component {
       postLoginUser({ username, password }, route)
         .then(
           response => {
-            console.log('Login heard response: ', response);
             return response.json();
           },
           error => {
-            console.log('Login heard error: ', error);
+            return callback(error);
           }
         )
         .then(json => {
-          console.log('Login heard json: ', json);
           const { isAuthenticated, message, status, access_token } = json;
           if (status === 200) {
             if (!isAuthenticated && message) {
@@ -161,9 +142,10 @@ export default class LoginContainer extends Component {
             } else if (isAuthenticated && access_token) {
               this.setState({ feedback: 'You are logged in!', response: { hasError: false, isSuccessful: true } });
             }
+            callback(json);
           }
         })
-        .catch(err => console.log('caught err: ', err));
+        .catch(error => callback(error));
     }
   }
 

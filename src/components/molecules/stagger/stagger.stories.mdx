@@ -1,0 +1,16 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs/blocks';
+import { STORYBOOK } from "../../../constants"
+import Stagger from './stagger';
+import styles from "./stagger.scss";
+
+<Meta title="menu/molecules/stagger" />
+
+# Stagger
+
+<Subtitle>visually stagger a column of components</Subtitle>
+
+<Canvas>
+  <Story name="stagger">
+     <Stagger staggerText={["Let's", 'Create', 'Worlds']} stagger={{ key: 'marginLeft', value: 16 }} />
+  </Story>
+</Canvas>

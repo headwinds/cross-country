@@ -1,5 +1,0 @@
-# Text Input Example
-
-```
-<TextInput />
-```
