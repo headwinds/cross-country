@@ -12,11 +12,12 @@ export { default as Image } from './atoms/image/image';
 export { default as Headline } from './atoms/text/headline/headline';
 export { default as SubHeadline } from './atoms/text/subheadline/subheadline';
 export { default as Paragraph } from './atoms/text/paragraph/paragraph';
+export { default as Form } from './atoms/form';
 export { default as TextInput } from './atoms/text/input';
 export { default as Hilight } from './atoms/text/hilight';
 export { default as Label } from './atoms/text/label';
 export { default as Link } from './atoms/link';
-export { default as List } from './atoms/list/list';
+export { default as List } from './atoms/list';
 export { default as ListItem } from './atoms/list/list-item/list-item';
 
 export { default as Table } from './atoms/table';
@@ -34,8 +35,19 @@ export { default as Group } from './atoms/group';
 export { default as CheckboxLabel } from './molecules/checkboxlabel';
 export { default as Wolf } from './molecules/wolf';
 export { default as Bar } from './molecules/bar';
+export { default as Wrapper } from './molecules/wrapper';
+export { default as Wallpaper } from './molecules/wallpaper';
+export { default as Tile } from './molecules/tile';
+export { default as Modal } from './molecules/modal';
+export { default as Brand } from './molecules/brand';
+export { default as Stagger } from './molecules/stagger';
+export { default as RelatedArticles } from './molecules/related-articles';
 
 // organisms
 export { default as Login } from './organisms/login';
+export { default as TileGrid } from './organisms/tile-grid';
+export { default as Drone } from './organisms/drone';
+export { default as Garden } from './organisms/garden';
+export { default as Sketch } from './organisms/sketch';
 
 //import './styles.scss';

@@ -1,3 +1,16 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+.story-link {
+  font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  font-size: 14px !important;
+}
+
+.sb-show-main.sb-main-padded {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
 }

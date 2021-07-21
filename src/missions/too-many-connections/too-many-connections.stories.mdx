@@ -1,0 +1,79 @@
+import { Meta, Subtitle } from '@storybook/addon-docs/blocks';
+import Prism from 'prismjs';
+
+
+<Meta title="menu/missions/too many connections" />
+
+# Too Many Connections
+
+<Subtitle>We cannot connect to the database</Subtitle>
+
+When a user makes a request to the server which needs to query a database, ideally they should receive data back in less than a second (< 400 ms).
+
+What happens when we are using the serverless host, [Vercel](https://vercel.com), and we have multiple users attempting to connect to the same database? With a serverless function, we will open connection to the database when the function begins and close the connection the connection after it completes. 
+
+Our database has a limited amount of connections. If our plan on [ElephantSQL](https://www.elephantsql.com/plans.html) has only 10 concurrent connections and they are all taken, what happens to the next user who attempts to request data? We don't want them to receive a "too many connections" error! 
+
+Instead, we can provide feedback that the user may need to wait longer while the server continually attempts to connect finally returning the requested data. 
+
+## Servers & Database
+
+For hobbyist projects, I have selected [Flask](https://flask.palletsprojects.com/en/2.0.x/) and [NestJS](https://nestjs.com/). In both cases, I'm using PostgreSQL as the database and an [ORM](https://blog.bitsrc.io/what-is-an-orm-and-why-you-should-use-it-b2b6f75f5e2a) to talk to it. I have [SQLAlchemy](https://www.sqlalchemy.org/) within Flask and [Sequelize](https://sequelize.org/) within NestJS. Along with leaning on an ORM, I also want to learn and write SQL on its own.  
+
+## Python Flask
+
+For Flask, I'm using the [blueprints](https://flask.palletsprojects.com/en/2.0.x/blueprints/) approach to building a RESTFUL Api. 
+
+## NestJS 
+
+NestJS has a modular architecture with pattern that was designed to be attractive to Java developers offering them familiar terms like DTOs and Entities. 
+
+<pre>
+<code className="language-javascript">
+{`
+  import { Dialect } from 'sequelize/types';
+
+  export const config = {
+    database: {
+      dialect: 'postgres' as Dialect,
+      host: 'ruby.db.elephantsql.com',
+      port: 5432,
+      username: 'your-username-here',
+      password: 'your-password-here',
+      database: 'your-database-here', 
+      logging: false,
+      ssl: true,
+      pool: {
+        maxConnections: 1,
+        maxIdleTime: 1000,
+      },
+      retry: {
+        match: [
+          /ConnectionError/,
+          /SequelizeConnectionError/,
+          /SequelizeConnectionRefusedError/,
+          /SequelizeHostNotFoundError/,
+          /SequelizeHostNotReachableError/,
+          /SequelizeInvalidConnectionError/,
+          /SequelizeConnectionTimedOutError/,
+          /SequelizeConnectionAcquireTimeoutError/,
+          /Connection terminated unexpectedly/,
+        ],
+        max: Infinity,
+      },
+      synchronize: false,
+      migrationsRun: true,
+      migrations: [__dirname + '/migrations/**/*{.ts,.js}'],
+      cli: {
+        migrationsDir: 'db/migrations',
+      },
+    },
+    jwtPrivateKey: 'razzle-dazzle',
+  };
+  `}
+</code>
+</pre>
+
+It took me too long to find a decent article how to display a code snippet in Storybook so a special thanks to Jason Ewins and his write up,  
+ [get prismjs working in react](https://medium.com/get-it-working/get-prismjs-working-in-react-a6d989e59290). I didn't want a code panel but like I have above where I can talk about and include the code in the same document. 
+

@@ -1,26 +1,22 @@
-/* eslint-disable */
-//import globalVariable from '../config/variables';
+// SCSS THEME
 
-// top 100 palettes
-// https://github.com/mattdesl/nice-color-palettes
-
-// 100, 200, 500, 1000
-export function getColorPalettes(total){
-  return require('nice-color-palettes/{${100}');
+export function getColorPalettes(total) {
+  const colors = require('nice-color-palettes');
+  const palette = colors[10];
+  return palette;
 }
-
 
 const globalVariable = {
-  'lips': "#c0c0c0",
-  'drySoil': "#c8b51d",
-  'sand': "#efe9e2",  // me 
-  'glass': "#c0c8d9",
-  'numberCruncher': "#718fb4",
-  'higherGround': "#a68573",
-  'mailaise': "#4e596c",
-  'explorer': "#3d3335",
-  'blackSnout': "#120f12",
-}
+  lips: '#c0c0c0',
+  drySoil: '#c8b51d',
+  sand: '#efe9e2', // me
+  glass: '#c0c8d9',
+  numberCruncher: '#718fb4',
+  higherGround: '#a68573',
+  mailaise: '#4e596c',
+  explorer: '#3d3335',
+  blackSnout: '#120f12',
+};
 
 let colorUtil;
 class ColorUtil {
@@ -36,14 +32,12 @@ class ColorUtil {
       'higherGround',
       'mailaise',
       'explorer',
-      'blackSnout'
+      'blackSnout',
     ];
 
     const colours = keys.map(key => {
       return globalVariable[key];
     });
-
-    console.log('colours: ', colours);
 
     return colours;
   }
@@ -59,6 +53,8 @@ class ColorUtil {
   }
 
   // color credit: http://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors
+  // note percet is a decimal like 0.5
+  // you can effectively use getShadedColor and either pass -0.5 or 0.5 to darken or lighten a color respectively
   getShadedColor(color, percent) {
     let f = color.split(','),
       t = percent < 0 ? 0 : 255,
@@ -94,15 +90,12 @@ class ColorUtil {
     );
   }
 
+  // I can't exactly remember what is colorData?! I think it's picked from the canvas?!
   lighten(colorData) {
-    let percent = colorData.lightCount * 10 / 100;
+    let percent = (colorData.lightCount * 10) / 100;
     let originalColor = colorData.originalColor;
 
-    colorData.curColor = this.getBlendedColor(
-      colorData.originalColor,
-      'rgb(255,255,255)',
-      percent
-    );
+    colorData.curColor = this.getBlendedColor(colorData.originalColor, 'rgb(255,255,255)', percent);
 
     if (colorData.lightCount >= 10) colorData.lightCount = 9;
     colorData.lightCount++;
@@ -114,14 +107,10 @@ class ColorUtil {
   }
 
   darken(colorData) {
-    let percent = colorData.darkCount * 10 / 100;
+    let percent = (colorData.darkCount * 10) / 100;
     let originalColor = colorData.originalColor;
 
-    colorData.curColor = this.getBlendedColor(
-      colorData.originalColor,
-      'rgb(0,0,0)',
-      percent
-    );
+    colorData.curColor = this.getBlendedColor(colorData.originalColor, 'rgb(0,0,0)', percent);
 
     if (colorData.darkCount >= 10) colorData.darkCount = 9;
     colorData.darkCount++;
@@ -132,4 +121,4 @@ class ColorUtil {
   }
 }
 
-export default (colorUtil = new ColorUtil());
+export default colorUtil = new ColorUtil();

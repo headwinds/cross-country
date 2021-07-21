@@ -1,18 +1,25 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs/blocks';
 import Tile from './tile';
 import TileStory from './tile-story';
+import { Column, SubHeadline, Link } from '../../'
+
 
 <Meta title="menu/molecules/tile" />
 
 # Tile
 
-<Subtitle>a bar for charting</Subtitle>
+<Subtitle>a tile is a buidling block</Subtitle>
+
+What can we do with a tile?
+
+In games or sci-fi films, it is common to see the corners of tile hilight and pulse when the tile is activated.
+
+I wanted a similar effect, and first I searched the web for inspiration finding <Link customClass="story-link" url="https://codepen.io/NyX/pen/JYOzWW">this take</Link> which is perfect for this story. 
 
 <Canvas>
   <Story name="tile">
-    <Tile />
-  </Story>
-  <Story name="custom tile">
-    <TileStory />
+    <Column>
+      <Tile />
+    </Column>
   </Story>
 </Canvas>

@@ -1,0 +1,19 @@
+import { Meta, Subtitle } from '@storybook/addon-docs/blocks';
+import { SubHeadline, Paragraph, List, ListItem, Link, RelatedArticles }  from '../../../src/components';
+
+<Meta title="menu/missions/xstate" />
+
+# XState
+
+<Subtitle>using xstate to manage state</Subtitle>
+
+<Paragraph>
+By using XState as our finite state machine, we are able to introduce new states with less worry about the consequences on previous states. That's the longterm payoff. The short term pain is learning a new system of dispatching events and storing data.
+</Paragraph>
+
+<Paragraph>
+ On the surface, XState feels like rigid system and I want to see how it might fit into my rapid prototyping process so that I can still experiment with various states until I discover the right mix. How can XState help me plan and design the experience? 
+</Paragraph>
+
+
+<RelatedArticles articles={[{title: 'Global State using XState & React', url: 'https://garden.bradwoods.io/notes/global-state'}]} />

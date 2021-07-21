@@ -1,0 +1,17 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs/blocks';
+import Sketch from './sketch';
+import { Paragraph, Link } from "../../../../"
+
+<Meta title="menu/organisms/sketch" />
+
+# Sketch
+
+<Subtitle>create assets with svg</Subtitle>
+
+<Paragraph>Vector graphics are ideal for screens since they can scale without distortion.</Paragraph>
+
+<Canvas>
+  <Story name="sketch">
+    <Sketch config={{ text: "Sketch", hasBackground: true }} />
+  </Story>  
+</Canvas>
