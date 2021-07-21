@@ -8,50 +8,6 @@ const generateDataset = () => {
     .map(() => [Math.random() * 180 + 10, Math.random() * 135 + 10]);
 };
 
-/*
-
-In this experiement, the transitions seem to get blown away each time instead apearing in sequence
-
-const exitSteps = [
-  {
-    duration: 1000,
-    fill: 'tomato',
-  },
-  {
-    duration: 1000,
-    fill: 'blue',
-  },
-  {
-    duration: 1000,
-    fill: 'green',
-  },
-];
-
-// https://stackoverflow.com/questions/39995354/how-to-chain-javascript-methods-natively-from-an-iterator
-
-const chain = (target, ...calls) => {
-  for(let {method, args} of calls) {
-    target = target[method](...args)
-  }
-  return obj
-}
-chain(target, [
-  {meth: 'transition', args: []},
-  {meth: 'duration', args: [arg]},
-   {meth: 'attr', args: [arg]}
-  ]})
-
-const chainExitTransition = (state, steps) => {
-  let chain = state;
-  steps.forEach(step => {
-    const { duration, fill } = step;
-    chain.transition().duration(duration).attr('fill', fill) ;
-    chain
-  });
-  state.transition().attr('r', 0).style('opacity', 0).remove();
-};
-*/
-
 const applyTransitions = state => {
   state
     .transition()
