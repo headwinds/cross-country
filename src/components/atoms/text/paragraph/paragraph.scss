@@ -12,12 +12,12 @@
   -moz-osx-font-smoothing: grayscale;
 
   @media (min-width:320px) and (max-width:650px) { 
-    width: 80%;
+    max-width: 100%;
   }
 
   @media (min-width:651px) and (max-width:950px) { 
-    max-width: 60%;
-    }
+    max-width: 100%;
+  }
 
   @media (min-width:951px) {  
     max-width: 600px;

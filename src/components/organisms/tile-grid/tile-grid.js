@@ -59,8 +59,6 @@ const TileGrid = ({
         const keyId = `${x}${y}`;
 
         const isSelected = tileSeleted ? tileModel.id === tileSeleted.id : false;
-        console.log('TileGrid updated isSelected: ', isSelected);
-        console.log('TileGrid updated tileSeleted: ', tileSeleted);
         return (
           <CustomTile
             key={keyId}

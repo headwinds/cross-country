@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Image, Column, SubHeadline } from '../../';
 
 export const Wolf = ({ config: { url, text, a11y, hasBackground } }) => {

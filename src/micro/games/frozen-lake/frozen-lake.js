@@ -9,7 +9,7 @@ const createDemoModels = () => {
   });
 };
 
-const OneAcre = () => {
+const FrozenLake = () => {
   const demoModels = createDemoModels();
   const [hasModal, toggleModal] = useState(false);
   const [selectedTile, toggleSelectedTile] = useState(null);
@@ -36,4 +36,4 @@ const OneAcre = () => {
   );
 };
 
-export default OneAcre;
+export default FrozenLake;

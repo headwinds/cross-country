@@ -1,0 +1,70 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs/blocks';
+import FrozenLake from "./frozen-lake";
+import { Paragraph, Link, List, ListItem, Bold } from "../../../";
+import Prism from 'prismjs';
+
+<Meta title="menu/micro/games/frozen lake" />
+
+# Frozen Lake
+
+<Subtitle>a mico game about re-inforcement learning</Subtitle>
+
+<Paragraph>
+When I discovered <Link url="https://gym.openai.com/envs/FrozenLake-v0/">Frozen Lake</Link>, a <Link url="https://gym.openai.com/envs/#toy_text">toy text environment</Link> by the open ai team, I knew that I had to try to re-create it as tile-based <Link url='https://twitter.com/LootBndt/status/1406551232861413376'>diorama.</Link> I wanted to turn it into a remote service so that UI could talk to it and get updated on each turn.  
+</Paragraph>
+<Paragraph>
+I used the provided Python source from their Github repo to build the service using Flask. I created a project folder and setup a virtual environment for the Python app.
+</Paragraph>
+<Paragraph>
+As mentioned in the <Link url="https://github.com/openai/gym#examples">gym examples</Link>, we need to create the interface for agent. In this case, we'll use React and D3.
+</Paragraph>
+<Paragraph>
+In order for the agent to move through our environment, we need to implement:
+</Paragraph>
+<List>
+  <ListItem>
+    <Paragraph><Bold>reset()</Bold> Reset the environment's state.</Paragraph>
+  </ListItem>
+  <ListItem>
+    <Paragraph><Bold>step(ACTION)</Bold> Step the environment by one timestep by passing an ACTION which is constant either LEFT, RIGHT, UP, or DOWN. Returns observation, reward, done, info. 
+    </Paragraph>
+  </ListItem>
+  <ListItem>
+    <Paragraph>
+    <Bold>render()</Bold> Render one frame of the environment.
+    </Paragraph>
+  </ListItem>
+</List>
+<Paragraph>
+  Along with learning for free, open source is awesome because it means we can change whatever we like. Instead of a tile named F for frozen, I'd like to rename it I for ice and introduce a new tile S for Snow. The ice tiles will have an slippery effect applied while the snow tiles will not. 
+</Paragraph>
+<Paragraph>We can still see the effect of a slippery tile when we print the result of a step.
+</Paragraph>
+<Paragraph>
+Snow Tile
+<pre>
+<code className="language-javascript">
+  {`
+    (1, 0.0, False, {'prob': 1.0})
+  `}
+</code>
+</pre>
+</Paragraph>
+<Paragraph>
+Ice Tile
+<pre>
+<code className="language-javascript">
+  {`
+    (1, 0.0, False, {'prob': 0.33333333})
+  `}
+</code>
+</pre>
+</Paragraph>
+<Paragraph>With a snow tile, the agent has 100% chance of advancing to the next tile that it selected, however, with the ice tile, there is 33% change of slipping off and landing on undesired tile. 
+</Paragraph>
+
+<Canvas>
+  <Story name="frozen lake">
+    <FrozenLake config={{text: "frozen lake", hasBackground: false}} />
+  </Story>
+</Canvas>

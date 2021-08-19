@@ -8,7 +8,31 @@ import { SubHeadline, Paragraph, List, ListItem, Link, RelatedArticles }  from '
 <Subtitle>a dashboard which monitors the status of a serverless cronjob </Subtitle>
 
 <Paragraph>
-When using servless, how can we setup a cronjob and that can be monitored so that are confident that the automation is working each week?
+When using serverless, how can we setup a cronjob and that can be monitored so that are confident that the automation is working each week?
 </Paragraph>
 
-<RelatedArticles articles={[{title: '', url: ''}]} />
+<SubHeadline>Hobbyist</SubHeadline>
+
+<Paragraph>
+Vercel does offer <Link url="https://vercel.com/docs/solutions/cron-jobs">some suggestions.</Link>
+</Paragraph>
+<SubHeadline>Github Actions</SubHeadline>
+
+
+<SubHeadline>Local Schedule</SubHeadline>
+<Paragraph>
+Instead of hosting the cronjob, I thought I might be able to get away with running it from my local machine. While I'm at my desktop, my computer is on most of the days. But I learned that as soon as I step away from machine, my mac will sleep and thus the process will stop.
+</Paragraph>
+<Paragraph>
+I currently experimenting with using the <Link url="https://www.howtogeek.com/245683/how-to-prevent-your-mac-from-sleeping-with-no-additional-software/">caffeinate command</Link> which will keep my computer awake so that the process will run. Since I only need to process to run on certain, I can then disable it on days with no jobs so that the computer can get some shut eye. 
+</Paragraph>
+
+<SubHeadline>Enterprise</SubHeadline>
+
+At work, I have the opportunity to learn large enterprise systems within Google Cloud so have taken the opportunity to build a reporting tool.
+
+To perform a cronjob, we can use Cloud Scheduler to set a datetime for a Cloud Function to some work like collecting lighthouse audits every monday and storing them in BigQuery. I did exactly this by following an excellent, detailed <Link url="https://www.simoahava.com/google-cloud/lighthouse-bigquery-google-cloud-platform/">article</Link>. 
+
+After assembling this solution, I also collaborated with a colleague to take the various parts and use <Link url='https://cloud.google.com/docs/terraform'>Terraform</Link> to help "whitelabel" the solution so that another company within the organization could repeat it.
+
+<RelatedArticles articles={[{id: 0, title: '', url: ''}]} />
