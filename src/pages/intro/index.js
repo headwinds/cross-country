@@ -1,19 +1,11 @@
 import React, { Component } from 'react';
 import getIsMobile from '../../utils/mobile-detect';
-import { Logo, Grid, Wallpaper, Column, SubHeadline, Headline, Paragraph } from '../../components';
+import { Logo, Grid, Wallpaper, Column, Row, SubHeadline, Headline, Paragraph, Tile, Stagger } from '../../components';
+import FrozenLake from '../../micro/games/frozen-lake';
 import useDeviceDetection from '../../hooks/useDeviceDetection/';
 import useTheme from '../../hooks/useTheme/';
 import styles from './intro.scss';
 import clsx from 'clsx';
-
-import logo from '../../components/atoms/logo/cross-country.svg';
-
-const nationalparks = [
-  { id: 0, name: 'Alqonquin' },
-  { id: 1, name: 'Jasper' },
-  { id: 2, name: 'Elk Island' },
-  { id: 3, name: 'Rouge' },
-];
 
 const DeviceContext = React.createContext('device');
 
@@ -29,11 +21,17 @@ export default class Intro extends Component {
       radios: {
         selectedId: 0,
       },
+      mlTask: 'Learning',
     };
 
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleRadioChange = this.handleRadioChange.bind(this);
+    this.animateMachineText = this.animateMachineText.bind(this);
+  }
+
+  componentDidMount() {
+    this.animateMachineText();
   }
 
   handleClick(event, label) {
@@ -52,11 +50,43 @@ export default class Intro extends Component {
     });
   }
 
+  animateMachineText() {
+    const { mlTask } = this.state;
+    const startTask = 'Learning';
+    const endTask = 'Teaching';
+    const len = startTask.length - 1;
+    const cursor = '_';
+    let newMLTask = startTask;
+    let mlTaskIndex = len;
+
+    setTimeout(() => {
+      let mlTextAnimateInterval = setInterval(() => {
+        if (newMLTask.includes('Le')) {
+          newMLTask = ` ${startTask.substr(0, mlTaskIndex)}${cursor}`;
+
+          mlTaskIndex--;
+          return this.setState({ mlTask: newMLTask });
+        } else {
+          newMLTask = ` ${endTask.substr(0, mlTaskIndex)}${cursor}`;
+          mlTaskIndex++;
+
+          if (mlTaskIndex > endTask.length) {
+            clearInterval(mlTextAnimateInterval);
+            return this.setState({ mlTask: endTask });
+          }
+
+          return this.setState({ mlTask: newMLTask });
+        }
+      }, 250);
+    }, 5000);
+  }
+
   render() {
     const {
       buttonFeedback,
       logoComp,
       radios: { selectedId },
+      mlTask,
     } = this.state;
 
     // make sure this done from the client not the server!
@@ -69,15 +99,13 @@ export default class Intro extends Component {
 
     return (
       <DeviceContext.Provider value={contextValue}>
-        <Wallpaper>
-          <Grid>
-            <Column>
-              <SubHeadline customClass={styles.sketches}>
-                Turn your <span style={{ color: '#9972e2' }}>Sketches</span> into{' '}
-                <span style={{ color: '#9972e2' }}>Games</span>
-              </SubHeadline>
-            </Column>
-          </Grid>
+        <Wallpaper backgroundColor="white">
+          <Column>
+            <Headline customClass={styles.headline}>Cross Country</Headline>
+            <SubHeadline customClass={styles.subheadline}>Create Worlds with Tiles</SubHeadline>
+            <Stagger staggerText={['Learn React, D3, XState', `& Machine ${mlTask}`]} />
+          </Column>
+          <FrozenLake />
         </Wallpaper>
       </DeviceContext.Provider>
     );

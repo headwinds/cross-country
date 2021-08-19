@@ -15,6 +15,7 @@ export { default as Paragraph } from './atoms/text/paragraph/paragraph';
 export { default as Form } from './atoms/form';
 export { default as TextInput } from './atoms/text/input';
 export { default as Hilight } from './atoms/text/hilight';
+export { default as Bold } from './atoms/text/bold';
 export { default as Label } from './atoms/text/label';
 export { default as Link } from './atoms/link';
 export { default as List } from './atoms/list';

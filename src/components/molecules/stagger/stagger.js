@@ -9,9 +9,9 @@ const defaultConfig = {
 };
 
 const Stagger = ({ config = defaultConfig, staggerText = [], stagger = { key: 'marginLeft', value: 26 } }) => {
-  console.log('Stagger config: ', config);
   const list = staggerText.map((text, idx) => (
     <SubHeadline
+      key={idx}
       {...config.text.rest}
       size="large"
       customClass={clsx(styles.text, config.text.customClass)}

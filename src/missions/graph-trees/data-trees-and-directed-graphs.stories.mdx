@@ -1,0 +1,27 @@
+import { Meta, Subtitle } from '@storybook/addon-docs/blocks';
+import Prism from 'prismjs';
+import { SubHeadline, Paragraph, List, ListItem, Link, RelatedArticles }  from '../../../src/components';
+import DuneGraphStory from '../../../src/components/organisms/trees/faction/dune/dune-graph-story';
+
+<Meta title="menu/missions/data trees and directed graphs" />
+
+<Subtitle>Data Trees & Directed Graphs</Subtitle>
+
+<Paragraph>
+When harvesting D3 scripts from <Link url="https://bl.ocks.org/">Bl.ocks</Link> or <Link url="https://observablehq.com/">Observerable</Link>, you may discover that they do a lot in each function. Any time you see long functions, this is an opportunity to refactor and make it easier to maintain.
+These long functions are basically pipelines that assemble the final visualization. 
+</Paragraph>
+
+<Paragraph>
+Each step in the pipeline can (and should be) its own function. So when you copy and paste in a long function, take this opportunity to break it up and learn from each step! 
+</Paragraph>
+
+<Paragraph>
+As port each function, you begin to explore the codebase and learn more about the complexities of color through <Link url="https://github.com/d3/d3-scale-chromatic">d3-scale-chromatic</Link> and how color can potentialy confuse your audience.
+</Paragraph>
+
+<DuneGraphStory />
+
+<RelatedArticles articles={
+    [{id: 0, url: "https://coderwall.com/p/lixing/closure-tables-for-browsing-trees-in-sql", title: "Closure tables for browsing trees in sql"}]
+} />
