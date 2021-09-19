@@ -3,13 +3,11 @@ import { Column } from '../../../../';
 import styles from './hunter.scss';
 import clsx from 'clsx';
 
-const Hunter = ({ children, customClass = '', customStyle = {}, ...rest }) => {
+const Hunter = ({ children, customClass = '', model: { customStyle = {} }, ...rest }) => {
   return (
-    <Column>
-      <div className={clsx(styles.hunter, customClass)} style={customStyle} {...rest}>
-        {children}
-      </div>
-    </Column>
+    <div className={clsx(styles.hunter, customClass)} style={customStyle} {...rest}>
+      {children}
+    </div>
   );
 };
 

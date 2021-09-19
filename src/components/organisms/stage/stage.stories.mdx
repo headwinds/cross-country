@@ -1,0 +1,17 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs/blocks';
+import { STORYBOOK } from "../../../constants";
+import { Hunter } from "../../"
+import Stage from './stage';
+import styles from "./stage.scss";
+
+<Meta title="menu/organisms/stage" />
+
+# Stage
+
+<Subtitle>All the world's a stage, and all the men and women merely players</Subtitle>
+
+<Canvas>
+  <Story name="stage">
+     <Stage actors={[<Hunter />]} />
+  </Story>
+</Canvas>

@@ -1,5 +1,16 @@
 import React, { Component, useState, useEffect } from 'react';
-import { Image, Column, SubHeadline, Wrapper, TileGrid, Tile, Paragraph, Modal, Hunter } from '../../../components';
+import {
+  Image,
+  Column,
+  SubHeadline,
+  Wrapper,
+  TileGrid,
+  Tile,
+  Paragraph,
+  Modal,
+  Hunter,
+  Stage,
+} from '../../../components';
 import PropTypes from 'prop-types';
 import { useFrozenLakeService } from './use-frozen-lake-service';
 
@@ -40,9 +51,6 @@ const FrozenLake = ({ isStandalone = false, palette = null }) => {
   const [selectedTile, toggleSelectedTile] = useState(null);
   const [current, send] = useFrozenLakeService();
 
-  console.log('demoModels: ', demoModels);
-  console.log('rendering: ');
-
   const {
     context: { generatedMap },
   } = current;
@@ -73,32 +81,22 @@ const FrozenLake = ({ isStandalone = false, palette = null }) => {
   };
 
   const renderGrid = () => {
-    return (
-      <>
-        <div
-          style={{
-            position: 'absolute',
-            zIndex: 1,
-            backgroundColor: 'transparent',
-            opacity: 1,
-            width: 600,
-            height: 400,
-          }}
-        >
-          <div style={{ position: 'absolute', zIndex: 0, left: 20, top: 120 }}>
-            <Hunter />
-          </div>
-        </div>
-        <TileGrid
-          models={demoModels}
-          totalInRow={4}
-          Tile={Tile}
-          isIsometric={true}
-          palette={palette}
-          tileConfig={{ size: 100, cornerColor: '#999' }}
-        />
-      </>
-    );
+    if (demoModels.length > 0) {
+      return (
+        <>
+          <Stage actorModels={[{ customStyle: { position: 'absolute', zIndex: 0, left: 20, top: 120 } }]} />
+          <TileGrid
+            models={demoModels}
+            totalInRow={4}
+            Tile={Tile}
+            isIsometric={true}
+            palette={palette}
+            tileConfig={{ size: 100, cornerColor: '#999' }}
+          />
+        </>
+      );
+    }
+    return null;
   };
 
   if (isStandalone) {

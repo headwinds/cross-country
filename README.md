@@ -164,6 +164,7 @@ npm publish
 ## Data Visualization
 * [Seeing Theory](https://seeing-theory.brown.edu/)
 * [Setosa](https://setosa.io/)
+* [moebio](http://moebio.com/)
 
 ## Stats, NLP & Machine Learning
 * [Spacey](https://spacy.io/)
@@ -177,6 +178,7 @@ npm publish
 * [Deep Learning Drizzle](https://deep-learning-drizzle.github.io/)
 * [Intro to Tensorflow](https://www.youtube.com/watch?v=LwM7xabuiIc)
 * [Distill](https://distill.pub/)
+* [Creative Applications](https://www.creativeapplications.net/)
 * [Making of an AI Storyteller](https://towardsdatascience.com/the-making-of-an-ai-storyteller-c3b8d5a983f5)
 * [Crafter](https://danijar.com/project/crafter/)
 
