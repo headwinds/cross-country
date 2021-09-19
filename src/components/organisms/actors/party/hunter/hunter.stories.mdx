@@ -1,6 +1,6 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs/blocks';
 import Hunter from './hunter';
-import { Link } from "../../../../"
+import { Link, RelatedArticles } from "../../../../"
 import styles from "./hunter.scss";
 
 <Meta title="menu/organisms/actors/party/hunter" />
@@ -11,9 +11,13 @@ import styles from "./hunter.scss";
 
 <Link url="https://www.theatlantic.com/notes/2015/09/radiolab-on-whether-trophy-hunting-can-aid-conservation/404350/">Does Trophy Hunting Actually Aid Conservation?</Link>
 
-anti-hero 
 
-https://en.wikipedia.org/wiki/Elasmotherium
+
+<RelatedArticles articles={[
+    {id: 0, title: 'Radiolab Podcast', url: 'https://www.theatlantic.com/notes/2015/09/radiolab-on-whether-trophy-hunting-can-aid-conservation/404350/'},
+    {id: 1, title: 'Elasmotherium', url: 'https://en.wikipedia.org/wiki/Elasmotherium'},
+    {id: 2, title: 'John Locke', url: 'https://lostpedia.fandom.com/wiki/John_Locke'},
+]} />
 
 <Canvas>
   <Story name="hunter">

@@ -37,7 +37,7 @@ const frokenLakeMachine = Machine({
   id: 'frozenLake',
   initial: 'idle',
   context: {
-    map: [],
+    generatedMap: [],
   },
   states: {
     idle: {
@@ -51,7 +51,7 @@ const frokenLakeMachine = Machine({
         src: (context, event) => fetchMap(),
         onDone: {
           target: 'success',
-          actions: assign({ map: (context, event) => event.data.map }),
+          actions: assign({ generatedMap: (context, event) => event.data.generatedMap }),
         },
         onError: {
           target: 'failure',
