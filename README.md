@@ -124,7 +124,6 @@ npm publish
 ```
 
 ## Inspiration
-
 * [create-react-library](https://www.npmjs.com/package/create-react-library)
 * [mobile-first media queries](https://medium.com/codeartisan/breakpoints-and-media-queries-in-scss-46e8f551e2f2)
 * [pure-css-accessible-checkboxes-and-radios-buttons](https://medium.com/claritydesignsystem/pure-css-accessible-checkboxes-and-radios-buttons-54063e759bb3)
@@ -135,6 +134,9 @@ npm publish
 * [flexboxpatterns](https://www.flexboxpatterns.com/)
 * [nextra](https://nextra.vercel.app/)
 
+
+## Fullstack
+* [Flask & React](https://blog.appseed.us/flask-react-full-stack-seed-projects/)
 ## TILE
 * [mapeditor](https://www.mapeditor.org/)
 * [phase3 tile demo](https://itnext.io/modular-game-worlds-in-phaser-3-tilemaps-3-procedural-dungeon-3bc19b841cd)
@@ -143,6 +145,7 @@ npm publish
 * [tensorflowjs model](https://www.tensorflow.org/js/models)
 * [tidy models](https://www.tidymodels.org/)
 * [fivethirtyeight](https://fivethirtyeight.com/)
+* [Public APIs](https://github.com/public-apis/public-apis)
 ## ALGORITHMS
 * [Javascript The Algorithms](https://github.com/TheAlgorithms/Javascript)
 
@@ -155,7 +158,14 @@ npm publish
 ## Graph 
 * [networkx](https://networkx.org/documentation/stable/auto_examples/index.html)
 
-## NLP & Machine Learning
+## Learning Python
+* [realpython quizzes](https://realpython.com/quizzes/)
+
+## Data Visualization
+* [Seeing Theory](https://seeing-theory.brown.edu/)
+* [Setosa](https://setosa.io/)
+
+## Stats, NLP & Machine Learning
 * [Spacey](https://spacy.io/)
 * [Open AI](https://openai.com/)
 * [Hugging Face](https://huggingface.co/)
@@ -164,6 +174,12 @@ npm publish
 * [Harvest Entities in Text with Wolfram](https://www.wolfram.com/language/12/natural-language-processing/harvest-entities-in-text.html?product=mathematica)
 * [Storytelling](https://pudding.cool/process/how-to-make-dope-shit-part-3/)
 * [Contextual Bandit](https://towardsdatascience.com/contextual-bandits-and-reinforcement-learning-6bdfeaece72a)
+* [Deep Learning Drizzle](https://deep-learning-drizzle.github.io/)
+* [Intro to Tensorflow](https://www.youtube.com/watch?v=LwM7xabuiIc)
+* [Distill](https://distill.pub/)
+* [Making of an AI Storyteller](https://towardsdatascience.com/the-making-of-an-ai-storyteller-c3b8d5a983f5)
+* [Crafter](https://danijar.com/project/crafter/)
+
 ## License
 
 MIT © [headwinds](https://github.com/headwinds)

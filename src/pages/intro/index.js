@@ -4,6 +4,8 @@ import { Logo, Grid, Wallpaper, Column, Row, SubHeadline, Headline, Paragraph, T
 import FrozenLake from '../../micro/games/frozen-lake';
 import useDeviceDetection from '../../hooks/useDeviceDetection/';
 import useTheme from '../../hooks/useTheme/';
+import { getColorPalettes } from '../../utils/color-util';
+import numberUtil from '../../utils/number-util';
 import styles from './intro.scss';
 import clsx from 'clsx';
 
@@ -22,6 +24,7 @@ export default class Intro extends Component {
         selectedId: 0,
       },
       mlTask: 'Learning',
+      palette: null,
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -32,7 +35,15 @@ export default class Intro extends Component {
 
   componentDidMount() {
     this.animateMachineText();
+
+    const ranIdx = Math.rand;
+
+    const palette = getColorPalettes(numberUtil.getRandomInt(0, 5));
+    console.log(palette)
+    this.setState({ palette });
   }
+
+  // handlers
 
   handleClick(event, label) {
     event.preventDefault();
@@ -50,6 +61,7 @@ export default class Intro extends Component {
     });
   }
 
+  //
   animateMachineText() {
     const { mlTask } = this.state;
     const startTask = 'Learning';
@@ -58,6 +70,8 @@ export default class Intro extends Component {
     const cursor = '_';
     let newMLTask = startTask;
     let mlTaskIndex = len;
+
+    const characterMilliseconds = 100;
 
     setTimeout(() => {
       let mlTextAnimateInterval = setInterval(() => {
@@ -77,7 +91,7 @@ export default class Intro extends Component {
 
           return this.setState({ mlTask: newMLTask });
         }
-      }, 250);
+      }, characterMilliseconds);
     }, 5000);
   }
 
@@ -87,6 +101,7 @@ export default class Intro extends Component {
       logoComp,
       radios: { selectedId },
       mlTask,
+      palette,
     } = this.state;
 
     // make sure this done from the client not the server!
@@ -97,15 +112,29 @@ export default class Intro extends Component {
     const hello = `By combining text and vector graphics, we can create posts, experiments and even worlds within a structure that will flow across devices.`;
     const responsive = `This system will detect the device. In this case, you're on a ${device}, and will respond accordingly providing pleasant UX for writing and reading technical articles as well as experimenting with javascript and svg.`;
 
+    if (!palette) {
+      return null;
+    }
+
+    const headlineColor = palette[0];
+    const subHeadlineColor = palette[1];
+    const staggerColor = palette[2];
+
     return (
       <DeviceContext.Provider value={contextValue}>
         <Wallpaper backgroundColor="white">
           <Column>
-            <Headline customClass={styles.headline}>Cross Country</Headline>
-            <SubHeadline customClass={styles.subheadline}>Create Worlds with Tiles</SubHeadline>
-            <Stagger staggerText={['Learn React, D3, XState', `& Machine ${mlTask}`]} />
+            <Headline color={headlineColor} customClass={styles.headline}>
+              Cross Country
+            </Headline>
+            <SubHeadline color={subHeadlineColor} customClass={styles.subheadline}>
+              Create Worlds with Tiles
+            </SubHeadline>
           </Column>
-          <FrozenLake />
+          <Row>
+            <Stagger color={staggerColor} staggerText={['Learn React, D3, XState', `& Machine ${mlTask}`]} />
+            <FrozenLake />
+          </Row>
         </Wallpaper>
       </DeviceContext.Provider>
     );

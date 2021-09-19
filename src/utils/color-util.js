@@ -1,8 +1,8 @@
 // SCSS THEME
 
-export function getColorPalettes(total) {
+export function getColorPalettes(index) {
   const colors = require('nice-color-palettes');
-  const palette = colors[10];
+  const palette = colors[index];
   return palette;
 }
 
