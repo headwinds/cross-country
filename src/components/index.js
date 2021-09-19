@@ -50,6 +50,8 @@ export { default as TileGrid } from './organisms/tile-grid';
 export { default as Drone } from './organisms/drone';
 export { default as Garden } from './organisms/garden';
 export { default as Sketch } from './organisms/sketch';
+export { default as Actor } from './organisms/actors/party/hunter';
 export { default as Hunter } from './organisms/actors/party/hunter';
+export { default as Stage } from './organisms/stage';
 
 //import './styles.scss';
