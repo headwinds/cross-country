@@ -53,5 +53,4 @@ export { default as Sketch } from './organisms/sketch';
 export { default as Actor } from './organisms/actors/actor';
 export { default as Hunter } from './organisms/actors/party/hunter';
 export { default as Stage } from './organisms/stage';
-
-//import './styles.scss';
+export { default as ReverseTextAnimation } from './organisms/animation/reverse-text-animation';

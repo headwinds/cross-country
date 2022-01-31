@@ -1,7 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
 import getIsMobile from '../../utils/mobile-detect';
-import { Logo, Grid, Wallpaper, Column, Row, SubHeadline, Headline, Paragraph, Tile } from '../../components';
-import ReverseTextAnimation from '../../components/organisms/animation/reverse-text-animation';
+import {
+  Logo,
+  Grid,
+  Wallpaper,
+  Column,
+  Row,
+  SubHeadline,
+  Headline,
+  Paragraph,
+  Tile,
+  ReverseTextAnimation,
+} from '../../components';
+//import ReverseTextAnimation from '../../components/organisms/animation/reverse-text-animation';
 import FrozenLake from '../../micro/games/frozen-lake';
 import useDeviceDetection from '../../hooks/useDeviceDetection/';
 import useTheme from '../../hooks/useTheme/';
