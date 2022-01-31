@@ -1,21 +1,13 @@
-/*
-Atom
-
-renders 1 native element
-*/
-
-import React, { Component } from 'react';
+import React, { Component, forwardRef } from 'react';
 import styles from './row.scss';
 import clsx from 'clsx';
 
-const Row = ({ children, hasChildrenCentered = true, customClass = '', customStyle = {}, ...rest }) => {
-  //style['justifyContent'] = hasChildrenCentered ? 'center' : 'flex-start';
-
+const Row = forwardRef(({ children, hasChildrenCentered = true, customClass = '', customStyle = {}, ...rest }, ref) => {
   return (
-    <div {...rest} className={clsx(styles.row, customClass)} style={customStyle}>
+    <div {...rest} className={clsx(styles.row, customClass)} style={customStyle} ref={ref}>
       {children}
     </div>
   );
-};
+});
 
 export default Row;

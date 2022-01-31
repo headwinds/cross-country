@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import { useMachine } from '@xstate/react';
 import { Machine, assign } from 'xstate';
 
-const MAP_URL = 'https://theisland-headwinds1.vercel.app/api/environment/frozen-lake/map';
-const WALKTHROUGH_URL = 'https://theisland-headwinds1.vercel.app/api/environment/frozen-lake/walkthrough';
+const MAP_URL = 'https://scout-theisland-headwinds1.vercel.app/api/environment/frozen-lake/map';
+const WALKTHROUGH_URL = 'https://scout-theisland-headwinds1.vercel.app/api/environment/frozen-lake/walkthrough';
 
 /*
 const fetchUser = map =>
@@ -22,8 +22,6 @@ const fetchMap = () =>
   fetch(`${MAP_URL}`)
     .then(blob => blob.json())
     .then(data => {
-      console.log('fetch data: ', data);
-
       return data;
     })
     .catch(console.log);

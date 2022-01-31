@@ -3,12 +3,36 @@ import { Column } from '../../../';
 import styles from './actor.scss';
 import clsx from 'clsx';
 
-const Actor = ({ children, customClass = '', customStyle = {}, ...rest }) => {
+const head = {};
+const body = {};
+const legs = {};
+const defaultConfig = { head, body, legs, type: 'humanoid' };
+
+const renderHumanoid = () => {
   return (
-    <Column>
-      <div className={clsx(styles.actor, customClass)} style={customStyle} {...rest}>
-        {children}
-      </div>
+    <>
+      <div>head</div>
+      <div>body</div>
+      <div>legs</div>
+    </>
+  );
+};
+
+const Actor = ({ customClass = '', customStyle = {}, config = defaultConfig, ...rest }) => {
+  const columnCustomClass = clsx(styles.actor, customClass);
+  const { type } = config;
+
+  const renderType = () => {
+    switch (type) {
+      case 'humanoid':
+      default:
+        return renderHumanoid();
+    }
+  };
+
+  return (
+    <Column customClass={columnCustomClass} customStyle={customStyle} {...rest}>
+      {renderType()}
     </Column>
   );
 };
