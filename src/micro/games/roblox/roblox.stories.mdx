@@ -1,0 +1,47 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs/blocks';
+import Roblox from "./roblox";
+import { Paragraph, Link, List, ListItem, SubHeadline  } from "../../../";
+import Prism from 'prismjs';
+
+<Meta title="menu/micro/games/roblox" />
+
+# Frozen Lake
+
+<Subtitle>Tile based Roblox Layout</Subtitle>
+
+<SubHeadline>Vision</SubHeadline>
+
+<Paragraph>
+I'd like to share a link with my daughter for her access on her iPad. The link would launch an editor and lead her through the process of selecting and laying out buildings in grid. Once the layout is complete, the layout could be exported.  
+</Paragraph>
+
+<Paragraph>
+While playing Roblox with my daughters, I noticed that they spend a lot of time working with clunky 2D UI to select customes and update the look of their characters. This type of play could also be handled completely within a web editor.
+</Paragraph>
+
+<Paragraph>
+Utlimately, it would be amazing to be able to leverage the Roblox API; import this layout; and have it build the world in 3D!
+If not Roblox, could it imported another platform like the Sims?! 
+</Paragraph>
+
+<SubHeadline>Questions</SubHeadline>
+
+<Paragraph>
+While we are building the world, how can a machine best observe each step?  
+</Paragraph>
+
+<Paragraph>
+Is there an open standard to export data to be used in other world building games? 
+</Paragraph>
+
+<SubHeadline>Session Collection</SubHeadline>
+
+<Paragraph>
+As we build the environment, each step is collected so that we can analyze the input and play back each step so the agent can learn from them.
+</Paragraph>
+
+<Canvas>
+  <Story name="roblox">
+    <Roblox config={{text: "roblox", hasBackground: false}} />
+  </Story>
+</Canvas>

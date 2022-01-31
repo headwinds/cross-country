@@ -1,6 +1,10 @@
+
+
+
 import { Meta, Canvas, Story, Subtitle, Quote } from '@storybook/addon-docs/blocks';
 import { STORYBOOK } from "../../../constants"
 import A11yCanvas from './canvas';
+import ComingSoon from '../coming-soon';
 import styles from "./canvas.scss";
 import { Paragraph, Link } from '../../'
 
@@ -19,8 +23,11 @@ import { Paragraph, Link } from '../../'
 </Link>
 
 
+
+
 <StoryBookCanvas>
   <Story name="canvas">
-    <A11yCanvas>wrap and augment a native element</A11yCanvas>
+    {/*<A11yCanvas>wrap and augment a native element</A11yCanvas>*/}
+    <ComingSoon />
   </Story>
 </StoryBookCanvas>

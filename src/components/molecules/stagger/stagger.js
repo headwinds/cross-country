@@ -8,10 +8,11 @@ const defaultConfig = {
   text: { customClass: '', customStyle: {}, rest: {} },
 };
 
-const Stagger = ({ config = defaultConfig, staggerText = [], stagger = { key: 'marginLeft', value: 26 } }) => {
-  console.log('Stagger config: ', config);
+const Stagger = ({ color = "#000", config = defaultConfig, staggerText = [], stagger = { key: 'marginLeft', value: 26 } }) => {
   const list = staggerText.map((text, idx) => (
     <SubHeadline
+      color={color}
+      key={idx}
       {...config.text.rest}
       size="large"
       customClass={clsx(styles.text, config.text.customClass)}

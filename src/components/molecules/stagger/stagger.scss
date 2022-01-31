@@ -9,10 +9,12 @@
 .text {
   font-family: $font-rubik;
   letter-spacing: 0px;
-  color: #90b93c;
+  color: rgb(62, 143, 62);
   text-align: center;
   line-height: 38px;
   font-weight: 700;
-  background-color: #f5f5f5;
-  padding: 0px 16px;
+  background-color: white;
+  padding: 0px 8px;
+  margin-bottom: 0px;
+  font-size: 40px;
 }

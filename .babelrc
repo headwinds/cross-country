@@ -14,5 +14,9 @@
     "@babel/preset-react"
   ],
   "ignore": ["node_modules/**"],
-  "plugins": [["@babel/plugin-transform-runtime"], ["@babel/plugin-proposal-decorators", { "legacy": true }]]
+  "plugins": [
+    ["@babel/plugin-transform-runtime"],
+    ["@babel/plugin-proposal-decorators", { "legacy": true }]
+    //["@babel/plugin-proposal-class-properties"]
+  ]
 }
