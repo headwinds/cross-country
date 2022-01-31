@@ -8,9 +8,13 @@ const defaultConfig = {
   text: { customClass: '', customStyle: {}, rest: {} },
 };
 
-const Stage = ({ config = defaultConfig, actorModels = [] }) => {
+const defaultActorModel = {
+  customStyle: { position: 'absolute', zIndex: 0, left: 20, top: 120, backgroundColor: 'pink' },
+};
+
+const Stage = ({ config = defaultConfig, actorModels = [defaultActorModel] }) => {
   const renderActors = () => {
-    return actorModels.map(model => <Hunter model={model} />);
+    return actorModels.map(model => <Hunter model={model} key={model?.id ?? 0} />);
   };
   return (
     <Column

@@ -64,7 +64,6 @@ const FrozenLake = ({ isStandalone = false, palette = null }) => {
     } = current;
 
     if (generatedMap?.length > 0) {
-      console.log('current changed: ', generatedMap);
       const newDemoModels = createDemoModels(16, generatedMap);
       setDemoModels(newDemoModels);
     }
@@ -102,7 +101,7 @@ const FrozenLake = ({ isStandalone = false, palette = null }) => {
   if (isStandalone) {
     return (
       <Wrapper>
-        <Column hasChildrenCentered>
+        <Column hasChildrenCentered customStyle={{ margin: 8 }}>
           {renderModal()}
           {renderGrid()}
         </Column>

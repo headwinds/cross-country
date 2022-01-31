@@ -1,9 +1,15 @@
 import { Meta, Subtitle } from '@storybook/addon-docs/blocks';
-import { SubHeadline, Paragraph, List, ListItem, Link, RelatedArticles }  from '../../../src/components';
+import { Headline, SubHeadline, Paragraph, List, ListItem, Link, RelatedArticles }  from '../../../src/components';
 
-<Meta title="menu/missions/template" />
+<Meta title="menu/missions/api" />
 
-# Template
+<Headline>Building an API to Split Life Between City & Country</Headline>
+
+<Subtitle>Rate Limit</Subtitle>
+
+<Paragraph>
+Since I'm dealing with serverless, I need be aware of how Vercel can help with <Link url="https://github.com/vercel/next.js/discussions/12134">rate limiting</Link> and protect the API against attacks. I am using the <Link url="https://pypi.org/project/Flask-Limiter/">flask_limiter</Link> library but am uncertain whether or not it will work for serverless?! 
+</Paragraph>
 
 <Subtitle>How I Sketch</Subtitle>
 
@@ -13,10 +19,11 @@ and then next to machine, I have my paper notepad.
 </Paragraph>
 
 <Paragraph>
-I use TextEdit primarily as a mind dump. As I'm exploring, I'll dump links and ideas into the both analog and digital documents.</Paragraph>
-<Paragraph>
-
+I use TextEdit primarily as a mind dump. As I'm exploring, I'll dump links and ideas into the both analog and digital documents.
 </Paragraph>
 
-
-<RelatedArticles articles={[{id: 0, title: '', url: ''}]} />
+<RelatedArticles articles={[
+    {id: 0, title: 'rate limiting without overhead netlify or vercel-functions', url: 'https://lihbr.com/blog/rate-limiting-without-overhead-netlify-or-vercel-functions'},
+    {id: 0, title: 'how to rate limit flask', url: 'https://medium.com/analytics-vidhya/how-to-rate-limit-routes-in-flask-61c6c791961b'},
+    ]}
+/>

@@ -167,11 +167,12 @@ npm publish
 * [moebio](http://moebio.com/)
 
 ## Stats, NLP & Machine Learning
+* [what is machine learning anway](https://boingboing.net/2021/11/08/what-is-machine-learning-anyway-this-three-minute-animation-delivers-an-excellent-simple-explanation.html)
 * [Spacey](https://spacy.io/)
 * [Open AI](https://openai.com/)
 * [Hugging Face](https://huggingface.co/)
 * [Kaggle](https://www.kaggle.com/)
-* [Rasa](https://rasa.com/
+* [Rasa](https://rasa.com/)
 * [Harvest Entities in Text with Wolfram](https://www.wolfram.com/language/12/natural-language-processing/harvest-entities-in-text.html?product=mathematica)
 * [Storytelling](https://pudding.cool/process/how-to-make-dope-shit-part-3/)
 * [Contextual Bandit](https://towardsdatascience.com/contextual-bandits-and-reinforcement-learning-6bdfeaece72a)
