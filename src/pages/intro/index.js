@@ -9,7 +9,7 @@ import useTheme from '../../hooks/useTheme/';
 
 // utils & hooks
 import { getColorPalettes } from '../../utils/color-util';
-import numberUtil from '../../utils/number-util';
+// import numberUtil from '../../utils/number-util'; <-- use Class and needs a babel plugin
 
 // styles
 import styles from './intro.scss';
@@ -118,7 +118,7 @@ const Intro = () => {
   useEffect(() => {
     const { isFetching, palette } = state;
     if (!isFetching && !palette) {
-      const newPalette = getColorPalettes(numberUtil.getRandomInt(0, 5));
+      const newPalette = getColorPalettes(3); //numberUtil.getRandomInt(0, 5)
       setState({ ...state, palette: newPalette });
     }
   });

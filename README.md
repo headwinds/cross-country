@@ -50,7 +50,7 @@ or
 npm install --save cross-country
 ```
 
-You want to run 2 directories
+You want to open 2 terminals
 
 1. where you build the components
 ```
