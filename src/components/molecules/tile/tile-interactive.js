@@ -17,7 +17,7 @@ const InteractiveTile = ({
   sample = 'shallow-water',
   ...rest
 }) => {
-  const finalCustomStyle = { ...customStyle, width: size, height: size, backgroundColor: fill };
+  const finalCustomStyle = { ...customStyle, width: size, height: size, backgroundColor: model.fill };
 
   const handleTileSelected = () => {
     if (isSelected) {

@@ -23,10 +23,30 @@
   margin-left: 16px;
 }
 
-.sketches {
+.headline {
   font-family: $font-rubik;
   font-weight: 300;
-  font-size: 26px;
-  color: #b89fe6;
+  font-size: 36px;
+  color: #444;
+  margin: 0px;
   margin-left: 26px;
+  padding: 0px;
+}
+
+.subheadline {
+  font-family: $font-rubik;
+  font-weight: 300;
+  font-size: 28px;
+  color: #444;
+  margin: 0px;
+  margin-left: 36px;
+  padding: 0px;
+}
+
+.subheadline {
+  font-family: $font-rubik;
+  font-weight: 300;
+  font-size: 20px;
+  color: #666;
+  margin-left: 46px;
 }

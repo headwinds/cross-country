@@ -1,0 +1,46 @@
+{
+  "nodes": [
+    {
+      "name": "ser1"
+    },
+    {
+      "name": "ser2"
+    },
+    {
+      "name": "ser3"
+    },
+    {
+      "name": "ser4"
+    },
+    {
+      "name": "ser5"
+    }
+  ],
+  "links": [
+    {
+      "source": "ser1",
+      "dest": "ser3",
+      "value": "10"
+    },
+    {
+      "source": "ser1",
+      "dest": "ser5",
+      "value": "10"
+    },
+    {
+      "source": "ser2",
+      "dest": "ser4",
+      "value": "30"
+    },
+    {
+      "source": "ser3",
+      "dest": "ser4",
+      "value": "10"
+    },
+    {
+      "source": "ser3",
+      "dest": "ser5",
+      "value": "10"
+    }
+  ]
+}

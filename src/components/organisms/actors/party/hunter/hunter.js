@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+import { Column, Actor } from '../../../../';
 import styles from './hunter.scss';
 import clsx from 'clsx';
 
-const Hunter = ({ children, customClass = '', customStyle = {}, ...rest }) => (
-  <div className={clsx(styles.template, customClass)} style={customStyle} {...rest}>
-    {children}
-  </div>
-);
+// pre-configured character
+const head = {};
+const body = {};
+const legs = {};
+const config = { head, body, legs, type: 'humanoid' };
+
+const Hunter = ({ customClass = '', model: { customStyle = {} }, ...rest }) => {
+  return <Actor config={config} />;
+};
 
 export default Hunter;

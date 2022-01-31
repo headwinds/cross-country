@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { Column, SubHeadline, ListItem, List, Link } from '../../';
+import { Column, SubHeadline, ListItem, List, Link, Paragraph } from '../../';
 import styles from './related-articles.scss';
 import clsx from 'clsx';
 
 const RelatedArticles = ({ articles = [], text = 'Related Articles', hasBackground = false }) => {
-  const list = articles.map(({ title, url }) => (
-    <ListItem>
-      <Link url={url}>{title}</Link>
+  const list = articles.map(({ title, url, id }) => (
+    <ListItem key={id}>
+      <Paragraph>
+        <Link url={url}>{title}</Link>
+      </Paragraph>
     </ListItem>
   ));
   return (

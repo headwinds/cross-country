@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import styles from './wisp.scss';
 import clsx from 'clsx';
 
-const Wisp = ({ children, customClass = '', customStyle = {}, ...rest }) => (
-  <div className={clsx(styles.template, customClass)} style={customStyle} {...rest}>
+const Wisp = ({ children, customClass = '', ...rest }) => (
+  <div className={clsx(styles.wisp, customClass)} {...rest}>
     {children}
   </div>
 );
