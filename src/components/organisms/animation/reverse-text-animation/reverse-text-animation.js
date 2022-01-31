@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Row, Stagger } from '../../../components';
+import { Row, Stagger } from '../../../';
 
 const defaultReverseConfig = { startTask: 'Learning', endTask: 'Teaching', cursor: '_' };
 
