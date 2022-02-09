@@ -3,21 +3,23 @@ import { Column, Row, Button } from '../../';
 import styles from './tile.scss';
 import clsx from 'clsx';
 
+const defaultModel = {fill: '#eee'};
+
 const InteractiveTile = ({
   isSelected = false,
   setSelected = null,
   isInteractive = false,
   customClass,
   size = 100,
-  fill = '#eee',
-  cornerColor = '#999',
+  cornerColor = '#ddd',
   customStyle = {},
   type,
-  model = {},
+  model = defaultModel,
   sample = 'shallow-water',
   ...rest
 }) => {
-  const finalCustomStyle = { ...customStyle, width: size, height: size, backgroundColor: model.fill };
+  const {fill} = model;
+  const finalCustomStyle = { ...customStyle, width: size, height: size, backgroundColor: fill };
 
   const handleTileSelected = () => {
     if (isSelected) {
