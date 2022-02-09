@@ -4,9 +4,13 @@
 
 [![NPM](https://img.shields.io/npm/v/cross-country.svg)](https://www.npmjs.com/package/cross-country) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-The componennts within this library are designed responsively to be used write articles and create tile-based games; even better combine writing, gaming, with a sample dataset and tell a story.
+Are you a fan of the Sims, Starcraft, Chess, Dumgeons and Dragons and other table top role playing games aka TTRPGs? 
 
-Are you a fan of the Sims, Starcraft, Chess, Dumgeons and Dragons and other table top games? Do you keep a sketch book and draw notes about games, and the general puzzles that make up life? This library is meant to translate your analog sketch book pages into a digital works that can be shared and explored by other like-minded individuals. 
+Do you keep a sketch book and draw notes about games, and the general puzzles that make up life? 
+
+This library is meant to translate your analog sketch book pages into a digital works that can be shared and explored by other like-minded individuals. Ultimately, could we combine both analog and digital into some new mixed AR/VR experience?!
+
+The components within this library are designed responsively to be used write articles and create tile-based games; even better combine writing, gaming, with a sample dataset and tell a story.
 
 By wrapping html, each component is augmented for building accessible experiences across screens. A simple page may look like this:
 
