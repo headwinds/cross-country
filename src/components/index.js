@@ -5,7 +5,6 @@ export { default as Grid } from './atoms/grid';
 export { default as Column } from './atoms/column/column';
 export { default as Checkbox } from './atoms/checkbox/';
 export { default as Radio } from './atoms/radio/';
-export { default as RadioGroup } from './molecules/radiogroup/';
 export { default as Button } from './atoms/button/button-themed';
 export { default as Row } from './atoms/row/row';
 export { default as Image } from './atoms/image/image';
@@ -33,6 +32,7 @@ export { default as Circle } from './atoms/circle';
 export { default as Group } from './atoms/group';
 
 // molecules
+export { default as RadioGroup } from './molecules/radiogroup/';
 export { default as CheckboxLabel } from './molecules/checkboxlabel';
 export { default as Wolf } from './molecules/wolf';
 export { default as Bar } from './molecules/bar';

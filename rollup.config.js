@@ -31,6 +31,7 @@ const PLUGINS = [
   resolve({
     browser: true,
     resolveOnly: [/^(?!react$)/, /^(?!react-dom$)/, /^(?!prop-types)/],
+    extensions: ['.mjs', '.js', '.jsx', '.json'],
   }),
   commonjs(),
   filesize(),

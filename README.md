@@ -56,12 +56,12 @@ npm install --save cross-country
 
 You want to open 2 terminals
 
-1. where you build the components
+Terminal 1. where you build the components
 ```
 yarn start
 ```
 
-2. Storybook
+Terminal 2. where you can play with the components via Storybook
 ```
 yarn storybook
 ```

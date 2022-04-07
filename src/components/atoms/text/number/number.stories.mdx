@@ -1,0 +1,21 @@
+import { Meta, Subtitle } from '@storybook/addon-docs/block'
+import { STORYBOOK } from "../../../../constants";
+import Number from './number';
+import styles from "./number.scss";
+
+<Meta title="menu/atoms/text/number" />
+
+# Template
+
+<Subtitle>displays a number that we can animate and it will hold its position without causing layout shift</Subtitle>
+
+<Canvas>
+  <Story name="number">
+    <Number customStyle={{color: "teal"}}>42</Number>
+  </Story>
+</Canvas>
+
+
+<RelatedArticles articles={[
+    {id: 0, title: 'Tweet about font variant numeric', url: 'https://twitter.com/xdesro/status/1508172487347036169?s=11&t=iqfwsjGjaQi9DWWoVigA0Q'},
+]} />
