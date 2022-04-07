@@ -1,4 +1,4 @@
-import { Meta, Subtitle } from '@storybook/addon-docs/block'
+import { Meta, Subtitle } from '@storybook/addon-docs/blocks';
 import { STORYBOOK } from "../../../../constants";
 import Number from './number';
 import styles from "./number.scss";
@@ -11,7 +11,9 @@ import styles from "./number.scss";
 
 <Canvas>
   <Story name="number">
-    <Number customStyle={{color: "teal"}}>42</Number>
+    <Number customStyle={{color: "teal", textAlign: "right"}}>42.34</Number>
+    <Number customStyle={{color: "gold", textAlign: "right"}}>2142.65</Number>
+    <Number customStyle={{color: "orange", textAlign: "right"}}>98298.92</Number>
   </Story>
 </Canvas>
 
