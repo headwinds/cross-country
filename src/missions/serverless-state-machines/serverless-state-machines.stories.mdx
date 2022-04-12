@@ -1,8 +1,8 @@
-import { Meta, Subtitle } from '@storybook/addon-docs/blocks';
+import { Meta, Subtitle } from '@storybook/addon-docs';
 import Prism from 'prismjs';
 import { SubHeadline, Paragraph, List, ListItem, Link, RelatedArticles }  from '../../../src/components';
 
-<Meta title="menu/missions/too many connections" />
+<Meta title="menu/missions/serverless, databases & state machines" />
 
 # Too Many Connections
 
@@ -78,7 +78,21 @@ It took me too long to find a decent article how to display a code snippet in St
  [get prismjs working in react](https://medium.com/get-it-working/get-prismjs-working-in-react-a6d989e59290). I didn't want a code panel but like I have above where I can talk about and include the code in the same document. 
 
 Lee Robinson tweet
-https://twitter.com/leeerob/status/1430177168307412998?s=11
 
 
-<RelatedArticles />
+
+
+<Paragraph>
+By using XState as our finite state machine, we are able to introduce new states with less worry about the consequences on previous states. That's the longterm payoff. The short term pain is learning a new system of dispatching events and storing data.
+</Paragraph>
+
+<Paragraph>
+ On the surface, XState feels like rigid system and I want to see how it might fit into my rapid prototyping process so that I can still experiment with various states until I discover the right mix. How can XState help me plan and design the experience? 
+</Paragraph>
+
+
+<RelatedArticles articles={[
+  {id: 0, title: 'Global State using XState & React', url: 'https://garden.bradwoods.io/notes/global-state'},
+  {id: 1, title: 'Tweet: want Serverless...issues connecting to your database', url: 'https://twitter.com/leeerob/status/1430177168307412998?s=11'}]} />
+
+

@@ -1,13 +1,16 @@
-import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs/blocks';
-import FrozenLake from "./frozen-lake";
-import { Paragraph, Link, List, ListItem, Bold } from "../../../";
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
+import { SubHeadline, Paragraph, List, ListItem, Bold, Link, RelatedArticles }  from '../../../src/components';
+
 import Prism from 'prismjs';
+import FrozenLake from "./frozen-lake";
 
 <Meta title="menu/micro/games/frozen lake" />
 
 # Frozen Lake
 
-<Subtitle>a mico game about re-inforcement learning</Subtitle>
+<Subtitle>exploring tile based games with a recommendation engine</Subtitle>
+
+<FrozenLake config={{text: "frozen lake", hasBackground: false}} isStandalone={true} />
 
 <Paragraph>
 When I discovered <Link url="https://gym.openai.com/envs/FrozenLake-v0/">Frozen Lake</Link>, a <Link url="https://gym.openai.com/envs/#toy_text">toy text environment</Link> by the open ai team, I knew that I had to try to re-create it as tile-based <Link url='https://twitter.com/LootBndt/status/1406551232861413376'>diorama.</Link> I wanted to turn it into a remote service so that UI could talk to it and get updated on each turn.  
@@ -63,11 +66,35 @@ Ice Tile
 <Paragraph>With a snow tile, the agent has 100% chance of advancing to the next tile that it selected, however, with the ice tile, there is 33% change of slipping off and landing on undesired tile. 
 </Paragraph>
 
-<Canvas>
-  <Story name="frozen lake">
-    <FrozenLake config={{text: "frozen lake", hasBackground: false}} isStandalone={true} />
-  </Story>
-</Canvas>
+<Paragraph>
+I'd like to share a link with my daughter for her access on her iPad. The link would launch an editor and lead her through the process of selecting and laying out buildings in grid. Once the layout is complete, the layout could be exported.  
+</Paragraph>
+
+<Paragraph>
+While playing Roblox with my daughters, I noticed that they spend a lot of time working with clunky 2D UI to select customes and update the look of their characters. This type of play could also be handled completely within a web editor.
+</Paragraph>
+
+<Paragraph>
+Utlimately, it would be amazing to be able to leverage the Roblox API; import this layout; and have it build the world in 3D!
+If not Roblox, could it imported another platform like the Sims?! 
+</Paragraph>
+
+<SubHeadline>Questions</SubHeadline>
+
+<Paragraph>
+While we are building the world, how can a machine best observe each step?  
+</Paragraph>
+
+<Paragraph>
+Is there an open standard to export data to be used in other world building games? 
+</Paragraph>
+
+<SubHeadline>Session Collection</SubHeadline>
+
+<Paragraph>
+As we build the environment, each step is collected so that we can analyze the input and play back each step so the agent can learn from them.
+</Paragraph>
+
 
 <h2>Diarama</h2>
 
@@ -78,8 +105,9 @@ Ice Tile
     {id: 3, title: 'Tweet: Did you know that the majority of whale meat eaten in Iceland is served to tourists?', url: 'https://twitter.com/katie__eden/status/1445357829657931776?s=11'},
     {id: 4, title: "Tweet: Raining outside", url: "https://twitter.com/MonsterIndieDev/status/1448306852438188033"},
     {id: 5, title: "Tweet: Shop UI", url: "https://twitter.com/mikixen_/status/1448121317534814210"},
-    {id: 6, title: "Tweet: Frozen lake"}, url: "https://twitter.com/czepekumaps/status/1450878382552584194"},
+    {id: 6, title: "Tweet: Frozen lake", url: "https://twitter.com/czepekumaps/status/1450878382552584194"},
     {id: 7, title: "Traffic Jam of Robot Couriers", url: "https://boingboing.net/2021/12/08/traffic-jam-of-robot-couriers-caused-by-winter-weather.html"},
     {id: 8, title: "vim adventures", url: "https://vim-adventures.com/"},
+    {id: 9, title: "Tweet: figures that float above the frozen lakes", url: "https://twitter.com/valdevia_art/status/1512121037328158723?s=11&t=xZ9VIhyH6gxuYLprZWFKpg"},
 ]} />
 

@@ -1,11 +1,37 @@
-import { Meta, Subtitle } from '@storybook/addon-docs/blocks';
-import Prism from 'prismjs';
+import { Meta, Subtitle } from '@storybook/addon-docs';
 import { SubHeadline, Paragraph, List, ListItem, Link, RelatedArticles }  from '../../../src/components';
-import DuneGraphStory from '../../../src/components/organisms/trees/faction/dune/dune-graph-story';
+import GiantSoup from '../../micro/apps/giant-soup';
 
-<Meta title="menu/missions/data trees and directed graphs" />
+<Meta title="menu/missions/giant soup" />
 
+# Giant Soup
+
+<Subtitle>A writer's companion</Subtitle>
 <Subtitle>Data Trees & Directed Graphs</Subtitle>
+
+<GiantSoup />
+
+<Paragraph>
+We will use the Giant Soup API to test creating and updating a book by loading and saving the first page for the first chapter.
+</Paragraph>
+
+<Paragraph>
+The API is written in Java. Why Java?! After nearly 20 years of ignoring it I decided to learn it. Frankly, I was a bit intimidated by it; certainly due 
+to years of overhearing other devs complain about it and possibly the belief that I thought it was a dying language. I had spent the last few years focussing
+on Python. But guess what? Java is not dead. I had a momemnt where I realized that twently years of Java development meant a lot of systems that would need maintenance.
+There is a financial opportunity to use Java to write and improve existing software system knowing that many companies are basically stuck on the platform. 
+</Paragraph>
+
+<Paragraph>
+When you see a large enterprise that has hundreds of cronjobs written in Java and the average time to update any file within the enterprise takes at least a week of review
+time, it become obvious that switching to some new language like Rust or Go is nearly impossible. While I'm eager to write micro-services, in many cases it simply
+makes better business sense to maintain and shore up existing systems. 
+</Paragraph>
+
+<Paragraph>
+Java is beautiful. Java is disgusting. 
+</Paragraph>
+
 
 <Paragraph>
 When harvesting D3 scripts from <Link url="https://bl.ocks.org/">Bl.ocks</Link> or <Link url="https://observablehq.com/">Observerable</Link>, you may discover that they do a lot in each function. Any time you see long functions, this is an opportunity to refactor and make it easier to maintain.
@@ -37,6 +63,11 @@ As port each function, you begin to explore the codebase and learn more about th
     {id: 9, url: 'https://www.freecodecamp.org/news/how-to-build-an-end-to-end-conversational-ai-system-using-behavior-trees-658a7122e794/', title: 'How to Build an End-to-End Conversational AI System using Behavior Trees'},
     {id: 10, url: 'https://dev.to/javinpaul/21-binary-tree-coding-questions-for-java-developers-325o', title: '21 Binary Tree Coding Questions for Java Developers'},
     {id: 11, url: 'http://www.webgraphviz.com/', title: 'WebGraphViz'},
+    {id: 12, title: 'Twitch Kings Quest 2', url: 'https://clips.twitch.tv/FastDepressedCrowPraiseIt-LhP2vLS1oKXlv30-'},
+    {id: 13, title: 'literatures greatest opening lines', url: 'https://www.shortlist.com/lists/literatures-greatest-opening-paragraphs'},
+    {id: 14, title: 'Building games and apps entirely through natural language using OpenAI’s code-davinci model', url: 'https://andrewmayneblog.wordpress.com/2022/03/17/building-games-and-apps-entirely-through-natural-language-using-openais-davinci-code-model/'},
+    {id: 15, title: 'The most common words in English', url: 'https://www.englishclub.com/vocabulary/top-1000-words-most-common-in-english.htm'},
+    {id: 16, title: 'Bert 101', url: 'https://huggingface.co/blog/bert-101'},
+    {id: 17, title: 'Recommendation Engines', url: 'https://medium.com/@alfonsollanes/how-do-you-measure-and-evaluate-the-quality-of-recommendation-engines-2e91db5952af'}
     ]
 } />
-

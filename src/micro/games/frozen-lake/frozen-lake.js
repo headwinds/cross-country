@@ -12,7 +12,8 @@ import {
   Stage,
 } from '../../../components';
 import PropTypes from 'prop-types';
-import { useFrozenLakeService } from './use-frozen-lake-service';
+import { frozenLakeMachine } from './frozen-lake-machine';
+import { useMachine } from '@xstate/react';
 
 const mock_map = [
   ['S', 'F', 'F', 'F'],
@@ -49,14 +50,19 @@ const FrozenLake = ({ isStandalone = false, palette = null }) => {
   const [demoModels, setDemoModels] = useState(createDemoModels(0, []));
   const [hasModal, toggleModal] = useState(false);
   const [selectedTile, toggleSelectedTile] = useState(null);
-  const [current, send] = useFrozenLakeService();
+  const [current, send] = useMachine(frozenLakeMachine, {});
 
   const {
     context: { generatedMap },
   } = current;
+
   if (generatedMap) {
     //setDemoModels(16, map);
   }
+
+  useEffect(() => {
+    send('FETCH');
+  }, [send]);
 
   useEffect(() => {
     const {
