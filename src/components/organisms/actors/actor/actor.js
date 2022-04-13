@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Column } from '../../../';
+import { Column, Image, SVG } from '../../../';
 import styles from './actor.scss';
 import clsx from 'clsx';
 
@@ -10,15 +10,15 @@ const defaultConfig = { head, body, legs, type: 'humanoid' };
 
 const renderHumanoid = () => {
   return (
-    <>
-      <div>head</div>
-      <div>body</div>
-      <div>legs</div>
-    </>
+    <div>
+      <div style={{ backgroundColor: 'gold', width: 40, height: 40 }}></div>
+      <div style={{ backgroundColor: 'grey', width: 40, height: 40 }}></div>
+      <div style={{ backgroundColor: 'black', width: 40, height: 20 }}></div>
+    </div>
   );
 };
 
-const Actor = ({ customClass = '', customStyle = {}, config = defaultConfig, ...rest }) => {
+const Actor = ({ position, customClass = '', customStyle = {}, config = defaultConfig, ...rest }) => {
   const columnCustomClass = clsx(styles.actor, customClass);
   const { type } = config;
 
@@ -30,8 +30,12 @@ const Actor = ({ customClass = '', customStyle = {}, config = defaultConfig, ...
     }
   };
 
+  const finalCustomStyle = position
+    ? { ...customStyle, position: 'absolute', top: position.y, left: position.x }
+    : { ...customStyle };
+
   return (
-    <Column customClass={columnCustomClass} customStyle={customStyle} {...rest}>
+    <Column customClass={columnCustomClass} customStyle={finalCustomStyle} {...rest}>
       {renderType()}
     </Column>
   );

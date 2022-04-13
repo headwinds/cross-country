@@ -9,8 +9,8 @@ const body = {};
 const legs = {};
 const config = { head, body, legs, type: 'humanoid' };
 
-const Hunter = ({ customClass = '', model: { customStyle = {} }, ...rest }) => {
-  return <Actor config={config} />;
+const Hunter = ({ position, customClass = '', model: { customStyle = {} }, ...rest }) => {
+  return <Actor config={config} position={position} customClass={customClass} customStyle={customStyle} />;
 };
 
 export default Hunter;

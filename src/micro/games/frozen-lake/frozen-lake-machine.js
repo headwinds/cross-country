@@ -1,4 +1,3 @@
-//import { createMachine, assign } from 'xstate';
 import { createMachine, assign } from 'xstate';
 
 const localUrl = 'http://localhost:5003';
@@ -10,6 +9,11 @@ const url = document.domain.includes('localhost') ? localUrl : remoteUrl;
 const MAP_URL = `${url}/api/environment/frozen-lake/map`;
 const WALKTHROUGH_URL = `${url}/api/environment/frozen-lake/walkthrough`;
 
+const initialContext = {
+  generatedMap: [],
+  isMapLoaded: false,
+};
+
 const fetchMap = () =>
   fetch(`${MAP_URL}`)
     .then(blob => blob.json())
@@ -18,36 +22,53 @@ const fetchMap = () =>
     })
     .catch(console.log);
 
+const positionPlayer = () => {
+  console.log('positionPlayer');
+};
+
 export const frozenLakeMachine = createMachine({
   id: 'frozenLake',
-  initial: 'idle',
-  context: {
-    generatedMap: [],
-  },
+  initial: 'init',
+  context: initialContext,
   states: {
-    idle: {
+    init: {
       on: {
-        FETCH: 'loading',
+        INIT_MAP: 'loadingMap',
       },
     },
-    loading: {
+    positionPlayer: {
+      on: {
+        POSITION_PLAYER: positionPlayer,
+      },
+    },
+    resetting: {
+      // how would we reset the game?
+      // assign({ generatedMap: (context, event) => event.data.generatedMap })
+    },
+    idle: {
+      on: {},
+    },
+    loadingMap: {
       invoke: {
         id: 'getMap',
         src: (context, event) => fetchMap(),
         onDone: {
-          target: 'success',
+          target: 'loadingMapSuccess',
           actions: assign({ generatedMap: (context, event) => event.data.generatedMap }),
         },
         onError: {
-          target: 'failure',
+          target: 'loadingMapFailure',
           actions: assign({ error: (context, event) => event.data }),
         },
       },
     },
-    success: {},
-    failure: {
+    loadingMapSuccess: {
+      // after the map is loaded, we can start the game and position the player
+      on: {},
+    },
+    loadingMapFailure: {
       on: {
-        RETRY: 'loading',
+        RETRY: 'loadingMap',
       },
     },
   },

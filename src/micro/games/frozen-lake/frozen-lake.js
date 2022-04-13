@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { Component, useState, useEffect, createRef } from 'react';
 import {
   Image,
   Column,
@@ -31,6 +31,15 @@ const colors = {
   G: palette[3],
 };
 
+const defaultConfig = {
+  column: { customClass: '', customStyle: {}, rest: {} },
+  text: { customClass: '', customStyle: {}, rest: {} },
+};
+
+const defaultActorModel = {
+  customStyle: { position: 'absolute', zIndex: 0, left: 20, top: 120 },
+};
+
 const createDemoModels = (total, generatedMap) => {
   const range = [...Array(total).keys()];
   let i = -1;
@@ -61,7 +70,8 @@ const FrozenLake = ({ isStandalone = false, palette = null }) => {
   }
 
   useEffect(() => {
-    send('FETCH');
+    // init the map by fetching its data
+    send('INIT_MAP');
   }, [send]);
 
   useEffect(() => {
@@ -86,10 +96,21 @@ const FrozenLake = ({ isStandalone = false, palette = null }) => {
   };
 
   const renderGrid = () => {
+    const renderActors = () => {
+      const actorModels = [defaultActorModel];
+      return actorModels.map(model => <Hunter model={model} key={model?.id ?? 0} position={{ x: 80, y: 120, z: 0 }} />);
+    };
+
     if (demoModels.length > 0) {
       return (
-        <>
-          <Stage actorModels={[{ customStyle: { position: 'absolute', zIndex: 0, left: 20, top: 120 } }]} />
+        <section>
+          <Stage
+            config={defaultConfig}
+            actorModels={[{ customStyle: { position: 'absolute', zIndex: 0, left: 20, top: 120 } }]}
+          >
+            {renderActors()}
+          </Stage>
+
           <TileGrid
             models={demoModels}
             totalInRow={4}
@@ -98,7 +119,7 @@ const FrozenLake = ({ isStandalone = false, palette = null }) => {
             palette={palette}
             tileConfig={{ size: 100, cornerColor: '#999' }}
           />
-        </>
+        </section>
       );
     }
     return null;

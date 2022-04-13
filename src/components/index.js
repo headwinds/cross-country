@@ -19,17 +19,16 @@ export { default as Label } from './atoms/text/label';
 export { default as Link } from './atoms/link';
 export { default as List } from './atoms/list';
 export { default as ListItem } from './atoms/list/list-item/list-item';
+// atoms / svg
+export { default as SVG } from './atoms/svg';
+export { default as Circle } from './atoms/circle';
+export { default as Group } from './atoms/group';
 
 export { default as Table } from './atoms/table';
 export { default as TableBody } from './atoms/table/table-body';
 export { default as TableHead } from './atoms/table/table-head';
 export { default as TableRow } from './atoms/table/table-row';
 export { default as TableData } from './atoms/table/table-data';
-
-// atoms / svg
-export { default as SVG } from './atoms/svg';
-export { default as Circle } from './atoms/circle';
-export { default as Group } from './atoms/group';
 
 // molecules
 export { default as RadioGroup } from './molecules/radiogroup/';
