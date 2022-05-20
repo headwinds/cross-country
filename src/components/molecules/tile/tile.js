@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 // components
 import { Column, Row } from '../../';
 import styles from './tile.scss';
@@ -13,13 +13,13 @@ A tile could be an image, svg, canvas or composed other tiles.
 Color mixing challenge - what is color is grass, dirt, the sky, etc to you?
 */
 
-const Tile = props => {
+const Tile = forwardRef((props, ref) => {
   const { type } = props;
   switch (type) {
     case 'interactive':
     default:
-      return <InteractiveTile {...props} />;
+      return <InteractiveTile {...props} ref={ref} />;
   }
-};
+});
 
 export default Tile;

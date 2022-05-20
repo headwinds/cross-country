@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-//import Sketch from './sketch';
-import { Column, Sketch } from '../../../../components';
+import { Column, Sketch } from '../../';
+import c from '../../../constants';
 import './draw.scss';
+import channel from '../../../services/pusher-service';
 
 const Buffalo = () => {
   return (

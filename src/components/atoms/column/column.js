@@ -15,7 +15,10 @@ const Column = forwardRef(
     },
     ref
   ) => {
-    customStyle['alignItems'] = hasChildrenCentered ? 'center' : 'flex-start';
+    const newCustomStyle = { ...customStyle, alignItems: 'flex-start' };
+    if (hasChildrenCentered) {
+      newCustomStyle.alignItems = 'center';
+    }
 
     return (
       <div
@@ -28,7 +31,7 @@ const Column = forwardRef(
           },
           customClass
         )}
-        style={customStyle}
+        style={newCustomStyle}
         ref={ref}
       >
         {children}

@@ -13,7 +13,6 @@ import {
   ReverseTextAnimation,
 } from '../../components';
 
-import FrozenLake from '../../micro/games/frozen-lake';
 import useDeviceDetection from '../../hooks/useDeviceDetection/';
 import useTheme from '../../hooks/useTheme/';
 
@@ -106,7 +105,7 @@ const Intro = () => {
         </Column>
         <div ref={staggerRowRef}>
           <Row>
-            <FrozenLake />
+            <p>frozen lake here eventually...</p>
           </Row>
         </div>
       </Wallpaper>

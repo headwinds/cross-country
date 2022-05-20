@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
 import { Column, Actor } from '../../../../';
-import styles from './hunter.scss';
+import styles from './warrior.scss';
 import clsx from 'clsx';
 
 // pre-configured character
-const head = { color: 'gold' };
+const head = { color: 'black' };
 const body = { color: 'grey' };
-const legs = { color: 'black' };
+const legs = { color: 'red' };
 const defaultConfig = { head, body, legs, type: 'humanoid' };
-const defaultModel = { id: 0, type: 'hunter', customStyle: {}, config: defaultConfig };
+const defaultModel = { id: 1, type: 'warrior', customStyle: {}, config: defaultConfig };
 
-const Hunter = ({ position, customClass = '', model = defaultModel, tileSize }) => {
+const Warrior = ({ position, customClass = '', model = defaultModel, tileSize }) => {
   const { config, customStyle } = model;
-
   const validConfig = config ?? defaultConfig;
-
   return (
     <Actor
       config={validConfig}
@@ -26,4 +24,4 @@ const Hunter = ({ position, customClass = '', model = defaultModel, tileSize }) 
   );
 };
 
-export default Hunter;
+export default Warrior;

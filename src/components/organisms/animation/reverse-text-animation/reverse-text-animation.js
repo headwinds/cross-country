@@ -20,11 +20,10 @@ const ReverseTextAnimation = ({
     const fromParts = startTask.substr(0, 2);
     let newMlTask = '';
     let newMlTaskIndex = 0;
-    console.log('animate - word ', word);
+
     if (word.includes(fromParts)) {
       newMlTask = `${startTask.substr(0, index)}${cursor}`;
       newMlTaskIndex = index - 1;
-      console.log('animate - index ', index);
     } else {
       newMlTask = `${endTask.substr(0, index)}${cursor}`;
       newMlTaskIndex = index + 1;

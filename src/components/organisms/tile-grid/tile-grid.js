@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 // components
 import { Tile, Column, Row } from '../../';
 import styles from './tile-grid.scss';
 import ColorUtil from '../../../utils/color-util';
+import clsx from 'clsx';
 
-const DefaultTile = Tile;
+//const DefaultTile = Tile;
 
 // The model needs to share the same schema as the ScoutTile
 /*
@@ -51,11 +52,13 @@ const TileGrid = ({
   models = demoModels,
   isDemo = false,
   width = 400,
-  CustomTile = DefaultTile,
   tileConfig = { size: 100, fill: '#67bd67', cornerColor: shadedColor },
   isIsometric = false,
+  customClass = null,
+  tileRefs,
 }) => {
   const [tileSeleted, setSelected] = useState(null);
+  //const tileRefs = useRef([]);
 
   const size = Math.floor(width / totalInRow - gapSize);
   const totalTiles = models.length;
@@ -68,11 +71,12 @@ const TileGrid = ({
 
     return grid;
   };
-  //const drainModels = [...models];
+
   const initialModelGrid = createGrid();
 
   const renderGrid = grid => {
-    let count = 0;
+    let count = -1;
+
     const createColumns = (columns, x) => {
       return columns.map((cell, y) => {
         const tileModel = grid[x][y];
@@ -85,13 +89,15 @@ const TileGrid = ({
 
         const isSelected = tileSeleted ? tileModel.id === tileSeleted.id : false;
         return (
-          <CustomTile
+          <Tile
             key={keyId}
             model={tileModel}
             {...tileConfig}
             customStyle={{ margin: gapSize }}
             setSelected={setSelected}
             isSelected={isSelected}
+            ref={ref => (tileRefs.current[count] = ref)}
+            id={`tile${tileModel.id}`}
           />
         );
       });
@@ -100,7 +106,7 @@ const TileGrid = ({
     const createRow = (columns, x) => {
       const row = createColumns(columns, x);
       return (
-        <Row style={styles.row} key={x}>
+        <Row style={styles.tileRow} key={x}>
           {row}
         </Row>
       );
@@ -111,7 +117,10 @@ const TileGrid = ({
 
   const tiles = renderGrid(initialModelGrid);
 
-  return <Column customClass={isIsometric ? styles.tileGridIso : styles.tileGrid}>{tiles}</Column>;
+  const tileGridClass = isIsometric ? styles.tileGridIso : styles.tileGrid;
+  const columnCustomClass = clsx(tileGridClass, customClass);
+
+  return <Column customClass={columnCustomClass}>{tiles}</Column>;
 };
 
 export default TileGrid;

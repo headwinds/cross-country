@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { Column, Actor } from '../../../../';
-import styles from './hunter.scss';
+import styles from './troll.scss';
 import clsx from 'clsx';
 
 // pre-configured character
-const head = { color: 'gold' };
-const body = { color: 'grey' };
-const legs = { color: 'black' };
+const head = { color: 'white' };
+const body = { color: 'white' };
+const legs = { color: 'white' };
 const defaultConfig = { head, body, legs, type: 'humanoid' };
-const defaultModel = { id: 0, type: 'hunter', customStyle: {}, config: defaultConfig };
+const defaultModel = { id: 2, type: 'troll', customStyle: {}, config: defaultConfig };
 
-const Hunter = ({ position, customClass = '', model = defaultModel, tileSize }) => {
+const Troll = ({ position, customClass = '', model = defaultModel, tileSize }) => {
   const { config, customStyle } = model;
 
   const validConfig = config ?? defaultConfig;
@@ -26,4 +26,4 @@ const Hunter = ({ position, customClass = '', model = defaultModel, tileSize }) 
   );
 };
 
-export default Hunter;
+export default Troll;

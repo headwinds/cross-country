@@ -78,6 +78,10 @@ yarn start
 
 Open your browser to http://localhost:3000/
 
+In order to use React Hooks, you will also have to [link react](https://stackoverflow.com/a/58612244/581803) or you will get a rule of hooks error.
+
+
+
 ## Usage
 
 ```jsx
@@ -124,7 +128,6 @@ your-password
 now-your-email
 npm publish
 ```
-
 ## Inspiration
 * [create-react-library](https://www.npmjs.com/package/create-react-library)
 * [mobile-first media queries](https://medium.com/codeartisan/breakpoints-and-media-queries-in-scss-46e8f551e2f2)
@@ -135,7 +138,7 @@ npm publish
 * [tile corner reticle](https://codepen.io/NyX/pen/JYOzWW)
 * [flexboxpatterns](https://www.flexboxpatterns.com/)
 * [nextra](https://nextra.vercel.app/)
-
+* [XState & React](https://xstate.js.org/docs/packages/xstate-react/#quick-start)
 
 ## Fullstack
 * [Flask & React](https://blog.appseed.us/flask-react-full-stack-seed-projects/)

@@ -7,4 +7,9 @@
 // https://webdesign.tutsplus.com/tutorials/create-an-isometric-layout-with-3d-transforms--cms-27134
 .tileGridIso {
   transform: rotateX(64deg) rotateY(0deg) rotateZ(-45deg);
+  width: 500px;
+}
+
+.tileRow {
+  padding: 0px;
 }

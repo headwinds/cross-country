@@ -11,7 +11,12 @@ import styles from "./stage.scss";
 <Subtitle>All the world's a stage, and all the men and women merely players</Subtitle>
 
 <Canvas>
-  <Story name="stage">
-     <Stage actors={[<Hunter />]} />
-  </Story>
+     <Stage 
+          name='stage'
+          config={{
+            column: { customStyle: { position: 'relative', height: 200, width: 200, backgroundColor: '#eee' } },
+          }}
+        >
+          <Hunter model={{ customStyle: { position: 'absolute', zIndex: 0, left: 20, top: 100 } }} />
+        </Stage>
 </Canvas>

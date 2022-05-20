@@ -8,8 +8,6 @@ import clsx from 'clsx';
 const Registration = ({ config: { text, hasBackground } }) => {
   const [state, send] = useMachine(registrationMachine);
 
-  console.log('Registration state: ', state);
-
   const handleFormSubmit = () => {};
 
   return (

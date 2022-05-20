@@ -4,13 +4,18 @@ import styles from './related-articles.scss';
 import clsx from 'clsx';
 
 const RelatedArticles = ({ articles = [], text = 'Related Articles', hasBackground = false }) => {
-  const list = articles.map(({ title, url, id }) => (
-    <ListItem key={id}>
-      <Paragraph>
-        <Link url={url}>{title}</Link>
-      </Paragraph>
-    </ListItem>
-  ));
+  const list = articles.map(({ title, url, id }) => {
+    const Child = () => <span>{title}</span>;
+    return (
+      <ListItem key={id}>
+        <Paragraph>
+          <Link url={url}>
+            <Child />
+          </Link>
+        </Paragraph>
+      </ListItem>
+    );
+  });
   return (
     <Column hasBackground={hasBackground}>
       <SubHeadline text={text} />
