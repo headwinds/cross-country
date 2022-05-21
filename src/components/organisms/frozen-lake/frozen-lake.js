@@ -11,7 +11,7 @@ import styles from './frozen-lake.scss';
 const selectGeneratedMap = state => state.context.generatedMap;
 const selectCurrentParagraph = state => state.context.currentParagraph;
 const selectContext = state => state.context;
-const selectTileModels = state => state.context.tileModelCollection;
+//const selectTileModels = state => state.context.tileModelCollection;
 const selectActorModels = state => state.context.actorModels;
 
 const FrozenLake = ({ isStandalone = false, palette = null }) => {
@@ -21,6 +21,8 @@ const FrozenLake = ({ isStandalone = false, palette = null }) => {
   const generatedMap = useSelector(service, selectGeneratedMap);
   const frozenLakeRef = useRef(false);
 
+  const tileModelCollection = [{ id: 0, letter: 'C', fill: '#c5e0dc' }];
+
   //const tileModelCollection = useSelector(service, selectTileModels);
   const actorModels = useSelector(service, selectActorModels);
 
@@ -28,7 +30,7 @@ const FrozenLake = ({ isStandalone = false, palette = null }) => {
   const context = useSelector(service, selectContext);
   const tileRefs = useRef([]); // not reliable! We only get the last ref for some reason?!
 
-  const { hasModal, isIsometric, tileSize, isMapGenerated = false, tileModelCollection } = context;
+  const { hasModal, isIsometric, tileSize, isMapGenerated = false } = context;
 
   const stageConfig = { column: { customClass: styles.frozenLakeColumn } };
 

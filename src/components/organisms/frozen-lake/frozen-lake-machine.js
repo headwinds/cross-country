@@ -56,24 +56,25 @@ const createTileModels = (total, generatedMap) => {
   });
   */
 
-  let i = -1;
-  let j = -1;
+  //let i = -1;
+  //let j = -1;
   const tileModels = range.reduce((acc, index) => {
-
+    /*
     if (index % 4 === 0) {
       i++;
       j = -1;
     }
     j++;
     const letter = mapWithStartPosition[i][j];
+    */
+    const letter = 'C';
 
     return [...acc, { id: index, letter, fill: colors[letter] }];
-
   }, []);
 
   console.log('createTileModels: tileModels: ', tileModels);
 
-  return tileModels;
+  return mockTileModelCollection;
 };
 
 const updateTileModelsAfterMapGenerated = (context, event) => {
@@ -81,7 +82,7 @@ const updateTileModelsAfterMapGenerated = (context, event) => {
   const total = (context.generatedMap.length + totalCampRow) * 4;
 
   const updatedTileModels = createTileModels(total, event.generatedMap);
-  console.log('updateTileModelsAfterMapGenerated here context: ', updatedTileModels);
+  console.log('updateTileModelsAfterMapGenerated here updatedTileModels: ', updatedTileModels);
 
   return updatedTileModels;
 };
