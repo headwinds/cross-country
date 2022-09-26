@@ -80,6 +80,15 @@ Open your browser to http://localhost:3000/
 
 In order to use React Hooks, you will also have to [link react](https://stackoverflow.com/a/58612244/581803) or you will get a rule of hooks error.
 
+If we see: Error: Invalid hook call. Hooks can only be called inside of the body
+
+run:
+
+```
+npm link example/node_modules/react
+```
+
+You may need to stop and restart both library and example folders.
 
 
 ## Usage

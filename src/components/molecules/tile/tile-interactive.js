@@ -22,7 +22,7 @@ const InteractiveTile = forwardRef(
     },
     ref
   ) => {
-    const { fill } = model;
+    const { fill, id } = model;
     const finalCustomStyle = { ...customStyle, width: size, height: size, backgroundColor: fill };
 
     const handleTileSelected = () => {
@@ -37,9 +37,9 @@ const InteractiveTile = forwardRef(
         customClass={clsx(styles.tile, styles.corners, { [styles.in]: !isSelected, [styles.out]: isSelected })}
         hasChildrenCentered
         customStyle={{ ...finalCustomStyle, backgroundColor: 'tranparent', borderColor: fill }}
-        {...rest}
         onClick={handleTileSelected}
         ref={ref}
+        {...rest}
       >
         <Column
           customClass={clsx(styles.innerTile, styles[sample])}

@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 import { Column, Image, SVG } from '../../../';
 import styles from './actor.scss';
 import clsx from 'clsx';
+import ActorModel from '../../../../models/ActorModel';
 
 const head = { color: 'purple' };
 const body = { color: 'green' };
 const legs = { color: 'cornflowerblue' };
 const defaultConfig = { head, body, legs, type: 'humanoid', tileSize: 30 };
+
+// should be taken from windsong!
+const actorModel = new ActorModel({ name: 'Actor' }).toObject();
+//{ health: 100, speed: 1, attack: 1, defense: 1, isDead: false };
 
 // the actor should be relative to the tile size so that they're larger than the tile
 
@@ -25,7 +30,7 @@ const renderHumanoid = (config, tileSize) => {
   );
 };
 
-const Actor = ({ position, customClass = '', customStyle = {}, config = defaultConfig, tileSize }) => {
+const Actor = ({ position, customClass = '', customStyle = {}, config = defaultConfig, tileSize, ...rest }) => {
   const columnCustomClass = clsx(styles.actor, customClass);
   const { type } = config;
 
@@ -46,6 +51,7 @@ const Actor = ({ position, customClass = '', customStyle = {}, config = defaultC
       customClass={styles.actor}
       customStyle={{ backgroundColor: 'red', opacity: 0.2, width: tileSize, height: tileSize, alignItems: 'center' }}
       name="actor tile"
+      {...rest}
     >
       <Column customClass={columnCustomClass} customStyle={finalCustomStyle} name="actor">
         {renderType()}

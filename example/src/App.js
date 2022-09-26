@@ -1,5 +1,13 @@
+import { inspect } from '@xstate/inspect';
+
 import React from 'react';
-import { Garden, Paragraph, Column, FrozenLake, Hunter, Warrior, Stage } from 'cross-country';
+import { Garden, Paragraph, Column, CaveTroll, Hunter, Warrior, Stage } from 'cross-country';
+
+inspect({
+  // options
+  // url: 'https://stately.ai/viz?inspect', // (default)
+  iframe: false, // open in new window
+});
 
 const App = () => {
   const gardenConfig = {
@@ -12,8 +20,8 @@ const App = () => {
     <Column>
       <Garden config={gardenConfig} />
       <Column customStyle={{ width: '100%' }}>
-        <Paragraph>Frozen Lake</Paragraph>
-        <FrozenLake />
+        <Paragraph>Cave Troll</Paragraph>
+        <CaveTroll />
       </Column>
       <Column>
         <Paragraph>Hunters</Paragraph>

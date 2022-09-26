@@ -66,9 +66,11 @@ const TileGrid = ({
   const createGrid = () => {
     const grid = [];
     // credit https://stackoverflow.com/questions/22464605/convert-a-1d-array-to-2d-array
-
-    while (models.length) grid.push(models.splice(0, totalInRow));
-
+    // but be careful here since splice is destructive - make sure you don't destroy the original array!!!
+    // important lesson for xstate that you don't mutate the original array!!!
+    const cloneModels = [...models];
+    // vs const cloneModels = models;
+    while (cloneModels.length) grid.push(cloneModels.splice(0, totalInRow));
     return grid;
   };
 
