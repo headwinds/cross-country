@@ -1,21 +1,36 @@
+const path = require('path');
+
 module.exports = {
-  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: ['../src/**/*.stories.@(ts|js|mdx)'],
   addons: [
+    '@storybook/addon-docs',
+    '@storybook/addon-a11y',
+    'storybook-xstate-addon/preset',
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
-    'storybook-addon-sass-postcss',
-    {
-      name: 'storybook-addon-sass-postcss',
-      options: {
-        rule: {
-          test: /\.(scss|sass)$/i,
-        },
-      },
-    },
   ],
-  framework: '@storybook/react',
-  core: {
-    builder: 'webpack5',
+  webpackFinal: async (config, { configType }) => {
+    config.module.rules.push({
+      test: /\.scss$/,
+      loaders: [
+        require.resolve('style-loader'),
+        {
+          loader: require.resolve('css-loader'),
+          options: {
+            importLoaders: 1,
+            modules: {
+              mode: 'local',
+              localIdentName: '[path][name]__[local]--[hash:base64:5]',
+              // localIdentName: '[sha1:hash:hex:4]',
+              context: path.resolve(__dirname, 'src'),
+              hashPrefix: 'my-custom-hash',
+            },
+          },
+        },
+        require.resolve('sass-loader'),
+      ],
+    });
+
+    return config;
   },
 };

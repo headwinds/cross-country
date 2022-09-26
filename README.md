@@ -44,6 +44,19 @@ Tech
 Progress Complete 
 - 20% 
 
+Before installing, create a cross-country-config-private.js file in your root directory by copying the cross-country-config.js and renaming it.
+
+```
+export const privateConfig = {
+  UNSPLASH_API_KEY: 'YOUR-UNSPLASH-KEY',
+};
+```
+
+
+```
+yarn 
+```
+
 ## Libs 
 
 I have reviewed every library in cross-country and weighed its valued. 
