@@ -44,6 +44,13 @@ Tech
 Progress Complete 
 - 20% 
 
+## Libs 
+
+I have reviewed every library in cross-country and weighed its valued. 
+
+- [npmgraph of cross-country](https://npmgraph.js.org/?q=cross-country)
+- [bundlephobia of cross-country](https://bundlephobia.com/package/cross-country@1.1.45)
+
 ## Install
 
 ```

@@ -1,7 +1,7 @@
 import { inspect } from '@xstate/inspect';
 
 import React from 'react';
-import { Garden, Headline, SubHeadline, Paragraph, Column, CaveTroll } from 'cross-country';
+import { Garden, Headline, Column, CaveTroll } from 'cross-country';
 
 inspect({
   // options

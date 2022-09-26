@@ -8,7 +8,6 @@ $shallow-water: lightblue;
   justify-content: center;
   align-items: center;
   padding: 0px;
-  //border: 1px dashed rgba($shallow-water, 0.2);
 }
 
 .tileModal {
@@ -52,9 +51,6 @@ $shallow-water: lightblue;
   background-color: cyan;
 }
 
-// corners
-// credit: https://codepen.io/NyX/pen/JYOzWW
-// settings
 $line-color: $shallow-water;
 $line-size: 7;
 
@@ -71,7 +67,6 @@ html { box-sizing: border-box; }
   
   transition-duration: 0.3s;
   
-  // arrows
   &:before,
   &:after {
     content: '';
@@ -84,18 +79,16 @@ html { box-sizing: border-box; }
     border-color: inherit;
     border-style: solid;
     
-    // will-change: transform, opacity;
+
     transition-duration: 0.3s;
     transform: translateZ(0);
   }
   
-  // top corners
   &.top {
     &:before { border-width: $border-width 0 0 $border-width; }
     &:after { border-width: $border-width $border-width 0 0; }
   }
   
-  // bottom corners
   &.bottom {
     &:before { border-width: 0 0 $border-width $border-width; }
     &:after { border-width: 0 $border-width $border-width 0; }

@@ -3,8 +3,10 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 import filesize from 'rollup-plugin-filesize';
-import autoprefixer from 'autoprefixer';
-const svgr = require('@svgr/rollup').default;
+//import autoprefixer from 'autoprefixer';
+import svgr from '@svgr/rollup';
+
+//const svgr = require('@svgr/core').default;
 
 import pkg from './package.json';
 

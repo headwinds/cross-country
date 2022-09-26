@@ -8,19 +8,17 @@
   flex-wrap: wrap;
   width: 100%;
 
-  // 576px window width and more
+
   @include sm {
-    //
+
   }
   // 992px window width and more
   @include lg {
     margin-left: auto;
     margin-right: auto;
-    //max-width: 1100px;
   }
   // 1400px window width and more
   @include rwd(1400) {
-    //margin-bottom: 20px; careful this affected tile!!!
-    //margin-top: 20px;
+
   }
 }
