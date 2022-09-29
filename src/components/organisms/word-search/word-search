@@ -1,0 +1,8 @@
+/*
+.get("https://wordsapiv1.p.mashape.com/words?letterPattern=^a.{4}$")
+.header("X-Mashape-Key", "<required>")
+.header("Accept", "application/json")
+.end(function (result) {
+  console.log(result.status, result.headers, result.body);
+});
+*/

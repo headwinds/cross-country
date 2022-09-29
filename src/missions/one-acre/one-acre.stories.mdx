@@ -1,7 +1,5 @@
-import { Meta, Subtitle } from '@storybook/addon-docs/blocks';
+import { Meta, Subtitle } from '@storybook/addon-docs';
 import { SubHeadline, Paragraph, List, ListItem, Link, RelatedArticles }  from '../../../src/components';
-
-import FrozeLake from '../../../src/micro/games/frozen-lake';
 
 <Meta title="menu/missions/one acre" />
 
@@ -9,14 +7,44 @@ import FrozeLake from '../../../src/micro/games/frozen-lake';
 
 <Subtitle>The Dream to Work a One Acre Farm for a Day</Subtitle>
 
-<SubHeadline>Frozen Lake</SubHeadline>
+<Paragraph>Can I convince my daughter that tile games are anywhere near as fun as Roblox?!</Paragraph>
 
-<FrozeLake isStandAlone={true} />
+<RelatedArticles articles={[{id: 0, title: 'Investigation: How Roblox Is Exploiting Young Game Developers', url: 'https://www.youtube.com/watch?v=_gXlauRB1EQ'}]} />
+
+<Paragraph>
+Inspired by an epside of Lost when Desmond mentions the <Link url="https://lostpedia.fandom.com/wiki/Snowglobe">Snowglobe</Link> and Brad hypes <Link url="https://mythic-quest.fandom.com/wiki/Battle_Royale_mode">Battle Royale Mode</Link> on Mythic Quest, I wanted to build a small, diorama-type experiment which features an Area of Affect where a circle will the affect tiles hilighting those within the circle and darkening those beyond. 
+</Paragraph>
+<Paragraph>
+As the cirlce shrinks, the agents will need to move closer to the center and come in closer contact. Each agent will be able to cast an AOE spell that could push (a nod to <Link url="https://www.polygon.com/2018/2/26/17053646/into-the-breach-preview-impressions-difficulty-ftl-roguelike-pc">Into the Breach</Link>) the other agent outside of the circle and perish.
+</Paragraph>
+
+<List>
+    <ListItem>Polar bear</ListItem>
+    <ListItem>Wild boar fresh kill</ListItem>
+    <ListItem>Hairspray fireball</ListItem>
+    <ListItem>Cave</ListItem>
+    <ListItem>Time</ListItem>
+    <ListItem>Farmer vs hunter vs shaman</ListItem>
+    <ListItem>Sweat lodge</ListItem>
+</List>
+
 
 <RelatedArticles articles={[
     {id: 0, title: 'Tweet', url: 'https://twitter.com/kynseed/status/1429098760232177667?s=11'},
     {id: 1, title: 'Record Carp Killed with Bow', url: 'https://ftw.usatoday.com/2021/08/bow-fisherman-shatters-carp-record-a-straight-up-monster'},
     {id: 2, title: 'Crafter', url: 'https://danijar.com/project/crafter'},
-  
+    {id: 3, title: 'how I make my tiny home work', url: 'https://www.insider.com/how-i-make-my-tiny-home-work-for-me-photos-2022-2'},
+    {id: 4, title: 'How to Make a One Acre Farm', url: 'https://www.theguardian.com/science/2020/aug/01/how-to-make-a-one-acre-farm'},
+    {id: 5, title: 'Pets included', url: 'https://twitter.com/skynews/status/1497280830045044741?s=11'},
+    {id: 6, title: 'vanilla game', url: 'https://vanillagame.carrd.co/'},
+    {id: 7, title: 'what people do', url: 'https://twitter.com/mnvrsngh/status/1510979014676172815'},
+    {id: 8, title: 'lost on fandom', url: 'https://lostpedia.fandom.com//'},
+    {id: 9, title: 'kingdom of loathing', url: 'https://www.kingdomofloathing.com/'},
+    {id: 10, title: 'tweet by spacecaterus', url: 'https://twitter.com/spacecaterus/status/1425336895152787459?s=11/'},
+    {id: 11, titel: 'gregborenstein.com', url: 'https://gregborenstein.com/'},
+    {id: 12, titel: 'gr3gjsmith.net', url: 'http://gr3gjsmith.net'},
+    {id: 13, titel: 'HOLO', url: 'https://www.holo.mg/'},
+    {id: 14, title: 'huggingface: Critical Role Dataset', url: 'https://huggingface.co/datasets/crd3'},
+    {id: 15, title: 'a beginners guide to powered by apocalypse games', url: 'https://www.forbes.com/sites/robwieland/2020/12/29/a-beginners-guide-to-powered-by-the-apocalypse-games/?sh=5216a16b293c'},
+    {id: 16, title: 'tweet: bee keeping', url: 'https://twitter.com/apico_game/status/1520100607931011072?s=20&t=okw4CTdtAfdydpGkm-FYgQ'},
 ]} />
-
