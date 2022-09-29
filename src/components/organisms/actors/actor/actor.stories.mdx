@@ -10,7 +10,12 @@ import styles from "./actor.scss";
 <Subtitle>a base actor to give all other actors the same elements like a name or health bars</Subtitle>
 
 <Canvas>
-  <Story name="actor">
+  <Story name="basic actor">
     <Actor />
+  </Story>
+  <Story name="positioned actors">
+    <Actor position={{x: 200, y: 200, z: 0}} />
+    <Actor position={{x: 100, y: 100, z: 0}}  />
+    <Actor position={{x: 300, y: 0, z: 0}}  />
   </Story>
 </Canvas>
