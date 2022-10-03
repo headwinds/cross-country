@@ -55,10 +55,10 @@ export { default as Hunter } from './organisms/actors/party/hunter';
 export { default as Stage } from './organisms/stage';
 export { default as ReverseTextAnimation } from './organisms/animation/reverse-text-animation';
 
-export { default as Warrior } from './organisms/actors';
+export { default as Warrior } from './organisms/actors/party/warrior';
 //export { default as Troll } from './organisms/actors/monsters/troll';
-export { default as Wisp } from './organisms/actors';
+export { default as Wisp } from './organisms/actors/wisp';
 
 export { default as Registration } from './organisms/registration';
-//export { default as FrozenLake } from './organisms/frozen-lake';
+export { default as FrozenLake } from './organisms/frozen-lake';
 //export { default as CaveTroll } from './organisms/actors/monsters/troll/cave-troll';

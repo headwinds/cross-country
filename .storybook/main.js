@@ -14,7 +14,7 @@ module.exports = {
             importLoaders: 1,
             modules: {
               mode: 'local',
-              localIdentName: '[path][name]__[local]--[hash:base64:5]',
+              localIdentName: '[local]--[hash:base64:5]',
               // localIdentName: '[sha1:hash:hex:4]',
               context: path.resolve(__dirname, 'src'),
               hashPrefix: 'my-custom-hash',

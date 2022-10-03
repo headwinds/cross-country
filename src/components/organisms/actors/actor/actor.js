@@ -59,3 +59,5 @@ const Actor = ({ position, customClass = '', customStyle = {}, config = defaultC
     </Column>
   );
 };
+
+export default Actor;

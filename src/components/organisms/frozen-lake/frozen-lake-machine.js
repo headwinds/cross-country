@@ -3,7 +3,7 @@ import PusherService from '../../../services/pusher-service';
 import c from '../../../constants/';
 import book from './frozen-lake-book';
 
-const localUrl = 'http://localhost:5000';
+const localUrl = 'http://0.0.0.0:5000';
 const remoteUrl = 'https://scout.vercel.app';
 
 const url = document.domain.includes('localhost') ? localUrl : remoteUrl;
@@ -137,11 +137,13 @@ const initialContext = {
   scoutMessage: '',
 };
 
+const fetchConfig = { mode: 'no-cors' };
+
 // this now going to be a request
 // the result will arrive via the channel!
 const fetchMap = () => {
   console.log('Cross Country: frozen-lake-machine fetchMap called...');
-  fetch(`${MAP_URL}`)
+  fetch(`${MAP_URL}`, fetchConfig)
     .then(response => {
       console.log('Cross Country: frozen-lake-machine fetchMap ...heard response: ', response);
       if (response.ok) {
@@ -161,7 +163,7 @@ const fetchMap = () => {
 
 const fetchMapWalk = () => {
   console.log('Cross Country: frozen-lake-machine fetchMapWalk called...');
-  fetch(`${MAP_WALK_URL}`)
+  fetch(`${MAP_WALK_URL}`, fetchConfig)
     .then(response => {
       if (response.ok) {
         return response.json();

@@ -12,9 +12,8 @@ import {
   Headline,
   Paragraph,
   Wolf,
-} from './components';
-import useDeviceDetection from './hooks/useDeviceDetection/';
-import useTheme from './hooks/useTheme/';
+} from '../../';
+import useDeviceDetection from '../../../hooks/useDeviceDetection/';
 
 /*
 1. Login or Sign

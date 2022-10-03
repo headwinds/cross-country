@@ -14,7 +14,7 @@ const selectContext = state => state.context;
 //const selectTileModels = state => state.context.tileModelCollection;
 const selectActorModels = state => state.context.actorModels;
 
-const FrozenLake = ({ isStandalone = false, palette = null }) => {
+const FrozenLake = ({ isFullscreen = false, palette = null }) => {
   const service = useInterpret(frozenLakeMachine, {
     devTools: true,
   });
@@ -22,8 +22,6 @@ const FrozenLake = ({ isStandalone = false, palette = null }) => {
   const frozenLakeRef = useRef(false);
 
   const tileModelCollection = [{ id: 0, letter: 'C', fill: '#c5e0dc' }];
-
-  //const tileModelCollection = useSelector(service, selectTileModels);
   const actorModels = useSelector(service, selectActorModels);
 
   const currentParagraph = useSelector(service, selectCurrentParagraph);
@@ -103,7 +101,7 @@ const FrozenLake = ({ isStandalone = false, palette = null }) => {
     return null;
   };
 
-  if (isStandalone) {
+  if (isFullscreen) {
     return (
       <Wrapper>
         <Column hasChildrenCentered customStyle={{ margin: 8 }}>
@@ -125,7 +123,7 @@ const FrozenLake = ({ isStandalone = false, palette = null }) => {
 };
 
 FrozenLake.propTypes = {
-  isStandalone: PropTypes.bool,
+  isFullscreen: PropTypes.bool,
   palette: PropTypes.object,
 };
 

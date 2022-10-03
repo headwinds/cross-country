@@ -44,6 +44,10 @@ Tech
 Progress Complete 
 - 20% 
 
+Note to self: this is library can only be built with Node 12 - I need to sort out upgrading to Dart Sass with Webpack 5 and Storybook  but if you plan to use it any other projects that uses the latest version of node, it should be fine to import.
+
+[n 14.20.1](https://www.npmjs.com/package/n)
+
 ## Getting Started 
 
 Before installing, create a cross-country-config-private.js file in your root directory by copying the cross-country-config.js and renaming it.

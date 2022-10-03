@@ -83,7 +83,8 @@ const TileGrid = ({
         const keyId = `${x}${y}`;
 
         const isSelected = tileSeleted ? tileModel.id === tileSeleted.id : false;
-        return (
+
+        return tileRefs && tileRefs.length > 0 ? (
           <Tile
             key={keyId}
             model={tileModel}
@@ -94,7 +95,7 @@ const TileGrid = ({
             ref={ref => (tileRefs.current[count] = ref)}
             id={`tile${tileModel.id}`}
           />
-        );
+        ) : null;
       });
     };
     const createRow = (columns, x) => {
