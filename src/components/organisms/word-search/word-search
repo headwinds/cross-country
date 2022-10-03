@@ -6,3 +6,18 @@
   console.log(result.status, result.headers, result.body);
 });
 */
+
+import React, { Component } from 'react';
+import { Image, Column, SubHeadline } from '../../';
+import styles from './word-search.scss';
+import clsx from 'clsx';
+
+const WordSearch = ({ config: { text, hasBackground } }) => {
+  return (
+    <Column hasBackground={hasBackground}>
+      <SubHeadline text={text} />
+    </Column>
+  );
+};
+
+export default WordSearch;
