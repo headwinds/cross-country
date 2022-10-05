@@ -195,7 +195,7 @@ const Drone = ({ config: { id, tranformedState = 'compact' } }) => {
     }
   }, [dataset]);
 
-  return <g ref={droneRef} />;
+  return <Group ref={droneRef} />;
 };
 
 export default Drone;

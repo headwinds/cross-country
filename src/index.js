@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import Intro from './pages/intro';
 
 export * from './components';
 export * from './utils';
 
-const CrossCountry = () => <Intro name="intro" />;
+const CrossCountry = () => <div>intro</div>;
 
 export default CrossCountry;
