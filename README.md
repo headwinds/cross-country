@@ -10,7 +10,7 @@ Do you keep a sketch book and draw notes about games, and the general puzzles th
 
 This library is meant to translate your analog sketch book pages into a digital works that can be shared and explored by other like-minded individuals. Ultimately, could we combine both analog and digital into some new mixed AR/VR experience?!
 
-The components within this library are designed responsively to be used write articles and create tile-based games; even better combine writing, gaming, with a sample dataset and tell a story.
+The components within this library are designed responsively to be used write articles and create tile-based games; even better combine writing, gaming, with a sample dataset and tell a story. 
 
 By wrapping html, each component is augmented for building accessible experiences across screens. A simple page may look like this:
 
@@ -44,6 +44,20 @@ Tech
 Progress Complete 
 - 20% 
 
+Note to self: this is library can only be built with Node 12 - I need to sort out upgrading to Dart Sass with Webpack 5 and Storybook  but if you plan to use it any other projects that uses the latest version of node, it should be fine to import.
+
+[n 14.20.1](https://www.npmjs.com/package/n)
+
+## Getting Started 
+
+Before installing, create a cross-country-config-private.js file in your root directory by copying the cross-country-config.js and renaming it.
+
+```
+export const privateConfig = {
+  UNSPLASH_API_KEY: 'YOUR-UNSPLASH-KEY',
+};
+```
+
 ## Install
 
 ```
@@ -56,12 +70,12 @@ npm install --save cross-country
 
 You want to open 2 terminals
 
-1. where you build the components
+Terminal 1. where you build the components
 ```
 yarn start
 ```
 
-2. Storybook
+Terminal 2. Storybook
 ```
 yarn storybook
 ```
@@ -77,6 +91,18 @@ yarn start
 ```
 
 Open your browser to http://localhost:3000/
+
+In order to use React Hooks, you will also have to [link react](https://stackoverflow.com/a/58612244/581803) or you will get a rule of hooks error.
+
+If we see: Error: Invalid hook call. Hooks can only be called inside of the body
+
+run:
+
+```
+npm link example/node_modules/react
+```
+
+You may need to stop and restart both library and example folders.
 
 ## Usage
 
@@ -135,6 +161,7 @@ npm publish
 * [tile corner reticle](https://codepen.io/NyX/pen/JYOzWW)
 * [flexboxpatterns](https://www.flexboxpatterns.com/)
 * [nextra](https://nextra.vercel.app/)
+* [XState & React](https://xstate.js.org/docs/packages/xstate-react/#quick-start)
 
 
 ## Fullstack
