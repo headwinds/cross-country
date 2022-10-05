@@ -1,0 +1,42 @@
+import { Meta, Subtitle } from '@storybook/addon-docs/blocks';
+import Prism from 'prismjs';
+import { SubHeadline, Paragraph, List, ListItem, Link, RelatedArticles }  from '../../../src/components';
+import DuneGraphStory from '../../../src/components/organisms/trees/faction/dune/dune-graph-story';
+
+<Meta title="menu/missions/data trees and directed graphs" />
+
+<Subtitle>Data Trees & Directed Graphs</Subtitle>
+
+<Paragraph>
+When harvesting D3 scripts from <Link url="https://bl.ocks.org/">Bl.ocks</Link> or <Link url="https://observablehq.com/">Observerable</Link>, you may discover that they do a lot in each function. Any time you see long functions, this is an opportunity to refactor and make it easier to maintain.
+These long functions are basically pipelines that assemble the final visualization. 
+</Paragraph>
+
+<Paragraph>
+Each step in the pipeline can (and should be) its own function. So when you copy and paste in a long function, take this opportunity to break it up and learn from each step! 
+</Paragraph>
+
+<Paragraph>
+As port each function, you begin to explore the codebase and learn more about the complexities of color through <Link url="https://github.com/d3/d3-scale-chromatic">d3-scale-chromatic</Link> and how color can potentialy confuse your audience.
+</Paragraph>
+
+<DuneGraphStory />
+
+
+<RelatedArticles articles={
+    [
+    {id: 0, url: "https://coderwall.com/p/lixing/closure-tables-for-browsing-trees-in-sql", title: "Closure tables for browsing trees in sql"},
+    {id: 1, url: 'https://betterprogramming.pub/create-a-graph-database-and-api-with-postgresql-and-node-js-d7bddcc00bbb', title: 'Create a Graph Database and API with PostgreSQL and Node.js'},
+    {id: 2, url: 'https://github.com/hoverbird/convo', title: 'Javascript Conversation Graph'},
+    {id: 3, url: 'https://codebeautify.org/jsonviewer/0891ba', title: 'JsonViewer'},
+    {id: 4, url: 'https://www.shellrider.com/posts/my-first-post/', title: 'Conversavtion in Godot Engine'},
+    {id: 5, url: 'https://observablehq.com/@d3/d3-stratify', title: 'D3 Stratify'},
+    {id: 6, url: 'https://bl.ocks.org/d3noob/d316a488cae262ae24e6ca897b209f9e', title: 'D3 Tree Diagram'},
+    {id: 7, url: 'https://github.com/pdtyreus/conversation-kit', title: 'Java NLU Conversation Kit'},
+    {id: 8, url: 'https://opsive.com/support/documentation/behavior-designer/behavior-trees-or-finite-state-machines/', title: 'Behavior Trees or Finite State Machines?'},
+    {id: 9, url: 'https://www.freecodecamp.org/news/how-to-build-an-end-to-end-conversational-ai-system-using-behavior-trees-658a7122e794/', title: 'How to Build an End-to-End Conversational AI System using Behavior Trees'},
+    {id: 10, url: 'https://dev.to/javinpaul/21-binary-tree-coding-questions-for-java-developers-325o', title: '21 Binary Tree Coding Questions for Java Developers'},
+    {id: 11, url: 'http://www.webgraphviz.com/', title: 'WebGraphViz'},
+    ]
+} />
+
