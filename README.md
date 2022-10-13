@@ -44,7 +44,9 @@ Tech
 Progress Complete 
 - 20% 
 
-Note to self: this is library can only be built with Node 12 - I need to sort out upgrading to Dart Sass with Webpack 5 and Storybook  but if you plan to use it any other projects that uses the latest version of node, it should be fine to import.
+Note to self: this is library can only be built with Node 14 - I need to sort out upgrading to Dart Sass with Webpack 5 and Storybook but if you plan to use it any other projects that uses the latest version of node, it should be fine to import since it's all compiled down to vanila js.
+
+Another radical approach would be to harvest the React and trade SCSS for styled components or tailwind; just not a fan of the way tailwinds looks in the DOM though although I've heard enough devs say you get used to it. Perhaps, I'm ready for PostCSS?! Or something else?!
 
 [n 14.20.1](https://www.npmjs.com/package/n)
 
