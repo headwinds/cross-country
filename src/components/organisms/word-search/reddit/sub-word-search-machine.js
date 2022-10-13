@@ -1,16 +1,4 @@
 import { createMachine, assign, interpret, send, Machine } from 'xstate';
-import PusherService from '../../../services/pusher-service';
-import c from '../../../constants/';
-
-/*
-https://www.wordsapi.com/
-.get("https://wordsapiv1.p.mashape.com/words?letterPattern=^a.{4}$")
-.header("X-Mashape-Key", "<required>")
-.header("Accept", "application/json")
-.end(function (result) {
-  console.log(result.status, result.headers, result.body);
-});
-*/
 
 const localUrl = 'http://0.0.0.0:5000';
 const remoteUrl = 'https://www.wordsapi.com/';
