@@ -1,5 +1,6 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
 import WordSearch from './word-search';
+import { SubHeadline, Paragraph, List, ListItem, Link, RelatedArticles }  from '../../';
 
 <Meta title="menu/organisms/word search" />
 
@@ -12,3 +13,8 @@ import WordSearch from './word-search';
     <WordSearch config={{text: "Word Search", hasBackground: false}} />
   </Story>
 </Canvas>
+
+
+<RelatedArticles articles={[
+  {id: 0, title: 'cheat-at-wordle', url: 'https://observablehq.com/@visnup/cheat-at-wordle?collection=@visnup/games/2'}
+  ]} />
