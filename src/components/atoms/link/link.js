@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styles from './link.scss';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
@@ -16,8 +16,6 @@ const Link = ({ url, children, size, target, customClass = '', customStyle = {},
   </a>
 );
 
-export default Link;
-
 Link.defaultProps = {
   url: PropTypes.string,
   children: PropTypes.node,
@@ -31,3 +29,5 @@ Link.propTypes = {
   size: PropTypes.string,
   target: PropTypes.string,
 };
+
+export default Link;

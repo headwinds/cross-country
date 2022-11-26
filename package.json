@@ -40,9 +40,9 @@
     "example rollup react component"
   ],
   "bugs": {
-    "url": "https://github.com/jaebradley/example-rollup-react-component-npm-package/issues"
+    "url": "https://github.com/headwinds/cross-country/issues"
   },
-  "homepage": "https://github.com/jaebradley/example-rollup-react-component-npm-package#readme",
+  "homepage": "https://github.com/headwinds/cross-country#readme",
   "devDependencies": {
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
@@ -101,6 +101,8 @@
     "marked": "^2.0.0",
     "node-sass": "npm:sass@^1.55.0",
     "postcss": "^8.2.10",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
     "react-test-renderer": "^17.0.2",
     "rollup": "^2.13.1",
     "rollup-plugin-filesize": "^9.0.0",
@@ -118,14 +120,7 @@
     "webpack": "^4.43.0",
     "webpack-build-notifier": "^2.0.1",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  },
-  "peerDependencies": {
-    "prop-types": "^15.7.2",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.16.7",
