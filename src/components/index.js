@@ -43,6 +43,7 @@ export { default as Modal } from './molecules/modal';
 export { default as Brand } from './molecules/brand';
 export { default as Stagger } from './molecules/stagger';
 export { default as RelatedArticles } from './molecules/related-articles';
+export { default as Card } from './molecules/card';
 
 // organisms
 export { default as Login } from './organisms/login';

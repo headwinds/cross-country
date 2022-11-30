@@ -1,0 +1,90 @@
+/* general styles */
+.body {
+    font-family: 'Helvetica Neue',Arial,Helvetica,sans-serif;
+    background: whitesmoke;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow-x: hidden;
+  }
+  .ul {
+    list-style-type: none;
+    margin: 0px;
+  }
+  
+  .Porthole {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .div {
+    font-size: 18px !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  /* column styles */
+  
+  .column__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-gap: .5rem;
+    align-items: start;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    /* uncomment these lines if you want to have the standard Trello behavior instead of the column wrapping */
+    /*   grid-auto-flow: column;
+      grid-auto-columns: minmax(260px, 1fr); */
+  }
+  
+  .column__item {
+    border-radius: .2rem;
+    background-color: whitesmoke;
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  .column__title--wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: .25rem;
+    align-items: center;
+  }
+  
+  .column__title--wrapper h2 {
+    color: #17394d;
+    font-weight: 700;
+    font-size: .9rem;
+  }
+  
+  .column__title--wrapper i {
+    text-align: right;
+    color: #798d99;
+  }
+  
+  .column__item--cta {
+    padding: .25rem;
+    display: flex;
+    color: #798d99;
+  }
+  
+  .column__item--cta i {
+    margin-right: .25rem;
+  }
+  
+  /* card styles */
+  
+  .card__list {
+    display: grid;
+    grid-template-rows: auto;
+    grid-gap: .5rem;
+    margin: 8px;
+    padding: 0px;
+    overflow: hidden;
+  }
+  
+  .card__item {
+    background-color: whitesmoke;
+    border-radius: .25rem;
+    width: 98%;
+  }

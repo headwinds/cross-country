@@ -1,0 +1,42 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 50 50">
+<defs>
+<g id="photo_0_Layer0_0_FILL">
+<path fill="#000000" stroke="none" d="
+M 25.85 -0.55
+Q 25.85 -2.75 23.6 -2.75
+L -0.55 -2.75
+Q -2.75 -2.75 -2.75 -0.55
+L -2.75 23.75
+Q -2.75 25.9 -0.55 25.9
+L 23.6 25.9
+Q 25.85 25.9 25.85 23.75
+L 25.85 -0.55
+M 21.1 0.55
+Q 22.5 0.55 22.5 2
+L 22.5 12.7 15.95 8.1 7.55 15.5 4.85 13.45 0.55 17.2 0.55 2
+Q 0.55 0.55 2 0.55
+L 21.1 0.55 Z"/>
+</g>
+</defs>
+
+<g transform="matrix( 1.0952301025390625, 0, 0, 1.0952301025390625, 5.2,7.8) ">
+<g transform="matrix( 0.741455078125, 0, 0, 0.741455078125, 2.55,-0.4) ">
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<use xlink:href="#photo_0_Layer0_0_FILL"/>
+</g>
+</g>
+
+<g transform="matrix( 0.5634765625, 0, 0, 0.5634765625, 22.75,10.9) ">
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<use xlink:href="#photo_0_Layer0_0_FILL"/>
+</g>
+</g>
+
+<g transform="matrix( 0.5452728271484375, 0, 0, 0.5452728271484375, 7.7,19.25) ">
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<use xlink:href="#photo_0_Layer0_0_FILL"/>
+</g>
+</g>
+</g>
+</svg>

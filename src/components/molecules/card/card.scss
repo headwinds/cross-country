@@ -1,0 +1,23 @@
+@import "../../styles.scss";
+
+.card {
+  width: 280px;
+  height: 400px;
+  margin: 8px;
+  padding: 0px;
+  background-color: aquamarine;
+  border-radius: 4px;
+
+  // 576px window width and more
+  @include sm {
+  
+  }
+  // 992px window width and more
+  @include lg {
+   
+  }
+  // 1400px window width and more
+  @include rwd(1400) {
+    
+  }
+}

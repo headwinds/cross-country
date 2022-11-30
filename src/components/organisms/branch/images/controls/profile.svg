@@ -1,0 +1,44 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100">
+<defs>
+<g id="profile_mc_0_Layer1_0_FILL">
+<path fill="#FFFFFF" stroke="none" d="
+M 46.5 -39.75
+Q 46.5 -44.75 41.5 -44.75
+L -39.75 -44.75
+Q -44.75 -44.75 -44.75 -39.75
+L -44.75 41.5
+Q -44.75 46.5 -39.75 46.5
+L 41.5 46.5
+Q 46.5 46.5 46.5 41.5
+L 46.5 -39.75 Z"/>
+</g>
+
+<g id="profile_mc_0_Layer0_0_FILL">
+<path fill="#020202" stroke="none" d="
+M -0.6 -41
+Q -9.65 -41 -16.15 -34.65
+L 14.9 -34.65
+Q 8.45 -41 -0.6 -41
+M 37.75 42.05
+Q 37.55 27 26.7 16.2 15.7 5.2 0.15 5.2
+L 0.05 5.2
+Q -15.45 5.2 -26.5 16.2 -37.3 27 -37.5 42.05
+L 37.75 42.05
+M 21.5 -18.9
+Q 21.5 -22.85 20.3 -26.3
+L -21.55 -26.3
+Q -22.75 -22.85 -22.75 -18.9 -22.75 -9.75 -16.25 -3.25 -9.75 3.2 -0.6 3.2 8.55 3.2 15 -3.25 21.5 -9.75 21.5 -18.9 Z"/>
+</g>
+</defs>
+
+<g id="profile" transform="matrix( 1, 0, 0, 1, 50.15,50.55) ">
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<use xlink:href="#profile_mc_0_Layer1_0_FILL"/>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<use xlink:href="#profile_mc_0_Layer0_0_FILL"/>
+</g>
+</g>
+</svg>
