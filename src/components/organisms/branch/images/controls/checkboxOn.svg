@@ -1,0 +1,181 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 50 50">
+<defs>
+<linearGradient id="Gradient_1" gradientUnits="userSpaceOnUse" x1="25.099999999999998" y1="2.5249999999999986" x2="24.7" y2="47.775" spreadMethod="pad">
+<stop  offset="0%" stop-color="#0F413F"/>
+
+<stop  offset="100%" stop-color="#216B6E"/>
+</linearGradient>
+
+<linearGradient id="Gradient_2" gradientUnits="userSpaceOnUse" x1="54.487500000000004" y1="13.825" x2="32.7125" y2="50.175" spreadMethod="pad">
+<stop  offset="0%" stop-color="#0F413F"/>
+
+<stop  offset="100%" stop-color="#216B6E"/>
+</linearGradient>
+
+<g id="checkon_0_Layer6_0_FILL">
+<path fill="#000000" fill-opacity="0.00392156862745098" stroke="none" d="
+M 47.25 20.5
+L 47.25 14 41 14 41 20.5 47.25 20.5
+M 47.25 14
+L 47.25 2 3 2 3 48.25 47.25 48.25 47.25 20.5 41 20.5 41 14 47.25 14 Z"/>
+</g>
+
+<g id="checkon_0_Layer5_0_FILL">
+<path fill="url(#Gradient_1)" stroke="none" d="
+M 47.5 5.75
+Q 47.5 2.75 44.5 2.75
+L 5.25 2.75
+Q 2.25 2.75 2.25 5.75
+L 2.25 44.5
+Q 2.25 47.5 5.25 47.5
+L 44.5 47.5
+Q 47.5 47.5 47.5 44.5
+L 47.5 5.75 Z"/>
+</g>
+
+<g id="checkon_0_Layer1_0_FILL">
+<path fill="url(#Gradient_2)" stroke="none" d="
+M 45.5 13.7
+Q 45.496484375 13.0736328125 45.05 12.6
+L 40.1 7.7
+Q 39.6638671875 7.29453125 39.05 7.3 38.4353515625 7.3072265625 38 7.75
+L 16.95 28.8 11.75 23.6
+Q 11.3158203125 23.1552734375 10.7 23.15 10.083984375 23.1552734375 9.65 23.6
+L 4.05 29.2
+Q 3.603515625 29.63671875 3.6 30.25 3.6048828125 30.87734375 4.05 31.3
+L 15.25 42.45
+Q 15.6869140625 42.906640625 16.3 42.9 16.9146484375 42.8927734375 17.35 42.45
+L 45.05 14.75
+Q 45.496484375 14.3130859375 45.5 13.7 Z"/>
+</g>
+
+<g id="checkon_0_Layer0_0_FILL">
+<path fill="#20B0B0" stroke="none" d="
+M 6.9 32.05
+L 16.55 41.65 27.55 30.75 22.6 25.8 17.2 31.15 12.45 26.45 6.9 32.05
+M 33.95 24.3
+L 36.05 22.15 31.1 17.2 29 19.4 33.95 24.3 Z"/>
+
+<path fill="#48C0C0" stroke="none" d="
+M 12.45 26.45
+L 10.95 24.9 5.35 30.5 6.9 32.05 12.45 26.45
+M 33.95 24.3
+L 29 19.4 22.6 25.8 27.55 30.75 33.95 24.3 Z"/>
+
+<path fill="#3DA8A8" stroke="none" d="
+M 39.3 9.05
+L 31.1 17.2 36.05 22.15 44.25 13.95 39.3 9.05 Z"/>
+</g>
+
+<path id="checkon_0_Layer4_0_1_STROKES" stroke="#082E2D" stroke-width="2" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3" fill="none" d="
+M 43 2.75
+L 44.5 2.75
+Q 47.5 2.75 47.5 5.75
+L 47.5 9.75
+M 47.5 40.75
+L 47.5 44.5
+Q 47.5 47.5 44.5 47.5
+L 42.5 47.5
+M 8.5 47.5
+L 5.25 47.5
+Q 2.25 47.5 2.25 44.5
+L 2.25 41.5
+M 2.25 8.5
+L 2.25 5.75
+Q 2.25 2.75 5.25 2.75
+L 6.25 2.75"/>
+
+<path id="checkon_0_Layer4_0_2_STROKES" stroke="#1E6466" stroke-width="2" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3" fill="none" d="
+M 47.5 9.75
+L 47.5 40.75
+M 6.25 2.75
+L 43 2.75"/>
+
+<path id="checkon_0_Layer4_0_3_STROKES" stroke="#1E6466" stroke-width="2" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="3" fill="none" d="
+M 42.5 47.5
+L 8.5 47.5
+M 2.25 41.5
+L 2.25 8.5"/>
+
+<path id="checkon_0_Layer3_0_1_STROKES" stroke="#104D4B" stroke-width="2" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3" fill="none" d="
+M 47.5 9.45
+L 47.5 5.7
+Q 47.5 2.7 44.5 2.7
+L 42.5 2.7
+M 8.5 2.7
+L 5.25 2.7
+Q 2.25 2.7 2.25 5.7
+L 2.25 8.7"/>
+
+<path id="checkon_0_Layer2_0_1_STROKES" stroke="#104D4B" stroke-width="2" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3" fill="none" d="
+M 47.5 40.65
+L 47.5 44.4
+Q 47.5 47.4 44.5 47.4
+L 42.5 47.4
+M 8.5 47.4
+L 5.25 47.4
+Q 2.25 47.4 2.25 44.4
+L 2.25 41.4"/>
+
+<path id="checkon_0_Layer0_0_1_STROKES" stroke="#007575" stroke-width="1" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3" fill="none" d="
+M 44.25 13.95
+L 36.05 22.15 33.95 24.3 27.55 30.75 16.55 41.65 6.9 32.05"/>
+
+<path id="checkon_0_Layer0_0_2_STROKES" stroke="#027E7E" stroke-width="1" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3" fill="none" d="
+M 39.3 9.05
+L 44.25 13.95
+M 5.35 30.5
+L 6.9 32.05
+M 10.95 24.9
+L 12.45 26.45 17.2 31.15"/>
+
+<path id="checkon_0_Layer0_0_3_STROKES" stroke="#0B8F8F" stroke-width="1" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="3" fill="none" d="
+M 31.1 17.2
+L 39.3 9.05
+M 5.35 30.5
+L 10.95 24.9
+M 17.2 31.15
+L 22.6 25.8 29 19.4 31.1 17.2"/>
+</defs>
+
+<g id="checkon" transform="matrix( 1, 0, 0, 1, 0,0) ">
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<use xlink:href="#checkon_0_Layer6_0_FILL"/>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<use xlink:href="#checkon_0_Layer5_0_FILL"/>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<use xlink:href="#checkon_0_Layer4_0_1_STROKES"/>
+
+<use xlink:href="#checkon_0_Layer4_0_2_STROKES"/>
+
+<use xlink:href="#checkon_0_Layer4_0_3_STROKES"/>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<use xlink:href="#checkon_0_Layer3_0_1_STROKES"/>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<use xlink:href="#checkon_0_Layer2_0_1_STROKES"/>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<use xlink:href="#checkon_0_Layer1_0_FILL"/>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<use xlink:href="#checkon_0_Layer0_0_FILL"/>
+
+<use xlink:href="#checkon_0_Layer0_0_1_STROKES"/>
+
+<use xlink:href="#checkon_0_Layer0_0_2_STROKES"/>
+
+<use xlink:href="#checkon_0_Layer0_0_3_STROKES"/>
+</g>
+</g>
+</svg>
