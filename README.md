@@ -10,6 +10,8 @@ Core Tech
 - D3 
 - Storybook
 
+[Cross Country Storybook via Github Pages](https://headwinds.github.io/cross-country)
+
 Bored of building enterprise UI? Are you a fan of the Sims, Starcraft, Chess, Dungeons and Dragons and other table top role playing games aka TTRPGs? By playing with code, you can actually hone your dayjob skills while exploring subject matter that you are more passionate. 
 
 Do you keep a sketch book? Do you draw notes about fantasy UI, game mechanics and envision a future of EVs and trips to Mars? 
@@ -39,7 +41,7 @@ By wrapping html, each component is augmented for building accessible experience
 </Wrapper>
 ```
 
-[Cross Country Guide](https://cross-country-guide.vercel.app)
+
 
 
 
@@ -169,6 +171,14 @@ If you 2-factor indentifaction, setup you may have to use for Google Authenticat
 
 Since I had .npmrc setup in other projects, I had to one for this project [using the default](https://docs.npmjs.com/cli/v8/using-npm/registry). At first, I thought I needed /headwinds and then /headwinds/cross-country but nope! Just use the default - see my .npmrc file.  
 
+## Publish Storybook
+
+Since I already have `headwinds` repo, I followed the github pages doc to create another repo this time empty named `headwinds.github.io` and then was able to publish and host the storybook.
+
+
+```
+npm run deploy-storybook-ci
+```
 
 ## Inspiration
 * [create-react-library](https://www.npmjs.com/package/create-react-library)
