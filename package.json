@@ -1,6 +1,6 @@
 {
   "name": "cross-country",
-  "version": "1.1.46",
+  "version": "1.1.48",
   "description": "an atomic design system built for react & lonely forest bathers",
   "author": "headwinds",
   "license": "MIT",
@@ -101,8 +101,8 @@
     "marked": "^2.0.0",
     "node-sass": "npm:sass@^1.55.0",
     "postcss": "^8.2.10",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-test-renderer": "^17.0.2",
     "rollup": "^2.13.1",
     "rollup-plugin-filesize": "^9.0.0",
