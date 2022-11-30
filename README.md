@@ -4,13 +4,13 @@
 
 [![NPM](https://img.shields.io/npm/v/cross-country.svg)](https://www.npmjs.com/package/cross-country) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-Are you a fan of the Sims, Starcraft, Chess, Dumgeons and Dragons and other table top role playing games aka TTRPGs? 
+Bored of building enterprise UI? Are you a fan of the Sims, Starcraft, Chess, Dungeons and Dragons and other table top role playing games aka TTRPGs? By playing with code, you can actually hone your dayjob skills while exploring subject matter that you are more passionate. 
 
-Do you keep a sketch book and draw notes about games, and the general puzzles that make up life? 
+Do you keep a sketch book? Do you draw notes about fantasy UI, game mechanics and envision a future of EVs and trips to Mars? 
 
-This library is meant to translate your analog sketch book pages into a digital works that can be shared and explored by other like-minded individuals. Ultimately, could we combine both analog and digital into some new mixed AR/VR experience?!
+This library is an escape from conversative eCommerce apps, and meant to translate your analog sketch book pages into a digital works that can be shared by other like-minded individuals. Perhaps, they will become some new mixed AR/VR experience?!
 
-The components within this library are designed responsively to be used write articles and create tile-based games; even better combine writing, gaming, with a sample dataset and tell a story. 
+The components within this library are designed responsively to be used to write articles; create tile-based games; or even better combine writing, gaming, with a sample dataset and tell a story or converse with an AI.  
 
 By wrapping html, each component is augmented for building accessible experiences across screens. A simple page may look like this:
 
@@ -42,7 +42,7 @@ Tech
 - Storybook
 
 Progress Complete 
-- 20% 
+- 35% 
 
 Note to self: this is library can only be built with Node 14 (tested with 14.20.1) - I need to sort out upgrading to Dart Sass with Webpack 5 and Storybook but if you plan to use it any other projects that uses the latest version of node, it should be fine to import since it's all compiled down to vanila js. The current issue preventing the upgrade has something to do with sass-loader and migration from 7 to 8 where I most likey need to upgrade how the options are configured.
 
@@ -162,6 +162,11 @@ your-password
 now-your-email
 npm publish
 ```
+
+If you 2-factor indentifaction, setup you may have to use for Google Authenticator on your phone.
+
+Since I had .npmrc setup in other projects, I had to one for this project [using the default](https://docs.npmjs.com/cli/v8/using-npm/registry). At first, I thought I needed /headwinds and then /headwinds/cross-country but nope! Just use the default - see my .npmrc file.  
+
 
 ## Inspiration
 * [create-react-library](https://www.npmjs.com/package/create-react-library)
