@@ -44,9 +44,21 @@ Tech
 Progress Complete 
 - 20% 
 
-Note to self: this is library can only be built with Node 12 - I need to sort out upgrading to Dart Sass with Webpack 5 and Storybook  but if you plan to use it any other projects that uses the latest version of node, it should be fine to import.
+Note to self: this is library can only be built with Node 14 (tested with 14.20.1) - I need to sort out upgrading to Dart Sass with Webpack 5 and Storybook but if you plan to use it any other projects that uses the latest version of node, it should be fine to import since it's all compiled down to vanila js. The current issue preventing the upgrade has something to do with sass-loader and migration from 7 to 8 where I most likey need to upgrade how the options are configured.
+
+```
+Module build failed (from ./node_modules/sass-loader/dist/cjs.js):
+Error: Missing binary. See message above.
+```
+
+Again no errors with Node 14.20.1 but they appear as I switch to 16.9.1
+
+Another radical approach would be to harvest the React and trade SCSS for styled components or tailwind; just not a fan of the way tailwinds looks in the DOM though although I've heard enough devs say you get used to it. Perhaps, I'm ready for PostCSS?! Or something else?!
 
 [n 14.20.1](https://www.npmjs.com/package/n)
+
+For now, I believe I'm fine to continue building on 14. It is not sunset yet like Node 12. Yet... does trouble a bit.
+I know I won't get any performance wins by supporting Node 16 so there isn't much point sweating it. 
 
 ## Getting Started 
 
@@ -210,7 +222,14 @@ npm publish
 * [Distill](https://distill.pub/)
 * [Creative Applications](https://www.creativeapplications.net/)
 * [Making of an AI Storyteller](https://towardsdatascience.com/the-making-of-an-ai-storyteller-c3b8d5a983f5)
+
+### ML & Gaming
 * [Crafter](https://danijar.com/project/crafter/)
+* [TextWorldExpress](https://github.com/cognitiveailab/TextWorldExpress)
+
+## Goal Setting
+* [80 days to get into FAANG](https://towardsdatascience.com/80-days-to-get-into-faang-5c77f27d5224)
+* [Jack Dorsey's Don't do list](https://www.cnbc.com/2018/10/22/twitter-ceo-jack-dorsey-writes-a-wont-do-list-every-day.html)
 
 ## License
 

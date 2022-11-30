@@ -1,6 +1,10 @@
-import React, { Component } from 'react'
-import styles from './image.scss'
+import React, { Component } from 'react';
+import styles from './image.scss';
 
-const Image = ({url, width, a11y}) => (<img src={url} width={width} className={styles.image} alt={a11y} />);
+const Image = ({ url, width, a11y }) => {
+  const img = url && url != '' ? <img src={url} width={width} alt={a11y} /> : null;
+
+  return img;
+};
 
 export default Image;
