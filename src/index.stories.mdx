@@ -1,5 +1,5 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
-import { Column, Paragraph } from './components';
+import { Column, Paragraph, Link, List, ListItem } from './components';
 
 <Meta title="menu/intro" />
 
@@ -7,12 +7,17 @@ import { Column, Paragraph } from './components';
 
 <Subtitle>explore the cross section of games and data visualization</Subtitle>
 
-Have you ever wanted to bring a sketch into a game? Do you doodle games in your notebook and want to quick prototype them? Do you want to share common, end to end components like a login or chat across applications? Cross Country is a library designed to make this happen, and encourages the exploration of social science, tile-based games and machine learning. 
-
 <Canvas>
   <Story name="intro">
     <Column>
-    <Paragraph>coming soon</Paragraph>
+      <Paragraph>This is my component library which maps to how I think about writing markup and how I like to work with the IDE that has the power to autocomplete and features articial intelligence.</Paragraph>
+      <Paragraph>Why do I need my own component library? Why can't I just use an established one? </Paragraph>
+      <Paragraph>Have you ever wanted to bring a sketch into a game? Do you doodle games in your notebook and want to quick prototype them? Do you want to share common, end to end components like a login or chat across applications? Cross Country is a library designed to make this happen, and encourages the exploration of social science, tile-based games and machine learning. </Paragraph>
+      <List>
+          <ListItem><Link src="https://github.com/jaebradley/example-rollup-react-component-npm-package">rollup starter</Link></ListItem>
+          <ListItem><Link src="https://xstate.js.org/">XState</Link></ListItem>
+          <ListItem><Link src="https://www.npmjs.com/package/d3">D3</Link></ListItem>
+      </List>
     </Column>
   </Story>
 </Canvas>

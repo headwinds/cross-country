@@ -1,11 +1,47 @@
 import { Meta, Subtitle } from '@storybook/addon-docs/blocks';
 import Prism from 'prismjs';
 import { SubHeadline, Paragraph, List, ListItem, Link, RelatedArticles }  from '../../../src/components';
-import DuneGraphStory from '../../../src/components/organisms/trees/faction/dune/dune-graph-story';
+import TreeStory from '../../../src/components/molecules/tree/tree-story';
+
 
 <Meta title="menu/missions/data trees and directed graphs" />
 
 <Subtitle>Data Trees & Directed Graphs</Subtitle>
+
+<Paragraph>
+    Data trees and directed graphs are two different ways to represent data. They are both used to represent data in a hierarchical way. The difference is that data trees are used to represent data that has a parent-child relationship, while directed graphs are used to represent data that has a relationship between two nodes.
+</Paragraph>
+
+<Paragraph>Well, thank you copolit for the explanation. Did copilot really write it though or am I dept to some other author who got scooped?! The lines between AI and human writing are certainly blurring; in fact with technical writing it may become impossible to the difference.</Paragraph>
+
+<Paragraph>But let's return to the topic at hand. I'll echo: data trees have a parent-child relationship.
+HTML shares this structure. A simple html document has a parent-child relationship. The html tag is the parent of the head and body tags. The head tag is the parent of the title tag. The body tag is the parent of the h1 tag. The h1 tag is the parent of the text "Hello World".</Paragraph>
+
+<Paragraph>How can we convert tabular data into a tree? What fields would this table need to express the parent-child relationship?</Paragraph>
+
+<Paragraph>While a computer can easily take a string a html of display a webpage, humans are more visual builders and prefer to view the html as a tree in an editor like VS Code or Submlime while we work on it.</Paragraph>
+
+<Paragraph>For instance, take this instruction list string of html as a row:</Paragraph>
+
+
+```
+const instructionList = [
+    {indent: 0, text: "Build a Backyard Office", type: "h1"},
+    {indent: 1, text: "scout your backyard", type: "ol"},
+    {indent: 1, text: "convince your partner", type: "ol"},
+    {indent: 2, text: "measure the available space", type: "ol"},
+    {indent: 0, text: "Do more steps and then enjoy your shed", type: "p"}
+]
+```
+
+```
+<div><ul><li>scout your backyard</li><li>design the shed</li><ol><li>measure the available space</li><li>sketch the layout</li></ol><li>source materials</li></ul></div>
+```
+
+<TreeStory />
+
+
+
 
 <Paragraph>
 When harvesting D3 scripts from <Link url="https://bl.ocks.org/">Bl.ocks</Link> or <Link url="https://observablehq.com/">Observerable</Link>, you may discover that they do a lot in each function. Any time you see long functions, this is an opportunity to refactor and make it easier to maintain.
@@ -19,9 +55,6 @@ Each step in the pipeline can (and should be) its own function. So when you copy
 <Paragraph>
 As port each function, you begin to explore the codebase and learn more about the complexities of color through <Link url="https://github.com/d3/d3-scale-chromatic">d3-scale-chromatic</Link> and how color can potentialy confuse your audience.
 </Paragraph>
-
-<DuneGraphStory />
-
 
 <RelatedArticles articles={
     [
@@ -37,6 +70,7 @@ As port each function, you begin to explore the codebase and learn more about th
     {id: 9, url: 'https://www.freecodecamp.org/news/how-to-build-an-end-to-end-conversational-ai-system-using-behavior-trees-658a7122e794/', title: 'How to Build an End-to-End Conversational AI System using Behavior Trees'},
     {id: 10, url: 'https://dev.to/javinpaul/21-binary-tree-coding-questions-for-java-developers-325o', title: '21 Binary Tree Coding Questions for Java Developers'},
     {id: 11, url: 'http://www.webgraphviz.com/', title: 'WebGraphViz'},
+    {id: 12, url: 'https://www.getdbt.com/blog/what-exactly-is-dbt/', title: 'How DBT can automatically build DAGs for you'},
     ]
 } />
 
