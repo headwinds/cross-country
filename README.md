@@ -4,6 +4,12 @@
 
 [![NPM](https://img.shields.io/npm/v/cross-country.svg)](https://www.npmjs.com/package/cross-country) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+Core Tech 
+- react (18.02) & react-spring 
+- scss modules
+- D3 
+- Storybook
+
 Bored of building enterprise UI? Are you a fan of the Sims, Starcraft, Chess, Dungeons and Dragons and other table top role playing games aka TTRPGs? By playing with code, you can actually hone your dayjob skills while exploring subject matter that you are more passionate. 
 
 Do you keep a sketch book? Do you draw notes about fantasy UI, game mechanics and envision a future of EVs and trips to Mars? 
@@ -35,11 +41,7 @@ By wrapping html, each component is augmented for building accessible experience
 
 [Cross Country Guide](https://cross-country-guide.vercel.app)
 
-Tech 
-- react & react-spring 
-- scss modules
-- D3 
-- Storybook
+
 
 Progress Complete 
 - 35% 
