@@ -12,26 +12,20 @@ const validateContent = entry => {
   return entry;
 };
 export function getRSSBranch(candidateBranch, index, ix) {
-  console.log(`-------------------------- getRSSBranch ${ix} --------------------------`);
-  if (log()) console.log('PortholeImageService - getRSSBranch - candidateBranch: ', candidateBranch);
   const branch = validateContent(candidateBranch);
-  if (log()) console.log('PortholeImageService - getRSSBranch - branch: ', branch);
 
   // important that there is a branch
   if (!branch) {
-    if (log()) console.log('PortholeImageService - getRSSBranch - Big ERROR!!!! No branch');
     return undefined;
   }
 
   let images = getImagesFromDescription(branch);
   // there should always be at least 1 default image!
-  if (log()) console.log('PortholeImageService - getRSSBranch - images: ', images);
+
   let resultImageObj = images[0];
-  if (log()) console.log('PortholeImageService - getRSSBranch - resultImageObj: ', resultImageObj);
 
   // important that there is a resultImageObj
   if (!resultImageObj) {
-    if (log()) console.log('PortholeImageService -  no resultImageObj - so PortholeBranchModel is null!!!! ix: ', ix);
     return null;
   }
 
@@ -64,7 +58,7 @@ export function getRSSBranch(candidateBranch, index, ix) {
   else if (branch.meta.title.trim() === 'designboom | architecture & design magazine') branch.meta.title = 'designboom';
   const tags = branch.categories ? branch.categories : [];
   const id = `branch-${index}-${ix}`;
-  if (log()) console.log('PortholeImageService - getRSSBranch - HERE: ');
+
   const portholeBranch = new PortholeBranchModel(
     id,
     tags,
@@ -85,7 +79,7 @@ export function getRSSBranch(candidateBranch, index, ix) {
     false,
     false
   );
-  if (log()) console.log('PortholeImageService - getRSSBranch - BUT HERE ?: ', portholeBranch);
+
   return portholeBranch;
 }
 export function createAllPortholeTrees() {

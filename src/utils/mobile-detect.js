@@ -1,12 +1,14 @@
-// navigator and window are not available in SSR!
 // https://medium.com/frontend-digest/how-to-disable-ssr-for-a-nextjs-page-d6b19aa350e3
+import { getWindow, getNavigator, getDocument } from './server-side-util';
+
 const getIsMobile = () => {
-  const isServer = () => typeof window === 'undefined';
-  if (isServer) {
+  const screenWindow = getWindow();
+  const screenNavigator = getNavigator();
+  if (screenWindow) {
     return false;
   }
   let check = false;
-  (function(a) {
+  (function (a) {
     if (
       /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(
         a
@@ -16,7 +18,7 @@ const getIsMobile = () => {
       )
     )
       check = true;
-  })(navigator.userAgent || navigator.vendor || window.opera);
+  })(screenNavigator?.userAgent || screenNavigator?.vendor || screenWindow?.opera);
   return check;
 };
 

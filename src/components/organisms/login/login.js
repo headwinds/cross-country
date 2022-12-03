@@ -5,6 +5,7 @@ import { getUnsplashPhoto } from '../../../services/image-service';
 import clsx from 'clsx';
 import styles from './login.scss';
 import { privateConfig } from '../../../../cross-country-config-private';
+import { getWindow } from '../../../utils/server-side-util';
 
 const Login = ({
   config: {
@@ -94,11 +95,14 @@ export default class LoginContainer extends Component {
       }
     });
 
-    window.addEventListener('keydown', this.onKeydownHandler, false);
+    const screenWindow = getWindow();
+
+    screenWindow?.addEventListener('keydown', this.onKeydownHandler, false);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('keyPress', this.onKeydownHandler, false);
+    const screenWindow = getWindow();
+    screenWindow?.removeEventListener('keyPress', this.onKeydownHandler, false);
   }
 
   componentDidUpdate() {}
