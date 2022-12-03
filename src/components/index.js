@@ -52,6 +52,8 @@ export { default as Drone } from './organisms/drone';
 export { default as Garden } from './organisms/garden';
 export { default as Sketch } from './organisms/sketch';
 export { default as Actor } from './organisms/actors/actor';
+export { default as Branch } from './organisms/branch/branch';
+export { default as Branches } from './organisms/branch/branches';
 export { default as Hunter } from './organisms/actors/party/hunter';
 export { default as Stage } from './organisms/stage';
 export { default as ReverseTextAnimation } from './organisms/animation/reverse-text-animation';

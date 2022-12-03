@@ -1,6 +1,11 @@
+import { getWindow } from './server-side-util';
 export function drawGrid() {
-  const width = window.innerWidth;
-  const height = window.innerHeight;
+  const screenWindow = getWindow();
+
+  if (!screenWindow) return null;
+
+  const width = screenWindow.innerWidth;
+  const height = screenWindow.innerHeight;
 
   const tileX = 10;
   const tileY = 10;
@@ -18,22 +23,18 @@ export function drawGrid() {
     return colorScheme(ranIndex);
   };
 
-  const svg = d3
-    .select("body")
-    .append("svg")
-    .attr("width", width)
-    .attr("height", height);
+  const svg = d3.select('body').append('svg').attr('width', width).attr('height', height);
 
   const drawTile = (x, y, z) => {
     svg
-      .append("g")
-      .attr("transform", "translate (" + x + "," + y + ")")
-      .append("rect")
-      .attr("fill", getRandFill())
-      .attr("stroke", "#DDD")
-      .attr("stroke-width", 1)
-      .attr("width", z)
-      .attr("height", z);
+      .append('g')
+      .attr('transform', 'translate (' + x + ',' + y + ')')
+      .append('rect')
+      .attr('fill', getRandFill())
+      .attr('stroke', '#DDD')
+      .attr('stroke-width', 1)
+      .attr('width', z)
+      .attr('height', z);
   };
 
   const processRow = (y, z) => {
