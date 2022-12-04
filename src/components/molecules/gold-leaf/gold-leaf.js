@@ -28,6 +28,11 @@ export const GoldLeaf = ({ goldLeafModel }) => {
 export default GoldLeaf;
 
 /*
+
+TO DO 
+
+I want to move the controls into this component.
+
 <section id={goldLeafModel.id} className={styles.GoldLeaf}>
         <h2 className={styles.GoldLeaf__title}>
           <a className={styles.GoldLeaf__titleLink} href={goldLeafModel.link} target="_blank" rel="noopener noreferrer">
