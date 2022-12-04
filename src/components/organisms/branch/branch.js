@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-//import sanitizeHtml from 'sanitize-html'; // BUILD ERROR!
-/*
-[!] Error: Unexpected token (Note that you need @rollup/plugin-json to import JSON files)
-node_modules/entities/lib/maps/xml.json (1:6)
-1: {"amp":"&","apos":"'","gt":">","lt":"<","quot":"\""}
-*/
 //import { getOffline, putOffline } from '../../../utils/golds/offline-util';
+import { GoldLeaf } from '../../';
 
 import {
   addItemToStore,
@@ -22,7 +17,6 @@ import { ArticleIcon, TweetIcon, HeartIcon, EmailIcon, ImageIcon, HideIcon, Clus
 const GOLD_COLOUR = '#E3D597';
 
 const he = require('he');
-//require('typeface-roboto');
 
 const Branch = props => {
   const { branch } = props;
@@ -130,34 +124,34 @@ const Branch = props => {
 
     const image = branch.useText ? null : <img src={branch.images[0].imageUrl} alt={branch.title} />;
     const totalBranches = branch.useText || branch.images.length === 1 ? null : branch.images.length;
+
     const content = trashed ? null : (
       <section id={branch.id} className={styles.Branch}>
-        <h2 className={styles.Branch__title}>
-          <a className={styles.Branch__titleLink} href={branch.link} target="_blank" rel="noopener noreferrer">
-            {branch.title}
-          </a>
-        </h2>
-        {/* first image */}
-        <div className={styles.Branch__image}>{image}</div>
+        <GoldLeaf goldLeafModel={branch} />
+
         {/* controls */}
-        {/* email */}
+
         <div className={styles.Branch__controls}>
+          {/* email 
           <div className={styles.Branch__item} onClick={handleEmail}>
             <EmailIcon />
           </div>
+          */}
           {/* tweet */}
           <div className={styles.Branch__item} onClick={handleTweet}>
             <TweetIcon />
           </div>
-          {/* train */}
+          {/* train 
           <div className={styles.Branch__item} onClick={handleToggleTrainBranch}>
             {trained && <HeartIcon color={GOLD_COLOUR} />}
             {!trained && <HeartIcon />}
           </div>
-          {/* trash */}
+          */}
+          {/* trash 
           <div className={styles.Branch__item} onClick={handleReadBranch}>
             <HideIcon />
           </div>
+          */}
           {/* imgs */}
           <div>
             <div className={styles.Branch__item} onClick={handleViewImages}>

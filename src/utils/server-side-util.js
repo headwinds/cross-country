@@ -3,7 +3,7 @@ export const getWindow = () => {
     /* we're on the server */
     return null;
   }
-  return window;
+  return window ? window : null;
 };
 
 export const getNavigator = () => {
@@ -11,7 +11,7 @@ export const getNavigator = () => {
     /* we're on the server */
     return null;
   }
-  return navigator;
+  return navigator ? navigator : null;
 };
 
 export const getDocument = () => {
@@ -19,5 +19,5 @@ export const getDocument = () => {
     /* we're on the server */
     return null;
   }
-  return document;
+  return document ? document : null;
 };

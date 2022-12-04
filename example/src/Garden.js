@@ -6,7 +6,7 @@ import { Garden, Paragraph, Column, CaveTroll, Warrior, Stage } from 'cross-coun
 inspect({
   // options
   // url: 'https://stately.ai/viz?inspect', // (default)
-  iframe: false, // open in new window
+  iframe: false,
 });
 
 const Garden = () => {
