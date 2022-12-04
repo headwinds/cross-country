@@ -40,11 +40,6 @@ By wrapping html, each component is augmented for building accessible experience
   <Wallpaper />
 </Wrapper>
 ```
-
-
-
-
-
 Progress Complete 
 - 35% 
 
@@ -64,7 +59,13 @@ Another radical approach would be to harvest the React and trade SCSS for styled
 For now, I believe I'm fine to continue building on 14. It is not sunset yet like Node 12. Yet... does trouble a bit.
 I know I won't get any performance wins by supporting Node 16 so there isn't much point sweating it. 
 
-## Getting Started 
+## NextJS 
+
+Part of my dogfooding process is to use my library on my own site, [headwinds](https://headwinds.vercel.app).
+
+Initially, I ran into a build error where I had to account for every `window` and `document` ensuring that they are not referenced until the UI hits the client. After hunting through my webpack build file, I was ble to eliminate them all, and it now works 100% server side!  
+
+## Unsplash Config
 
 Before installing, create a cross-country-config-private.js file in your root directory by copying the cross-country-config.js and renaming it.
 

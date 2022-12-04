@@ -44,6 +44,7 @@ export { default as Brand } from './molecules/brand';
 export { default as Stagger } from './molecules/stagger';
 export { default as RelatedArticles } from './molecules/related-articles';
 export { default as Card } from './molecules/card';
+export { default as GoldLeaf } from './molecules/gold-leaf';
 
 // organisms
 export { default as Login } from './organisms/login';

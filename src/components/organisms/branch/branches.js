@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-//import sanitizeHtml from 'sanitize-html';
 import { getOffline, putOffline } from '../../../utils/golds/offline-util';
 import { createAllPortholeTrees, getRSSBranch } from '../../../utils/golds/feed-util';
 import { getAllItemsFromStore } from '../../../utils/golds/indexdb-util';
 import { getWindow } from '../../../utils/server-side-util';
 import Branch from './branch';
 import styles from './branches.scss';
-import { Column, List, ListItem } from '../../../';
+import { Column, Row, List, ListItem } from '../../../';
 
 // https://stackoverflow.com/questions/54919522/lodash-differenceby-in-vanilla-javascript
 function differenceBy(array1, array2, key) {
@@ -106,9 +105,10 @@ const Branches = props => {
           allNewBranches =
             portholeBranchesValid.length > 0 ? allNewBranches.concat(portholeBranchesValid) : allNewBranches;
 
+          // let's the library working deployed to Vercel first and then wory about offline
           // offline storage needs to be tested and refactored
-          //putOffline(path, data);
-          //updateAll();
+          // putOffline(path, data);
+          // updateAll();
 
           const shuffledBranches = shuffle(allNewBranches);
           setState({ ...state, branches: shuffledBranches });
@@ -172,22 +172,22 @@ const Branches = props => {
       const width = screenWindow?.innerWidth;
       const cardWidth = 300;
       const totalColumns = Math.floor(width / cardWidth);
-      console.log('totalColumns: ', totalColumns);
-      const totalBranchesPerColumn = Math.floor(branches.length / totalColumns);
-      console.log('totalBranchesPerColumn: ', totalBranchesPerColumn);
-      const list = [];
-      const columnCount = 1;
-      //branches.forEach(addList);
-      const column = getColumn(totalBranchesPerColumn, branches, columnCount);
 
-      return column;
+      const totalBranchesPerColumn = Math.floor(branches.length / totalColumns);
+      const range = [...Array(totalColumns).keys()];
+
+      const list = range.map(columnCount => {
+        return getColumn(totalBranchesPerColumn, branches, columnCount);
+      });
+
+      return list;
     }
   };
 
   const renderUi = () => {
     const { branches } = state;
 
-    return <Column customClass={styles.column__list}>{getColumns(branches)}</Column>;
+    return <Row customClass={styles.column__list}>{getColumns(branches)}</Row>;
   };
 
   return renderUi();

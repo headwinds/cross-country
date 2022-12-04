@@ -1,3 +1,5 @@
+import { getWindow } from './server-side-util';
+
 let numberUtil;
 class NumberUtil {
   constructor() {}
@@ -101,7 +103,9 @@ class NumberUtil {
   };
 
   physicsScale = function (num) {
-    return (num * window.innerWidth) / 600;
+    const serverWindow = getWindow();
+    if (!serverWindow) return null;
+    return (num * serverWindow?.innerWidth) / 600;
   };
 }
 
