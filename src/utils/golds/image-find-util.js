@@ -54,13 +54,9 @@ export default function getImagesFromDescription(branchObj) {
   frag.appendChild(temp);
   // what if there are no images?
   let imgTags = temp.getElementsByTagName('img');
-  console.log('PortholeImageService - imgTags: ', imgTags);
 
   // also search for image tags - frag will auto convert image to img!
   if (imgTags && imgTags.length > 0) {
-    console.log('imgTags.length: ', imgTags.length);
-    console.log('typeof imgTags: ', typeof imgTags);
-    console.log('imgTags: ', imgTags);
     Array.from(imgTags).forEach((img, index) => {
       if (typeof img !== 'undefined') {
         let imgURL;
@@ -96,7 +92,7 @@ export default function getImagesFromDescription(branchObj) {
   if (images.length === 0) {
     const useText = true;
     const defaultImage = getImageObj(defaultFullScreenImageUrl, useText);
-    console.log('defaultImage: ', defaultImage);
+
     defaultImage.useText = true;
     images.push(defaultImage);
   }
@@ -105,8 +101,6 @@ export default function getImagesFromDescription(branchObj) {
 
 // rewrite the whole function to use the new image service!!!
 export const getVideosFromDescription = branchObj => {
-  if (log()) console.log('PortholeImageService - getVideosFromDescription - branchObj: ', branchObj);
-
   let videos = [];
   let unqiueVideos = [];
 
@@ -115,8 +109,6 @@ export const getVideosFromDescription = branchObj => {
   let videoUrl = null;
 
   let getImageObj = function (videoPath) {
-    if (log()) console.log('PortholeImageService addVideo videoPath: ' + videoPath);
-
     let resultVideoObj = {
       videoUrl: videoUrl,
     };
@@ -137,8 +129,6 @@ export const getVideosFromDescription = branchObj => {
   frag.appendChild(temp);
 
   let videoTags = temp.getElementsByTagName('video');
-
-  //if (log()) console.log("PortholeImageService imageTags: ", imageTags);
 
   if (videoTags.length > 0) {
     videoTags.forEach((video, index) => {

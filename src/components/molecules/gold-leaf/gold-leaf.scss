@@ -1,26 +1,13 @@
 @import "../../styles.scss";
 
-.Branch {
+.GoldLeaf {
   display: block;
   margin: 0px;
-  padding: 0px;
-
-  // 576px window width and more
-  @include sm {
-    
-  }
-  // 992px window width and more
-  @include lg {
-    //max-width: 1100px;
-  }
-  // 1400px window width and more
-  @include rwd(1400) {
-    //margin-bottom: 20px; careful this affected tile!!!
-    //margin-top: 20px;
-  }
+  background: transparent;
+  height: auto;
 }
   
-.Branch__controls {
+.GoldLeaf__controls {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 5px;
@@ -29,7 +16,7 @@
   padding: 5px;
   opacity: 0.4;
 }
-.Branch__item {
+.GoldLeaf__item {
   display: block;
   position: relative;
   background: transparent;
@@ -38,13 +25,25 @@
   pointer-events: all;
   cursor: pointer;
 }
-.Branch__images {
+.GoldLeaf p {
+  font-size: 18px;
+  padding: 10px;
+}
+.GoldLeaf a {
+  text-decoration: none;
+  color: #887f7f;
+}
+.GoldLeaf a:visited {
+  text-decoration: none;
+  color: #d0b002;
+}
+.GoldLeaf__images {
   display: flex;
   flex-direction: column;
   overflow: hidden;
   overflow-x: auto;
 }
-.Branch__total {
+.GoldLeaf__total {
   display: block;
   position: absolute;
   top: 0px;
@@ -53,7 +52,7 @@
   border-radius: 4px;
   padding: 0px 2px;
 }
-.Branch__total__text {
+.GoldLeaf__total__text {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,7 +60,7 @@
   font-size: 12px;
   opacity: 0.6;
 }
-.Branch__image {
+.GoldLeaf__image {
   display: flex;
   flex-direction: row;
   overflow: hidden;
@@ -69,20 +68,23 @@
   width: 100%;
   height: auto;
   align-items: flex-start;
+  padding: 0px;
 }
 
-.Branch__image img {
+.GoldLeaf__image img {
   width: 100%;
   height: auto;
 }
 
-.Branch__title {
+.GoldLeaf__title {
   font-family: $font-roboto-slab;
-  font-size: 20px;
+  font-size: 26px;
   color: #888;
-  //width: 96vw
+  opacity: 0.7;
+  line-height: 26px;
+  margin-bottom: 8px;
 }
-.Branch__titleLink {
+.GoldLeaf__titleLink {
   text-decoration: none;
   pointer-events: all;
   font-family: $font-roboto-slab;

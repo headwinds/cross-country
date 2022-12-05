@@ -1,10 +1,11 @@
-import React from 'react';
-import sanitizeHtml from 'sanitize-html';
+import React, { useState, useEffect } from 'react';
 import { getOffline, putOffline } from '../../../utils/golds/offline-util';
 import { createAllPortholeTrees, getRSSBranch } from '../../../utils/golds/feed-util';
 import { getAllItemsFromStore } from '../../../utils/golds/indexdb-util';
+import { getWindow } from '../../../utils/server-side-util';
 import Branch from './branch';
 import styles from './branches.scss';
+import { Column, Row, List, ListItem } from '../../../';
 
 // https://stackoverflow.com/questions/54919522/lodash-differenceby-in-vanilla-javascript
 function differenceBy(array1, array2, key) {
@@ -14,42 +15,37 @@ function differenceBy(array1, array2, key) {
 // https://stackoverflow.com/questions/49555273/how-to-shuffle-an-array-of-objects-in-javascript
 const shuffle = arr => arr.sort(() => Math.random() - 0.5);
 
-class Branches extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      feeds: createAllPortholeTrees(),
-      branches: [],
-    };
-  }
-  componentDidMount() {
-    this.getCabinQuestFeed();
-  }
-  getCabinQuestFeed() {
-    const self = this;
+const Branches = props => {
+  const [state, setState] = useState({
+    feeds: createAllPortholeTrees(),
+    branches: [],
+    hasFetched: false,
+    allNewBranches: [],
+  });
+  const { hasFetched, allNewBranches } = state;
+  useEffect(() => {
+    if (!hasFetched && allNewBranches.length === 0) {
+      getCabinQuestFeed();
+      setState({ ...state, hasFetched: true });
+    }
+  }, [hasFetched, allNewBranches]);
 
-    const { feeds } = this.state;
+  const getCabinQuestFeed = () => {
+    const { feeds } = state;
     let allNewBranches = [];
     let feedsComplete = 0;
     //let feedsFailed = 0; // no feeds should fail if I'm online! same with off ;-D
     let totalFeeds = 0;
-    console.log('totalFeeds: ', totalFeeds);
 
     const updateAll = () => {
       if (feedsComplete === totalFeeds - 1) {
         // remove all branches marked read
         getAllItemsFromStore('porthole').then(response => {
-          console.log('store reponse: ', response);
           const allBranchesMarkedRead = response.filter(item => item.bTrashed);
 
           // remove the branches that have been trashed
           const allNewBranchesNotRead = differenceBy(allNewBranches, allBranchesMarkedRead, 'link');
-          /*
-            console.log("DIF -----------------: ");
-            console.log("allBranchesMarkedRead", allBranchesMarkedRead.length);
-            console.log("allNewBranches", allNewBranches.length);
-            console.log("allNewBranchesNotRead", allNewBranchesNotRead.length);
-            */
+
           // update branches that have been trained
           const allBranchesTrained = response.filter(item => item.bViewed && !item.bTrashed);
           const getViewed = branch => {
@@ -60,10 +56,10 @@ class Branches extends React.Component {
             const bViewed = getViewed(branch);
             return { ...branch, bViewed };
           });
-          console.log('allBranches: ', allBranches);
+
           // finally shuffle them
           const shuffledBranches = shuffle(allBranches);
-          self.setState({ feedsComplete, branches: shuffledBranches });
+          setState({ ...state, feedsComplete, branches: shuffledBranches });
         });
       }
       feedsComplete++;
@@ -71,7 +67,6 @@ class Branches extends React.Component {
     const loadFeed = (feed, index) => {
       const path = `https://cabinquest.now.sh/bellwoods/trees/getTreeByRSSUrl/:xmlUrl?xmlUrl=${feed.xmlUrl}`;
       const convertToPortholeBranches = branches => {
-        console.log('branches 111111: ', branches);
         // raw
         const newBranches = branches;
         // refined
@@ -89,10 +84,8 @@ class Branches extends React.Component {
             return success.json();
           },
           fail => {
-            console.log('fail online: ', fail);
             getOffline(path).then(
               storedBranches => {
-                console.log('success getOffline: ', storedBranches);
                 const storedPortholeBranchesValid = convertToPortholeBranches(storedBranches);
                 allNewBranches =
                   storedPortholeBranchesValid.length > 0
@@ -107,92 +100,97 @@ class Branches extends React.Component {
           }
         )
         .then(data => {
-          console.log('successfully loaded portholeBranchesValid:', data);
           const portholeBranchesValid = convertToPortholeBranches(data?.branches ?? []);
-          console.log('successfully loaded portholeBranchesValid:', feed.title);
-          console.log('successfully loaded portholeBranchesValid:', portholeBranchesValid);
+
           allNewBranches =
             portholeBranchesValid.length > 0 ? allNewBranches.concat(portholeBranchesValid) : allNewBranches;
 
-          putOffline(path, data);
-          updateAll();
-          self.setState({ branches: allNewBranches });
+          // let's the library working deployed to Vercel first and then wory about offline
+          // offline storage needs to be tested and refactored
+          // putOffline(path, data);
+          // updateAll();
+
+          const shuffledBranches = shuffle(allNewBranches);
+          setState({ ...state, branches: shuffledBranches });
         });
     };
     for (let feedIdx in feeds) {
       loadFeed(feeds[feedIdx], feedIdx);
       totalFeeds++;
     }
-  }
+  };
 
-  render() {
-    const { branches } = this.state;
-    console.log('Branches render branches: ', branches);
-    const getCards = cardBranches => {
-      if (cardBranches.length === 0) {
-        return null;
-      } else {
-        return cardBranches.map((branch, idx) => {
-          if (branch && branch !== null && branch.text) {
-            const clean = sanitizeHtml(branch.text, {
-              allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img']),
-              allowedAttributes: {
-                a: ['href', 'target'],
-                img: ['src'],
-              },
-            });
-            return (
-              <li className={styles.card__item} key={idx}>
-                <Branch branch={branch} />
-              </li>
-            );
-          } else {
-            return null;
-          }
-        });
-      }
-    };
-    const getColumns = () => {
-      console.log('branches getColumns: ', branches);
-      if (branches.length === 0) {
-        return null;
-      } else {
-        const width = window.innerWidth;
-        const cardWidth = 300;
-        const totalColumns = Math.floor(width / cardWidth);
-        const totalBranchesPerColumn = Math.floor(branches.length / totalColumns);
-        console.log('branches totalBranchesPerColumn: ', totalBranchesPerColumn);
-        const list = [];
-        let columnCount = 0;
-        const addList = () => {
-          const startIndex = columnCount * totalBranchesPerColumn;
-          const endIndex = totalBranchesPerColumn * (columnCount + 1);
-          const cardBranches = branches.slice(startIndex, endIndex);
+  const getCards = cardBranches => {
+    if (cardBranches.length === 0) {
+      return null;
+    } else {
+      return cardBranches.map((branch, idx) => {
+        if (branch && branch !== null && branch.text) {
+          // need an alternative to santize as breaks rollup!
+          /*
+          const clean = sanitizeHtml(branch.text, {
+            allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img']),
+            allowedAttributes: {
+              a: ['href', 'target'],
+              img: ['src'],
+            },
+          });
+          */
 
-          const column = (
-            <li className={styles.column__item} key={`col${columnCount}`}>
-              <ul className={styles.card__list}>{getCards(cardBranches)}</ul>
-            </li>
+          return (
+            <ListItem className={styles.card__item} key={idx}>
+              <Branch branch={branch} />
+            </ListItem>
           );
-          list.push(column);
-          columnCount++;
-        };
-        branches.forEach(addList);
+        } else {
+          return null;
+        }
+      });
+    }
+  };
 
-        console.log('list: ', list);
+  const getColumn = (totalBranchesPerColumn, branches, columnCount) => {
+    const startIndex = columnCount * totalBranchesPerColumn;
+    const endIndex = totalBranchesPerColumn * (columnCount + 1);
+    const cardBranches = branches.slice(startIndex, endIndex);
 
-        // what is this doing?!
-        // Array.from(Array(totalColumns)).forEach((x, i) => { addList() });
-        // _.times(totalColumns, addList)
-
-        return list;
-      }
-    };
-    return (
-      <section className={styles.Porthole}>
-        <ul className={styles.column__list}>{getColumns()}</ul>
-      </section>
+    const column = (
+      <Column customClass={styles.column__item} key={`col${columnCount}`}>
+        <List customClass={styles.card__list}>{getCards(cardBranches)}</List>
+      </Column>
     );
-  }
-}
+    return column;
+    //list.push(column);
+    //columnCount++;
+  };
+
+  const getColumns = branches => {
+    const screenWindow = getWindow();
+    if (branches.length === 0) {
+      return null;
+    } else if (screenWindow) {
+      const width = screenWindow?.innerWidth;
+      const cardWidth = 300;
+      const totalColumns = Math.floor(width / cardWidth);
+
+      const totalBranchesPerColumn = Math.floor(branches.length / totalColumns);
+      const range = [...Array(totalColumns).keys()];
+
+      const list = range.map(columnCount => {
+        return getColumn(totalBranchesPerColumn, branches, columnCount);
+      });
+
+      return list;
+    }
+  };
+
+  const renderUi = () => {
+    const { branches } = state;
+
+    return <Row customClass={styles.column__list}>{getColumns(branches)}</Row>;
+  };
+
+  return renderUi();
+};
+
 export default Branches;

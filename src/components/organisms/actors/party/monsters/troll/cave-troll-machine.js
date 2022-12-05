@@ -1,12 +1,15 @@
 import { createMachine, assign, interpret, send } from 'xstate';
 
-import PusherService from '../../../../../../services/pusher-service';
+//import PusherService from '../../../../../../services/pusher-service';
 import c from '../../../../../../constants/';
+import PusherService from '../../../../../../services/pusher-service';
+import { getDocument } from '../../../../../../utils/server-side-util';
 
 const localUrl = 'http://127.0.0.1:5000';
 const remoteUrl = 'https://scout.vercel.app';
 
-const url = document.domain.includes('localhost') ? localUrl : remoteUrl;
+const screenDocument = getDocument();
+const url = screenDocument?.domain.includes('localhost') ? localUrl : remoteUrl;
 
 const MAP_URL = `${url}/api/world/map`;
 const MAP_WALK_URL = `${url}/api/world/map/walk`;
@@ -58,7 +61,7 @@ const initialContext = {
   tileModels: [],
   isMapGenerated: false,
   actorModels: [defaultHunterModel, defaultCaveTrollModel],
-  channel: PusherService.createPusherChannel(c.APP_KEY, c.APP_CLUSTER, c.CHANNEL_NAME),
+  //channel: PusherService.createPusherChannel(c.APP_KEY, c.APP_CLUSTER, c.CHANNEL_NAME),
 };
 
 const onEntryHandler = (context, event) => {
@@ -123,7 +126,7 @@ export const caveTrollMachine = createMachine(
     invoke: {
       id: 'socket',
       src: (context, event) => (callback, onEvent) => {
-        const { channel } = context;
+        //const { channel } = context;
 
         setTimeout(function () {
           callback({ type: 'FETCH_USER_MAP' });
@@ -138,7 +141,7 @@ export const caveTrollMachine = createMachine(
           callback({ type: 'PUSHER_FOUND_MAP_SUCCESS', generatedMap: map });
         };
 
-        PusherService.bindToPusher(channel, c.GET_MAP_SUCCESS, onGetMapSuccessHandler);
+        //PusherService.bindToPusher(channel, c.GET_MAP_SUCCESS, onGetMapSuccessHandler);
       },
     },
     id: 'caveTroll',

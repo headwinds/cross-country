@@ -2,11 +2,13 @@ import { createMachine, assign, interpret, send } from 'xstate';
 import PusherService from '../../../services/pusher-service';
 import c from '../../../constants/';
 import book from './frozen-lake-book';
+import { getDocument } from '../../../utils/server-side-util';
 
 const localUrl = 'http://0.0.0.0:5000';
 const remoteUrl = 'https://scout.vercel.app';
 
-const url = document.domain.includes('localhost') ? localUrl : remoteUrl;
+const screenDocument = getDocument();
+const url = screenDocument?.domain.includes('localhost') ? localUrl : remoteUrl;
 
 const MAP_URL = `${url}/api/world/map`;
 const MAP_WALK_URL = `${url}/api/world/map/walk`;
@@ -246,9 +248,9 @@ export const frozenLakeMachine = createMachine(
           //callback({ type: 'FETCH_MAP_SUCCESS', generatedMap: map });
         };
 
-        channel = PusherService.createPusherChannel(c.APP_KEY, c.APP_CLUSTER, c.CHANNEL_NAME);
-        PusherService.bindToPusher(channel, c.GET_MAP_SUCCESS, onGetMapSuccessHandler);
-        PusherService.bindToPusher(channel, c.WALK_MAP_SUCCESS, onWalkMapSuccessHandler);
+        //channel = PusherService.createPusherChannel(c.APP_KEY, c.APP_CLUSTER, c.CHANNEL_NAME);
+        //PusherService.bindToPusher(channel, c.GET_MAP_SUCCESS, onGetMapSuccessHandler);
+        //PusherService.bindToPusher(channel, c.WALK_MAP_SUCCESS, onWalkMapSuccessHandler);
       },
     },
     states: {

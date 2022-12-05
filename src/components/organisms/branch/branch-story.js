@@ -4,10 +4,9 @@ import getImagesFromDescription from '../../../utils/golds/image-find-util';
 import { getRSSBranch } from '../../../utils/golds/feed-util';
 
 // there is a bug here that is causing the branch to be undefined!
-//import killScreenBranches from './kill-screen-raw-branches';
-
+import killScreenBranches from './kill-screen-raw-branches';
 import behanceBranches from './behance-raw-branches';
-import gameSpotBranches from './game-spot-raw-branches';
+import gameStopBranches from './game-spot-raw-branches';
 
 const index = 0;
 
@@ -24,12 +23,17 @@ const convertToPortholeBranches = branches => {
   return portholeBranchesValid;
 };
 
-const getBranch = (isOnlyText, hasMultiple, portholeBranchModels) => {
-  const gamespotPortholeBranchModels = convertToPortholeBranches(gameSpotBranches);
+const getBranch = (isOnlyText, hasMultiple, portholeBranchModels, isKillScreen) => {
+  if (isKillScreen) {
+    const killScreenPortholeBranchModels = convertToPortholeBranches(killScreenBranches);
+    return killScreenPortholeBranchModels[0];
+  }
+
+  const gamestopPortholeBranchModels = convertToPortholeBranches(gameStopBranches);
   if (isOnlyText) {
-    return gamespotPortholeBranchModels[0];
+    return gamestopPortholeBranchModels[0];
   } else if (hasMultiple) {
-    return gamespotPortholeBranchModels[7];
+    return gamestopPortholeBranchModels[7];
   }
   return portholeBranchModels[0];
 };
@@ -37,9 +41,9 @@ const getBranch = (isOnlyText, hasMultiple, portholeBranchModels) => {
 // note some images are super small and scaled up with distortion
 // should I reject them or center them without scaling?
 
-const BranchStory = ({ isOnlyText, hasMultiple }) => {
+const BranchStory = ({ isOnlyText, hasMultiple, isKillScreen }) => {
   const portholeBranchModels = convertToPortholeBranches(behanceBranches);
-  const branch = getBranch(isOnlyText, hasMultiple, portholeBranchModels);
+  const branch = getBranch(isOnlyText, hasMultiple, portholeBranchModels, isKillScreen);
   return branch ? <Branch branch={branch} /> : 'No Branch!';
 };
 
