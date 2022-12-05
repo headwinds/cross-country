@@ -1,15 +1,15 @@
 import { inspect } from '@xstate/inspect';
 
 import React from 'react';
-import { Garden, Paragraph, Column, CaveTroll, Hunter, Warrior, Stage } from 'cross-country';
+import { Garden, Paragraph, Column, CaveTroll, Warrior, Stage } from 'cross-country';
 
 inspect({
   // options
   // url: 'https://stately.ai/viz?inspect', // (default)
-  iframe: false, 
+  iframe: false,
 });
 
-const App = () => {
+const Garden = () => {
   const gardenConfig = {
     url: 'https://assets2.rockpapershotgun.com/wildermyth_OMrdDbN.jpg/BROK/resize/1920x1920%3E/format/jpg/quality/80/wildermyth_OMrdDbN.jpg',
     a11y: 'wildermyth',
@@ -38,7 +38,7 @@ const App = () => {
             },
           }}
         >
-          <Hunter model={{ tile: { id: 0, name: 'C', x: 100, y: 100 } }} />
+          {/*<Hunter model={{ tile: { id: 0, name: 'C', x: 100, y: 100 } }} />*/}
           <Warrior model={{ tile: { id: 1, name: 'C', x: 100, y: 100 } }} />
         </Stage>
       </Column>
@@ -46,4 +46,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Garden;

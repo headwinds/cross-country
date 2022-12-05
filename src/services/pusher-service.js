@@ -1,5 +1,5 @@
 //import c from '../constants/';
-import Pusher from 'pusher-js';
+//import Pusher from 'pusher-js';
 
 /*
 channel.bind('pusher:subscription_succeeded', function () {
@@ -42,6 +42,7 @@ const onGetMapSuccessHandler = data => {
 };
 */
 
+/*
 const createPusherChannel = (appKey, appCluster, channelName) => {
   const pusherClient = new Pusher(appKey, {
     cluster: appCluster,
@@ -63,3 +64,4 @@ const PusherService = {
 };
 
 export default PusherService;
+*/

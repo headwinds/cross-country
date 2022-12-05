@@ -1,9 +1,15 @@
+import { getWindow } from './server-side-util';
+
+
 // this doesn't work reliably 
 export default function ip_local()
 {
  var ip = false;
- window.RTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection || false;
- if (window.RTCPeerConnection)
+
+ const screenWindow = getWindow();
+
+ screenWindow?.RTCPeerConnection = screenWindow?.RTCPeerConnection || screenWindow?.mozRTCPeerConnection || screenWindow?.webkitRTCPeerConnection || false;
+ if (screenWindow?.RTCPeerConnection)
  {
   ip = [];
   var pc = new RTCPeerConnection({iceServers:[]}), noop = function(){};

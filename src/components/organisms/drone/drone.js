@@ -70,8 +70,8 @@ const Drone = ({ config: { id, tranformedState = 'compact' } }) => {
   const maxSeconds = 5 * oneSecond;
 
   const [isCleared, clearInterval] = useInterval(() => {
-    const newCoorX = Math.random() * 180;
-    const newCoorY = Math.random() * 180;
+    const newCoorX = Math.random() * 75;
+    const newCoorY = Math.random() * 75;
 
     const newDroneModel =
       tranformedState === 'compact'
@@ -125,6 +125,9 @@ const Drone = ({ config: { id, tranformedState = 'compact' } }) => {
       .call(enter => enter.transition().duration(1000).attr('fill', '#999').attr('r', 10));
 
     //group.call(enter => enter.transition().duration(1000).attr('transform', 'translate(50,50) scale(1.2)'));
+
+    d3.select('svg').style('width', '500px');
+    d3.select('svg').style('height', '500px');
   };
 
   const updateDroneTransition = element => {
@@ -179,6 +182,7 @@ const Drone = ({ config: { id, tranformedState = 'compact' } }) => {
 
   const renderDrone = () => {
     const groupElement = d3.select(droneRef.current);
+
     groupElement
       .selectAll('g')
       .data(dataset, d => d)

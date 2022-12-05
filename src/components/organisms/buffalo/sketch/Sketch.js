@@ -1,3 +1,4 @@
+// import { getWindow } from '../../../utils/server-side-util';
 // const matchStateToProps = state => ({ app });
 /*
 function mapStateToProps(state) {
@@ -163,8 +164,12 @@ export class SketchComponent extends CommonComponent implements OnInit {
    let detailsHeight = details.height();
    let detailsWidth = details.width(); 
 
-   let detailsTop = ( window.innerHeight - detailsHeight - 50 ) + "px";
-   let detailsLeft = ( ( window.innerWidth / 2 ) - ( detailsWidth / 2) ) + "px";
+   const screenWinodw = getWindow();
+
+   if (!screenWinodw) return;
+
+   let detailsTop = ( screenWinodw?.innerHeight - detailsHeight - 50 ) + "px";
+   let detailsLeft = ( ( screenWinodw?.innerWidth / 2 ) - ( detailsWidth / 2) ) + "px";
 
    let cssObj = {top: detailsTop, left: detailsLeft};
 
@@ -412,8 +417,12 @@ export class SketchComponent extends CommonComponent implements OnInit {
 
     console.log("sketch - createDraggable args: ", arguments);
 
+    const screenWindow = getWindow();
+
+    if (!screenWindow) return false;
+
       dropAreaId = (typeof dropAreaId === "undefined") ? "#paper" : dropAreaId;
-      bounds = (typeof bounds === "undefined") ? window : bounds;
+      bounds = (typeof bounds === "undefined") ? screenWindow : bounds;
 
       let dropArea = $(dropAreaId);
 
