@@ -99,6 +99,21 @@ const Branch = props => {
     setState({ ...state, showImages: false });
   };
 
+  const renderImageBtn = showImages => {
+    if (showImages) {
+      return (
+        <div className={styles.Branch__item} onClick={handleViewImages}>
+          <ClusterOffIcon />
+          <div className={styles.Branch__total}>
+            {/* what is happening here? */}
+            <span className={styles.Branch__total__text}>{totalBranches}</span>
+          </div>
+        </div>
+      );
+    }
+    return null;
+  };
+
   const renderUi = () => {
     const { branch, showImages, showArticle, text, trained, trashed } = state;
 
@@ -153,15 +168,9 @@ const Branch = props => {
           </div>
           */}
           {/* imgs */}
-          <div>
-            <div className={styles.Branch__item} onClick={handleViewImages}>
-              <ClusterOffIcon />
-              <div className={styles.Branch__total}>
-                {/* what is happening here? */}
-                <span className={styles.Branch__total__text}>{totalBranches}</span>
-              </div>
-            </div>
-          </div>
+
+          {renderImageBtn(showImages)}
+
           {/* article */}
           <div className={styles.Branch__item} onClick={handleViewArticle}>
             <ArticleIcon />
