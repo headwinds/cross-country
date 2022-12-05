@@ -1,3 +1,5 @@
+@import "../../styles.scss";
+
 /* general styles */
 .body {
     font-family: 'Helvetica Neue',Arial,Helvetica,sans-serif;
@@ -27,7 +29,7 @@
   .column__list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    grid-gap: .5rem;
+    grid-gap: 8px;
     align-items: start;
     overflow: hidden;
     margin: 0px;
@@ -43,6 +45,21 @@
     background-color: whitesmoke;
     padding: 0px;
     margin: 0px;
+    //max-width: 280px;
+
+      // 576px window width and more
+    @include sm {
+      //max-width: 98vw;
+    }
+    // 992px window width and more
+    @include lg {
+      //max-width: 1100px;
+    }
+    // 1400px window width and more
+    @include rwd(1400) {
+      //margin-bottom: 20px; careful this affected tile!!!
+      //margin-top: 20px;
+    }
   }
   
   .column__title--wrapper {
@@ -79,9 +96,10 @@
     display: grid;
     grid-template-rows: auto;
     grid-gap: .5rem;
-    margin: 8px;
-    padding: 0px;
+    margin: 0px;
+    padding: 8px;
     overflow: hidden;
+    background: whitesmoke;
   }
   
   .card__item {

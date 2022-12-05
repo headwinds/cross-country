@@ -6,7 +6,7 @@ import { getRSSBranch } from '../../../utils/golds/feed-util';
 // there is a bug here that is causing the branch to be undefined!
 import killScreenBranches from './kill-screen-raw-branches';
 import behanceBranches from './behance-raw-branches';
-import gameSpotBranches from './game-spot-raw-branches';
+import gameStopBranches from './game-spot-raw-branches';
 
 const index = 0;
 
@@ -29,11 +29,11 @@ const getBranch = (isOnlyText, hasMultiple, portholeBranchModels, isKillScreen) 
     return killScreenPortholeBranchModels[0];
   }
 
-  const gamespotPortholeBranchModels = convertToPortholeBranches(gameSpotBranches);
+  const gamestopPortholeBranchModels = convertToPortholeBranches(gameStopBranches);
   if (isOnlyText) {
-    return gamespotPortholeBranchModels[0];
+    return gamestopPortholeBranchModels[0];
   } else if (hasMultiple) {
-    return gamespotPortholeBranchModels[7];
+    return gamestopPortholeBranchModels[7];
   }
   return portholeBranchModels[0];
 };
