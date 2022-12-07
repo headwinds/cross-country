@@ -114,6 +114,17 @@ const Branch = props => {
     return null;
   };
 
+  const renderTrainingBtn = () => {
+    return null;
+
+    return (
+      <div className={styles.Branch__item} onClick={handleToggleTrainBranch}>
+        {trained && <HeartIcon color={GOLD_COLOUR} />}
+        {!trained && <HeartIcon />}
+      </div>
+    );
+  };
+
   const renderUi = () => {
     const { branch, showImages, showArticle, text, trained, trashed } = state;
 
@@ -156,12 +167,9 @@ const Branch = props => {
           <div className={styles.Branch__item} onClick={handleTweet}>
             <TweetIcon />
           </div>
-          {/* train 
-          <div className={styles.Branch__item} onClick={handleToggleTrainBranch}>
-            {trained && <HeartIcon color={GOLD_COLOUR} />}
-            {!trained && <HeartIcon />}
-          </div>
-          */}
+
+          {renderTrainingBtn()}
+
           {/* trash 
           <div className={styles.Branch__item} onClick={handleReadBranch}>
             <HideIcon />

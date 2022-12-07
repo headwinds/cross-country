@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
-import Button from './button-headless';
+import Button from '../button-themed';
 
 const handleClick = jest.fn();
 
