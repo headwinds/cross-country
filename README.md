@@ -12,7 +12,7 @@ Core Tech
 
 [Cross Country Storybook via Github Pages](https://headwinds.github.io/cross-country)
 
-Bored of building enterprise UI? Are you a fan of the Sims, Starcraft, Chess, Dungeons and Dragons and other table top role playing games aka TTRPGs? By playing with code, you can actually hone your dayjob skills while exploring subject matter that you are more passionate. 
+Bored of building enterprise UI? Are you a fan of the Sims, Starcraft, Chess, Dungeons and Dragons and other table top role playing games (TTRPGs)? By playing with code, you can actually hone your dayjob skills while exploring subject matter that you are more passionate. 
 
 Do you keep a sketch book? Do you draw notes about fantasy UI, game mechanics and envision a future of EVs and trips to Mars? 
 
@@ -43,21 +43,15 @@ By wrapping html, each component is augmented for building accessible experience
 Progress Complete 
 - 35% 
 
-Note to self: this is library can only be built with Node 14 (tested with 14.20.1) - I need to sort out upgrading to Dart Sass with Webpack 5 and Storybook but if you plan to use it any other projects that uses the latest version of node, it should be fine to import since it's all compiled down to vanila js. The current issue preventing the upgrade has something to do with sass-loader and migration from 7 to 8 where I most likey need to upgrade how the options are configured.
+## Known Issues
 
-```
-Module build failed (from ./node_modules/sass-loader/dist/cjs.js):
-Error: Missing binary. See message above.
-```
+This is library can only be built with Node 14 (tested with 14.20.1) - I need to sort out upgrading to Dart Sass with Webpack 5 and Storybook but if you plan to use it any other projects that uses the latest version of node, it should be fine to import since it's all compiled down to vanila js. 
 
-Again no errors with Node 14.20.1 but they appear as I switch to 16.9.1
+The current issue preventing the upgrade has something to do with sass-loader and migration from 7 to 8 where I most likey need to upgrade how the options are configured.
 
-Another radical approach would be to harvest the React and trade SCSS for styled components or tailwind; just not a fan of the way tailwinds looks in the DOM though although I've heard enough devs say you get used to it. Perhaps, I'm ready for PostCSS?! Or something else?!
+Again no errors with Node 14.20.1 but they appear as I switch to 16.9.1. 
 
 [n 14.20.1](https://www.npmjs.com/package/n)
-
-For now, I believe I'm fine to continue building on 14. It is not sunset yet like Node 12. Yet... does trouble a bit.
-I know I won't get any performance wins by supporting Node 16 so there isn't much point sweating it. 
 
 ## NextJS 
 

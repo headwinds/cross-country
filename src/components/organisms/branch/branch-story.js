@@ -44,6 +44,7 @@ const getBranch = (isOnlyText, hasMultiple, portholeBranchModels, isKillScreen) 
 const BranchStory = ({ isOnlyText, hasMultiple, isKillScreen }) => {
   const portholeBranchModels = convertToPortholeBranches(behanceBranches);
   const branch = getBranch(isOnlyText, hasMultiple, portholeBranchModels, isKillScreen);
+  console.log('mock branch: ', branch);
   return branch ? <Branch branch={branch} /> : 'No Branch!';
 };
 
