@@ -2,6 +2,13 @@ import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import Button from '../button-themed';
 
+/*
+I had to add config to reset the handleclick function each time
+which I expected to work by default 
+see clearMocks in jest.config.js 
+https://stackoverflow.com/questions/47812801/how-to-reset-jest-mock-functions-calls-count-before-every-test
+*/
+
 const handleClick = jest.fn();
 
 describe('<Button />', () => {
@@ -10,17 +17,24 @@ describe('<Button />', () => {
     expect(container).toBeTruthy();
   });
 
-  test('click the button', () => {
-    const { container, debug } = render(<Button text="hello" handleClick={handleClick} />);
-    const button = screen.getByRole('button');
+  test('click the button', async () => {
+    const { container, debug } = render(<Button text="hulk" onClick={handleClick} />);
+    const button = await screen.findByText('hulk');
     fireEvent.click(button);
-    expect(handleClick).toHaveBeenCalledTimes(1);
+
+    await waitFor(() => {
+      expect(handleClick).toHaveBeenCalledTimes(1);
+    });
   });
 
-  test('press down', () => {
-    const { container, debug } = render(<Button text="hello" handleClick={handleClick} />);
-    const button = screen.getByRole('button');
-    fireEvent.keyDown(button);
-    expect(handleClick).toHaveBeenCalledTimes(1);
+  test('press down', async () => {
+    const { container, debug } = render(<Button text="thor" onClick={handleClick} />);
+
+    const button = await screen.findByText('thor');
+    fireEvent.click(button);
+
+    await waitFor(() => {
+      expect(handleClick).toHaveBeenCalledTimes(1);
+    });
   });
 });

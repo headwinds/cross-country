@@ -8,7 +8,7 @@ const localUrl = 'http://127.0.0.1:5000';
 const remoteUrl = 'https://scout.vercel.app';
 
 const screenDocument = getDocument();
-const url = screenDocument?.domain.includes('localhost') ? localUrl : remoteUrl;
+const url = screenDocument?.domain?.includes('localhost') ? localUrl : remoteUrl;
 
 const MAP_URL = `${url}/api/world/map`;
 const MAP_WALK_URL = `${url}/api/world/map/walk`;
