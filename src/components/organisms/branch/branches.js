@@ -3,6 +3,7 @@ import { getOffline, putOffline } from '../../../utils/golds/offline-util';
 import { createAllPortholeTrees, getRSSBranch } from '../../../utils/golds/feed-util';
 import { getAllItemsFromStore } from '../../../utils/golds/indexdb-util';
 import { getWindow } from '../../../utils/server-side-util';
+import { fetchRetry } from '../../../utils/fetch-util';
 import Branch from './branch';
 import styles from './branches.scss';
 import { Column, Row, List, ListItem } from '../../../';
@@ -23,12 +24,60 @@ const Branches = props => {
     allNewBranches: [],
   });
   const { hasFetched, allNewBranches } = state;
+
+  // BFF approach where I provide a new microservice that will handle the RSS feed and return exactly what I need
+  const getCabinQuestFeedFromScoutSummarizeService = async data => {
+    let options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    };
+    let p = await fetch('https://scout-summarize.vercel.app/api/porthole/feeds', options);
+    let response = await p.json();
+    return response;
+  };
+
+  const convertToPortholeBranches = branches => {
+    // raw
+    const newBranches = branches;
+    // refined
+    const portholeBranches = newBranches.map((candidateBranch, ix) => {
+      return getRSSBranch(candidateBranch, 0, ix);
+    });
+    // validated
+    const portholeBranchesValid = portholeBranches.filter(branch => branch !== null);
+
+    return portholeBranchesValid;
+  };
+
   useEffect(() => {
-    if (!hasFetched && allNewBranches.length === 0) {
-      getCabinQuestFeed();
-      setState({ ...state, hasFetched: true });
+    async function fetchData() {
+      const portholeBranches = createAllPortholeTrees();
+      const arr = Object.values(portholeBranches);
+      const rssUrls = arr.map(branch => branch.xmlUrl);
+
+      const jsonData = {
+        rssUrls,
+      };
+      // You can await here
+      const response = await getCabinQuestFeedFromScoutSummarizeService(jsonData);
+      console.log('got the response in the BranchStory ', response);
+
+      const allNewBranches = convertToPortholeBranches(response.feed_responses);
+      const shuffledBranches = shuffle(allNewBranches);
+
+      // ensure all branches are unique
+      const uniqueBranchs = [...new Set(shuffledBranches)];
+      setState({ ...state, branches: uniqueBranchs });
     }
-  }, [hasFetched, allNewBranches]);
+    fetchData();
+  }, []); // Or [] if effect doesn't need props or state
+
+  /*
+
+  TO DO - refactor out offline storage and retrieval
 
   const getCabinQuestFeed = () => {
     const { feeds } = state;
@@ -107,18 +156,25 @@ const Branches = props => {
 
           // let's the library working deployed to Vercel first and then wory about offline
           // offline storage needs to be tested and refactored
-          // putOffline(path, data);
-          // updateAll();
+          putOffline(path, data);
+          updateAll();
+
+          // remove the branches that have been trashed
 
           const shuffledBranches = shuffle(allNewBranches);
-          setState({ ...state, branches: shuffledBranches });
+
+          // ensure all branches are unique
+          const uniqueBranchs = [...new Set(shuffledBranches)];
+          setState({ ...state, branches: uniqueBranchs });
         });
     };
+
     for (let feedIdx in feeds) {
       loadFeed(feeds[feedIdx], feedIdx);
       totalFeeds++;
     }
   };
+  */
 
   const getCards = cardBranches => {
     if (cardBranches.length === 0) {
@@ -151,7 +207,7 @@ const Branches = props => {
 
   const getColumn = (totalBranchesPerColumn, branches, columnCount) => {
     const startIndex = columnCount * totalBranchesPerColumn;
-    const endIndex = totalBranchesPerColumn * (columnCount + 1);
+    const endIndex = totalBranchesPerColumn * (columnCount + 1) - 1;
     const cardBranches = branches.slice(startIndex, endIndex);
 
     const column = (
@@ -159,9 +215,8 @@ const Branches = props => {
         <List customClass={styles.card__list}>{getCards(cardBranches)}</List>
       </Column>
     );
+
     return column;
-    //list.push(column);
-    //columnCount++;
   };
 
   const getColumns = branches => {
