@@ -1,6 +1,6 @@
 import React from 'react';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import Button from '../';
+import { fireEvent, render, screen } from '@testing-library/react';
+import Button from '../button-themed';
 
 /*
 I had to add config to reset the handleclick function each time
@@ -13,7 +13,7 @@ const handleClick = jest.fn();
 
 describe('<Button />', () => {
   test('renders', () => {
-    const { container } = render(<Button text="hello" onClick={handleClick} />);
+    const { container } = render(<Button text="hello" handleClick={handleClick} />);
     expect(container).toBeTruthy();
   });
 
