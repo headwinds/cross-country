@@ -43,6 +43,36 @@ By wrapping html, each component is augmented for building accessible experience
 Progress Complete 
 - 35% 
 
+
+### Generating New Components
+
+I've included a handy NodeJS util file under `generate-component` folder. Instead of copy pasting components to create a new component, you can instead run this command to generate all the files you need to start building out a new component. To use it:
+
+```
+yarn new YourComponentName YourAtomicType
+```
+
+example
+
+```
+yarn new accordion atom
+```
+
+This will generate:
+
+```
+/src
+  /YourComponentName
+    /__stories__
+      YourComponentName.stories.tsx
+    /__tests__
+      YourComponentName.test.tsx
+    index.ts
+    YourComponentName.tsx
+    YourComponentName.types.ts
+    YourComponentName.module.scss
+```
+
 ## Known Issues
 
 This is library can only be built with Node 14 (tested with 14.20.1) - I need to sort out upgrading to Dart Sass with Webpack 5 and Storybook but if you plan to use it any other projects that uses the latest version of node, it should be fine to import since it's all compiled down to vanila js. 
@@ -176,6 +206,7 @@ npm run deploy-storybook-ci
 ```
 
 ## Inspiration
+* [creating your own react component library](https://blog.harveydelaney.com/creating-your-own-react-component-library/)
 * [create-react-library](https://www.npmjs.com/package/create-react-library)
 * [mobile-first media queries](https://medium.com/codeartisan/breakpoints-and-media-queries-in-scss-46e8f551e2f2)
 * [pure-css-accessible-checkboxes-and-radios-buttons](https://medium.com/claritydesignsystem/pure-css-accessible-checkboxes-and-radios-buttons-54063e759bb3)
