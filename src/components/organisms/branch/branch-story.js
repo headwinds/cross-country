@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Branch from './branch';
 import getImagesFromDescription from '../../../utils/golds/image-find-util';
 import { getRSSBranch } from '../../../utils/golds/feed-util';
@@ -37,9 +37,6 @@ const getBranch = (isOnlyText, hasMultiple, portholeBranchModels, isKillScreen) 
   }
   return portholeBranchModels[0];
 };
-
-// note some images are super small and scaled up with distortion
-// should I reject them or center them without scaling?
 
 const BranchStory = ({ isOnlyText, hasMultiple, isKillScreen }) => {
   const portholeBranchModels = convertToPortholeBranches(behanceBranches);
