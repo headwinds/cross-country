@@ -1,14 +1,14 @@
-module.exports = (componentName, atomicTypeName) => ({
+module.exports = (componentUpperCaseName, atomicTypeName) => ({
   content: `import React from "react";
-import ${(componentName, atomicTypeName)} from "../";
+import ${componentUpperCaseName} from "../";
 
 export default {
-    title: "menu/${atomicTypeName}/${componentName}"
+    title: "menu/${atomicTypeName}/${componentUpperCaseName.toLowerCase()}"
 };
 
-export const WithBar = () => <${componentName} foo="bar" />;
+export const WithBar = () => <${componentUpperCaseName} foo="bar" />;
 
-export const WithBaz = () => <${componentName} foo="baz" />;
+export const WithBaz = () => <${componentUpperCaseName} foo="baz" />;
 `,
   extension: `.stories.tsx`,
 });

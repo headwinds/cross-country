@@ -1,10 +1,8 @@
 module.exports = componentName => ({
-  content: `@import "../__common__/styles/styles.module.scss";
+  content: `@import "../../styles.scss";
 
 .fooBar {
-  @include font-defaults;
-
-  color: $harvey-green;
+  color: $teal;
 }
 `,
   extension: `.module.scss`,

@@ -1,11 +1,12 @@
-import React from "react";
-import { accordionProps } from "./accordion.types";
+import * as React from 'react';
+import { AccordionProps } from './accordion.types';
 
-import styles from "./accordion.module.scss";
+import styles from './accordion.scss';
 
-const accordion: React.FC<accordionProps> = ({ foo }) => (
-    <div data-testid="accordion" className={styles.fooBar}>{foo}</div>
+const Accordion: React.FC<AccordionProps> = ({ foo }) => (
+  <div data-testid="accordion" className={styles.accordion}>
+    {foo}
+  </div>
 );
 
-export default accordion;
-
+export default Accordion;

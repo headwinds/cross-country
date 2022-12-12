@@ -2,13 +2,15 @@ import babel from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
+import typescript from 'rollup-plugin-typescript2';
 import filesize from 'rollup-plugin-filesize';
 import autoprefixer from 'autoprefixer';
+import copy from 'rollup-plugin-copy';
 const svgr = require('@svgr/rollup').default;
 
 import pkg from './package.json';
 
-const INPUT_FILE_PATH = 'src/index.js';
+const INPUT_FILE_PATH = 'src/index.ts';
 const OUTPUT_NAME = 'Example';
 
 const GLOBALS = {
@@ -33,7 +35,17 @@ const PLUGINS = [
     resolveOnly: [/^(?!react$)/, /^(?!react-dom$)/, /^(?!prop-types)/],
   }),
   commonjs(),
+  typescript({ useTsconfigDeclarationDir: true }),
   filesize(),
+  copy({
+    targets: [
+      {
+        src: 'src/index.css',
+        dest: 'build',
+        rename: 'index.css',
+      },
+    ],
+  }),
 ];
 
 const EXTERNAL = ['react', 'react-dom', 'prop-types'];

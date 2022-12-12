@@ -1,3 +1,3 @@
-export interface accordionProps {
-    foo: string;
+export interface AccordionProps {
+  foo: string;
 }
