@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  stories: ['../src/**/*.stories.@(ts|js|mdx)'],
+  stories: ['../src/**/*.stories.@(ts|tsx|js|mdx)'],
   addons: ['@storybook/addon-docs', '@storybook/addon-a11y', 'storybook-xstate-addon/preset'],
   webpackFinal: async (config, { configType }) => {
     config.module.rules.push({
@@ -24,6 +24,15 @@ module.exports = {
         require.resolve('sass-loader'),
       ],
     });
+
+    config.module.rules.push({
+      test: /\.(ts|tsx)$/,
+      loader: require.resolve('babel-loader'),
+      options: {
+        presets: [['react-app', { flow: false, typescript: true }]],
+      },
+    });
+    config.resolve.extensions.push('.ts', '.tsx');
 
     return config;
   },
