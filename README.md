@@ -12,7 +12,7 @@ Core Tech
 
 [Cross Country Storybook via Github Pages](https://headwinds.github.io/cross-country)
 
-Bored of building enterprise UI? Are you a fan of the Sims, Starcraft, Chess, Dungeons and Dragons and other table top role playing games (TTRPGs)? By playing with code, you can actually hone your dayjob skills while exploring subject matter that you are more passionate. 
+Bored of building the same enterprise UI without any sizzle? Are you a fan of the Sims, Starcraft, Chess, Dungeons and Dragons and other table top role playing games (TTRPGs)? By playing with code, you can actually hone your dayjob skills while exploring subject matter that you are more passionate. 
 
 Do you keep a sketch book? Do you draw notes about fantasy UI, game mechanics and envision a future of EVs and trips to Mars? 
 
@@ -42,6 +42,40 @@ By wrapping html, each component is augmented for building accessible experience
 ```
 Progress Complete 
 - 35% 
+
+
+### Generating New Components
+
+I've included a handy NodeJS util file under `generate-component` folder. Instead of copy pasting components to create a new component, you can instead run this command to generate all the files you need to start building out a new component. To use it:
+
+```
+yarn new YourComponentName YourAtomicType
+```
+
+example
+
+```
+yarn new accordion molecules
+```
+
+This will generate the following files and your component name will also be captilized (ie import { Accordion } from "country-country"):
+
+```
+/src
+  /YourComponentName
+    /__stories__
+      YourComponentName.stories.tsx
+    /__tests__
+      YourComponentName.test.tsx
+    index.ts
+    YourComponentName.tsx
+    YourComponentName.types.ts
+    YourComponentName.module.scss
+    index.d.ts
+    typings.d.ts
+```
+
+When you ready, remember to expose the component in the index.ts file at the root. 
 
 ## Known Issues
 
@@ -176,6 +210,8 @@ npm run deploy-storybook-ci
 ```
 
 ## Inspiration
+* [creating your own react component library](https://blog.harveydelaney.com/creating-your-own-react-component-library/)
+* [Shopify polaris-viz](https://polaris-viz.shopify.com/)
 * [create-react-library](https://www.npmjs.com/package/create-react-library)
 * [mobile-first media queries](https://medium.com/codeartisan/breakpoints-and-media-queries-in-scss-46e8f551e2f2)
 * [pure-css-accessible-checkboxes-and-radios-buttons](https://medium.com/claritydesignsystem/pure-css-accessible-checkboxes-and-radios-buttons-54063e759bb3)
@@ -186,7 +222,7 @@ npm run deploy-storybook-ci
 * [flexboxpatterns](https://www.flexboxpatterns.com/)
 * [nextra](https://nextra.vercel.app/)
 * [XState & React](https://xstate.js.org/docs/packages/xstate-react/#quick-start)
-
+* [Typescript & SCSS](https://lwebapp.com/en/post/cannot-find-module-scss)
 
 ## Fullstack
 * [Flask & React](https://blog.appseed.us/flask-react-full-stack-seed-projects/)

@@ -63,7 +63,6 @@ const Branches = props => {
       };
       // You can await here
       const response = await getCabinQuestFeedFromScoutSummarizeService(jsonData);
-      console.log('got the response in the BranchStory ', response);
 
       const allNewBranches = convertToPortholeBranches(response.feed_responses);
       const shuffledBranches = shuffle(allNewBranches);
