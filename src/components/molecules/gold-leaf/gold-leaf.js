@@ -3,6 +3,10 @@ import { Image, Column, SubHeadline, Card, Link } from '../../';
 import styles from './gold-leaf.scss';
 
 export const GoldLeaf = ({ goldLeafModel }) => {
+  if (!goldLeafModel) {
+    return null;
+  }
+
   const renderImage = useText => {
     if (useText) {
       return null;

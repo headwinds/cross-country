@@ -1,12 +1,12 @@
-module.exports = componentName => ({
+module.exports = componentUpperCaseName => ({
   content: `import React from "react";
 import { render } from "@testing-library/react";
 
-import ${componentName} from "../";
-import { ${componentName}Props } from "./${componentName}.types";
+import ${componentUpperCaseName} from "../";
+import { ${componentUpperCaseName}Props } from "../${componentUpperCaseName.toLowerCase()}.types";
 
 describe("Test Component", () => {
-  let props: ${componentName}Props;
+  let props: ${componentUpperCaseName}Props;
 
   beforeEach(() => {
     props = {
@@ -14,15 +14,15 @@ describe("Test Component", () => {
     };
   });
 
-  const renderComponent = () => render(<${componentName} {...props} />);
+  const renderComponent = () => render(<${componentUpperCaseName} {...props} />);
 
   it("should render foo text correctly", () => {
-    props.foo = "harvey was here";
+    props.foo = "cross country was here";
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId("${componentName}");
+    const component = getByTestId("${componentUpperCaseName.toLowerCase()}");
 
-    expect(component).toHaveTextContent("harvey was here");
+    expect(component).toHaveTextContent("cross country was here");
   });
 });
 `,
