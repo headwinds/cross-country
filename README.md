@@ -79,11 +79,9 @@ When you ready, remember to expose the component in the index.ts file at the roo
 
 ## Known Issues
 
-This is library can only be built with Node 14 (tested with 14.20.1) - I need to sort out upgrading to Dart Sass with Webpack 5 and Storybook but if you plan to use it any other projects that uses the latest version of node, it should be fine to import since it's all compiled down to vanila js. 
+While you can use this library with the latest stable version of Node (tested against Node 18), it can only be built with Node 14 (tested with 14.20.1). I need to sort out upgrading to Dart Sass with Webpack 5 and Storybook but if you plan to use it any other projects that uses the latest version of node, it should be fine to import since it's all compiled down to vanila js. 
 
-The current issue preventing the upgrade has something to do with sass-loader and migration from 7 to 8 where I most likey need to upgrade how the options are configured.
-
-Again no errors with Node 14.20.1 but they appear as I switch to 16.9.1. 
+The current issue preventing the upgrade has something to do with sass-loader and migration from 7 to 8 where I most likey need to upgrade how the options are configured. Again no errors with Node 14.20.1 but they appear as I switch to 16.9.1. 
 
 [n 14.20.1](https://www.npmjs.com/package/n)
 
