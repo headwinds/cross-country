@@ -9,6 +9,7 @@ Core Tech
 - scss modules
 - D3 
 - Storybook
+- Typescript (you can prototype in Javascript and switch to TS at anytime)
 
 [Cross Country Storybook via Github Pages](https://headwinds.github.io/cross-country)
 
