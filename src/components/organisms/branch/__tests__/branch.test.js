@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import Branch from '../';
-import { branchMock } from '../__mocks__/branch-mock';
+import { branchMock } from './branch-mock';
 
 const handleClick = jest.fn();
 

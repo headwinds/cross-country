@@ -1,64 +1,82 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { getOffline, putOffline } from '../../../utils/golds/offline-util';
-import { createAllPortholeTrees, getRSSBranch, convertToPortholeBranches } from '../../../utils/golds/feed-util';
+import { createAllPortholeTrees, getRSSBranch } from '../../../utils/golds/feed-util';
 import { getAllItemsFromStore } from '../../../utils/golds/indexdb-util';
+import { getWindow } from '../../../utils/server-side-util';
 import { fetchRetry } from '../../../utils/fetch-util';
 import { differenceBy, shuffle } from '../../../utils/fp-util';
-import { Row } from '../../../';
-import BranchList from './branch-list';
-
+import Branch from '../branch';
+import { Column, Row, List, ListItem } from '../../../';
+import { BranchListProps } from './branch-list.types';
 import styles from './branches.scss';
 
-const Branches = () => {
-  const [state, setState] = useState({
-    feeds: createAllPortholeTrees(),
-    branches: [],
-    hasFetched: false,
-    allNewBranches: [],
-  });
-  const { hasFetched, allNewBranches, branches } = state;
-
-  // BFF approach where I provide a new microservice that will handle the RSS feed and return exactly what I need
-  const getCabinQuestFeedFromScoutSummarizeService = async data => {
-    let options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    };
-    let p = await fetch('https://scout-summarize.vercel.app/api/porthole/feeds', options);
-    let response = await p.json();
-    return response;
+const BranchList: React.FC<BranchListProps> = ({ branches }) => {
+  const getCards = cardBranches => {
+    if (cardBranches.length === 0) {
+      return null;
+    } else {
+      return cardBranches.map((branch, idx) => {
+        if (branch && branch !== null && branch.text) {
+          return (
+            <ListItem className={styles.card__item} key={idx}>
+              <Branch branch={branch} />
+            </ListItem>
+          );
+        } else {
+          return null;
+        }
+      });
+    }
   };
 
-  useEffect(() => {
-    async function fetchData() {
-      const portholeBranches = createAllPortholeTrees();
-      const arr = Object.values(portholeBranches);
-      const rssUrls = arr.map(({ xmlUrl }) => xmlUrl);
+  const getColumn = (totalBranchesPerColumn, branches, columnCount) => {
+    const startIndex = columnCount * totalBranchesPerColumn;
+    const endIndex = totalBranchesPerColumn * (columnCount + 1) - 1;
+    const cardBranches = branches.slice(startIndex, endIndex);
 
-      const jsonData = {
-        rssUrls,
-      };
-      // You can await here
-      const response = await getCabinQuestFeedFromScoutSummarizeService(jsonData);
+    const columnProps = {
+      customClass: styles.column__item,
+      key: `col${columnCount}`,
+    };
 
-      const allNewBranches = convertToPortholeBranches(response.feed_responses);
-      const shuffledBranches = shuffle(allNewBranches);
+    const column = (
+      <Column {...columnProps}>
+        <List customClass={styles.card__list}>{getCards(cardBranches)}</List>
+      </Column>
+    );
 
-      // ensure all branches are unique
-      const uniqueBranches = [...new Set(shuffledBranches)];
-      setState({ ...state, branches: uniqueBranches });
+    return column;
+  };
+
+  const getColumns = branches => {
+    const screenWindow = getWindow();
+    if (branches.length === 0) {
+      return null;
+    } else if (screenWindow) {
+      const width = screenWindow?.innerWidth;
+      const cardWidth = 300;
+      const totalColumns = Math.floor(width / cardWidth);
+
+      const totalBranchesPerColumn = Math.floor(branches.length / totalColumns);
+      const range = [...Array(totalColumns).keys()];
+
+      const list = range.map(columnCount => {
+        return getColumn(totalBranchesPerColumn, branches, columnCount);
+      });
+
+      return list;
     }
-    fetchData();
-  }, []);
+  };
 
-  return <BranchList branches={branches} />;
+  return (
+    <Row data-testid="branch-list" customClass={styles.column__list}>
+      {getColumns(branches)}
+    </Row>
+  );
 };
 
-export default Branches;
+export default BranchList;
 
 /*
 
