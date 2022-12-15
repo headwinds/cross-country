@@ -11,6 +11,7 @@ const validateContent = entry => {
   }
   return entry;
 };
+
 export function getRSSBranch(candidateBranch, index, ix) {
   const branch = validateContent(candidateBranch);
 
@@ -82,6 +83,20 @@ export function getRSSBranch(candidateBranch, index, ix) {
 
   return portholeBranch;
 }
+
+export const convertToPortholeBranches = branches => {
+  // raw
+  const newBranches = branches;
+  // refined
+  const portholeBranches = newBranches.map((candidateBranch, ix) => {
+    return getRSSBranch(candidateBranch, 0, ix);
+  });
+  // validated
+  const portholeBranchesValid = portholeBranches.filter(branch => branch !== null);
+
+  return portholeBranchesValid;
+};
+
 export function createAllPortholeTrees() {
   // 1
   var cabinPornTreeObj = {
