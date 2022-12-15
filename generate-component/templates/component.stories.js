@@ -1,14 +1,18 @@
 module.exports = (componentUpperCaseName, atomicTypeName) => ({
-  content: `import React from "react";
-import ${componentUpperCaseName} from "../";
-
-export default {
-    title: "menu/${atomicTypeName}/${componentUpperCaseName.toLowerCase()}"
-};
-
-export const WithBar = () => <${componentUpperCaseName} foo="bar" />;
-
-export const WithBaz = () => <${componentUpperCaseName} foo="baz" />;
+  content: `import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
+  import { STORYBOOK } from "../../../../constants"
+  import { Paragraph, SubHeadline } from '../../../';
+  import ${componentUpperCaseName}Story from './${componentUpperCaseName.toLowerCase()}-story';
+  
+  <Meta title="menu/organisms/branches" />
+  
+  <Subtitle>subtitle here</Subtitle>
+  
+  <Canvas>
+    <Story name=${componentUpperCaseName.toLowerCase()}>
+      <`${componentUpperCaseName}Story` />
+    </Story>
+  </Canvas>
 `,
-  extension: `.stories.tsx`,
+  extension: `.stories.mdx`,
 });

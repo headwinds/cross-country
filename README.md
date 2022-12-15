@@ -9,10 +9,11 @@ Core Tech
 - scss modules
 - D3 
 - Storybook
+- Typescript 
 
 [Cross Country Storybook via Github Pages](https://headwinds.github.io/cross-country)
 
-Bored of building the same enterprise UI without any sizzle? Are you a fan of the Sims, Starcraft, Chess, Dungeons and Dragons and other table top role playing games (TTRPGs)? By playing with code, you can actually hone your dayjob skills while exploring subject matter that you are more passionate. 
+Bored of building the same enterprise UI without any sizzle? Are you a fan of the Sims, Starcraft, Chess, Dungeons and Dragons and other table top role playing games (TTRPGs)? Do you pour over your personal stats from Strava or Spotify? Is your year always in review?! By playing with code, you can actually hone your dayjob skills while exploring subject matter that you are more passionate. 
 
 Do you keep a sketch book? Do you draw notes about fantasy UI, game mechanics and envision a future of EVs and trips to Mars? 
 
