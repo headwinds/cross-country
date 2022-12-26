@@ -1,26 +1,26 @@
-import React from "react";
-import { render } from "@testing-library/react";
+import React from 'react';
+import { render } from '@testing-library/react';
 
-import Loading from "../";
-import { LoadingProps } from "../loading.types";
+import Loading from '../';
+import { LoadingProps } from '../loading.types';
 
-describe("Test Component", () => {
+describe('Test Component', () => {
   let props: LoadingProps;
 
   beforeEach(() => {
     props = {
-      foo: "bar"
+      label: 'bar',
     };
   });
 
   const renderComponent = () => render(<Loading {...props} />);
 
-  it("should render foo text correctly", () => {
-    props.foo = "cross country was here";
+  it('should render foo text correctly', () => {
+    props.label = 'cross country was here';
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId("loading");
+    const component = getByTestId('loading');
 
-    expect(component).toHaveTextContent("cross country was here");
+    expect(component).toHaveTextContent('cross country was here');
   });
 });

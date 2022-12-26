@@ -6,7 +6,7 @@ import { differenceBy, shuffle } from '../../../../utils/fp-util';
 
 import { BranchType } from '../../../../types/branch.type';
 import { BranchListProps } from '../branch-list.types';
-import { response } from './branches-mock';
+import { response } from '../__mocks__/branches-mock';
 import BranchList from '../branch-list';
 
 const allNewBranches = convertToPortholeBranches(response.feed_responses);
