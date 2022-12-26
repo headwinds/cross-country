@@ -21,7 +21,7 @@ const defaultOptions = {
  */
 const useInterval = (fn, milliseconds, options = defaultOptions) => {
   const opts = { ...defaultOptions, ...(options || {}) };
-  const timeout = useRef();
+  const timeout = useRef(null);
   const callback = useRef(fn);
   const [isCleared, setIsCleared] = useState(false);
 

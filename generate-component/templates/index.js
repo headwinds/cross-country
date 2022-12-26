@@ -1,5 +1,6 @@
 const defaultIndex = require('./default-index');
 const component = require('./component');
+const componentStory = require('./component-story');
 const componentTypes = require('./component.types');
 const componentStories = require('./component.stories');
 const componentTests = require('./component.test');
@@ -13,6 +14,7 @@ module.exports = [
   indexD,
   typings,
   component,
+  componentStory,
   componentTypes,
   componentStories,
   componentTests,

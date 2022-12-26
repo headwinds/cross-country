@@ -5,7 +5,7 @@ import { ${componentUpperCaseName}Props } from "./${componentUpperCaseName.toLow
 import styles from "./${componentUpperCaseName.toLowerCase()}.scss";
 
 const ${componentUpperCaseName}: React.FC<${componentUpperCaseName}Props> = ({ foo }) => (
-    <div data-testid="${componentUpperCaseName.toLowerCase()}" className={styles.fooBar}>{foo}</div>
+    <div data-testid="${componentUpperCaseName.toLowerCase()}" className={styles.${componentUpperCaseName}}>{foo || "missng prop foo"}</div>
 );
 
 export default ${componentUpperCaseName};

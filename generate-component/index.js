@@ -45,7 +45,11 @@ generatedTemplates.forEach(template => {
     } else if (template.extension === '.d.ts' || (template.extension === '.types.ts' && template.name)) {
       fs.writeFileSync(`${componentDirectory}/${template.name}${template.extension}`, template.content);
     } else {
-      fs.writeFileSync(`${componentDirectory}/${componentName}${template.extension}`, template.content);
+      if (template.isStory) {
+        fs.writeFileSync(`${componentDirectory}/${componentName}-story${template.extension}`, template.content);
+      } else {
+        fs.writeFileSync(`${componentDirectory}/${componentName}${template.extension}`, template.content);
+      }
     }
   }
 });
