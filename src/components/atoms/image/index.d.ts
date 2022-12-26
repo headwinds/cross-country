@@ -1,2 +1,4 @@
-export { default } from './image';
-export * from './image';
+declare module '*.scss' {
+  const content: { [key: string]: any };
+  export = content;
+}

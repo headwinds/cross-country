@@ -10,4 +10,5 @@ module.exports = componentUpperCaseName => ({
 
 `,
   extension: `.tsx`,
+  isStory: true,
 });

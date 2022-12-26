@@ -269,6 +269,7 @@ npm run deploy-storybook-ci
 * [Distill](https://distill.pub/)
 * [Creative Applications](https://www.creativeapplications.net/)
 * [Making of an AI Storyteller](https://towardsdatascience.com/the-making-of-an-ai-storyteller-c3b8d5a983f5)
+* [Ivy: a mission to unify all ML frameworks](https://lets-unify.ai/)
 
 ### ML & Gaming
 * [Crafter](https://danijar.com/project/crafter/)

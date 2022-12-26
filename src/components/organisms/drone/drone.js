@@ -58,8 +58,8 @@ const getPart = (layers, label, key) => {
  */
 const Drone = ({ config: { id, tranformedState = 'compact' } }) => {
   const [currentPosition, setCurrrentPosition] = useState({ x: 0, y: 0 });
-  const droneRef = useRef();
-  const compactRef = useRef();
+  const droneRef = useRef(null);
+  const compactRef = useRef(null);
   const defaultModel = tranformedState === 'compact' ? compactDroneModel : expandedDroneModel;
   const [droneModel, setDroneModel] = useState(defaultModel);
   const dataset = [droneModel];
