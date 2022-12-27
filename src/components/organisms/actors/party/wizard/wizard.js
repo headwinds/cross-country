@@ -11,13 +11,13 @@ const defaultModel = {
   id: 0,
   type: 'humanoid',
   position: { x: 0, y: 0, z: 0 },
-  customSkinStyle: { backgroundColor: 'goldenrod' },
+  customSkinStyle: { backgroundColor: 'rebeccapurple' },
   config: defaultConfig,
   customClass: '',
 };
 
-const Warrior = ({ model = defaultModel, tileSize }) => {
-  const { config, customClass, customSkinStyle, position, type } = model;
+const Wizard = ({ model = defaultModel, tileSize }) => {
+  const { config, customClass, customSkinStyle = {}, position, type } = model;
 
   const validConfig = config ?? defaultConfig;
 
@@ -33,4 +33,4 @@ const Warrior = ({ model = defaultModel, tileSize }) => {
   );
 };
 
-export default Warrior;
+export default Wizard;
