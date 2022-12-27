@@ -9,7 +9,7 @@ const defaultConfig = {
 };
 
 const defaultActorModel = {
-  customStyle: { position: 'absolute', zIndex: 0, left: 20, top: 120, backgroundColor: 'pink' },
+  customStyle: { position: 'absolute', zIndex: 0, left: 20, top: 120, backgroundColor: 'green' },
 };
 
 const Stage = ({ config = defaultConfig, actorModels = [defaultActorModel] }) => {

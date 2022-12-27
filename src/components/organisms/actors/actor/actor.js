@@ -4,10 +4,12 @@ import styles from './actor.scss';
 import clsx from 'clsx';
 import ActorModel from '../../../../models/ActorModel';
 
+const tileSize = 50;
+
 const head = { color: 'purple' };
 const body = { color: 'green' };
 const legs = { color: 'cornflowerblue' };
-const defaultConfig = { head, body, legs, type: 'humanoid', tileSize: 30 };
+const defaultConfig = { head, body, legs, type: 'humanoid', tileSize };
 
 // should be taken from windsong!
 const actorModel = new ActorModel({ name: 'Actor' }).toObject();
@@ -30,7 +32,29 @@ const renderHumanoid = (config, tileSize) => {
   );
 };
 
-const Actor = ({ position, customClass = '', customStyle = {}, config = defaultConfig, tileSize, ...rest }) => {
+const defaultPosition = { x: 0, y: 0, z: 0 };
+
+const defaultCustomTileStyle = {
+  opacity: 1,
+  width: tileSize,
+  height: tileSize,
+  alignItems: 'center',
+};
+
+// skin
+const defaultCustomSkinStyle = {
+  backgroundColor: 'red',
+};
+
+const Actor = ({
+  position = defaultPosition,
+  customClass = '', // for the tile container
+  customTileStyle = defaultCustomTileStyle,
+  customSkinStyle = defaultCustomSkinStyle,
+  config = defaultConfig,
+  tileSize,
+  ...rest
+}) => {
   const columnCustomClass = clsx(styles.actor, customClass);
   const { type } = config;
 
@@ -42,18 +66,20 @@ const Actor = ({ position, customClass = '', customStyle = {}, config = defaultC
     }
   };
 
-  const finalCustomStyle = position
-    ? { ...customStyle, position: 'absolute', top: position.y, left: position.x }
-    : { ...customStyle };
+  const { x, y, z } = position;
 
   return (
     <Column
       customClass={styles.actor}
-      customStyle={{ backgroundColor: 'red', opacity: 0.2, width: tileSize, height: tileSize, alignItems: 'center' }}
+      customStyle={{ ...customTileStyle, transform: `translate3d(${x}px, ${y}px, ${z}px)` }}
       name="actor tile"
       {...rest}
     >
-      <Column customClass={columnCustomClass} customStyle={finalCustomStyle} name="actor">
+      <Column
+        customClass={columnCustomClass}
+        customStyle={{ ...defaultCustomSkinStyle, ...customSkinStyle }}
+        name="actor"
+      >
         {renderType()}
       </Column>
     </Column>
