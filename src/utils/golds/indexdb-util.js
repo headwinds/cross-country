@@ -69,7 +69,6 @@ export async function getItemFromStore(store, item, key) {
 }
 export async function getAllItemsFromStore(store) {
   const dbPromise = getIndexDB();
-  //console.log("objectStoreNames: ", db)
 
   return dbPromise
     .then(function (db) {
