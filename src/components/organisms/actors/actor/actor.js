@@ -4,12 +4,12 @@ import styles from './actor.scss';
 import clsx from 'clsx';
 import ActorModel from '../../../../models/ActorModel';
 
-const tileSize = 50;
+const defaultTileSize = 50;
 
 const head = { color: 'purple' };
 const body = { color: 'green' };
 const legs = { color: 'cornflowerblue' };
-const defaultConfig = { head, body, legs, type: 'humanoid', tileSize };
+const defaultConfig = { head, body, legs, type: 'humanoid', tileSize: defaultTileSize };
 
 // should be taken from windsong!
 const actorModel = new ActorModel({ name: 'Actor' }).toObject();
@@ -36,8 +36,8 @@ const defaultPosition = { x: 0, y: 0, z: 0 };
 
 const defaultCustomTileStyle = {
   opacity: 1,
-  width: tileSize,
-  height: tileSize,
+  width: defaultTileSize,
+  height: defaultTileSize,
   alignItems: 'center',
 };
 
@@ -52,7 +52,7 @@ const Actor = ({
   customTileStyle = defaultCustomTileStyle,
   customSkinStyle = defaultCustomSkinStyle,
   config = defaultConfig,
-  tileSize,
+  tileSize = defaultTileSize,
   ...rest
 }) => {
   const columnCustomClass = clsx(styles.actor, customClass);
@@ -61,6 +61,8 @@ const Actor = ({
   const renderType = () => {
     switch (type) {
       case 'humanoid':
+        return null;
+      case 'three':
       default:
         return renderHumanoid(config, tileSize);
     }
