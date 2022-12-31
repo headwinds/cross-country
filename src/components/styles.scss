@@ -80,9 +80,9 @@ $screen-xl-min: 1200px;
  }
 
 $font-war: 'Roboto Condensed', Helvetica, Arial;
-
+$darkgrey: #333;
 $black:#2b2b2b;
-$teal: #0cb4b4;
+$teal: #097272; // need a better to way to pick accessible colors to ensure contrast
 
 :export {
   colors: {

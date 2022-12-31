@@ -1,0 +1,188 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
+import { Paragraph, Link, Headline, SubHeadline } from "../../../../";
+import AnimateActorUseSpringRef from "./animate-actor-use-spring-ref";
+import AnimateActorUseChain from "./animate-actor-use-chain";
+import AnimateActorPatrol from "./animate-actor-patrol";
+import Prism from 'prismjs';
+
+<Meta title="menu/organisms/animation/actors" />
+
+<Headline text="Scripting Animation with react-spring" />
+
+<Paragraph>
+I've selected <Link url="https://www.react-spring.dev/">react-spring</Link> as the animation library for native html tags because I like how it is Physics based. I really enjoyed exploring the Box2D physics engine; it did such an amazing job of collision detection; but it's just not practical for building interface animations.
+</Paragraph>
+
+<Paragraph>
+I actually believe <Link url="https://greensock.com/gsap/">GSAP</Link> as has an easier API for beginners but there is something more compelling about react-spring.
+</Paragraph>
+
+<Paragraph>
+What if I could combine the ease of GSAP's API with the physics of react-spring?
+</Paragraph>
+
+<Paragraph>I'll look at the various pieces that make up a complex animation breaking them down into individual commands like moveUp or moveDown so that we can eventually chain the commands together.</Paragraph>
+
+<SubHeadline text="Simple Animation with useSpringRef and a command" />
+
+<Paragraph>The <Link url="https://www.react-spring.dev/docs/concepts/imperative-api">Imperative API</Link> will control the animation without re-rendering the component. useSpringRef provides a hook and the ability to add multiple controllers to a single ref.
+</Paragraph>
+
+<SubHeadline text="SpringValue" />
+
+<Paragraph>By learning about <Link url="https://www.react-spring.dev/docs/advanced/spring-value">SpringValue</Link>, we can better understand how to manipulate the animation over time.</Paragraph>
+
+<Paragraph>Speaking of time, how can we controll how long or how short the animation is?</Paragraph>
+
+<Paragraph>Since React-spring is physics-based, the time is controlled via the physical properties set in the <Link url="https://react-spring.dev/docs/advanced/config">spring configs.</Link></Paragraph>
+
+<AnimateActorUseSpringRef />
+
+<Paragraph>In this example, there doesn't seem to be much need for useSpringRef but I'm hoping that by using it here, it will eventually make it easier to chain commands together.</Paragraph>
+
+<Paragraph>Within the props, each property is a SpringValue so it get the value of each one we need to use get()</Paragraph>
+
+<pre>
+<code className="language-javascript">
+{`
+const springRef = useSpringRef();
+  const [isDisabled, setDisabled] = useState(false);
+
+  const [props, api] = useSpring(
+    () => ({
+      ref: springRef,
+      from: { x: 0, y: 0, z: 0 },
+    }),
+    []
+  );
+
+  const moveRight = distance => {
+    const { x, y, z } = props;
+    const curX = x.get();
+    const newDistanceRight = curX + distance;
+    const to = { x: newDistanceRight };
+
+    api.start({
+      to,
+      onStart: () => console.log('the spring has started'),
+      onChange: () => console.log('the spring has frame changed'),
+      onRest: () => console.log('the spring has reached rest'),
+      onPause: () => console.log('the spring has paused'),
+      onResume: () => console.log('the spring has resumed'),
+    });
+  };
+
+  const move = direction => {
+    moveRight(100);
+  };
+
+  const handleClick = () => {
+    if (!isDisabled) {
+      const { x, y, z } = props;
+      // limit the space that the actor can move
+      if (x.get() <= 100) {
+        move();
+      }
+    }
+    setDisabled(true);
+  };
+`}
+</code>
+</pre>
+
+
+<SubHeadline text="Events" />
+
+<Paragraph>By watching the <Link url="https://www.react-spring.dev/docs/advanced/events">events</Link>, we could build more complex animations. For instance, once the has animation has come to a rest, we move to another location.</Paragraph>
+
+<SubHeadline text="useChain" />
+
+<Paragraph>But there is an easier way to accomplish this orchestration. We can review the docs for <Link url="https://react-spring.dev/docs/components/use-chain">chain</Link> and <Link url="https://react-spring.dev/docs/advanced/async-animations">async animations</Link> to script the commands.</Paragraph>
+
+<AnimateActorUseChain />
+
+<Paragraph>Alright, that's cool but how do we break out of animation around responsd to an event? Again we turn to <Link url="https://react-spring.dev/docs/advanced/async-animations">async animations</Link> guide and this time use the supplied cancel function.</Paragraph>
+
+<Paragraph>Let's build an animation where our Warrior is patrolling the castle grounds.</Paragraph>
+
+<Paragraph>While docs show that we can pass a cancel function, I don't see how I can access nor use it effectively. Instead, and possibly easier, let's simply use the pause and resume api functions to achieve the same results.</Paragraph>
+
+<AnimateActorPatrol />
+
+<Paragraph>As a refactor idea, I would like to useReducer instead of useState. I wonder if a reducer would allow me to use its state instead of relying on a simply let for the counter.</Paragraph>
+
+<pre>
+<code className="language-javascript">
+{`
+ const springRef = useSpringRef();
+  const [isDisabled, setDisabled] = useState(false);
+  const [wispSpeach, setWispSpeechText] = useState('Halt!');
+  //const [count, setCount] = useState(0); I used a simple let counter instead of useState
+
+  const warriorReports = [
+    'All clear',
+    "What's for supper?",
+    'I see nothing',
+    'I see something...nah it was nothing',
+    'Or did I?!',
+  ];
+  const [warriorReport, setWarriorReport] = useState('');
+
+  const [props, api] = useSpring(
+    () => ({
+      ref: springRef,
+      from: { x: 0, y: 0, z: 0 },
+    }),
+    []
+  );
+
+  const onRest = () => {
+    console.log('onRest ', count);
+    count = count < 4 ? count + 1 : 0;
+    setWarriorReport(warriorReports[count]);
+  };
+
+  const move = distance => {
+    const { x, y, z } = props;
+    const curX = x.get();
+    const curY = y.get();
+    const newDistanceRight = curX + distance;
+    const newDistanceDown = curY + distance;
+    const newDistanceLeft = newDistanceRight - distance;
+    const newDistanceUp = newDistanceDown - distance;
+
+    const multipleTo = async (next, cancel) => {
+      await next({ x: newDistanceRight, onRest });
+      await next({ y: newDistanceDown, onRest });
+      await next({ x: newDistanceLeft, onRest });
+      await next({ y: newDistanceUp, onRest });
+    };
+
+    api.start({
+      to: multipleTo,
+      onResume: () => console.log('move spring has paused'),
+      onResume: () => console.log('move spring has resumed'),
+      config: config.gentle,
+      loop: true,
+    });
+  };
+
+  const handleClick = () => {
+    // how can I access that cancel function?!
+    // ok instead of using the cancel function
+    // I can just use the pause and resume functions
+    if (wispSpeach === 'Halt!') {
+      api.pause();
+      setWispSpeechText('Carry on!');
+    } else {
+      api.resume();
+      setWispSpeechText('Halt!');
+    }
+  };
+
+  useEffect(() => {
+    move(100);
+  }, []);
+`}
+</code>
+</pre>

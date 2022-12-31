@@ -47,6 +47,9 @@ export { default as Card } from './molecules/card';
 export { default as GoldLeaf } from './molecules/gold-leaf';
 export { default as Accordion } from './molecules/accordion';
 
+export { default as Loading } from './molecules/loading';
+export { default as Error } from './molecules/error';
+
 // organisms
 export { default as Login } from './organisms/login';
 export { default as TileGrid } from './organisms/tile-grid';
@@ -55,11 +58,14 @@ export { default as Garden } from './organisms/garden';
 export { default as Actor } from './organisms/actors/actor';
 export { default as Branch } from './organisms/branch/branch';
 export { default as Branches } from './organisms/branches/branches';
-export { default as Hunter } from './organisms/actors/party/hunter';
+
 export { default as Stage } from './organisms/stage';
 export { default as ReverseTextAnimation } from './organisms/animation/reverse-text-animation';
 
+export { default as Hunter } from './organisms/actors/party/hunter';
 export { default as Warrior } from './organisms/actors/party/warrior';
+export { default as Cleric } from './organisms/actors/party/cleric';
+export { default as Wizard } from './organisms/actors/party/wizard';
 //export { default as Troll } from './organisms/actors/monsters/troll';
 export { default as Wisp } from './organisms/actors/wisp';
 

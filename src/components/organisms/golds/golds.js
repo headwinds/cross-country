@@ -18,5 +18,5 @@ import useDeviceDetection from '../../../hooks/useDeviceDetection/';
 export default function Golds() {
   const [step, setStep] = useState('login');
 
-  return <Column>Golds here...</Column>;
+  return <Column>place holder</Column>;
 }

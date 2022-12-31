@@ -1,15 +1,16 @@
-module.exports = componentUpperCaseName => ({
+module.exports = (componentUpperCaseName, componentLowerCaseName) => ({
   content: `import * as React from "react";
-import { ${componentUpperCaseName}Props } from "./${componentUpperCaseName.toLowerCase()}.types";
+import { ${componentUpperCaseName}Props } from "./${componentLowerCaseName}.types";
 
-import styles from "./${componentUpperCaseName.toLowerCase()}.scss";
+import styles from "./${componentLowerCaseName}.scss";
 
-const ${componentUpperCaseName}: React.FC<${componentUpperCaseName}Props> = ({ foo }) => (
-    <div data-testid="${componentUpperCaseName.toLowerCase()}" className={styles.${componentUpperCaseName}}>{foo || "missng prop foo"}</div>
-);
+const ${componentUpperCaseName}: React.FC<${componentUpperCaseName}Props> = ({ foo }) => {
+  return (<div data-testid="${componentLowerCaseName}" className={styles.${componentUpperCaseName}}>{foo || "missng prop foo"}</div>)
+};
 
 export default ${componentUpperCaseName};
 
 `,
   extension: `.tsx`,
+  type: 'base',
 });

@@ -1,4 +1,4 @@
-module.exports = componentUpperCaseName => ({
-  content: `export { default } from './${componentUpperCaseName.toLowerCase()}';`,
+module.exports = (componentUpperCaseName, componentLowerCaseName) => ({
+  content: `export { default } from './${componentLowerCaseName}';`,
   extension: `.ts`,
 });

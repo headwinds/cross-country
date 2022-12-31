@@ -6,7 +6,7 @@ import { createAllPortholeTrees, getRSSBranch, convertToPortholeBranches } from 
 import { getAllItemsFromStore } from '../../../utils/golds/indexdb-util';
 import { fetchRetry } from '../../../utils/fetch-util';
 import { differenceBy, shuffle } from '../../../utils/fp-util';
-import { Row } from '../../../';
+import { Row, Loading } from '../../../';
 import BranchList from './branch-list';
 
 import styles from './branches.scss';
@@ -55,7 +55,7 @@ const Branches = () => {
     fetchData();
   }, []);
 
-  return <BranchList branches={branches} />;
+  return branches.length === 0 ? <Loading /> : <BranchList branches={branches} />;
 };
 
 export default Branches;

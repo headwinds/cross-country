@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import Branch from './branch';
-import getImagesFromDescription from '../../../utils/golds/image-find-util';
-import { getRSSBranch } from '../../../utils/golds/feed-util';
+import Branch from '../branch';
+import getImagesFromDescription from '../../../../utils/golds/image-find-util';
+import { getRSSBranch } from '../../../../utils/golds/feed-util';
 
 // there is a bug here that is causing the branch to be undefined!
 import killScreenBranches from './kill-screen-raw-branches';

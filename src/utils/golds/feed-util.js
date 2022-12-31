@@ -20,20 +20,20 @@ export function getRSSBranch(candidateBranch, index, ix) {
     return undefined;
   }
 
-  let images = getImagesFromDescription(branch);
+  const images = getImagesFromDescription(branch);
   // there should always be at least 1 default image!
 
-  let resultImageObj = images[0];
+  const resultImageObj = images[0];
 
   // important that there is a resultImageObj
   if (!resultImageObj) {
     return null;
   }
 
-  let photoUrl = resultImageObj.useText ? resultImageObj.defaultImageUrl : resultImageObj.imageUrl;
-  let photoLargeUrl = photoUrl.indexOf('500') > -1 ? photoUrl.replace('500', '1280') : photoUrl;
-  let branchTitleUnescape = unescape(branch.title);
-  let branchDescriptionUnescape = unescape(resultImageObj.text);
+  const photoUrl = resultImageObj.useText ? resultImageObj.defaultImageUrl : resultImageObj.imageUrl;
+  const photoLargeUrl = photoUrl.indexOf('500') > -1 ? photoUrl.replace('500', '1280') : photoUrl;
+  const branchTitleUnescape = unescape(branch.title);
+  const branchDescriptionUnescape = unescape(resultImageObj.text);
   // fix title
   if (branch.meta.title === 'National Geographic Photo of the Day') branch.meta.title = 'National Geographic';
   else if (branch.meta.title === 'Latest Articles') branch.meta.title = 'Dwell';
@@ -58,7 +58,7 @@ export function getRSSBranch(candidateBranch, index, ix) {
   else if (branch.meta.title.trim() === 'Sports - The Inquisitr News') branch.meta.title = 'The Inquisitr';
   else if (branch.meta.title.trim() === 'designboom | architecture & design magazine') branch.meta.title = 'designboom';
   const tags = branch.categories ? branch.categories : [];
-  const id = `branch-${index}-${ix}`;
+  const id = `gold-leaf-${index}-${ix}`;
 
   const portholeBranch = new PortholeBranchModel(
     id,
