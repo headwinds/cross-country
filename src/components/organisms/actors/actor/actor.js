@@ -17,7 +17,7 @@ const actorModel = new ActorModel({ name: 'Actor' }).toObject();
 
 // the actor should be relative to the tile size so that they're larger than the tile
 
-const renderHumanoid = (config, tileSize) => {
+const renderHeadBodyFeet = (config, tileSize) => {
   const { head, body, legs } = config;
 
   const third = Math.floor(tileSize / 3) - 4;
@@ -58,13 +58,13 @@ const Actor = ({
   const columnCustomClass = clsx(styles.actor, customClass);
   const { type } = config;
 
-  const renderType = () => {
+  const renderSubType = () => {
     switch (type) {
       case 'humanoid':
         return null;
       case 'three':
       default:
-        return renderHumanoid(config, tileSize);
+        return renderHeadBodyFeet(config, tileSize);
     }
   };
 
@@ -82,7 +82,7 @@ const Actor = ({
         customStyle={{ ...defaultCustomSkinStyle, ...customSkinStyle }}
         name="actor"
       >
-        {renderType()}
+        {renderSubType()}
       </Column>
     </Column>
   );

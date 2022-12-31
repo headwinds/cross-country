@@ -1,6 +1,6 @@
-module.exports = componentUpperCaseName => ({
+module.exports = (componentUpperCaseName, conponentLowerCaseName) => ({
   content: `import * as React from "react";
-  import ${componentUpperCaseName} from "../${componentUpperCaseName.toLowerCase()}";
+  import ${componentUpperCaseName} from "../${conponentLowerCaseName}";
   
   const ${componentUpperCaseName}Story = () => {
     return <${componentUpperCaseName} />;

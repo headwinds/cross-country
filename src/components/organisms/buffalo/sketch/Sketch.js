@@ -13,6 +13,17 @@ const mapDispatchToProps = dispatch => bindActionCreators({ dispatch }, dispatch
 export default connect(mapStateToProps, mapDispatchToProps)(Sketch);
 */
 
+import React from 'react';
+import { Column, Paragraph } from '../../../../';
+
+const Sketch = () => {
+  return (
+    <Column>
+      <Paragraph>attempted to build a toy Flash with SVG & D3</Paragraph>
+    </Column>
+  );
+};
+
 export default Sketch;
 
 /*
