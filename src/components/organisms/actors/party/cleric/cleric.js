@@ -17,7 +17,7 @@ const defaultModel = {
 };
 
 const Cleric = ({ model = defaultModel, tileSize }) => {
-  const { config, customClass, customSkinStyle, position, type } = model;
+  const { config, customClass, customSkinStyle, customTileStyle, position, type } = model;
 
   const validConfig = config ?? defaultConfig;
 
@@ -27,6 +27,7 @@ const Cleric = ({ model = defaultModel, tileSize }) => {
       config={validConfig}
       position={position}
       customClass={customClass}
+      customTileStyle={customTileStyle}
       customSkinStyle={{ ...defaultModel.customSkinStyle, ...customSkinStyle }}
       tileSize={tileSize}
     />

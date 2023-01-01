@@ -18,7 +18,10 @@ const Wrapper = forwardRef(({ backgroundColor = '', customClass = '', customStyl
     <Column
       {...rest}
       customClass={clsx(styles.wrapper, customClass)}
-      customStyle={{ backgroundColor, ...customStyle }}
+      customStyle={{
+        backgroundColor,
+        ...customStyle,
+      }}
     ></Column>
   );
 });

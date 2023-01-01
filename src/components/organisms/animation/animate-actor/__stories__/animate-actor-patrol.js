@@ -2,13 +2,10 @@ import { useState, useEffect } from 'react';
 import { animated, useTransition, useSpring, useChain, useSpringRef, config } from '@react-spring/web';
 import { Wisp, Hunter, Warrior, Cleric, Wizard, Column, Row, Paragraph, Button, Hilight } from '../../../../';
 
-let count = 0; // had to use a simple let as useState seems to affect the animation
-
 const AnimateActorPatrol = ({ actorComponentName = 'cleric', targetPosition = { x: 100, y: 200, z: 0 } }) => {
   const springRef = useSpringRef();
   const [isDisabled, setDisabled] = useState(false);
   const [wispSpeach, setWispSpeechText] = useState('Halt!');
-  //const [count, setCount] = useState(0); I used a simple let counter instead of useState
 
   const warriorReports = [
     'All clear',
@@ -27,12 +24,6 @@ const AnimateActorPatrol = ({ actorComponentName = 'cleric', targetPosition = { 
     []
   );
 
-  const onRest = () => {
-    console.log('onRest ', count);
-    count = count < 4 ? count + 1 : 0;
-    setWarriorReport(warriorReports[count]);
-  };
-
   const move = distance => {
     const { x, y, z } = props;
     const curX = x.get();
@@ -41,6 +32,13 @@ const AnimateActorPatrol = ({ actorComponentName = 'cleric', targetPosition = { 
     const newDistanceDown = curY + distance;
     const newDistanceLeft = newDistanceRight - distance;
     const newDistanceUp = newDistanceDown - distance;
+
+    let count = 0; // had to use a simple let as useState seems to affect the animation restarting it!
+
+    const onRest = () => {
+      count = count < 4 ? count + 1 : 0;
+      setWarriorReport(warriorReports[count]);
+    };
 
     const multipleTo = async (next, cancel) => {
       await next({ x: newDistanceRight, onRest });
@@ -65,6 +63,7 @@ const AnimateActorPatrol = ({ actorComponentName = 'cleric', targetPosition = { 
     if (wispSpeach === 'Halt!') {
       api.pause();
       setWispSpeechText('Carry on!');
+      setWarriorReport('Roger roger');
     } else {
       api.resume();
       setWispSpeechText('Halt!');
