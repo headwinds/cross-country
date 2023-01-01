@@ -68,7 +68,7 @@ export default class LoginContainer extends Component {
       password: '',
       feedback: '',
       imageUrl: '',
-      crossCountryConfig: this.props.config.crossCountryConfig || privateConfig,
+      crossCountryConfig: this.props?.config?.crossCountryConfig ?? privateConfig,
       fetch: false,
       response: null,
     };

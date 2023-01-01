@@ -109,40 +109,12 @@ const springRef = useSpringRef();
 
 <AnimateActorPatrol />
 
-<Paragraph>As a refactor idea, I would like to useReducer instead of useState. I wonder if a reducer would allow me to use its state instead of relying on a simply let for the counter.</Paragraph>
+<Paragraph>At first, I thought I could useState for the counter but after trying it and observing that the associated re-render can negatively affect the running animtion. Then, I used a simple let counter within the move function.</Paragraph>
 
 <pre>
 <code className="language-javascript">
 {`
- const springRef = useSpringRef();
-  const [isDisabled, setDisabled] = useState(false);
-  const [wispSpeach, setWispSpeechText] = useState('Halt!');
-  //const [count, setCount] = useState(0); I used a simple let counter instead of useState
-
-  const warriorReports = [
-    'All clear',
-    "What's for supper?",
-    'I see nothing',
-    'I see something...nah it was nothing',
-    'Or did I?!',
-  ];
-  const [warriorReport, setWarriorReport] = useState('');
-
-  const [props, api] = useSpring(
-    () => ({
-      ref: springRef,
-      from: { x: 0, y: 0, z: 0 },
-    }),
-    []
-  );
-
-  const onRest = () => {
-    console.log('onRest ', count);
-    count = count < 4 ? count + 1 : 0;
-    setWarriorReport(warriorReports[count]);
-  };
-
-  const move = distance => {
+const move = distance => {
     const { x, y, z } = props;
     const curX = x.get();
     const curY = y.get();
@@ -150,6 +122,13 @@ const springRef = useSpringRef();
     const newDistanceDown = curY + distance;
     const newDistanceLeft = newDistanceRight - distance;
     const newDistanceUp = newDistanceDown - distance;
+
+    let count = 0; // had to use a simple let as useState seems to affect the animation restarting it!
+
+    const onRest = () => {
+      count = count < 4 ? count + 1 : 0;
+      setWarriorReport(warriorReports[count]);
+    };
 
     const multipleTo = async (next, cancel) => {
       await next({ x: newDistanceRight, onRest });
@@ -166,23 +145,6 @@ const springRef = useSpringRef();
       loop: true,
     });
   };
-
-  const handleClick = () => {
-    // how can I access that cancel function?!
-    // ok instead of using the cancel function
-    // I can just use the pause and resume functions
-    if (wispSpeach === 'Halt!') {
-      api.pause();
-      setWispSpeechText('Carry on!');
-    } else {
-      api.resume();
-      setWispSpeechText('Halt!');
-    }
-  };
-
-  useEffect(() => {
-    move(100);
-  }, []);
 `}
 </code>
 </pre>

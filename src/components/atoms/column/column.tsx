@@ -17,9 +17,6 @@ const Column: React.FC<ColumnProps> = forwardRef(
     },
     ref
   ) => {
-    // this would prevent the user from overriding the alignItems! The user in this case being me
-    // customStyle['alignItems'] = hasChildrenCentered ? 'center' : 'flex-start';
-
     return (
       <div
         {...rest}

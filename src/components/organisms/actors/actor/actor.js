@@ -37,7 +37,7 @@ const defaultPosition = { x: 0, y: 0, z: 0 };
 const defaultCustomTileStyle = {
   opacity: 1,
   width: defaultTileSize,
-  height: defaultTileSize,
+  height: 80,
   alignItems: 'center',
 };
 
@@ -80,7 +80,7 @@ const Actor = ({
       <Column
         customClass={columnCustomClass}
         customStyle={{ ...defaultCustomSkinStyle, ...customSkinStyle }}
-        name="actor"
+        name="actor skin"
       >
         {renderSubType()}
       </Column>

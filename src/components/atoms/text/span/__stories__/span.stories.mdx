@@ -1,0 +1,24 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
+import { Paragraph, SubHeadline, Link } from '../../../../';
+import SpanStory from './span-story';
+
+<Meta title="menu/atoms/text/span" />
+
+<Subtitle>a span</Subtitle>
+
+<Paragraph>
+A span is perfect for inline text elements. It is a generic inline container for phrasing content, which does not inherently represent anything. It can be used to group elements for styling purposes (using the class or id attributes), or because they share attribute values, such as lang.
+</Paragraph> 
+<Paragraph>
+It should be used only when no other semantic element is appropriate. <Link url="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span">learn more</Link>
+</Paragraph> 
+
+<Paragraph>
+In this age of AI co-writing, my role is now more of editor and designer of the layout. I get to review the text for accurary, clarity, and make decisions like let's break that block of text into two paragraphs.
+  </Paragraph>
+
+<Canvas>
+  <Story name="span">
+    <SpanStory />
+  </Story>
+</Canvas>
