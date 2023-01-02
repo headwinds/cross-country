@@ -1,5 +1,6 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
 import { Paragraph, Link, Headline, SubHeadline } from "../../../../";
+import AnimateActorUseTransitions from "./animate-actor-use-transitions";
 import AnimateActorUseSpringRef from "./animate-actor-use-spring-ref";
 import AnimateActorUseChain from "./animate-actor-use-chain";
 import AnimateActorPatrol from "./animate-actor-patrol";
@@ -27,6 +28,22 @@ What if I could combine the ease of GSAP's API with the physics of react-spring?
 
 <Paragraph>The <Link url="https://www.react-spring.dev/docs/concepts/imperative-api">Imperative API</Link> will control the animation without re-rendering the component. useSpringRef provides a hook and the ability to add multiple controllers to a single ref.
 </Paragraph>
+
+<Paragraph>
+  You can think of each component on the screen as an actor. We want to design meaningful animations that enchance the interaction. Typically, in UI design, you see text animated.
+</Paragraph>
+
+<Paragraph>
+  Similar to D3, useTransition has the same concept where by removing elements from the array will trigger the leave animation. I would hazard a guess that D3 may have even inspired this API since they both use data as the array name.  
+</Paragraph>
+
+<SubHeadline text="Animate Text" />
+
+<Paragraph>
+  In this example, we can see all the actor components that make up the <Link url='/?path=/story/menu-organisms-login--login'>Login</Link>. The login has three phases: it will appear; the user will use it to login; and then it will disappear as it's no longer required and then screen could transition to the main content.
+</Paragraph>
+
+<AnimateActorUseTransitions />
 
 <SubHeadline text="SpringValue" />
 

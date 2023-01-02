@@ -6,7 +6,59 @@ import clsx from 'clsx';
 import styles from './login.scss';
 import { privateConfig } from '../../../../cross-country-config-private';
 import { getWindow } from '../../../utils/server-side-util';
-import LoginView from './login-view';
+
+const Login = ({
+  config: {
+    imageUrl,
+    hasImage = true,
+    text,
+    a11y,
+    hasBackground,
+    route,
+    callback = () => {},
+    username,
+    password,
+    response = null,
+    handleClick,
+    onUsernameChange,
+    onPasswordChange,
+    feedback,
+    customErrorClass = '',
+    crossCountryConfig = null,
+  },
+}) => {
+  return (
+    <Column hasBackground={hasBackground} customClass={styles.login}>
+      <SubHeadline font="Electr">Login</SubHeadline>
+      {hasImage ? <Image url={imageUrl} width="300" a11y={a11y} /> : null}
+      <Row customClass={styles.login__row}>
+        <Label>Username</Label>
+        <TextInput onChange={onUsernameChange} value={username} />
+      </Row>
+      <Row customClass={styles.login__row}>
+        <Label>Password</Label>
+        <TextInput onChange={onPasswordChange} value={password} type="password" />
+      </Row>
+      <Row customClass={styles.login__rowSend}>
+        <Button label="login" onClick={handleClick}>
+          Send
+        </Button>
+      </Row>
+      <Row>
+        {feedback !== '' && (
+          <Paragraph
+            customClass={clsx(
+              { [styles.login__error]: response.hasError, [styles.login__success]: response.isSuccessful },
+              customErrorClass
+            )}
+          >
+            {feedback}
+          </Paragraph>
+        )}
+      </Row>
+    </Column>
+  );
+};
 
 export default class LoginContainer extends Component {
   constructor(props) {
@@ -40,7 +92,7 @@ export default class LoginContainer extends Component {
         const {
           urls: { small },
         } = result.response;
-        this.setState({ imageUrl: small, a11y: 'record player' });
+        this.setState({ imageUrl: small });
       }
     });
 
@@ -104,10 +156,9 @@ export default class LoginContainer extends Component {
 
   render() {
     const { config } = this.props;
-    const { username, password, feedback, imageUrl, response, a11y } = this.state;
+    const { username, password, feedback, imageUrl, response } = this.state;
     const loginConfig = {
       ...config,
-      a11y,
       imageUrl,
       username,
       password,
@@ -117,6 +168,6 @@ export default class LoginContainer extends Component {
       onPasswordChange: this.onPasswordChange,
       response,
     };
-    return <LoginView config={loginConfig} />;
+    return <Login config={loginConfig} />;
   }
 }

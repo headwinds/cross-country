@@ -34,7 +34,7 @@ But what happens if something goes wrong? How can we best assure that the use is
 ```
 <Login
     config={{
-        url: 'https://i.pinimg.com/originals/c2/99/c8/c299c825b1d9adf653a03760880c2d81.jpg',,
+        imageUrl: 'https://i.pinimg.com/originals/c2/99/c8/c299c825b1d9adf653a03760880c2d81.jpg',
         a11y: "wolf",
         text: "Wolf",
         route: "/login",
@@ -50,7 +50,18 @@ But what happens if something goes wrong? How can we best assure that the use is
 <Canvas>
   <Story name="login">
     <Login config={{
-        url: 'https://i.pinimg.com/originals/c2/99/c8/c299c825b1d9adf653a03760880c2d81.jpg',
+        imageUrl: '',
+        a11y: '', // unsplash will update the a11y test
+        text: '',
+        route: "/login",
+        crossCountryConfig: privateConfig || {
+            UNSPLASH_API_KEY: "YOUR-API-KEY",
+        },
+    }}/>
+  </Story>
+    <Story name="login without image">
+    <Login config={{
+        hasImage: false,
         a11y: "wolf",
         text: "Wolf",
         route: "/login",

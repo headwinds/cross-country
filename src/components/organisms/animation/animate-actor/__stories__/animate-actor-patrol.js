@@ -79,7 +79,7 @@ const AnimateActorPatrol = ({ actorComponentName = 'cleric', targetPosition = { 
   return (
     <Column>
       <Row>
-        <Column customStyle={{ width: 200, height: 200, backgroundColor: 'whitesmoke' }}>
+        <Column customStyle={{ width: 200, height: 220, backgroundColor: 'whitesmoke' }}>
           <animated.div style={props}>
             <Warrior />
           </animated.div>
