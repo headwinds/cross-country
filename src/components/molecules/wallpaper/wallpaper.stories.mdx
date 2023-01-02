@@ -2,7 +2,9 @@
 
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
 import Wallpaper from './wallpaper';
-import WrapperStory from './wallpaper-story';
+import WrapperNoiseStory from './wallpaper-noise-story';
+import WrapperLinearGradientStory from './wallpaper-linear-gradient-story';
+import {Paragraph, Link} from '../../';
 
 <Meta title="menu/molecules/wallpaper" />
 
@@ -10,13 +12,20 @@ import WrapperStory from './wallpaper-story';
 
 <Subtitle>a background for your project</Subtitle>
 
-
+<Paragraph>
+  I wanted to experiment with this awesome article on <Link url="https://css-tricks.com/grainy-gradients/">css-tricks.com/grainy-gradients/</Link>
+  and see if I could inline the svg noise pattern in the css.
+</Paragraph>
+<Paragraph>I really appreciate tools like this <Link url="https://grainy-gradients.vercel.app/">grainy-gradients</Link> that make it easy to create these patterns, and inspires me to make similar tools!</Paragraph>
 
 <Canvas>
   <Story name="wallpaper">
     <Wallpaper backgroundColor="mintcream" customStyle={{}} />
   </Story>
+  <Story name="wallpaper with linear gradient">
+    <WrapperLinearGradientStory />
+  </Story>
   <Story name="wallpaper with noise">
-    <WrapperStory />
+    <WrapperNoiseStory />
   </Story>
 </Canvas>

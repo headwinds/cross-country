@@ -46,7 +46,7 @@ const AnimateActorUseChain = ({ actorComponentName = 'cleric', targetPosition = 
 
   return (
     <Column>
-      <Column customStyle={{ width: 200, height: 100, backgroundColor: 'whitesmoke' }}>
+      <Column customStyle={{ width: 200, height: 120, backgroundColor: 'whitesmoke' }}>
         <animated.div style={props}>
           <Cleric />
         </animated.div>
