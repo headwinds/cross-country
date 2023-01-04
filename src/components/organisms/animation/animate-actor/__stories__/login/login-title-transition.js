@@ -4,10 +4,9 @@ import { SubHeadline, Column } from '../../../../../';
 
 // I want to animate the login title in and out of the login form
 // and give a container box so that it has a crisp edge
-const LoginTitleTransition = ({ data = [], requiredRefs }) => {
-  const { loginTransRef, lineTransRef } = requiredRefs;
-  //const transRef = loginTransRef || useSpringRef();
-  //const loginRef = useSpringRef();
+const LoginTitleTransition = ({ data = [] }) => {
+  const loginTransRef = useSpringRef();
+  const lineTransRef = useSpringRef();
 
   const [transitions, api] = useTransition(data, () => ({
     ref: loginTransRef,
@@ -25,14 +24,15 @@ const LoginTitleTransition = ({ data = [], requiredRefs }) => {
 
   // we want to parent to start the both animations
   useEffect(() => {
-    //loginRef.start();
+    loginTransRef.start();
+    lineTransRef.start();
   }, []);
 
   return lineTransitions(lineStyle => (
     <animated.div style={lineStyle}>
       <Column
         customStyle={{
-          width: 200,
+          width: 300,
           height: 24,
           padding: 0,
           margin: 0,

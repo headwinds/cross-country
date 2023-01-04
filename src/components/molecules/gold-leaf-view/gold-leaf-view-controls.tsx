@@ -1,27 +1,15 @@
 /*
-import * as React from "react";
-import { Column } from '../../';  
-import { GolfLeafViewProps } from "./golf-leaf-view.types";
 
-import styles from "./golf-leaf-view.scss";
+TYPE IT!!!!
+
+import * as React from "react";
+import { GolfLeafViewProps } from "./golf-leaf-view.types";
 
 const GolfLeafView: React.FC<GolfLeafViewProps> = ({ foo }) => {
   return (<Column dataTestId="golf-leaf-view" customClass={styles.GolfLeafView}>{foo || "missng prop foo"}</Column>)
 };
-
-export default GolfLeafView;
-
-import React, { useState } from 'react';
-//import { getOffline, putOffline } from '../../../utils/golds/offline-util';
-import { GoldLeaf } from '../../';
-
-import {
-  addItemToStore,
-  getItemFromStore,
-  deleteItemFromStore,
-  updateItemInStore,
-} from '../../../utils/golds/indexdb-util';
 */
+
 import * as React from 'react';
 import { useState } from 'react';
 import { removeAllImagesFromText, defaultFullScreenImageUrl } from '../../../utils/golds/image-find-util';
@@ -37,15 +25,14 @@ import {
   ClusterOffIcon,
   ArticleNoneIcon,
 } from './icons';
-import { Column, Row, Span, Button } from '../../';
+import { Column, Row } from '../../';
 import GoldLeaf from '../gold-leaf';
-import { GoldLeafViewProps } from './gold-leaf-view.types';
 
 const GOLD_COLOUR = '#E3D597';
 
 const he = require('he');
 
-const GoldLeafView: React.FC<GoldLeafViewProps> = ({ goldLeafModel, dataTestId = 'golf-leaf-view' }) => {
+const GoldLeafViewControls = ({ goldLeafModel }) => {
   const [state, setState] = useState({
     showImages: false,
     showArticle: false,
@@ -98,21 +85,21 @@ const GoldLeafView: React.FC<GoldLeafViewProps> = ({ goldLeafModel, dataTestId =
   const handleToggleTrainGoldLeaf = () => {
     // is the goldLeafModel already present?
     const { goldLeafModel, trained } = state;
-    /*
+
     getItemFromStore('porthole', goldLeafModel, 'link').then(response => {
       if (response) {
         // its present so update it
         if (goldLeafModel.bViewed) {
-          //('porthole', { ...goldLeafModel, bViewed: false });
+          updateItemInStore('porthole', { ...goldLeafModel, bViewed: false });
         } else {
-          // updateItemInStore('porthole', { ...goldLeafModel, bViewed: true });
+          updateItemInStore('porthole', { ...goldLeafModel, bViewed: true });
         }
       } else {
         // its not present so add it as viewed
-        //addItemToStore('porthole', { ...goldLeafModel, bViewed: true });
+        addItemToStore('porthole', { ...goldLeafModel, bViewed: true });
       }
-    });*/
-    // setState({ trained: !trained });
+    });
+    setState({ trained: !trained });
   };
 
   const handleReadGoldLeaf = () => {
@@ -130,15 +117,16 @@ const GoldLeafView: React.FC<GoldLeafViewProps> = ({ goldLeafModel, dataTestId =
   };
 
   const renderImageBtn = (showImages, totalGoldLeafes) => {
+    console.log('renderImageBtn totalGoldLeafes', totalGoldLeafes);
     //if (showImages) {
     return (
-      <Button customClass={styles.GoldLeaf__item} onClick={handleViewImages}>
+      <div className={styles.GoldLeaf__item} onClick={handleViewImages}>
         <ClusterOffIcon />
-        <Column customClass={styles.GoldLeaf__total}>
+        <div className={styles.GoldLeaf__total}>
           {/* what is happening here? */}
-          <Span customClass={styles.GoldLeaf__total__text}>{totalGoldLeafes || 0}</Span>
-        </Column>
-      </Button>
+          <span className={styles.GoldLeaf__total__text}>{totalGoldLeafes || 0}</span>
+        </div>
+      </div>
     );
     // }
     return null;
@@ -150,7 +138,7 @@ const GoldLeafView: React.FC<GoldLeafViewProps> = ({ goldLeafModel, dataTestId =
     return trained ? <HeartIcon color={GOLD_COLOUR} /> : <HeartIcon />;
   };
 
-  const renderUi = () => {
+  const renderControls = () => {
     const { goldLeafModel, showImages, showArticle, text, trained, trashed } = state;
 
     // why isn't goldLeafModel defined when viewing multipe goldLeafModeles?
@@ -173,51 +161,45 @@ const GoldLeafView: React.FC<GoldLeafViewProps> = ({ goldLeafModel, dataTestId =
         }
       }) ?? null;
 
-    const image = goldLeafModel.useText ? null : (
-      <img src={goldLeafModel.images[0].imageUrl} alt={goldLeafModel.title} />
-    );
     const totalGoldLeafes =
       goldLeafModel.useText || goldLeafModel.images.length === 1 ? null : goldLeafModel.images.length;
 
     const goldLeafText = stripImagesFromText(goldLeafModel);
 
-    const content = trashed ? null : (
-      <Column customClass={styles.GoldLeaf} dataTestId={dataTestId}>
+    return (
+      <Column id={goldLeafModel.id} className={styles.GoldLeaf}>
         <GoldLeaf goldLeafModel={goldLeafModel} />
 
-        <Row customClass={styles.GoldLeaf__controls}>
-          <Button customClass={styles.GoldLeaf__item} onClick={handleEmail}>
+        <Row className={styles.GoldLeaf__controls}>
+          <div className={styles.GoldLeaf__item} onClick={handleEmail}>
             <EmailIcon />
-          </Button>
+          </div>
 
-          <Button customClass={styles.GoldLeaf__item} onClick={handleTweet}>
+          <div className={styles.GoldLeaf__item} onClick={handleTweet}>
             <TweetIcon />
-          </Button>
-          <Button customClass={styles.GoldLeaf__item} onClick={handleTweet}>
+          </div>
+          <div className={styles.GoldLeaf__item} onClick={handleTweet}>
             {renderTrainingBtn()}
-          </Button>
+          </div>
 
-          <Button customClass={styles.GoldLeaf__item} onClick={handleReadGoldLeaf}>
+          <div className={styles.GoldLeaf__item} onClick={handleReadGoldLeaf}>
             <HideIcon />
-          </Button>
-
-          {/* imgs */}
+          </div>
 
           {renderImageBtn(showImages, totalGoldLeafes)}
 
-          {/* article */}
-          <Button customClass={styles.GoldLeaf__item} onClick={handleViewArticle}>
+          <div className={styles.GoldLeaf__item} onClick={handleViewArticle}>
             {goldLeafText !== '' ? <ArticleIcon /> : <ArticleNoneIcon />}
-          </Button>
+          </div>
         </Row>
-        {/* images */}
-        {showImages ? <Column customClass={styles.GoldLeaf__images}>{images}</Column> : null}
+
+        {showImages ? <Column className={styles.GoldLeaf__images}>{images}</Column> : null}
         {showArticle ? (
-          <div
+          <Column
             contentEditable="true"
             dangerouslySetInnerHTML={{ __html: text }}
             style={{ color: '#666', outline: 'none' }}
-          ></div>
+          ></Column>
         ) : null}
         {/* footer controls 
         <div className="GoldLeaf__controls">
@@ -225,9 +207,8 @@ const GoldLeafView: React.FC<GoldLeafViewProps> = ({ goldLeafModel, dataTestId =
         </div> */}
       </Column>
     );
-    return content;
   };
 
-  return renderUi();
+  return renderControls();
 };
-export default GoldLeafView;
+export default GoldLeafViewControls;

@@ -1,3 +1,5 @@
 export interface SpanProps {
-    foo?: string;
+  customStyle?: any;
+  customClass?: string;
+  dataTestId?: string;
 }
