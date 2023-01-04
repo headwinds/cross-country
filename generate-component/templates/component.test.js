@@ -5,7 +5,7 @@ import { render } from "@testing-library/react";
 import ${componentUpperCaseName} from "../";
 import { ${componentUpperCaseName}Props } from "../${componentLowerCaseName}.types";
 
-describe("Test Component", () => {
+describe("<${componentUpperCaseName} />", () => {
   let props: ${componentUpperCaseName}Props;
 
   beforeEach(() => {

@@ -1,26 +1,25 @@
-import React from "react";
-import { render } from "@testing-library/react";
+import React from 'react';
+import { render } from '@testing-library/react';
 
-import Timeseries from "../";
-import { TimeseriesProps } from "../timeseries.types";
+import Timeseries from '../';
+import { TimeseriesProps } from '../timeseries.types';
 
-describe("Test Component", () => {
+describe('Test Component', () => {
   let props: TimeseriesProps;
 
   beforeEach(() => {
     props = {
-      foo: "bar"
+      foo: 'bar',
     };
   });
 
   const renderComponent = () => render(<Timeseries {...props} />);
 
-  it("should render foo text correctly", () => {
-    props.foo = "cross country was here";
+  it('should render foo text correctly', () => {
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId("timeseries");
+    const component = getByTestId('timeseries');
 
-    expect(component).toHaveTextContent("cross country was here");
+    expect(component).toHaveTextContent('timeseries ARIMA');
   });
 });

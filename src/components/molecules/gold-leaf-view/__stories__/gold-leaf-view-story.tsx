@@ -18,13 +18,13 @@ const convertToPortholeBranches = branches => {
   return portholeBranchesValid;
 };
 
-const getBranch = () => {
+export const getGoldLeafModel = () => {
   const portholeBranchModels = convertToPortholeBranches(behanceBranches);
   return portholeBranchModels[6];
 };
 
 const GoldLeafViewStory = ({ isOnlyText, hasMultiple, isKillScreen }) => {
-  const goldLeafModel = getBranch();
+  const goldLeafModel = getGoldLeafModel();
   return <GoldLeafView goldLeafModel={goldLeafModel} />;
 };
 

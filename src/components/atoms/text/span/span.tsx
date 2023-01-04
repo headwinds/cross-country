@@ -6,7 +6,7 @@ import styles from './span.scss';
 
 const Span: React.FC<SpanProps> = ({ dataTestId = 'span', customClass = '', customStyle = {}, children, ...rest }) => {
   return (
-    <span dataTestId={dataTestId} className={clsx(styles.Span, customClass)} style={customStyle} {...rest}>
+    <span data-testid={dataTestId} className={clsx(styles.Span, customClass)} style={customStyle} {...rest}>
       {children}
     </span>
   );
