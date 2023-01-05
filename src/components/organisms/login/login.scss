@@ -21,7 +21,7 @@
   $font: $font-electrolize;
 
   &__title {
-    color: grey;
+    color: #666;
     opacity: 0.7;
     font-size: 16px;
     font-family: $font;
@@ -43,6 +43,12 @@
     border-top-style: none;
     border-left-style: none;
     border-right-style: none;
+    color: #000;
+    font-family: $font;
+  }
+
+  &__input::placeholder {
+    font-family: $font;
   }
 
   &__button {
