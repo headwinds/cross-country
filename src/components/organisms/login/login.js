@@ -1,81 +1,142 @@
-import React, { Component } from 'react';
+import React, { useState, useReducer, useEffect } from 'react';
+// components
 import { Image, TextInput, Column, Row, Paragraph, Button, Label, SubHeadline } from '../../';
-import { postLoginUser } from '../../../services/login-service';
-import { getUnsplashPhoto } from '../../../services/image-service';
-import clsx from 'clsx';
-import styles from './login.scss';
-import { privateConfig } from '../../../../cross-country-config-private';
-import { getWindow } from '../../../utils/server-side-util';
 import LoginView from './login-view';
 
-export default class LoginContainer extends Component {
-  constructor(props) {
-    super(props);
+// utils
+import { postLoginUser } from '../../../services/login-service';
+import { getUnsplashPhoto } from '../../../services/image-service';
+import { getWindow } from '../../../utils/server-side-util';
+import { fetchRetry } from '../../../utils/fetch-util';
 
-    this.state = {
-      username: '',
-      password: '',
-      feedback: '',
-      imageUrl: '',
-      crossCountryConfig: this.props?.config?.crossCountryConfig ?? privateConfig,
-      fetch: false,
-      response: null,
-    };
+const usernameRegExp = /^.{2,}$/;
+const passwordRegExp = /^.{4,}$/;
 
-    this.onUsernameChange = this.onUsernameChange.bind(this);
-    this.onPasswordChange = this.onPasswordChange.bind(this);
-    this.login = this.login.bind(this);
-    this.onKeydownHandler = this.onKeydownHandler.bind(this);
+const loginReducerInitialState = {
+  username: {
+    isUsernameValid: false,
+    isUsernameUntouched: true,
+    usernameErrorMessage: 'Username is required and must be lowercase & unique',
+    usernameRegExp,
+    usernameValue: '',
+  },
+  password: {
+    isValid: false,
+    isUntouched: true,
+    errorMessage: 'Password is required and must be at least 4 characters',
+    regex: passwordRegExp,
+    passwordValue: '',
+  },
+  hasImage: false,
+  a11y: '',
+  feedback: '',
+  text: '',
+  fetch: false,
+  response: null,
+  route: '/login',
+  screenWindow: null,
+  unsplashImgUrl: null,
+  loginResponse: {
+    error: null,
+    message: '',
+    isSuccessful: false,
+  },
+};
+
+const createInitialState = () => {
+  return {
+    ...loginReducerInitialState,
+  };
+};
+
+const formActionTypes = {
+  VALIDATE_USERNAME: 'VALIDATE_USERNAME',
+  VALIDATE_PASSWORD: 'VALIDATE_PASSWORD',
+};
+
+const loginReducer = (state, action) => {
+  console.log('loginReducer action: ', action);
+  switch (action.type) {
+    case formActionTypes.VALIDATE_USERNAME:
+      const { usernameRegExp } = loginReducerInitialState.username;
+      return {
+        ...state,
+        username: {
+          ...state.username,
+          isUsernameValid: usernameRegExp.test(action.payload),
+          isUsernameUntouched: false,
+          usernameValue: action.payload,
+        },
+      };
+    case formActionTypes.VALIDATE_PASSWORD:
+      return {
+        ...state,
+        password: {
+          ...state.password,
+          // isValid: state.password.regex.test(action.payload),
+          isUntouched: false,
+          passwordValue: action.payload,
+        },
+      };
+    default:
+      return state;
   }
+};
 
-  componentDidMount() {
-    const { crossCountryConfig } = this.state;
+const Login = ({
+  crossCountryConfig = { UNSPLASH_API_KEY: 'YOUR-API-KEY' },
+  isAnimated = false,
+  hasImage = true,
+  hasBackground = false,
+  imageUrl = null,
+}) => {
+  const [
+    {
+      username: { usernameValue, isUsernameValid, isUsernameUntouched, usernameErrorMessage },
+      feedback,
+      response,
+      route,
+      screenWindow,
+      unsplashImgUrl,
+      a11y,
+      loginResponse,
+    },
+    dispatch,
+  ] = useReducer(loginReducer, null, createInitialState);
 
-    getUnsplashPhoto(crossCountryConfig.UNSPLASH_API_KEY).then(result => {
-      if (result.errors) {
-        // handle error here
-        console.log('error occurred: ', result.errors[0]);
-      } else {
-        // handle success here
-        const {
-          urls: { small },
-        } = result.response;
-        this.setState({ imageUrl: small, a11y: 'record player' });
-      }
+  //const [usernameValue, setUsernameValue] = useState('');
+  const [passwordValue, setPasswordValue] = useState('');
+
+  // functions
+
+  const onUsernameChange = newValue => {
+    console.log('onUsernameChange value: ', newValue);
+
+    dispatch({
+      type: formActionTypes.VALIDATE_USERNAME,
+      payload: newValue,
     });
+    //setUsernameValue(newValue);
+  };
 
-    const screenWindow = getWindow();
+  const onPasswordChange = newValue => {
+    setState({ ...state, password: newValue });
+  };
 
-    screenWindow?.addEventListener('keydown', this.onKeydownHandler, false);
-  }
-
-  componentWillUnmount() {
-    const screenWindow = getWindow();
-    screenWindow?.removeEventListener('keyPress', this.onKeydownHandler, false);
-  }
-
-  componentDidUpdate() {}
-
-  onUsernameChange({ target: { value } }) {
-    this.setState({ username: value });
-  }
-
-  onPasswordChange({ target: { value } }) {
-    this.setState({ password: value });
-  }
-
-  onKeydownHandler(event) {
+  const onKeydownHandler = event => {
+    event.preventDefault();
     if (event.keyCode === 13) {
-      event.preventDefault();
-      this.login();
+      //login();
     }
-  }
+  };
 
-  login() {
-    const {
-      config: { route },
-    } = this.props;
-    const { username, password } = this.state;
+  const onSubmitHandler = e => {
+    e.preventDefault();
+    login();
+  };
+
+  const login = () => {
+    const { username, password, route } = this.state;
 
     if (username && password) {
       postLoginUser({ username, password }, route)
@@ -100,23 +161,66 @@ export default class LoginContainer extends Component {
         })
         .catch(error => callback(error));
     }
-  }
+  };
 
-  render() {
-    const { config } = this.props;
-    const { username, password, feedback, imageUrl, response, a11y } = this.state;
-    const loginConfig = {
-      ...config,
-      a11y,
-      imageUrl,
-      username,
-      password,
-      feedback,
-      handleClick: this.login,
-      onUsernameChange: this.onUsernameChange,
-      onPasswordChange: this.onPasswordChange,
-      response,
+  // effects
+  // why do I even need this?!
+  /*
+  useEffect(() => {
+    //
+    const newScreenWindow = getWindow();
+    newScreenWindow?.addEventListener('keydown', onKeydownHandler, false);
+    setState({ ...state, screenWindow: newScreenWindow });
+
+    return () => {
+      screenWindow?.removeEventListener('keyPress', onKeydownHandler, false);
     };
-    return <LoginView config={loginConfig} />;
-  }
-}
+  }, [screenWindow]);
+  */
+
+  useEffect(() => {
+    const { UNSPLASH_API_KEY } = crossCountryConfig;
+
+    if (UNSPLASH_API_KEY !== 'YOUR-API-KEY' && unsplashImgUrl === null && hasImage)
+      getUnsplashPhoto(UNSPLASH_API_KEY).then(({ type, response, status }) => {
+        if (status === 200) {
+          const { urls } = response;
+          const { small } = urls;
+          setState({ ...state, unsplashImgUrl: small, a11y: 'record player' });
+        }
+      });
+  }, []);
+
+  useEffect(() => {
+    console.log('should re-render when usernameValue or passwordValue changes');
+    console.log('usernameValue on change: ', usernameValue);
+    console.log('usernameValue isUsernameValid: ', isUsernameValid);
+  }, [usernameValue, isUsernameValid]);
+
+  //useEffect(() => {}, [username, password]);
+
+  const loginViewProps = {
+    crossCountryConfig,
+    usernameValue,
+    passwordValue,
+    onSubmitHandler,
+    onUsernameChange,
+    onPasswordChange,
+    unsplashImgUrl,
+    imageUrl,
+    a11y,
+    loginResponse,
+    isAnimated,
+    hasImage,
+    hasBackground,
+  };
+
+  return (
+    <>
+      <TextInput onTextChange={onUsernameChange} value={usernameValue} />
+      <Paragraph>{usernameValue}</Paragraph>
+    </>
+  );
+};
+
+export default Login;

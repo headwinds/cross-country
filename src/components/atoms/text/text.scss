@@ -17,6 +17,11 @@ $teal: #0cb4b4;
     margin: 4px;
 }
 
+.textInput::placeholder {
+  opacity: 0.8;
+  color: #999;
+}
+
 .label {
     font-family: $font-paragraph;
     font-size: 16px;
