@@ -12,10 +12,24 @@ import { getWindow } from '../../../utils/server-side-util';
 import clsx from 'clsx';
 import styles from './login.scss';
 
+const Field = ({ text, onTextChange, value, type = 'text' }) => (
+  <Row customClass={styles.login__row}>
+    <Label htmlFor={text.toLowerCase()} customClass={styles.login__label}>
+      {text}
+    </Label>
+    <TextInput
+      id={text.toLowerCase()}
+      onTextChange={onTextChange}
+      value={value}
+      customClass={styles.login__input}
+      placeholder={`enter your ${text.toLowerCase()}`}
+      type={type}
+    />
+  </Row>
+);
+
 const LoginFieldsTransition = ({ isAnimated, onUsernameChange, usernameValue, onPasswordChange, passwordValue }) => {
   const data = [1];
-
-  console.log('LoginFieldsTransition usernameValue', usernameValue);
 
   const transRef = useSpringRef();
 
@@ -38,48 +52,18 @@ const LoginFieldsTransition = ({ isAnimated, onUsernameChange, usernameValue, on
     transRef.start();
   }, []);
 
-  const Username = () => (
-    <Row customClass={styles.login__row}>
-      <Label htmlFor="username" customClass={styles.login__label}>
-        Username
-      </Label>
-      <TextInput
-        id="username"
-        onTextChange={onUsernameChange}
-        value={usernameValue}
-        customClass={styles.login__input}
-        placeholder="enter your username"
-      />
-    </Row>
-  );
-
-  const Password = () => (
-    <Row customClass={styles.login__row}>
-      <Label htmlFor="password" customClass={styles.login__label}>
-        Password
-      </Label>
-      <TextInput
-        id="password"
-        onTextChange={onPasswordChange}
-        value={passwordValue}
-        customClass={styles.login__input}
-        placeholder="enter your password"
-      />
-    </Row>
-  );
-
   const renderLoginFields = () => {
     if (isAnimated) {
       return (
         <Column customStyle={{ width: 400 }}>
           {usernameTransitions(style => (
             <animated.div style={style}>
-              <Username />
+              <Field text="Username" onTextChange={onUsernameChange} value={usernameValue} />
             </animated.div>
           ))}
           {passwordTransitions(style => (
             <animated.div style={style}>
-              <Password />
+              <Field text="Password" type="password" onTextChange={onPasswordChange} value={passwordValue} />
             </animated.div>
           ))}
         </Column>
@@ -88,8 +72,8 @@ const LoginFieldsTransition = ({ isAnimated, onUsernameChange, usernameValue, on
 
     return (
       <Column customStyle={{ width: 400 }}>
-        <Username />
-        <Password />
+        <Field text="Username" onTextChange={onUsernameChange} value={usernameValue} />
+        <Field text="Password" type="password" onTextChange={onPasswordChange} value={passwordValue} />
       </Column>
     );
   };

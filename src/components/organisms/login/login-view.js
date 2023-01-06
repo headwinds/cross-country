@@ -69,7 +69,7 @@ const LoginView = ({
           onUsernameChange={onUsernameChange}
           onPasswordChange={onPasswordChange}
         />
-        <LoginSubmit isAnimated={isAnimated} />
+        <LoginSubmit isAnimated={isAnimated} onSubmitHandler={onSubmitHandler} />
         <Row>
           {response !== '' && (
             <Paragraph
@@ -78,7 +78,7 @@ const LoginView = ({
                 [styles.login__success]: response?.isSuccessful,
               })}
             >
-              message here
+              {response?.message}
             </Paragraph>
           )}
         </Row>

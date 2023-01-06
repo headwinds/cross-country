@@ -21,10 +21,10 @@ const loginReducerInitialState = {
     usernameValue: '',
   },
   password: {
-    isValid: false,
-    isUntouched: true,
-    errorMessage: 'Password is required and must be at least 4 characters',
-    regex: passwordRegExp,
+    isPasswordValid: false,
+    isPasswordUntouched: true,
+    passwordErrorMessage: 'Password is required and must be at least 4 characters',
+    passwordRegExp,
     passwordValue: '',
   },
   hasImage: false,
@@ -49,34 +49,50 @@ const createInitialState = () => {
   };
 };
 
-const formActionTypes = {
+const reduceActionTypes = {
   VALIDATE_USERNAME: 'VALIDATE_USERNAME',
   VALIDATE_PASSWORD: 'VALIDATE_PASSWORD',
+  SET_SCREEN: 'SET_SCREEN',
+  SET_LOGIN_RESPONSE: 'SET_LOGIN_RESPONSE',
+  SET_LOGIN_ERROR: 'SET_LOGIN_ERROR',
 };
 
 const loginReducer = (state, action) => {
-  console.log('loginReducer action: ', action);
   switch (action.type) {
-    case formActionTypes.VALIDATE_USERNAME:
-      const { usernameRegExp } = loginReducerInitialState.username;
+    case reduceActionTypes.VALIDATE_USERNAME:
       return {
         ...state,
         username: {
           ...state.username,
-          isUsernameValid: usernameRegExp.test(action.payload),
+          isUsernameValid: state.username.usernameRegExp.test(action.payload),
           isUsernameUntouched: false,
           usernameValue: action.payload,
         },
       };
-    case formActionTypes.VALIDATE_PASSWORD:
+    case reduceActionTypes.VALIDATE_PASSWORD:
       return {
         ...state,
         password: {
           ...state.password,
-          // isValid: state.password.regex.test(action.payload),
-          isUntouched: false,
+          isPassowrdValid: state.password.passwordRegExp.test(action.payload),
+          isPasswordUntouched: false,
           passwordValue: action.payload,
         },
+      };
+    case reduceActionTypes.SET_SCREEN:
+      return {
+        ...state,
+        screenWindow: action.payload,
+      };
+    case reduceActionTypes.SET_LOGIN_RESPONSE:
+      return {
+        ...state,
+        loginResponse: action.payload,
+      };
+    case reduceActionTypes.SET_LOGIN_ERROR:
+      return {
+        ...state,
+        loginResponse: action.payload,
       };
     default:
       return state;
@@ -93,6 +109,7 @@ const Login = ({
   const [
     {
       username: { usernameValue, isUsernameValid, isUsernameUntouched, usernameErrorMessage },
+      password: { passwordValue, isPasswordValid, isPasswordUntouched, passwordErrorMessage },
       feedback,
       response,
       route,
@@ -104,29 +121,25 @@ const Login = ({
     dispatch,
   ] = useReducer(loginReducer, null, createInitialState);
 
-  //const [usernameValue, setUsernameValue] = useState('');
-  const [passwordValue, setPasswordValue] = useState('');
-
   // functions
-
   const onUsernameChange = newValue => {
-    console.log('onUsernameChange value: ', newValue);
-
     dispatch({
-      type: formActionTypes.VALIDATE_USERNAME,
+      type: reduceActionTypes.VALIDATE_USERNAME,
       payload: newValue,
     });
-    //setUsernameValue(newValue);
   };
 
   const onPasswordChange = newValue => {
-    setState({ ...state, password: newValue });
+    dispatch({
+      type: reduceActionTypes.VALIDATE_PASSWORD,
+      payload: newValue,
+    });
   };
 
   const onKeydownHandler = event => {
     event.preventDefault();
     if (event.keyCode === 13) {
-      //login();
+      login();
     }
   };
 
@@ -136,10 +149,8 @@ const Login = ({
   };
 
   const login = () => {
-    const { username, password, route } = this.state;
-
     if (username && password) {
-      postLoginUser({ username, password }, route)
+      postLoginUser({ username: usernameValue, password: passwordValue }, route)
         .then(
           response => {
             return response.json();
@@ -152,31 +163,48 @@ const Login = ({
           const { isAuthenticated, message, status, access_token } = json;
           if (status === 200) {
             if (!isAuthenticated && message) {
-              this.setState({ feedback: message, response: { hasError: true, isSuccessful: false } });
+              return dispatch({
+                type: reduceActionTypes.SET_LOGIN_ERROR,
+                payload: { feedback: message, response: { hasError: true, isSuccessful: false } },
+              });
             } else if (isAuthenticated && access_token) {
-              this.setState({ feedback: 'You are logged in!', response: { hasError: false, isSuccessful: true } });
+              dispatch({
+                type: reduceActionTypes.SET_LOGIN_RESPONSE,
+                payload: { feedback: 'You are logged in!', response: { hasError: false, isSuccessful: true } },
+              });
+            } else {
+              dispatch({
+                type: reduceActionTypes.SET_LOGIN_RESPONSE,
+                payload: json,
+              });
             }
-            callback(json);
           }
         })
-        .catch(error => callback(error));
+        .catch(error => {
+          return dispatch({
+            type: reduceActionTypes.SET_LOGIN_ERROR,
+            payload: error,
+          });
+        });
     }
   };
 
   // effects
-  // why do I even need this?!
+  // capture keydown events but interferes with input fields
   /*
   useEffect(() => {
     //
     const newScreenWindow = getWindow();
     newScreenWindow?.addEventListener('keydown', onKeydownHandler, false);
-    setState({ ...state, screenWindow: newScreenWindow });
+    dispatch({
+      type: reduceActionTypes.SET_SCREEN,
+      payload: newScreenWindow,
+    });
 
     return () => {
       screenWindow?.removeEventListener('keyPress', onKeydownHandler, false);
     };
-  }, [screenWindow]);
-  */
+  }, []);*/
 
   useEffect(() => {
     const { UNSPLASH_API_KEY } = crossCountryConfig;
@@ -190,14 +218,6 @@ const Login = ({
         }
       });
   }, []);
-
-  useEffect(() => {
-    console.log('should re-render when usernameValue or passwordValue changes');
-    console.log('usernameValue on change: ', usernameValue);
-    console.log('usernameValue isUsernameValid: ', isUsernameValid);
-  }, [usernameValue, isUsernameValid]);
-
-  //useEffect(() => {}, [username, password]);
 
   const loginViewProps = {
     crossCountryConfig,
@@ -215,12 +235,7 @@ const Login = ({
     hasBackground,
   };
 
-  return (
-    <>
-      <TextInput onTextChange={onUsernameChange} value={usernameValue} />
-      <Paragraph>{usernameValue}</Paragraph>
-    </>
-  );
+  return <LoginView {...loginViewProps} />;
 };
 
 export default Login;
