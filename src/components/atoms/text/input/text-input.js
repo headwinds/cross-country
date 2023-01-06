@@ -9,16 +9,23 @@ const TextInput = ({
   customClass = '',
   customStyle = {},
   placeholder = 'enter your text',
+  type = 'text',
   ...rest
 }) => {
   return (
     <input
       {...rest}
-      type="text"
+      type={type}
       className={clsx(styles.textInput, customClass)}
       style={customStyle}
-      onChange={({ target: { value } }) => onTextChange(value)}
-      //value={value}
+      onChange={event => {
+        event.preventDefault();
+        const {
+          target: { value },
+        } = event;
+        return onTextChange(value);
+      }}
+      value={value}
       style={customStyle}
       placeholder={placeholder}
     />

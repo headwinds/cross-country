@@ -59,38 +59,36 @@ But what happens if something goes wrong? How can we best assure that the use is
 
 <Canvas>
   <Story name="login">
-        <Login config={{
-            hasImage: true,
-            imageUrl: '',
-            a11y: '', // unsplash will update the a11y test
-            text: '',
-            route: "/login",
-            crossCountryConfig: privateConfig || {
+        <Login 
+            crossCountryConfig = { privateConfig || {
                 UNSPLASH_API_KEY: "YOUR-API-KEY",
-            },
-        }}/>
+            }}
+            isAnimated = {false}
+            hasImage = {true}
+            hasBackground = {false}
+            imageUrl = {null}
+        />
     </Story>
     <Story name="login without image">
-        <Login config={{
-            hasImage: false,
-            a11y: "wolf",
-            text: "Wolf",
-            route: "/login",
-            crossCountryConfig: privateConfig || {
+        <Login 
+            crossCountryConfig = { privateConfig || {
                 UNSPLASH_API_KEY: "YOUR-API-KEY",
-            },
-        }}/>
+            }}
+            isAnimated = {false}
+            hasImage = {true}
+            hasBackground = {false}
+            imageUrl = {null}
+        />
     </Story>
      <Story name="login with animations">
-       <Login config={{
-            hasImage: false,
-            a11y: "wolf",
-            text: "Wolf",
-            route: "/login",
-            isAnimated: true,
-            crossCountryConfig: privateConfig || {
+        <Login 
+            crossCountryConfig = { privateConfig || {
                 UNSPLASH_API_KEY: "YOUR-API-KEY",
-            },
-        }}/>
+            }}
+            isAnimated = {true}
+            hasImage = {false}
+            hasBackground = {false}
+            imageUrl = {null}
+        />
     </Story>
 </Canvas>

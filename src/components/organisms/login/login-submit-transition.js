@@ -48,7 +48,7 @@ import { getWindow } from '../../../utils/server-side-util';
 import clsx from 'clsx';
 import styles from './login.scss';
 
-const LoginSubmitTransition = ({ isAnimated, handleClick }) => {
+const LoginSubmitTransition = ({ isAnimated, onSubmitHandler }) => {
   const data = [1];
   const transRef = useSpringRef();
 
@@ -67,7 +67,7 @@ const LoginSubmitTransition = ({ isAnimated, handleClick }) => {
     return transitions(style => (
       <animated.div style={style}>
         <Row customClass={styles.login__rowSend}>
-          <Button label="login" onClick={handleClick} customClass={styles.login__button}>
+          <Button label="login" onClick={onSubmitHandler} customClass={styles.login__button}>
             Send
           </Button>
         </Row>
@@ -77,7 +77,7 @@ const LoginSubmitTransition = ({ isAnimated, handleClick }) => {
 
   return (
     <Row customClass={styles.login__rowSend}>
-      <Button label="login" onClick={handleClick} customClass={styles.login__button}>
+      <Button label="login" onClick={onSubmitHandler} customClass={styles.login__button}>
         Send
       </Button>
     </Row>
