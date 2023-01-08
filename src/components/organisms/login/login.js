@@ -41,6 +41,8 @@ const loginReducerInitialState = {
     message: '',
     isSuccessful: false,
   },
+  isFetching: false,
+  error: null,
 };
 
 const createInitialState = () => {
@@ -55,6 +57,9 @@ const reduceActionTypes = {
   SET_SCREEN: 'SET_SCREEN',
   SET_LOGIN_RESPONSE: 'SET_LOGIN_RESPONSE',
   SET_LOGIN_ERROR: 'SET_LOGIN_ERROR',
+  IS_FETCHING: 'IS_FETCHING',
+  FETCH_SUCCESS: 'FETCH_SUCCESS',
+  FETCH_FAIL: 'FETCH_FAIL',
 };
 
 const loginReducer = (state, action) => {
@@ -93,6 +98,23 @@ const loginReducer = (state, action) => {
       return {
         ...state,
         loginResponse: action.payload,
+      };
+    case reduceActionTypes.IS_FETCHING:
+      return {
+        ...state,
+        isFetching: true,
+      };
+    case reduceActionTypes.FETCH_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        error: null,
+      };
+    case reduceActionTypes.FETCH_FAIL:
+      return {
+        ...state,
+        isFetching: false,
+        error: action.payload,
       };
     default:
       return state;
@@ -136,15 +158,11 @@ const Login = ({
     });
   };
 
-  const onKeydownHandler = event => {
-    event.preventDefault();
-    if (event.keyCode === 13) {
-      login();
-    }
-  };
-
   const onSubmitHandler = e => {
     e.preventDefault();
+    dispatch({
+      type: reduceActionTypes.IS_FETCHING,
+    });
     login();
   };
 
@@ -156,11 +174,28 @@ const Login = ({
             return response.json();
           },
           error => {
-            return callback(error);
+            return dispatch({
+              type: reduceActionTypes.SET_LOGIN_ERROR,
+              payload: error,
+            });
           }
         )
-        .then(json => {
-          const { isAuthenticated, message, status, access_token } = json;
+        .then(({ isAuthenticated, message, status, access_token }) => {
+          /*
+          access_token 
+          isAuthenticated
+          message: "success"
+          refresh_token
+          status: 200
+          user_account: {
+            admin: false,
+            confirmed: true,
+            confirmed_on: "Fri, 07 May 2021 14:53:29 GMT".
+            email
+            id 
+            username
+          } 
+          */
           if (status === 200) {
             if (!isAuthenticated && message) {
               return dispatch({
@@ -188,23 +223,6 @@ const Login = ({
         });
     }
   };
-
-  // effects
-  // capture keydown events but interferes with input fields
-  /*
-  useEffect(() => {
-    //
-    const newScreenWindow = getWindow();
-    newScreenWindow?.addEventListener('keydown', onKeydownHandler, false);
-    dispatch({
-      type: reduceActionTypes.SET_SCREEN,
-      payload: newScreenWindow,
-    });
-
-    return () => {
-      screenWindow?.removeEventListener('keyPress', onKeydownHandler, false);
-    };
-  }, []);*/
 
   useEffect(() => {
     const { UNSPLASH_API_KEY } = crossCountryConfig;

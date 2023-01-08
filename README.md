@@ -256,6 +256,7 @@ npm run deploy-storybook-ci
 
 ## Stats, NLP & Machine Learning
 * [what is machine learning anway](https://boingboing.net/2021/11/08/what-is-machine-learning-anyway-this-three-minute-animation-delivers-an-excellent-simple-explanation.html)
+* [build a basic model](https://towardsdatascience.com/building-a-basic-machine-learning-model-in-python-d7cca929ee62)
 * [Spacey](https://spacy.io/)
 * [Open AI](https://openai.com/)
 * [Hugging Face](https://huggingface.co/)

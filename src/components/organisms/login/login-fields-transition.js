@@ -12,21 +12,26 @@ import { getWindow } from '../../../utils/server-side-util';
 import clsx from 'clsx';
 import styles from './login.scss';
 
-const Field = ({ text, onTextChange, value, type = 'text' }) => (
-  <Row customClass={styles.login__row}>
-    <Label htmlFor={text.toLowerCase()} customClass={styles.login__label}>
-      {text}
-    </Label>
-    <TextInput
-      id={text.toLowerCase()}
-      onTextChange={onTextChange}
-      value={value}
-      customClass={styles.login__input}
-      placeholder={`enter your ${text.toLowerCase()}`}
-      type={type}
-    />
-  </Row>
-);
+const Field = ({ text, onTextChange, value, type = 'text', isValid = false, isUntouched = true }) => {
+  return (
+    <Row customClass={styles.login__row}>
+      <Label
+        htmlFor={text.toLowerCase()}
+        customClass={clsx(styles.login__label, { [styles.login__label_valid]: isValid && !isUntouched })}
+      >
+        {text}
+      </Label>
+      <TextInput
+        id={text.toLowerCase()}
+        onTextChange={onTextChange}
+        value={value}
+        customClass={styles.login__input}
+        placeholder={`enter your ${text.toLowerCase()}`}
+        type={type}
+      />
+    </Row>
+  );
+};
 
 const LoginFieldsTransition = ({ isAnimated, onUsernameChange, usernameValue, onPasswordChange, passwordValue }) => {
   const data = [1];

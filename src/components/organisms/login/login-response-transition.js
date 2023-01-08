@@ -12,7 +12,26 @@ import { getWindow } from '../../../utils/server-side-util';
 import clsx from 'clsx';
 import styles from './login.scss';
 
-const LoginSubmitTransition = ({ isAnimated }) => {
+const Response = ({ loginResponse }) => {
+  if (loginResponse) {
+    return (
+      <Row>
+        <Paragraph
+          customClass={clsx({
+            [styles.login__error]: loginResponse?.hasError,
+            [styles.login__success]: loginResponse?.isSuccessful,
+          })}
+        >
+          {loginResponse?.message}
+        </Paragraph>
+      </Row>
+    );
+  }
+
+  return null;
+};
+
+const LoginResponseTransition = ({ isAnimated, loginResponse }) => {
   const data = [1];
   const transRef = useSpringRef();
 
@@ -30,22 +49,12 @@ const LoginSubmitTransition = ({ isAnimated }) => {
   if (isAnimated) {
     return transitions(style => (
       <animated.div style={style}>
-        <Row customClass={styles.login__rowSend}>
-          <Button type="submit" label="login" customClass={styles.login__button}>
-            Send
-          </Button>
-        </Row>
+        <Response loginResponse={loginResponse} />
       </animated.div>
     ));
   }
 
-  return (
-    <Row customClass={styles.login__rowSend}>
-      <Button type="submit" label="login" customClass={styles.login__button}>
-        Send
-      </Button>
-    </Row>
-  );
+  return <Response loginResponse={loginResponse} />;
 };
 
-export default LoginSubmitTransition;
+export default LoginResponseTransition;

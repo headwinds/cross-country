@@ -13,7 +13,7 @@ const Registration = ({ config: { text, hasBackground } }) => {
   const handleFormSubmit = () => {};
 
   return (
-    <Column hasBackground={hasBackground}>
+    <Column hasBackground={hasBackground} customClass={styles.registration}>
       <SubHeadline text={text} />
       <Form>
         <Row>

@@ -1,33 +1,9 @@
 @import "../../styles.scss";
+$font: $font-electrolize;
+$valid-text: rgb(21, 199, 166);
 
-.registration {
+.field {
   display: flex;
-  padding: 26px;
-  width: 360px;
-
-
-  @include sm {
-    padding: 16px;
-  }
-
-  @include lg {
-  
-  }
-
-  @include rwd(1400) {
-
-  }
-
-  $valid-text: rgb(21, 199, 166);
-
-  $font: $font-electrolize;
-
-  &__title {
-    color: #666;
-    opacity: 0.7;
-    font-size: 16px;
-    font-family: $font;
-  }
 
   &__label {
     color: mediumvioletred;
@@ -87,5 +63,4 @@
     padding: 8px;
     color: green;
   }
-
 }
