@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useTransition, animated, useSpringRef, useSpring } from '@react-spring/web';
 
 // components
-import { Image, TextInput, Column, Row, Paragraph, Button, Label, SubHeadline } from '../../';
+import { Image, TextInput, Column, Row, Paragraph, Button, Label, SubHeadline, Loading } from '../../';
 import { postLoginUser } from '../../../services/login-service';
 import { getUnsplashPhoto } from '../../../services/image-service';
 import { privateConfig } from '../../../../cross-country-config-private';
@@ -12,8 +12,9 @@ import { getWindow } from '../../../utils/server-side-util';
 import clsx from 'clsx';
 import styles from './login.scss';
 
-const LoginSubmitTransition = ({ isAnimated }) => {
-  const data = [1];
+const LoginFetchingTransition = ({ isAnimated, isFetching }) => {
+  // need to use isFetching to trigger the transition in and out
+  const data = isFetching ? [1] : [];
   const transRef = useSpringRef();
 
   const [transitions, api] = useTransition(data, () => ({
@@ -30,22 +31,12 @@ const LoginSubmitTransition = ({ isAnimated }) => {
   if (isAnimated) {
     return transitions(style => (
       <animated.div style={style}>
-        <Row customClass={styles.login__rowSend}>
-          <Button type="submit" label="login" customClass={styles.login__button}>
-            Send
-          </Button>
-        </Row>
+        <Loading />
       </animated.div>
     ));
   }
 
-  return (
-    <Row customClass={styles.login__rowSend}>
-      <Button type="submit" label="login" customClass={styles.login__button}>
-        Send
-      </Button>
-    </Row>
-  );
+  return isFetching ? <Loading /> : null;
 };
 
-export default LoginSubmitTransition;
+export default LoginFetchingTransition;
