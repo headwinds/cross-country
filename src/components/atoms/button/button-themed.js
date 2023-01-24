@@ -10,13 +10,17 @@ const ButtonThemed = ({
   customClass = '',
   customStyle = {},
   children = null,
+  ariaLabel = '',
+  ...rest
 }) => (
   <Button
+    {...rest}
     customClass={clsx(styles.button, styles.defaultButton, customClass)}
     text={text}
     onClick={onClick}
     customStyle={customStyle}
     type={type}
+    ariaLabel={ariaLabel}
   >
     {text || children}
   </Button>

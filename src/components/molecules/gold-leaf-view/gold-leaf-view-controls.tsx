@@ -205,23 +205,23 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = nul
       <GoldLeaf goldLeafModel={goldLeafModel} />
 
       <Row customClass={styles.GoldLeaf__controls}>
-        <Button customClass={styles.GoldLeaf__item} onClick={handleEmail}>
+        <Button customClass={styles.GoldLeaf__item} onClick={handleEmail} aria-label="email">
           <EmailIcon />
         </Button>
 
-        <Button customClass={styles.GoldLeaf__item} onClick={handleTweet}>
+        <Button customClass={styles.GoldLeaf__item} onClick={handleTweet} aria-label="tweet">
           <TweetIcon />
         </Button>
-        <Button customClass={styles.GoldLeaf__item} onClick={handleToggleTrainGoldLeaf}>
+        <Button customClass={styles.GoldLeaf__item} onClick={handleToggleTrainGoldLeaf} aria-label="train">
           {renderTrainingBtn()}
         </Button>
 
-        <Button customClass={styles.GoldLeaf__item} onClick={handleReadGoldLeaf}>
+        <Button customClass={styles.GoldLeaf__item} onClick={handleReadGoldLeaf} aria-label="remove">
           <HideIcon />
         </Button>
 
         {renderImageBtn(showImages, totalGoldLeafes)}
-        <Button customClass={styles.GoldLeaf__item} onClick={handleViewArticle}>
+        <Button customClass={styles.GoldLeaf__item} onClick={handleViewArticle} aria-label="view artilce">
           {goldLeafText !== '' ? <ArticleIcon /> : <ArticleNoneIcon />}
         </Button>
       </Row>
