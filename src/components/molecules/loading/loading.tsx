@@ -4,7 +4,7 @@ import { LoadingProps } from './loading.types';
 
 import styles from './loading.scss';
 
-const Loading: React.FC<LoadingProps> = ({ label, isAnimated = false }) => {
+const Loading: React.FC<LoadingProps> = ({ label }) => {
   // thank you @garrettmaring for the tip https://github.com/pmndrs/react-spring/issues/493
   // Now I want to turn into another example where the enter transition can do a sequence of animations
   /*

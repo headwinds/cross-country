@@ -1,4 +1,5 @@
 $shallow-water: lightblue;
+$shallow-water: lightblue;
 
 .tile {
   display: flex;
@@ -42,6 +43,10 @@ $shallow-water: lightblue;
 
 .shallow-water {
   background-color: $shallow-water;
+}
+
+.light-grey {
+  background-color: #eee;
 }
 
 .dirt {

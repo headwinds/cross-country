@@ -23,20 +23,21 @@
 .GoldLeaf__controls {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-gap: 5px;
+  grid-gap: 4px;
   height: 40px;
   margin-bottom: 4px;
-  padding: 5px;
+  padding: 0px;
   opacity: 0.4;
 }
 .GoldLeaf__item {
   display: block;
   position: relative;
   background: transparent;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   pointer-events: all;
   cursor: pointer;
+  padding: 4px;
 }
 .GoldLeaf__images {
   display: flex;
@@ -47,7 +48,7 @@
 .GoldLeaf__total {
   display: block;
   position: absolute;
-  top: 0px;
+  top: 6px;
   left: 30px;
   background: #eee;
   border-radius: 4px;

@@ -1,4 +1,6 @@
 import React, { forwardRef } from 'react';
+import { useSpring, animated } from '@react-spring/web';
+
 // components
 import { Column, Row } from '../../';
 import styles from './tile.scss';

@@ -1,4 +1,4 @@
-import LeafModel from '../../../models/leaf-model';
+import LeafModel from '../../../models/LeafModel';
 
 export interface GoldLeafViewProps {
   goldLeafModel: LeafModel;
