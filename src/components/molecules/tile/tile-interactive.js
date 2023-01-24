@@ -1,4 +1,5 @@
 import React, { forwardRef, useCallback } from 'react';
+import { useSpring, animated } from '@react-spring/web';
 import { Column, Row, Button } from '../../../';
 import styles from './tile.scss';
 import clsx from 'clsx';
@@ -17,13 +18,14 @@ const InteractiveTile = forwardRef(
       customStyle = {},
       type,
       model = defaultModel,
-      sample = 'shallow-water',
+      springModel = null,
+      //sample = 'light-grey', // shallow-water
       ...rest
     },
     ref
   ) => {
     const { fill, id } = model;
-    const finalCustomStyle = { ...customStyle, width: size, height: size, backgroundColor: fill };
+    const finalCustomStyle = { ...customStyle, width: size, height: size, backgroundColor: fill, padding: 0 };
 
     const handleTileSelected = () => {
       if (isSelected) {
@@ -31,6 +33,8 @@ const InteractiveTile = forwardRef(
       }
       return setSelected(model);
     };
+
+    const colorProps = useSpring(springModel);
 
     return (
       <Column
@@ -41,11 +45,23 @@ const InteractiveTile = forwardRef(
         ref={ref}
         {...rest}
       >
-        <Column
-          customClass={clsx(styles.innerTile, styles[sample])}
-          hasChildrenCentered
-          customStyle={{ ...finalCustomStyle, width: size - 4, height: size - 4 }}
-        ></Column>
+        {springModel ? (
+          <animated.div
+            style={{
+              ...finalCustomStyle,
+              backgroundColor: colorProps.backgroundColor.to(value => value),
+              width: size - 4,
+              height: size - 4,
+            }}
+          />
+        ) : (
+          <Column
+            //customClass={clsx(styles.innerTile, styles[sample])}
+            hasChildrenCentered
+            customStyle={{ ...finalCustomStyle, width: size - 4, height: size - 4 }}
+          ></Column>
+        )}
+
         <Row
           customClass={clsx(styles.corners, styles.top)}
           customStyle={{ color: isSelected ? 'black' : cornerColor }}

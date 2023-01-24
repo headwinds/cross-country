@@ -7,7 +7,7 @@ export interface ImageProps {
   height?: number | string;
   dataTestId?: string;
   customClass?: string;
-  customStyle?: React.CSSPropertiesImageProps; // possibly add the csstype https://www.npmjs.com/package/csstype - React.CSSPropertiesImageProps ?
+  customStyle?: any; // possibly add the csstype https://www.npmjs.com/package/csstype - React.CSSPropertiesImageProps ?
 }
 
 declare const Image: React.ComponentType<ImageProps>;

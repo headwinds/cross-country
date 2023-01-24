@@ -236,6 +236,7 @@ npm run deploy-storybook-ci
 * [Public APIs](https://github.com/public-apis/public-apis)
 ## ALGORITHMS
 * [Javascript The Algorithms](https://github.com/TheAlgorithms/Javascript)
+* [New Years Gift 75 Leetcode Questions](https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU)
 
 ## Map Generators
 * [stygiangen](https://github.com/slashman/stygiangen/)
@@ -272,9 +273,10 @@ npm run deploy-storybook-ci
 * [Making of an AI Storyteller](https://towardsdatascience.com/the-making-of-an-ai-storyteller-c3b8d5a983f5)
 * [Ivy: a mission to unify all ML frameworks](https://lets-unify.ai/)
 
-### ML & Gaming
+### Gaming
 * [Crafter](https://danijar.com/project/crafter/)
 * [TextWorldExpress](https://github.com/cognitiveailab/TextWorldExpress)
+* [Fari](https://fari.app/)
 
 ## Goal Setting
 * [80 days to get into FAANG](https://towardsdatascience.com/80-days-to-get-into-faang-5c77f27d5224)

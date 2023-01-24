@@ -1,10 +1,16 @@
 import * as React from 'react';
 
 const SvgComponent = props => (
-  <svg width={40} height={40} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    viewBox="0 0 40 55"
+    style={{ transform: 'translate(0px,0px)' }}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <rect
       width={2.788}
-      height={32.701}
+      height={35}
       rx={1.394}
       transform="matrix(.83223 -.55443 .57115 .82084 9.522 5.546)"
       fill="#887F7F"

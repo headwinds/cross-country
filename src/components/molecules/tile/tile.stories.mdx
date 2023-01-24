@@ -1,6 +1,7 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
 import Tile from './tile';
 import TileStory from './tile-story';
+import AnimatedTileStory from './tile-animated-story';
 import { Column, SubHeadline, Link } from '../../'
 
 
@@ -16,6 +17,12 @@ In games or sci-fi films, it is common to see the corners of tile hilight and pu
 
 I wanted a similar effect, and first I searched the web for inspiration finding <Link customClass="story-link" url="https://codepen.io/NyX/pen/JYOzWW">this take</Link> which is perfect for this story. 
 
+Color intrepolation is an interesting approach to transitioning a tile's colour from one to another.
+
+We can use react-spring to animate the tile's color.
+
+[impressive threejs color example](https://github.com/pmndrs/react-three-fiber/discussions/763#discussion-27296)
+
 <Canvas>
   <Story name="tile">
     <Column>
@@ -24,5 +31,8 @@ I wanted a similar effect, and first I searched the web for inspiration finding 
     <Column>
       <Tile />
     </Column>
+  </Story>
+  <Story name="animate tile color">
+    <AnimatedTileStory />
   </Story>
 </Canvas>

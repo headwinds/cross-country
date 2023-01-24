@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export interface ColumnProps {
-  children?: ReactElement;
+  children?: any;
   hasBackground?: true;
   backgroundColor?: string;
   hasChildrenCentered?: boolean;

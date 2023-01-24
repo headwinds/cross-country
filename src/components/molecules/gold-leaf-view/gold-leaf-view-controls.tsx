@@ -10,6 +10,42 @@ const GolfLeafView: React.FC<GolfLeafViewProps> = ({ foo }) => {
 };
 */
 
+/*
+import * as React from 'react';
+import { animated, useTransition, useSpring, useChain, useSpringRef, config } from '@react-spring/web';
+
+const GoldLeafViewControls: React.FC = () => {
+  // thank you @garrettmaring for the tip https://github.com/pmndrs/react-spring/issues/493
+  // Now I want to turn into another example where the enter transition can do a sequence of animations
+
+  const [passwordTransitions, passwordApi] = useTransition(data, () => ({
+    ref: usernameTransRef,
+    from: item => async (next, cancel) => {
+      await new Promise(resolve => setTimeout(resolve, 700));
+      await next({ opacity: 1, transform: 'translate3d(-50px, 0px, 0px)' });
+      await next({ opacity: 0, transform: 'translate3d(-50px, 0px, 0px)' });
+      await next({ opacity: 1, transform: 'translate3d(-50px, 0px, 0px)' });
+    },
+    enter: item => async (next, cancel) => {
+      await new Promise(resolve => setTimeout(resolve, 700));
+      await next({ opacity: 1, transform: 'translate3d(-50px, 0px, 0px)' });
+      await next({ opacity: 0, transform: 'translate3d(-50px, 0px, 0px)' });
+      await next({ opacity: 1, transform: 'translate3d(-50px, 0px, 0px)' });
+    },
+    leave: item => async (next, cancel) => {
+      await new Promise(resolve => setTimeout(resolve, 700));
+      await next({ opacity: 1, transform: 'translate3d(-50px, 0px, 0px)' });
+      await next({ opacity: 0, transform: 'translate3d(-50px, 0px, 0px)' });
+      await next({ opacity: 1, transform: 'translate3d(-50px, 0px, 0px)' });
+    },
+  }));
+
+  return <div data-testid="loading">{'coming soon...'}</div>;
+};
+
+export default GoldLeafViewControls;
+*/
+
 import * as React from 'react';
 import { useState } from 'react';
 import { removeAllImagesFromText, defaultFullScreenImageUrl } from '../../../utils/golds/image-find-util';
@@ -25,14 +61,15 @@ import {
   ClusterOffIcon,
   ArticleNoneIcon,
 } from './icons';
-import { Column, Row } from '../../';
+import { Column, Row, Span, Button } from '../../';
 import GoldLeaf from '../gold-leaf';
+import { GoldLeafViewProps } from './gold-leaf-view.types';
 
 const GOLD_COLOUR = '#E3D597';
 
 const he = require('he');
 
-const GoldLeafViewControls = ({ goldLeafModel }) => {
+const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = null, dataTestId = 'golf-leaf-view' }) => {
   const [state, setState] = useState({
     showImages: false,
     showArticle: false,
@@ -41,21 +78,18 @@ const GoldLeafViewControls = ({ goldLeafModel }) => {
     curScroll: 0,
     trained: goldLeafModel.bViewed,
     trashed: false,
-    goldLeafModel,
   });
 
   const handleEmail = () => {
-    const { goldLeafModel } = state;
     email(goldLeafModel, '');
   };
 
   const handleTweet = () => {
-    const { goldLeafModel } = state;
     tweet(goldLeafModel);
   };
 
   const handleViewImages = () => {
-    const { showImages, goldLeafModel } = state;
+    const { showImages } = state;
 
     if (goldLeafModel.images.length < 2) return;
     const newShowImages = !showImages;
@@ -63,7 +97,7 @@ const GoldLeafViewControls = ({ goldLeafModel }) => {
     setState({ ...state, showImages: newShowImages, showArticle: false });
   };
 
-  const stripImagesFromText = goldLeafModel => {
+  const stripImagesFromText = () => {
     const articleWithoutImages = removeAllImagesFromText(goldLeafModel);
 
     const stripedHtml = articleWithoutImages.replace(/<[^>]+>/g, '');
@@ -72,7 +106,7 @@ const GoldLeafViewControls = ({ goldLeafModel }) => {
   };
 
   const handleViewArticle = () => {
-    const { showArticle, goldLeafModel } = state;
+    const { showArticle } = state;
     const newShowArticle = !showArticle;
 
     const decodedStripedHtml = stripImagesFromText(goldLeafModel);
@@ -84,49 +118,49 @@ const GoldLeafViewControls = ({ goldLeafModel }) => {
 
   const handleToggleTrainGoldLeaf = () => {
     // is the goldLeafModel already present?
-    const { goldLeafModel, trained } = state;
+    const { trained } = state;
 
+    console.log('handleToggleTrainGoldLeaf');
+
+    /*
     getItemFromStore('porthole', goldLeafModel, 'link').then(response => {
       if (response) {
         // its present so update it
         if (goldLeafModel.bViewed) {
-          updateItemInStore('porthole', { ...goldLeafModel, bViewed: false });
+          //('porthole', { ...goldLeafModel, bViewed: false });
         } else {
-          updateItemInStore('porthole', { ...goldLeafModel, bViewed: true });
+          // updateItemInStore('porthole', { ...goldLeafModel, bViewed: true });
         }
       } else {
         // its not present so add it as viewed
-        addItemToStore('porthole', { ...goldLeafModel, bViewed: true });
+        //addItemToStore('porthole', { ...goldLeafModel, bViewed: true });
       }
-    });
-    setState({ trained: !trained });
+    });*/
+    // setState({ trained: !trained });
   };
 
   const handleReadGoldLeaf = () => {
-    const { goldLeafModel } = state;
-
     //addItemToStore('porthole', { ...goldLeafModel, bTrashed: true });
     setState({ ...state, trashed: true });
   };
 
   const handleCloseImages = () => {
-    const { goldLeafModel, curScroll } = state;
+    const { curScroll } = state;
     //document.documentElement.scrollTop = curScroll + 50;
     document.getElementById(goldLeafModel.id).scrollIntoView();
     setState({ ...state, showImages: false });
   };
 
   const renderImageBtn = (showImages, totalGoldLeafes) => {
-    console.log('renderImageBtn totalGoldLeafes', totalGoldLeafes);
     //if (showImages) {
     return (
-      <div className={styles.GoldLeaf__item} onClick={handleViewImages}>
+      <Button customClass={styles.GoldLeaf__item} onClick={handleViewImages}>
         <ClusterOffIcon />
-        <div className={styles.GoldLeaf__total}>
+        <Column customClass={styles.GoldLeaf__total}>
           {/* what is happening here? */}
-          <span className={styles.GoldLeaf__total__text}>{totalGoldLeafes || 0}</span>
-        </div>
-      </div>
+          <Span customClass={styles.GoldLeaf__total__text}>{totalGoldLeafes || 0}</Span>
+        </Column>
+      </Button>
     );
     // }
     return null;
@@ -138,77 +172,73 @@ const GoldLeafViewControls = ({ goldLeafModel }) => {
     return trained ? <HeartIcon color={GOLD_COLOUR} /> : <HeartIcon />;
   };
 
-  const renderControls = () => {
-    const { goldLeafModel, showImages, showArticle, text, trained, trashed } = state;
+  const { showImages, showArticle, text, trained, trashed } = state;
 
-    // why isn't goldLeafModel defined when viewing multipe goldLeafModeles?
-    if (!goldLeafModel) {
-      return null;
-    }
+  // why isn't a goldLeafModel defined when viewing multipe goldLeafModeles?
+  if (!goldLeafModel) {
+    return null;
+  }
 
-    const images =
-      goldLeafModel.images.map((imgObj, idx) => {
-        if (imgObj.useText) {
-          // return (<div dangerouslySetInnerHTML={{__html: clean}} style={{fontSize: 14, lineHeight: 1.2}} />)
-          return null;
-        } else {
-          if (idx !== 0)
-            return (
-              <div key={idx} className={styles.GoldLeaf__image}>
-                <img src={imgObj.imageUrl} alt={goldLeafModel.title} />
-              </div>
-            );
-        }
-      }) ?? null;
+  const images =
+    goldLeafModel.images.map((imgObj, idx) => {
+      if (imgObj.useText) {
+        // return (<div dangerouslySetInnerHTML={{__html: clean}} style={{fontSize: 14, lineHeight: 1.2}} />)
+        return null;
+      } else {
+        if (idx !== 0)
+          return (
+            <div key={idx} className={styles.GoldLeaf__image}>
+              <img src={imgObj.imageUrl} alt={goldLeafModel.title} />
+            </div>
+          );
+      }
+    }) ?? null;
 
-    const totalGoldLeafes =
-      goldLeafModel.useText || goldLeafModel.images.length === 1 ? null : goldLeafModel.images.length;
+  const image = goldLeafModel.useText ? null : <img src={goldLeafModel.images[0].imageUrl} alt={goldLeafModel.title} />;
+  const totalGoldLeafes =
+    goldLeafModel.useText || goldLeafModel.images.length === 1 ? null : goldLeafModel.images.length;
 
-    const goldLeafText = stripImagesFromText(goldLeafModel);
+  const goldLeafText = stripImagesFromText(goldLeafModel);
 
-    return (
-      <Column id={goldLeafModel.id} className={styles.GoldLeaf}>
-        <GoldLeaf goldLeafModel={goldLeafModel} />
+  return (
+    <Column customClass={styles.GoldLeaf} dataTestId={dataTestId}>
+      <GoldLeaf goldLeafModel={goldLeafModel} />
 
-        <Row className={styles.GoldLeaf__controls}>
-          <div className={styles.GoldLeaf__item} onClick={handleEmail}>
-            <EmailIcon />
-          </div>
+      <Row customClass={styles.GoldLeaf__controls}>
+        <Button customClass={styles.GoldLeaf__item} onClick={handleEmail}>
+          <EmailIcon />
+        </Button>
 
-          <div className={styles.GoldLeaf__item} onClick={handleTweet}>
-            <TweetIcon />
-          </div>
-          <div className={styles.GoldLeaf__item} onClick={handleTweet}>
-            {renderTrainingBtn()}
-          </div>
+        <Button customClass={styles.GoldLeaf__item} onClick={handleTweet}>
+          <TweetIcon />
+        </Button>
+        <Button customClass={styles.GoldLeaf__item} onClick={handleToggleTrainGoldLeaf}>
+          {renderTrainingBtn()}
+        </Button>
 
-          <div className={styles.GoldLeaf__item} onClick={handleReadGoldLeaf}>
-            <HideIcon />
-          </div>
+        <Button customClass={styles.GoldLeaf__item} onClick={handleReadGoldLeaf}>
+          <HideIcon />
+        </Button>
 
-          {renderImageBtn(showImages, totalGoldLeafes)}
-
-          <div className={styles.GoldLeaf__item} onClick={handleViewArticle}>
-            {goldLeafText !== '' ? <ArticleIcon /> : <ArticleNoneIcon />}
-          </div>
-        </Row>
-
-        {showImages ? <Column className={styles.GoldLeaf__images}>{images}</Column> : null}
-        {showArticle ? (
-          <Column
-            contentEditable="true"
-            dangerouslySetInnerHTML={{ __html: text }}
-            style={{ color: '#666', outline: 'none' }}
-          ></Column>
-        ) : null}
-        {/* footer controls 
+        {renderImageBtn(showImages, totalGoldLeafes)}
+        <Button customClass={styles.GoldLeaf__item} onClick={handleViewArticle}>
+          {goldLeafText !== '' ? <ArticleIcon /> : <ArticleNoneIcon />}
+        </Button>
+      </Row>
+      {/* images */}
+      {showImages ? <Column customClass={styles.GoldLeaf__images}>{images}</Column> : null}
+      {showArticle ? (
+        <div
+          contentEditable="true"
+          dangerouslySetInnerHTML={{ __html: text }}
+          style={{ color: '#666', outline: 'none' }}
+        ></div>
+      ) : null}
+      {/* footer controls 
         <div className="GoldLeaf__controls">
           {showImages && totalGoldLeafes > 1 && (<div className="GoldLeaf__item" onClick={handleCloseImages}></div>) }
         </div> */}
-      </Column>
-    );
-  };
-
-  return renderControls();
+    </Column>
+  );
 };
 export default GoldLeafViewControls;
