@@ -8,9 +8,11 @@ const Button = ({
   customStyle = {},
   children = null,
   type = 'button',
+  ...rest
 }) => {
   return (
     <button
+      {...rest}
       type={type}
       style={customStyle}
       className={customClass}
