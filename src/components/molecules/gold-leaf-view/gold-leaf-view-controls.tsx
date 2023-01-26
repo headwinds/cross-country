@@ -62,7 +62,7 @@ import {
   ArticleNoneIcon,
 } from './icons';
 import { Column, Row, Span, Button } from '../../';
-import GoldLeaf from '../gold-leaf';
+
 import { GoldLeafViewProps } from './gold-leaf-view.types';
 
 const GOLD_COLOUR = '#E3D597';
@@ -121,22 +121,6 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = nul
     const { trained } = state;
 
     console.log('handleToggleTrainGoldLeaf');
-
-    /*
-    getItemFromStore('porthole', goldLeafModel, 'link').then(response => {
-      if (response) {
-        // its present so update it
-        if (goldLeafModel.bViewed) {
-          //('porthole', { ...goldLeafModel, bViewed: false });
-        } else {
-          // updateItemInStore('porthole', { ...goldLeafModel, bViewed: true });
-        }
-      } else {
-        // its not present so add it as viewed
-        //addItemToStore('porthole', { ...goldLeafModel, bViewed: true });
-      }
-    });*/
-    // setState({ trained: !trained });
   };
 
   const handleReadGoldLeaf = () => {
@@ -202,8 +186,6 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = nul
 
   return (
     <Column customClass={styles.GoldLeaf} dataTestId={dataTestId}>
-      <GoldLeaf goldLeafModel={goldLeafModel} />
-
       <Row customClass={styles.GoldLeaf__controls}>
         <Button customClass={styles.GoldLeaf__item} onClick={handleEmail} aria-label="email">
           <EmailIcon />
@@ -242,3 +224,22 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = nul
   );
 };
 export default GoldLeafViewControls;
+
+/*
+Offline refactor phase 2
+
+/*
+  getItemFromStore('porthole', goldLeafModel, 'link').then(response => {
+    if (response) {
+      // its present so update it
+      if (goldLeafModel.bViewed) {
+        //('porthole', { ...goldLeafModel, bViewed: false });
+      } else {
+        // updateItemInStore('porthole', { ...goldLeafModel, bViewed: true });
+      }
+    } else {
+      // its not present so add it as viewed
+      //addItemToStore('porthole', { ...goldLeafModel, bViewed: true });
+    }
+  });
+*/

@@ -1,9 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import { Image, Column, SubHeadline, Card, Link } from '../../';
 import GoldLeafNotFound from './gold-leaf-not-found';
 import styles from './gold-leaf.scss';
+import GoldLeafView from '../gold-leaf-view';
+import { GoldLeafProps } from './gold-leaf.types';
 
-export const GoldLeaf = ({ goldLeafModel }) => {
+export const GoldLeaf: React.FC<GoldLeafProps> = ({ goldLeafModel, mode = 'unknown' }) => {
   const renderImage = useText => {
     if (useText) {
       return null;
@@ -16,8 +18,10 @@ export const GoldLeaf = ({ goldLeafModel }) => {
     );
   };
 
-  const renderCard = () => {
-    if (goldLeafModel) {
+  const render = () => {
+    if (mode === 'view' && goldLeafModel) {
+      return <GoldLeafView goldLeafModel={goldLeafModel} />;
+    } else if (mode !== 'view' && goldLeafModel) {
       return (
         <Card customClass={styles.GoldLeaf} hasBackground={false}>
           <Link url={goldLeafModel.link} customClass={styles.GoldLeaf__titleLink}>
@@ -31,7 +35,7 @@ export const GoldLeaf = ({ goldLeafModel }) => {
     }
   };
 
-  return renderCard();
+  return render();
 };
 
 export default GoldLeaf;

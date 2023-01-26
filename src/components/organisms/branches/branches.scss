@@ -28,16 +28,21 @@
   
   .column__list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
     grid-gap: 8px;
     align-items: start;
     overflow: hidden;
     margin: 0px;
-    padding: 0px;
+    padding: 8px;
     width: 100vw;
     /* uncomment these lines if you want to have the standard Trello behavior instead of the column wrapping */
     /*   grid-auto-flow: column;
       grid-auto-columns: minmax(260px, 1fr); */
+
+    @include sm {
+      padding: 0px;
+    }
+
   }
   
   .column__item {
@@ -45,11 +50,14 @@
     background-color: whitesmoke;
     padding: 0px;
     margin: 0px;
+    align-items: center;
+    display: flex;
     //max-width: 280px;
 
       // 576px window width and more
     @include sm {
       //max-width: 98vw;
+      
     }
     // 992px window width and more
     @include lg {

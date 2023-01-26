@@ -13,12 +13,21 @@ import {
   ClusterOffIcon,
   ArticleNoneIcon,
 } from './icons';
-import { Column, Row, Span, Button } from '../../';
+import { Card } from '../../';
 import GoldLeaf from '../gold-leaf';
 import { GoldLeafViewProps } from './gold-leaf-view.types';
 import GoldLeafViewControlls from './gold-leaf-view-controls';
 
 const GoldLeafView: React.FC<GoldLeafViewProps> = ({ goldLeafModel = null, dataTestId = 'golf-leaf-view' }) => {
-  return <GoldLeafViewControlls goldLeafModel={goldLeafModel} dataTestId={`${dataTestId}-controls`} />;
+  return (
+    <Card
+      customClass={styles.GoldLeaf}
+      dataTestId={dataTestId}
+      customStyle={{ height: 'auto', width: 370, background: 'whitesmoke' }}
+    >
+      <GoldLeaf goldLeafModel={goldLeafModel} />
+      <GoldLeafViewControlls goldLeafModel={goldLeafModel} dataTestId={`${dataTestId}-controls`} />
+    </Card>
+  );
 };
 export default GoldLeafView;

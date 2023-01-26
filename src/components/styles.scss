@@ -45,7 +45,7 @@ $screen-xl-min: 1200px;
 
 // Small devices
 @mixin sm {
-    @media (min-width: #{$screen-sm-min}) {
+    @media only screen and (max-width: #{$screen-sm-min}) {
         @content;
     }
  }

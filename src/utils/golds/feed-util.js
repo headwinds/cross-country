@@ -198,10 +198,10 @@ export function createAllPortholeTrees() {
     category: 'gaming',
     origin: 'porthole',
   };
-  // 12
+  // 12 - not working
   var architizerTreeObj = {
     _id: '12',
-    xmlUrl: 'http://architizer.tumblr.com/rss',
+    xmlUrl: 'https://architizer.com/blog/feed',
     type: 'rss',
     title: 'Architizer',
     category: 'architecture',
@@ -544,7 +544,10 @@ export function createAllPortholeTrees() {
   http://blogs.walkerart.org/filmvideo/feed/
   http://www.documentary.org/rss.xml
   */
-  var allPortholeTrees = {
+
+  // careful with long feeds as they can take a while to load - over 10 secs will timeout!
+
+  const allPortholeTrees = {
     cabinporn: cabinPornTreeObj,
     treehugger: treeHuggerTreeObj,
     wired: wiredTreeObj,
@@ -556,11 +559,11 @@ export function createAllPortholeTrees() {
     designmilk: designmilkTreeObj,
     boingboing: boingboingTreeObj,
     polygon: polygonTreeObj,
-    architizer: architizerTreeObj,
+    //architizer: architizerTreeObj, // doesn't exist anymore
     //"harpersbazaar" : harpersbazaarTreeObj,
     //"w" : wTreeObj,
     booooooom: booooooomTreeObj,
-    abduzeedo: abduzeedoTreeObj,
+    //abduzeedo: abduzeedoTreeObj,
     behance: behanceTreeObj,
     //"bleacherreport" : bleacherReportTreeObj, // not working
     gamespot: gamespotTreeObj,
@@ -585,14 +588,14 @@ export function createAllPortholeTrees() {
     //"walker" : walkerFilmTreeObj,
     //"doc" : docFilmTreeObj,
     venturebeat: venturebeatTreeObj,
-    killscreen: killscreenTreeObj,
+    //killscreen: killscreenTreeObj,
     //"inquisitr" : inquisitrTreeObj,
     sbnation: sbnationTreeObj,
     //dezeen: dezeenTreeObj,
     //"contemporist" : contemporistTreeObj,
     //"eikongraphia" : eikongraphiaTreeObj,
     //"unhappy" : unhappyTreeObj, // not working
-    architecture: architectureTreeObj,
+    //architecture: architectureTreeObj,
     designboom: designboomTreeObj,
     nautilus: nautilusTreeObj,
   };
