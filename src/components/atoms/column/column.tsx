@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import styles from './column.scss';
 import { ColumnProps } from './column.types';
 
-const Column: React.FC<ColumnProps> = forwardRef(
+const Column = forwardRef<HTMLInputElement>(
   (
     {
       children,
@@ -11,25 +11,27 @@ const Column: React.FC<ColumnProps> = forwardRef(
       hasChildrenCentered = false,
       backgroundColor = '#eee',
       dataTestId = 'column',
-      customStyle = {},
+      customStyle = null,
       customClass = '',
       ...rest
     },
     ref
   ) => {
+    console.log('Column customStyle: ', customStyle);
     return (
       <div
+        ref={ref}
         {...rest}
         data-testid={dataTestId}
         className={clsx(
+          styles.column,
           {
-            [styles.column]: true,
             [styles.column__opaque]: hasBackground,
             [styles.column__transparent]: hasBackground,
           },
           customClass
         )}
-        style={customStyle}
+        style={{ ...customStyle }}
       >
         {children}
       </div>
