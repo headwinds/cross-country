@@ -120,6 +120,8 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = nul
     // is the goldLeafModel already present?
     const { trained } = state;
 
+    // can we unheart it?
+
     console.log('handleToggleTrainGoldLeaf');
   };
 

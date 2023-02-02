@@ -6,7 +6,7 @@ export interface ColumnProps {
   backgroundColor?: string;
   hasChildrenCentered?: boolean;
   customClass?: string;
-  customStyle?: {};
+  customStyle?: any;
   dataTestId?: string;
 }
 
