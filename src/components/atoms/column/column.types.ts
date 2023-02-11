@@ -1,8 +1,8 @@
 import * as React from 'react';
 
 export interface ColumnProps {
-  children?: any;
-  hasBackground?: true;
+  children: React.ReactNode | React.ReactNode[];
+  hasBackground?: boolean;
   backgroundColor?: string;
   hasChildrenCentered?: boolean;
   customClass?: string;

@@ -13,6 +13,7 @@ import clsx from 'clsx';
 import styles from './login.scss';
 
 const Response = ({ loginResponse }) => {
+  console.log('Response loginReponse: ', loginResponse);
   if (loginResponse) {
     return (
       <Row>

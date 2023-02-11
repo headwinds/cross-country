@@ -1,14 +1,16 @@
 import { getApiDomain } from '../config';
+import { fetchRetry } from '../utils/fetch-util';
 
 export function postLoginUser(user, route) {
   const apiUrl = `${getApiDomain()}${route}`;
   console.log(apiUrl);
-
-  return fetch(apiUrl, {
+  console.log('sending user: ', user);
+  return fetchRetry(apiUrl, {
     method: 'POST',
     headers: {
-      Accept: 'application/json',
+      'Accept': 'application/json',
       'Content-Type': 'application/json',
+      'mode': "cors",
     },
     body: JSON.stringify(user),
   });

@@ -4,19 +4,30 @@ import GoldLeafNotFound from './gold-leaf-not-found';
 import styles from './gold-leaf.scss';
 import GoldLeafView from '../gold-leaf-view';
 import { GoldLeafProps } from './gold-leaf.types';
+import LeafModel from '../../../models/LeafModel';
+
+interface GoldLeafImageProps {
+  children?: React.ReactNode;
+  goldLeafModel?: LeafModel;
+};
+
+const GoldLeafImage: React.FC<GoldLeafImageProps> = ({goldLeafModel}) => {
+  console.log('GoldLeafImage goldLeafModel: ', goldLeafModel);
+  const {hasText} = goldLeafModel;
+
+  if (hasText) {
+    return null;
+  }
+
+  return (
+    <Column customClass={styles.GoldLeaf__image}>
+      <Image url={goldLeafModel?.images?.[0].imageUrl ?? ''} a11y={goldLeafModel?.title ?? ''} />
+    </Column>
+  );
+};
 
 export const GoldLeaf: React.FC<GoldLeafProps> = ({ goldLeafModel, mode = 'unknown' }) => {
-  const renderImage = useText => {
-    if (useText) {
-      return null;
-    }
 
-    return (
-      <Column customClass={styles.GoldLeaf__image}>
-        <Image url={goldLeafModel.images[0].imageUrl} a11y={goldLeafModel.title} />
-      </Column>
-    );
-  };
 
   const render = () => {
     if (mode === 'view' && goldLeafModel) {
@@ -27,7 +38,7 @@ export const GoldLeaf: React.FC<GoldLeafProps> = ({ goldLeafModel, mode = 'unkno
           <Link url={goldLeafModel.link} customClass={styles.GoldLeaf__titleLink}>
             <SubHeadline text={goldLeafModel.title} customClass={styles.GoldLeaf__title} />
           </Link>
-          {renderImage(goldLeafModel.useText)}
+          <GoldLeafImage goldLeafModel={goldLeafModel} />
         </Card>
       );
     } else {

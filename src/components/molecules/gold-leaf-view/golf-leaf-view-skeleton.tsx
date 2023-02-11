@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { ErrorProps } from './error.types';
+import { GoldLeafViewSkeletonProps } from './gold-leaf-view-skeleton.types';
 
-import styles from './error.scss';
+import styles from './gold-leaf-view-skeleton.scss';
 
-const GolfLeafViewSkeleton: React.FC<ErrorProps> = ({ foo }) => (
+const GolfLeafViewSkeleton: React.FC<GoldLeafViewSkeletonProps> = ({ foo }) => (
   <div data-testid="error" className={styles.Error}>
     {foo || 'missng prop foo'}
   </div>

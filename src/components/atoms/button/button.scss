@@ -16,7 +16,7 @@
 }
 
 .button:focus {
-  @include boxshadow(rgb(12, 180, 180))
+  //@include boxshadow(rgb(12, 180, 180))
 }
 
 .defaultButton {

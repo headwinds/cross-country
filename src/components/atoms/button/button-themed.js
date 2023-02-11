@@ -20,7 +20,7 @@ const ButtonThemed = ({
     onClick={onClick}
     customStyle={customStyle}
     type={type}
-    ariaLabel={ariaLabel}
+    aria-label={ariaLabel}
   >
     {text || children}
   </Button>
