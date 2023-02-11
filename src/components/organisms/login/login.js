@@ -6,8 +6,6 @@ import LoginView from './login-view';
 // utils
 import { postLoginUser } from '../../../services/login-service';
 import { getUnsplashPhoto } from '../../../services/image-service';
-import { getWindow } from '../../../utils/server-side-util';
-import { fetchRetry } from '../../../utils/fetch-util';
 
 const usernameRegExp = /^.{2,}$/;
 const passwordRegExp = /^.{4,}$/;
@@ -29,7 +27,6 @@ const loginReducerInitialState = {
   },
   hasImage: false,
   a11y: '',
-  feedback: '',
   text: '',
   fetch: false,
   response: null,
@@ -132,10 +129,7 @@ const Login = ({
     {
       username: { usernameValue, isUsernameValid, isUsernameUntouched, usernameErrorMessage },
       password: { passwordValue, isPasswordValid, isPasswordUntouched, passwordErrorMessage },
-      feedback,
-      response,
       route,
-      screenWindow,
       unsplashImgUrl,
       a11y,
       loginResponse,
@@ -180,7 +174,8 @@ const Login = ({
             });
           }
         )
-        .then(({ isAuthenticated, message, status, access_token }) => {
+        .then(json => {
+          const { isAuthenticated, message, status, access_token } = json;
           /*
           access_token 
           isAuthenticated
@@ -197,22 +192,24 @@ const Login = ({
           } 
           */
           if (status === 200) {
-            if (!isAuthenticated && message) {
-              return dispatch({
-                type: reduceActionTypes.SET_LOGIN_ERROR,
-                payload: { feedback: message, response: { hasError: true, isSuccessful: false } },
-              });
-            } else if (isAuthenticated && access_token) {
+            console.log('login json: ', json);
+            if (isAuthenticated && access_token) {
               dispatch({
                 type: reduceActionTypes.SET_LOGIN_RESPONSE,
-                payload: { feedback: 'You are logged in!', response: { hasError: false, isSuccessful: true } },
+                payload: { message: 'You are logged in!', response: { hasError: false, isSuccessful: true } },
               });
             } else {
+              const errorPayload = { message, response: { hasError: true, isSuccessful: isAuthenticated } };
               dispatch({
-                type: reduceActionTypes.SET_LOGIN_RESPONSE,
-                payload: json,
+                type: reduceActionTypes.SET_LOGIN_ERROR,
+                payload: errorPayload,
               });
             }
+          } else {
+            dispatch({
+              type: reduceActionTypes.SET_LOGIN_RESPONSE,
+              payload: { message: 'Something went wrong', response: { hasError: true, isSuccessful: false } },
+            });
           }
         })
         .catch(error => {

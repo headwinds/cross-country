@@ -115,13 +115,21 @@ const LeafModel = Record({
       base: '', // url
       language: null,
       type: 'text/html',
-      value:
-        '', // html string
+      value: '', // html string
     },
   ],
   guidislink: false,
   id: 'https://www.thisiscolossal.com/?p=225180', // ie https://www.thisiscolossal.com/?p=225180
   link: '',
+  images: [
+    {
+      defaultImageUrl: '',
+      imageUrl: '',
+      large: true,
+      text: '',
+      useText: false,
+    },
+  ],
   links: [
     {
       href: '',
@@ -135,14 +143,12 @@ const LeafModel = Record({
   },
   published: '',
   published_parsed: [],
-  summary:
-    '', // html string
+  summary: '', // html string
   summary_detail: {
     base: '',
     language: null,
     type: '',
-    value:
-      '',
+    value: '',
   },
   tags: [
     {
@@ -161,4 +167,3 @@ const LeafModel = Record({
 });
 
 export default LeafModel;
-

@@ -83,7 +83,6 @@
     "babel-loader": "8.1.0",
     "babel-preset-minify": "^0.6.0-alpha.9",
     "bufferutil": "^4.0.2",
-    "canvas": "^2.6.1",
     "codecov": "^3.7.0",
     "css-loader": "^3.5.3",
     "es-check": "^5.1.2",

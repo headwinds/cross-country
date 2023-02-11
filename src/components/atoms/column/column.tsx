@@ -3,7 +3,8 @@ import clsx from 'clsx';
 import styles from './column.scss';
 import { ColumnProps } from './column.types';
 
-const Column = forwardRef<HTMLInputElement>(
+
+const Column = forwardRef(
   (
     {
       children,
@@ -14,10 +15,9 @@ const Column = forwardRef<HTMLInputElement>(
       customStyle = null,
       customClass = '',
       ...rest
-    },
+    }: any,
     ref
   ) => {
-    console.log('Column customStyle: ', customStyle);
     return (
       <div
         ref={ref}
