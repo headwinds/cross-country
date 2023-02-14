@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Row, Label, TextInput } from '../../';
 import { FieldProps } from './field.types';
 import clsx from 'clsx';
-import styles from './field.scss';
+import styles from './field.css';
 
 const Field: React.FC<FieldProps> = ({ text, onTextChange, value, type, isValid, isUntouched }) => {
   return (

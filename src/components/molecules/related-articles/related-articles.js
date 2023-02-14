@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Column, SubHeadline, ListItem, List, Link, Paragraph } from '../../';
-import styles from './related-articles.scss';
+import styles from './related-articles.css';
 import clsx from 'clsx';
 
 const RelatedArticles = ({ articles = [], text = 'Related Articles', hasBackground = false }) => {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './quote.scss';
+import styles from './quote.css';
 import clsx from 'clsx';
 import { Column, Paragraph, Link } from '../../';
 

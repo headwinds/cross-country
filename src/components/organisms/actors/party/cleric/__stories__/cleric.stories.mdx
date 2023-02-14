@@ -1,7 +1,7 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
 import Cleric from '../cleric';
-import { Link, RelatedArticles, Stage, Paragraph } from "../../../../../"
-import styles from "../cleric.scss";
+import { Link, RelatedArticles, Stage, Paragraph } from '../../../../../';
+import styles from '../cleric.css';
 import { clericStoryModel } from './cleric-story-model';
 
 <Meta title="menu/organisms/actors/cleric" />
@@ -12,7 +12,6 @@ import { clericStoryModel } from './cleric-story-model';
 
 <Canvas>
   <Story name="cleric">
-    <Cleric model={ clericStoryModel }/>
+    <Cleric model={clericStoryModel} />
   </Story>
 </Canvas>
-

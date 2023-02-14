@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './headline.scss';
+import styles from './headline.css';
 import clsx from 'clsx';
 
 const Headline = ({ color = '', text, children, customStyle = {}, customClass = '', ...rest }) => (

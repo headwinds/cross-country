@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './bold.scss';
+import styles from './bold.css';
 import clsx from 'clsx';
 
 const Bold = ({ children, customClass = '', customStyle = {}, ...rest }) => (

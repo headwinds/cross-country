@@ -1,6 +1,6 @@
 import React from 'react';
 import { Column } from '../../';
-import styles from './modal.scss';
+import styles from './modal.css';
 import clsx from 'clsx';
 
 const Modal = ({

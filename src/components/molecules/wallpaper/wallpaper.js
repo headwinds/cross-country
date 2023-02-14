@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Column from '../../atoms/column/column';
-import styles from './wallpaper.scss';
+import styles from './wallpaper.css';
 import { useSpring, animated, SpringValue } from '@react-spring/web';
 import clsx from 'clsx';
 

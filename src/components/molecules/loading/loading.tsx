@@ -2,7 +2,7 @@ import * as React from 'react';
 import { animated, useTransition, useSpring, useChain, useSpringRef, config } from '@react-spring/web';
 import { LoadingProps } from './loading.types';
 
-import styles from './loading.scss';
+import styles from './loading.css';
 
 const Loading: React.FC<LoadingProps> = ({ label }) => {
   // thank you @garrettmaring for the tip https://github.com/pmndrs/react-spring/issues/493

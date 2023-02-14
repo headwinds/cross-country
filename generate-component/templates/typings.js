@@ -1,5 +1,5 @@
 module.exports = () => ({
-  content: `declare module '*.scss';`,
+  content: `declare module '*.css';`,
   extension: `.d.ts`,
   name: `typings`,
 });

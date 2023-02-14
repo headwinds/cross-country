@@ -1,5 +1,5 @@
 import React, { Component, forwardRef } from 'react';
-import styles from './row.scss';
+import styles from './row.module.css';
 import clsx from 'clsx';
 
 const Row = forwardRef(({ children, hasChildrenCentered = true, customClass = '', customStyle = {}, ...rest }, ref) => {

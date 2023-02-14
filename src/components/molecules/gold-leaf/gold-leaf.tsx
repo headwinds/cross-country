@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Image, Column, SubHeadline, Card, Link } from '../../';
 import GoldLeafNotFound from './gold-leaf-not-found';
-import styles from './gold-leaf.scss';
+import styles from './gold-leaf.css';
 import GoldLeafView from '../gold-leaf-view';
 import { GoldLeafProps } from './gold-leaf.types';
 import LeafModel from '../../../models/LeafModel';
@@ -9,11 +9,11 @@ import LeafModel from '../../../models/LeafModel';
 interface GoldLeafImageProps {
   children?: React.ReactNode;
   goldLeafModel?: LeafModel;
-};
+}
 
-const GoldLeafImage: React.FC<GoldLeafImageProps> = ({goldLeafModel}) => {
+const GoldLeafImage: React.FC<GoldLeafImageProps> = ({ goldLeafModel }) => {
   console.log('GoldLeafImage goldLeafModel: ', goldLeafModel);
-  const {hasText} = goldLeafModel;
+  const { hasText } = goldLeafModel;
 
   if (hasText) {
     return null;
@@ -27,8 +27,6 @@ const GoldLeafImage: React.FC<GoldLeafImageProps> = ({goldLeafModel}) => {
 };
 
 export const GoldLeaf: React.FC<GoldLeafProps> = ({ goldLeafModel, mode = 'unknown' }) => {
-
-
   const render = () => {
     if (mode === 'view' && goldLeafModel) {
       return <GoldLeafView goldLeafModel={goldLeafModel} />;

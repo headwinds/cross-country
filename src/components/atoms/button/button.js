@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import styles from './button.module.css';
 
 const Button = ({
   text = '',
@@ -15,10 +16,9 @@ const Button = ({
       {...rest}
       type={type}
       style={customStyle}
-      className={customClass}
+      className={clsx(styles.button, customClass)}
       onClick={onClick}
       onKeyDown={onClick}
-      className={customClass}
     >
       {text || children}
     </button>

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Error from '../error';
 import { logError } from './errors';
 import { ErrorBoundary } from 'react-error-boundary';
-import styles from './log-error-boundary.scss';
+import styles from './log-error-boundary.css';
 
 const onErrorHandler = (error, info, location) => {
   const actualMessage = error?.message ?? '';

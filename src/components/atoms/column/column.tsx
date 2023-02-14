@@ -1,8 +1,7 @@
 import React, { Component, forwardRef } from 'react';
 import clsx from 'clsx';
-import styles from './column.scss';
+import styles from './column.module.css';
 import { ColumnProps } from './column.types';
-
 
 const Column = forwardRef(
   (

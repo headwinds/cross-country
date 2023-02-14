@@ -1,7 +1,7 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
-import { STORYBOOK } from "../../../constants"
+import { STORYBOOK } from '../../../constants';
 import Stagger from './stagger';
-import styles from "./stagger.scss";
+import styles from './stagger.css';
 
 <Meta title="menu/molecules/stagger" />
 
@@ -13,9 +13,17 @@ import styles from "./stagger.scss";
 
 <Canvas>
   <Story name="two words">
-    <Stagger color={['#999','#adbd25']} staggerText={["Economic", 'Headwinds']} stagger={{ key: 'marginLeft', value: 16 }} />
+    <Stagger
+      color={['#999', '#adbd25']}
+      staggerText={['Economic', 'Headwinds']}
+      stagger={{ key: 'marginLeft', value: 16 }}
+    />
   </Story>
   <Story name="three words">
-    <Stagger color={['#999','#adbd25', 'hotpink']} staggerText={["Let's", 'Create', 'Worlds']} stagger={{ key: 'marginLeft', value: 16 }} />
+    <Stagger
+      color={['#999', '#adbd25', 'hotpink']}
+      staggerText={["Let's", 'Create', 'Worlds']}
+      stagger={{ key: 'marginLeft', value: 16 }}
+    />
   </Story>
 </Canvas>

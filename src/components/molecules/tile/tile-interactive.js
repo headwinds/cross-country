@@ -1,7 +1,7 @@
 import React, { forwardRef, useCallback } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 import { Column, Row, Button } from '../../../';
-import styles from './tile.scss';
+import styles from './tile.css';
 import clsx from 'clsx';
 
 const defaultModel = { fill: '#eee' };

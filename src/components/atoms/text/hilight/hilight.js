@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './hilight.scss';
+import styles from './hilight.css';
 import clsx from 'clsx';
 
 const Hilight = ({ text, children, customClass = '', customStyle = {}, hilightColor, ...rest }) => {

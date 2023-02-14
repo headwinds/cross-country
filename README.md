@@ -73,7 +73,7 @@ This will generate the following files and your component name will also be capt
     index.ts
     YourComponentName.tsx
     YourComponentName.types.ts
-    YourComponentName.module.scss
+    YourComponentName.module.css
     index.d.ts
     typings.d.ts
 ```
@@ -87,6 +87,10 @@ While you can use this library with the latest stable version of Node (tested ag
 The current issue preventing the upgrade has something to do with sass-loader and migration from 7 to 8 where I most likey need to upgrade how the options are configured. Again no errors with Node 14.20.1 but they appear as I switch to 16.9.1.
 
 [n 14.20.1](https://www.npmjs.com/package/n)
+
+## Webpack 4 migration to 5
+
+[Storybook support for Webpack 5](https://github.com/storybookjs/storybook/issues/19692)
 
 ## NextJS
 

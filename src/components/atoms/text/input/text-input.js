@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from '../text.scss';
+import styles from './text-input.css';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
@@ -17,7 +17,6 @@ const TextInput = ({
       {...rest}
       type={type}
       className={clsx(styles.textInput, customClass)}
-      style={customStyle}
       onChange={event => {
         event.preventDefault();
         const {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Column, Image, SVG } from '../../../';
-import styles from './actor.scss';
+import styles from './actor.css';
 import clsx from 'clsx';
 import ActorModel from '../../../../models/ActorModel';
 

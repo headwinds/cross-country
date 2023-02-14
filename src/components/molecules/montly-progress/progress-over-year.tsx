@@ -14,7 +14,7 @@ const getWeek = function () {
   return Math.ceil(((today - onejan) / 86400000 + onejan.getDay() + 1) / 7);
 };
 
-import styles from './progress.scss';
+import styles from './progress.css';
 
 /**
  * tracks progress over a year and includes a particle effect
