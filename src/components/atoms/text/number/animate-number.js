@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSpring, animated, SpringValue } from '@react-spring/web';
-import styles from './number.scss';
+import styles from './number.css';
 
 // https://aleclarson.github.io/react-spring/v9/#Additions
 // https://codesandbox.io/s/green-snow-6n8ue?file=/SVGAnimation.js

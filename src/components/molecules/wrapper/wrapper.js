@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import Column from '../../atoms/column/column';
-import styles from './wrapper.scss';
+import styles from './wrapper.css';
 import clsx from 'clsx';
 
 /*

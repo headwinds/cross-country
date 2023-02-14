@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import { removeAllImagesFromText, defaultFullScreenImageUrl } from '../../../utils/golds/image-find-util';
 import { tweet, email } from '../../../utils/golds/share-util';
-import styles from './gold-leaf-view.scss';
+import styles from './gold-leaf-view.module.css';
 import {
   ArticleIcon,
   TweetIcon,

@@ -1,0 +1,27 @@
+.table {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.tableRow {
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.tableData {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  color: #737373;
+}
+
+.tableDataHead {
+  display: flex;
+  width: 200px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  color: #666;
+}

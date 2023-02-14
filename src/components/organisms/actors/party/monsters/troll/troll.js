@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Column, Actor } from '../../../../../';
-import styles from './troll.scss';
+import styles from './troll.css';
 import clsx from 'clsx';
 
 // pre-configured character

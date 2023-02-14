@@ -1,6 +1,6 @@
 import React from 'react';
 import Column from '../../atoms/column/column';
-import styles from './page.scss';
+import styles from './page.css';
 import clsx from 'clsx';
 
 const Page = ({ backgroundColor = '', customClass = '', customStyle = {}, ...rest }) => {

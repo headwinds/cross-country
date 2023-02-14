@@ -10,7 +10,7 @@ import { getWindow } from '../../../utils/server-side-util';
 
 // styles
 import clsx from 'clsx';
-import styles from './login.scss';
+import styles from './login.module.css';
 
 const Field = ({ text, onTextChange, value, type = 'text', isValid = false, isUntouched = true }) => {
   return (

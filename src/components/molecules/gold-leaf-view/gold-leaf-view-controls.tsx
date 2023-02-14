@@ -50,7 +50,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import { removeAllImagesFromText, defaultFullScreenImageUrl } from '../../../utils/golds/image-find-util';
 import { tweet, email } from '../../../utils/golds/share-util';
-import styles from './gold-leaf-view.scss';
+import styles from './gold-leaf-view.module.css';
 import {
   ArticleIcon,
   TweetIcon,
@@ -98,7 +98,7 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = nul
     setState({ ...state, showImages: newShowImages, showArticle: false });
   };
 
-  const stripImagesFromText = (goldLeafModel) => {
+  const stripImagesFromText = goldLeafModel => {
     const articleWithoutImages = removeAllImagesFromText(goldLeafModel);
 
     const stripedHtml = articleWithoutImages.replace(/<[^>]+>/g, '');
@@ -119,12 +119,13 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = nul
 
   const handleToggleTrainGoldLeaf = async () => {
     // is the goldLeafModel already present?
-    const userGoldLeafModel = {...goldLeafModel, user_account_id: 'a4dc18a4-0389-4844-880e-c776d927b42f'}
+    const userGoldLeafModel = { ...goldLeafModel, user_account_id: 'a4dc18a4-0389-4844-880e-c776d927b42f' };
     const { trained } = state;
 
     // can we unheart it?
     const url = 'http://localhost:5000/api/post/heart';
-    const accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3NjE0ODAzNywianRpIjoiNzhiYmUxMDUtMWM4OS00MzU3LTg2YzktOTQ0OGUzMTRlMTM2IiwibmJmIjoxNjc2MTQ4MDM3LCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiaGVhZHdpbmRzIiwiZXhwIjoxNjc2MTQ4OTM3fQ.A0BxgS8347Q74MUM2ficxhwNy0uvy-jKrh-9p5BmliY";
+    const accessToken =
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3NjE0ODAzNywianRpIjoiNzhiYmUxMDUtMWM4OS00MzU3LTg2YzktOTQ0OGUzMTRlMTM2IiwibmJmIjoxNjc2MTQ4MDM3LCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiaGVhZHdpbmRzIiwiZXhwIjoxNjc2MTQ4OTM3fQ.A0BxgS8347Q74MUM2ficxhwNy0uvy-jKrh-9p5BmliY';
     // msg: "Signature verification failed"
     //const accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9'
     const config = {
@@ -133,9 +134,9 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = nul
       mode: 'cors',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${accessToken}`,
-      }
-    }
+        Authorization: `Bearer ${accessToken}`,
+      },
+    };
     const response = await fetchRetry(url, config);
     const data = await response.json();
 

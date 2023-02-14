@@ -9,4 +9,5 @@ export interface KeyValuePairsProps {
   keyValues: KeyValue[];
   keyStyle?: any;
   valueStyle?: any;
+  children: React.ReactNode | React.ReactNode[];
 }

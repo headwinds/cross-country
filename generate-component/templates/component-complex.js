@@ -3,7 +3,7 @@ module.exports = (componentUpperCaseName, componentLowerCaseName) => ({
 import { Column } from '../../';  
 import { ${componentUpperCaseName}Props } from "./${componentLowerCaseName}.types";
 
-import styles from "./${componentLowerCaseName}.scss";
+import styles from "./${componentLowerCaseName}.css";
 
 const ${componentUpperCaseName}: React.FC<${componentUpperCaseName}Props> = ({ foo }) => {
   return (<Column dataTestId="${componentLowerCaseName}" customClass={styles.${componentUpperCaseName}}>{foo || "missng prop foo"}</Column>)

@@ -1,5 +1,5 @@
 module.exports = () => ({
-  content: `declare module '*.scss' {
+  content: `declare module '*.css' {
     const content: { [key: string]: any };
     export = content;
   }`,

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Column, SubHeadline, Hunter } from '../../';
-import styles from './stage.scss';
+import styles from './stage.css';
 import clsx from 'clsx';
 
 const defaultConfig = {

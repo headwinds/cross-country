@@ -3,7 +3,7 @@ import { useSpring, animated } from '@react-spring/web';
 
 // components
 import { Column, Row } from '../../';
-import styles from './tile.scss';
+import styles from './tile.css';
 import InteractiveTile from './tile-interactive';
 
 const Tile = forwardRef((props, ref) => {

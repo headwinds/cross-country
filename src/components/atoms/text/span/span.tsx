@@ -2,7 +2,7 @@ import * as React from 'react';
 import clsx from 'clsx';
 import { SpanProps } from './span.types';
 
-import styles from './span.scss';
+import styles from './span.css';
 
 const Span: React.FC<SpanProps> = ({ dataTestId = 'span', customClass = '', customStyle = {}, children, ...rest }) => {
   return (

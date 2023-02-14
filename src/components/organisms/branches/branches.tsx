@@ -9,7 +9,7 @@ import { differenceBy, shuffle } from '../../../utils/fp-util';
 import { Row, Loading } from '../../../';
 import BranchList from './branch-list';
 
-import styles from './branches.scss';
+import styles from './branches.module.css';
 
 const Branches = () => {
   const [state, setState] = useState({
@@ -29,9 +29,15 @@ const Branches = () => {
       },
       body: JSON.stringify(data),
     };
-    const response = await fetch('https://scout-summarize.vercel.app/api/porthole/feeds', options);
-    const json = await response.json();
-    return json;
+    try {
+      const localUrl = 'http://localhost:5004/api/porthole/feeds';
+      const remoteUrl = 'https://scout-summarize.vercel.app/api/porthole/feeds';
+
+      const response = await fetchRetry(localUrl, options);
+      const json = await response.json();
+
+      return json;
+    } catch (error) {}
   };
 
   useEffect(() => {

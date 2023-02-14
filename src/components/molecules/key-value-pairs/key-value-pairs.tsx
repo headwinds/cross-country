@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Row, Column, Paragraph, Span } from '../../';
 import { KeyValuePairsProps } from './key-value-pairs.types';
 
-import styles from './key-value-pairs.scss';
+import styles from './key-value-pairs.css';
 
 const KeyValuePairs: React.FC<KeyValuePairsProps> = ({
   dataTestId = 'key-value-pairs',

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Column, SubHeadline } from '../../';
-import styles from './stagger.scss';
+import styles from './stagger.css';
 import clsx from 'clsx';
 
 const defaultConfig = {

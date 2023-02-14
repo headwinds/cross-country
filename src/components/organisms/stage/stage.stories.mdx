@@ -1,8 +1,8 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
-import { STORYBOOK } from "../../../constants";
-import Hunter from "../../../"
+import { STORYBOOK } from '../../../constants';
+import Hunter from '../../../';
 import Stage from './stage';
-import styles from "./stage.scss";
+import styles from './stage.css';
 
 <Meta title="menu/organisms/stage" />
 
@@ -12,6 +12,6 @@ import styles from "./stage.scss";
 
 <Canvas>
   <Story name="stage">
-     <Stage actors={[<Hunter />]} />
+    <Stage actors={[<Hunter />]} />
   </Story>
 </Canvas>

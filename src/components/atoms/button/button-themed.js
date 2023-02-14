@@ -1,7 +1,9 @@
 import React from 'react';
-import styles from './button.scss';
+import styles from './button.module.css';
 import Button from './button';
 import clsx from 'clsx';
+
+console.log('styles ', styles);
 
 const ButtonThemed = ({
   type = 'button',

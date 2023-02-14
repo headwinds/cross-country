@@ -5,7 +5,7 @@ import { useInterpret, useSelector, useMachine } from '@xstate/react';
 import { Image, Tile, Column, Row, Wrapper, Modal, Hunter, Troll, Stage, Button } from '../../../../../../';
 import CaveTrollBoard from './cave-troll-board';
 import c from '../../../../../../constants/';
-import styles from './cave-troll.scss';
+import styles from './cave-troll.css';
 
 const CaveTroll = () => {
   const [current, send] = useMachine(caveTrollMachine, { devTools: true });

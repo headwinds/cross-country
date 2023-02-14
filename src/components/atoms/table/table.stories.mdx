@@ -1,11 +1,10 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
-import { STORYBOOK } from "../../../constants"
+import { STORYBOOK } from '../../../constants';
 import Table from './';
 import TableHead from './table-head';
 import TableRow from './table-row';
 import TableBody from './table-body';
 import TableData from './table-data';
-import styles from "./table.scss";
 
 <Meta title="menu/atoms/table" />
 
@@ -16,7 +15,7 @@ import styles from "./table.scss";
 <Canvas>
   <Story name="table">
     <Table>
-     <TableHead>
+      <TableHead>
         <TableRow>
           <TableData isHead>Item</TableData>
           <TableData isHead>Price</TableData>
@@ -24,22 +23,22 @@ import styles from "./table.scss";
       </TableHead>
       <TableBody>
         <TableRow>
-          <TableData>Axe</TableData> 
+          <TableData>Axe</TableData>
           <TableData>300</TableData>
         </TableRow>
         <TableRow>
-          <TableData>Coffee</TableData> 
+          <TableData>Coffee</TableData>
           <TableData>50</TableData>
         </TableRow>
         <TableRow>
-          <TableData>Wind Turbine</TableData> 
+          <TableData>Wind Turbine</TableData>
           <TableData>2500</TableData>
         </TableRow>
         <TableRow>
-          <TableData>Fishing Lure</TableData> 
+          <TableData>Fishing Lure</TableData>
           <TableData>25</TableData>
         </TableRow>
-       </TableBody>
+      </TableBody>
     </Table>
   </Story>
 </Canvas>
