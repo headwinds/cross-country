@@ -1,7 +1,6 @@
 import * as React from 'react';
 import GoldLeafView from '../gold-leaf-view';
-import getImagesFromDescription from '../../../../utils/golds/image-find-util';
-import { getRSSBranch } from '../../../../utils/golds/feed-util';
+import { getRSSBranch } from '../../../../../utils/golds/feed-util';
 import behanceBranches from './behance-raw-branches';
 
 const convertToPortholeBranches = branches => {

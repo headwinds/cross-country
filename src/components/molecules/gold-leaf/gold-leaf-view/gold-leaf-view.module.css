@@ -1,39 +1,33 @@
 .GoldLeaf {
   display: block;
   margin: 0px;
-  background: transparent;
-  height: auto;
+  padding: 0px;
+}
+
+.GoldLeafView {
+  display: block;
+  margin: 0px;
+  padding: 0px;
 }
   
 .GoldLeaf__controls {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-gap: 5px;
-  height: 40px;
+  grid-gap: 4px;
+  height: 58px;
   margin-bottom: 4px;
-  padding: 5px;
+  padding: 0px;
   opacity: 0.4;
 }
 .GoldLeaf__item {
   display: block;
   position: relative;
   background: transparent;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   pointer-events: all;
   cursor: pointer;
-}
-.GoldLeaf p {
-  font-size: 18px;
-  padding: 10px;
-}
-.GoldLeaf a {
-  text-decoration: none;
-  color: #887f7f;
-}
-.GoldLeaf a:visited {
-  text-decoration: none;
-  color: #d0b002;
+  padding: 4px;
 }
 .GoldLeaf__images {
   display: flex;
@@ -44,7 +38,7 @@
 .GoldLeaf__total {
   display: block;
   position: absolute;
-  top: 0px;
+  top: 6px;
   left: 30px;
   background: #eee;
   border-radius: 4px;
@@ -58,6 +52,12 @@
   font-size: 12px;
   opacity: 0.6;
 }
+
+.GoldLeaf__GoldTitleImageCard {
+  margin: 0px;
+  padding: 0px;
+}
+
 .GoldLeaf__image {
   display: flex;
   flex-direction: row;
@@ -66,6 +66,7 @@
   width: 100%;
   height: auto;
   align-items: flex-start;
+  margin: 0px;
   padding: 0px;
 }
 
@@ -75,12 +76,11 @@
 }
 
 .GoldLeaf__title {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 26px;
-  color:#333;
-  opacity: 0.7;
-  line-height: 26px;
-  margin-bottom: 8px;
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: #888;
+  width: 96vw;
+  margin-left: 8px;
 }
 .GoldLeaf__titleLink {
   text-decoration: none;

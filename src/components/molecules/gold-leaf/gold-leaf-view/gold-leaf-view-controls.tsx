@@ -48,8 +48,8 @@ export default GoldLeafViewControls;
 
 import * as React from 'react';
 import { useState } from 'react';
-import { removeAllImagesFromText, defaultFullScreenImageUrl } from '../../../utils/golds/image-find-util';
-import { tweet, email } from '../../../utils/golds/share-util';
+import { removeAllImagesFromText, defaultFullScreenImageUrl } from '../../../../utils/golds/image-find-util';
+import { tweet, email } from '../../../../utils/golds/share-util';
 import styles from './gold-leaf-view.module.css';
 import {
   ArticleIcon,
@@ -61,8 +61,8 @@ import {
   ClusterOffIcon,
   ArticleNoneIcon,
 } from './icons';
-import { fetchRetry } from '../../../utils/fetch-util';
-import { Column, Row, Span, Button } from '../../';
+import { fetchRetry } from '../../../../utils/fetch-util';
+import { Column, Row, Span, Button } from '../../..';
 
 import { GoldLeafViewProps } from './gold-leaf-view.types';
 
