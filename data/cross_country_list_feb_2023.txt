@@ -19,6 +19,7 @@ https://about.sourcegraph.com/blog/building-conc-better-structured-concurrency-f
 https://houston.astro.build/
 https://docs.celeryq.dev/en/stable/
 https://medium.com/helpful-com/how-to-be-an-effective-early-stage-employee-hint-be-helpful-e681b456a01f
+https://paulbutler.org/
 
 Data Science
 https://towardsdatascience.com/a-quick-guide-to-beautiful-scatter-plots-in-python-75625ae67396
@@ -29,6 +30,7 @@ https://towardsdatascience.com/a-step-by-step-guide-to-develop-a-map-based-appli
 https://towardsdatascience.com/how-to-send-tabular-time-series-data-to-apache-kafka-with-python-and-pandas-39e2055373c3
 https://www.wandb.courses/courses/effective-mlops-model-development
 https://blog.google/technology/ai/bard-google-ai-search-updates/
+https://towardsdatascience.com/a-brief-introduction-to-time-series-forecasting-using-statistical-methods-d4ec849658c3
 
 Design
 https://www.happyhues.co/
