@@ -622,3 +622,12 @@ export const getVideoUrl = branchObj => {
     }
   }
 };
+
+const feedUtil = {
+  convertToPortholeBranches,
+  getVideoUrl,
+  allPortholeTrees,
+  getRSSBranch,
+};
+
+export default feedUtil;
