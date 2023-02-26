@@ -20,6 +20,9 @@ https://houston.astro.build/
 https://docs.celeryq.dev/en/stable/
 https://medium.com/helpful-com/how-to-be-an-effective-early-stage-employee-hint-be-helpful-e681b456a01f
 https://paulbutler.org/
+https://mars.nasa.gov/technology/helicopter/status/441/perseverances-four-legged-companion-is-ready/
+https://tamagui.dev/
+https://phosphoricons.com/
 
 Data Science
 https://towardsdatascience.com/a-quick-guide-to-beautiful-scatter-plots-in-python-75625ae67396
@@ -31,9 +34,14 @@ https://towardsdatascience.com/how-to-send-tabular-time-series-data-to-apache-ka
 https://www.wandb.courses/courses/effective-mlops-model-development
 https://blog.google/technology/ai/bard-google-ai-search-updates/
 https://towardsdatascience.com/a-brief-introduction-to-time-series-forecasting-using-statistical-methods-d4ec849658c3
+https://blog.fixie.ai/introducing-fixie-ai-a-new-way-to-build-with-large-language-models-d4e1aeee6b81
+https://github.com/huseinzol05/Stock-Prediction-Models
 
 Design
 https://www.happyhues.co/
+https://meodai.github.io/poline
+https://www.scenario.gg/
+https://www.pangeamaps.com/
 
 EV
 https://www.swytchbike.com/
@@ -48,3 +56,4 @@ https://oracle-rpg.com/
 https://rpgmuseum.fandom.com/wiki/Oracle
 https://www.reddit.com/r/Solo_Roleplaying/
 https://www.youtube.com/watch?v=ODPMsTEh7kI&t=2s
+https://sleepysasquatch.itch.io/glide
