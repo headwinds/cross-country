@@ -95,7 +95,7 @@
     "rollup": "^2.13.1",
     "rollup-plugin-filesize": "^9.0.0",
     "rollup-plugin-postcss": "^4.0.0",
-    "semantic-release": "^17.0.8",
+    "semantic-release": "^19.0.3",
     "source-map-loader": "^1.0.0",
     "storybook-css-modules": "^1.0.8",
     "storybook-css-modules-preset": "^1.1.1",
