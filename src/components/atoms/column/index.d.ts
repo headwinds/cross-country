@@ -1,2 +1,4 @@
-export { default } from './column';
-export * from './column';
+declare module '*.css' {
+  const content: { [key: string]: any };
+  export = content;
+}

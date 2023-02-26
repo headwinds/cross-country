@@ -4,7 +4,7 @@ import { Row, Stagger } from '../../../';
 const defaultReverseConfig = { startTask: 'Learning', endTask: 'Teaching', cursor: '_' };
 
 const ReverseTextAnimation = ({
-  color = 'green',
+  color = 'darkgrey',
   titleOne = 'Learn React, D3, XState',
   titleTwo = '& Machine',
   reverseConfig = defaultReverseConfig,
@@ -50,17 +50,17 @@ const ReverseTextAnimation = ({
   }, [hasCompletedPause, mlTask]);
 
   useEffect(() => {
-    const afterFiveSeconds = 5000;
+    const afterTwoSeconds = 2000;
 
     if (!hasCompletedPause) {
       setTimeout(() => {
         setCompletedPause(true);
-      }, afterFiveSeconds);
+      }, afterTwoSeconds);
       setAnimating(true);
     }
   }, [hasCompletedPause]);
 
-  const staggerColor = color;
+  const staggerColor = [color, 'hotpink'];
   const { word } = mlTask;
   const staggerText = [titleOne, `${titleTwo} ${word}`];
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Column, Form, Button, Row, Tile, TextInput, Wisp } from '../../';
-import styles from './giant-soup.scss';
+import styles from './giant-soup.module.css';
 import { useMachine } from '@xstate/react';
 import { giantSoupMachine } from './giant-soup-machine';
 

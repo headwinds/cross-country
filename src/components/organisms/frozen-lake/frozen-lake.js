@@ -6,7 +6,7 @@ import { Image, Column, SubHeadline, Wrapper, Paragraph, Modal, Hunter, Warrior,
 import PusherService from '../../../services/pusher-service';
 import FrozenLakeBoard from './frozen-lake-board';
 import c from '../../../constants/';
-import styles from './frozen-lake.scss';
+import styles from './frozen-lake.module.css';
 
 const selectGeneratedMap = state => state.context.generatedMap;
 const selectCurrentParagraph = state => state.context.currentParagraph;

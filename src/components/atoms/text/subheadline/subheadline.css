@@ -1,0 +1,11 @@
+.subheadline {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: black;
+    margin: 0px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-bottom: 8px;
+} 
+  

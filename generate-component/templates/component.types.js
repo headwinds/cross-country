@@ -1,8 +1,8 @@
-module.exports = componentUpperCaseName => ({
+module.exports = (componentUpperCaseName, componentLowerCaseName) => ({
   content: `export interface ${componentUpperCaseName}Props {
-    foo: string;
+    foo?: string;
 }
 `,
   extension: `.types.ts`,
-  name: componentUpperCaseName.toLowerCase(),
+  name: componentLowerCaseName,
 });

@@ -22,7 +22,7 @@ import { getColorPalettes } from '../../utils/color-util';
 // import numberUtil from '../../utils/number-util'; <-- use Class and needs a babel plugin
 
 // styles
-import styles from './intro.scss';
+import styles from './intro.css';
 import clsx from 'clsx';
 
 const DeviceContext = React.createContext('device');

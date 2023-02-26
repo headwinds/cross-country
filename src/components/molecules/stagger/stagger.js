@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Column, SubHeadline } from '../../';
-import styles from './stagger.scss';
+import styles from './stagger.css';
 import clsx from 'clsx';
 
 const defaultConfig = {
@@ -8,10 +8,15 @@ const defaultConfig = {
   text: { customClass: '', customStyle: {}, rest: {} },
 };
 
-const Stagger = ({ color = "#000", config = defaultConfig, staggerText = [], stagger = { key: 'marginLeft', value: 26 } }) => {
+const Stagger = ({
+  color = '#000',
+  config = defaultConfig,
+  staggerText = [],
+  stagger = { key: 'marginLeft', value: 26 },
+}) => {
   const list = staggerText.map((text, idx) => (
     <SubHeadline
-      color={color}
+      color={Array.isArray(color) ? color[idx] : color}
       key={idx}
       {...config.text.rest}
       size="large"

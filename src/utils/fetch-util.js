@@ -8,9 +8,8 @@ export const fetchRetry = (url, options = {}, retries = 10, backoff = 1000) => {
     Our response does have response.status which in most cases is 200 ;-D
   */
   const retryCodes = [408, 500, 502, 503, 504, 522, 524];
-  return fetch(url, { method: 'POST' })
+  return fetch(url, options)
     .then(response => {
-      console.log('response: ', response);
       if (response?.ok) return response;
       if (retries > 0 && retryCodes.includes(response.status)) {
         console.log('trying....: ', response);

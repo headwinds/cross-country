@@ -1,0 +1,83 @@
+.Branch {
+  display: block;
+  margin: 0px;
+  padding: 0px;
+}
+  
+.Branch__controls {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 5px;
+  height: 40px;
+  margin-bottom: 4px;
+  padding: 5px;
+  opacity: 0.4;
+}
+.Branch__item {
+  display: block;
+  position: relative;
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  pointer-events: all;
+  cursor: pointer;
+}
+.Branch__images {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overflow-x: auto;
+}
+.Branch__total {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 30px;
+  background: #eee;
+  border-radius: 4px;
+  padding: 0px 2px;
+}
+.Branch__total__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  font-size: 12px;
+  opacity: 0.6;
+}
+.Branch__image {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  overflow-y: auto;
+  width: 100%;
+  height: auto;
+  align-items: flex-start;
+}
+
+.Branch__image img {
+  width: 100%;
+  height: auto;
+}
+
+.Branch__title {
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: #888;
+}
+.Branch__titleLink {
+  text-decoration: none;
+  pointer-events: all;
+  font-family:Arial, Helvetica, sans-serif;
+  line-height: 10px;
+}
+.code {
+  padding: 3px 8px;
+  background-color: #a257ff;
+  box-shadow: none;
+  color: #fff;
+  border-radius: .3em;
+  font-family:Arial, Helvetica, sans-serif;
+  word-break: break-word;
+}
+  

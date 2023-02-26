@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import Column from '../../atoms/column/column';
-import styles from './wrapper.scss';
+import styles from './wrapper.css';
 import clsx from 'clsx';
 
 /*
@@ -11,17 +11,19 @@ import clsx from 'clsx';
   const store = JSON.parse(localStorage.getItem('store'));
   localStorage.clear();
   https://www.json.org/
-
 */
 
-const Wrapper = ({ backgroundColor = '', customClass = '', customStyle = {}, ...rest }) => {
+const Wrapper = forwardRef(({ backgroundColor = '', customClass = '', customStyle = {}, ...rest }, ref) => {
   return (
     <Column
       {...rest}
       customClass={clsx(styles.wrapper, customClass)}
-      customStyle={{ backgroundColor, ...customStyle }}
+      customStyle={{
+        backgroundColor,
+        ...customStyle,
+      }}
     ></Column>
   );
-};
+});
 
 export default Wrapper;

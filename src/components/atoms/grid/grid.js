@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import clsx from 'clsx';
-import styles from './grid.scss';
+import styles from './grid.css';
 import PropTypes from 'prop-types';
 
 /**

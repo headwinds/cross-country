@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 // components
 import { Tile, Column, Row } from '../../';
-import styles from './tile-grid.scss';
+import styles from './tile-grid.css';
 import ColorUtil from '../../../utils/color-util';
 import clsx from 'clsx';
 
@@ -53,7 +53,6 @@ const TileGrid = ({
   tileRefs,
 }) => {
   const [tileSeleted, setSelected] = useState(null);
-  //const tileRefs = useRef([]);
 
   const size = Math.floor(width / totalInRow - gapSize);
   const totalTiles = models.length;
@@ -70,7 +69,6 @@ const TileGrid = ({
   };
 
   const initialModelGrid = createGrid();
-
   const renderGrid = grid => {
     let count = -1;
 
@@ -84,7 +82,9 @@ const TileGrid = ({
 
         const isSelected = tileSeleted ? tileModel.id === tileSeleted.id : false;
 
-        return tileRefs && tileRefs.length > 0 ? (
+        console.log('got here');
+
+        return (
           <Tile
             key={keyId}
             model={tileModel}
@@ -95,7 +95,7 @@ const TileGrid = ({
             ref={ref => (tileRefs.current[count] = ref)}
             id={`tile${tileModel.id}`}
           />
-        ) : null;
+        );
       });
     };
     const createRow = (columns, x) => {

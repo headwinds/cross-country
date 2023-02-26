@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './number.scss';
+import styles from './number.css';
 import clsx from 'clsx';
 
 const Number = ({ text, color = '', size = 'small', children, customStyle = {}, customClass = '' }) => {

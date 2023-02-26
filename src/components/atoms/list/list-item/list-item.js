@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from '../list.scss';
+import styles from '../list.css';
 import clsx from 'clsx';
 
 /*

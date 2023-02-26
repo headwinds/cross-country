@@ -1,0 +1,17 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
+import Cleric from '../cleric';
+import { Link, RelatedArticles, Stage, Paragraph } from '../../../../../';
+import styles from '../cleric.css';
+import { clericStoryModel } from './cleric-story-model';
+
+<Meta title="menu/organisms/actors/cleric" />
+
+# Cleric
+
+<Subtitle>a cleric</Subtitle>
+
+<Canvas>
+  <Story name="cleric">
+    <Cleric model={clericStoryModel} />
+  </Story>
+</Canvas>

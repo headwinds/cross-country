@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './link.scss';
+import styles from './link.css';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 

@@ -1,0 +1,209 @@
+Pixel Wall
+https://www.planar.com/about/showrooms/#na 
+https://www.led-card.com/p6-full-color-smd-led-module.html?gclid=Cj0KCQjwmuiTBhDoARIsAPiv6L-iQGkerWFEQE4M6GcIGn_ti6y6fIrjoWC02hkEQOrKg1ju6hxgRMoaAh8_EALw_wcB
+https://www.pureav.ca/av-equipment-rental
+
+Mod Hammer Model
+https://kotaku.com/elden-ring-bushygames-one-hit-kill-radahn-margit-speedr-1848977810
+
+XState & Pusher
+https://github.com/statelyai/xstate/issues/549
+https://www.kevinhxu.com/xstate-websocket-machine/
+https://codesandbox.io/s/qegz0
+
+DEAN
+https://www.imdb.com/title/tt1120985/characters/nm0331516
+https://www.thinkwithgoogle.com/intl/en-ca/future-of-marketing/digital-transformation/loblaw-digital-transformation/
+
+Conventional commits
+https://www.conventionalcommits.org/en/v1.0.0/
+
+Theisland 
+https://towardsdatascience.com/machine-learning-prediction-in-real-time-using-docker-and-python-rest-apis-with-flask-4235aa2395eb
+
+K8
+https://medium.com/swlh/building-a-gke-with-cloud-sdk-99fee12bf0a6
+https://joachim8675309.medium.com/building-gke-with-terraform-869df1cd3f41
+
+STATS
+<img src="https://github-readme-stats.vercel.app/api?username=equinusocio&show_icons=true&hide_border=true" alt="Stats" width="440" align="right"> 
+
+FISH FARMING
+https://www.behance.net/gallery/134180279/FARMING-PATTERNS-I
+
+https://towardsdatascience.com/build-a-python-crawler-to-get-activity-stream-with-github-api-d1e9f5831d88
+https://api.github.com/users/headwinds/following
+
+BACKYARD
+https://cabinporn.com/post/621372884621901824/heres-a-concept-for-an-extra-room-for-your
+
+Github
+https://api.github.com/users/headwinds/received_events
+
+https://towardsdatascience.com/build-a-python-crawler-to-get-activity-stream-with-github-api-d1e9f5831d88
+
+
+Simple tile game
+https://www.w3schools.com/codegame/index.html
+
+Apartments
+https://boingboing.net/2021/12/16/tokyo-concept-apartment-building-offers-extremely-tiny-and-odd-living-spaces.html?utm_source=rss&utm_medium=rss&utm_campaign=tokyo-concept-apartment-building-offers-extremely-tiny-and-odd-living-spaces
+
+Tile Editors
+https://www.tilesetter.org/
+
+Lego Narrative
+https://www.gdcvault.com/play/1020434/Narrative Ken Levine
+https://www.polygon.com/platform/amp/22832995/wildermyth-is-the-video-game-miracle-of-2021
+
+Dwarf Fortress
+https://if50.substack.com/p/2006-dwarf-fortress
+
+Frozen lake related
+https://towardsdatascience.com/developing-a-roguelike-game-with-reinforcement-learning-using-gcp-46a9b2f5ca3
+https://ai.facebook.com/blog/nethack-learning-environment-to-advance-deep-reinforcement-learning/
+https://deepai.org/publication/rogue-gym-a-new-challenge-for-generalization-in-reinforcement-learning
+
+Customization 
+https://www.polygon.com/22732578/animal-crossing-new-horizons-update-picket-fence-when
+
+Map Kit
+https://www.google.com/maps/about/mymaps/
+https://github.com/alyssaxuu/mapus
+
+
+SIERRA
+http://gamerwalkthroughs.com/wp-content/uploads/2015/08/Kings-Quest-Map.png
+http://www.agdinteractive.com/games/kq1/download/download.html
+http://sarien.net/kingsquest#eastcastle - full screen - walk faster?!
+DOSBOX
+
+COOPERATIVE
+https://www.amazon.com/Greater-Than-Games-Spirit-Island/dp/B01MUHP51S?ots=1&slotNum=22&imprToken=c4bddba3-c9a7-0386-4af&tag=polygon05-20&ascsubtag=[]pl[p]22412537[t]w[d]D
+https://www.polygon.com/tabletop-games/22648496/best-cooperative-board-games
+
+Sarient dot net 
+const canvas = document.getElementById("canvas");
+canvas.width = window.innerWidth; //document.body.clientWidth; //document.width is obsolete
+canvas.height = window.innerHeight; //document.body.clientHeight;
+canvas.requestFullscreen();
+https://www.youtube.com/watch?v=G068I6yOT7o mostly walking
+https://www.twitch.tv/videos/1121201773 nalvara
+
+https://www.maketecheasier.com/play-dos-games-on-macos/
+https://www.youtube.com/watch?v=LriUAmAkuD8 <-- hosted docker Dosbox
+https://github.com/schneidexe/docker-dosbox
+https://www.dosbox.com/wiki/GAMES:King%27s_Quest:_Quest_for_the_Crown
+https://www.mobygames.com/
+game/dos/kings-quest/hints
+
+Sierra
+http://sierrachest.com/gfx/games/KQ1/maps/map_daventry.JPG
+http://img1.wikia.nocookie.net/__cb20120729201321/kingsquest/images/c/c1/DaventryKQ1AGI.png
+http://sierrachest.com/gfx/games/KQ1/maps/map_clouds.JPG
+http://sierrachest.com/gfx/games/KQ1/maps/map_leprechauns.JPG
+https://i.ytimg.com/vi/NEG-am4guWk/maxresdefault.jpg <-- cabin
+https://www.youtube.com/watch?v=NEG-am4guWk
+
+https://www.scummvm.org/
+
+NFT
+https://opensea.io/
+https://artblocks.io/token/133000889
+
+FILMS
+https://letterboxd.com/
+https://letterboxd.com/selfawaresoup/stats/
+
+BOOKS
+https://www.npr.org/2021/08/18/1027159166/best-books-science-fiction-fantasy-past-decade
+
+COLLECT
+curl --request POST --url 'https://beacons.vercel.app/api/home/collect-lighthouse'
+
+ISLAND
+https://www.google.com/doodles/doodle-champion-island-games-begin
+
+TEXT ADVENTURE
+https://if50.substack.com/
+https://versificator.itch.io/gruescript
+
+SOLO TTRPG
+https://momatoes.itch.io/the-magus
+https://www.drivethrurpg.com/product/298057
+
+Remove background
+https://twitter.com/maruti_bitamin/status/1396810442840883201?s=11
+
+ME? I'm a guide - promote me
+https://trevorblades.com/
+
+TREE
+https://stackoverflow.com/questions/16069840/rendering-a-tree-from-a-closure-table-select-statement
+https://coderwall.com/p/lixing/closure-tables-for-browsing-trees-in-sql
+https://tapoueh.org/blog/2018/01/exporting-a-hierarchy-in-json-with-recursive-queries/
+https://slavabezborodov.com/python/asyncio/postgresql/2017/12/14/managing-tree-based-data-in-sql-using-async-python.html
+
+Ocean Layers
+https://twitter.com/nickbezioart/status/1403417849880891403?s=11
+
+Tree Flare to Nodes/Links
+https://stackoverflow.com/questions/32150395/convert-json-tree-data-to-nodes-and-links/32273451
+
+Boar Ramen - Canadian?!
+https://kyotofoodie.com/kyoto-wild-boar-ramen/
+
+THREAD
+https://stackoverflow.com/questions/3262346/pausing-a-thread-using-threading-class
+
+Hugging Face
+https://huggingface.co/course/chapter1/1?fw=pt
+
+Table to Graph
+https://stackoverflow.com/questions/54454063/how-to-convert-table-data-to-nodes-and-links-for-d3js-sankey
+https://bl.ocks.org/akulmehta/b98bb2487e838075631ee79c55361e1b
+
+Tuna
+https://cloverleaf.ca/en/traceability/results/rsnkfs8w1180
+
+TEACHERS
+https://www.youtube.com/watch?v=J6ksjvw1kBs
+https://mathantics.com/
+
+10 days
+https://www.hackerrank.com/domains/tutorials/10-days-of-javascript
+
+TRON
+https://github.com/arwes/arwes
+
+Cumbia
+https://www.mixcloud.com/DJV21/cumbia-wepa-mix-3-2019/
+https://www.abc.net.au/radionational/programs/earshot/earshot-10-november/6810004
+https://www.youtube.com/watch?v=ieeZ0mviFKc&t=2s 
+http://www.cumbiacosmonauts.com.au/videos
+
+
+Mammoth 
+https://boingboing.net/2021/06/07/this-animal-was-revived-after-being-frozen-for-24000-years.html
+https://wavingwalrus.itch.io/peckin-pixels
+
+REPL
+https://tinyurl.com/yfc2jhya
+
+Blog Feed
+https://gist.github.com/roycoding/c4af3c1ea4ae2d9b4ce9536dab20d3da
+
+Video tweaks
+https://gitlab.lblw.ca/sdm/beauty-frontend-plp/-/merge_requests/916
+
+D3
+https://bl.ocks.org/d3indepth/9d9f03a0016bc9df0f13b0d52978c02f
+
+AUTOMATION
+https://confluence.lblw.cloud/display/BB/BB+FE+Automation+Test+Table
+
+
+
+
+
+

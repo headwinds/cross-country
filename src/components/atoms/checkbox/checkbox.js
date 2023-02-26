@@ -1,8 +1,8 @@
-import React from "react";
-import styles from "./checkbox.scss";
+import React from 'react';
+import styles from './checkbox.module.css';
 
 const Checkbox = ({ isChecked, id, handleChange }) => {
-  const classNameSelected = isChecked ? "checkboxFormSelected::before" : "";
+  const classNameSelected = isChecked ? 'checkboxFormSelected::before' : '';
   const className = `${styles.checkboxFunction} ${styles[classNameSelected]}`;
   return (
     <div

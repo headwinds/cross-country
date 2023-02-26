@@ -4,7 +4,6 @@ import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 import typescript from 'rollup-plugin-typescript2';
 import filesize from 'rollup-plugin-filesize';
-import autoprefixer from 'autoprefixer';
 import copy from 'rollup-plugin-copy';
 const svgr = require('@svgr/rollup').default;
 
@@ -24,7 +23,6 @@ const PLUGINS = [
   postcss({
     extract: false,
     modules: true,
-    use: ['sass'],
   }),
   babel({
     babelHelpers: 'runtime',
