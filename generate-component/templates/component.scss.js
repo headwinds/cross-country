@@ -1,9 +1,9 @@
-module.exports = componentName => ({
-  content: `@import "../../styles.scss";
+module.exports = componentUpperCaseName => ({
+  content: `@import "../../styles.css";
 
-.fooBar {
+.${componentUpperCaseName} {
   color: $teal;
 }
 `,
-  extension: `.scss`,
+  extension: `.css`,
 });

@@ -1,0 +1,23 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
+import { Coloumn, Paragraph, SubHeadline, Link, Headline } from '../../../../../';
+import Hilight from '../hilight';
+
+
+<Meta title="menu/atoms/text/hilight" />
+
+# Template
+
+<Subtitle>a post many have many sub headlines to title content sections</Subtitle>
+
+<Canvas>
+  <Story name="subheadline">
+    <Column customStyle={{margin: 16}}>
+      <Headline customStyle={{fontSize: 28, margin: 16, fontWeight: 300}}>A <Hilight customStyle={{backgroundColor: 'rgba(211, 174, 128,0.3)'}}>Copper Mine</Hilight> Could Advance <Hilight customStyle={{backgroundColor: 'rgba(60, 179, 113, 0.3)'}}>Green Energy</Hilight> but <Hilight customStyle={{backgroundColor: 'rgba(255, 125, 129,0.3)'}}>Scar</Hilight> Sacred Land</Headline>
+      <Paragraph>Tribal groups are fighting an Arizona project whose backers say increasing the supply of copper, crucial to batteries, would reduce fossil-fuel use.</Paragraph>
+      <Paragraph>SUPERIOR, Ariz. — As Wendsler Nosie finished his evening prayers sitting before a mesquite fire, a ceremonial yucca staff festooned with eagle feathers by his side, he gazed sternly toward a distant mesa where mining companies hope to extract more than a billion tons of copper.</Paragraph>
+      <Paragraph>
+        That mine could help address climate change by helping the United States replace fossil fuels and combustion engines with renewable energy and electric cars. But to <Link url="https://kjzz.org/content/1331617/former-san-carlos-apache-chairman-walking-ancestral-land-protect-it-mine">Mr. Nosie</Link>, a former chairman of the San Carlos Apache Tribe, it’s the latest insult in a bitter history.</Paragraph>
+      <Link url='https://www.nytimes.com/2023/01/27/business/energy-environment/copper-mine-arizona.html'>full article</Link>
+    </Column>
+  </Story>
+</Canvas>

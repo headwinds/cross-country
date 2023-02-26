@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './wisp.scss';
+import styles from './wisp.css';
 import clsx from 'clsx';
 
 const Wisp = ({ children, customClass = '', ...rest }) => (

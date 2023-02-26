@@ -1,7 +1,7 @@
 import React from 'react';
 import Column from '../../atoms/column/column';
 import Row from '../../atoms/row/row';
-import styles from './tile.scss';
+import styles from './tile.css';
 import clsx from 'clsx';
 
 const ColorTile = ({

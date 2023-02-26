@@ -20,20 +20,20 @@ export function getRSSBranch(candidateBranch, index, ix) {
     return undefined;
   }
 
-  let images = getImagesFromDescription(branch);
+  const images = getImagesFromDescription(branch);
   // there should always be at least 1 default image!
 
-  let resultImageObj = images[0];
+  const resultImageObj = images[0];
 
   // important that there is a resultImageObj
   if (!resultImageObj) {
     return null;
   }
 
-  let photoUrl = resultImageObj.useText ? resultImageObj.defaultImageUrl : resultImageObj.imageUrl;
-  let photoLargeUrl = photoUrl.indexOf('500') > -1 ? photoUrl.replace('500', '1280') : photoUrl;
-  let branchTitleUnescape = unescape(branch.title);
-  let branchDescriptionUnescape = unescape(resultImageObj.text);
+  const photoUrl = resultImageObj.useText ? resultImageObj.defaultImageUrl : resultImageObj.imageUrl;
+  const photoLargeUrl = photoUrl.indexOf('500') > -1 ? photoUrl.replace('500', '1280') : photoUrl;
+  const branchTitleUnescape = unescape(branch.title);
+  const branchDescriptionUnescape = unescape(resultImageObj.text);
   // fix title
   if (branch.meta.title === 'National Geographic Photo of the Day') branch.meta.title = 'National Geographic';
   else if (branch.meta.title === 'Latest Articles') branch.meta.title = 'Dwell';
@@ -58,7 +58,7 @@ export function getRSSBranch(candidateBranch, index, ix) {
   else if (branch.meta.title.trim() === 'Sports - The Inquisitr News') branch.meta.title = 'The Inquisitr';
   else if (branch.meta.title.trim() === 'designboom | architecture & design magazine') branch.meta.title = 'designboom';
   const tags = branch.categories ? branch.categories : [];
-  const id = `branch-${index}-${ix}`;
+  const id = `gold-leaf-${index}-${ix}`;
 
   const portholeBranch = new PortholeBranchModel(
     id,
@@ -198,10 +198,10 @@ export function createAllPortholeTrees() {
     category: 'gaming',
     origin: 'porthole',
   };
-  // 12
+  // 12 - not working
   var architizerTreeObj = {
     _id: '12',
-    xmlUrl: 'http://architizer.tumblr.com/rss',
+    xmlUrl: 'https://architizer.com/blog/feed',
     type: 'rss',
     title: 'Architizer',
     category: 'architecture',
@@ -544,25 +544,28 @@ export function createAllPortholeTrees() {
   http://blogs.walkerart.org/filmvideo/feed/
   http://www.documentary.org/rss.xml
   */
-  var allPortholeTrees = {
-    //"cabinporn" : cabinPornTreeObj,
+
+  // careful with long feeds as they can take a while to load - over 10 secs will timeout!
+
+  const allPortholeTrees = {
+    cabinporn: cabinPornTreeObj,
     treehugger: treeHuggerTreeObj,
-    //"wired" : wiredTreeObj,
+    wired: wiredTreeObj,
     coolhunting: coolHuntingTreeObj,
     kotaku: kotakuTreeObj,
-    //"nationalgeographic" : nationalGeographicTreeObj,
+    nationalgeographic: nationalGeographicTreeObj,
     colossal: colossalTreeObj,
-    //"dwell" : dwellTreeObj,
+    dwell: dwellTreeObj,
     designmilk: designmilkTreeObj,
     boingboing: boingboingTreeObj,
     polygon: polygonTreeObj,
-    //"architizer" : architizerTreeObj,
+    //architizer: architizerTreeObj, // doesn't exist anymore
     //"harpersbazaar" : harpersbazaarTreeObj,
     //"w" : wTreeObj,
-    //"booooooom" : booooooomTreeObj,
-    //"abduzeedo" : abduzeedoTreeObj,
+    booooooom: booooooomTreeObj,
+    //abduzeedo: abduzeedoTreeObj,
     behance: behanceTreeObj,
-    //"bleacherreport" : bleacherReportTreeObj,
+    //"bleacherreport" : bleacherReportTreeObj, // not working
     gamespot: gamespotTreeObj,
     //"twitchfilm" : twitchfilmTreeObj,
     //"mm" : mmTreeObj,
@@ -575,7 +578,7 @@ export function createAllPortholeTrees() {
     //"fraser" : fraserTreeObj,
     //"cristian" : cristianTreeObj,
     //"headlands" : headlandsTreeObj,
-    //"artnation" : artnationTreeObj,
+    //artnation: artnationTreeObj, valid feed but perhaps different format?!
     //"nycscout" : nycscoutTreeObj,
     //"tavi" : taviTreeObj,
     //"repeller" : repellerTreeObj,
@@ -584,17 +587,17 @@ export function createAllPortholeTrees() {
     //"guardian" : guardianFilmTreeObj,
     //"walker" : walkerFilmTreeObj,
     //"doc" : docFilmTreeObj,
-    //"venturebeat" : venturebeatTreeObj,
-    killscreen: killscreenTreeObj,
+    venturebeat: venturebeatTreeObj,
+    //killscreen: killscreenTreeObj,
     //"inquisitr" : inquisitrTreeObj,
     sbnation: sbnationTreeObj,
-    //"dezeen" :  dezeenTreeObj,
+    //dezeen: dezeenTreeObj,
     //"contemporist" : contemporistTreeObj,
     //"eikongraphia" : eikongraphiaTreeObj,
-    //"unhappy" : unhappyTreeObj,
-    //"architecture" : architectureTreeObj,
-    //"designboom":designboomTreeObj,
-    //"nautilus":nautilusTreeObj,
+    //"unhappy" : unhappyTreeObj, // not working
+    //architecture: architectureTreeObj,
+    designboom: designboomTreeObj,
+    nautilus: nautilusTreeObj,
   };
   return allPortholeTrees;
 }
@@ -619,3 +622,12 @@ export const getVideoUrl = branchObj => {
     }
   }
 };
+
+const feedUtil = {
+  convertToPortholeBranches,
+  getVideoUrl,
+  allPortholeTrees,
+  getRSSBranch,
+};
+
+export default feedUtil;

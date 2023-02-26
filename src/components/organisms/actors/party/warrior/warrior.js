@@ -1,24 +1,33 @@
-import React, { Component } from 'react';
-import { Column, Actor } from '../../../../';
-import styles from './warrior.scss';
 import clsx from 'clsx';
+import Actor from '../../actor/';
 
 // pre-configured character
-const head = { color: 'black' };
+const head = { color: 'gold' };
 const body = { color: 'grey' };
-const legs = { color: 'red' };
+const legs = { color: 'black' };
 const defaultConfig = { head, body, legs, type: 'humanoid' };
-const defaultModel = { id: 1, type: 'warrior', customStyle: {}, config: defaultConfig };
 
-const Warrior = ({ position, customClass = '', model = defaultModel, tileSize }) => {
-  const { config, customStyle } = model;
+const defaultModel = {
+  id: 0,
+  type: 'humanoid',
+  position: { x: 0, y: 0, z: 0 },
+  customSkinStyle: { backgroundColor: 'goldenrod' },
+  config: defaultConfig,
+  customClass: '',
+};
+
+const Warrior = ({ model = defaultModel, tileSize }) => {
+  const { config, customClass, customSkinStyle, position, type } = model;
+
   const validConfig = config ?? defaultConfig;
+
   return (
     <Actor
+      type={type}
       config={validConfig}
       position={position}
       customClass={customClass}
-      customStyle={customStyle}
+      customSkinStyle={{ ...defaultModel.customSkinStyle, ...customSkinStyle }}
       tileSize={tileSize}
     />
   );

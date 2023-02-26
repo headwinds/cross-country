@@ -1,0 +1,12 @@
+.number {
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: black;
+  margin: 0px;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0px;
+  padding: 0px;
+  font-variant-numeric: tabular-nums;
+}

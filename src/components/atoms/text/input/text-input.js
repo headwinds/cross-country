@@ -1,37 +1,34 @@
 import React, { Component } from 'react';
-import styles from '../text.scss';
+import styles from './text-input.css';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-const TextInput = ({ onChange, value, customClass = '', customStyle = {}, ...rest }) => {
+const TextInput = ({
+  onTextChange,
+  value,
+  customClass = '',
+  customStyle = {},
+  placeholder = 'enter your text',
+  type = 'text',
+  ...rest
+}) => {
   return (
     <input
       {...rest}
-      type="text"
+      type={type}
       className={clsx(styles.textInput, customClass)}
-      style={customStyle}
-      onChange={onChange}
+      onChange={event => {
+        event.preventDefault();
+        const {
+          target: { value },
+        } = event;
+        return onTextChange(value);
+      }}
       value={value}
       style={customStyle}
+      placeholder={placeholder}
     />
   );
 };
-
-TextInput.propTypes = {
-  /**
-   * TextInput's onChangeHandler
-   */
-  onChangeHandler: PropTypes.func,
-  /**
-   * TextInput's value
-   */
-  value: PropTypes.string,
-  /**
-   * TextInput's custom style
-   */
-  customStyle: PropTypes.shape({}),
-};
-
-TextInput.defaultProps = {};
 
 export default TextInput;

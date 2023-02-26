@@ -10,7 +10,18 @@ const capitalize = str => {
   return `${str[0].toUpperCase()}${str.slice(1)}`;
 };
 
-const componentUpperCaseName = capitalize(componentName);
+const detectMultipleWords = str => {
+  if (str.includes('-')) {
+    return str
+      .split('-')
+      .map(word => capitalize(word))
+      .join('');
+  }
+  return capitalize(str);
+};
+
+const componentUpperCaseName = detectMultipleWords(componentName);
+const componentLowerCaseName = componentName.toLowerCase(); // ie gold vs gold-leaf vs gold-leaf-view - want to preserve the hyphen
 
 if (!componentName) {
   log(chalk.yellow(`Please supply a valid component name`));
@@ -32,11 +43,13 @@ fs.mkdirSync(componentDirectory);
 fs.mkdirSync(testsDirectory);
 fs.mkdirSync(storiesDirectory);
 
-const generatedTemplates = templates.map(template => template(componentUpperCaseName, atomicTypeName));
+const generatedTemplates = templates.map(template =>
+  template(componentUpperCaseName, componentLowerCaseName, atomicTypeName)
+);
 
 generatedTemplates.forEach(template => {
-  if (template.extension === '.stories.tsx' || template.extension === '.test.tsx') {
-    const folder = template.extension === '.stories.tsx' ? '__stories__' : '__tests__';
+  if (template.extension === '.stories.mdx' || template.extension === '.test.tsx') {
+    const folder = template.extension === '.stories.mdx' ? '__stories__' : '__tests__';
 
     fs.writeFileSync(`${componentDirectory}/${folder}/${componentName}${template.extension}`, template.content);
   } else {
@@ -45,7 +58,14 @@ generatedTemplates.forEach(template => {
     } else if (template.extension === '.d.ts' || (template.extension === '.types.ts' && template.name)) {
       fs.writeFileSync(`${componentDirectory}/${template.name}${template.extension}`, template.content);
     } else {
-      fs.writeFileSync(`${componentDirectory}/${componentName}${template.extension}`, template.content);
+      if (template.isStory) {
+        fs.writeFileSync(
+          `${componentDirectory}/__stories__/${componentName}-story${template.extension}`,
+          template.content
+        );
+      } else {
+        fs.writeFileSync(`${componentDirectory}/${componentName}${template.extension}`, template.content);
+      }
     }
   }
 });

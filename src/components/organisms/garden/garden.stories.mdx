@@ -1,14 +1,36 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
-import { Paragraph } from "../../"
+import { Paragraph, Link, List, ListItem } from "../../"
 import Garden from './garden';
 
 <Meta title="menu/organisms/garden" />
 
 # Garden
 
-<Subtitle>a blog post</Subtitle>
+<Paragraph>I first learned about the digital garden metaphor from a <Link url="https://twitter.com/jhooks/status/1258097024139849729">jhooks tweet</Link> who followed that up with a <Link url="https://joelhooks.com/digital-garden">longer post</Link> explaining his thinking.
+</Paragraph>
 
-<Paragraph>a living document which should be re-visited from time to time</Paragraph>
+<Paragraph>
+ Other creative developers like <Link url="https://joshbuchea.com/whats-a-digital-garden/">Josh Buchea</Link> and <Link url="https://garden.bradwoods.io/about">Brad Wooods</Link> also devoted posts to exploring this practice.
+</Paragraph>
+
+<Paragraph>
+I like the use of emoji or icons to mark the state of work in progress:
+</Paragraph>
+
+<List>
+  <ListItem>Seed - New content planted less than a year ago</ListItem>
+  <ListItem>Sprout - Content planted over a year ago & regularly tended</ListItem>
+  <ListItem>Mature - Content planted over 2 years ago & regularly tended</ListItem>
+  <ListItem>Decaying - Content not tended in over a year</ListItem>
+</List>
+
+<Paragraph>
+I would add consider adding pruning icon as a decay modifier. I will never finish all these projects, and pruning them down to a more manageable size is good thing for focus. But is the goal to finish or simply have fun learning?! By having a varied set of projects, I never lack for something to work on, and it's more fun than work if I only spend time on it until I lose interest or feel tired. 
+</Paragraph>
+
+<Paragraph>
+What then is the difference creative coding and working? Most people get paid to finish projects for other people. I have had many moment though when I've enjoyed the work so much so that I would have done it for free but of course kept that to myself. A day job does pay to pursue these passion projects.
+</Paragraph>
 
 <Canvas>
   <Story name="garden">

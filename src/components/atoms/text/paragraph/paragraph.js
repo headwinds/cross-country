@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './paragraph.scss';
+import styles from './paragraph.css';
 import clsx from 'clsx';
 
 const Paragraph = ({ text, children, customClass = '', customStyle = {} }) => (

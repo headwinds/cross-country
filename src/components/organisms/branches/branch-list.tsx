@@ -9,7 +9,7 @@ import { differenceBy, shuffle } from '../../../utils/fp-util';
 import Branch from '../branch';
 import { Column, Row, List, ListItem } from '../../../';
 import { BranchListProps } from './branch-list.types';
-import styles from './branches.scss';
+import styles from './branches.module.css';
 
 const BranchList: React.FC<BranchListProps> = ({ branches }) => {
   const getCards = cardBranches => {

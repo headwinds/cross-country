@@ -1,7 +1,7 @@
 import { Meta, Subtitle } from '@storybook/addon-docs';
-import { STORYBOOK } from "../../../../constants";
 import Number from './number';
-import styles from "./number.scss";
+import AnimateNumber from './animate-number';
+import styles from './number.css';
 
 <Meta title="menu/atoms/text/number" />
 
@@ -11,13 +11,35 @@ import styles from "./number.scss";
 
 <Canvas>
   <Story name="number">
-    <Number customStyle={{color: "teal", textAlign: "right"}}>42.34</Number>
-    <Number customStyle={{color: "gold", textAlign: "right"}}>2142.65</Number>
-    <Number customStyle={{color: "orange", textAlign: "right"}}>98298.92</Number>
+    <Number customStyle={{ color: 'teal', textAlign: 'right' }}>42.34</Number>
+    <Number customStyle={{ color: 'gold', textAlign: 'right' }}>2142.65</Number>
+    <Number customStyle={{ color: 'orange', textAlign: 'right' }}>98298.92</Number>
+  </Story>
+  <Story name="animate number">
+    <AnimateNumber customStyle={{ color: 'teal', textAlign: 'right' }} from={0} to={42} delay={0} />
+    <AnimateNumber
+      customStyle={{ color: 'hotpink', fontSize: 32, textAlign: 'right' }}
+      locale="en-US"
+      from={0}
+      to={6296668420}
+      delay={1000}
+    />
+    <AnimateNumber
+      customStyle={{ color: '#666', fontSize: 18, textAlign: 'right' }}
+      locale="de-DE"
+      from={9387787657434}
+      to={232343}
+      delay={2000}
+    />
   </Story>
 </Canvas>
 
-
-<RelatedArticles articles={[
-    {id: 0, title: 'Tweet about font variant numeric', url: 'https://twitter.com/xdesro/status/1508172487347036169?s=11&t=iqfwsjGjaQi9DWWoVigA0Q'},
-]} />
+<RelatedArticles
+  articles={[
+    {
+      id: 0,
+      title: 'Tweet about font variant numeric',
+      url: 'https://twitter.com/xdesro/status/1508172487347036169?s=11&t=iqfwsjGjaQi9DWWoVigA0Q',
+    },
+  ]}
+/>

@@ -1,6 +1,8 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
 import { STORYBOOK } from "../../../constants"
 import Group from './group';
+import Circle from '../circle';
+import SVG from '../svg';
 
 <Meta title="menu/atoms/group" />
 
@@ -12,6 +14,22 @@ In SVG, we use a group to contain and manipulate elements together.
 
 <Canvas>
   <Story name="group">
-    <Group />
+    <SVG width="500px" height="500px">
+      <Group style={{transform: 'translate(20px,20px)'}}>
+        <Circle cx={100} cy={100} radius={50} fill={'gold'} />
+        <Circle cx={20} cy={40} radius={20} fill={'teal'} />
+        <Circle cx={80} cy={15} radius={10} fill={'magenta'} />
+      </Group>
+      <Group style={{transform: 'translate(200px,210px) rotate(45deg)'}}>
+        <Circle cx={100} cy={100} radius={50} fill={'gold'} />
+        <Circle cx={20} cy={40} radius={20} fill={'teal'} />
+        <Circle cx={80} cy={15} radius={10} fill={'magenta'} />
+      </Group>
+      <Group style={{transform: 'scale(0.5) translate(800px,210px) rotate(125deg) skew(15deg)'}}>
+        <Circle cx={100} cy={100} radius={50} fill={'gold'} />
+        <Circle cx={20} cy={40} radius={20} fill={'teal'} />
+        <Circle cx={80} cy={15} radius={10} fill={'magenta'} />
+      </Group>
+    </SVG>
   </Story>
 </Canvas>

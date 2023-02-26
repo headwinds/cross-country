@@ -1,0 +1,27 @@
+.list {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    font-family: $font-common;
+}
+
+.listItem {
+    margin: 0px;
+    padding: 0px;
+    font-family: $font-common;
+    font-weight: 300;
+    color: #333
+}
+
+.horizontalList {
+    display: flex;
+}
+
+.horizontalListItem {
+    padding: 8px;
+}
+
+.horizontalListWrap {
+    display: flex;
+    flex-flow: wrap;
+}

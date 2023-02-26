@@ -29,7 +29,7 @@ const AnimatedCircles = () => {
   const dataset = generateDataset();
 
   const [visibleCircles, setVisibleCircles] = useState(dataset);
-  const ref = useRef();
+  const ref = useRef(null);
 
   useInterval(() => {
     const newDataset = generateDataset();

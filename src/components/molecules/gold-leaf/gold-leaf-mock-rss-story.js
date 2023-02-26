@@ -21,6 +21,7 @@ const GoldLeafMockRssStory = ({ config }) => {
 
   const portholeBranchModels = convertToPortholeBranches(behanceBranches);
   const goldLeafModel = portholeBranchModels[0];
+  console.log('RSS consumption goldLeafModel: ', goldLeafModel);
   return <GoldLeaf goldLeafModel={goldLeafModel} config={config} />;
 };
 
