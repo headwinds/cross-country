@@ -7,7 +7,7 @@
 Core Tech
 
 - react (18.02) & react-spring
-- scss modules
+- CSS modules
 - D3
 - Storybook
 - Typescript
@@ -80,11 +80,9 @@ This will generate the following files and your component name will also be capt
 
 When you ready, remember to expose the component in the index.ts file at the root.
 
-## Known Issues
+## SCSS to CSS modules
 
-While you can use this library with the latest stable version of Node (tested against Node 18), it can only be built with Node 14 (tested with 14.20.1). I need to sort out upgrading to Dart Sass with Webpack 5 and Storybook but if you plan to use it any other projects that uses the latest version of node, it should be fine to import since it's all compiled down to vanila js.
-
-The current issue preventing the upgrade has something to do with sass-loader and migration from 7 to 8 where I most likey need to upgrade how the options are configured. Again no errors with Node 14.20.1 but they appear as I switch to 16.9.1.
+Originally, I started with SCSS Module but "downgraded" to CSS to upgrade Node from 12 to 18 and possibly invest in PostCSS or something else in the future! Also CSS Modules works with React Native.
 
 [n 14.20.1](https://www.npmjs.com/package/n)
 
