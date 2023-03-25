@@ -4,7 +4,7 @@ import log from './log-util';
 const defaultImageUrl = './'; // need default images...
 const validateContent = entry => {
   // first check for empty or undefined
-  for (var ix in entry) {
+  for (const ix in entry) {
     if (String(entry[ix]) === 'undefined') {
       entry[ix] = 'not found';
     }
@@ -99,7 +99,7 @@ export const convertToPortholeBranches = branches => {
 
 export function createAllPortholeTrees() {
   // 1
-  var cabinPornTreeObj = {
+  const cabinPornTreeObj = {
     _id: '1',
     xmlUrl: 'http://cabinporn.com/rss',
     type: 'rss',
@@ -108,7 +108,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 2
-  var coolHuntingTreeObj = {
+  const coolHuntingTreeObj = {
     _id: '2',
     xmlUrl: 'http://feeds.coolhunting.com/ch',
     type: 'rss',
@@ -117,8 +117,8 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 3
-  //var swissmissTreeObj = { _id : "54cb9435d1796e940600008b", xmlUrl : "http://feeds2.feedburner.com/Swissmiss", type : "rss", title : "Swiss Miss" };
-  var designmilkTreeObj = {
+  //const swissmissTreeObj = { _id : "54cb9435d1796e940600008b", xmlUrl : "http://feeds2.feedburner.com/Swissmiss", type : "rss", title : "Swiss Miss" };
+  const designmilkTreeObj = {
     _id: '3',
     xmlUrl: 'http://feeds.feedburner.com/design-milk',
     type: 'rss',
@@ -127,7 +127,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 4
-  var wiredTreeObj = {
+  const wiredTreeObj = {
     _id: '4',
     xmlUrl: 'http://feeds.wired.com/wired/index',
     type: 'rss',
@@ -136,7 +136,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 5
-  var boingboingTreeObj = {
+  const boingboingTreeObj = {
     _id: '5',
     xmlUrl: 'http://feeds.boingboing.net/boingboing/iBag',
     type: 'rss',
@@ -145,7 +145,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 6
-  var kotakuTreeObj = {
+  const kotakuTreeObj = {
     _id: '6',
     xmlUrl: 'http://kotaku.com/rss/vip',
     type: 'rss',
@@ -154,7 +154,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 7
-  var treeHuggerTreeObj = {
+  const treeHuggerTreeObj = {
     _id: '7',
     xmlUrl: 'http://www.treehugger.com/feeds/latest/',
     type: 'rss',
@@ -163,7 +163,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 8
-  var nationalGeographicTreeObj = {
+  const nationalGeographicTreeObj = {
     _id: '8',
     xmlUrl: 'http://feeds.nationalgeographic.com/ng/photography/photo-of-the-day/',
     type: 'rss',
@@ -172,7 +172,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 9
-  var dwellTreeObj = {
+  const dwellTreeObj = {
     _id: '9',
     xmlUrl: 'http://www.dwell.com/articles/feed',
     type: 'rss',
@@ -181,7 +181,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 10
-  var colossalTreeObj = {
+  const colossalTreeObj = {
     _id: '10',
     xmlUrl: 'http://feeds.feedburner.com/colossal',
     type: 'rss',
@@ -190,7 +190,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 11
-  var polygonTreeObj = {
+  const polygonTreeObj = {
     _id: '11',
     xmlUrl: 'http://www.polygon.com/rss/index.xml',
     type: 'rss',
@@ -199,7 +199,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 12 - not working
-  var architizerTreeObj = {
+  const architizerTreeObj = {
     _id: '12',
     xmlUrl: 'https://architizer.com/blog/feed',
     type: 'rss',
@@ -208,7 +208,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 13
-  var harpersbazaarTreeObj = {
+  const harpersbazaarTreeObj = {
     _id: '13',
     xmlUrl: 'http://harpersbazaar.tumblr.com/rss',
     type: 'rss',
@@ -217,7 +217,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 14
-  var wTreeObj = {
+  const wTreeObj = {
     _id: '14',
     xmlUrl: 'http://w.tumblr.com/rss',
     type: 'rss',
@@ -226,7 +226,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 15
-  var booooooomTreeObj = {
+  const booooooomTreeObj = {
     _id: '15',
     xmlUrl: 'http://www.booooooom.com/feed/',
     type: 'rss',
@@ -235,7 +235,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 16
-  var abduzeedoTreeObj = {
+  const abduzeedoTreeObj = {
     _id: '16',
     xmlUrl: 'http://feeds.feedburner.com/abduzeedo',
     type: 'rss',
@@ -244,7 +244,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 17
-  var behanceTreeObj = {
+  const behanceTreeObj = {
     _id: '17',
     xmlUrl: 'https://www.behance.net/feeds/projects',
     type: 'rss',
@@ -253,7 +253,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 18
-  var bleacherReportTreeObj = {
+  const bleacherReportTreeObj = {
     _id: '18',
     xmlUrl: 'http://bleacherreport.tumblr.com/rss',
     type: 'rss',
@@ -262,7 +262,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 19
-  var gamespotTreeObj = {
+  const gamespotTreeObj = {
     _id: '19',
     xmlUrl: 'http://www.gamespot.com/feeds/mashup/',
     type: 'rss',
@@ -271,7 +271,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 20
-  var twitchfilmTreeObj = {
+  const twitchfilmTreeObj = {
     _id: '20',
     xmlUrl: 'http://feeds.twitchfilm.com/TwitchEverything',
     type: 'rss',
@@ -280,7 +280,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 21
-  var mmTreeObj = {
+  const mmTreeObj = {
     _id: '21',
     xmlUrl: 'http://www.50mm.jp/?format=rss',
     type: 'rss',
@@ -289,7 +289,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 22
-  var stuckTreeObj = {
+  const stuckTreeObj = {
     _id: '22',
     xmlUrl: 'http://www.stuckincustoms.com/feed/',
     type: 'rss',
@@ -298,7 +298,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 23
-  var nmeTreeObj = {
+  const nmeTreeObj = {
     _id: '23',
     xmlUrl: 'http://www.nme.com/rss/reviews',
     type: 'rss',
@@ -307,7 +307,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 24
-  var pitchforkTreeObj = {
+  const pitchforkTreeObj = {
     _id: '24',
     xmlUrl: 'http://pitchfork.com/rss/news/',
     type: 'rss',
@@ -316,7 +316,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 25
-  var boilerroomTreeObj = {
+  const boilerroomTreeObj = {
     _id: '25',
     xmlUrl: 'http://boilerroom.tv/feed/',
     type: 'rss',
@@ -325,7 +325,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 26
-  var ruinTreeObj = {
+  const ruinTreeObj = {
     _id: '26',
     xmlUrl: 'http://feeds.feedburner.com/RackkAndRuin',
     type: 'rss',
@@ -334,7 +334,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 27
-  var paperholmTreeObj = {
+  const paperholmTreeObj = {
     _id: '27',
     xmlUrl: 'http://www.paperholm.com/rss',
     type: 'rss',
@@ -343,9 +343,9 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 28
-  //var fraserTreeObj = { _id : "28", xmlUrl : "https://fraserflowers.wordpress.com/feed/", type : "rss", title : "fraser", category: "photography", origin: "porthole" };
+  //const fraserTreeObj = { _id : "28", xmlUrl : "https://fraserflowers.wordpress.com/feed/", type : "rss", title : "fraser", category: "photography", origin: "porthole" };
   // 29
-  var cristianTreeObj = {
+  const cristianTreeObj = {
     _id: '29',
     xmlUrl: 'http://cristianordonez.tumblr.com/rss/',
     type: 'rss',
@@ -354,7 +354,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 30
-  var headlandsTreeObj = {
+  const headlandsTreeObj = {
     _id: '30',
     xmlUrl: 'https://medium.com/feed/get-outside/',
     type: 'rss',
@@ -363,7 +363,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 31
-  var artnationTreeObj = {
+  const artnationTreeObj = {
     _id: '31',
     xmlUrl: 'https://artstation.com/artwork.rss',
     type: 'rss',
@@ -372,7 +372,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 32
-  var nycscoutTreeObj = {
+  const nycscoutTreeObj = {
     _id: '32',
     xmlUrl: 'http://feeds.feedburner.com/scoutingny',
     type: 'rss',
@@ -381,7 +381,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 33
-  var taviTreeObj = {
+  const taviTreeObj = {
     _id: '33',
     xmlUrl: 'http://www.thestylerookie.com/feeds/posts/default',
     type: 'rss',
@@ -390,7 +390,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 34
-  var repellerTreeObj = {
+  const repellerTreeObj = {
     _id: '34',
     xmlUrl: 'http://www.manrepeller.com/feed',
     type: 'rss',
@@ -399,7 +399,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 35
-  var slashFilmTreeObj = {
+  const slashFilmTreeObj = {
     _id: '35',
     xmlUrl: 'http://www.slashfilm.com/feed/',
     type: 'rss',
@@ -408,7 +408,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 36
-  var guardianFilmTreeObj = {
+  const guardianFilmTreeObj = {
     _id: '36',
     xmlUrl: 'http://www.theguardian.com/film/filmblog/rss',
     type: 'rss',
@@ -417,7 +417,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 37
-  var walkerFilmTreeObj = {
+  const walkerFilmTreeObj = {
     _id: '37',
     xmlUrl: 'http://blogs.walkerart.org/filmvideo/feed/',
     type: 'rss',
@@ -426,7 +426,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 38
-  var docFilmTreeObj = {
+  const docFilmTreeObj = {
     _id: '38',
     xmlUrl: 'http://www.documentary.org/rss.xml',
     type: 'rss',
@@ -435,9 +435,9 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 39
-  //var yahoosportsTreeObj = { _id : "39", xmlUrl : "https://ca.sports.yahoo.com/blogs/rss.xml", type : "rss", title : "Yahoo Sports", category: "sports", origin: "porthole" };
+  //const yahoosportsTreeObj = { _id : "39", xmlUrl : "https://ca.sports.yahoo.com/blogs/rss.xml", type : "rss", title : "Yahoo Sports", category: "sports", origin: "porthole" };
   // 40
-  var venturebeatTreeObj = {
+  const venturebeatTreeObj = {
     _id: '40',
     xmlUrl: 'http://venturebeat.com/feed/',
     type: 'rss',
@@ -446,7 +446,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 41
-  var killscreenTreeObj = {
+  const killscreenTreeObj = {
     _id: '41',
     xmlUrl: 'https://killscreen.com/feed/',
     type: 'rss',
@@ -455,7 +455,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 42
-  var inquisitrTreeObj = {
+  const inquisitrTreeObj = {
     _id: '42',
     xmlUrl: 'http://feeds.inquisitr.com/TheInquisitrSport',
     type: 'rss',
@@ -464,7 +464,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 43
-  var sbnationTreeObj = {
+  const sbnationTreeObj = {
     _id: '43',
     xmlUrl: 'http://www.sbnation.com/rss/current',
     type: 'rss',
@@ -473,7 +473,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 44
-  var dezeenTreeObj = {
+  const dezeenTreeObj = {
     _id: '44',
     xmlUrl: 'http://www.dezeen.com/feed/',
     type: 'rss',
@@ -482,7 +482,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 45
-  var contemporistTreeObj = {
+  const contemporistTreeObj = {
     _id: '45',
     xmlUrl: 'http://feeds.feedburner.com/contemporist',
     type: 'rss',
@@ -491,7 +491,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 46
-  var eikongraphiaTreeObj = {
+  const eikongraphiaTreeObj = {
     _id: '46',
     xmlUrl: 'http://eikongraphia.com/?feed=rss2',
     type: 'rss',
@@ -500,7 +500,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 47
-  var unhappyTreeObj = {
+  const unhappyTreeObj = {
     _id: '47',
     xmlUrl: 'http://unhappyhipsters.com/rss',
     type: 'rss',
@@ -509,7 +509,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 48
-  var architectureTreeObj = {
+  const architectureTreeObj = {
     _id: '48',
     xmlUrl: 'http://architectureblog.tumblr.com/rss',
     type: 'rss',
@@ -518,7 +518,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 49
-  var designboomTreeObj = {
+  const designboomTreeObj = {
     _id: '49',
     xmlUrl: 'http://www.designboom.com/feed/',
     type: 'rss',
@@ -527,7 +527,7 @@ export function createAllPortholeTrees() {
     origin: 'porthole',
   };
   // 50
-  var nautilusTreeObj = {
+  const nautilusTreeObj = {
     _id: '50',
     xmlUrl: 'http://nautil.us/rss/all',
     type: 'rss',
@@ -601,6 +601,9 @@ export function createAllPortholeTrees() {
   };
   return allPortholeTrees;
 }
+
+const allPortholeTrees = createAllPortholeTrees();
+
 export const getVideoUrl = branchObj => {
   // then try the description
   if (undefined !== branchObj.description) {
@@ -626,8 +629,8 @@ export const getVideoUrl = branchObj => {
 const feedUtil = {
   convertToPortholeBranches,
   getVideoUrl,
-  allPortholeTrees,
   getRSSBranch,
+  allPortholeTrees,
 };
 
 export default feedUtil;
