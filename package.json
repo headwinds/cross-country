@@ -67,7 +67,7 @@
     "@storybook/manager-webpack5": "^6.5.16",
     "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
-    "@svgr/rollup": "^5.5.0",
+    "@svgr/rollup": "^7.0.0",
     "@testing-library/react": "^13.4.0",
     "acorn": "^7.2.0",
     "autoprefixer": "^9.8.0",
