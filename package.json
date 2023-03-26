@@ -106,7 +106,7 @@
     "webpack": "^5.75.0",
     "webpack-build-notifier": "^2.0.1",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^4.13.1"
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.16.7",
