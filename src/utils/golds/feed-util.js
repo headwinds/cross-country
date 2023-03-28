@@ -110,7 +110,7 @@ export function createAllPortholeTrees() {
   // 2
   const coolHuntingTreeObj = {
     _id: '2',
-    xmlUrl: 'http://feeds.coolhunting.com/ch',
+    xmlUrl: 'https://coolhunting.com/feed/',
     type: 'rss',
     title: 'Cool Hunting',
     category: 'design',
