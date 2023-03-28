@@ -14,11 +14,11 @@ Core Tech
 
 [Cross Country Storybook via Github Pages](https://headwinds.github.io/cross-country)
 
-Bored of building the same enterprise UI without any sizzle? Are you a fan of the Sims, Starcraft, Chess, Dungeons and Dragons and other table top role playing games (TTRPGs)? Do you pour over your personal stats from Strava or Spotify? Is your year always in review?! By playing with code, you can actually hone your dayjob skills while exploring subject matter that you are more passionate.
+Bored of building the same enterprise UI without any sizzle? Are you a fan of the Sims, Starcraft, Chess, Dungeons and Dragons and other table top role playing games (TTRPGs)?
 
-Do you keep a sketch book? Do you draw notes about fantasy UI, game mechanics and envision a future of EVs and trips to Mars?
+Do you keep a sketch book, and draw notes about fantasy UI, game mechanics and envision a future of EVs and trips to Mars? Do you pour over your personal stats from Strava or Spotify? Is your year always in review?! By playing with code, you can actually hone your dayjob skills while exploring subject matter that you are more passionate.
 
-This library is an escape from conversative eCommerce apps, and meant to translate your analog sketch book pages into a digital works that can be shared by other like-minded individuals. Perhaps, they will become some new mixed AR/VR experience?!
+This library is an escape from conversative eCommerce apps, and meant to translate your analog sketch book pages into a digital works that can be shared by other like-minded individuals. Perhaps, they will become some new mixed AR/VR experience?! Perhaps, we'll keep it simple and retro. I'm know I'm not tired of 2D games.
 
 The components within this library are designed responsively to be used to write articles; create tile-based games; or even better combine writing, gaming, with a sample dataset and tell a story or converse with an AI.
 
@@ -118,18 +118,16 @@ or
 npm install --save cross-country
 ```
 
-You want to open 2 terminals
-
-Terminal 1. where you build the components
-
-```
-yarn start
-```
-
-Terminal 2. Storybook
+While building, you can use Storybook
 
 ```
 yarn storybook
+```
+
+When you are ready to publish, you can test the build by starting it
+
+```
+yarn start
 ```
 
 Open your browser to http://localhost:6006/
@@ -258,6 +256,11 @@ npm run deploy-storybook-ci
 - [stygiangen](https://github.com/slashman/stygiangen/)
 - [Fantasy-Map-Generator](https://azgaar.github.io/Fantasy-Map-Generator/)
 - [react plotly mapbox](https://towardsdatascience.com/a-step-by-step-guide-to-develop-a-map-based-application-part-i-757766b04f77)
+
+## Automation
+
+- [Playwright & Github Actions](https://maciekpalmowski.dev/buying-a-bicycle-using-playwright/)
+- [Vercel cronjobs](https://vercel.com/blog/cron-jobs)
 
 ## Functional Programming
 
