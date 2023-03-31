@@ -1,19 +1,22 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
-import { Paragraph } from "../../"
+import { Paragraph } from '../../';
 import Drone from './drone';
 import DroneStory from './drone-story';
 
-<Meta title="menu/organisms/drone" />
+<Meta title="design system/organisms/drone" />
 
 # Drone
 
 <Subtitle>an organism that can transform when the window resizes</Subtitle>
 
-<Paragraph>Along with responding to the window, we should also be able to command this drone to transform and move around the screen without colliding into our drones</Paragraph>
+<Paragraph>
+  Along with responding to the window, we should also be able to command this drone to transform and move around the
+  screen without colliding into our drones
+</Paragraph>
 
 <Canvas>
   <Story name="drone">
-    <Drone config={{id: 0, tranformedState: 'compact'}} />
+    <Drone config={{ id: 0, tranformedState: 'compact' }} />
   </Story>
   <Story name="custom drone">
     <DroneStory />

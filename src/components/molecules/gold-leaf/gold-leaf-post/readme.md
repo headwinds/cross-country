@@ -7,11 +7,13 @@
 - https://tinyhousetalk.com/free-10x14-cabin-plans/
 - https://www.businessinsider.com/unyoked-off-grid-tiny-homes-strong-traveler-demand-photos-2023-3
 - https://www.dezeen.com/2023/03/18/caspar-schols-flatpack-cabin-anna/
+- https://www.treehugger.com/bloxs-luxury-prefab-tiny-home-made-out-of-cross-laminated-timber-7369100
 
 ##### TTRPG
 
 - https://swordandsource.ca/getting-started-with-solo-rpgs/?ref=sword-source-newsletter
 - https://www.polygon.com/2021/3/26/22352414/field-guide-to-memory-keepsake-game-impressions-interview
+- https://quirkybirdgames.itch.io/game-publishing-a-micro-rpg
 
 #### Machine Learning
 
@@ -28,6 +30,7 @@
 - https://medium.com/react-native-training/caching-images-in-react-native-709fd94b3e71
 - https://www.educative.io/answers/how-to-cache-images-in-react-native-with-react-native-fast-image
 - https://tinyacquisitions.com
+- https://maciekpalmowski.dev/buying-a-bicycle-using-playwright/
 
 ##### Climate
 
@@ -37,7 +40,6 @@
 - https://www.vox.com/energy-and-environment/2018/1/19/16908402/global-warming-2-degrees-climate-change
 - https://www.carbonbrief.org/analysis-when-might-the-world-exceed-1-5c-and-2c-of-global-warming/
 - https://climate.nasa.gov/vital-signs/global-temperature/
-
 
 ##### Backyard
 

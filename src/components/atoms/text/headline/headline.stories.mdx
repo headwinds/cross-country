@@ -2,9 +2,9 @@ import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
 import { STORYBOOK } from '../../../../constants';
 import Headline from './headline';
 import { SubHeadline, Column, Image } from '../../../';
-import styles from './headline.css';
+import styles from './headline.module.css';
 
-<Meta title="menu/atoms/text/headline" />
+<Meta title="design system/atoms/text/headline" />
 
 # Headline
 
@@ -15,8 +15,8 @@ import styles from './headline.css';
     <Headline color="lightslategrey">The First Footstep</Headline>
   </Story>
   <Story name="headline with subheadline">
-    <Column hasChildrenCentered>
-      <Headline customClass={styles.warIsOver} customStyle={{ fontSize: 60 }}>
+    <Column customStyle={{ alignItems: 'center' }}>
+      <Headline customClass={styles.warIsOver} customStyle={{ fontSize: 60, fontWeight: 700 }}>
         WAR
         <br />
         IS

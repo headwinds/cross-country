@@ -1,45 +1,61 @@
-
-
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
 import Login from '../login';
 import { privateConfig } from '../../../../../cross-country-config-private';
-import { Paragraph, Link, Hilight } from "../../../";
+import { Paragraph, Link, Hilight } from '../../../';
 
-<Meta title="menu/organisms/login" />
+<Meta title="design system/organisms/login" />
 
 # Login
 
 <Subtitle>users can sign in into your application</Subtitle>
 
 <Paragraph>
-We need to include a login within our apps to identify the user. It provides some security. Today, with one-click social logins - "Sigin with Google" - the login process has less friction and the user does not need to register on multiple sites. 
+  We need to include a login within our apps to identify the user. It provides some security. Today, with one-click
+  social logins - "Sigin with Google" - the login process has less friction and the user does not need to register on
+  multiple sites.
 </Paragraph>
 <Paragraph>
-This library assumes that the user already has at least one social login, and also include its own registration flow. 
-We all have an email account right? Having an email account from a major provider like Google or Microsoft is the keystone of most login flows as we need to verify the account by having the user click a link from the email. We need to assume that the email account itself is secure that we as app develops don't also need to worry about building that out.''
- It does, however, make it easier to connect at least one social login for the user to login with their preferred account that should include additional info like their email address and a link to their avatar image.      
+  This library assumes that the user already has at least one social login, and also include its own registration flow.
+  We all have an email account right? Having an email account from a major provider like Google or Microsoft is the
+  keystone of most login flows as we need to verify the account by having the user click a link from the email. We need
+  to assume that the email account itself is secure that we as app develops don't also need to worry about building that
+  out.'' It does, however, make it easier to connect at least one social login for the user to login with their
+  preferred account that should include additional info like their email address and a link to their avatar image.
 </Paragraph>
 <Paragraph>
-If the user decides to skip the social login and use this form instead, ideally we want login to processed without issue. After the user has filled out this form and clicks send, we will send these credentails to the API.  
+  If the user decides to skip the social login and use this form instead, ideally we want login to processed without
+  issue. After the user has filled out this form and clicks send, we will send these credentails to the API.
 </Paragraph>
 <Paragraph>
-In the backend, we will search for the user in the database and then compare the password against the encrypted one that they used to register.
+  In the backend, we will search for the user in the database and then compare the password against the encrypted one
+  that they used to register.
 </Paragraph>
 <Paragraph>
-But what happens if something goes wrong? How can we best assure that the use is able to login? For that matter, how can we improve any backend request? While researching this problem, I found this article, <Link url="https://blog.bearer.sh/add-retry-to-api-calls-javascript-node/">Add Retries to Your API Calls</Link> (Mark Michon, April 02 2020) and really liked this retry strategy. It seemed like simple yet elegant approach handling network requests which could be converted to a util file wrapping fetch so that I could use it anywhere in my project. In fact, I could create a <Hilight color="">useRetryFetch</Hilight> hook but does this hook already exist? It does! Along with having an API similar to Apollo use query and mutation functions, React Query also has the ability to retry queries:  
-<Link url="https://react-query.tanstack.com/guides/query-retries">Add Retries to Your API Calls</Link>. So intead of creating a custom hook, let's leverage React Query and add it is a dependency to this library.
+  But what happens if something goes wrong? How can we best assure that the use is able to login? For that matter, how
+  can we improve any backend request? While researching this problem, I found this article,{' '}
+  <Link url="https://blog.bearer.sh/add-retry-to-api-calls-javascript-node/">Add Retries to Your API Calls</Link> (Mark
+  Michon, April 02 2020) and really liked this retry strategy. It seemed like simple yet elegant approach handling
+  network requests which could be converted to a util file wrapping fetch so that I could use it anywhere in my project.
+  In fact, I could create a <Hilight color="">useRetryFetch</Hilight> hook but does this hook already exist? It does!
+  Along with having an API similar to Apollo use query and mutation functions, React Query also has the ability to retry
+  queries:
+  <Link url="https://react-query.tanstack.com/guides/query-retries">Add Retries to Your API Calls</Link>. So intead of creating
+  a custom hook, let's leverage React Query and add it is a dependency to this library.
 </Paragraph>
 
 <SubHeadline text="Animating Components" />
 
 <Paragraph>
-  In this example, we can see all the actor components that make up the <Link url='/?path=/story/menu-organisms-login--login'>Login</Link>. The login has three phases: it will appear; the user will use it to login; and then it will disappear as it's no longer required and then screen could transition to the main content. 
-</Paragraph>
-  
-<Paragraph>
-  There is a certain natural design in the order of the animation. We start with the title and end with the submit button which would reflect the order of the form and the user's interaction.
+  In this example, we can see all the actor components that make up the{' '}
+  <Link url="/?path=/story/menu-organisms-login--login">Login</Link>. The login has three phases: it will appear; the
+  user will use it to login; and then it will disappear as it's no longer required and then screen could transition to
+  the main content.
 </Paragraph>
 
+<Paragraph>
+  There is a certain natural design in the order of the animation. We start with the title and end with the submit
+  button which would reflect the order of the form and the user's interaction.
+</Paragraph>
 
 ```
 <Login
@@ -56,39 +72,44 @@ But what happens if something goes wrong? How can we best assure that the use is
 />
 ```
 
-
 <Canvas>
   <Story name="login">
-        <Login 
-            crossCountryConfig = { privateConfig || {
-                UNSPLASH_API_KEY: "YOUR-API-KEY",
-            }}
-            isAnimated = {false}
-            hasImage = {true}
-            hasBackground = {false}
-            imageUrl = {null}
-        />
-    </Story>
-    <Story name="login without image">
-        <Login 
-            crossCountryConfig = { privateConfig || {
-                UNSPLASH_API_KEY: "YOUR-API-KEY",
-            }}
-            isAnimated = {false}
-            hasImage = {true}
-            hasBackground = {false}
-            imageUrl = {null}
-        />
-    </Story>
-     <Story name="login with animations">
-        <Login 
-            crossCountryConfig = { privateConfig || {
-                UNSPLASH_API_KEY: "YOUR-API-KEY",
-            }}
-            isAnimated = {true}
-            hasImage = {false}
-            hasBackground = {false}
-            imageUrl = {null}
-        />
-    </Story>
+    <Login
+      crossCountryConfig={
+        privateConfig || {
+          UNSPLASH_API_KEY: 'YOUR-API-KEY',
+        }
+      }
+      isAnimated={false}
+      hasImage={true}
+      hasBackground={false}
+      imageUrl={null}
+    />
+  </Story>
+  <Story name="login without image">
+    <Login
+      crossCountryConfig={
+        privateConfig || {
+          UNSPLASH_API_KEY: 'YOUR-API-KEY',
+        }
+      }
+      isAnimated={false}
+      hasImage={true}
+      hasBackground={false}
+      imageUrl={null}
+    />
+  </Story>
+  <Story name="login with animations">
+    <Login
+      crossCountryConfig={
+        privateConfig || {
+          UNSPLASH_API_KEY: 'YOUR-API-KEY',
+        }
+      }
+      isAnimated={true}
+      hasImage={false}
+      hasBackground={false}
+      imageUrl={null}
+    />
+  </Story>
 </Canvas>
