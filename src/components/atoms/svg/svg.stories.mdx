@@ -1,8 +1,8 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
-import {STORYBOOK} from "../../../constants"
+import { STORYBOOK } from '../../../constants';
 import SVG from './svg';
 
-<Meta title="menu/atoms/svg" />
+<Meta title="design system/atoms/svg" />
 
 # SVG
 
@@ -14,11 +14,15 @@ A blank canvas where we can create data visualizations, games and other experien
   <Story name="basic">
     <SVG />
   </Story>
-    <Story name="with text">
-    <SVG customStyle={{
+  <Story name="with text">
+    <SVG
+      customStyle={{
         border: '4px solid pink',
-      }}>
-    <text x={20} y={30} style={{font: "bold 30px sans-serif"}}>hello world</text>
+      }}
+    >
+      <text x={20} y={30} style={{ font: 'bold 30px sans-serif' }}>
+        hello world
+      </text>
     </SVG>
   </Story>
 </Canvas>

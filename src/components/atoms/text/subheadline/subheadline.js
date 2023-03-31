@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './subheadline.css';
+import styles from './subheadline.module.css';
 import clsx from 'clsx';
 
 const SubHeadline = ({ text, color = '', size = 'small', children, customStyle = {}, customClass = '' }) => {

@@ -18,7 +18,7 @@ import useDeviceDetection from '../../hooks/useDeviceDetection/';
 import useTheme from '../../hooks/useTheme/';
 
 // utils & hooks
-import { getColorPalettes } from '../../utils/color-util';
+import ColorUtil from '../../../utils/color-util';
 // import numberUtil from '../../utils/number-util'; <-- use Class and needs a babel plugin
 
 // styles
@@ -80,7 +80,7 @@ const Intro = () => {
   useEffect(() => {
     const { isFetching, palette } = state;
     if (!isFetching && !palette) {
-      const newPalette = getColorPalettes(3);
+      const newPalette = ColorUtil.getColorPalettes(3);
       setState({ ...state, palette: newPalette });
     }
   });
