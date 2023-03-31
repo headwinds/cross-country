@@ -1,8 +1,8 @@
 import { Meta, Subtitle } from '@storybook/addon-docs';
 import Prism from 'prismjs';
-import { SubHeadline, Paragraph, List, ListItem, Link, RelatedArticles }  from '../../../src/components';
+import { SubHeadline, Paragraph, List, ListItem, Link, RelatedArticles } from '../../../src/components';
 
-<Meta title="menu/missions/too many connections" />
+<Meta title="missions/too many connections" />
 
 # Too Many Connections
 
@@ -10,27 +10,27 @@ import { SubHeadline, Paragraph, List, ListItem, Link, RelatedArticles }  from '
 
 When a user makes a request to the server which needs to query a database, ideally they should receive data back in less than a second (< 400 ms).
 
-What happens when we are using the serverless host, [Vercel](https://vercel.com), and we have multiple users attempting to connect to the same database? With a serverless function, we will open connection to the database when the function begins and close the connection the connection after it completes. 
+What happens when we are using the serverless host, [Vercel](https://vercel.com), and we have multiple users attempting to connect to the same database? With a serverless function, we will open connection to the database when the function begins and close the connection the connection after it completes.
 
-Our database has a limited amount of connections. If our plan on [ElephantSQL](https://www.elephantsql.com/plans.html) has only 10 concurrent connections and they are all taken, what happens to the next user who attempts to request data? We don't want them to receive a "too many connections" error! 
+Our database has a limited amount of connections. If our plan on [ElephantSQL](https://www.elephantsql.com/plans.html) has only 10 concurrent connections and they are all taken, what happens to the next user who attempts to request data? We don't want them to receive a "too many connections" error!
 
-Instead, we can provide feedback that the user may need to wait longer while the server continually attempts to connect finally returning the requested data. 
+Instead, we can provide feedback that the user may need to wait longer while the server continually attempts to connect finally returning the requested data.
 
 ## Servers & Database
 
-For hobbyist projects, I have selected [Flask](https://flask.palletsprojects.com/en/2.0.x/) and [NestJS](https://nestjs.com/). In both cases, I'm using PostgreSQL as the database and an [ORM](https://blog.bitsrc.io/what-is-an-orm-and-why-you-should-use-it-b2b6f75f5e2a) to talk to it. I have [SQLAlchemy](https://www.sqlalchemy.org/) within Flask and [Sequelize](https://sequelize.org/) within NestJS. Along with leaning on an ORM, I also want to learn and write SQL on its own.  
+For hobbyist projects, I have selected [Flask](https://flask.palletsprojects.com/en/2.0.x/) and [NestJS](https://nestjs.com/). In both cases, I'm using PostgreSQL as the database and an [ORM](https://blog.bitsrc.io/what-is-an-orm-and-why-you-should-use-it-b2b6f75f5e2a) to talk to it. I have [SQLAlchemy](https://www.sqlalchemy.org/) within Flask and [Sequelize](https://sequelize.org/) within NestJS. Along with leaning on an ORM, I also want to learn and write SQL on its own.
 
 ## Python Flask
 
-For Flask, I'm using the [blueprints](https://flask.palletsprojects.com/en/2.0.x/blueprints/) approach to building a RESTFUL Api. 
+For Flask, I'm using the [blueprints](https://flask.palletsprojects.com/en/2.0.x/blueprints/) approach to building a RESTFUL Api.
 
-## NestJS 
+## NestJS
 
-NestJS has a modular architecture with pattern that was designed to be attractive to Java developers offering them familiar terms like DTOs and Entities. 
+NestJS has a modular architecture with pattern that was designed to be attractive to Java developers offering them familiar terms like DTOs and Entities.
 
 <pre>
-<code className="language-javascript">
-{`
+  <code className="language-javascript">
+    {`
   import { Dialect } from 'sequelize/types';
 
   export const config = {
@@ -71,14 +71,12 @@ NestJS has a modular architecture with pattern that was designed to be attractiv
     jwtPrivateKey: 'razzle-dazzle',
   };
   `}
-</code>
+  </code>
 </pre>
 
 It took me too long to find a decent article how to display a code snippet in Storybook so a special thanks to Jason Ewins and his write up,  
- [get prismjs working in react](https://medium.com/get-it-working/get-prismjs-working-in-react-a6d989e59290). I didn't want a code panel but like I have above where I can talk about and include the code in the same document. 
+ [get prismjs working in react](https://medium.com/get-it-working/get-prismjs-working-in-react-a6d989e59290). I didn't want a code panel but like I have above where I can talk about and include the code in the same document.
 
 Lee Robinson's [tweet about connecting serverless to a database](https://twitter.com/leeerob/status/1430177168307412998?s=11)
-
-
 
 <RelatedArticles />

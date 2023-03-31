@@ -1,61 +1,78 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
-import { Paragraph, Link, Headline, SubHeadline } from "../../../../";
-import AnimateActorUseSpringRef from "./animate-actor-use-spring-ref";
-import AnimateActorUseChain from "./animate-actor-use-chain";
-import AnimateActorPatrol from "./animate-actor-patrol";
+import { Paragraph, Link, Headline, SubHeadline } from '../../../../';
+import AnimateActorUseSpringRef from './animate-actor-use-spring-ref';
+import AnimateActorUseChain from './animate-actor-use-chain';
+import AnimateActorPatrol from './animate-actor-patrol';
 import Prism from 'prismjs';
 
-<Meta title="menu/organisms/animation/actors" />
+<Meta title="design system/organisms/animation/actors" />
 
 <Headline text="Scripting Animation with react-spring" />
 
 <Paragraph>
-I've selected <Link url="https://www.react-spring.dev/">react-spring</Link> as the animation library for native html tags because I like how it is Physics based. I really enjoyed exploring the Box2D physics engine; it did such an amazing job of collision detection; but it's just not practical for building interface animations.
+  I've selected <Link url="https://www.react-spring.dev/">react-spring</Link> as the animation library for native html
+  tags because I like how it is Physics based. I really enjoyed exploring the Box2D physics engine; it did such an
+  amazing job of collision detection; but it's just not practical for building interface animations.
 </Paragraph>
 
 <Paragraph>
-I actually believe <Link url="https://greensock.com/gsap/">GSAP</Link> as has an easier API for beginners but there is something more compelling about react-spring.
+  I actually believe <Link url="https://greensock.com/gsap/">GSAP</Link> as has an easier API for beginners but there is
+  something more compelling about react-spring.
 </Paragraph>
+
+<Paragraph>What if I could combine the ease of GSAP's API with the physics of react-spring?</Paragraph>
 
 <Paragraph>
-What if I could combine the ease of GSAP's API with the physics of react-spring?
+  I'll look at the various pieces that make up a complex animation breaking them down into individual commands like
+  moveUp or moveDown so that we can eventually chain the commands together.
 </Paragraph>
-
-<Paragraph>I'll look at the various pieces that make up a complex animation breaking them down into individual commands like moveUp or moveDown so that we can eventually chain the commands together.</Paragraph>
 
 <SubHeadline text="Simple Animation with useSpringRef and a command" />
 
-<Paragraph>The <Link url="https://www.react-spring.dev/docs/concepts/imperative-api">Imperative API</Link> will control the animation without re-rendering the component. useSpringRef provides a hook and the ability to add multiple controllers to a single ref.
+<Paragraph>
+  The <Link url="https://www.react-spring.dev/docs/concepts/imperative-api">Imperative API</Link> will control the
+  animation without re-rendering the component. useSpringRef provides a hook and the ability to add multiple controllers
+  to a single ref.
 </Paragraph>
 
 <Paragraph>
-  You can think of each component on the screen as an actor. We want to design meaningful animations that enchance the interaction. Typically, in UI design, you see text animated.
+  You can think of each component on the screen as an actor. We want to design meaningful animations that enchance the
+  interaction. Typically, in UI design, you see text animated.
 </Paragraph>
 
 <Paragraph>
-  Similar to D3, useTransition has the same concept where by removing elements from the array will trigger the leave animation. I would hazard a guess that D3 may have even inspired this API since they both use data as the array name.  
+  Similar to D3, useTransition has the same concept where by removing elements from the array will trigger the leave
+  animation. I would hazard a guess that D3 may have even inspired this API since they both use data as the array name.
 </Paragraph>
-
-
-
 
 <SubHeadline text="SpringValue" />
 
-<Paragraph>By learning about <Link url="https://www.react-spring.dev/docs/advanced/spring-value">SpringValue</Link>, we can better understand how to manipulate the animation over time.</Paragraph>
+<Paragraph>
+  By learning about <Link url="https://www.react-spring.dev/docs/advanced/spring-value">SpringValue</Link>, we can
+  better understand how to manipulate the animation over time.
+</Paragraph>
 
 <Paragraph>Speaking of time, how can we controll how long or how short the animation is?</Paragraph>
 
-<Paragraph>Since React-spring is physics-based, the time is controlled via the physical properties set in the <Link url="https://react-spring.dev/docs/advanced/config">spring configs.</Link></Paragraph>
+<Paragraph>
+  Since React-spring is physics-based, the time is controlled via the physical properties set in the{' '}
+  <Link url="https://react-spring.dev/docs/advanced/config">spring configs.</Link>
+</Paragraph>
 
 <AnimateActorUseSpringRef />
 
-<Paragraph>In this example, there doesn't seem to be much need for useSpringRef but I'm hoping that by using it here, it will eventually make it easier to chain commands together.</Paragraph>
+<Paragraph>
+  In this example, there doesn't seem to be much need for useSpringRef but I'm hoping that by using it here, it will
+  eventually make it easier to chain commands together.
+</Paragraph>
 
-<Paragraph>Within the props, each property is a SpringValue so it get the value of each one we need to use get()</Paragraph>
+<Paragraph>
+  Within the props, each property is a SpringValue so it get the value of each one we need to use get()
+</Paragraph>
 
 <pre>
-<code className="language-javascript">
-{`
+  <code className="language-javascript">
+    {`
 const springRef = useSpringRef();
   const [isDisabled, setDisabled] = useState(false);
 
@@ -98,33 +115,49 @@ const springRef = useSpringRef();
     setDisabled(true);
   };
 `}
-</code>
+  </code>
 </pre>
-
 
 <SubHeadline text="Events" />
 
-<Paragraph>By watching the <Link url="https://www.react-spring.dev/docs/advanced/events">events</Link>, we could build more complex animations. For instance, once the has animation has come to a rest, we move to another location.</Paragraph>
+<Paragraph>
+  By watching the <Link url="https://www.react-spring.dev/docs/advanced/events">events</Link>, we could build more
+  complex animations. For instance, once the has animation has come to a rest, we move to another location.
+</Paragraph>
 
 <SubHeadline text="useChain" />
 
-<Paragraph>But there is an easier way to accomplish this orchestration. We can review the docs for <Link url="https://react-spring.dev/docs/components/use-chain">chain</Link> and <Link url="https://react-spring.dev/docs/advanced/async-animations">async animations</Link> to script the commands.</Paragraph>
+<Paragraph>
+  But there is an easier way to accomplish this orchestration. We can review the docs for{' '}
+  <Link url="https://react-spring.dev/docs/components/use-chain">chain</Link> and{' '}
+  <Link url="https://react-spring.dev/docs/advanced/async-animations">async animations</Link> to script the commands.
+</Paragraph>
 
 <AnimateActorUseChain />
 
-<Paragraph>Alright, that's cool but how do we break out of animation around responsd to an event? Again we turn to <Link url="https://react-spring.dev/docs/advanced/async-animations">async animations</Link> guide and this time use the supplied cancel function.</Paragraph>
+<Paragraph>
+  Alright, that's cool but how do we break out of animation around responsd to an event? Again we turn to{' '}
+  <Link url="https://react-spring.dev/docs/advanced/async-animations">async animations</Link> guide and this time use
+  the supplied cancel function.
+</Paragraph>
 
 <Paragraph>Let's build an animation where our Warrior is patrolling the castle grounds.</Paragraph>
 
-<Paragraph>While docs show that we can pass a cancel function, I don't see how I can access nor use it effectively. Instead, and possibly easier, let's simply use the pause and resume api functions to achieve the same results.</Paragraph>
+<Paragraph>
+  While docs show that we can pass a cancel function, I don't see how I can access nor use it effectively. Instead, and
+  possibly easier, let's simply use the pause and resume api functions to achieve the same results.
+</Paragraph>
 
 <AnimateActorPatrol />
 
-<Paragraph>At first, I thought I could useState for the counter but after trying it and observing that the associated re-render can negatively affect the running animtion. Then, I used a simple let counter within the move function.</Paragraph>
+<Paragraph>
+  At first, I thought I could useState for the counter but after trying it and observing that the associated re-render
+  can negatively affect the running animtion. Then, I used a simple let counter within the move function.
+</Paragraph>
 
 <pre>
-<code className="language-javascript">
-{`
+  <code className="language-javascript">
+    {`
 const move = distance => {
     const { x, y, z } = props;
     const curX = x.get();
@@ -157,5 +190,5 @@ const move = distance => {
     });
   };
 `}
-</code>
+  </code>
 </pre>

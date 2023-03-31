@@ -134,26 +134,17 @@ Open your browser to http://localhost:6006/
 
 To build & deploy storybook `yarn build-storybook`
 
-3. Example - you will need to link the library - if link fail, everything in the example is also available in the storybook
+## Publish to NPM
+
+After you commit, make sure you have updated the version number before publishing usually `npm version patch`
 
 ```
-cd example
-yarn start
+npm login
+your-username-not-your-email
+your-password
+now-your-email
+npm publish
 ```
-
-Open your browser to http://localhost:3000/
-
-In order to use React Hooks, you will also have to [link react](https://stackoverflow.com/a/58612244/581803) or you will get a rule of hooks error.
-
-If we see: Error: Invalid hook call. Hooks can only be called inside of the body
-
-run:
-
-```
-npm link example/node_modules/react
-```
-
-You may need to stop and restart both library and example folders.
 
 ## Usage
 
@@ -188,18 +179,6 @@ const App = () => (
         </Column>
     )
 export default App;
-```
-
-## Publish to NPM
-
-After you commit, make sure you have updated the version number before publishing usually `npm version patch`
-
-```
-npm login
-your-username-not-your-email
-your-password
-now-your-email
-npm publish
 ```
 
 If you 2-factor indentifaction, setup you may have to use for Google Authenticator on your phone.
@@ -298,6 +277,7 @@ npm run deploy-storybook-ci
 - [Creative Applications](https://www.creativeapplications.net/)
 - [Making of an AI Storyteller](https://towardsdatascience.com/the-making-of-an-ai-storyteller-c3b8d5a983f5)
 - [Ivy: a mission to unify all ML frameworks](https://lets-unify.ai/)
+- [Replicate](https://replicate.com/)
 
 ### Gaming
 

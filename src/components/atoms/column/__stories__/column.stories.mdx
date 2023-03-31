@@ -2,7 +2,7 @@ import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
 import Column from '../column';
 import Label from '../../text/label';
 
-<Meta title="menu/atoms/column" />
+<Meta title="design system/atoms/column" />
 
 # Column
 
@@ -10,6 +10,10 @@ import Label from '../../text/label';
 
 <Canvas>
   <Story name="column">
-    <Column customStyle={{backgroundColor: 'hsla(60, 100%, 25%, 75%)'}}><Column>hello</Column><Column> I'm an olive </Column><Column>hlsa column</Column></Column>
+    <Column customStyle={{ backgroundColor: 'hsla(60, 100%, 25%, 75%)' }}>
+      <Column>hello</Column>
+      <Column> I'm an olive </Column>
+      <Column>hlsa column</Column>
+    </Column>
   </Story>
 </Canvas>
