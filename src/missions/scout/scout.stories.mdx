@@ -1,41 +1,79 @@
 import { Meta, Subtitle } from '@storybook/addon-docs';
-import { Headline, SubHeadline, Paragraph, List, ListItem, Link, RelatedArticles }  from '../../../src/components';
+import { Headline, SubHeadline, Paragraph, List, ListItem, Link, RelatedArticles } from '../../../src/components';
 
-<Meta title="menu/missions/api" />
+<Meta title="missions/api" />
 
 <Headline>Building an API to Split Life Between City & Country</Headline>
 
 <Subtitle>Rate Limit</Subtitle>
 
 <Paragraph>
-Since I'm dealing with serverless, I need be aware of how Vercel can help with <Link url="https://github.com/vercel/next.js/discussions/12134">rate limiting</Link> and protect the API against attacks. I am using the <Link url="https://pypi.org/project/Flask-Limiter/">flask_limiter</Link> library but am uncertain whether or not it will work for serverless?! 
+  Since I'm dealing with serverless, I need be aware of how Vercel can help with{' '}
+  <Link url="https://github.com/vercel/next.js/discussions/12134">rate limiting</Link> and protect the API against
+  attacks. I am using the <Link url="https://pypi.org/project/Flask-Limiter/">flask_limiter</Link> library but am
+  uncertain whether or not it will work for serverless?!
 </Paragraph>
 
 <Subtitle>How I Sketch</Subtitle>
 
 <Paragraph>
-It's interesting to observe what analog and digitals tools I use the most while I explore a subject. On my mac, I think my most frequently used tools is one of the simplest: TextEdit. 
-and then next to machine, I have my paper notepad. 
+  It's interesting to observe what analog and digitals tools I use the most while I explore a subject. On my mac, I
+  think my most frequently used tools is one of the simplest: TextEdit. and then next to machine, I have my paper
+  notepad.
 </Paragraph>
 
 <Paragraph>
-I use TextEdit primarily as a mind dump. As I'm exploring, I'll dump links and ideas into the both analog and digital documents.
+  I use TextEdit primarily as a mind dump. As I'm exploring, I'll dump links and ideas into the both analog and digital
+  documents.
 </Paragraph>
 
-<RelatedArticles articles={[
-    {id: 0, title: 'rate limiting without overhead netlify or vercel-functions', url: 'https://lihbr.com/blog/rate-limiting-without-overhead-netlify-or-vercel-functions'},
-    {id: 1, title: 'how to rate limit flask', url: 'https://medium.com/analytics-vidhya/how-to-rate-limit-routes-in-flask-61c6c791961b'},
-    {id: 2, url: "https://coderwall.com/p/lixing/closure-tables-for-browsing-trees-in-sql", title: "Closure tables for browsing trees in sql"},
-    {id: 3, url: 'https://betterprogramming.pub/create-a-graph-database-and-api-with-postgresql-and-node-js-d7bddcc00bbb', title: 'Create a Graph Database and API with PostgreSQL and Node.js'},
-    {id: 4, url: 'https://github.com/hoverbird/convo', title: 'Javascript Conversation Graph'},
-    {id: 5, url: 'https://codebeautify.org/jsonviewer/0891ba', title: 'JsonViewer'},
-    {id: 6, url: 'https://www.shellrider.com/posts/my-first-post/', title: 'Conversavtion in Godot Engine'},
-    {id: 7, url: 'https://observablehq.com/@d3/d3-stratify', title: 'D3 Stratify'},
-    {id: 8, url: 'https://bl.ocks.org/d3noob/d316a488cae262ae24e6ca897b209f9e', title: 'D3 Tree Diagram'},
-    {id: 9, url: 'https://github.com/pdtyreus/conversation-kit', title: 'Java NLU Conversation Kit'},
-    {id: 10, url: 'https://opsive.com/support/documentation/behavior-designer/behavior-trees-or-finite-state-machines/', title: 'Behavior Trees or Finite State Machines?'},
-    {id: 11, url: 'https://www.freecodecamp.org/news/how-to-build-an-end-to-end-conversational-ai-system-using-behavior-trees-658a7122e794/', title: 'How to Build an End-to-End Conversational AI System using Behavior Trees'},
-    {id: 12, url: 'https://dev.to/javinpaul/21-binary-tree-coding-questions-for-java-developers-325o', title: '21 Binary Tree Coding Questions for Java Developers'},
-    {id: 13, url: 'https://www.wordsapi.com/docs/#searching', title: 'wordsapi search for words to help with wordle and crosswords'},
-    ]}
+<RelatedArticles
+  articles={[
+    {
+      id: 0,
+      title: 'rate limiting without overhead netlify or vercel-functions',
+      url: 'https://lihbr.com/blog/rate-limiting-without-overhead-netlify-or-vercel-functions',
+    },
+    {
+      id: 1,
+      title: 'how to rate limit flask',
+      url: 'https://medium.com/analytics-vidhya/how-to-rate-limit-routes-in-flask-61c6c791961b',
+    },
+    {
+      id: 2,
+      url: 'https://coderwall.com/p/lixing/closure-tables-for-browsing-trees-in-sql',
+      title: 'Closure tables for browsing trees in sql',
+    },
+    {
+      id: 3,
+      url: 'https://betterprogramming.pub/create-a-graph-database-and-api-with-postgresql-and-node-js-d7bddcc00bbb',
+      title: 'Create a Graph Database and API with PostgreSQL and Node.js',
+    },
+    { id: 4, url: 'https://github.com/hoverbird/convo', title: 'Javascript Conversation Graph' },
+    { id: 5, url: 'https://codebeautify.org/jsonviewer/0891ba', title: 'JsonViewer' },
+    { id: 6, url: 'https://www.shellrider.com/posts/my-first-post/', title: 'Conversavtion in Godot Engine' },
+    { id: 7, url: 'https://observablehq.com/@d3/d3-stratify', title: 'D3 Stratify' },
+    { id: 8, url: 'https://bl.ocks.org/d3noob/d316a488cae262ae24e6ca897b209f9e', title: 'D3 Tree Diagram' },
+    { id: 9, url: 'https://github.com/pdtyreus/conversation-kit', title: 'Java NLU Conversation Kit' },
+    {
+      id: 10,
+      url: 'https://opsive.com/support/documentation/behavior-designer/behavior-trees-or-finite-state-machines/',
+      title: 'Behavior Trees or Finite State Machines?',
+    },
+    {
+      id: 11,
+      url: 'https://www.freecodecamp.org/news/how-to-build-an-end-to-end-conversational-ai-system-using-behavior-trees-658a7122e794/',
+      title: 'How to Build an End-to-End Conversational AI System using Behavior Trees',
+    },
+    {
+      id: 12,
+      url: 'https://dev.to/javinpaul/21-binary-tree-coding-questions-for-java-developers-325o',
+      title: '21 Binary Tree Coding Questions for Java Developers',
+    },
+    {
+      id: 13,
+      url: 'https://www.wordsapi.com/docs/#searching',
+      title: 'wordsapi search for words to help with wordle and crosswords',
+    },
+  ]}
 />
