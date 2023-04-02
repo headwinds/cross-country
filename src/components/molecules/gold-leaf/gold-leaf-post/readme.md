@@ -40,6 +40,7 @@
 - https://www.vox.com/energy-and-environment/2018/1/19/16908402/global-warming-2-degrees-climate-change
 - https://www.carbonbrief.org/analysis-when-might-the-world-exceed-1-5c-and-2c-of-global-warming/
 - https://climate.nasa.gov/vital-signs/global-temperature/
+- https://mhinfographics.com/2023/01/06/tutorial-visualizing-global-temperature-step-by-step/?utm_source=substack&utm_medium=email
 
 ##### Backyard
 
@@ -48,3 +49,4 @@
 #### Fandom
 
 - https://www.polygon.com/star-wars/23640202/mandalorian-mythosaur-season-3-monster-episode
+- https://twitter.com/GilesPink/status/1640420171159576576

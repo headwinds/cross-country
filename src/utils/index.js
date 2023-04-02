@@ -5,4 +5,4 @@ export { default as getIsMobile } from './mobile-detect';
 export { default as feedUtil } from './golds/feed-util';
 
 // colour & palettes
-export { default as ColorUtil } from './color-util';
+export { default as ColourUtil } from './color-util';

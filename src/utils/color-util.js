@@ -34,6 +34,10 @@ class ColorUtil {
     return colours;
   }
 
+  getColour(key) {
+    return globalVariable[key];
+  }
+
   getColorPalettes(index) {
     const palette = colors[index];
     return palette;

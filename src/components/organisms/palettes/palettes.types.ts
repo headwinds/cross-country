@@ -1,3 +1,3 @@
 export interface PalettesProps {
-    foo?: string;
+  total?: number;
 }
