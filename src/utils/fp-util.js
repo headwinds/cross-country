@@ -5,3 +5,10 @@ export const differenceBy = (array1, array2, key) => {
 
 // https://stackoverflow.com/questions/49555273/how-to-shuffle-an-array-of-objects-in-javascript
 export const shuffle = arr => arr.sort(() => Math.random() - 0.5);
+
+const FpUtil = {
+  differenceBy,
+  shuffle,
+};
+
+export default FpUtil;
