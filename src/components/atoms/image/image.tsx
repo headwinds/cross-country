@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import clsx from 'clsx';
-import styles from './image.css';
+import styles from './image.module.css';
 import { ImageProps } from './image.types';
 
 const Image: React.FC<ImageProps> = ({
