@@ -1,5 +1,5 @@
 const colors = require('nice-color-palettes');
-class ColorUtil {
+class ColourUtil {
   constructor() {}
 
   getColours() {
@@ -122,6 +122,6 @@ class ColorUtil {
   }
 }
 
-const colorUtil = new ColorUtil();
+const colourUtil = new ColourUtil();
 
-export default colorUtil;
+export default colourUtil;

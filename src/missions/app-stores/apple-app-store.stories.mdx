@@ -1,0 +1,33 @@
+import { Meta, Subtitle } from '@storybook/addon-docs';
+import {
+  SubHeadline,
+  Paragraph,
+  List,
+  ListItem,
+  Link,
+  RelatedArticles,
+  TermsOfUse,
+  PrivacyPolicy,
+} from '../../../src/components';
+
+<Meta title="missions/app store" />
+
+## App Documents
+
+<Paragraph>
+  In order to present your app in the store, you need to produce 2 documents: Terms of Use and a Privacy Policy.
+</Paragraph>
+<Paragraph>
+  Since I'm a solo developer with no budget, I asked ChatGPT to write them for me. And it was smart enough to leave
+  placeholders for company and app names.
+</Paragraph>
+
+<Paragraph>
+  See molecules/policies to use{' '}
+  <Link url="/?path=/story/design-system-molecules-policies-privacy-policy--privacy-policy">PrivacyPolicy</Link> and{' '}
+  <Link url="?path=/story/design-system-molecules-policies-terms-of-use--terms-of-use">TermsOfUse</Link> components on
+  your projects
+</Paragraph>
+<TermsOfUse companyName="YOUR-COMPANY-NAME" appName="YOUR-APP-NAME" />
+
+<PrivacyPolicy companyName="YOUR-COMPANY-NAME" contactEmail="YOUR-SUPPORT-EMAIL" />
