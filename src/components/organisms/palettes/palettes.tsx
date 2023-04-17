@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Column, Tile, Row, SubHeadline } from '../../';
 import { PalettesProps } from './palettes.types';
-import ColorUtils from '../../../utils/color-util';
+import ColorUtils from '../../../utils/colour-util';
 import styles from './palettes.module.css';
 
 /**

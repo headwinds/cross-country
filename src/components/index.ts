@@ -51,6 +51,9 @@ export { default as Accordion } from './molecules/accordion';
 export { default as Loading } from './molecules/loading';
 export { default as Error } from './molecules/error';
 
+export { default as PrivacyPolicy } from './molecules/policies/privacy-policy';
+export { default as TermsOfUse } from './molecules/policies/terms-of-use';
+
 // organisms
 export { default as Login } from './organisms/login';
 export { default as TileGrid } from './organisms/tile-grid';
