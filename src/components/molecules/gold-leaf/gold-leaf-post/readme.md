@@ -14,6 +14,7 @@
 - https://swordandsource.ca/getting-started-with-solo-rpgs/?ref=sword-source-newsletter
 - https://www.polygon.com/2021/3/26/22352414/field-guide-to-memory-keepsake-game-impressions-interview
 - https://quirkybirdgames.itch.io/game-publishing-a-micro-rpg
+- https://obie.medium.com/my-kids-and-i-just-played-d-d-with-chatgpt4-as-the-dm-43258e72b2c6
 
 #### Machine Learning
 
@@ -31,6 +32,7 @@
 - https://www.educative.io/answers/how-to-cache-images-in-react-native-with-react-native-fast-image
 - https://tinyacquisitions.com
 - https://maciekpalmowski.dev/buying-a-bicycle-using-playwright/
+- https://github.com/brunoimbrizi/txt-shuffle
 
 ##### Climate
 

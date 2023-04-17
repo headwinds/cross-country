@@ -1,0 +1,28 @@
+.list {
+  margin: 0px;
+  padding: 0px;
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+}
+
+.listItem {
+  margin: 16px;
+  padding: 0px;
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  font-weight: 300;
+  color: #333;
+}
+
+.horizontalList {
+  display: flex;
+}
+
+.horizontalListItem {
+  padding: 8px;
+}
+
+.horizontalListWrap {
+  display: flex;
+  flex-flow: wrap;
+}
