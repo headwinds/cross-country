@@ -1,0 +1,51 @@
+import { Meta, Subtitle } from '@storybook/addon-docs';
+import { SubHeadline, Paragraph, List, ListItem, Link, RelatedArticles } from '../../../src/components';
+
+<Meta title="missions/xstate" />
+
+# XState
+
+<Subtitle>XState for the rest of us...</Subtitle>
+
+<Paragraph>
+  XState promotes building small state machines to assemble large, complex applications. By using XState as our finite
+  state machine, we are able to introduce new states with less worry about the consequences on previous states. That's
+  the longterm payoff. The short term pain is learning a new system of dispatching events and storing data. There is a
+  learning curve for developing the machine pattern which is steeper than useState. The spotlight light example is an
+  excellent introduction to XState.
+</Paragraph>
+
+<Paragraph>
+  After that, I wanted to learn how to use many machines in orchestration similar to principles of components
+  development and functional programming. Small machines are easier to understand on their own than large machines. With
+  planning, you can build small machines that work together to a produce a complicated system.
+</Paragraph>
+
+<Paragraph>
+  On the surface, XState feels like rigid, complicated system, and I want to see how it might fit into my rapid
+  prototyping process so that I can still experiment with various states until I discover the right mix. How can XState
+  help me plan and design the experience? The short answer is that it forces one to think in steps or turns. The games I
+  want to make are turn-based where the player steps through a world.
+</Paragraph>
+
+<Paragraph>
+  What is a good quest but a series of interesting steps? In many games, quests are more like chores. A chore can be
+  fascinating if something you may never a get a chance to do. For instnace, I like farming simulators as I will
+  probably never live on a farm. I know that the reality of farm is both grueling and rewarding; involving long days and
+  back-breaking labour. Within a game however there is no heavy work but only potentially the boredom of repeatious
+  actions which can be seen as bad game design.
+</Paragraph>
+
+<Paragraph>
+  It can be entertaing to raise virtual chickens but we don't want to repeat that experience if the gamer isn't having
+  fun anymore. We can provide options to progress to other chores with new appeal! Who is going to have a blast mucking
+  out the dragon den before they return from their hunt? You are! As game designers, we are going to both design and
+  play through encounters like this, and we should make them fun to code and antipicate some joy that are players will
+  feel to inspire and propel us forward to finish it!
+</Paragraph>
+
+<RelatedArticles
+  articles={[
+    { id: 0, title: 'Global State using XState & React', url: 'https://garden.bradwoods.io/notes/global-state' },
+  ]}
+/>

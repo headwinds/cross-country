@@ -34,6 +34,18 @@ class ColourUtil {
     return colours;
   }
 
+  getSplashPalette() {
+    const defaultPalette = [
+      { hex: '#C1DED2', id: 0 },
+      { hex: '#D9D9D9', id: 1 },
+      { hex: '#EFE9E2', id: 2 },
+      { hex: '#EEEEEE', id: 3 },
+      { hex: '#F9EBDE', id: 4 },
+      { hex: '#E9DACC', id: 5 },
+    ];
+    return defaultPalette;
+  }
+
   getColour(key) {
     return globalVariable[key];
   }

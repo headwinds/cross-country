@@ -7,7 +7,7 @@ import styles from './log-error-boundary.css';
 const LogErrorBoundary: React.FC<LogErrorBoundaryProps> = ({ foo }) => {
   return (
     <Column dataTestId="log-error-boundary" customClass={styles.LogErrorBoundary}>
-      {foo || 'missng prop foo'}
+      {foo || 'plan & start building'}
     </Column>
   );
 };

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Column, SubHeadline } from '../../';
 import styles from './stagger.css';
 import clsx from 'clsx';

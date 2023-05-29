@@ -1,0 +1,24 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
+import { Paragraph, SubHeadline } from '../../../';
+import HomeStory from './home-story';
+
+<Meta title="design system/templates/home" />
+
+<Subtitle>lo fi layout</Subtitle>
+
+The home page is the first impression of your site. There is a certain science to its layout depending on your design and business objectives.
+
+We cam use tiles to block in areas of the home to help us organize and visualize the final result and see if will achieve our goals.
+
+<Canvas>
+  <Story name="home">
+    <HomeStory />
+  </Story>
+</Canvas>
+
+<RelatedArticles
+  articles={[
+    { id: 0, title: 'ark ui splitter', url: 'https://ark-ui.com/docs/react/components/splitter' },
+
+]}
+/>

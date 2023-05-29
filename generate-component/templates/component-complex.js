@@ -6,7 +6,7 @@ import { ${componentUpperCaseName}Props } from "./${componentLowerCaseName}.type
 import styles from "./${componentLowerCaseName}.module.css";
 
 const ${componentUpperCaseName}: React.FC<${componentUpperCaseName}Props> = ({ foo }) => {
-  return (<Column dataTestId="${componentLowerCaseName}" customClass={styles.${componentUpperCaseName}}>{foo || "missng prop foo"}</Column>)
+  return (<Column dataTestId="${componentLowerCaseName}" customClass={styles.${componentUpperCaseName}}>{foo || "plan & start building"}</Column>)
 };
 
 export default ${componentUpperCaseName};

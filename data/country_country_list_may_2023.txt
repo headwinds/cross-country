@@ -1,0 +1,7 @@
+
+Programming 
+https://www.totaltypescript.com/tutorials/beginners-typescript
+
+ML
+https://www.haihai.ai/gpt-gdrive/
+https://towardsdatascience.com/a-gentle-intro-to-chaining-llms-agents-and-utils-via-langchain-16cd385fca81

@@ -6,11 +6,10 @@
 }
 
 .listItem {
-  margin: 16px;
+  margin: 4px;
   padding: 0px;
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol';
-  font-weight: 300;
   color: #333;
 }
 
