@@ -30,10 +30,11 @@ const Branches = () => {
       body: JSON.stringify(data),
     };
     try {
-      const localUrl = 'http://localhost:5004/api/porthole/feeds';
+      // be careful - we don't want to use localhost on another site we should config this route
+      // const localUrl = 'http://localhost:5004/api/porthole/feeds';
       const remoteUrl = 'https://scout-summarize.vercel.app/api/porthole/feeds';
 
-      const response = await fetchRetry(localUrl, options);
+      const response = await fetchRetry(remoteUrl, options);
       const json = await response.json();
 
       return json;
