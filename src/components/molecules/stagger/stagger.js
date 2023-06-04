@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Column, SubHeadline } from '../../';
 import styles from './stagger.css';
 import clsx from 'clsx';
@@ -13,15 +13,16 @@ const Stagger = ({
   config = defaultConfig,
   staggerText = [],
   stagger = { key: 'marginLeft', value: 26 },
+  size = 'large',
 }) => {
   const list = staggerText.map((text, idx) => (
     <SubHeadline
       color={Array.isArray(color) ? color[idx] : color}
       key={idx}
       {...config.text.rest}
-      size="large"
-      customClass={clsx(styles.text, config.text.customClass)}
-      customStyle={{ ...config.text.customStyle, [stagger.key]: stagger.value * idx }}
+      size={size}
+      customClass={clsx(styles.text, config?.text?.customClass)}
+      customStyle={{ ...config?.text?.customStyle, [stagger.key]: stagger.value * idx }}
     >
       {text}
     </SubHeadline>

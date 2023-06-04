@@ -3,7 +3,7 @@ module.exports = (componentUpperCaseName, componentLowerCaseName, atomicTypeName
 import { Paragraph, SubHeadline } from '../../../';
 import ${componentUpperCaseName}Story from './${componentLowerCaseName}-story';
 
-<Meta title="menu/${atomicTypeName}/${componentLowerCaseName.split('-').join(' ')}" />
+<Meta title="design system/${atomicTypeName}/${componentLowerCaseName.split('-').join(' ')}" />
 
 <Subtitle>subtitle here</Subtitle>
 

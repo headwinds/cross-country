@@ -1,0 +1,75 @@
+.tile {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+
+.interactive {
+  cursor: pointer;
+}
+
+.tileModal {
+  display: flex;
+  position: absolute;
+  box-shadow: 1px 1px 4px 0px rgba(67, 67, 67, 0.75);
+  -webkit-box-shadow: 1px 1px 4px 0px rgba(67, 67, 67, 0.75);
+  -moz-box-shadow: 1px 1px 4px 0px rgba(67, 67, 67, 0.75);
+  width: 200px;
+  height: 300px;
+  top: 0px;
+  left: 0px;
+}
+
+.innerTile {
+  display: flex;
+  flex-direction: column;
+  width: 96px;
+  height: 96px;
+  padding: 0px;
+  background-color: lightblue;
+}
+
+.grass {
+  background-color: green;
+}
+
+.metal {
+  background-color: rgb(179, 179, 179);
+}
+
+.shallow-water {
+  background-color: lightblue;
+}
+
+.light-grey {
+  background-color: #eee;
+}
+
+.dirt {
+  background-color: #92642b;
+}
+
+.cyan {
+  background-color: cyan;
+}
+
+.corners {
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.corners--in {
+  background-color: black;
+}
+
+.corners--out {
+  background-color: pink;
+}
+
+.corners:hover {
+  cursor: pointer;
+}

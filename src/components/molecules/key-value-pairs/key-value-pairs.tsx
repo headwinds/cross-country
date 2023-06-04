@@ -6,7 +6,6 @@ import styles from './key-value-pairs.css';
 
 const KeyValuePairs: React.FC<KeyValuePairsProps> = ({
   dataTestId = 'key-value-pairs',
-  children,
   keyValues = [],
   keyStyle = {},
   valueStyle = {},

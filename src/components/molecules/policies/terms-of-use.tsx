@@ -1,5 +1,5 @@
 import React from 'react';
-import { SubHeadline, Paragraph, List, ListItem, Column } from '../../../';
+import { SubHeadline, Paragraph, List, ListItem, Column } from '../../..';
 const TermsOfUse = ({ appName, companyName, hasTitle = true}) => {
   return (
     <Column>
