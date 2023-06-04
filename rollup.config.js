@@ -5,7 +5,7 @@ import postcss from 'rollup-plugin-postcss';
 import typescript from 'rollup-plugin-typescript2';
 import filesize from 'rollup-plugin-filesize';
 import copy from 'rollup-plugin-copy';
-const svgr = require('@svgr/rollup').default;
+import svgr from '@svgr/rollup';
 
 import pkg from './package.json';
 
