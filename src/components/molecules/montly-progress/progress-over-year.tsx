@@ -22,7 +22,7 @@ import styles from './progress.css';
 const ProgressOverYear: React.FC<ProgressProps> = ({ foo }) => {
   return (
     <Column dataTestId="progress" customClass={styles.Progress}>
-      {foo || 'missng prop foo'}
+      {foo || 'plan & start building'}
     </Column>
   );
 };

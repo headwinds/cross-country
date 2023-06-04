@@ -47,6 +47,7 @@ export { default as RelatedArticles } from './molecules/related-articles';
 export { default as Card } from './molecules/card';
 export { default as GoldLeaf } from './molecules/gold-leaf';
 export { default as Accordion } from './molecules/accordion';
+export { default as KeyValuePairs } from './molecules/key-value-pairs';
 
 export { default as Loading } from './molecules/loading';
 export { default as Error } from './molecules/error';

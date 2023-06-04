@@ -9,3 +9,15 @@
   -moz-osx-font-smoothing: grayscale;
   margin-bottom: 8px;
 }
+
+.subheadline__small {
+  font-size: 18px;
+}
+
+.subheadline__medium {
+  font-size: 22px;
+}
+
+.subheadline__large {
+  font-size: 32px;
+}

@@ -6,7 +6,7 @@ import * as React from "react";
 import { GolfLeafViewProps } from "./golf-leaf-view.types";
 
 const GolfLeafView: React.FC<GolfLeafViewProps> = ({ foo }) => {
-  return (<Column dataTestId="golf-leaf-view" customClass={styles.GolfLeafView}>{foo || "missng prop foo"}</Column>)
+  return (<Column dataTestId="golf-leaf-view" customClass={styles.GolfLeafView}>{foo || "plan & start building"}</Column>)
 };
 */
 
