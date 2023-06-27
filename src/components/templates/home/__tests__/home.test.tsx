@@ -1,26 +1,45 @@
-import React from "react";
-import { render } from "@testing-library/react";
+import React from 'react';
+import { render } from '@testing-library/react';
 
-import Home from "../";
-import { HomeProps } from "../home.types";
+import Home from '../';
+import { HomeProps } from '../home.types';
 
-describe("<Home />", () => {
+describe('<Home />', () => {
   let props: HomeProps;
 
   beforeEach(() => {
+    const Header = () => (
+      <div>
+        <h1>Header</h1>
+      </div>
+    );
+
+    const Hero = () => (
+      <div>
+        <h1>Hero</h1>
+      </div>
+    );
+
+    const Footer = () => (
+      <div>
+        <h1>Footer</h1>
+      </div>
+    );
+
     props = {
-      foo: "bar"
+      header: <Header />,
+      hero: <Hero />,
+      footer: <Footer />,
     };
   });
 
   const renderComponent = () => render(<Home {...props} />);
 
-  it("should render foo text correctly", () => {
-    props.foo = "cross country was here";
-    const { getByTestId } = renderComponent();
+  it('should render foo text correctly', () => {
+    const { getByText } = renderComponent();
 
-    const component = getByTestId("home");
+    const component = getByText('Hero');
 
-    expect(component).toHaveTextContent("cross country was here");
+    expect(component).toHaveTextContent('Hero');
   });
 });

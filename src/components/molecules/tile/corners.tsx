@@ -72,60 +72,23 @@ const Corners: React.FC<CornersProps> = ({
   });
 
   /*
-  const [topRightProps, setTopRight, stopTopRight] = useSpring(() => ({
-    top: -20,
-    left: size + 20,
-    from: { top: 0, left: size },
-    config,
-  }));
-
-  const [bottomLeftProps, setBottomLeft, stopBottomLeft] = useSpring(() => ({
-    top: size + 20,
-    left: -20,
-    from: { top: size, left: 0 },
-    config,
-  }));
-
-  const [bottomRightProps, setBottomRight, stopBottomRight] = useSpring(() => ({
-    top: size + 20,
-    left: size + 20,
-    from: { top: size, left: size },
-    config,
-  }));
-
-  const cornerSize = 10;
-
-  const commonStyle = {
-    background: 'black',
-    width: cornerSize,
-    height: cornerSize,
-    position: 'absolute',
-    display: 'flex',
-  };
-  const topLeftCornerStyle = { ...commonStyle, background: 'black' };
-  const topRightCornerStyle = { ...commonStyle, background: 'blue' };
-
-  const bottomLeftCornerStyle = { ...commonStyle, background: 'green' };
-  const bottomRightCornerStyle = {
-    ...commonStyle,
-    background: 'pink',
-  };
-
-  return (
-    <div>
-      <animated.div className={styles.corner} style={{ ...topLeftCornerStyle, ...topLeftProps }} />
-      <animated.div className={styles.corner} style={{ ...topRightCornerStyle, ...topRightProps }} />
-      <animated.div className={styles.corner} style={{ ...bottomLeftCornerStyle, ...bottomLeftProps }} />
-      <animated.div className={styles.corner} style={{ ...bottomRightCornerStyle, ...bottomRightProps }} />
-    </div>
-  );
-  */
   return (
     <>
       <animated.div className={styles.corner} style={{ ...topLeftCornerStyle, ...topLeftProps }} />
       <animated.div className={styles.corner} style={{ ...topRightCornerStyle, ...topRightProps }} />
       <animated.div className={styles.corner} style={{ ...bottomLeftCornerStyle, ...bottomLeftProps }} />
       <animated.div className={styles.corner} style={{ ...bottomRightCornerStyle, ...bottomRightProps }} />
+    </>
+  );*/
+
+  // why is there a string in the style prop?
+  // https://stackoverflow.com/questions/66043544/react-spring-use-spring-hook-returns-string-instead-of-object
+  return (
+    <>
+      <animated.div className={styles.corner} />
+      <animated.div className={styles.corner} />
+      <animated.div className={styles.corner} />
+      <animated.div className={styles.corner} />
     </>
   );
 };
