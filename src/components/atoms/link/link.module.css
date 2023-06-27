@@ -8,6 +8,7 @@
   box-shadow: 0px 0px 0px rgb(11, 174, 174) inset;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
+  width: fit-content;
 }
 
 a:not([class]) {

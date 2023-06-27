@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import styles from './image.module.css';
 import { ImageProps } from './image.types';
 
-const Image: React.FC<ImageProps> = ({
+const Image = ({
   url,
   width,
   a11y,
@@ -11,7 +11,7 @@ const Image: React.FC<ImageProps> = ({
   customClass = '',
   customStyle = {},
   dataTestId = 'image',
-}) => (
+}: ImageProps) => (
   <img
     data-testid={dataTestId}
     className={(clsx(styles.image), customClass)}

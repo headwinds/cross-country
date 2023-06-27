@@ -1,9 +1,8 @@
-import * as React from "react";
-  import Home from "../home";
-  
-  const HomeStory = () => {
-    return <Home />;
-  };
-  
-  export default HomeStory;
+import * as React from 'react';
+import HomeTemplate from '../home';
 
+const HomeStory = () => {
+  return <HomeTemplate isBlockedIn />;
+};
+
+export default HomeStory;

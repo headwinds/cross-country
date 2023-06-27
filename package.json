@@ -67,9 +67,10 @@
     "@storybook/addon-postcss": "^3.0.0-alpha.1",
     "@storybook/builder-webpack4": "^6.5.16",
     "@storybook/builder-webpack5": "^6.5.16",
+    "@storybook/cli": "6.5.15",
     "@storybook/manager-webpack4": "^6.5.16",
     "@storybook/manager-webpack5": "^6.5.16",
-    "@storybook/react": "^7.0.0",
+    "@storybook/react": "6.5.16",
     "@storybook/testing-library": "^0.0.13",
     "@svgr/rollup": "^7.0.0",
     "@testing-library/jest-dom": "^5.16.5",
@@ -109,7 +110,7 @@
     "rollup-plugin-typescript2": "^0.34.1",
     "semantic-release": "^19.0.3",
     "source-map-loader": "^1.0.0",
-    "storybook": "^7.0.0-beta.47",
+    "storybook": "6.5.14",
     "storybook-css-modules": "^1.0.8",
     "storybook-css-modules-preset": "^1.1.1",
     "storybook-xstate-addon": "2.3.6",
@@ -123,6 +124,7 @@
     "webpack-dev-server": "^4.13.1"
   },
   "dependencies": {
+    "@types/react": "^18.2.13",
     "@xstate/inspect": "0.8.0",
     "@xstate/react": "3.2.1",
     "clsx": "^1.1.0",

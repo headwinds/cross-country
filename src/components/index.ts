@@ -21,6 +21,7 @@ export { default as Label } from './atoms/text/label';
 export { default as Link } from './atoms/link';
 export { default as List } from './atoms/list';
 export { default as ListItem } from './atoms/list/list-item/list-item';
+export { default as AnimateNumber } from './atoms/text/number/animate-number';
 
 export { default as Table } from './atoms/table';
 export { default as TableBody } from './atoms/table/table-body';
@@ -73,3 +74,7 @@ export { default as Cleric } from './organisms/actors/party/cleric';
 export { default as Wizard } from './organisms/actors/party/wizard';
 export { default as Wisp } from './organisms/actors/wisp';
 export { default as FrozenLake } from './organisms/frozen-lake';
+
+// templates
+export { default as HomeTemplate } from './templates/home';
+export { default as HeadwindsHomeTemplate } from './templates/home/headwinds';

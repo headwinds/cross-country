@@ -5,6 +5,8 @@ import Corners from './corners';
 import styles from './tile.module.css';
 import clsx from 'clsx';
 
+import type { InteractiveTileType } from './types';
+
 const defaultModel = { fill: '#eee', value: 0, id: 0 };
 
 const SUBSTRACT_SIZE_MODIFIER = 5;
@@ -18,7 +20,7 @@ const InteractiveTile = forwardRef(
   (
     {
       isSelected = false,
-      setSelected = null,
+      setSelected,
       isInteractive = true,
       customClass,
       size = 100,
@@ -31,7 +33,7 @@ const InteractiveTile = forwardRef(
       children,
       //sample = 'light-grey', // shallow-water
       ...rest
-    },
+    }: InteractiveTileType,
     ref
   ) => {
     const [isHovered, toggleHovered] = useState(false);
