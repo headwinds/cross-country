@@ -40,14 +40,14 @@ const Branches = () => {
       return json;
     } catch (error) {}
   };
-
+  /*
   const getMockDataAsync = async () => {
     return new Promise(resolve => {
       setTimeout(() => {
         resolve(mockResponse);
       }, 0);
     });
-  };
+  };*/
 
   useEffect(() => {
     async function fetchData() {
