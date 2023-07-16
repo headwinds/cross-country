@@ -5,11 +5,12 @@ import { useState, useEffect } from 'react';
 import { createAllPortholeTrees, getRSSBranch, convertToPortholeBranches } from '../../../utils/golds/feed-util';
 import { getAllItemsFromStore } from '../../../utils/golds/indexdb-util';
 import { fetchRetry } from '../../../utils/fetch-util';
-import { differenceBy, shuffle } from '../../../utils/fp-util';
-import { Row, Loading } from '../../../';
+import { shuffle } from '../../../utils/fp-util';
+import { Loading } from '../../../';
 import BranchList from './branch-list';
+import mockResponse from './__mocks__/response.json';
 
-import styles from './branches.module.css';
+const isTesting = true;
 
 const Branches = () => {
   const [state, setState] = useState({
@@ -41,6 +42,14 @@ const Branches = () => {
     } catch (error) {}
   };
 
+  const getMockDataAsync = async () => {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(mockResponse);
+      }, 0);
+    });
+  };
+
   useEffect(() => {
     async function fetchData() {
       const portholeBranches = createAllPortholeTrees();
@@ -50,7 +59,7 @@ const Branches = () => {
       const jsonData = {
         rssUrls,
       };
-      const json = await getCabinQuestFeedFromScoutSummarizeService(jsonData);
+      const json = isTesting ? await getMockDataAsync() : await getCabinQuestFeedFromScoutSummarizeService(jsonData);
 
       const allNewBranches = convertToPortholeBranches(json.feed_responses);
       const shuffledBranches = shuffle(allNewBranches);

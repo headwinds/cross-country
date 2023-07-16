@@ -12,7 +12,6 @@ interface GoldLeafImageProps {
 }
 
 const GoldLeafImage: React.FC<GoldLeafImageProps> = ({ goldLeafModel }) => {
-  console.log('GoldLeafImage goldLeafModel: ', goldLeafModel);
   const { hasText } = goldLeafModel;
 
   if (hasText) {
@@ -33,9 +32,19 @@ export const GoldTitleImageCard: React.FC<GoldLeafProps> = ({ goldLeafModel, mod
     } else if (mode !== 'view' && goldLeafModel) {
       return (
         <Card customClass={styles.GoldLeaf__GoldTitleImageCard} hasBackground={false}>
-          <Link url={goldLeafModel.link} customClass={styles.GoldLeaf__titleLink}>
-            <SubHeadline text={goldLeafModel.title} customClass={styles.GoldLeaf__title} />
-          </Link>
+          <Column customStyle={{ padding: 4 }}>
+            <Link
+              url={goldLeafModel.link}
+              customClass={styles.GoldLeaf__titleLink}
+              customStyle={{ borderBottom: 'none', boxShadow: 'none' }}
+            >
+              <SubHeadline
+                text={goldLeafModel.title}
+                customClass={styles.GoldLeaf__title}
+                customStyle={{ width: 'fit-content', lineHeight: '26px', fontWeight: 700 }}
+              />
+            </Link>
+          </Column>
           <GoldLeafImage goldLeafModel={goldLeafModel} />
         </Card>
       );
