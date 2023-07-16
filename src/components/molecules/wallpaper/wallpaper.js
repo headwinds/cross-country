@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Column from '../../atoms/column/column';
-import styles from './wallpaper.css';
+import styles from './wallpaper.module.css';
 import { useSpring, animated, SpringValue } from '@react-spring/web';
 import clsx from 'clsx';
 
@@ -16,6 +16,7 @@ const Wallpaper = ({
   hasNoise = false,
   hasGradient = false,
   springModel = null,
+  children,
   ...rest
 }) => {
   const from = 0;
@@ -94,7 +95,7 @@ const Wallpaper = ({
 
   const finalCustomStyle = getFinalStyle();
 
-  const render = () => {
+  const wallpaper = () => {
     if (springModel) {
       return (
         <animated.div
@@ -118,7 +119,12 @@ const Wallpaper = ({
     }
   };
 
-  return render();
+  return (
+    <>
+      <div style={{ position: 'absolute', zIndex: 2 }}>{children}</div>
+      <div style={{ position: 'absolute', zIndex: 1, width: '100vw', height: '100vh' }}>{wallpaper}</div>
+    </>
+  );
 };
 
 export default Wallpaper;

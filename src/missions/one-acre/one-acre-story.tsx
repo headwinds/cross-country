@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React from 'react';
 import { Column, Tile, Paragraph, Row } from '../../components';
 import { getIsland, getMapNewGrid } from './one-acre-util';

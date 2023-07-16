@@ -1,15 +1,12 @@
 import * as React from 'react';
 import { Column } from '../../';
 import { HomeProps } from './home.types';
+import HomeTemplate from '../../templates/home/home';
 
 import styles from './home.module.css';
 
-const Home: React.FC<HomeProps> = ({ foo }) => {
-  return (
-    <Column dataTestId="home" customClass={styles.Home}>
-      {foo || 'plan & start building'}
-    </Column>
-  );
+const Home = ({ foo }: HomeProps) => {
+  return <HomeTemplate isBlockedIn />;
 };
 
 export default Home;

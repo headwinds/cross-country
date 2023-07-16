@@ -1,17 +1,29 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
-import { getOffline, putOffline } from '../../../utils/golds/offline-util';
-import { createAllPortholeTrees, getRSSBranch } from '../../../utils/golds/feed-util';
-import { getAllItemsFromStore } from '../../../utils/golds/indexdb-util';
+import { useRef, useEffect, useState } from 'react';
 import { getWindow } from '../../../utils/server-side-util';
-import { fetchRetry } from '../../../utils/fetch-util';
-import { differenceBy, shuffle } from '../../../utils/fp-util';
 import Branch from '../branch';
 import { Column, Row, List, ListItem } from '../../../';
 import { BranchListProps } from './branch-list.types';
 import styles from './branches.module.css';
 
-const BranchList: React.FC<BranchListProps> = ({ branches }) => {
+const BranchList = ({ branches }: BranchListProps) => {
+  const ref = useRef(null);
+  const [totalColumns, setTotalColumns] = useState(null);
+
+  useEffect(() => {
+    if (ref?.current?.offsetWidth && totalColumns === null) {
+      const width = ref.current.offsetWidth;
+
+      const cardWidth = 404;
+      const totalColumns = Math.floor(width / cardWidth);
+
+      console.log('width: ', width);
+      console.log('totalColumns: ', totalColumns);
+
+      setTotalColumns(totalColumns);
+    }
+  }, []);
+
   const getCards = cardBranches => {
     if (cardBranches.length === 0) {
       return null;
@@ -19,7 +31,7 @@ const BranchList: React.FC<BranchListProps> = ({ branches }) => {
       return cardBranches.map((branch, idx) => {
         if (branch && branch !== null && branch.text) {
           return (
-            <ListItem className={styles.card__item} key={idx}>
+            <ListItem className={styles.card__item} key={idx} customStyle={{ listStyle: 'none' }}>
               <Branch branch={branch} />
             </ListItem>
           );
@@ -50,13 +62,15 @@ const BranchList: React.FC<BranchListProps> = ({ branches }) => {
   };
 
   const getColumns = branches => {
-    const screenWindow = getWindow();
+    // instead of the window, let's get the width of the parent container
+    //const screenWindow = getWindow();
+
     if (branches.length === 0) {
       return null;
-    } else if (screenWindow) {
-      const width = screenWindow?.innerWidth;
-      const cardWidth = 300;
-      const totalColumns = Math.floor(width / cardWidth);
+    } else if (totalColumns) {
+      //const width = screenWindow?.innerWidth;
+      //const cardWidth = 300;
+      //const totalColumns = Math.floor(width / cardWidth);
 
       const totalBranchesPerColumn = Math.floor(branches.length / totalColumns);
       const range = [...Array(totalColumns).keys()];
@@ -70,7 +84,7 @@ const BranchList: React.FC<BranchListProps> = ({ branches }) => {
   };
 
   return (
-    <Row data-testid="branch-list" customClass={styles.column__list}>
+    <Row data-testid="branch-list" customClass={styles.column__list} ref={ref}>
       {getColumns(branches)}
     </Row>
   );

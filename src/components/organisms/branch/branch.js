@@ -9,11 +9,6 @@ import {
   updateItemInStore,
 } from '../../../utils/golds/indexdb-util';
 
-import { removeAllImagesFromText, defaultFullScreenImageUrl } from '../../../utils/golds/image-find-util';
-import { tweet, email } from '../../../utils/golds/share-util';
-import styles from './branch.css';
-import { ArticleIcon, TweetIcon, HeartIcon, EmailIcon, ImageIcon, HideIcon, ClusterOffIcon } from './icons';
-
 const GOLD_COLOUR = '#E3D597';
 
 const he = require('he');

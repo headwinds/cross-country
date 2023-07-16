@@ -11,14 +11,18 @@ import {
   Paragraph,
   Tile,
   ReverseTextAnimation,
+  HeadwindsHomeTemplate,
 } from '../../../';
+import Header from './headwinds-header';
+import Hero from './headwinds-hero';
+import SideQuest from './headwinds-sidequest';
+import Footer from './headwinds-footer';
 
-import FrozenLake from '../../../organisms/frozen-lake';
 //import useDeviceDetection from '../../../../../hooks/useDeviceDetection';
 //import useTheme from '../../../../../hooks/useTheme';
 
 // utils & hooks
-import ColorUtil from '../../../../utils/colour-util';
+import ColourUtil from '../../../../utils/colour-util';
 // import numberUtil from '../../utils/number-util'; <-- use Class and needs a babel plugin
 
 // styles
@@ -35,14 +39,14 @@ const defaultState = {
   radios: {
     selectedId: 0,
   },
-  palette: null,
   isFetching: false,
 };
 
-const Intro = () => {
+const HeadwindsHome = () => {
   const [state, setState] = useState(defaultState);
   const [mlTask, setTask] = useState('Learning');
   const staggerRowRef = useRef(null);
+  const [palette, setPalette] = useState(null);
 
   // handlers
 
@@ -66,7 +70,6 @@ const Intro = () => {
     buttonFeedback,
     logoComp,
     radios: { selectedId },
-    palette,
   } = state;
 
   // make sure this done from the client not the server!
@@ -78,12 +81,13 @@ const Intro = () => {
   const responsive = `This system will detect the device. In this case, you're on a ${device}, and will respond accordingly providing pleasant UX for writing and reading technical articles as well as experimenting with javascript and svg.`;
 
   useEffect(() => {
-    const { isFetching, palette } = state;
+    const { isFetching } = state;
     if (!isFetching && !palette) {
-      const newPalette = ColorUtil.getColorPalettes(3);
-      setState({ ...state, palette: newPalette });
+      const newPalette = ColourUtil.getColorPalettes(3);
+      console.log('newPalette', newPalette);
+      setPalette({ palette: newPalette });
     }
-  });
+  }, [state, palette]);
 
   if (!palette) {
     return null;
@@ -93,9 +97,22 @@ const Intro = () => {
   const subHeadlineColor = headlineColor;
   const staggerColor = palette[1];
 
+  console.log('Rendering headwinds home');
+
+  return (
+    <DeviceContext.Provider value={contextValue}>
+      <Wallpaper backgroundColor="transparent">
+        <HeadwindsHomeTemplate sidequest={<SideQuest />} hero={<Hero />} header={<Header />} footer={<Footer />} />
+      </Wallpaper>
+    </DeviceContext.Provider>
+  );
+
+  /*
   return (
     <DeviceContext.Provider value={contextValue}>
       <Wallpaper backgroundColor="white">
+        <HeadwindsHomeTemplate isBlockedIn />
+
         <Column>
           <Headline color={headlineColor} customClass={styles.headline}>
             Cross Country
@@ -111,7 +128,7 @@ const Intro = () => {
         </div>
       </Wallpaper>
     </DeviceContext.Provider>
-  );
+  );*/
 };
 
-export default Intro;
+export default HeadwindsHome;
