@@ -8,9 +8,8 @@ import { fetchRetry } from '../../../utils/fetch-util';
 import { shuffle } from '../../../utils/fp-util';
 import { Loading } from '../../../';
 import BranchList from './branch-list';
-import mockResponse from './__mocks__/response.json';
-
-const isTesting = true;
+//import mockResponse from './__mocks__/response.json';
+//const isTesting = true;
 
 const Branches = () => {
   const [state, setState] = useState({
@@ -59,7 +58,8 @@ const Branches = () => {
       const jsonData = {
         rssUrls,
       };
-      const json = isTesting ? await getMockDataAsync() : await getCabinQuestFeedFromScoutSummarizeService(jsonData);
+      //const json = isTesting ? await getMockDataAsync() : await getCabinQuestFeedFromScoutSummarizeService(jsonData);
+      const json = await getCabinQuestFeedFromScoutSummarizeService(jsonData);
 
       const allNewBranches = convertToPortholeBranches(json.feed_responses);
       const shuffledBranches = shuffle(allNewBranches);
