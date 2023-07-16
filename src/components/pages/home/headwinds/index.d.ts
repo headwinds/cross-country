@@ -9,3 +9,8 @@ declare module '*.svg' {
   const height: number;
   export = value;
 }
+
+declare module '*.css' {
+  const content: { [key: string]: any };
+  export = content;
+}
