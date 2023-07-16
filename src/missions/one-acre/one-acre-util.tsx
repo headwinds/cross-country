@@ -67,7 +67,6 @@ type GridIsland = {
 };
 
 const defaultPalette = ColourUtil.getSplashPalette();
-console.log('defaultPalette: ', defaultPalette);
 
 type GridResponseType = {
   islandCount: number;

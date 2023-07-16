@@ -1,5 +1,51 @@
+@import '../../global.module.css';
 
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    'header header header'
+    'hero hero hero'
+    'panel1 panel2 panel3'
+    'footer footer footer';
+  grid-gap: 8px;
+}
 
-.Home {
-  color: $teal;
+.header {
+  grid-area: header;
+  height: 50px;
+}
+
+.hero {
+  grid-area: hero;
+  height: 400px;
+}
+
+.panel1 {
+  grid-area: panel1;
+  height: 300px;
+}
+
+.panel2 {
+  grid-area: panel2;
+  height: 300px;
+}
+
+.panel3 {
+  grid-area: panel3;
+  height: 300px;
+}
+
+.footer {
+  grid-area: footer;
+  height: 100px;
+}
+
+.commonBlockedIn {
+  background-color: var(--template-color);
+}
+
+.heroBlockedIn {
+  background-color: var(--template-hero-color);
 }

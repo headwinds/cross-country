@@ -6,11 +6,9 @@ import { Column, Row } from '../..';
 import styles from './tile.module.css';
 import InteractiveTile from './tile-interactive';
 
-type TileProps = {
-  type: string;
-};
+import type { TileType, InteractiveTileType } from './types';
 
-const Tile: React.FC<TileProps> = forwardRef((props, ref) => {
+const Tile = forwardRef((props: TileType | InteractiveTileType, ref) => {
   const { type } = props;
   switch (type) {
     case 'interactive':

@@ -1,0 +1,7 @@
+/* global.css */
+:root {
+  --mint: #ddffe7;
+  --spearmint: #98d7c2;
+  --template-color: #eee;
+  --template-hero-color: var(--mint);
+}
