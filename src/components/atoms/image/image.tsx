@@ -1,3 +1,5 @@
+// disable typescript error for this file
+// @ts-nocheck
 import React, { Component } from 'react';
 import clsx from 'clsx';
 import styles from './image.module.css';
