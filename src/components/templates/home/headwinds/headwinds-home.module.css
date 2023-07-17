@@ -12,6 +12,13 @@
   width: 100%;
 }
 
+@media (max-width: 500px) {
+  .gridContainer {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .header {
   grid-area: header;
   height: 50px;

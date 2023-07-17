@@ -8,7 +8,7 @@ const gold = '#b2a25a';
 
 const HeadwindsSidequest = () => {
   return (
-    <Column customStyle={{ width: 380 }}>
+    <Column>
       <Row>
         <Column customStyle={{ padding: 0 }}>
           <Image a11y="brandon flowers" url={brandon} width={100} height={100} customStyle={{ borderRadius: '50%' }} />
@@ -31,7 +31,6 @@ const HeadwindsSidequest = () => {
       <SubHeadline
         color={gold}
         customStyle={{
-          borderRadius: 5,
           backgroundColor: 'whitesmoke',
           padding: 8,
           fontWeight: 300,
