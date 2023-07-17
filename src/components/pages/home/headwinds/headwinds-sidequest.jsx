@@ -1,7 +1,7 @@
 import React from 'react';
 import { Column, Row, SubHeadline, Paragraph, Link, Headline, Image, List, ListItem, AnimateNumber } from '../../..';
 import brandon from './brandon_square.png';
-import bolt from './bolt.svg'; // import cross_country from './cross-country.svg';
+import bolt from './bolt.svg';
 
 const moss = '#bccd9d';
 const gold = '#b2a25a';
