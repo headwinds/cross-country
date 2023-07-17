@@ -36,7 +36,7 @@ const HeadwindsSidequest = () => {
           fontWeight: 300,
         }}
       >
-        As a passionate dev, I also write about Data Visualization, building APIs, State Machines & leveraging Natural
+        As a passionate dev, I also write about Data Visualization, DIY APIs, State Machines & leveraging Natural
         Language Processing.
       </SubHeadline>
       <Paragraph customStyle={{ marginBottom: 16 }}>
