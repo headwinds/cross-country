@@ -78,3 +78,7 @@ export { default as FrozenLake } from './organisms/frozen-lake';
 // templates
 export { default as HomeTemplate } from './templates/home';
 export { default as HeadwindsHomeTemplate } from './templates/home/headwinds';
+
+// pages
+export { default as HeadwindsHomePage } from './pages/home/headwinds';
+export { default as HomePage } from './pages/home';

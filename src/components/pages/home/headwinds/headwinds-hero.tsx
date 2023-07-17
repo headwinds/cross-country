@@ -1,8 +1,7 @@
 import React from 'react';
-import { Column, Branches } from '../../../';
-import FrozenLake from '../../../organisms/frozen-lake';
+import { Branches } from '../../../';
 
 const HeadwindsHero = () => {
-  return <Branches />;
+  return <Branches isTesting />;
 };
 export default HeadwindsHero;
