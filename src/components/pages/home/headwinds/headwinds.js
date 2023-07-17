@@ -97,8 +97,6 @@ const HeadwindsHome = () => {
   const subHeadlineColor = headlineColor;
   const staggerColor = palette[1];
 
-  console.log('Rendering headwinds home');
-
   return (
     <DeviceContext.Provider value={contextValue}>
       <Wallpaper backgroundColor="transparent">
