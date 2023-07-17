@@ -6,6 +6,7 @@ import typescript from 'rollup-plugin-typescript2';
 import filesize from 'rollup-plugin-filesize';
 import copy from 'rollup-plugin-copy';
 import svgr from '@svgr/rollup';
+import url from 'rollup-plugin-url';
 
 import pkg from './package.json';
 
@@ -20,6 +21,10 @@ const GLOBALS = {
 
 const PLUGINS = [
   svgr(),
+  url({
+    include: ['**/*.svg', '**/*.png'], // Specify the file extensions you want to include
+    limit: Infinity, // Remove any file size limit
+  }),
   postcss({
     extract: false,
     modules: true,

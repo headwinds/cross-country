@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export interface ImageProps {
-  url: string;
+  url?: any;
   width?: number;
   a11y?: string;
   height?: number | string;
