@@ -8,10 +8,9 @@ import { fetchRetry } from '../../../utils/fetch-util';
 import { shuffle } from '../../../utils/fp-util';
 import { Loading } from '../../../';
 import BranchList from './branch-list';
-//import mockResponse from './__mocks__/response.json';
-//const isTesting = true;
+import { mockResponse } from './__mocks__/response';
 
-const Branches = () => {
+const Branches = ({ isTesting = false }) => {
   const [state, setState] = useState({
     feeds: createAllPortholeTrees(),
     branches: [],
@@ -40,14 +39,14 @@ const Branches = () => {
       return json;
     } catch (error) {}
   };
-  /*
+
   const getMockDataAsync = async () => {
     return new Promise(resolve => {
       setTimeout(() => {
         resolve(mockResponse);
       }, 0);
     });
-  };*/
+  };
 
   useEffect(() => {
     async function fetchData() {
@@ -58,8 +57,8 @@ const Branches = () => {
       const jsonData = {
         rssUrls,
       };
-      //const json = isTesting ? await getMockDataAsync() : await getCabinQuestFeedFromScoutSummarizeService(jsonData);
-      const json = await getCabinQuestFeedFromScoutSummarizeService(jsonData);
+      const json = isTesting ? await getMockDataAsync() : await getCabinQuestFeedFromScoutSummarizeService(jsonData);
+      //const json = await getCabinQuestFeedFromScoutSummarizeService(jsonData);
 
       const allNewBranches = convertToPortholeBranches(json.feed_responses);
       const shuffledBranches = shuffle(allNewBranches);

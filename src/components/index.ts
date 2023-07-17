@@ -53,8 +53,8 @@ export { default as KeyValuePairs } from './molecules/key-value-pairs';
 export { default as Loading } from './molecules/loading';
 export { default as Error } from './molecules/error';
 
-//export { default as PrivacyPolicy } from './molecules/policies/privacy-policy';
-//export { default as TermsOfUse } from './molecules/policies/terms-of-use';
+export { default as PrivacyPolicy } from './molecules/policies/privacy-policy';
+export { default as TermsOfUse } from './molecules/policies/terms-of-use';
 
 // organisms
 export { default as Login } from './organisms/login';
@@ -78,3 +78,7 @@ export { default as FrozenLake } from './organisms/frozen-lake';
 // templates
 export { default as HomeTemplate } from './templates/home';
 export { default as HeadwindsHomeTemplate } from './templates/home/headwinds';
+
+// pages
+export { default as HeadwindsHomePage } from './pages/home/headwinds';
+export { default as HomePage } from './pages/home';
