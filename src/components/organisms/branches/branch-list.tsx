@@ -6,6 +6,8 @@ import { Column, Row, List, ListItem } from '../../../';
 import { BranchListProps } from './branch-list.types';
 import styles from './branches.module.css';
 
+const cardWidth = 375; // smaller phones like iPhone have 375px width
+
 const BranchList = ({ branches }: BranchListProps) => {
   const ref = useRef(null);
   const [totalColumns, setTotalColumns] = useState(null);
@@ -14,12 +16,10 @@ const BranchList = ({ branches }: BranchListProps) => {
     if (ref?.current?.offsetWidth && totalColumns === null) {
       const width = ref.current.offsetWidth;
 
-      const cardWidth = 404;
-      const totalColumns = Math.floor(width / cardWidth);
-
-      console.log('width: ', width);
+      const calcTotalColumns = Math.floor(width / cardWidth);
+      const totalColumns = calcTotalColumns > 0 ? calcTotalColumns : 1;
       console.log('totalColumns: ', totalColumns);
-
+      console.log('width: ', width);
       setTotalColumns(totalColumns);
     }
   }, []);
@@ -53,7 +53,7 @@ const BranchList = ({ branches }: BranchListProps) => {
     };
 
     const column = (
-      <Column {...columnProps}>
+      <Column {...columnProps} customClass={styles.card__column}>
         <List customClass={styles.card__list}>{getCards(cardBranches)}</List>
       </Column>
     );
@@ -62,16 +62,9 @@ const BranchList = ({ branches }: BranchListProps) => {
   };
 
   const getColumns = branches => {
-    // instead of the window, let's get the width of the parent container
-    //const screenWindow = getWindow();
-
     if (branches.length === 0) {
       return null;
     } else if (totalColumns) {
-      //const width = screenWindow?.innerWidth;
-      //const cardWidth = 300;
-      //const totalColumns = Math.floor(width / cardWidth);
-
       const totalBranchesPerColumn = Math.floor(branches.length / totalColumns);
       const range = [...Array(totalColumns).keys()];
 

@@ -41,7 +41,7 @@ export const GoldTitleImageCard: React.FC<GoldLeafProps> = ({ goldLeafModel, mod
               <SubHeadline
                 text={goldLeafModel.title}
                 customClass={styles.GoldLeaf__title}
-                customStyle={{ width: 'fit-content', lineHeight: '26px', fontWeight: 700 }}
+                customStyle={{ lineHeight: '26px', fontWeight: 700 }}
               />
             </Link>
           </Column>

@@ -9,6 +9,7 @@
     'content content'
     'footer footer';
   grid-gap: 8px;
+  width: 100%;
 }
 
 .header {
@@ -22,6 +23,7 @@
   justify-content: center;
   width: 100%;
   overflow: hidden;
+  min-height: 500px;
 }
 
 .sidequest {
