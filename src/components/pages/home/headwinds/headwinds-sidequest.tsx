@@ -1,7 +1,7 @@
 import React from 'react';
 import { Column, Row, SubHeadline, Paragraph, Link, Headline, Image, List, ListItem, AnimateNumber } from '../../..';
 import brandon from './brandon_square.png';
-import bolt from './bolt.svg';
+import { Bolt } from './bolt';
 
 const moss = '#bccd9d';
 const gold = '#b2a25a';
@@ -14,7 +14,8 @@ const HeadwindsSidequest = () => {
           <Image a11y="brandon flowers" url={brandon} width={100} height={100} customStyle={{ borderRadius: '50%' }} />
 
           <Headline>
-            <Image a11y="lightening bolt" url={bolt} width={30} height={30} /> Brandon Flowers
+            <Bolt />
+            Brandon Flowers
           </Headline>
         </Column>
         {/* <AnimateNumber delay="1000" to={234002} from={0} /> */}
