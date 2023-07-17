@@ -108,6 +108,7 @@
     "rollup-plugin-filesize": "^9.0.0",
     "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-typescript2": "^0.34.1",
+    "rollup-plugin-url": "^3.0.1",
     "semantic-release": "^19.0.3",
     "source-map-loader": "^1.0.0",
     "storybook": "6.5.14",
