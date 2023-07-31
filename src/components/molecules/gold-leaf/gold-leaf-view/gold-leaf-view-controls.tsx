@@ -139,8 +139,6 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = nul
     };
     const response = await fetchRetry(url, config);
     const data = await response.json();
-
-    console.log('handleToggleTrainGoldLeaf data: ', data);
   };
 
   const handleReadGoldLeaf = () => {
@@ -203,7 +201,6 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = nul
     goldLeafModel.useText || goldLeafModel.images.length === 1 ? null : goldLeafModel.images.length;
 
   const goldLeafText = stripImagesFromText(goldLeafModel);
-  console.log('testing goldLeafText: ', goldLeafText);
 
   return (
     <Column customClass={styles.GoldLeaf} dataTestId={dataTestId}>

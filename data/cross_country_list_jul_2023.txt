@@ -4,3 +4,5 @@ https://towardsdatascience.com/6-habits-to-include-in-your-daily-routine-for-a-l
 Programming
 https://mdxeditor.dev/
 https://dev.to/lakshmananarumugam/15-advanced-typescript-tips-for-development-5ddj
+https://twitter.com/headwinds/status/1685387123472355328
+
