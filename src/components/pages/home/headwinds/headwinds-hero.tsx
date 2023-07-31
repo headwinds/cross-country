@@ -1,7 +1,7 @@
 import React from 'react';
 import { Branches } from '../../../';
 
-const HeadwindsHero = () => {
-  return <Branches isTesting />;
+const HeadwindsHero = ({ isLoading, isTesting }) => {
+  return <Branches isTesting={isTesting} isLoading={isLoading} />;
 };
 export default HeadwindsHero;

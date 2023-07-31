@@ -6,4 +6,5 @@ export interface HomeProps {
   panel3?: React.ReactNode;
   footer?: React.ReactNode;
   isBlockedIn: boolean;
+  isLoading: boolean;
 }

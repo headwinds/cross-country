@@ -18,8 +18,8 @@ const BranchList = ({ branches }: BranchListProps) => {
 
       const calcTotalColumns = Math.floor(width / cardWidth);
       const totalColumns = calcTotalColumns > 0 ? calcTotalColumns : 1;
-      console.log('totalColumns: ', totalColumns);
-      console.log('width: ', width);
+      //console.log('BranchList totalColumns: ', totalColumns);
+      //console.log('BranchList width: ', width);
       setTotalColumns(totalColumns);
     }
   }, []);
