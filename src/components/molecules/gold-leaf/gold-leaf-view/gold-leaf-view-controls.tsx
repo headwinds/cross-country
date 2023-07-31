@@ -112,7 +112,7 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = nul
 
     const decodedStripedHtml = stripImagesFromText(goldLeafModel);
 
-    if (decodedStripedHtml !== '') {
+    if (decodedStripedHtml !== '' && String(decodedStripedHtml) !== 'true') {
       setState({ ...state, showImages: false, showArticle: newShowArticle, text: decodedStripedHtml });
     }
   };
@@ -139,8 +139,6 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = nul
     };
     const response = await fetchRetry(url, config);
     const data = await response.json();
-
-    console.log('handleToggleTrainGoldLeaf data: ', data);
   };
 
   const handleReadGoldLeaf = () => {
@@ -214,6 +212,7 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = nul
         <Button customClass={styles.GoldLeaf__item} onClick={handleTweet} aria-label="tweet">
           <TweetIcon />
         </Button>
+        {/*
         <Button customClass={styles.GoldLeaf__item} onClick={handleToggleTrainGoldLeaf} aria-label="train">
           {renderTrainingBtn()}
         </Button>
@@ -221,10 +220,11 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = nul
         <Button customClass={styles.GoldLeaf__item} onClick={handleReadGoldLeaf} aria-label="remove">
           <HideIcon />
         </Button>
-
+        */}
         {renderImageBtn(showImages, totalGoldLeafes)}
+
         <Button customClass={styles.GoldLeaf__item} onClick={handleViewArticle} aria-label="view artilce">
-          {goldLeafText !== '' ? <ArticleIcon /> : <ArticleNoneIcon />}
+          {goldLeafText !== '' && goldLeafText !== 'true' ? <ArticleIcon /> : <ArticleNoneIcon />}
         </Button>
       </Row>
       {/* images */}
@@ -233,7 +233,7 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = nul
         <div
           contentEditable="true"
           dangerouslySetInnerHTML={{ __html: text }}
-          style={{ color: '#666', outline: 'none' }}
+          style={{ color: '#666', outline: 'none', padding: 16 }}
         ></div>
       ) : null}
       {/* footer controls 
