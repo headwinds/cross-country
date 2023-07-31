@@ -10,7 +10,12 @@ import { Loading } from '../../../';
 import BranchList from './branch-list';
 import { mockResponse } from './__mocks__/response';
 
-const Branches = ({ isTesting = false }) => {
+type BranchesProps = {
+  isTesting?: boolean;
+  isLoading?: boolean;
+};
+
+const Branches = ({ isTesting = false, isLoading = false }: BranchesProps) => {
   const [state, setState] = useState({
     feeds: createAllPortholeTrees(),
     branches: [],
