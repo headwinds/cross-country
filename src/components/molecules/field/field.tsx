@@ -2,9 +2,9 @@ import * as React from 'react';
 import { Row, Label, TextInput } from '../../';
 import { FieldProps } from './field.types';
 import clsx from 'clsx';
-import styles from './field.css';
+import styles from './field.module.css';
 
-const Field: React.FC<FieldProps> = ({ text, onTextChange, value, type, isValid, isUntouched }) => {
+const Field = ({ text = 'hello world', onTextChange, value, type, isValid, isUntouched }: FieldProps) => {
   return (
     <Row customClass={styles.field__row}>
       <Label
