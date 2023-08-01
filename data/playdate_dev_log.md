@@ -12,7 +12,7 @@ The Playdate SDK comes with a simulator which is found within the the bin folder
 
 https://love2d.org/
 
-I thought about using VS Code but I think I'll try https://nova.app/ which seems to have a lot of support for Lua and makes it easy to run the Playdate Simulator.
+I thought about using [VS Code](https://devblog.cadinbatrack.com/2021/09/28/developing-for-playdate-in-vscode/) but I think I'll try [Nova](https://nova.app/) which seems to have a lot of support for Lua and makes it easy to run the Playdate Simulator.
 
 https://extensions.panic.com/extensions/com.panic/com.panic.Playdate/
 
@@ -23,3 +23,5 @@ By running the Playdate date in Nova, I was able to compile each of the examples
 ![simular location](./playdate/asteroids-setup.png)
 
 ![simular location](./playdate/asteroids-simulator.png)
+
+https://devblog.cadinbatrack.com/2022/03/02/panels-for-playdate/
