@@ -14,6 +14,7 @@ export { default as SubHeadline } from './atoms/text/subheadline/subheadline';
 export { default as Paragraph } from './atoms/text/paragraph/paragraph';
 export { default as Form } from './atoms/form';
 export { default as TextInput } from './atoms/text/input';
+export { default as TextArea } from './atoms/text/text-area';
 export { default as Span } from './atoms/text/span';
 export { default as Hilight } from './atoms/text/hilight';
 export { default as Bold } from './atoms/text/bold';

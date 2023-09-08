@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import styles from './text-input.css';
-import PropTypes from 'prop-types';
+import styles from './text-input.module.css';
+
 import clsx from 'clsx';
 
 const TextInput = ({
