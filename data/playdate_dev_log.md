@@ -101,3 +101,7 @@ Along with pixel art, for the Playdate it's also a matter of embracing 1 bit! Bl
 - https://devforum.play.date/t/playdither-a-web-tool-for-1-bit-image-dithering/5339
 
 I'm going to try to use my mouse but will most likey grab a [$40 wacom tablet](https://www.bestbuy.com/site/wacom-intuos-graphic-drawing-tablet-for-mac-pc-chromebook-android-small-with-software-included-black/6196636.p?skuId=6196636) or possibly this [Huion](https://www.amazon.ca/HUION-420-Battery-Free-Compatible-Chromebook/dp/B00DTPYWBG) since I shouldn't need a sophisticated one for pixel art. I used to have Wacom tablet back in the hazy days of Flash.
+
+## September 8/2023
+
+The playdate-metroidvania repo uses LDTK so that encouraged me to grab a copy from [ldtk.io](https://ldtk.io/) and decided to pay $10 based on my current funds which is nice to being the options. I could have paid nothing. I can also donate more if I provided value and if I ever make money from my game.

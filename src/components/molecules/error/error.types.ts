@@ -1,4 +1,4 @@
 export interface ErrorProps {
-    foo?: string;
-    customStyle?: any;
+  message?: string;
+  customStyle?: any;
 }

@@ -1,0 +1,9 @@
+.cluster {
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+}
+
+li.listicle {
+  list-style-type: none;
+}
