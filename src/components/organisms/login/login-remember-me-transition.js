@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { useTransition, animated, useSpringRef } from '@react-spring/web';
 
 // components
-import { Row, Button } from '../../';
+import { Row, Button, Checkbox, Label } from '../..';
 
 // styles
 import styles from './login.module.css';
 
-const LoginSubmitTransition = ({ isAnimated, handleClick, isAuthenticated }) => {
+const LoginRememberMeTransition = ({ isAnimated, isChecked, handleRememberMeClicked }) => {
   const data = [1];
   const transRef = useSpringRef();
 
@@ -18,6 +18,18 @@ const LoginSubmitTransition = ({ isAnimated, handleClick, isAuthenticated }) => 
     leave: { opacity: 0, transform: 'translate3d(0px, 20px, 0px)' },
   }));
 
+  const RememberView = useCallback(
+    () => (
+      <Row customClass={styles.login__rowSend}>
+        <Row customClass={styles.login__rowSend}>
+          <Label customClass={styles.login__text}>Remember me?</Label>
+          <Checkbox isChecked={isChecked} handleChange={handleRememberMeClicked} />
+        </Row>
+      </Row>
+    ),
+    [isChecked]
+  );
+
   useEffect(() => {
     transRef.start();
   }, []);
@@ -25,22 +37,12 @@ const LoginSubmitTransition = ({ isAnimated, handleClick, isAuthenticated }) => 
   if (isAnimated) {
     return transitions(style => (
       <animated.div style={style}>
-        <Row customClass={styles.login__rowSend}>
-          <Button label="login" onClick={handleClick} customClass={styles.login__button}>
-            Send
-          </Button>
-        </Row>
+        <RememberView />
       </animated.div>
     ));
   }
 
-  return (
-    <Row customClass={styles.login__rowSend}>
-      <Button label="login" onClick={handleClick} customClass={styles.login__button}>
-        Send
-      </Button>
-    </Row>
-  );
+  return <RememberView />;
 };
 
-export default LoginSubmitTransition;
+export default LoginRememberMeTransition;

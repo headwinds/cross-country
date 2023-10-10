@@ -105,3 +105,9 @@ I'm going to try to use my mouse but will most likey grab a [$40 wacom tablet](h
 ## September 8/2023
 
 The playdate-metroidvania repo uses LDTK so that encouraged me to grab a copy from [ldtk.io](https://ldtk.io/) and decided to pay $10 based on my current funds which is nice to being the options. I could have paid nothing. I can also donate more if I provided value and if I ever make money from my game.
+
+I have opened the world.ldtk file in LDTK and am attempting to add more screens to it. I discovered that right-clicking a tile will delete while left-clciking will add a tile.
+
+I've now extended the original 3 screen world and added another 10 screens and was able to quickly draw these screens using the tile brush.
+
+<img src="./playdate/larger_world.png" style="width: 400px" />

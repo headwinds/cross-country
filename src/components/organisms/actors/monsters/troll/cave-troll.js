@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { caveTrollMachine } from './cave-troll-machine';
 import { useInterpret, useSelector, useMachine } from '@xstate/react';
-import { Image, Tile, Column, Row, Wrapper, Modal, Hunter, Troll, Stage, Button } from '../../../../../../';
+import { Image, Tile, Column, Row, Wrapper, Modal, Hunter, Troll, Stage, Button } from '../../../../..';
 import CaveTrollBoard from './cave-troll-board';
-import c from '../../../../../../constants/';
+import c from '../../../../../constants';
 import styles from './cave-troll.css';
 
 const CaveTroll = () => {

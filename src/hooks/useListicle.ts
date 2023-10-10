@@ -1,53 +1,82 @@
-import { useEffect, useState, useCallback, useRef } from 'react';
+import { useEffect, useState } from 'react';
+import useBulkFetch from './useBulkFetch';
 
 type ListicleItems = {
   title: string;
   urls: string[];
 }[];
 
-const useListicle = ({ listicle }: { listicle: string }) => {
-  const [listicleItems, setListicleItems] = useState<ListicleItems>([]);
+// remote path
+// https://listicles-phi.vercel.app/cross_country_list_aug_2023.txt
+// path to data folder
 
-  const parseListicle = useCallback(() => {
-    console.log('useListicle.ts: listicle: ', typeof listicle);
-    const arr: string[] = listicle?.split('\n\n');
+// missing mar & apr
+const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug'];
 
-    console.log('useListicle.ts: arr: ', arr);
+const month = 'may';
+const year = '2023';
+const localPath = '../../../data/listicles/';
+const remotePath = 'https://cross-country-listicles.vercel.app/';
+const defaultUrl = `${remotePath}cross_country_list_${month}_${year}.txt`;
 
-    const listicleArray: ListicleItems = arr.map(item => {
-      console.log('useListicle.ts: item ->: ', item);
-      /*
-      item logs as:
-       ML
-        https://styledrop.github.io/
-        https://www.haihai.ai/gpt-gdrive/
-        https://towardsdatascience.com/a-gentle-intro-to-chaining-llms-agents-and-utils-via-langchain-16cd385fca81
-        https://tsmatz.wordpress.com/2023/03/07/react-with-openai-gpt-and-langchain/
-        https://arxiv.org/pdf/2210.03629.pdf
-        https://voyager.minedojo.org/
-        the first link is the title, the rest are the urls
-        so create an object with the title and the collections of urls like {title: string, urls: string[]}
-      */
-      const titleUrlCollection: { title: string; urls: string[] } = {
-        title: '',
-        urls: [],
-      };
-      const titleUrlArray: string[] = item.split('\n');
-      titleUrlCollection.title = titleUrlArray[0];
-      titleUrlCollection.urls = titleUrlArray.slice(1);
-      return titleUrlCollection;
-    });
-
-    setListicleItems(listicleArray);
-  }, []);
+const useListicle = (url: string = defaultUrl) => {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (listicle) {
-      parseListicle();
-    }
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url);
+        const data = await response.text();
+
+        const lines = data.split('\n');
+        let curCateogry = '';
+        const categories = lines.reduce((acc, line, index) => {
+          // this first line should be the first category
+          if (!line.includes('http') && line.trim() !== '') {
+            const category = line.trim();
+            if (!acc[category]) {
+              acc[category] = [];
+            }
+            curCateogry = category;
+          } else if (line.includes('http')) {
+            const url = line.trim();
+            acc[curCateogry].push({ title: curCateogry, url });
+          }
+          console.log('acc: ', acc);
+          return acc;
+        }, {});
+        setData(categories);
+      } catch (error) {
+        setError(error);
+        return console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
   }, []);
 
-  return listicleItems;
+  // once we have all the urls, let's replace them with their titles
+  useEffect(() => {
+    // update all the urls with their titles
+    if (data) {
+      const urls = Object.keys(data).reduce((acc, category) => {
+        const items = data[category];
+        const urls = items.map(item => item.url);
+        return [...acc, ...urls];
+      }, []);
+      // we have the urls, now fetch them
+      const { data: urlsData, error: urlsError, isLoading: urlsIsLoading } = useBulkFetch(urls);
+    }
+  }, [data]);
+
+  return {
+    data,
+    error,
+    isLoading,
+  };
 };
 
 export default useListicle;

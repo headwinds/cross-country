@@ -5,7 +5,7 @@ import { PillButton } from './pill-button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'design system/atoms/button/Pill Button',
+  title: 'design system/atoms/button/pill button',
   component: PillButton,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

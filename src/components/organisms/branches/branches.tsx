@@ -12,10 +12,10 @@ import { mockResponse } from './__mocks__/response';
 
 type BranchesProps = {
   isTesting?: boolean;
-  isLoading?: boolean;
+  onLoadedCallback?: (error) => void;
 };
 
-const Branches = ({ isTesting = false, isLoading = false }: BranchesProps) => {
+const Branches = ({ isTesting = false, onLoadedCallback }: BranchesProps) => {
   const [state, setState] = useState({
     feeds: createAllPortholeTrees(),
     branches: [],
@@ -23,6 +23,8 @@ const Branches = ({ isTesting = false, isLoading = false }: BranchesProps) => {
     allNewBranches: [],
   });
   const { hasFetched, allNewBranches, branches } = state;
+
+  console.log('branches rendered isTesting', isTesting);
 
   // BFF approach where I provide a new microservice that will handle the RSS feed and return exactly what I need
   const getCabinQuestFeedFromScoutSummarizeService = async data => {
@@ -41,14 +43,19 @@ const Branches = ({ isTesting = false, isLoading = false }: BranchesProps) => {
       const response = await fetchRetry(remoteUrl, options);
       const json = await response.json();
 
+      onLoadedCallback(null);
+
       return json;
-    } catch (error) {}
+    } catch (error) {
+      onLoadedCallback(error);
+    }
   };
 
   const getMockDataAsync = async () => {
     return new Promise(resolve => {
       setTimeout(() => {
         resolve(mockResponse);
+        onLoadedCallback(null);
       }, 0);
     });
   };
