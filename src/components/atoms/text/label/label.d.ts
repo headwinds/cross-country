@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export interface LabelProps {
-  text: string;
+  children: React.ReactNode;
   forId?: string;
 }
 

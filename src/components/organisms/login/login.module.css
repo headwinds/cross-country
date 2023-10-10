@@ -1,7 +1,11 @@
 .login {
   display: flex;
-  padding: 26px;
-  width: 360px;
+  overflow: hidden;
+  padding: 0px;
+}
+
+.login__view {
+  padding: 0px;
 }
 
 .login__title {
@@ -56,16 +60,22 @@
 }
 
 .login__rowSend {
-  justify-content: flex-end !important;
-  margin: 8px;
+  justify-content: flex-start !important;
+}
+
+.login__response {
+  padding: 8px;
+  font-size: 12px;
 }
 
 .login__error {
-  padding: 8px;
   color: darkred;
 }
 
 .login__success {
-  padding: 8px;
   color: green;
+}
+.login__text {
+  color: #666;
+  font-size: 12px;
 }

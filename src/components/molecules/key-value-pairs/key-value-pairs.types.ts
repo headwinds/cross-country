@@ -2,6 +2,7 @@ interface KeyValue {
   id: number;
   key: string;
   value: string;
+  type?: string;
 }
 
 export interface KeyValuePairsProps {

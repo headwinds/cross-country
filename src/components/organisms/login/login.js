@@ -1,6 +1,6 @@
-import React, { useState, useReducer, useEffect } from 'react';
+import React, { useReducer, useEffect } from 'react';
+
 // components
-import { Image, TextInput, Column, Row, Paragraph, Button, Label, SubHeadline } from '../../';
 import LoginView from './login-view';
 
 // utils
@@ -16,14 +16,14 @@ const loginReducerInitialState = {
     isUsernameUntouched: true,
     usernameErrorMessage: 'Username is required and must be lowercase & unique',
     usernameRegExp,
-    usernameValue: '',
+    usernameValue: 'cabin',
   },
   password: {
     isPasswordValid: false,
     isPasswordUntouched: true,
     passwordErrorMessage: 'Password is required and must be at least 4 characters',
     passwordRegExp,
-    passwordValue: '',
+    passwordValue: 'cabin',
   },
   hasImage: false,
   a11y: '',
@@ -40,6 +40,8 @@ const loginReducerInitialState = {
   },
   isFetching: false,
   error: null,
+  // need to check the secure cookie
+  hasRememberMeChecked: false,
 };
 
 const createInitialState = () => {
@@ -57,6 +59,7 @@ const reduceActionTypes = {
   IS_FETCHING: 'IS_FETCHING',
   FETCH_SUCCESS: 'FETCH_SUCCESS',
   FETCH_FAIL: 'FETCH_FAIL',
+  TOGGLE_REMEMBER_ME: 'TOGGLE_REMEMBER_ME',
 };
 
 const loginReducer = (state, action) => {
@@ -113,6 +116,12 @@ const loginReducer = (state, action) => {
         isFetching: false,
         error: action.payload,
       };
+    case reduceActionTypes.TOGGLE_REMEMBER_ME:
+      return {
+        ...state,
+        hasRememberMeChecked: !state.hasRememberMeChecked,
+        error: action.payload,
+      };
     default:
       return state;
   }
@@ -133,6 +142,7 @@ const Login = ({
       unsplashImgUrl,
       a11y,
       loginResponse,
+      hasRememberMeChecked,
     },
     dispatch,
   ] = useReducer(loginReducer, null, createInitialState);
@@ -175,7 +185,8 @@ const Login = ({
           }
         )
         .then(json => {
-          const { isAuthenticated, message, status, access_token } = json;
+          console.log('res  ', json);
+          const { isAuthenticated, message, status, access_token, refresh_token } = json;
           /*
           access_token 
           isAuthenticated
@@ -196,7 +207,10 @@ const Login = ({
             if (isAuthenticated && access_token) {
               dispatch({
                 type: reduceActionTypes.SET_LOGIN_RESPONSE,
-                payload: { message: 'You are logged in!', response: { hasError: false, isSuccessful: true } },
+                payload: {
+                  message: 'You are logged in!',
+                  response: { hasError: false, isSuccessful: true, access_token, refresh_token },
+                },
               });
             } else {
               const errorPayload = { message, response: { hasError: true, isSuccessful: isAuthenticated } };
@@ -219,6 +233,13 @@ const Login = ({
           });
         });
     }
+  };
+
+  const handleRememberMeClicked = () => {
+    // dispatch toggle remember me
+    dispatch({
+      type: reduceActionTypes.TOGGLE_REMEMBER_ME,
+    });
   };
 
   useEffect(() => {
@@ -248,6 +269,8 @@ const Login = ({
     isAnimated,
     hasImage,
     hasBackground,
+    handleRememberMeClicked,
+    hasRememberMeChecked,
   };
 
   return <LoginView {...loginViewProps} />;

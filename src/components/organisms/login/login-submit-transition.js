@@ -1,42 +1,36 @@
-import React, { useEffect } from 'react';
-import { useTransition, animated, useSpringRef, useSpring } from '@react-spring/web';
+import React, { useEffect, useState } from 'react';
+import { useSpring, animated } from '@react-spring/web';
 
 // components
-import { Image, TextInput, Column, Row, Paragraph, Button, Label, SubHeadline } from '../../';
-import { postLoginUser } from '../../../services/login-service';
-import { getUnsplashPhoto } from '../../../services/image-service';
-import { privateConfig } from '../../../../cross-country-config-private';
-import { getWindow } from '../../../utils/server-side-util';
+import { Row, Button } from '../../';
 
 // styles
-import clsx from 'clsx';
 import styles from './login.module.css';
 
-const LoginSubmitTransition = ({ isAnimated }) => {
-  const data = [1];
-  const transRef = useSpringRef();
-
-  const [transitions, api] = useTransition(data, () => ({
-    ref: transRef,
-    from: { opacity: 0, transform: 'translate3d(0px, 0px, 0px)' },
-    enter: { opacity: 1, transform: 'translate3d(0px, 10px, 0px)', delay: 900 },
-    leave: { opacity: 0, transform: 'translate3d(0px, 20px, 0px)' },
-  }));
+const LoginSubmitTransition = ({ isAnimated, isAuthenticated = false }) => {
+  const start = { opacity: 0, transform: 'translate3d(0px, 0px, 0px)' };
+  const enter = { opacity: 1, transform: 'translate3d(0px, 10px, 0px)', delay: 900 };
+  const leave = { opacity: 0, transform: 'translate3d(0px, 0px, 0px)' };
+  const [animatedStyles, api] = useSpring(() => start);
 
   useEffect(() => {
-    transRef.start();
-  }, []);
+    if (!isAuthenticated) {
+      api.start(enter);
+    } else {
+      api.start(leave);
+    }
+  }, [isAuthenticated]);
 
   if (isAnimated) {
-    return transitions(style => (
-      <animated.div style={style}>
+    return (
+      <animated.div style={animatedStyles}>
         <Row customClass={styles.login__rowSend}>
           <Button type="submit" label="login" customClass={styles.login__button}>
             Send
           </Button>
         </Row>
       </animated.div>
-    ));
+    );
   }
 
   return (

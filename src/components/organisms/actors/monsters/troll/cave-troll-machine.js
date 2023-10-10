@@ -1,9 +1,9 @@
 import { createMachine, assign, interpret, send } from 'xstate';
 
 //import PusherService from '../../../../../../services/pusher-service';
-import c from '../../../../../../constants/';
-import PusherService from '../../../../../../services/pusher-service';
-import { getDocument } from '../../../../../../utils/server-side-util';
+import c from '../../../../../constants';
+import PusherService from '../../../../../services/pusher-service';
+import { getDocument } from '../../../../../utils/server-side-util';
 
 const localUrl = 'http://127.0.0.1:5000';
 const remoteUrl = 'https://scout.vercel.app';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Column, Row, SubHeadline, Paragraph, Link, Headline, Image, List, ListItem, AnimateNumber } from '../../..';
+import { Column, Row, SubHeadline, Paragraph, Link, Headline, Image, List, ListItem, Login } from '../../..';
 import brandon from './brandon_square.png';
 import { Bolt } from './bolt';
 import { LinkedinLogo, GithubLogo, TwitterLogo } from 'phosphor-react';
@@ -8,7 +8,26 @@ const moss = '#bccd9d';
 const gold = '#b2a25a';
 const teal = '#0baeae';
 
-const HeadwindsSidequest = ({ isLoading = false }) => {
+interface HeadwindsSidequestProps {
+  onLoadedCallback?: (error) => void;
+}
+
+/*
+Sidequest Goals:
+
+Create a sidequest component that is a "side" section of the page
+
+What media best represents me? 
+- A picture of me
+- short bio
+- links to social media like favourite podcast, twitter, github, linkedin, etc
+
+Can I create a short quest to go learn something with a quiz and some stats at the end?
+
+Authenticate the user with a JWT token and allow them to customize their profile
+*/
+
+const HeadwindsSidequest = ({ onLoadedCallback }: HeadwindsSidequestProps) => {
   const customLinkStyle = {
     textDecoration: 'none',
     boxShadow: 'none',
@@ -22,18 +41,21 @@ const HeadwindsSidequest = ({ isLoading = false }) => {
     color: gold,
   };
 
+  const onSideQuestLoaded = error => {
+    onLoadedCallback(error);
+  };
+
   return (
     <Column>
+      <Login isAnimated />
       <Row>
         <Column customStyle={{ padding: 0 }}>
           <Image a11y="brandon flowers" url={brandon} width={100} height={100} customStyle={{ borderRadius: '50%' }} />
-
           <Headline>
             <Bolt />
             Brandon Flowers
           </Headline>
         </Column>
-        {/* <AnimateNumber delay="1000" to={234002} from={0} /> */}
       </Row>
       <Paragraph>
         I{"'"}m primarily a Frontend Developer, and am currently happily employed @{' '}

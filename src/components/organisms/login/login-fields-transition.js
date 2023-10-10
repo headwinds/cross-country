@@ -1,12 +1,8 @@
-import React, { useEffect } from 'react';
-import { useTransition, animated, useSpringRef, useSpring } from '@react-spring/web';
+import React, { useEffect, useState } from 'react';
+import { useSpring, animated } from '@react-spring/web';
 
 // components
-import { Image, TextInput, Column, Row, Paragraph, Button, Label, SubHeadline } from '../../';
-import { postLoginUser } from '../../../services/login-service';
-import { getUnsplashPhoto } from '../../../services/image-service';
-import { privateConfig } from '../../../../cross-country-config-private';
-import { getWindow } from '../../../utils/server-side-util';
+import { TextInput, Column, Row, Label } from '../../';
 
 // styles
 import clsx from 'clsx';
@@ -33,50 +29,58 @@ const Field = ({ text, onTextChange, value, type = 'text', isValid = false, isUn
   );
 };
 
-const LoginFieldsTransition = ({ isAnimated, onUsernameChange, usernameValue, onPasswordChange, passwordValue }) => {
-  const data = [1];
+const LoginFieldsTransition = ({
+  isAnimated,
+  onUsernameChange,
+  usernameValue,
+  onPasswordChange,
+  passwordValue,
+  isAuthenticated,
+}) => {
+  // usernanem animations
+  const usernameStart = { opacity: 0, transform: 'translate3d(-100px, 0px, 0px)' };
+  const usernameEnter = { opacity: 1, transform: 'translate3d(-50px, 0px, 0px)', delay: 500 };
+  const usernameLeave = { opacity: 0, transform: 'translate3d(200px, 0px, 0px)' };
+  const [usernameStyles, usernameApi] = useSpring(() => usernameStart);
 
-  const transRef = useSpringRef();
+  // passowrd animations
+  const playAnimation = (api, config) => {
+    api.start(config);
+  };
 
-  const [usernameTransitions, usernameApi] = useTransition(data, () => ({
-    ref: transRef,
-    from: { opacity: 0, transform: 'translate3d(-100px, 0px, 0px)' },
-    enter: { opacity: 1, transform: 'translate3d(-50px, 0px, 0px)', delay: 500 },
-    leave: { opacity: 0, transform: 'translate3d(200px, 0px, 0px)' },
-  }));
-
-  const [passwordTransitions, passwordApi] = useTransition(data, () => ({
-    ref: transRef,
-    from: { opacity: 0, transform: 'translate3d(-100px, 0px, 0px)' },
-    enter: { opacity: 1, transform: 'translate3d(-50px, 0px, 0px)', delay: 700 },
-    leave: { opacity: 0, transform: 'translate3d(200px, 0px, 0px)', delay: 100 },
-  }));
+  const passwordStart = { opacity: 0, transform: 'translate3d(-100px, 0px, 0px)' };
+  const passwordEnter = { opacity: 1, transform: 'translate3d(-50px, 0px, 0px)', delay: 700 };
+  const passwordLeave = { opacity: 0, transform: 'translate3d(200px, 0px, 0px)', delay: 100 };
+  const [passwordStyles, passwordApi] = useSpring(() => passwordStart);
 
   // we want to parent to start the both animations
   useEffect(() => {
-    transRef.start();
-  }, []);
+    if (!isAuthenticated) {
+      playAnimation(usernameApi, usernameEnter);
+      playAnimation(passwordApi, passwordEnter);
+    } else {
+      playAnimation(usernameApi, usernameLeave);
+      playAnimation(passwordApi, passwordLeave);
+    }
+  }, [isAuthenticated]);
 
   const renderLoginFields = () => {
     if (isAnimated) {
       return (
-        <Column customStyle={{ width: 400 }}>
-          {usernameTransitions(style => (
-            <animated.div style={style}>
-              <Field text="Username" onTextChange={onUsernameChange} value={usernameValue} />
-            </animated.div>
-          ))}
-          {passwordTransitions(style => (
-            <animated.div style={style}>
-              <Field text="Password" type="password" onTextChange={onPasswordChange} value={passwordValue} />
-            </animated.div>
-          ))}
+        <Column customStyle={{ padding: 0 }}>
+          <animated.div style={usernameStyles}>
+            <Field text="Username" onTextChange={onUsernameChange} value={usernameValue} />
+          </animated.div>
+
+          <animated.div style={passwordStyles}>
+            <Field text="Password" type="password" onTextChange={onPasswordChange} value={passwordValue} />
+          </animated.div>
         </Column>
       );
     }
 
     return (
-      <Column customStyle={{ width: 400 }}>
+      <Column customStyle={{ padding: 0 }}>
         <Field text="Username" onTextChange={onUsernameChange} value={usernameValue} />
         <Field text="Password" type="password" onTextChange={onPasswordChange} value={passwordValue} />
       </Column>

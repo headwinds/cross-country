@@ -1,26 +1,21 @@
-import React, { useEffect } from 'react';
-import { useTransition, animated, useSpringRef, useSpring } from '@react-spring/web';
+import React, { useEffect, useState } from 'react';
+import { useTransition, animated, useSpringRef } from '@react-spring/web';
 
 // components
-import { Image, TextInput, Column, Row, Paragraph, Button, Label, SubHeadline } from '../../';
-import { postLoginUser } from '../../../services/login-service';
-import { getUnsplashPhoto } from '../../../services/image-service';
-import { privateConfig } from '../../../../cross-country-config-private';
-import { getWindow } from '../../../utils/server-side-util';
+import { Row, Paragraph } from '../../';
 
 // styles
 import clsx from 'clsx';
 import styles from './login.module.css';
 
 const Response = ({ loginResponse }) => {
-  console.log('Response loginReponse: ', loginResponse);
   if (loginResponse) {
     return (
       <Row>
         <Paragraph
-          customClass={clsx({
-            [styles.login__error]: loginResponse?.hasError,
-            [styles.login__success]: loginResponse?.isSuccessful,
+          customClass={clsx(styles.login__response, {
+            [styles.login__error]: loginResponse?.response?.hasError,
+            [styles.login__success]: loginResponse?.response?.isSuccessful,
           })}
         >
           {loginResponse?.message}
@@ -33,7 +28,8 @@ const Response = ({ loginResponse }) => {
 };
 
 const LoginResponseTransition = ({ isAnimated, loginResponse }) => {
-  const data = [1];
+  const [data, setData] = useState([1]);
+
   const transRef = useSpringRef();
 
   const [transitions, api] = useTransition(data, () => ({
@@ -44,8 +40,16 @@ const LoginResponseTransition = ({ isAnimated, loginResponse }) => {
   }));
 
   useEffect(() => {
-    transRef.start();
-  }, []);
+    if (loginResponse?.response?.isSuccessful) {
+      // ok this works but I want to do it with the leave animation!
+      transRef.start({
+        opacity: 0,
+        transform: 'translate3d(0px, 0px, 0px)',
+      });
+    } else {
+      transRef.start();
+    }
+  }, [loginResponse]);
 
   if (isAnimated) {
     return transitions(style => (

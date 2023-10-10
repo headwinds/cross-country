@@ -1,16 +1,8 @@
 import React, { useEffect } from 'react';
-import { useTransition, animated, useSpringRef, useSpring } from '@react-spring/web';
+import { useTransition, animated, useSpringRef } from '@react-spring/web';
 
 // components
-import { Image, TextInput, Column, Row, Paragraph, Button, Label, SubHeadline, Loading } from '../../';
-import { postLoginUser } from '../../../services/login-service';
-import { getUnsplashPhoto } from '../../../services/image-service';
-import { privateConfig } from '../../../../cross-country-config-private';
-import { getWindow } from '../../../utils/server-side-util';
-
-// styles
-import clsx from 'clsx';
-import styles from './login.module.css';
+import { Loading } from '../../';
 
 const LoginFetchingTransition = ({ isAnimated, isFetching }) => {
   // need to use isFetching to trigger the transition in and out

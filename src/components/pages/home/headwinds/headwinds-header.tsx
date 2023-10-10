@@ -1,7 +1,14 @@
 import React from 'react';
-import { Column } from '../../../';
+import { Column, Label } from '../../../';
 
-const HeadwindsHeader = ({ isLoading }) => {
-  return <div></div>;
+/*
+Note the header is only 50px tall so use it render alerts and notifications
+*/
+const HeadwindsHeader = ({ message = '' }) => {
+  return (
+    <Column>
+      <Label>{message}</Label>
+    </Column>
+  );
 };
 export default HeadwindsHeader;
