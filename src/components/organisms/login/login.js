@@ -7,6 +7,10 @@ import LoginView from './login-view';
 import { postLoginUser } from '../../../services/login-service';
 import { getUnsplashPhoto } from '../../../services/image-service';
 
+/*
+Authenticate the user with a JWT token and set access token in a secure cookie 
+*/
+
 const usernameRegExp = /^.{2,}$/;
 const passwordRegExp = /^.{4,}$/;
 
