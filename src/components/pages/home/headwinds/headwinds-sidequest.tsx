@@ -32,15 +32,6 @@ const HeadwindsSidequest = ({ onLoadedCallback }: HeadwindsSidequestProps) => {
   return (
     <Column>
       <Login isAnimated />
-      {/*<Row>
-        <Column customStyle={{ padding: 0 }}>
-          <Image a11y="brandon flowers" url={brandon} width={100} height={100} customStyle={{ borderRadius: '50%' }} />
-          <Headline>
-            <Bolt />
-            Brandon Flowers
-          </Headline>
-        </Column>
-      </Row>*/}
     </Column>
   );
 };
