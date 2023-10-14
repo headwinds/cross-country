@@ -52,7 +52,7 @@ It's time to came up with a few game ideas. As time is limited and I want to rel
 
 I started game design google doc which will be easier to share with others and keep track of ideas.
 
-![simulator location](./playdate/crypt-bone-king.png)
+<img src="./playdate/crypt-bone-king.png" style="width: 500px" />
 
 I've pitched and convinced my collaborator on working within a tile-based world after showing him this excellent example [crypt-of-the-bone-king](https://tinytouchtales.itch.io/crypt-of-the-bone-king) of what can be accomplished during a [7DRL Challenge](https://7drl.com/)
 
@@ -75,7 +75,7 @@ While not exactly related to VS CODE, [this ecosystem post](https://devforum.pla
 
 WOW!!!
 
-<img src="./playdate/metroidvania.png style="width: 400px" />
+<img src="./playdate/metroidvania.png style="width: 500px" />
 
 So the author of that post, [colingourlay](https://github.com/colingourlay) created a [Metroivania](https://github.com/colingourlay/playdate-metroidvania) repo to test his builder which I have just cloned and ran using npm start! And presto - the game built and is now running on the simulator. This may be the perfect work-around. If I can write in VS Code, and it will watch the files, and update the app, this is excellent workflow for me.
 
@@ -110,18 +110,17 @@ I have opened the world.ldtk file in LDTK and am attempting to add more screens 
 
 I've now extended the original 3 screen world and added another 10 screens and was able to quickly draw these screens using the tile brush.
 
-<img src="./playdate/larger_world.png" style="width: 400px" />
+<img src="./playdate/larger_world.png" style="width: 500px" />
 
 ## September 30/2023
 
-<img src="./playdate/playdate_arrived.png" style="width: 400px" />
+<img src="./playdate/playdate_arrived.jpg" style="width: 500px" />
 
 My Playdate arrived! At first I was a bit worried it had bricked since it took nearly 2 hours to charge!
 
 I played the few games and purchased Resonant Tale since it was described as being Zelda-like.
 
-We need to be careful with such comparison to Link Awakenings. I had to lean on this [walkthrough]
-(https://www.youtube.com/watch?v=L6NlQ5CsJH8) to progress and I also found it easier to play via the [mirror](https://play.date/mirror/) on my large monitor.
+We need to be careful with such comparison to Link Awakenings. I had to lean on this [walkthrough](https://www.youtube.com/watch?v=L6NlQ5CsJH8) to progress and I also found it easier to play via the [mirror](https://play.date/mirror/) on my large monitor.
 
 The screen is small and suffers from no backlight.
 
@@ -131,38 +130,40 @@ Today, I'm going to try and get the game running on the actual device instead th
 
 [how can I test my Playdate game on the actual Playdate device not the simulator?](https://www.perplexity.ai/search/how-can-I-c_mnR32URH.93yiTB5P2jA?s=c)
 
-<img src="./playdate/playdate_waiting_for_disk.png" style="width: 400px" />
+<img src="./playdate/playdate_waiting_for_disk.png" style="width: 500px" />
 
 I had mirror running so I believe was blocking my connection to the simulator. Once I kill mirror, it start to print device info to the console.
 
 So I'm not able to load my game onto the device. It does look like its connected because the playdate icon appears on the simulator and I can see text in the console in blue text.
 
-<img src="./playdate/connected_but_not_transferring.png" style="width: 400px" />
+<img src="./playdate/connected_but_not_transferring.png" style="width: 500px" />
 
 I can take screenshot of the device and it appears in my desktop folder. I can use the device to control the simulator!
 
 Only Updload to Device doesn't seem to work. `Waiting for Playdate disk…` appears in the console, and nothing happens.
 
-<img src="./playdate/simulator_to_device.png" style="width: 400px" />
+<img src="./playdate/simulator_to_device.png" style="width: 500px" />
 
 a search for `waiting for disk` on the [dev forum](https://devforum.play.date/search?q=waiting%20for%20disk) reveals a few posts with similar issues.
 
 After reading through the post, one dev mentioned command-d to also show the device info.
 
-<img src="./playdate/device_info.png" style="width: 400px" />
+<img src="./playdate/device_info.png" style="width: 500px" />
 
 I tried a different open source project and it had the same result.
 
-<img src="./playdate/success_upload.png" style="width: 400px" />
+<img src="./playdate/success_upload.png" style="width: 500px" />
 
 With the device info open, now I got the `Successfully uploaded` message but I still see the Waiting for Playdate disk… message.
 
 Next, I tried the side load method and that worked! I simply had to zip the single pdx file and then drag it onto the Sideloaded page on my Playdate Account.
 
-<img src="./playdate/sideload_1.png" style="width: 400px" />
+<img src="./playdate/sideload_1.png" style="width: 500px" />
 
-<img src="./playdate/sideload_2.png" style="width: 400px" />
+I dragged the zip file onto the page and it uploaded.
+
+<img src="./playdate/sideload_2.png" style="width: 500px" />
 
 After that I downloaded the game from the Playdate Game > Settings section, and was able to install it.
 
-<img src="./playdate/aloha_moon.gif" style="width: 400px" />
+<img src="./playdate/aloha_moon.gif" style="width: 500px" />
