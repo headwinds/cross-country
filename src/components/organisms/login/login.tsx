@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer, useEffect, useCallback } from 'react';
 
 // components
 import LoginView from './login-view';
@@ -137,6 +137,7 @@ const Login = ({
   hasImage = true,
   hasBackground = false,
   imageUrl = null,
+  onChange = (loginResponse: any) => {},
 }) => {
   const [
     {
@@ -173,6 +174,11 @@ const Login = ({
     });
     login();
   };
+
+  useEffect(() => {
+    console.log('Login loginResponse useEffect: ', loginResponse);
+    onChange(loginResponse);
+  }, [loginResponse]);
 
   const login = () => {
     if (username && password) {

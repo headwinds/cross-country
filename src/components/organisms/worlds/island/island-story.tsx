@@ -1,10 +1,10 @@
 // @ts-nocheck
 
 import React from 'react';
-import { Column, Tile, Paragraph, Row } from '../../components';
-import { getIsland, getMapNewGrid } from './one-acre-util';
+import { Column, Tile, Paragraph, Row } from '../../..';
+import { getIsland, getMapNewGrid } from './island-util';
 // utils
-import { ColourUtil } from '../../utils/';
+import { ColourUtil } from '../../../../utils';
 
 const palette = ColourUtil.getSplashPalette();
 
@@ -16,7 +16,7 @@ export const RowOfTiles = ({ tiles, key, styles }) => {
   );
 };
 
-type OncreAcreStoryProps = {};
+type IslandStoryProps = {};
 
 const acreMap = [
   ['-1', '0', '0', '1', '-1'],
@@ -47,13 +47,11 @@ const dunePalette = [
   { hex: '#a69150', id: 2 },
 ];
 
-const OncreAcreStory: React.FC<OncreAcreStoryProps> = props => {
+const IslandStory = (props: IslandStoryProps) => {
   const island = getMapNewGrid(largerIslandMap);
   const arrakis = getMapNewGrid(acreMap);
   const { islandCount, gridTiles } = getIsland(island, Tile, RowOfTiles, islandPalette);
   const { islandCount: duneCount, gridTiles: duneGridTiles } = getIsland(arrakis, Tile, RowOfTiles, dunePalette);
-
-  console.log('htmlGrid ', gridTiles);
 
   return (
     <Column>
@@ -67,4 +65,4 @@ const OncreAcreStory: React.FC<OncreAcreStoryProps> = props => {
   );
 };
 
-export default OncreAcreStory;
+export default IslandStory;
