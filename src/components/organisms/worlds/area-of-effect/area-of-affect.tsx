@@ -1,13 +1,13 @@
 // @ts-nocheck
 //import { AgnosticRowOfTiles as RowOfTiles, AgnosticTile as Tile } from './agnostic-acre';
-import { Row, Tile } from '../../components';
+import { Row, Tile } from '../../../..';
 
 // utils
-import { ColourUtil } from '../../utils/';
+import { ColourUtil } from '../../../../utils';
 
 // styles
 //import { Column, Row, Tile, SubHeadline, Paragraph, List, ListItem, Link, RelatedArticles } from '../../components';
-import styles from './one-acre-story.module.css';
+import styles from './area-of-affect.module.css';
 
 export const RowOfTiles = ({ tiles, key, styles }) => {
   return (

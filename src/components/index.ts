@@ -8,7 +8,7 @@ export { default as Radio } from './atoms/radio/';
 export { default as RadioGroup } from './molecules/radiogroup/';
 export { default as Button } from './atoms/button/button-themed';
 export { default as Row } from './atoms/row/row';
-export { default as Image } from './atoms/image/image';
+export { default as CrossCountyImage } from './atoms/image/cross-country-image';
 export { default as Headline } from './atoms/text/headline/headline';
 export { default as SubHeadline } from './atoms/text/subheadline/subheadline';
 export { default as Paragraph } from './atoms/text/paragraph/paragraph';

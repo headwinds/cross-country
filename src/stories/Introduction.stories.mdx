@@ -8,6 +8,7 @@ import Plugin from './assets/plugin.svg';
 import Repo from './assets/repo.svg';
 import StackAlt from './assets/stackalt.svg';
 import Headwinds from './assets/headwinds.svg';
+import { Link } from '../components';
 
 <Meta title="Cross Country/Introduction" />
 
@@ -102,14 +103,15 @@ import Headwinds from './assets/headwinds.svg';
     }
 
     .tip-wrapper {
-      font-size: 13px;
+      font-size: 16px;
       line-height: 20px;
       margin-top: 40px;
       margin-bottom: 40px;
+      color: #666;
     }
 
     .tip-wrapper code {
-      font-size: 12px;
+      font-size: 1px;
       display: inline-block;
     }
   `}
@@ -123,7 +125,7 @@ If you're struggling for original content or even just to get started, you might
 
 You can use the same assets and mechanics, but with a new story and characters.
 
-You can fork this Storybook to build your own components and continue a building UIs with a [**component-driven**](https://componentdriven.org) process starting with atomic components and ending with full screens. The game is building is the game! We "find the fun" in the process of using our imagination and the joy of making something work.
+You can fork this Storybook to build your own components and continue a building UIs with a [component-driven](https://componentdriven.org) process starting with atomic components and ending with full screens. The game is building is the game! We "find the fun" in the process of using our imagination and the joy of making something work.
 
 <div className="subheading">Explore</div>
 
@@ -139,11 +141,15 @@ You can fork this Storybook to build your own components and continue a building
     <img src={Headwinds} alt="code" />
     <span>
       <strong>Headwinds Studio</strong>
-      solopreneur & forest bather
+      hobbyist solopreneur & forest bather
     </span>
   </a>
 </div>
 
 <div className="tip-wrapper">
-  <span className="tip">Tip</span>Edit the Markdown in <code>stories/Introduction.stories.mdx</code>
+  <span className="tip">Tip</span>Buy a{' '}
+  <Link url="https://www.amazon.ca/Cambridge-59216-Wirebound-Cover-Notebook/dp/B07L5WN15V/ref=sr_1_10_mod_primary_new?crid=HNHYMIZMHSN1&keywords=cambridge+spiral+9+x+9&qid=1698670758&s=office&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=cambridge+spiral+9+x+9%2Coffice-products%2C62&sr=1-10">
+    spiral notebook
+  </Link>{' '}
+  and start journaling
 </div>

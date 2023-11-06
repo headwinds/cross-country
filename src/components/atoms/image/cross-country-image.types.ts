@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface ImageProps {
+export interface CrossCountryImageProps {
   url?: any;
   width?: number;
   a11y?: string;
