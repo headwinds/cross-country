@@ -8,7 +8,7 @@ export { default as Radio } from './atoms/radio/';
 export { default as RadioGroup } from './molecules/radiogroup/';
 export { default as Button } from './atoms/button/button-themed';
 export { default as Row } from './atoms/row/row';
-export { default as CrossCountyImage } from './atoms/image/cross-country-image';
+export { default as Image } from './atoms/image/cross-country-image';
 export { default as Headline } from './atoms/text/headline/headline';
 export { default as SubHeadline } from './atoms/text/subheadline/subheadline';
 export { default as Paragraph } from './atoms/text/paragraph/paragraph';
@@ -49,8 +49,9 @@ export { default as RelatedArticles } from './molecules/related-articles';
 export { default as Card } from './molecules/card';
 export { default as GoldLeaf } from './molecules/gold-leaf';
 export { default as Accordion } from './molecules/accordion';
+export { default as Bolt } from './molecules/icons/bolt/bolt';
+export { default as ProfilePorthole } from './molecules/profile-porthole';
 export { default as KeyValuePairs } from './molecules/key-value-pairs';
-
 export { default as Loading } from './molecules/loading';
 export { default as Error } from './molecules/error';
 

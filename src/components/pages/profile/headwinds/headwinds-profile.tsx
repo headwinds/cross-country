@@ -1,5 +1,5 @@
 import React from 'react';
-import { Column, Row, SubHeadline, Paragraph, Link, Headline, Image, List, ListItem } from '../../..';
+import { Column, Row, SubHeadline, Paragraph, Link, Headline, Image, List, ListItem } from '../../../..';
 import brandon from './brandon_square.png';
 import { Bolt } from './bolt';
 import { LinkedinLogo, GithubLogo, TwitterLogo } from 'phosphor-react';

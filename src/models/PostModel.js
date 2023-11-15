@@ -1,3 +1,7 @@
+import { Record } from 'immutable';
+
+// do I really want markup or plain text?! or even markdown!
+
 /*
 example post data
  const post = {
@@ -17,6 +21,7 @@ const PostModel = Record({
   blogpost_type: '',
   slug: '',
   user_account_id: '',
+  status: '',
 });
 
 export default PostModel;

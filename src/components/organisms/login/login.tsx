@@ -6,6 +6,8 @@ import LoginView from './login-view';
 // utils
 import { postLoginUser } from '../../../services/login-service';
 import { getUnsplashPhoto } from '../../../services/image-service';
+import useLocalStorage from '../../../hooks/useLocalStorage';
+import UserModel from '../../../models/UserModel';
 
 /*
 Authenticate the user with a JWT token and set access token in a secure cookie 
@@ -37,15 +39,12 @@ const loginReducerInitialState = {
   route: '/login',
   screenWindow: null,
   unsplashImgUrl: null,
-  loginResponse: {
-    error: null,
-    message: '',
-    isSuccessful: false,
-  },
   isFetching: false,
   error: null,
   // need to check the secure cookie
   hasRememberMeChecked: false,
+  user: null,
+  message: '',
 };
 
 const createInitialState = () => {
@@ -58,12 +57,13 @@ const reduceActionTypes = {
   VALIDATE_USERNAME: 'VALIDATE_USERNAME',
   VALIDATE_PASSWORD: 'VALIDATE_PASSWORD',
   SET_SCREEN: 'SET_SCREEN',
-  SET_LOGIN_RESPONSE: 'SET_LOGIN_RESPONSE',
+  SET_LOGIN_SUCCESS: 'SET_LOGIN_SUCCESS',
   SET_LOGIN_ERROR: 'SET_LOGIN_ERROR',
   IS_FETCHING: 'IS_FETCHING',
   FETCH_SUCCESS: 'FETCH_SUCCESS',
   FETCH_FAIL: 'FETCH_FAIL',
   TOGGLE_REMEMBER_ME: 'TOGGLE_REMEMBER_ME',
+  SET_REMEMBER_ME_SELECTED: 'SET_REMEMBER_ME_SELECTED',
 };
 
 const loginReducer = (state, action) => {
@@ -93,15 +93,16 @@ const loginReducer = (state, action) => {
         ...state,
         screenWindow: action.payload,
       };
-    case reduceActionTypes.SET_LOGIN_RESPONSE:
+    case reduceActionTypes.SET_LOGIN_SUCCESS:
       return {
         ...state,
-        loginResponse: action.payload,
+        user: action.payload.user,
+        message: action.payload.message,
       };
     case reduceActionTypes.SET_LOGIN_ERROR:
       return {
         ...state,
-        loginResponse: action.payload,
+        error: action.payload,
       };
     case reduceActionTypes.IS_FETCHING:
       return {
@@ -123,8 +124,12 @@ const loginReducer = (state, action) => {
     case reduceActionTypes.TOGGLE_REMEMBER_ME:
       return {
         ...state,
-        hasRememberMeChecked: !state.hasRememberMeChecked,
-        error: action.payload,
+        hasRememberMeChecked: action.payload,
+      };
+    case reduceActionTypes.SET_REMEMBER_ME_SELECTED:
+      return {
+        ...state,
+        hasRememberMeChecked: true,
       };
     default:
       return state;
@@ -134,11 +139,13 @@ const loginReducer = (state, action) => {
 const Login = ({
   crossCountryConfig = { UNSPLASH_API_KEY: 'YOUR-API-KEY' },
   isAnimated = false,
-  hasImage = true,
+  hasImage = false, // true is busted!
   hasBackground = false,
   imageUrl = null,
-  onChange = (loginResponse: any) => {},
+  onChange = (user: any) => {},
 }) => {
+  const [storedUser, setStoredUser] = useLocalStorage('user', null);
+  const [isRememberMeSelectedFromLocalStorage, setStoredRemember] = useLocalStorage('isRememberMeSelected', false);
   const [
     {
       username: { usernameValue, isUsernameValid, isUsernameUntouched, usernameErrorMessage },
@@ -146,7 +153,7 @@ const Login = ({
       route,
       unsplashImgUrl,
       a11y,
-      loginResponse,
+      user,
       hasRememberMeChecked,
     },
     dispatch,
@@ -175,10 +182,16 @@ const Login = ({
     login();
   };
 
+  const onRememberMeChange = e => {
+    e.preventDefault();
+  };
+
   useEffect(() => {
-    console.log('Login loginResponse useEffect: ', loginResponse);
-    onChange(loginResponse);
-  }, [loginResponse]);
+    console.log('Login user useEffect: ', user);
+    onChange(user);
+  }, [user]);
+
+  console.log('Login: isRememberMeSelectedFromLocalStorage: ', isRememberMeSelectedFromLocalStorage);
 
   const login = () => {
     if (username && password) {
@@ -196,7 +209,8 @@ const Login = ({
         )
         .then(json => {
           console.log('res  ', json);
-          const { isAuthenticated, message, status, access_token, refresh_token } = json;
+          const { isAuthenticated, message, status } = json;
+
           /*
           access_token 
           isAuthenticated
@@ -214,12 +228,14 @@ const Login = ({
           */
           if (status === 200) {
             console.log('login json: ', json);
-            if (isAuthenticated && access_token) {
+            if (isAuthenticated) {
+              const { isAuthenticated, access_token, refresh_token } = json;
+              const user = new UserModel({ ...json.user_account, access_token, refresh_token, isAuthenticated });
               dispatch({
-                type: reduceActionTypes.SET_LOGIN_RESPONSE,
+                type: reduceActionTypes.SET_LOGIN_SUCCESS,
                 payload: {
                   message: 'You are logged in!',
-                  response: { hasError: false, isSuccessful: true, access_token, refresh_token },
+                  user,
                 },
               });
             } else {
@@ -231,7 +247,7 @@ const Login = ({
             }
           } else {
             dispatch({
-              type: reduceActionTypes.SET_LOGIN_RESPONSE,
+              type: reduceActionTypes.SET_LOGIN_ERROR,
               payload: { message: 'Something went wrong', response: { hasError: true, isSuccessful: false } },
             });
           }
@@ -245,10 +261,16 @@ const Login = ({
     }
   };
 
-  const handleRememberMeClicked = () => {
+  const handleRememberMeClicked = event => {
+    const isChecked = !event.target.checked;
+    console.log('handleRememberMeClicked setStoredRemember isChecked: ', isChecked);
+
+    setStoredRemember(isChecked);
+
     // dispatch toggle remember me
     dispatch({
       type: reduceActionTypes.TOGGLE_REMEMBER_ME,
+      payload: isChecked,
     });
   };
 
@@ -265,6 +287,22 @@ const Login = ({
       });
   }, []);
 
+  // check local storage for the user token
+  useEffect(() => {
+    if (storedUser) {
+      console.log('storedUser: ', storedUser);
+      if (storedUser?.username) {
+        dispatch({
+          type: reduceActionTypes.SET_LOGIN_SUCCESS,
+          payload: {
+            message: 'You are logged in!',
+            user: storedUser,
+          },
+        });
+      }
+    }
+  }, []);
+
   const loginViewProps = {
     crossCountryConfig,
     usernameValue,
@@ -275,15 +313,14 @@ const Login = ({
     unsplashImgUrl,
     imageUrl,
     a11y,
-    loginResponse,
     isAnimated,
     hasImage,
     hasBackground,
     handleRememberMeClicked,
-    hasRememberMeChecked,
+    user,
   };
 
-  return <LoginView {...loginViewProps} />;
+  return <LoginView {...loginViewProps} hasRememberMeChecked={isRememberMeSelectedFromLocalStorage} />;
 };
 
 export default Login;

@@ -2,13 +2,11 @@ import React, { useEffect } from 'react';
 import { useTransition, animated, useSpringRef } from '@react-spring/web';
 
 // components
-import { Row, Button } from '../../';
+import { Loading } from '../..';
 
-// styles
-import styles from './login.module.css';
-
-const LoginSubmitTransition = ({ isAnimated, handleClick, isAuthenticated }) => {
-  const data = [1];
+const LoginFetchingTransition = ({ isAnimated, isFetching }) => {
+  // need to use isFetching to trigger the transition in and out
+  const data = isFetching ? [1] : [];
   const transRef = useSpringRef();
 
   const [transitions, api] = useTransition(data, () => ({
@@ -25,22 +23,12 @@ const LoginSubmitTransition = ({ isAnimated, handleClick, isAuthenticated }) => 
   if (isAnimated) {
     return transitions(style => (
       <animated.div style={style}>
-        <Row customClass={styles.login__rowSend}>
-          <Button label="login" onClick={handleClick} customClass={styles.login__button}>
-            Send
-          </Button>
-        </Row>
+        <Loading />
       </animated.div>
     ));
   }
 
-  return (
-    <Row customClass={styles.login__rowSend}>
-      <Button label="login" onClick={handleClick} customClass={styles.login__button}>
-        Send
-      </Button>
-    </Row>
-  );
+  return isFetching ? <Loading /> : null;
 };
 
-export default LoginSubmitTransition;
+export default LoginFetchingTransition;

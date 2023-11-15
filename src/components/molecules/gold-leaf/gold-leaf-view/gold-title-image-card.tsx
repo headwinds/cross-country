@@ -1,31 +1,12 @@
 import * as React from 'react';
-import { Image, Column, SubHeadline, Card, Link } from '../../..';
-import GoldLeafNotFound from '../gold-leaf-not-found';
-import styles from './gold-leaf-view.module.css';
 import GoldLeafView from '.';
+import { Card, Column, Link, SubHeadline } from '../../..';
+import GoldLeafNotFound from '../gold-leaf-not-found';
 import { GoldLeafProps } from '../gold-leaf.types';
-import LeafModel from '../../../../models/LeafModel';
+import styles from './gold-leaf-view.module.css';
+import GoldLeafImage from './golf-leaf-image';
 
-interface GoldLeafImageProps {
-  children?: React.ReactNode;
-  goldLeafModel?: LeafModel;
-}
-
-const GoldLeafImage: React.FC<GoldLeafImageProps> = ({ goldLeafModel }) => {
-  const { hasText } = goldLeafModel;
-
-  if (hasText) {
-    return null;
-  }
-
-  return (
-    <Column customClass={styles.GoldLeaf__image}>
-      <Image url={goldLeafModel?.images?.[0].imageUrl ?? ''} a11y={goldLeafModel?.title ?? ''} />
-    </Column>
-  );
-};
-
-export const GoldTitleImageCard: React.FC<GoldLeafProps> = ({ goldLeafModel, mode = 'unknown' }) => {
+export const GoldTitleImageCard = ({ goldLeafModel, mode = 'unknown' }: GoldLeafProps) => {
   const render = () => {
     if (mode === 'view' && goldLeafModel) {
       return <GoldLeafView goldLeafModel={goldLeafModel} />;
