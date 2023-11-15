@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 
 // components
-import { TextInput, Column, Row, Label } from '../../';
+import { TextInput, Column, Row, Label } from '../..';
 
 // styles
 import clsx from 'clsx';

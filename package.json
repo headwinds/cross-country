@@ -137,7 +137,8 @@
     "phosphor-react": "^1.4.1",
     "unsplash-js": "^7.0.10",
     "uuid": "^8.0.0",
-    "xstate": "^4.37.1"
+    "xstate": "^4.37.1",
+    "zod": "^3.22.4"
   },
   "storybook-deployer": {
     "gitUsername": "headwinds",

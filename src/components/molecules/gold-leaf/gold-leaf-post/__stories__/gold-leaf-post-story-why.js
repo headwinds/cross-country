@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import GoldLeaf from './';
-import PortholeBranchModel from '../../../models/PortholeBranchModel';
+import GoldLeaf from '../../';
+import PortholeBranchModel from '../../../../../models/PortholeBranchModel';
 
-const GoldLeafPostStory = ({ config }) => {
+const GoldLeafPostStory = ({ config, isAuthenticated }) => {
   const [state, setState] = useState({
     posts: [],
     goldLeafModel: null,
   });
 
   const getScoutPostsService = async id => {
+    if (!isAuthenticated) {
+      // dispatch an event to show a message to the user
+      return null;
+    }
     const url = `http://127.0.0.1:5000/api/blog?blogId=${id}`;
 
     const options = {

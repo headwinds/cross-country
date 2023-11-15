@@ -1,5 +1,10 @@
 .label {
-    border: none;
-    margin: 8px;
-    padding: 0px;
+  border: none;
+  margin: 8px;
+  padding: 0px;
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
 }

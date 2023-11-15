@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 
 // components
-import { Row, Button } from '../../';
+import { Row, Button } from '../..';
 
 // styles
 import styles from './login.module.css';

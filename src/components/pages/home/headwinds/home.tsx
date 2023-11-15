@@ -8,22 +8,6 @@ import SideQuest from './headwinds-sidequest';
 import Footer from './headwinds-footer';
 import { Loading, Error } from '../../../';
 
-/*
-Goals:
-
-1. Authenticate and post thoughts either publicly or privately - integrations with other services
-
-2. visualize thoughts over time - possibly reflect on them and promote private to public - vice versa?! somehow show 
-thought migration... 
-
-3. encourage/invite building of grid based games and solopreneurship 
-
-4. I want a loader that does something interesting with my collection of listicles
-but a cluster wold be cooler!
-
-5. show my own api status! full stack!
-*/
-
 const Home = ({ isBlockedIn = false }: HomeProps) => {
   // the parent component should manage the relationship between its children
   const [isLoaded, setIsLoaded] = useState(false);

@@ -41,6 +41,7 @@ const rgb = ColorUtil.hexToRgb('#67bd67');
 const darkenColor = -0.1; // 10% darker
 const shadedColor = ColorUtil.getShadedColor(rgb, darkenColor);
 const demoModels = createDemoModels();
+
 const TileGrid = ({
   totalInRow = 4,
   gapSize = 0,
@@ -82,8 +83,6 @@ const TileGrid = ({
 
         const isSelected = tileSeleted ? tileModel.id === tileSeleted.id : false;
 
-        console.log('got here');
-
         return (
           <Tile
             key={keyId}
@@ -92,7 +91,7 @@ const TileGrid = ({
             customStyle={{ margin: gapSize }}
             setSelected={setSelected}
             isSelected={isSelected}
-            ref={ref => (tileRefs.current[count] = ref)}
+            ref={ref => (tileRefs ? (tileRefs.current[count] = ref) : null)}
             id={`tile${tileModel.id}`}
           />
         );

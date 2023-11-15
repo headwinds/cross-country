@@ -2,23 +2,25 @@ import React, { useEffect, useState } from 'react';
 import { useTransition, animated, useSpringRef } from '@react-spring/web';
 
 // components
-import { Row, Paragraph } from '../../';
+import { Row, Paragraph } from '../..';
 
 // styles
 import clsx from 'clsx';
 import styles from './login.module.css';
 
-const Response = ({ loginResponse }) => {
-  if (loginResponse) {
+const Response = ({ user }) => {
+  if (user) {
+    const hasError = user ? false : true;
+    const isSuccessful = user ? true : false;
     return (
       <Row>
         <Paragraph
           customClass={clsx(styles.login__response, {
-            [styles.login__error]: loginResponse?.response?.hasError,
-            [styles.login__success]: loginResponse?.response?.isSuccessful,
+            [styles.login__error]: hasError,
+            [styles.login__success]: isSuccessful,
           })}
         >
-          {loginResponse?.message}
+          {user ? "You're logged in!" : "Sorry, we couldn't log you in!"}
         </Paragraph>
       </Row>
     );
@@ -27,7 +29,7 @@ const Response = ({ loginResponse }) => {
   return null;
 };
 
-const LoginResponseTransition = ({ isAnimated, loginResponse }) => {
+const LoginResponseTransition = ({ isAnimated, user }) => {
   const [data, setData] = useState([1]);
 
   const transRef = useSpringRef();
@@ -40,7 +42,7 @@ const LoginResponseTransition = ({ isAnimated, loginResponse }) => {
   }));
 
   useEffect(() => {
-    if (loginResponse?.response?.isSuccessful) {
+    if (user) {
       // ok this works but I want to do it with the leave animation!
       transRef.start({
         opacity: 0,
@@ -49,17 +51,17 @@ const LoginResponseTransition = ({ isAnimated, loginResponse }) => {
     } else {
       transRef.start();
     }
-  }, [loginResponse]);
+  }, [user]);
 
   if (isAnimated) {
     return transitions(style => (
       <animated.div style={style}>
-        <Response loginResponse={loginResponse} />
+        <Response user={user} />
       </animated.div>
     ));
   }
 
-  return <Response loginResponse={loginResponse} />;
+  return <Response user={user} />;
 };
 
 export default LoginResponseTransition;

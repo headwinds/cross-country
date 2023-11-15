@@ -1,11 +1,10 @@
 import React from 'react';
 
 // components
-import { Image, Column, Form } from '../../';
+import { Image, Column, Form, ProfilePorthole } from '../..';
 import LoginTitle from './login-title-transition';
 import LoginFields from './login-fields-transition';
 import LoginSubmit from './login-submit-transition';
-import LoginRememberMe from './login-remember-me-transition';
 import LoginFetching from './login-fetching-transition';
 import LoginResponse from './login-response-transition';
 
@@ -13,17 +12,17 @@ import LoginResponse from './login-response-transition';
 import styles from './login.module.css';
 
 const LoginView = ({
-  usernameValue,
-  passwordValue,
+  usernameValue = '',
+  passwordValue = '',
   onSubmitHandler,
   onUsernameChange,
   onPasswordChange,
   unsplashImgUrl,
-  imageUrl,
+  imageUrl = '',
   a11y,
-  loginResponse = null,
+  user = null,
   isAnimated = false,
-  hasImage = true,
+  hasImage = false,
   hasBackground = false,
   isFetching = false,
   hasTitle = true,
@@ -31,10 +30,10 @@ const LoginView = ({
   handleRememberMeClicked,
   customStyle = { padding: 0 },
 }) => {
-  /*
-  if loginResponse?.response?.isSuccessful,, reverse the animation...
-  */
-  const isAuthenticated = loginResponse?.response?.isSuccessful;
+  const isAuthenticated = user ? true : false;
+  console.log('LoginView: user: ', user);
+  console.log('LoginView: isAuthenticated: ', isAuthenticated);
+  console.log('LoginView: username: ', user?.get?.('username') ?? 'no user');
 
   return (
     <Column customClass={styles.login__view} customStyle={customStyle}>
@@ -49,13 +48,14 @@ const LoginView = ({
           onPasswordChange={onPasswordChange}
           isAuthenticated={isAuthenticated}
         />
-        {/* <LoginRememberMe
-            isAnimated={isAnimated}
-            isChecked={hasRememberMeChecked}
-            handleRememberMeClicked={handleRememberMeClicked}
-          />*/}
-        <LoginSubmit isAnimated={isAnimated} onSubmitHandler={onSubmitHandler} isAuthenticated={isAuthenticated} />
-        <LoginResponse isAnimated={isAnimated} loginResponse={loginResponse} isAuthenticated={isAuthenticated} />
+        <LoginSubmit
+          hasRememberMeChecked={hasRememberMeChecked}
+          handleRememberMeClicked={handleRememberMeClicked}
+          isAnimated={isAnimated}
+          onSubmitHandler={onSubmitHandler}
+          isAuthenticated={isAuthenticated}
+        />
+        <LoginResponse isAnimated={isAnimated} user={user} isAuthenticated={isAuthenticated} />
       </Form>
       <LoginFetching isAnimated={isAnimated} isFetching={isFetching} />
     </Column>

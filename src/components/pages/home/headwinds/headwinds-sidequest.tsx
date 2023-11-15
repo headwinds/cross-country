@@ -1,8 +1,5 @@
 import React from 'react';
-import { Column, Row, SubHeadline, Paragraph, Link, Headline, Image, List, ListItem, Login } from '../../..';
-import brandon from './brandon_square.png';
-import { Bolt } from './bolt';
-import { LinkedinLogo, GithubLogo, TwitterLogo } from 'phosphor-react';
+import { Column, Login } from '../../..';
 
 const moss = '#bccd9d';
 const gold = '#b2a25a';
@@ -24,8 +21,6 @@ What do I want to see as soon as I login in?
 What are some of things that I can make or model?
 
 Can I create a short quest to go learn something with a quiz and some stats at the end?
-
-
 */
 
 const HeadwindsSidequest = ({ onLoadedCallback }: HeadwindsSidequestProps) => {
