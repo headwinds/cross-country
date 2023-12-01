@@ -1,26 +1,22 @@
 # cross-country
 
-> an atomic react design system for lonely forest bathers
+> an atomic react design system for personal metrics
 
 [![NPM](https://img.shields.io/npm/v/cross-country.svg)](https://www.npmjs.com/package/cross-country) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 Core Tech
 
+- Typescript
 - react (18.02) & react-spring
 - CSS modules
 - D3
 - Storybook
-- Typescript
 
 [Cross Country Storybook via Github Pages](https://headwinds.github.io/cross-country)
 
-Bored of building the same enterprise UI without any sizzle? Are you a fan of the Sims, Starcraft, Chess, Dungeons and Dragons and other table top role playing games (TTRPGs)?
+Do you pour over your personal stats from Github, Strava or Spotify? Is your year always in review?! By experimenting with code, you can hone your developer skills while exploring subject matter that interests you. 
 
-Do you keep a sketch book, and draw notes about fantasy UI, game mechanics and envision a future of EVs and trips to Mars? Do you pour over your personal stats from Strava or Spotify? Is your year always in review?! By playing with code, you can actually hone your dayjob skills while exploring subject matter that you are more passionate.
-
-This library is an escape from conversative eCommerce apps, and meant to translate your analog sketch book pages into a digital works that can be shared by other like-minded individuals. Perhaps, they will become some new mixed AR/VR experience?! Perhaps, we'll keep it simple and retro. I'm know I'm not tired of 2D games.
-
-The components within this library are designed responsively to be used to write articles; create tile-based games; or even better combine writing, gaming, with a sample dataset and tell a story or converse with an AI.
+In my case, I'm using this library to present metrics about my path as a developer as well as my home energy efficiency and [decarbonization](https://greenbuildingcanada.ca/decarbonize-home/).  
 
 By wrapping html, each component is augmented for building accessible experiences across screens. A simple page may look like this:
 
@@ -29,23 +25,14 @@ By wrapping html, each component is augmented for building accessible experience
   <Page>
     <Column>
       <Paragraph>
-      By wrapping html, each component is augmented for building accessible experiences across screens.
+       Hello! I'm a developer with a mix of frontend and backend experience.
       </Paragraph>
-      <Paragraph>
-       A simple page may look like this with the default design settings.
-      </Paragraph>
-    </Column>
-    <Column>
-      <MyGameOrExperiementHere />
+      <Metrics keyValuePairs=[{label: "Frontend", value: 75, type: "percent"}, {label: "Backend", value: 25, type: "percent"}] />
     </Column>
   </Page>
   <Wallpaper />
 </Wrapper>
 ```
-
-Progress Complete
-
-- 35%
 
 ### Generating New Components
 
@@ -82,7 +69,7 @@ When you ready, remember to expose the component in the index.ts file at the roo
 
 ## SCSS to CSS modules
 
-Originally, I started with SCSS Module but "downgraded" to CSS to upgrade Node from 12 to 18 and possibly invest in PostCSS or something else in the future! Also CSS Modules works with React Native.
+Originally, I started with SCSS Module but "downgraded" to CSS to upgrade Node from 12 to 18 and am planning to invest in PostCSS and Tailwind.
 
 [n 14.20.1](https://www.npmjs.com/package/n)
 
@@ -145,43 +132,6 @@ your-password
 now-your-email
 npm publish
 ```
-
-## Usage
-
-```jsx
-import React, { Component } from 'react'
-import {Column, Row, Image, Headline, Paragraph, Wolf} from 'cross-country';
-
-const data = {
-  headline: "My world needs another design system",
-  image: {
-    url: "https://images.unsplash.com/photo-1512411233342-92208dfe81af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-    a11y: "a nice aframe from unsplash",
-    width: 300
-  },
-  wolf: {
-    url: "https://images.unsplash.com/photo-1512411233342-92208dfe81af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-    text: "K-2SO & Jyn Erso"
-    a11y: "K-2SO & Jyn Erso"
-}
-
-const {headline, wolf, image } = data;
-
-const App = () => (
-      <Column>
-          <Headline text={headline} />
-          <Row>
-            <Image {...image} />
-            <Column>
-              <Wolf config={wolf} />
-            </Column>
-          </Row>
-        </Column>
-    )
-export default App;
-```
-
-If you 2-factor indentifaction, setup you may have to use for Google Authenticator on your phone.
 
 Since I had .npmrc setup in other projects, I had to one for this project [using the default](https://docs.npmjs.com/cli/v8/using-npm/registry). At first, I thought I needed /headwinds and then /headwinds/cross-country but nope! Just use the default - see my .npmrc file.
 
