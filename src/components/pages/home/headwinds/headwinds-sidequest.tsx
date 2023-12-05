@@ -36,8 +36,7 @@ const HeadwindsSidequest = ({ isLoading = false }) => {
         {/* <AnimateNumber delay="1000" to={234002} from={0} /> */}
       </Row>
       <Paragraph>
-        I{"'"}m primarily a Frontend Developer, and am currently happily employed @{' '}
-        <Link url="http://www.validere.com">Validere </Link>.
+        I{"'"}m currently seeking the opportunity to make a major impact at a new company! Whether you need a mix of fullstack or 100% front-end, I can help you and your team build your roman empire! I 💛 solving complex customer journeys and workflows. Learn more on my       <Link url="https://github.com/headwinds/">Github</Link>.
       </Paragraph>
       <Paragraph>
         I believe in the power of AI Collaboration, and wish to harness it to teach both people and machines about our
