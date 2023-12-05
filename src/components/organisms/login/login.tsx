@@ -194,7 +194,7 @@ const Login = ({
   console.log('Login: isRememberMeSelectedFromLocalStorage: ', isRememberMeSelectedFromLocalStorage);
 
   const login = () => {
-    if (username && password) {
+    if (usernameValue && passwordValue) {
       postLoginUser({ username: usernameValue, password: passwordValue }, route)
         .then(
           response => {
@@ -274,6 +274,8 @@ const Login = ({
     });
   };
 
+  /*
+  no need for this feature anymore - consider deleting it
   useEffect(() => {
     const { UNSPLASH_API_KEY } = crossCountryConfig;
 
@@ -286,6 +288,7 @@ const Login = ({
         }
       });
   }, []);
+  */
 
   // check local storage for the user token
   useEffect(() => {

@@ -39,7 +39,7 @@ const LoginView = ({
     <Column customClass={styles.login__view} customStyle={customStyle}>
       <Form onSubmit={onSubmitHandler}>
         {hasTitle ? <LoginTitle isAnimated={isAnimated} isAuthenticated={isAuthenticated} /> : null}
-        {hasImage ? <Image url={unsplashImgUrl || imageUrl} width="300" a11y={a11y} /> : null}
+        {hasImage ? <Image url={unsplashImgUrl || imageUrl} width={300} a11y={a11y} /> : null}
         <LoginFields
           isAnimated={isAnimated}
           usernameValue={usernameValue}
@@ -55,7 +55,7 @@ const LoginView = ({
           onSubmitHandler={onSubmitHandler}
           isAuthenticated={isAuthenticated}
         />
-        <LoginResponse isAnimated={isAnimated} user={user} isAuthenticated={isAuthenticated} />
+        {/*<LoginResponse isAnimated={isAnimated} user={user} isAuthenticated={isAuthenticated} />*/}
       </Form>
       <LoginFetching isAnimated={isAnimated} isFetching={isFetching} />
     </Column>

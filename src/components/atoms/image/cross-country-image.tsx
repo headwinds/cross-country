@@ -25,7 +25,6 @@ const CrossCountryImage = ({
         width={width}
         height={height}
         alt={a11y}
-        onError={e => (e.target.style.display = 'none')}
       />
     </div>
   );
