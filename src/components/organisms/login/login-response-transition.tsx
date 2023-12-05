@@ -29,7 +29,13 @@ const Response = ({ user }) => {
   return null;
 };
 
-const LoginResponseTransition = ({ isAnimated, user }) => {
+type LoginResponseTransitionProps = {
+  isAnimated: boolean;
+  user: any;
+  isAuthenticated?: boolean;
+}
+
+const LoginResponseTransition = ({ isAnimated, user }: LoginResponseTransitionProps) => {
   const [data, setData] = useState([1]);
 
   const transRef = useSpringRef();

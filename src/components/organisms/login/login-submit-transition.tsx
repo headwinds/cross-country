@@ -12,6 +12,7 @@ const LoginSubmitTransition = ({
   isAuthenticated = false,
   handleRememberMeClicked,
   hasRememberMeChecked,
+  onSubmitHandler
 }) => {
   const start = { opacity: 0, transform: 'translate3d(0px, 0px, 0px)' };
   const enter = { opacity: 1, transform: 'translate3d(0px, 10px, 0px)', delay: 900 };

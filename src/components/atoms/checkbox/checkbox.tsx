@@ -20,7 +20,7 @@ const Checkbox = ({ isChecked = false, id, handleChange, customClassName = '', c
       className={clsx(styles.checkbox, className, customClassName)}
       role="checkbox"
       id={id}
-      checked={isChecked}
+      //checked={isChecked}
       onClick={handleChange}
       style={customStyle}
     />

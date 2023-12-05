@@ -92,7 +92,7 @@ const GoldLeafPost = ({ goldLeafModel = null, dataTestId = 'golf-leaf-view', use
   const onSaveClick = () => {
     console.log('GoldLeafPost about to save...', state);
     const { text } = state;
-    const { id } = user;
+    const { id } = user.toJS();
     postBlog(text, id);
   };
 

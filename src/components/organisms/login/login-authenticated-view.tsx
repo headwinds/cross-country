@@ -1,3 +1,4 @@
+/*
 import React, { useEffect, useState } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 
@@ -26,7 +27,7 @@ const LoginAuthenticatedView = ({ isAnimated, isAuthenticated = false }) => {
   const fullName = ' Brandon Flowers';
   const a11y = 'brandon flowers';
   const url = brandon; // needs to be remote!
-  const houseSigil = () => <Bolt />; // star wars? dune, game of thrones, etc...
+  //const houseSigil = () => <Bolt />; // star wars? dune, game of thrones, etc...
   const ofHouse = ' of House Flowers';
 
   const AuthenticatedView = () => (
@@ -34,7 +35,7 @@ const LoginAuthenticatedView = ({ isAnimated, isAuthenticated = false }) => {
       <Column customStyle={{ padding: 0 }}>
         <Image a11y={a11y} url={url} width={100} height={100} customStyle={{ borderRadius: '50%' }} />
         <Headline>
-          {houseSigil}
+          {/* houseSigil */}
           {fullName}
           {ofHouse}
         </Headline>
@@ -54,3 +55,4 @@ const LoginAuthenticatedView = ({ isAnimated, isAuthenticated = false }) => {
 };
 
 export default LoginSubmitTransition;
+*/
