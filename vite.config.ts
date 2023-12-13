@@ -35,9 +35,11 @@ export default defineConfig({
         ])
       ),
       output: {
-        dir: 'dist',
-        format: 'es',
+        //dir: 'dist',
+        //format: 'es',
         inlineDynamicImports: false,
+        assetFileNames: 'assets/[name][extname]',
+        entryFileNames: '[name].js',
       }
     },
   },

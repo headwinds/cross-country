@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { frozenLakeMachine } from './frozen-lake-machine';
 import { useMachine, useInterpret, useSelector } from '@xstate/react';
 import { Image, Column, SubHeadline, Wrapper, Paragraph, Modal, Hunter, Warrior, Stage, Button } from '../../';
-import PusherService from '../../../services/pusher-service';
+//import PusherService from '../../../services/pusher-service';
 import FrozenLakeBoard from './frozen-lake-board';
-import c from '../../../constants/';
+//import c from '../../../constants/';
 import styles from './frozen-lake.module.css';
 
 const selectGeneratedMap = state => state.context.generatedMap;

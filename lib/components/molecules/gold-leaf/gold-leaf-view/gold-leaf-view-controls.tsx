@@ -68,7 +68,8 @@ import { GoldLeafViewProps } from './gold-leaf-view.types';
 
 const GOLD_COLOUR = '#E3D597';
 
-const he = require('he');
+//TODO: repalce he
+//const he = require('he');
 
 const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = null, dataTestId = 'golf-leaf-view' }) => {
   const [state, setState] = useState({
@@ -102,7 +103,7 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = nul
     const articleWithoutImages = removeAllImagesFromText(goldLeafModel);
 
     const stripedHtml = articleWithoutImages.replace(/<[^>]+>/g, '');
-    const decodedStripedHtml = he.decode(stripedHtml);
+    const decodedStripedHtml = stripedHtml; //he.decode(stripedHtml);
     return decodedStripedHtml.trim();
   };
 
