@@ -11,8 +11,6 @@ import {
 
 const GOLD_COLOUR = '#E3D597';
 
-const he = require('he');
-
 const Branch = ({ branch }) => {
   return <GoldLeaf goldLeafModel={branch} mode="view" />;
 };
