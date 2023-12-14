@@ -2845,7 +2845,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/pluginutils@npm:^5.0.2, @rollup/pluginutils@npm:^5.0.5":
+"@rollup/pluginutils@npm:5, @rollup/pluginutils@npm:^5.0.2, @rollup/pluginutils@npm:^5.0.5":
   version: 5.1.0
   resolution: "@rollup/pluginutils@npm:5.1.0"
   dependencies:
@@ -5834,6 +5834,7 @@ __metadata:
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-error-boundary: "npm:^4.0.11"
+    rollup-plugin-css-only: "npm:^4.5.2"
     storybook: "npm:^7.6.4"
     typescript: "npm:^5.2.2"
     unsplash-js: "npm:^7.0.10"
@@ -10846,6 +10847,17 @@ __metadata:
   version: 3.0.2
   resolution: "robust-predicates@npm:3.0.2"
   checksum: 4ecd53649f1c2d49529c85518f2fa69ffb2f7a4453f7fd19c042421c7b4d76c3efb48bc1c740c8f7049346d7cb58cf08ee0c9adaae595cc23564d360adb1fde4
+  languageName: node
+  linkType: hard
+
+"rollup-plugin-css-only@npm:^4.5.2":
+  version: 4.5.2
+  resolution: "rollup-plugin-css-only@npm:4.5.2"
+  dependencies:
+    "@rollup/pluginutils": "npm:5"
+  peerDependencies:
+    rollup: <5
+  checksum: 22bcb5c499662249fbd88b6733bec9b52f59d4659be229a87f32cb2b8165362b96203de230ecc12ed4d65ca321961673bddb609c7a6004a5d498ae7854cf7d47
   languageName: node
   linkType: hard
 
