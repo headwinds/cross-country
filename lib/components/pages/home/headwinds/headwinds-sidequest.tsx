@@ -1,6 +1,6 @@
 import React from 'react';
-import { Column, Login } from '../../..';
-
+import { Column, Login, Row, Image, Bolt, Paragraph, SubHeadline, List, ListItem, Link, Headline } from '../../..';
+import { TwitterLogo, GithubLogo, LinkedinLogo } from 'phosphor-react';
 const moss = '#bccd9d';
 const gold = '#b2a25a';
 const teal = '#0baeae';
@@ -23,19 +23,31 @@ What are some of things that I can make or model?
 Can I create a short quest to go learn something with a quiz and some stats at the end?
 */
 
+const customParagraphStyle = {
+  marginLeft: 8,
+  color: gold,
+};
+
+const customLinkStyle = {
+  textDecoration: 'none',
+  boxShadow: 'none',
+  borderBottom: 'none',
+  alignItems: 'center',
+  display: 'flex',
+};
+
 const HeadwindsSidequest = ({ onLoadedCallback }: HeadwindsSidequestProps) => {
   return (
     <Column>
       <Row>
         <Column customStyle={{ padding: 0 }}>
-          <Image a11y="brandon flowers" url={brandon} width={100} height={100} customStyle={{ borderRadius: '50%' }} />
+         {/* pass in nextjs image component */}
 
           <Headline>
             <Bolt />
             Brandon Flowers
           </Headline>
         </Column>
-        {/* <AnimateNumber delay="1000" to={234002} from={0} /> */}
       </Row>
       <Paragraph>
         I{"'"}m currently seeking the opportunity to make a major impact at a new company! Whether you need a mix of fullstack or 100% front-end, I can help you and your team build your roman empire! I 💛 solving complex customer journeys and workflows. Learn more on my       <Link url="https://github.com/headwinds/">Github</Link>.
