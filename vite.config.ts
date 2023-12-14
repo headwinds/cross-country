@@ -5,6 +5,8 @@ import { glob } from 'glob'
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
+//import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
+
 
 export default defineConfig({
   plugins: [
@@ -13,11 +15,11 @@ export default defineConfig({
     dts({ include: ['lib'] }),
   ],
   build: {
+    cssCodeSplit: false,
+    copyPublicDir: false,
     lib: {
       entry: resolve(__dirname, 'lib/index.ts'),
-      name: 'cross-country',
       formats: ['es'],
-      fileName: (format) => `cross-country.${format}.js`,
     },
     rollupOptions: {
       external: ['react', 'react/jsx-runtime'], // externalize react to avoid bundling it
