@@ -17,9 +17,23 @@ Do you pour over your personal stats from Github, Strava or Spotify? Is your yea
 
 In my case, I'm using this library to present metrics about my path as a developer as well as my home energy efficiency and [decarbonization](https://greenbuildingcanada.ca/decarbonize-home/).  
 
-### Note about NextJS
+### NextJS Install
 
-After upgrading to Vite, this library currently does not work with NextJS due to the way it imports its CSS. I'm currently [exploring different approaches](https://dev.to/headwinds/comment/2bel0) but for now I would recommend using this library within [Vite react starter](https://vitejs.dev/guide/), and you can use an [earlier build like 1.1.85](https://www.npmjs.com/package/cross-country/v/1.1.85) before the Vite migration that does work with NextJS.  
+For this third-party library to work within NextJS, you need to make one change when you consume cross-country to import it's single css bundle.
+
+Edit the _app.js file to:
+```
+import "../styles/globals.css";
+import "cross-country/dist/bundle.css";
+
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />;
+}
+
+export default MyApp;
+```
+
+After upgrading to Vite, this library did not with NextJS due to the way it imports its CSS. I tried [exploring different approaches](https://dev.to/headwinds/comment/2bel0) but for now I would recommend using this library within [Vite react starter](https://vitejs.dev/guide/), and landed on [rollup-plugin-css-only](https://www.npmjs.com/package/rollup-plugin-css-only) which has minimal configuration.
 
 By wrapping html, each component is augmented for building accessible experiences across screens. A simple page may look like this:
 
