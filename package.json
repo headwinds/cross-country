@@ -1,7 +1,6 @@
 {
   "name": "cross-country",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.2.0",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,7 +12,6 @@
     "build": "tsc --p ./tsconfig-build.json && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "prepack": "json -f package.json -I -e \"delete this.devDependencies; delete this.dependencies\"",
     "prepublishOnly": "npm run build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
