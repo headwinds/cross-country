@@ -13,6 +13,8 @@ Core Tech
 - Typescript 5
 - Vite 
 
+Last Major Update: Dec 13/2023 upgrading to Vite from Webpack
+
 [Cross Country Storybook via Github Pages](https://headwinds.github.io/cross-country)
 
 Bored of building the same enterprise UI without any sizzle? Are you a fan of the Sims, Starcraft, Chess, Dungeons and Dragons and other table top role playing games (TTRPGs)?

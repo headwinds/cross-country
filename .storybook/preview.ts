@@ -9,6 +9,11 @@ const preview: Preview = {
        date: /Date$/i,
       },
     },
+    options: {
+      storySort: {
+        order: ['Cross Country', 'Design System', ['atoms', 'molecules', 'organisms', 'templates', 'pages']]
+      },
+    },
   },
 };
 

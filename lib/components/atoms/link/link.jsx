@@ -10,7 +10,7 @@ const Link = ({ url, children, size, target, customClass = '', customStyle = {},
       href={url}
       target={target}
       rel="noopener, noreferrer"
-      className={clsx(`${styles.link} ${styles[`link__${size}`]}`, customClass)}
+      className={clsx(styles.link, customClass)}
       style={customStyle}
     >
       {children}

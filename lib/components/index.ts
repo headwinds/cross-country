@@ -37,17 +37,14 @@ export { default as Group } from './atoms/group';
 // molecules
 export { default as CheckboxLabel } from './molecules/checkboxlabel';
 export { default as Wolf } from './molecules/wolf';
-export { default as Bar } from './molecules/bar';
 export { default as Wrapper } from './molecules/wrapper';
 export { default as Wallpaper } from './molecules/wallpaper';
 export { default as Tile } from './molecules/tile';
 export { default as Modal } from './molecules/modal';
-export { default as Brand } from './molecules/brand';
 export { default as Stagger } from './molecules/stagger';
 export { default as RelatedArticles } from './molecules/related-articles';
 export { default as Card } from './molecules/card';
 export { default as GoldLeaf } from './molecules/gold-leaf';
-export { default as Accordion } from './molecules/accordion';
 export { default as Bolt } from './molecules/icons/bolt/bolt';
 export { default as ProfilePorthole } from './molecules/profile-porthole';
 export { default as KeyValuePairs } from './molecules/key-value-pairs';
