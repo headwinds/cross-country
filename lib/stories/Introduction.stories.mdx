@@ -1,0 +1,147 @@
+import { Meta } from '@storybook/addon-docs';
+import Code from './assets/code-brackets.svg';
+import Colors from './assets/colors.svg';
+import Comments from './assets/comments.svg';
+import Direction from './assets/direction.svg';
+import Flow from './assets/flow.svg';
+import Plugin from './assets/plugin.svg';
+import Repo from './assets/repo.svg';
+import StackAlt from './assets/stackalt.svg';
+import Headwinds from './assets/headwinds.svg';
+import { Link, Paragraph } from '../components';
+
+<Meta title="Cross Country/Introduction" />
+
+<style>
+  {`
+    .subheading {
+      --mediumdark: '#999999';
+      font-weight: 900;
+      font-size: 13px;
+      color: #999;
+      letter-spacing: 6px;
+      line-height: 24px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      margin-top: 40px;
+    }
+
+    .link-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      row-gap: 10px;
+    }
+
+    @media (min-width: 620px) {
+      .link-list {
+        row-gap: 20px;
+        column-gap: 20px;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media all and (-ms-high-contrast:none) {
+    .link-list {
+        display: -ms-grid;
+        -ms-grid-columns: 1fr 1fr;
+        -ms-grid-rows: 1fr 1fr;
+      }
+    }
+
+    .link-item {
+      display: block;
+      padding: 20px 30px 20px 15px;
+      border: 1px solid #00000010;
+      border-radius: 5px;
+      transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;
+      color: #333333;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .link-item:hover {
+      border-color: #1EA7FD50;
+      transform: translate3d(0, -3px, 0);
+      box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;
+    }
+
+    .link-item:active {
+      border-color: #1EA7FD;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .link-item strong {
+      font-weight: 700;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .link-item img {
+      height: 40px;
+      width: 40px;
+      margin-right: 15px;
+      flex: none;
+    }
+
+    .link-item span {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .tip {
+      display: inline-block;
+      border-radius: 1em;
+      font-size: 11px;
+      line-height: 12px;
+      font-weight: 700;
+      background: #E7FDD8;
+      color: #66BF3C;
+      padding: 4px 12px;
+      margin-right: 10px;
+      vertical-align: top;
+    }
+
+    .tip-wrapper {
+      font-size: 16px;
+      line-height: 20px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      color: #666;
+    }
+
+    .tip-wrapper code {
+      font-size: 1px;
+      display: inline-block;
+    }
+  `}
+</style>
+
+# Cross Country
+
+Colour palettes, game tiles, the modelling and animating of stellar scenes with epic conflict. In other words, an engine for building interactive stories!
+
+If you're struggling for original content or even just to get started, you might take a [de-make approach](https://www.thegamer.com/best-game-demakes/) and attempt to build a game that's a clone; or better yet re-interupt a scene within a game. Once you have a foundation, then you can start to add your own ideas and make it your own.
+
+You can use the same assets and mechanics, but with a new story and characters.
+
+You can fork this Storybook to build your own components and continue a building UIs with a [component-driven](https://componentdriven.org) process starting with atomic components and ending with full screens. The game is building is the game! We "find the fun" in the process of using our imagination and the joy of making something work.
+
+<div className="subheading">Explore</div>
+
+<div className="link-list">
+  <a className="link-item" href="https://github.com/headwinds/cross-country" target="_blank">
+    <img src={Code} alt="code" />
+    <span>
+      <strong>GitHub project</strong>
+      View the source and add issues
+    </span>
+  </a>
+  <a className="link-item" href="https://headwinds.vercel.app" target="_blank">
+    <img src={Headwinds} alt="code" />
+    <span>
+      <strong>Headwinds Studio</strong>
+      hobbyist, enthusiast & forest bather
+    </span>
+  </a>
+</div>

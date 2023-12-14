@@ -1,0 +1,51 @@
+.checkbox {
+  display: flex;
+  position: relative;
+  pointer-events: none;
+  margin: 8px;
+}
+
+.checkboxForm {
+  display: inline-block;
+  position: absolute;
+  top: -5px;
+  left: -30px;
+  pointer-events: none;
+}
+
+.checkboxFormAfter::after {
+  content: '';
+  display: inline-block;
+  opacity: 1;
+  height: 24px;
+  width: 24px;
+  border: none;
+  background: white;
+  border-radius: 2px;
+}
+
+.checkboxFormBefore::before {
+  content: none;
+  display: inline-block;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  height: 5px;
+  width: 9px;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  transform: rotate(-45deg);
+}
+
+.checkboxFormBefore::before {
+  content: '';
+}
+
+.checkboxFunction {
+  opacity: 1;
+  pointer-events: all;
+  border: 1px solid #ccc;
+  width: 25px;
+  height: 25px;
+  border-radius: 4px;
+}
