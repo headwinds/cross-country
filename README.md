@@ -33,7 +33,9 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 ```
 
-After upgrading to Vite, this library did not with NextJS due to the way it imports its CSS. I tried [exploring different approaches](https://dev.to/headwinds/comment/2bel0) but for now I would recommend using this library within [Vite react starter](https://vitejs.dev/guide/), and landed on [rollup-plugin-css-only](https://www.npmjs.com/package/rollup-plugin-css-only) which has minimal configuration.
+After upgrading to Vite, this library did not with NextJS due to the way it imports its CSS. I [explored different approaches](https://dev.to/headwinds/comment/2bel0) and landed on [rollup-plugin-css-only](https://www.npmjs.com/package/rollup-plugin-css-only) which has minimal configuration.
+
+### Usage 
 
 By wrapping html, each component is augmented for building accessible experiences across screens. A simple page may look like this:
 
