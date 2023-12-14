@@ -1,0 +1,16 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
+import Cluster from './cluster';
+import { Link } from '../../../';
+import styles from './cluster.module.css';
+
+<Meta title="design system/organisms/cluster" />
+
+# Meta
+
+<Subtitle>cluster visualization of monthly lists</Subtitle>
+
+<Canvas>
+  <Story name="cluster">
+    <Cluster />
+  </Story>
+</Canvas>

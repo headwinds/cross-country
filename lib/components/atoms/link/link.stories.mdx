@@ -1,0 +1,26 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
+import { STORYBOOK } from '../../../constants';
+import { Paragraph, Image, Link } from '../../';
+
+<Meta title="design system/atoms/link" />
+
+# Link
+
+<Subtitle>a hyperlink.</Subtitle>
+
+https://stackoverflow.com/questions/24691460/how-does-wired-magazine-achieve-this-thick-underline-link-effect/24691535
+
+<Canvas>
+  <Story name="link">
+ <Link url="https://www.amazon.ca/Cambridge-59216-Wirebound-Cover-Notebook/dp/B07L5WN15V/ref=sr_1_10_mod_primary_new?crid=HNHYMIZMHSN1&keywords=cambridge+spiral+9+x+9&qid=1698670758&s=office&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=cambridge+spiral+9+x+9%2Coffice-products%2C62&sr=1-10">spiral notebook</Link>
+  </Story>
+  <Story name="link within a paragraph">
+    <Image url="https://www.gridsagegames.com/images/cogmind/OP_media_150111/cogmind_parts.gif" />
+    <Paragraph>
+      <Link url="http://www.roguebasin.com/index.php?title=Cogmind">Cogmind</Link> is a science fiction-themed
+      traditional roguelike in which you play a robot that builds itself from components found or salvaged from other
+      robots.
+    </Paragraph>
+  </Story>
+  
+</Canvas>

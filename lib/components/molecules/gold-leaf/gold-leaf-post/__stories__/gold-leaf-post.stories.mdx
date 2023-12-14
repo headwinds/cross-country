@@ -1,0 +1,18 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
+import GoldLeafPostStory from './gold-leaf-post-story';
+
+<Meta title="design system/molecules/gold leaf/gold leaf post" />
+
+As a first time user with no posts, I want to authenticate once, and set a cookie,
+
+Then it will remember me for a while so that I don't have to authenticate every time I want to write a post.
+
+My post should be in draft status until I'm ready to publish it.
+
+When I return, my most recent draft should be loaded.
+
+<Canvas>
+  <Story name="gold leaf post">
+    <GoldLeafPostStory />
+  </Story>
+</Canvas>

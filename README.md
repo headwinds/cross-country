@@ -6,11 +6,14 @@
 
 Core Tech
 
-- Typescript
-- react (18.02) & react-spring
+- React (18.02) & react-spring
 - CSS modules
 - D3
-- Storybook
+- Storybook 7
+- Typescript 5
+- Vite 
+
+Last Major Update: Dec 13/2023 upgrading to Vite from Webpack
 
 [Cross Country Storybook via Github Pages](https://headwinds.github.io/cross-country)
 
@@ -145,6 +148,7 @@ npm run deploy-storybook-ci
 
 ## Inspiration
 
+- [Create a Component Library Fast🚀(using Vite's library mode)](https://dev.to/receter/how-to-create-a-react-component-library-using-vites-library-mode-4lma)
 - [creating your own react component library](https://blog.harveydelaney.com/creating-your-own-react-component-library/)
 - [Shopify polaris-viz](https://polaris-viz.shopify.com/)
 - [create-react-library](https://www.npmjs.com/package/create-react-library)

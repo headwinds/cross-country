@@ -1,0 +1,148 @@
+import { Meta, Subtitle } from '@storybook/addon-docs';
+import { SubHeadline, Paragraph, List, ListItem, Link, RelatedArticles, Image, Column } from '../../../';
+import IslandStory from './island-story';
+
+<Meta title="design system/organisms/worlds/island" />
+
+### Islands
+
+FOCUS: why did I build this island?
+
+Inspired by an epside of Lost when Desmond mentions the <Link url="https://lostpedia.fandom.com/wiki/Snowglobe">Snowglobe</Link> and Brad hypes <Link url="https://mythic-quest.fandom.com/wiki/Battle_Royale_mode">
+Battle Royale Mode on Mythic Quest</Link>, I wanted to build a small, diorama-type experiment which features an Area of Affect where a circle will the affect tiles hilighting those within the circle and darkening those beyond.
+
+As the cirlce shrinks, the agents will need to move closer to the center and come in closer contact. Each agent will
+be able to cast an AOE spell that could push (a nod to{' '}
+
+<IslandStory />
+
+<List>
+  <ListItem>Polar bear</ListItem>
+  <ListItem>Wild boar fresh kill</ListItem>
+  <ListItem>Hairspray fireball</ListItem>
+  <ListItem>Cave</ListItem>
+  <ListItem>Time</ListItem>
+  <ListItem>Farmer vs hunter vs shaman</ListItem>
+  <ListItem>Sweat lodge</ListItem>
+</List>
+
+<RelatedArticles
+  articles={[
+    { id: 0, title: 'Tweet', url: 'https://twitter.com/kynseed/status/1429098760232177667?s=11' },
+    {
+      id: 1,
+      title: 'Record Carp Killed with Bow',
+      url: 'https://ftw.usatoday.com/2021/08/bow-fisherman-shatters-carp-record-a-straight-up-monster',
+    },
+    { id: 2, title: 'Crafter', url: 'https://danijar.com/project/crafter' },
+    {
+      id: 3,
+      title: 'how I make my tiny home work',
+      url: 'https://www.insider.com/how-i-make-my-tiny-home-work-for-me-photos-2022-2',
+    },
+    {
+      id: 4,
+      title: 'How to Make a One Acre Farm',
+      url: 'https://www.theguardian.com/science/2020/aug/01/how-to-make-a-one-acre-farm',
+    },
+    { id: 5, title: 'Pets included', url: 'https://twitter.com/skynews/status/1497280830045044741?s=11' },
+    { id: 6, title: 'vanilla game', url: 'https://vanillagame.carrd.co/' },
+    { id: 7, title: 'what people do', url: 'https://twitter.com/mnvrsngh/status/1510979014676172815' },
+    { id: 8, title: 'lost on fandom', url: 'https://lostpedia.fandom.com//' },
+    { id: 9, title: 'kingdom of loathing', url: 'https://www.kingdomofloathing.com/' },
+    {
+      id: 10,
+      title: 'tweet by spacecaterus',
+      url: 'https://twitter.com/spacecaterus/status/1425336895152787459?s=11/',
+    },
+    { id: 11, title: 'gregborenstein.com', url: 'https://gregborenstein.com/' },
+    { id: 12, title: 'gr3gjsmith.net', url: 'http://gr3gjsmith.net' },
+    { id: 13, title: 'HOLO', url: 'https://www.holo.mg/' },
+    { id: 14, title: 'huggingface: Critical Role Dataset', url: 'https://huggingface.co/datasets/crd3' },
+    {
+      id: 15,
+      title: 'a beginners guide to powered by apocalypse games',
+      url: 'https://www.forbes.com/sites/robwieland/2020/12/29/a-beginners-guide-to-powered-by-the-apocalypse-games/?sh=5216a16b293c',
+    },
+    {
+      id: 16,
+      title: 'tweet: bee keeping',
+      url: 'https://twitter.com/apico_game/status/1520100607931011072?s=20&t=okw4CTdtAfdydpGkm-FYgQ',
+    },
+    { id: 17, title: 'nested', url: 'https://if50.substack.com/p/2011-nested' },
+    {
+      id: 18,
+      title: '1 page Dune RPG',
+      url: 'https://boingboing.net/2021/09/23/this-delightful-fan-made-dune-role-playing-game-is-only-one-page.html',
+    },
+    { id: 19, title: 'Dune II', url: 'https://dune.fandom.com/wiki/Dune_II' },
+    {
+      id: 20,
+      title: 'Photos from the Jodorowsky Dune storyboard',
+      url: 'https://photos.google.com/share/AF1QipNGBuasYa_WETf7sF6Q9W3SN-X7oiB3jrh5QDMMNQPQl9xgS3cua--BhRr-BImP1w?pli=1&key=QmE1WTR0Z0FtZVFIalpsYVZ3LXFXMS1DUmNiUnR3/',
+    },
+    { id: 21, title: 'unDune deMake', url: 'https://liquidream.itch.io/undune2' },
+    { id: 22, title: 'Dune Spice Wars', url: 'https://www.engadget.com/dune-spice-wars-announcement-033301745.html' },
+    {
+      id: 23,
+      title: 'Twitch Kings Quest 2',
+      url: 'https://clips.twitch.tv/FastDepressedCrowPraiseIt-LhP2vLS1oKXlv30-',
+    },
+    {
+      id: 24,
+      title: 'Exploring the Potential of Generative Agents: Simulating Human Behavior with AI',
+      url: 'https://hackernoon.com/exploring-the-potential-of-generative-agents-simulating-human-behavior-with-ai',
+    },
+    {
+      id: 25,
+      title: 'Investigation: How Roblox Is Exploiting Young Game Developers',
+      url: 'https://www.youtube.com/watch?v=_gXlauRB1EQ',
+    },
+    {
+      id: 27,
+      title: 'Openai Gym',
+      url: 'https://openai.com/research/openai-gym-beta',
+    },
+    {
+      id: 28,
+      title: 'Gymnasium',
+      url: 'https://gymnasium.farama.org/',
+    },
+    {
+      id: 29,
+      title: 'end city castle generator',
+      url: 'https://twitter.com/alteredclone/status/1652419813262921729',
+    },
+    {
+      id: 30,
+      title: 'Age of Empires 2 in React',
+      url: 'https://www.youtube.com/watch?v=meUjZAyBkE8&feature=youtu.be',
+    },
+    {
+      id: 31,
+      title: 'Kiss the Ground',
+      url: 'https://kisstheground.com',
+    },
+    {
+      id: 32,
+      title: 'Regenerative Argiculture',
+      url: 'https://biologicalcarbon.ca/regenerative-ag',
+    },
+    {
+      id: 33,
+      title:
+        'Interactions of Grazing History, Cattle Removal and Time since Rain Drive Divergent Short-Term Responses by Desert Biota',
+      url: 'https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0068466',
+    },
+    {
+      id: 34,
+      title: 'Doniga Markegard Grassfed',
+      url: 'https://www.csuchico.edu/regenerativeagriculture/demos/markegard-family-grassfed.shtml',
+    },
+    {
+      id: 35,
+      title: 'GPTRPG',
+      url: 'https://github.com/dzoba/gptrpg',
+    },
+  ]}
+/>

@@ -1,0 +1,46 @@
+.field {
+  display: flex;
+}
+
+.field__label {
+  color: #999;
+  opacity: 0.7;
+  font-size: 14px;
+  margin-right: 8px;
+}
+
+.field__label_valid {
+  color: #000;
+  font-size: 14px;
+  margin-right: 8px;
+}
+
+.field__input {
+  color: #000;
+  padding: 8px;
+}
+
+.field__button {
+  margin: 8px;
+  width: 120px;
+  font-weight: 300;
+}
+
+.field__row {
+  justify-content: flex-end !important;
+}
+
+.field__rowSend {
+  justify-content: flex-end !important;
+  margin: 8px;
+}
+
+.field__error {
+  padding: 8px;
+  color: darkred;
+}
+
+.field__success {
+  padding: 8px;
+  color: green;
+}
