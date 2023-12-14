@@ -1,5 +1,5 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
-import { Paragraph, SubHeadline } from '../../../';
+import { Paragraph, SubHeadline, RelatedArticles } from '../../../';
 import HomeStory from './home-story';
 import Prism from 'prismjs';
 
@@ -17,31 +17,7 @@ I'm using this exercise to learn more about css variables. After switching from 
 
 ### conventional home
 
-<pre>
-  <code className="language-css">
-    {`
-@import '../../global.module.css';
 
-.gridContainer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas:
-    'header header header'
-    'hero hero hero'
-    'panel1 panel2 panel3'
-    'footer footer footer';
-  grid-gap: 8px;
-}
-
-.header {
-  grid-area: header;
-  background-color: var(--template-color);
-  height: 50px;
-}
-`}
-  </code>
-</pre>{' '}
 
 <Canvas>
   <Story name="canonical home">

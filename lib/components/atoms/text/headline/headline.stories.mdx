@@ -16,12 +16,8 @@ import styles from './headline.module.css';
   </Story>
   <Story name="headline with subheadline">
     <Column customStyle={{ alignItems: 'center' }}>
-      <Headline customClass={styles.warIsOver} customStyle={{ fontSize: 60, fontWeight: 700 }}>
-        WAR
-        <br />
-        IS
-        <br />
-        OVER!
+      <Headline customClass={styles.warIsOver} customStyle={{ display: "flex", flexDirection: "column", maxHeight: 220, width: 50, alignItems: 'center', fontSize: 60, fontWeight: 700, padding: 0, margin: 0 }}>
+        WAR IS OVER!
       </Headline>
       <SubHeadline customClass={styles.ifYouWant}>IF YOU WANT IT</SubHeadline>
       <Image

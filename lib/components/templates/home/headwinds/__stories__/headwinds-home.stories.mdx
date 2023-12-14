@@ -1,5 +1,5 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
-import { Paragraph, SubHeadline } from '../../../../';
+import { Paragraph, SubHeadline, RelatedArticles } from '../../../../';
 import HeadwindsHomeStory from './headwinds-home-story';
 import Prism from 'prismjs';
 
@@ -11,48 +11,7 @@ import Prism from 'prismjs';
 
 ### headwinds home
 
-<pre>
-  <code className="language-css">
-    {`
-@import '../../global.module.css';
 
-.gridContainer {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr auto;
-  grid-template-areas:
-    'header header'
-    'sidequest hero'
-    'footer footer';
-  grid-gap: 8px;
-}
-
-.header {
-  grid-area: header;
-  background-color: var(--template-color);
-  height: 50px;
-}
-
-.hero {
-  grid-area: hero;
-  background-color: var(--template-color);
-  height: 400px;
-}
-
-.sidequest {
-  grid-area: sidequest;
-  background-color: var(--template-color);
-  width: 300px;
-}
-
-.footer {
-  grid-area: footer;
-  background-color: var(--template-color);
-  height: 100px;
-}
-`}
-  </code>
-</pre>{' '}
 
 <Canvas>
   <Story name="headwinds home">
