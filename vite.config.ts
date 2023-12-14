@@ -4,20 +4,22 @@ import { fileURLToPath } from 'node:url'
 import { glob } from 'glob'
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
-import { libInjectCss } from 'vite-plugin-lib-inject-css'
+//import { libInjectCss } from 'vite-plugin-lib-inject-css'
+//import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
+import css from 'rollup-plugin-css-only';
 
 export default defineConfig({
   plugins: [
     react(),
-    libInjectCss(),
+    css({ output: 'bundle.css' }),
     dts({ include: ['lib'] }),
   ],
   build: {
+    cssCodeSplit: false,
+    copyPublicDir: false,
     lib: {
       entry: resolve(__dirname, 'lib/index.ts'),
-      name: 'cross-country',
       formats: ['es'],
-      fileName: (format) => `cross-country.${format}.js`,
     },
     rollupOptions: {
       external: ['react', 'react/jsx-runtime'], // externalize react to avoid bundling it

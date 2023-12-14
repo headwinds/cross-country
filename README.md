@@ -13,13 +13,27 @@ Core Tech
 - Typescript 5
 - Vite 
 
-Last Major Update: Dec 13/2023 upgrading to Vite from Webpack
-
-[Cross Country Storybook via Github Pages](https://headwinds.github.io/cross-country)
-
 Do you pour over your personal stats from Github, Strava or Spotify? Is your year always in review?! By experimenting with code, you can hone your developer skills while exploring subject matter that interests you. 
 
 In my case, I'm using this library to present metrics about my path as a developer as well as my home energy efficiency and [decarbonization](https://greenbuildingcanada.ca/decarbonize-home/).  
+
+### NextJS Install
+
+For this third-party library to work within NextJS, you need to make one change when you consume cross-country to import it's single css bundle.
+
+Edit the _app.js file to:
+```
+import "../styles/globals.css";
+import "cross-country/dist/bundle.css";
+
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />;
+}
+
+export default MyApp;
+```
+
+After upgrading to Vite, this library did not with NextJS due to the way it imports its CSS. I tried [exploring different approaches](https://dev.to/headwinds/comment/2bel0) but for now I would recommend using this library within [Vite react starter](https://vitejs.dev/guide/), and landed on [rollup-plugin-css-only](https://www.npmjs.com/package/rollup-plugin-css-only) which has minimal configuration.
 
 By wrapping html, each component is augmented for building accessible experiences across screens. A simple page may look like this:
 
@@ -122,7 +136,6 @@ yarn start
 
 Open your browser to http://localhost:6006/
 
-To build & deploy storybook `yarn build-storybook`
 
 ## Publish to NPM
 
@@ -137,14 +150,6 @@ npm publish
 ```
 
 Since I had .npmrc setup in other projects, I had to one for this project [using the default](https://docs.npmjs.com/cli/v8/using-npm/registry). At first, I thought I needed /headwinds and then /headwinds/cross-country but nope! Just use the default - see my .npmrc file.
-
-## Publish Storybook
-
-Since I already have `headwinds` repo, I followed the github pages doc to create another repo this time empty named `headwinds.github.io` and then was able to publish and host the storybook.
-
-```
-npm run deploy-storybook-ci
-```
 
 ## Inspiration
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import './pill-button.css';
+import styles from './pill-button.module.css';
 
 interface ButtonProps {
   /**
@@ -28,11 +28,12 @@ interface ButtonProps {
  * Primary UI component for user interaction
  */
 export const PillButton = ({ primary = false, size = 'medium', backgroundColor, label, ...props }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  //const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      //className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      className={styles.pillButton}
       style={{ backgroundColor }}
       {...props}
     >

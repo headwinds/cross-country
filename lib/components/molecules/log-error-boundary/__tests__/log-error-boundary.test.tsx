@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-
+import { describe, expect, beforeEach, it } from 'vitest';
 import LogErrorBoundary from "../";
 import { LogErrorBoundaryProps } from "../log-error-boundary.types";
 
