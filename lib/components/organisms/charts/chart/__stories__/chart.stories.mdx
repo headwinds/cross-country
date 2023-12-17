@@ -1,0 +1,13 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
+import Chart from '../chart';
+import { dataset } from './data-set';
+
+<Meta title="design system/organisms/charts/chart" />
+
+<Subtitle>Chart</Subtitle>
+
+<Canvas>
+    <Story name="chart">
+        <Chart data={dataset} width={600} height={400} variant={"line"} />
+    </Story>
+</Canvas>
