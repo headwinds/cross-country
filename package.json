@@ -1,6 +1,10 @@
 {
   "name": "cross-country",
   "version": "1.2.6",
+  "description": "an atomic design system built for personal metrics & lonely forest bathers",
+  "author": "headwinds",
+  "license": "MIT",
+  "repository": "headwinds/cross-country",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,7 +20,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "new": "node ./generate-component"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -84,5 +89,21 @@
       "plugin:storybook/recommended"
     ]
   },
-  "packageManager": "yarn@4.0.2"
+  "packageManager": "yarn@4.0.2",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "rollup",
+    "react",
+    "react component",
+    "rollup react",
+    "component",
+    "example react component",
+    "example rollup react component"
+  ],
+  "bugs": {
+    "url": "https://github.com/headwinds/cross-country/issues"
+  },
+  "homepage": "https://github.com/headwinds/cross-country#readme"
 }
