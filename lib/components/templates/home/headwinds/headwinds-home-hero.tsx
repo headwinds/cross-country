@@ -4,7 +4,7 @@ import { HeadwindsHomeProps } from './headwinds-home.types';
 import clsx from 'clsx';
 import styles from './headwinds-home.module.css';
 
-const HeadwindsHomeHeroTemplate = ({ header, hero, sidequest, footer, isBlockedIn = false }: HeadwindsHomeProps) => {
+const HeadwindsHomeHeroTemplate = ({ header, hero, footer, isBlockedIn = false }: HeadwindsHomeProps) => {
   return (
     <Grid customClass={styles.gridContainerHero}>
       <Row customClass={clsx(styles.header, { [styles.commonBlockedIn]: isBlockedIn })}>{header}</Row>

@@ -1,6 +1,7 @@
 import React from 'react';
-import { Column, Login, Row, Image, Bolt, Paragraph, SubHeadline, List, ListItem, Link, Headline } from '../../..';
+import { Column, Login, Row, Image, Bolt, Paragraph, SubHeadline, List, ListItem, Link, Headline } from '../../../../';
 import { TwitterLogo, GithubLogo, LinkedinLogo } from 'phosphor-react';
+import styles from "./headwinds-header.module.css";
 const moss = '#bccd9d';
 const gold = '#b2a25a';
 const teal = '#0baeae';
@@ -20,7 +21,7 @@ const customLinkStyle = {
 /*
 Note the header is only 50px tall so use it render alerts and notifications
 */
-const HeadwindsFooter = ({ message = '', isLoading = false }) => {
+const HeadwindsHeader = ({ message = '', isLoading = false }) => {
 
   /*
   Phase 2 - add a loading indicator & login to profile with EXP/LVL expereince
@@ -28,12 +29,14 @@ const HeadwindsFooter = ({ message = '', isLoading = false }) => {
   */
 
   return (
-    <Column>
+    <Column customClass={styles.headwindsHeaderContainer}>
+
       <Link url="https://www.github.com/headwinds" customStyle={customLinkStyle}>
         <GithubLogo size={32} color={gold} weight="light" />
         <Paragraph customStyle={customParagraphStyle}>Github</Paragraph>
       </Link>
+  
     </Column>
   );
 };
-export default HeadwindsFooter;
+export default HeadwindsHeader;

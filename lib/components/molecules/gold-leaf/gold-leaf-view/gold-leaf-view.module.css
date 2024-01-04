@@ -67,7 +67,7 @@
   height: auto;
   align-items: flex-start;
   margin: 0px;
-  padding: 0px;
+  padding: 0px !important;
 }
 
 .GoldLeaf__image img {

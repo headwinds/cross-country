@@ -1,18 +1,23 @@
 import * as React from 'react';
-import GoldLeafView from '.';
-import { Card, Column, Link, SubHeadline } from '../../..';
-import GoldLeafNotFound from '../gold-leaf-not-found';
-import { GoldLeafProps } from '../gold-leaf.types';
-import styles from './gold-leaf-view.module.css';
-import GoldLeafImage from './golf-leaf-image';
+import GoldLeafView from '../';
+import { Card, Column, Link, SubHeadline } from '../../../../';
+import GoldLeafNotFound from '../../gold-leaf-not-found';
 
-export const GoldTitleImageCard = ({ goldLeafModel, mode = 'unknown' }: GoldLeafProps) => {
+import styles from '../gold-leaf-view.module.css';
+import GoldLeafImage from './golf-leaf-image';
+import type { GoldLeafProps } from '../../gold-leaf.types';
+
+export const GoldTitleImageCard = ({ goldLeafModel, mode = 'unknown', onNoImageFoundCallback }: GoldLeafProps) => {
+
+  console.log("GoldTitleImageCard: ", goldLeafModel);
+
+
   const render = () => {
     if (mode === 'view' && goldLeafModel) {
       return <GoldLeafView goldLeafModel={goldLeafModel} />;
     } else if (mode !== 'view' && goldLeafModel) {
       return (
-        <Card customClass={styles.GoldLeaf__GoldTitleImageCard} hasBackground={false}>
+        <>
           <Column customStyle={{ padding: 4 }}>
             <Link
               url={goldLeafModel.link}
@@ -26,8 +31,8 @@ export const GoldTitleImageCard = ({ goldLeafModel, mode = 'unknown' }: GoldLeaf
               />
             </Link>
           </Column>
-          <GoldLeafImage goldLeafModel={goldLeafModel} />
-        </Card>
+          <GoldLeafImage goldLeafModel={goldLeafModel} onNoImageFoundCallback={onNoImageFoundCallback} />
+        </>
       );
     } else {
       return <GoldLeafNotFound />;

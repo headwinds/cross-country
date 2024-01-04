@@ -14,12 +14,12 @@
 
 .gridContainerHero {
   display: grid;
-  grid-template-rows: 100px auto 25px;
+  grid-template-rows: 24px auto 25px;
   grid-template-columns: auto;
   grid-template-areas:
-    'header header'
-    'content content'
-    'footer footer';
+    'header'
+    'content'
+    'footer';
   grid-gap: 8px;
   width: 100%;
 }
@@ -33,7 +33,7 @@
 
 .header {
   grid-area: header;
-  min-height: 50px;
+  min-height: 24px;
 }
 
 .content {

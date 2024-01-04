@@ -1,12 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-
 import * as d3 from 'd3';
+import type { ChartProps } from '../chart-types';
 
-interface LineChartProps {
-    data: { x: number; y: number }[];
-    width: number;
-    height: number;
-}
+interface LineChartProps extends ChartProps {}
 
 const LineChart = ({ data, width = 600, height = 400 }: LineChartProps) => {
     const chartRef = useRef<SVGSVGElement | null>(null);
@@ -32,14 +28,14 @@ const LineChart = ({ data, width = 600, height = 400 }: LineChartProps) => {
                 .line<{ x: number; y: number }>()
                 .x((d) => xScale(d.x))
                 .y((d) => yScale(d.y))
-                .curve(d3.curveCatmullRom); // Use curveCatmullRom for smooth line
+                .curve(d3.curveBasis); // Use curveCatmullRom for smooth line
 
             // Draw line
             svg
                 .append('path')
                 .datum(data)
                 .attr('fill', 'none')
-                .attr('stroke', 'steelblue')
+                .attr('stroke', 'grey')
                 .attr('stroke-width', 2)
                 .attr('d', line);
         }

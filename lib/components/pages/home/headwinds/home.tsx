@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { HomeProps } from './home.types';
-import HomeTemplate from '../../../templates/home/headwinds';
-import Header from './headwinds-header';
+import HomeTemplateHero from '../../../templates/home/headwinds/headwinds-home-hero';
+import Header from './header/headwinds-header';
 import Hero from './headwinds-hero';
-import SideQuest from './headwinds-sidequest';
+//import SideQuest from './headwinds-sidequest';
 import Footer from './headwinds-footer';
 import { Loading, Error } from '../../../';
 
@@ -52,10 +52,9 @@ const Home = ({ isBlockedIn = false }: HomeProps) => {
   }
 
   return (
-    <HomeTemplate
+    <HomeTemplateHero
       isBlockedIn={isBlockedIn}
       hero={<Hero onLoadedCallback={onHeroLoaded} />}
-      sidequest={<SideQuest onLoadedCallback={onSideQuestLoaded} />}
       header={<Header isLoading />}
       footer={<Footer isLoading />}
     />
