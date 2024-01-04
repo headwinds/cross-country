@@ -1,12 +1,15 @@
 .number {
-  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
-  font-size: 22px;
-  font-weight: 500;
-  color: black;
   margin: 0px;
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0px;
   padding: 0px;
+
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  font-size: 16px;
+  text-align: left;
+  font-weight: 300;
+  color: #333;
   font-variant-numeric: tabular-nums;
 }

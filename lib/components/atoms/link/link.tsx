@@ -3,7 +3,19 @@ import styles from './link.module.css';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-const Link = ({ url, children, size, target, customClass = '', customStyle = {}, ...rest }) => {
+type LinkProps = {
+  url: string;
+  children: React.ReactNode;
+  size?: string;
+  target?: string;
+  customClass?: string;
+  customStyle?: {};
+};
+
+const Link = ({ url, children, size = 'small', target = '_blank', customClass = '', customStyle = {}, ...rest }) => {
+
+  console.log("Link url: ", url);
+
   return (
     <a
       {...rest}
@@ -18,18 +30,5 @@ const Link = ({ url, children, size, target, customClass = '', customStyle = {},
   );
 };
 
-Link.defaultProps = {
-  url: PropTypes.string,
-  children: PropTypes.node,
-  size: 'small',
-  target: '_blank',
-};
-
-Link.propTypes = {
-  url: PropTypes.string,
-  children: PropTypes.node,
-  size: PropTypes.string,
-  target: PropTypes.string,
-};
 
 export default Link;
