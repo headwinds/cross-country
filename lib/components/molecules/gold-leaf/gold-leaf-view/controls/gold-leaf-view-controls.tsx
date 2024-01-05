@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { removeAllImagesFromText, defaultFullScreenImageUrl } from '../../../../utils/golds/image-find-util';
-import { tweet, email } from '../../../../utils/golds/share-util';
-import styles from './gold-leaf-view.module.css';
+import { removeAllImagesFromText, defaultFullScreenImageUrl } from '../../../../../utils/golds/image-find-util';
+import { tweet, email } from '../../../../../utils/golds/share-util';
+import styles from '../gold-leaf-view.module.css';
 import {
   ArticleIcon,
   TweetIcon,
@@ -12,11 +12,11 @@ import {
   HideIcon,
   ClusterOffIcon,
   ArticleNoneIcon,
-} from './icons';
-import { fetchRetry } from '../../../../utils/fetch-util';
-import { Column, Row, Span, Button } from '../../..';
+} from '../icons';
+import { fetchRetry } from '../../../../../utils/fetch-util';
+import { Column, Row, Span, Button } from '../../../../';
 
-import { GoldLeafViewProps } from './gold-leaf-view.types';
+import { GoldLeafViewProps } from '../gold-leaf-view.types';
 
 const GOLD_COLOUR = '#E3D597';
 
@@ -30,7 +30,7 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = nul
     text: '',
     read: false,
     curScroll: 0,
-    trained: goldLeafModel.bViewed,
+    trained: goldLeafModel?.bViewed ?? false,
     trashed: false,
   });
 

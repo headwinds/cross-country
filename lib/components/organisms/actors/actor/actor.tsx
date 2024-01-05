@@ -56,15 +56,16 @@ const Actor = ({
   ...rest
 }) => {
   const columnCustomClass = clsx(styles.actor, customClass);
-  const { type } = config;
+  const type = config?.type || 'humanoid';
 
   const renderSubType = () => {
     switch (type) {
       case 'humanoid':
+      case 'one':  
         return null;
       case 'three':
       default:
-        return renderHeadBodyFeet(config, tileSize);
+        return config ? renderHeadBodyFeet(config, tileSize) : null;
     }
   };
 

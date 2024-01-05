@@ -2,7 +2,6 @@ import renderRow from './render-row';
 
 const buildTree = instructionList => {
   const title = 'Recursive Strategy';
-  console.log(title);
 
   let htmlString = `<div><h1>${title}</h1>`;
 

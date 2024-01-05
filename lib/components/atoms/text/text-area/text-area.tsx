@@ -12,6 +12,7 @@ const TextArea = ({
   type = 'text-area',
   rows = 5,
   cols = 33,
+  isDraggable = false,
   ...rest
 }) => {
   return (
@@ -30,6 +31,7 @@ const TextArea = ({
       value={value}
       style={customStyle}
       placeholder={placeholder}
+      draggable={isDraggable}
     >
       {value}
     </textarea>

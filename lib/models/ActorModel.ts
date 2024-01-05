@@ -42,4 +42,19 @@ const ActorModel = Record({
   level: 1,
 });
 
+export type ActorType = {
+  id: number,
+  type: string,
+  alignment: string,
+  name: string,
+  health: number,
+  weapon: WeaponType,
+  shield: ShieldType,
+  speed: number,
+  accuracy: number,
+  skin: string,
+  spells: Array<SpellType>,
+  level: number,
+} 
+
 export default ActorModel;
