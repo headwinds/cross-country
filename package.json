@@ -1,6 +1,10 @@
 {
   "name": "cross-country",
-  "version": "1.2.6",
+  "version": "1.2.7",
+  "description": "an atomic design system built for personal metrics & lonely forest bathers",
+  "author": "headwinds",
+  "license": "MIT",
+  "repository": "headwinds/cross-country",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,7 +20,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "new": "node ./generate-component"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -32,6 +37,7 @@
     "@storybook/react": "^7.6.4",
     "@storybook/react-vite": "^7.6.4",
     "@storybook/test": "^7.6.4",
+    "@types/d3-axis": "^3",
     "@types/jest": "^29.5.11",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
@@ -56,12 +62,14 @@
   "dependencies": {
     "@react-spring/web": "^9.7.3",
     "@storybook/testing-library": "^0.2.2",
+    "@tanstack/react-query": "^5.14.2",
     "@testing-library/jest-dom": "^6.1.5",
     "@testing-library/react": "^14.1.2",
     "@xstate/inspect": "0.8.0",
     "@xstate/react": "3.2.1",
     "clsx": "^1.1.0",
     "d3": "^7.8.2",
+    "d3-axis": "^3.0.0",
     "he": "^1.2.0",
     "idb": "^7.1.1",
     "immutable": "4.1.0",
@@ -84,5 +92,21 @@
       "plugin:storybook/recommended"
     ]
   },
-  "packageManager": "yarn@4.0.2"
+  "packageManager": "yarn@4.0.2",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "rollup",
+    "react",
+    "react component",
+    "rollup react",
+    "component",
+    "example react component",
+    "example rollup react component"
+  ],
+  "bugs": {
+    "url": "https://github.com/headwinds/cross-country/issues"
+  },
+  "homepage": "https://github.com/headwinds/cross-country#readme"
 }

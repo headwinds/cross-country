@@ -24,7 +24,6 @@ const Branches = ({ isTesting = false, onLoadedCallback }: BranchesProps) => {
   });
   const { hasFetched, allNewBranches, branches } = state;
 
-  console.log('branches rendered isTesting', isTesting);
 
   // BFF approach where I provide a new microservice that will handle the RSS feed and return exactly what I need
   const getCabinQuestFeedFromScoutSummarizeService = async data => {

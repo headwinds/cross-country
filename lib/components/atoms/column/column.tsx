@@ -30,7 +30,7 @@ const Column = forwardRef(
           },
           customClass
         )}
-        style={{ ...customStyle }}
+        style={{...customStyle}} // doesn't to work? TODO: fix
       >
         {children}
       </div>
