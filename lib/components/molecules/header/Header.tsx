@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PillButton } from '../../atoms/button/pill-button';
+import PillButton from '../../atoms/button/pill-button';
 import styles from './header.module.css';
 
 type User = {

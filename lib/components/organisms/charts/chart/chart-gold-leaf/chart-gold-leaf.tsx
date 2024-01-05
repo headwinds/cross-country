@@ -2,7 +2,8 @@ import React from 'react';
 import GoldLeaf from './chart-gold-leaf';
 import { Column } from '../../../../../'
 
-const ChartGoldLeaf = ({isGolfLeafVisible, goldLeafModel, goldLeafCustomStyle}) => {
+// TODO: add types
+const ChartGoldLeaf = ({isGolfLeafVisible, goldLeafModel, goldLeafCustomStyle}: any) => {
     return (
         <Column>
           {isGolfLeafVisible && goldLeafModel ? <GoldLeaf goldLeafModel={goldLeafModel} customStyle={goldLeafCustomStyle} /> : null}
