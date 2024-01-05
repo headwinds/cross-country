@@ -4,25 +4,25 @@ import Scatterplot from '../scatterplot/scatterplot';
 import BottomAxis from '../axis/bottom-axis';
 import styles from './chart.module.css';
 import ChartGoldLeaf from './chart-gold-leaf';
-import type { GoldLeafModel } from '../../../molecules/gold-leaf/gold-leaf.types';
+
 
 type ChartVariants = "line" | "bar" | "scatterplot";
 
 interface ChartProps {
     data: number[];
-    variant: ChartVariants;
+    variant?: ChartVariants;
 }
 
 type ChartState = {
     isGolfLeafVisible?: boolean;
-    goldLeafModel: GoldLeafModel;
+    goldLeafModel: any;
     x: number;
     y: number;
     goldLeafCustomStyle?: any;
 }
 
 type ChartClickType = {
-    pointEvent: any;
+    pointEvent?: any;
     model: any;
     x: number;
     y: number;
@@ -32,7 +32,7 @@ const Chart = ({ data, variant = "scatterplot" }: ChartProps) => {
 
     if (!data) return null;
 
-    const [state, setState] = useState<ChartState>({isGolfLeafVisible: false, goldLeafModel: null, goldLeafCustomStyle: null});
+    const [state, setState] = useState<ChartState>({isGolfLeafVisible: false, goldLeafModel: null, goldLeafCustomStyle: null, x: 0, y: 0});
 
     const onClick = ({model, x, y}: ChartClickType) => {
         console.log("Chart clicked model: ", model);
@@ -61,7 +61,7 @@ const Chart = ({ data, variant = "scatterplot" }: ChartProps) => {
         }
     }
 
-    const bottomAxisData = data.map( d => d.x);
+    const bottomAxisData = data ? data.map( d => d) : [];
     const startDate = bottomAxisData[0];
     const endDate = bottomAxisData[bottomAxisData.length - 1];
 

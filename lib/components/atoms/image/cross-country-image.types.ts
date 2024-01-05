@@ -8,6 +8,7 @@ export interface CrossCountryImageProps {
   dataTestId?: string;
   customClass?: string;
   customStyle?: any; // possibly add the csstype https://www.npmjs.com/package/csstype - React.CSSPropertiesImageProps ?
+  onNoImageFoundCallback?: () => void;  
 }
 
 declare const Image: React.ComponentType<CrossCountryImageProps>;

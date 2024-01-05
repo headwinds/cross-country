@@ -16,7 +16,8 @@ const defaultModel = {
   customClass: '',
 };
 
-const Cleric = ({ model = defaultModel, tileSize }) => {
+// TODO: add a actor type - use generics! Actor<Cleric>
+const Cleric = ({ model = defaultModel, tileSize }: any) => {
   const { config, customClass, customSkinStyle, customTileStyle, position, type } = model;
 
   const validConfig = config ?? defaultConfig;
