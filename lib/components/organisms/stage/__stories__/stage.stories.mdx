@@ -1,8 +1,7 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
-import { STORYBOOK } from '../../../constants';
-import Hunter from '../../../';
-import Stage from './stage';
-import styles from './stage.module.css';
+import Stage from '../stage';
+import styles from '../stage.module.css';
+import {actors} from './actors-dataset';
 
 <Meta title="design system/organisms/stage" />
 
@@ -12,6 +11,6 @@ import styles from './stage.module.css';
 
 <Canvas>
   <Story name="stage">
-    <Stage actors={[<Hunter />]} />
+    <Stage actorModels={actors} />
   </Story>
 </Canvas>

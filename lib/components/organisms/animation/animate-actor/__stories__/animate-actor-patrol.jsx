@@ -49,7 +49,7 @@ const AnimateActorPatrol = ({ actorComponentName = 'cleric', targetPosition = { 
 
     api.start({
       to: multipleTo,
-      onResume: () => console.log('move spring has paused'),
+      onPause: () => console.log('move spring has paused'),
       onResume: () => console.log('move spring has resumed'),
       config: config.gentle,
       loop: true,

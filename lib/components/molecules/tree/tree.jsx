@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 // components
 import { Column, Row } from '../../';
-import styles from './tree.css';
+import styles from './tree.module.css';
 import TreeBuilder from './tree-simple-algorithm';
 import RecursiveTreeBuilder from './tree-recursive-algorithm';
 

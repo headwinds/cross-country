@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createRef, useRef } from 'react';
-import { Hunter, CaveTroll, TileGrid, Stage, Tile, Row } from '../../../../..';
+import { Hunter, TileGrid, Stage, Tile, Row } from '../../../../..';
 
 const CaveTrollBoard = ({
   actorModels,
