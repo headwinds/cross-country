@@ -42,19 +42,51 @@ const ActorModel = Record({
   level: 1,
 });
 
+type SpellType = {
+  name: string,
+  damage: number,
+  accuracy: number,
+  speed: number,
+  type: string,
+  description: string,
+}
+
+type WeaponType = {
+  name: string,
+  damage: number,
+  accuracy: number,
+  speed: number,
+  type: string,
+  description: string,
+}
+
+type ShieldType = {
+  name: string,
+  protection: number,
+  accuracy: number,
+  speed: number,
+  type: string,
+  description: string,
+}
+
+
 export type ActorType = {
   id: number,
-  type: string,
-  alignment: string,
-  name: string,
-  health: number,
-  weapon: WeaponType,
-  shield: ShieldType,
-  speed: number,
-  accuracy: number,
-  skin: string,
-  spells: Array<SpellType>,
-  level: number,
+  type?: string,
+  alignment?: string,
+  name?: string,
+  health?: number,
+  weapon?: WeaponType,
+  shield?: ShieldType,
+  speed?: number,
+  accuracy?: number,
+  skin?: string,
+  spells?: Array<SpellType>,
+  level?: number,
+  tileSize?: number,
+  variant?: string,
+  position?: { x: number, y: number, z: number },
+  customStyle?: { position: string, zIndex: number, left: number, top: number, backgroundColor: string },
 } 
 
 export default ActorModel;

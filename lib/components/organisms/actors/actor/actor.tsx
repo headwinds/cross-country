@@ -9,7 +9,7 @@ const defaultTileSize = 50;
 const head = { color: 'purple' };
 const body = { color: 'green' };
 const legs = { color: 'cornflowerblue' };
-const defaultConfig = { head, body, legs, type: 'humanoid', tileSize: defaultTileSize };
+const defaultConfig = { head, body, legs, type: 'humanoid' };
 
 // should be taken from windsong!
 const actorModel = new ActorModel({ name: 'Actor' }).toObject();
@@ -24,10 +24,10 @@ const renderHeadBodyFeet = (config, tileSize) => {
   const validThird = String(third) === 'NaN' ? 0 : third;
 
   return (
-    <div name="doll">
-      <div name="doll head" style={{ backgroundColor: head.color, width: 40, height: validThird }}></div>
-      <div name="doll body" style={{ backgroundColor: body.color, width: 40, height: validThird }}></div>
-      <div name="doll legs" style={{ backgroundColor: legs.color, width: 40, height: validThird - 10 }}></div>
+    <div>
+      <div style={{ backgroundColor: head.color, width: 40, height: validThird }}></div>
+      <div style={{ backgroundColor: body.color, width: 40, height: validThird }}></div>
+      <div style={{ backgroundColor: legs.color, width: 40, height: validThird - 10 }}></div>
     </div>
   );
 };

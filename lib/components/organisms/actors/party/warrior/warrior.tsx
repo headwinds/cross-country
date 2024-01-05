@@ -16,7 +16,7 @@ const defaultModel = {
   customClass: '',
 };
 
-const Warrior = ({ model = defaultModel, tileSize }) => {
+const Warrior = ({ model = defaultModel, tileSize }: any) => {
   const { config, customClass, customSkinStyle, position, type } = model;
 
   const validConfig = config ?? defaultConfig;
