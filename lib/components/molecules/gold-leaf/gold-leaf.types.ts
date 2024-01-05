@@ -6,4 +6,5 @@ export interface GoldLeafProps {
   mode?: string;
   customClass?: string;
   customStyle?: any;
+  onNoImageFoundCallback?: () => void;  
 }

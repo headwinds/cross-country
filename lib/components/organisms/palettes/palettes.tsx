@@ -9,16 +9,16 @@ import styles from './palettes.module.css';
  * @param total the number of palettes to display
  * @returns Returns the element to be rendered.
  */
-const Palettes = ({ total = 1, index }) => {
+const Palettes = ({ total = 1, index = 1 }) => {
   const arr = Array.from({ length: total }, (_, i) => i + 1);
 
-  const Palette = ({ paletteIndex }) => {
+  const Palette = ({ paletteIndex, arrIndex }: any) => {
     const palette = ColorUtils.getColorPalettes(paletteIndex);
     const tiles = palette.map((color, index) => {
       return <Tile key={index} dataTestId="palette" customClass={styles.PaletteTile} model={{ fill: color }} />;
     });
     return (
-      <div key={index}>
+      <div key={arrIndex}>
       <Column key={paletteIndex}>
         <SubHeadline>Palette {paletteIndex}</SubHeadline>
         <Row>{tiles}</Row>
@@ -28,7 +28,7 @@ const Palettes = ({ total = 1, index }) => {
   };
 
 
-  const list = arr.map((item, index) => <Palette paletteIndex={item} index={index} />);
+  const list = arr.map((item, index) => <Palette paletteIndex={item} arrIndex={index} />);
 
   return (
     <Column

@@ -112,7 +112,7 @@ const rank = (content) => {
 
     for (const [key, value] of entries) {
         if (key === "title") {
-            const words = value.split(" ");
+            const words = String(value).split(" ");
             words.forEach((word) => {
                 if (keywords.includes(word)) {
                     countMap[key] += 1;
@@ -122,7 +122,7 @@ const rank = (content) => {
         }
         // count the keywords in the summary
         if (key === "summary" || key === "description" || key === "text") {
-            const words = value.split(" ");
+            const words = String(value).split(" ") ?? [];
             words.forEach((word) => {
                 if (keywords.includes(word)) {
                     countMap[key] += 1;
@@ -132,17 +132,17 @@ const rank = (content) => {
         }
         // count the keywords in the tags
         if (key === "tags") {
+          if (Array.isArray(value)) {
             value.forEach(({term}) => {
                 if (term && keywords.includes(term)) {
                     countMap[key] += 1;
                     updatedCountMap(term)
                 }
             });
+          }
         }
 
     }
-
-    console.log(countMap)
 
     const finalCount = Object.values(countMap).reduce((acc, curr) => {
         return acc + curr;
@@ -164,7 +164,10 @@ const createDataset = () => {
     
     // sorty feed_responses by date published
     const sortedByPublishedDate = filtered.sort((a, b) => {
-        return new Date(a.published) - new Date(b.published);
+        // TODO: fix this typing
+        const dateA:any = new Date(a.published);
+        const dateB:any = new Date(b.published);
+        return dateA - dateB;
     });
 
     // convert the feed_responses to porthole branches

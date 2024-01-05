@@ -3,9 +3,10 @@ import * as d3 from 'd3';
 import styles from './bottom-axis.module.css';
 
 interface BottomAxisProps {
-    width: number;
-    height: number;
-    dateConfig: { startDate: string; endDate: string };
+    width?: number;
+    height?: number;
+    dateConfig: { startDate: string | number; endDate: string | number };
+    color?: string;
 }
 
 const defaultDateConfig = { startDate: "2023-05-01", endDate: "2023-09-01" };
@@ -48,4 +49,3 @@ const BottomAxis = ({ width = 600, height = 10, dateConfig = defaultDateConfig, 
 };
 
 export default BottomAxis;
-
