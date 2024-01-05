@@ -6,6 +6,7 @@ export { default as Checkbox } from './atoms/checkbox/';
 export { default as Radio } from './atoms/radio/';
 export { default as RadioGroup } from './molecules/radiogroup/';
 export { default as Button } from './atoms/button/button-themed';
+export { default as PillButton } from './atoms/button/pill-button';
 export { default as Row } from './atoms/row/row';
 export { default as Image } from './atoms/image/cross-country-image';
 export { default as Headline } from './atoms/text/headline/headline';
@@ -54,24 +55,25 @@ export { default as Error } from './molecules/error';
 export { default as PrivacyPolicy } from './molecules/policies/privacy-policy';
 export { default as TermsOfUse } from './molecules/policies/terms-of-use';
 
-// organisms
+// organisms / collecting
 export { default as Login } from './organisms/login';
-export { default as TileGrid } from './organisms/tile-grid';
-export { default as Drone } from './organisms/drone';
 export { default as Garden } from './organisms/garden';
-export { default as Actor } from './organisms/actors/actor';
 export { default as Branch } from './organisms/branch/branch';
 export { default as Branches } from './organisms/branches/branches';
-
-export { default as Stage } from './organisms/stage';
+export { default as Chart } from './organisms/charts/chart';
+export { default as Metrics } from './organisms/metrics';
 export { default as ReverseTextAnimation } from './organisms/animation/reverse-text-animation';
-
+// organisms / gaming
+export { default as Actor } from './organisms/actors/actor';
+export { default as Stage } from './organisms/stage';
 export { default as Hunter } from './organisms/actors/party/hunter';
 export { default as Warrior } from './organisms/actors/party/warrior';
 export { default as Cleric } from './organisms/actors/party/cleric';
 export { default as Wizard } from './organisms/actors/party/wizard';
 export { default as Wisp } from './organisms/actors/wisp';
 export { default as FrozenLake } from './organisms/frozen-lake';
+export { default as Drone } from './organisms/drone';
+export { default as TileGrid } from './organisms/tile-grid';
 
 // templates
 export { default as HomeTemplate } from './templates/home';

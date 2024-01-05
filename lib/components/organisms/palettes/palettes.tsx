@@ -9,7 +9,7 @@ import styles from './palettes.module.css';
  * @param total the number of palettes to display
  * @returns Returns the element to be rendered.
  */
-const Palettes: React.FC<PalettesProps> = ({ total = 1 }) => {
+const Palettes = ({ total = 1, index }) => {
   const arr = Array.from({ length: total }, (_, i) => i + 1);
 
   const Palette = ({ paletteIndex }) => {
@@ -18,14 +18,17 @@ const Palettes: React.FC<PalettesProps> = ({ total = 1 }) => {
       return <Tile key={index} dataTestId="palette" customClass={styles.PaletteTile} model={{ fill: color }} />;
     });
     return (
-      <Column>
+      <div key={index}>
+      <Column key={paletteIndex}>
         <SubHeadline>Palette {paletteIndex}</SubHeadline>
         <Row>{tiles}</Row>
       </Column>
+      </div>
     );
   };
 
-  const list = arr.map(item => <Palette paletteIndex={item} />);
+
+  const list = arr.map((item, index) => <Palette paletteIndex={item} index={index} />);
 
   return (
     <Column

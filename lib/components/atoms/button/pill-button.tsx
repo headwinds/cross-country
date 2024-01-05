@@ -27,7 +27,7 @@ interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-export const PillButton = ({ primary = false, size = 'medium', backgroundColor, label, ...props }: ButtonProps) => {
+const PillButton = ({ primary = false, size = 'medium', backgroundColor, label, ...props }: ButtonProps) => {
   //const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
     <button
@@ -41,3 +41,5 @@ export const PillButton = ({ primary = false, size = 'medium', backgroundColor, 
     </button>
   );
 };
+
+export default PillButton;
