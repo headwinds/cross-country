@@ -37,7 +37,6 @@ export { default as Group } from './atoms/group';
 
 // molecules
 export { default as CheckboxLabel } from './molecules/checkboxlabel';
-export { default as Wolf } from './molecules/wolf';
 export { default as Wrapper } from './molecules/wrapper';
 export { default as Wallpaper } from './molecules/wallpaper';
 export { default as Tile } from './molecules/tile';
@@ -57,7 +56,6 @@ export { default as TermsOfUse } from './molecules/policies/terms-of-use';
 
 // organisms / collecting
 export { default as Login } from './organisms/login';
-export { default as Garden } from './organisms/garden';
 export { default as Branch } from './organisms/branch/branch';
 export { default as Branches } from './organisms/branches/branches';
 export { default as Chart } from './organisms/charts/chart';
@@ -72,7 +70,6 @@ export { default as Cleric } from './organisms/actors/party/cleric';
 export { default as Wizard } from './organisms/actors/party/wizard';
 export { default as Wisp } from './organisms/actors/wisp';
 export { default as FrozenLake } from './organisms/frozen-lake';
-export { default as Drone } from './organisms/drone';
 export { default as TileGrid } from './organisms/tile-grid';
 
 // templates

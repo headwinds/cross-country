@@ -1,6 +1,6 @@
 # cross-country
 
-> an atomic react design system for personal metrics
+> an atomic react design system for personal metrics and creating courses
 
 [![NPM](https://img.shields.io/npm/v/cross-country.svg)](https://www.npmjs.com/package/cross-country) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -15,9 +15,21 @@ Core Tech
 
 Do you pour over your personal stats from Github, Strava or Spotify? Is your year always in review?! By experimenting with code, you can hone your developer skills while exploring subject matter that interests you. 
 
-In my case, I'm using this library to present metrics about my path as a developer as well as my home energy efficiency and [decarbonization](https://greenbuildingcanada.ca/decarbonize-home/).  
+[storybook](https://cross-country-storybook.vercel.app/)
 
-### NextJS Install
+### Install
+
+```
+npm install cross-country
+```
+
+### Use
+
+```
+import { Column, Row, Paragraph, Table, Chart } from "cross-country"
+```
+
+### NextJS Support
 
 For this third-party library to work within NextJS, you need to make one change when you consume cross-country to import it's single css bundle.
 
@@ -35,7 +47,7 @@ export default MyApp;
 
 After upgrading to Vite, this library did not with NextJS due to the way it imports its CSS. I [explored different approaches](https://dev.to/headwinds/comment/2bel0) and landed on [rollup-plugin-css-only](https://www.npmjs.com/package/rollup-plugin-css-only) which has minimal configuration.
 
-### Usage 
+### Example Page 
 
 By wrapping html, each component is augmented for building accessible experiences across screens. A simple page may look like this:
 
@@ -96,7 +108,7 @@ Originally, I started with SCSS Module but "downgraded" to CSS to upgrade Node f
 
 [Storybook support for Webpack 5](https://github.com/storybookjs/storybook/issues/19692)
 
-## NextJS
+## Server Side Rendering
 
 Part of my dogfooding process is to use my library on my own site, [headwinds](https://headwinds.vercel.app).
 
@@ -138,6 +150,15 @@ yarn start
 
 Open your browser to http://localhost:6006/
 
+## Build the Static Site
+
+After running `npm run build-storybook`, I had to make one change to the iframe.html file in the storybook-static folder. 
+
+The bundle.css isn't added so I had to add it manually. 
+
+```
+  <link rel="stylesheet" href="./bundle.css" />
+```
 
 ## Publish to NPM
 
