@@ -4,12 +4,7 @@ import OptionInput from "./option-input";
 import QuestionInput from "./question-input";
 import { PlusSquare } from "@phosphor-icons/react";
 
-const QuestionInputWithOptions = ({
-  question,
-  type,
-  onChange,
-  value = "hi",
-}) => {
+const QuestionInputWithOptions = ({ data, onChange, value = "hi" }) => {
   const [options, setOptions] = useState([
     { id: 0, value: "" },
     { id: 1, value: "" },
@@ -29,7 +24,7 @@ const QuestionInputWithOptions = ({
   return (
     <Column>
       <SubHeadline>Multiple Chocie Question</SubHeadline>
-      <QuestionInput question={question} />
+      <QuestionInput data={data} />
       {options.map((option, index) => (
         <OptionInput
           id={option.id}

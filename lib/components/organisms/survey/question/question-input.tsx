@@ -2,7 +2,7 @@ import React from "react";
 import { Column, SubHeadline, Paragraph, TextInput } from "../../../";
 
 const QuestionInput = ({
-  question,
+  data,
   onChange = null,
   //value = "",
   placeholder = "",
@@ -10,7 +10,8 @@ const QuestionInput = ({
   name = "example",
   customClass = "border-2 border-gray-200 rounded-sm m-2", // to support Tailwind CSS or any css class
 }) => {
-  const { prompt } = question;
+  const { question } = data;
+  console.log("QuestionInput data: ", data);
   return (
     <Column>
       <Paragraph customClass="m-2">{question}</Paragraph>
