@@ -29,7 +29,7 @@ const BuildFormStory = () => {
   };
 
   const onStateChange = (data) => {
-    console.log("BuildFormStory onStateChange data: ", data);
+    console.log("BuildFormStory onStateChange data.context: ", data.context);
     setData(data.context);
   };
 

@@ -18,6 +18,8 @@ const defaultCustomClasses = {
 const Quiz = ({ data = defaultData, customClasses = defaultCustomClasses }) => {
   const { title, description } = data;
 
+  console.log("Quiz data: ", data);
+
   return (
     <Column>
       <Headline customClass={customClasses.headline}>{title}</Headline>

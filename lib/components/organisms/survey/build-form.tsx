@@ -66,7 +66,9 @@ const BuildForm = ({
 
       if (name === "title") {
         //send("UPDATE_TITLE", { title: value });
-        send({ type: "UPDATE_TITLE" }, { title: value });
+        console.log("BuildForm useEffect send UPDATE_TITLE value: ", value);
+        const data = value;
+        send({ type: "UPDATE_TITLE", data });
       }
     });
     return () => subscription.unsubscribe();
