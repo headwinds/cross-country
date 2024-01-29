@@ -43,6 +43,7 @@ const BuildFormStory = () => {
 
       <Paragraph>As you build the form, you can preview it here...</Paragraph>
       <Quiz data={data} />
+      <Paragraph>Saved: needs local storage backup</Paragraph>
     </Column>
   );
 };

@@ -125,7 +125,7 @@ const BuildForm = ({
     <Form onSubmit={handleSubmit(onSubmit)}>
       <Headline>{headlineText}</Headline>
       <QuestionInput
-        question="What is the title?"
+        data={{ question: "What is the title?" }}
         name="title"
         //value={value}
         register={register}

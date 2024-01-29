@@ -6,17 +6,16 @@ import clsx from "clsx";
 
 const defaultState = {
   isOpen: false,
-  question: {
+  data: {
     id: null,
-    name: "",
-    placeholder: null,
+    name: `name-${new Date().getTime()}`,
     required: false,
     errorMessage: null,
-    questionType: "text",
-    prompt: "what is the question?",
+    question: "what is the question?",
     options: ["yes", "no"],
     answer: "yes",
   },
+  questionType: "text",
 };
 
 /*
@@ -29,7 +28,7 @@ Flow
 const AddQuestion = ({ register, handleQuestionChange }) => {
   const [state, setState] = useState(defaultState);
 
-  const { question } = state;
+  const { data, questionType } = state;
 
   const onChange = (e) => {
     console.log("Add Question change: ", e.target.value);
@@ -44,7 +43,7 @@ const AddQuestion = ({ register, handleQuestionChange }) => {
             setState({
               ...state,
               isOpen: true,
-              question: { ...question, questionType: "text" },
+              questionType: "text",
             })
           }
         >
@@ -56,7 +55,7 @@ const AddQuestion = ({ register, handleQuestionChange }) => {
             setState({
               ...state,
               isOpen: true,
-              question: { ...question, questionType: "multipleChoice" },
+              questionType: "multipleChoice",
             })
           }
         >
@@ -66,35 +65,25 @@ const AddQuestion = ({ register, handleQuestionChange }) => {
     );
   }
 
-  const getQuestionType = (question) => {
-    switch (question.questionType) {
+  const getQuestionType = (questionType) => {
+    switch (questionType) {
       case "multipleChoice":
         return (
           <QuestionInputWithOptions
-            question={question}
-            type={question.questionType}
-            placeholder={null}
+            data={data}
             register={register}
-            name={question.name}
+            name={data.name}
           />
         );
       case "text":
       default:
         return (
-          <QuestionInput
-            question={question}
-            type={question.questionType}
-            placeholder={null}
-            register={register}
-            name={question.name}
-          />
+          <QuestionInput data={data} register={register} name={data.name} />
         );
     }
   };
 
-  const handleNext = () => {};
-
-  return <>{getQuestionType(question)}</>;
+  return <>{getQuestionType(questionType)}</>;
 };
 
 export default AddQuestion;
