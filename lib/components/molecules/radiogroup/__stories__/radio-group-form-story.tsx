@@ -28,12 +28,16 @@ export const RadioGroupFormStory = () => {
     // who is the norse god of the sea?
     const { selectedSeaGod, selectedRagnarGod } = state;
 
+    const question = {
+        options: list,
+    }
+
   return (
     <form>
         <Paragraph>In Norse mythology, who was the god of the sea?</Paragraph>
-        <RadioGroup question={{options: list}} onChange={onSeaGodChange} selectedId={selectedSeaGod} />
+        <RadioGroup question={question} onChange={onSeaGodChange} selectedId={selectedSeaGod} />
         <Paragraph>What god did <Link url="https://vikings.fandom.com/wiki/Ragnar">Ragnar Lothbrok</Link> claim to be his father?</Paragraph>
-        <RadioGroup question={{options: list}} onChange={onRagnarChange} selectedId={selectedRagnarGod} />
+        <RadioGroup question={question} onChange={onRagnarChange} selectedId={selectedRagnarGod} />
     </form>
   );
 };

@@ -61,10 +61,6 @@ export const RadioGroupReactHookFormStory = () => {
     // who is the norse god of the sea?
     const { selectedSeaGod, selectedRagnarGod } = state;
 
-
-
-
-
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
         <Headline>{formData.title}</Headline>
