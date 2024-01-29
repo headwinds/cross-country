@@ -1,38 +1,56 @@
-import React, { Component, useState, useEffect, createRef, useRef } from 'react';
-import PropTypes from 'prop-types';
-import { frozenLakeMachine } from './frozen-lake-machine';
-import { useMachine, useInterpret, useSelector } from '@xstate/react';
-import { Image, Column, SubHeadline, Wrapper, Paragraph, Modal, Hunter, Warrior, Stage, Button } from '../../';
+import React, {
+  Component,
+  useState,
+  useEffect,
+  createRef,
+  useRef,
+} from "react";
+import PropTypes from "prop-types";
+import { frozenLakeMachine } from "./frozen-lake-machine";
+import { useMachine, useSelector } from "@xstate/react";
+import {
+  Image,
+  Column,
+  SubHeadline,
+  Wrapper,
+  Paragraph,
+  Modal,
+  Hunter,
+  Warrior,
+  Stage,
+  Button,
+} from "../../";
 //import PusherService from '../../../services/pusher-service';
-import FrozenLakeBoard from './frozen-lake-board';
+import FrozenLakeBoard from "./frozen-lake-board";
 //import c from '../../../constants/';
-import styles from './frozen-lake.module.css';
+import styles from "./frozen-lake.module.css";
 
-const selectGeneratedMap = state => state.context.generatedMap;
-const selectCurrentParagraph = state => state.context.currentParagraph;
-const selectContext = state => state.context;
+const selectGeneratedMap = (state) => state.context.generatedMap;
+const selectCurrentParagraph = (state) => state.context.currentParagraph;
+const selectContext = (state) => state.context;
 //const selectTileModels = state => state.context.tileModelCollection;
-const selectActorModels = state => state.context.actorModels;
+const selectActorModels = (state) => state.context.actorModels;
 
+// refactored to functional component to use useMachine instead of useInterpret
 const FrozenLake = ({ isFullscreen = false, palette = null }) => {
-  const service = useInterpret(frozenLakeMachine, {
+  const [current, send] = useMachine(frozenLakeMachine, {
     devTools: true,
   });
-  const generatedMap = useSelector(service, selectGeneratedMap);
+  const generatedMap = useSelector(current, selectGeneratedMap);
   const frozenLakeRef = useRef(false);
 
-  const tileModelCollection = [{ id: 0, letter: 'C', fill: '#c5e0dc' }];
-  const actorModels = useSelector(service, selectActorModels);
+  const tileModelCollection = [{ id: 0, letter: "C", fill: "#c5e0dc" }];
+  const actorModels = useSelector(current, selectActorModels);
 
-  const currentParagraph = useSelector(service, selectCurrentParagraph);
-  const context = useSelector(service, selectContext);
+  const currentParagraph = useSelector(current, selectCurrentParagraph);
+  const context = useSelector(current, selectContext);
   const tileRefs = useRef([]); // not reliable! We only get the last ref for some reason?!
 
   const { hasModal, isIsometric, tileSize, isMapGenerated = false } = context;
 
   const stageConfig = { column: { customClass: styles.frozenLakeColumn } };
 
-  console.log('FrozenLake - tileModelCollection: ', tileModelCollection);
+  console.log("FrozenLake - tileModelCollection: ", tileModelCollection);
 
   const renderModal = () => {
     if (hasModal) {
@@ -54,37 +72,51 @@ const FrozenLake = ({ isFullscreen = false, palette = null }) => {
   };
 
   const fetchMapWalkButton = () => {
-    service.send('FETCH_MAP_WALK');
+    send("FETCH_MAP_WALK");
   };
 
   const updateTileCreated = () => {
-    service.send('TILE_REFS_CREATED');
+    send("TILE_REFS_CREATED");
   };
 
   const renderActors = () => {
     if (tileModelCollection.length > 0) {
-      const getActor = model => {
+      const getActor = (model) => {
         const {
           type,
           customStyle: { top, left, zIndex },
           tileModel: { x, y },
         } = model;
         switch (type) {
-          case 'warrior':
-            return <Warrior model={model} key={model?.id ?? 0} position={{ x, y, z: zIndex }} tileSize={tileSize} />;
-          case 'hunter':
+          case "warrior":
+            return (
+              <Warrior
+                model={model}
+                key={model?.id ?? 0}
+                position={{ x, y, z: zIndex }}
+                tileSize={tileSize}
+              />
+            );
+          case "hunter":
           default:
-            return <Hunter model={model} key={model?.id ?? 0} position={{ x, y, z: zIndex }} tileSize={tileSize} />;
+            return (
+              <Hunter
+                model={model}
+                key={model?.id ?? 0}
+                position={{ x, y, z: zIndex }}
+                tileSize={tileSize}
+              />
+            );
         }
       };
 
-      return actorModels.map(model => getActor(model));
+      return actorModels.map((model) => getActor(model));
     }
     return null;
   };
 
   const renderGrid = () => {
-    console.log('renderGrid: ', tileModelCollection);
+    console.log("renderGrid: ", tileModelCollection);
     if (tileModelCollection.length > 0) {
       return (
         <FrozenLakeBoard
@@ -113,7 +145,7 @@ const FrozenLake = ({ isFullscreen = false, palette = null }) => {
     );
   } else {
     return (
-      <Column hasChildrenCentered customStyle={{ width: '100%' }}>
+      <Column hasChildrenCentered customStyle={{ width: "100%" }}>
         {renderGrid()}
         {renderActors()}
         {renderModal()}

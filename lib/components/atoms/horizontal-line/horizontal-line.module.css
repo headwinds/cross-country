@@ -1,0 +1,4 @@
+.hr {
+  display: flex;
+  flex-direction: column;
+}

@@ -6,7 +6,7 @@
 
 Core Tech
 
-- React (18.02) & react-spring
+- React (18.02), react-spring & react-hook-form
 - CSS modules
 - D3
 - Storybook 7
