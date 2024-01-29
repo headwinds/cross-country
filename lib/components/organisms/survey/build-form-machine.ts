@@ -65,7 +65,10 @@ export const buildFormMachine = createMachine({
         },
         UPDATE_TITLE: {
           actions: assign({
-            title: (_, event) => event.title,
+            title: ({ event }) => {
+              console.log("Machine UPDATE_TITLE: ", event);
+              return event.data.title;
+            },
           }),
         },
       },
