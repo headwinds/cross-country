@@ -83,7 +83,7 @@ const BuildForm = ({
     // ADD_QUESTION, UPDATE_QUESTION, DELETE_QUESTION
     console.log("BuildForm handleQuestionChange question: ", question);
     // based on the sate, send the right event
-    console.log("BuildForm handleQuestionChange state: ", state);
+
     // what is the state of questions?
     // is this question in questions?
     /*
@@ -132,7 +132,7 @@ const BuildForm = ({
         // onChange={handleQuestionChange}
       />
       <Paragraph>{firstQuestionInstruction}</Paragraph>
-      <AddQuestion handleQuestionChange />
+      <AddQuestion handleQuestionChange={handleQuestionChange} />
       <Paragraph>Submit is diabled until you are done</Paragraph>
       <TextInput type="submit" isDisabled={isDisabled} />
     </Form>

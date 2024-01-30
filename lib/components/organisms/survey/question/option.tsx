@@ -1,8 +1,8 @@
 import React from "react";
 
-const Option = ({ option, key }) => {
+const Option = ({ option, id }) => {
   return (
-    <div key={key}>
+    <div key={id}>
       <p>{option}</p>
     </div>
   );
