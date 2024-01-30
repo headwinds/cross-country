@@ -6,15 +6,6 @@ import clsx from "clsx";
 
 const defaultState = {
   isOpen: false,
-  data: {
-    id: null,
-    name: `name-${new Date().getTime()}`,
-    required: false,
-    errorMessage: null,
-    question: "what is the question?",
-    options: ["yes", "no"],
-    answer: "yes",
-  },
   questionType: "text",
 };
 
@@ -25,14 +16,15 @@ Flow
 2. ask what is the question? 
 */
 
-const AddQuestion = ({ register, handleQuestionChange }) => {
+const AddQuestion = ({ register, handleQuestionChange, data }) => {
+  console.log("AddQuestion data: ", data);
   const [state, setState] = useState(defaultState);
 
-  const { data, questionType } = state;
+  const { questionType } = state;
 
-  const onChange = (e) => {
-    console.log("Add Question change: ", e.target.value);
-    //handleQuestionChange();
+  const onChange = (data: QuestionType) => {
+    console.log("AddQuestion onChange data: ", data);
+    handleQuestionChange(data);
   };
 
   if (!state.isOpen) {
@@ -41,7 +33,6 @@ const AddQuestion = ({ register, handleQuestionChange }) => {
         <Button
           onClick={() =>
             setState({
-              ...state,
               isOpen: true,
               questionType: "text",
             })
@@ -53,7 +44,6 @@ const AddQuestion = ({ register, handleQuestionChange }) => {
         <Button
           onClick={() =>
             setState({
-              ...state,
               isOpen: true,
               questionType: "multipleChoice",
             })
@@ -73,12 +63,18 @@ const AddQuestion = ({ register, handleQuestionChange }) => {
             data={data}
             register={register}
             name={data.name}
+            onChange={onChange}
           />
         );
       case "text":
       default:
         return (
-          <QuestionInput data={data} register={register} name={data.name} />
+          <QuestionInput
+            data={data}
+            register={register}
+            name={data.name}
+            onChange={onChange}
+          />
         );
     }
   };
