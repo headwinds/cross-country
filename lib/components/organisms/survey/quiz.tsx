@@ -16,7 +16,7 @@ const defaultCustomClasses = {
 };
 
 const Quiz = ({ data = defaultData, customClasses = defaultCustomClasses }) => {
-  const { title, description } = data;
+  const { title, description, questions } = data;
 
   console.log("Quiz data: ", data);
 

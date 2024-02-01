@@ -4,7 +4,7 @@ import OptionInput from "./option-input";
 import QuestionInput from "./question-input";
 import { PlusSquare } from "@phosphor-icons/react";
 
-const QuestionInputWithOptions = ({ data, onChange }) => {
+const QuestionInputWithOptions = ({ data, register }) => {
   const { options } = data;
   console.log("QuestionInputWithOptions data: ", data);
 
@@ -17,14 +17,10 @@ const QuestionInputWithOptions = ({ data, onChange }) => {
     const newOptions = [...data.options, newOption];
 
     const updatedData = { ...data, options: newOptions };
-
-    onChange(updatedData);
   };
 
   const removeOption = (id) => {
     const newOptions = options.filter((option) => option.id !== id);
-
-    onChange({ ...data, options: newOptions });
   };
 
   const updateOption = (id, newValue) => {
@@ -34,18 +30,18 @@ const QuestionInputWithOptions = ({ data, onChange }) => {
       }
       return option;
     });
-
-    onChange({ ...data, options: newOptions });
   };
 
-  const onQuestionChange = (question) => {
-    onChange({ ...data, question });
-  };
+  const onQuestionChange = (question) => {};
+
+  /*
+  Options might be considered a form within a form?!
+  */
 
   return (
     <Column>
       <SubHeadline>Multiple Chocie Question</SubHeadline>
-      <QuestionInput data={data} onChange={onQuestionChange} />
+      <QuestionInput data={data} register={register} />
       {options.map((option, index) => (
         <OptionInput
           id={option.id}

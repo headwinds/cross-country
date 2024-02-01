@@ -1,8 +1,16 @@
 import React, { useState } from "react";
-import { Button, Row, Paragraph, TextInput, RadioGroup } from "../../../";
+import {
+  Column,
+  Button,
+  Row,
+  Paragraph,
+  TextInput,
+  RadioGroup,
+} from "../../../";
 import QuestionInput from "../question/question-input";
 import QuestionInputWithOptions from "../question/question-input-options";
 import clsx from "clsx";
+import type QuestionType from "../question/types";
 
 const defaultState = {
   isOpen: false,
@@ -16,39 +24,32 @@ Flow
 2. ask what is the question? 
 */
 
-const AddQuestion = ({ register, handleQuestionChange, data }) => {
+const AddQuestion = ({ register, data }) => {
   console.log("AddQuestion data: ", data);
-  const [state, setState] = useState(defaultState);
+  const [state, setState] = useState({ ...defaultState });
 
   const { questionType } = state;
 
-  const onChange = (data: QuestionType) => {
-    console.log("AddQuestion onChange data: ", data);
-    handleQuestionChange(data);
+  const onAddInputTextQuestion = () => {
+    setState({
+      isOpen: true,
+      questionType: "text",
+    });
+  };
+
+  const onAddMultipleChoiceQuestion = () => {
+    setState({
+      isOpen: true,
+      questionType: "multipleChoice",
+    });
   };
 
   if (!state.isOpen) {
     return (
       <Row>
-        <Button
-          onClick={() =>
-            setState({
-              isOpen: true,
-              questionType: "text",
-            })
-          }
-        >
-          + Input Text Question
-        </Button>
+        <Button onClick={onAddInputTextQuestion}>+ Input Text Question</Button>
         <Paragraph>OR</Paragraph>
-        <Button
-          onClick={() =>
-            setState({
-              isOpen: true,
-              questionType: "multipleChoice",
-            })
-          }
-        >
+        <Button onClick={onAddMultipleChoiceQuestion}>
           + Multipe Choise Question
         </Button>
       </Row>
@@ -58,28 +59,32 @@ const AddQuestion = ({ register, handleQuestionChange, data }) => {
   const getQuestionType = (questionType) => {
     switch (questionType) {
       case "multipleChoice":
-        return (
-          <QuestionInputWithOptions
-            data={data}
-            register={register}
-            name={data.name}
-            onChange={onChange}
-          />
-        );
+        return <QuestionInputWithOptions data={data} register={register} />;
       case "text":
       default:
-        return (
-          <QuestionInput
-            data={data}
-            register={register}
-            name={data.name}
-            onChange={onChange}
-          />
-        );
+        return <QuestionInput data={data} register={register} />;
     }
   };
 
-  return <>{getQuestionType(questionType)}</>;
+  const completeQueston = () => {
+    const action = "complete";
+    handleQuestionChange(data, action);
+  };
+
+  const cancelQuestion = () => {
+    const action = "cancel";
+    handleQuestionChange(data, action);
+  };
+
+  return (
+    <Column customStyle={{ padding: 0, margin: 0 }}>
+      {getQuestionType(questionType)}
+      <Row>
+        <Button onClick={completeQueston}>Complete</Button>
+        <Button onClick={cancelQuestion}>Cancel</Button>
+      </Row>
+    </Column>
+  );
 };
 
 export default AddQuestion;
