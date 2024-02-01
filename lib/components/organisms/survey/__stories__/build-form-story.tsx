@@ -10,6 +10,7 @@ Goal: the atoms should be compatible with react-hook-form support its register f
 
 const BuildFormStory = () => {
   const [data, setData] = useState({});
+  /*
   const fields = [
     {
       name: "title",
@@ -22,7 +23,7 @@ const BuildFormStory = () => {
       userId: "1",
       section: "",
     },
-  ];
+  ];*/
 
   const submitForm = (data) => {
     console.log("ReactHookFormStory onFormSubmit", data);
@@ -33,14 +34,15 @@ const BuildFormStory = () => {
     setData(data.context);
   };
 
+  const headlineText = "Build your Survey";
+
   return (
     <Column>
       <BuildForm
-        fields={fields}
         submitForm={submitForm}
         onStateChange={onStateChange}
+        headlineText={headlineText}
       />
-
       <Paragraph>As you build the form, you can preview it here...</Paragraph>
       <Quiz data={data} />
       <Paragraph>Saved: needs local storage backup</Paragraph>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styles from "./text-input.module.css";
+import debounce from "debounce";
 
 import clsx from "clsx";
 
@@ -23,14 +24,6 @@ const TextInput = ({
           type={type}
           disabled={isDisabled}
           className={clsx(styles.textInput, customClass)}
-          onChange={(event) => {
-            event.preventDefault();
-            const {
-              target: { value },
-            } = event;
-            return onTextChange(value);
-          }}
-          //value={value}
           style={customStyle}
           placeholder={placeholder}
           {...register(name)}

@@ -1,10 +1,21 @@
-
 export type OptionType = {
-    option: string;
-    id: string;
-}
+  option: string;
+  id: string;
+};
 
 export type QuestionType = {
-  question: string;
-   questionType: "multipleChoice" | "text;
-}
+  id: number;
+  name: string;
+  question: string | null; // rarely you might only need the answer which is useful for the first question when one might ask the for title of a form
+  answer: string | null; // not all questions have answers
+  questionType: "multipleChoice" | "text";
+  placeholder?: string;
+  isRequired?: boolean;
+  order?: number;
+  userId?: string;
+  isComplete: boolean; // begins in a draft mode while creating the question
+};
+
+export type MultipleChoiceQuestionType = {
+  options: OptionType[];
+} & QuestionType;

@@ -30,11 +30,7 @@ const ReactHookForm = ({ fields = [], submitForm = defaultSubmit }) => {
     submitForm(data);
   };
 
-  //console.log(watch("example")) // watch input value by passing the name of it
-
   const isDisabled = errors.length > 0;
-
-  // { onChange, question, selectedId = 0, name = "name", register = null }
 
   const fieldList = fields.map((field) => {
     switch (field.questionType) {
