@@ -6,11 +6,12 @@ import {
   Paragraph,
   TextInput,
   RadioGroup,
-} from "../../../";
-import QuestionInput from "../question/question-input";
-import QuestionInputWithOptions from "../question/question-input-options";
+} from "../../../../../";
+import QuestionInput from "../question-input";
+import EditMultipleChoice from "../edit-multiple-choice";
 import clsx from "clsx";
-import type QuestionType from "../question/types";
+import type QuestionType from "../types";
+import { defaultQuestionData } from "../../../build-form-machine";
 
 const defaultState = {
   isOpen: false,
@@ -24,7 +25,7 @@ Flow
 2. ask what is the question? 
 */
 
-const AddQuestion = ({ register, data }) => {
+const AddQuestion = ({ onChange, data = defaultQuestionData }) => {
   console.log("AddQuestion data: ", data);
   const [state, setState] = useState({ ...defaultState });
 
@@ -59,10 +60,10 @@ const AddQuestion = ({ register, data }) => {
   const getQuestionType = (questionType) => {
     switch (questionType) {
       case "multipleChoice":
-        return <QuestionInputWithOptions data={data} register={register} />;
+        return <EditMultipleChoice data={data} onChange={onChange} />;
       case "text":
       default:
-        return <QuestionInput data={data} register={register} />;
+        return <QuestionInput data={data} onChange={onChange} />;
     }
   };
 

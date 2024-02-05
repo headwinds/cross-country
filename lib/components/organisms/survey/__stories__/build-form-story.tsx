@@ -1,7 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
 import BuildForm from "../build-form";
-import Quiz from "../quiz";
 import { Button, Column, Headline, Paragraph } from "../../../";
 
 /*
@@ -44,7 +43,6 @@ const BuildFormStory = () => {
         headlineText={headlineText}
       />
       <Paragraph>As you build the form, you can preview it here...</Paragraph>
-      <Quiz data={data} />
       <Paragraph>Saved: needs local storage backup</Paragraph>
     </Column>
   );

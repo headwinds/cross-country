@@ -1,12 +1,14 @@
 import React, { useMemo } from "react";
-import Question from "../question";
+import Question from "./question";
+
 type QuestionListProps = {
   questions: any[];
   register: any;
-  onChange: any;
 };
 
-// QuestionsProps
+/*
+When taking a question, we are using react-hook-form
+*/
 
 const QuestionList = ({ questions, register, onChange }: QuestionListProps) => {
   const questionList = useMemo(() => {

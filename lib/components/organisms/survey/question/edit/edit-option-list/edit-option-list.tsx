@@ -1,12 +1,18 @@
 import React, { useState } from "react";
-import { Column, SubHeadline, TextInput, Button, Row, Label } from "../../../";
+import {
+  Column,
+  SubHeadline,
+  TextInput,
+  Button,
+  Row,
+  Label,
+} from "../../../../../";
 import OptionInput from "./option-input";
-import QuestionInput from "./question-input";
 import { PlusSquare } from "@phosphor-icons/react";
 
-const QuestionInputWithOptions = ({ data, register }) => {
+const EditOptionList = ({ data }) => {
   const { options } = data;
-  console.log("QuestionInputWithOptions data: ", data);
+  console.log("EditOptionList data: ", data);
 
   if (!options || !Array.isArray(options)) {
     return null;
@@ -34,14 +40,8 @@ const QuestionInputWithOptions = ({ data, register }) => {
 
   const onQuestionChange = (question) => {};
 
-  /*
-  Options might be considered a form within a form?!
-  */
-
   return (
-    <Column>
-      <SubHeadline>Multiple Chocie Question</SubHeadline>
-      <QuestionInput data={data} register={register} />
+    <Column customStyle={{ padding: 0 }}>
       {options.map((option, index) => (
         <OptionInput
           id={option.id}
@@ -62,4 +62,4 @@ const QuestionInputWithOptions = ({ data, register }) => {
   );
 };
 
-export default QuestionInputWithOptions;
+export default EditOptionList;

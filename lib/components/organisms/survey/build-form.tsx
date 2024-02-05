@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo } from "react";
-import { useForm } from "react-hook-form";
 import {
   Headline,
   Form,
@@ -11,24 +10,15 @@ import {
   Paragraph,
   Button,
 } from "../../";
-import AnswerInput from "./answer";
-import AddQuestion from "./add-question";
-import Question from "./question";
-import QuestionList from "./question-list";
-import QuestionInput from "./question/question-input";
+// edit the question
+import AddQuestion from "./question/edit/add-question";
+import EditQuestionList from "./question/edit/edit-question-list";
+
+// machine
 import { buildFormMachine } from "./build-form-machine";
 import { useMachine } from "@xstate/react";
 import type QuestionType from "./question/types";
 
-const defaultSubmit = (data) => {
-  if (data) {
-    return console.log("ReactHookForm defaultSubmit data: ", data);
-  }
-  console.log("ReactHookForm defaultSubmit no data!");
-};
-
-// build the form fields from the fields array so it can work with react-hook-form
-// but remove the submit button
 const BuildForm = ({
   submitForm = defaultSubmit,
   headlineText = "Build your Form",
@@ -40,42 +30,7 @@ const BuildForm = ({
   const questionTotal = state.context.questions.length > 1 ? "next" : "first";
   const firstQuestionInstruction = `Add your ${questionTotal} question`;
 
-  // we add one question at anytime so the addQuestion draft data should be the last question
   const questions = state.context?.questions ?? [];
-  // is the title quesiton complete?
-  const hasNextQuestion = questions[0].isComplete;
-  const nextQuestionData = hasNextQuestion ? [...questions].pop() : null;
-  //
-
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm<Inputs>();
-
-  const onSubmit = (data) => {
-    console.log("BuildForm onSubmit data: ", data);
-
-    submitForm(data);
-  };
-
-  const onSubscription = (changedValue, name, type) => {
-    console.log("BuildForm onSubscription...", { changedValue, name, type });
-
-    const question = questions.find((q) => q.name === name);
-    console.log("BuildForm onSubscription questions: ", questions);
-    console.log("BuildForm onSubscription question: ", question);
-
-    if (question) {
-      send({
-        type: "UPDATE_QUESTION",
-        question: { ...question, answer: changedValue },
-      });
-    }
-
-    //}
-  };
 
   const onChange = (changeEvent) => {
     console.log("BuildForm onChange changeEvent: ", changeEvent);
@@ -94,38 +49,21 @@ const BuildForm = ({
     }
   };
 
-  useEffect(() => {
-    const subscription = watch((value, { name, type }) => {
-      const changedValue = value[name];
-      onSubscription(changedValue, name, type);
-    });
-
-    return () => subscription.unsubscribe();
-  }, [watch]);
-
+  const errors = state.context.errors;
   const isDisabled = errors.length > 0;
 
-  useEffect(() => {
-    console.log("BuildForm useEffect state: ", state);
-    onStateChange(state);
-  }, [state, onStateChange]);
-
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
+    <Column>
       <Headline>{headlineText}</Headline>
-      <QuestionList
-        questions={questions}
-        register={register}
-        onChange={onChange}
-      />
-      {hasNextQuestion ? (
-        <AddQuestion data={nextQuestionData} register={register} />
-      ) : null}
+      <EditQuestionList questions={questions} onChange={onChange} />
+
+      <AddQuestion onChange={onChange} />
+
       <Paragraph>
         Submit is diabled until you have at least added a title
       </Paragraph>
       <TextInput type="submit" isDisabled={isDisabled} />
-    </Form>
+    </Column>
   );
 };
 
