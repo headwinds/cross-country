@@ -1,9 +1,16 @@
 import React from "react";
-import { Column, SubHeadline, Paragraph, TextInput, Button } from "../../../";
+import {
+  Column,
+  SubHeadline,
+  Paragraph,
+  TextInput,
+  Button,
+} from "../../../../";
+import AnswerInput from "./answer-input";
 
 const QuestionInput = ({
   data,
-  register,
+  onChange,
   customClass = "border-2 border-gray-200 rounded-sm m-2", // to support Tailwind CSS or any css class
 }) => {
   const { question, answer, name } = data;
@@ -24,23 +31,17 @@ const QuestionInput = ({
           placeholder={"Enter the question"}
           customClass={customClass}
           customStyle={{ width: "95%" }}
-          register={register}
+          onChange={onChange}
           name={name}
         />
       ) : null}
       {hasAnswer ? (
-        <>
-          <TextInput
-            placeholder={"Enter the answer"}
-            customClass={customClass}
-            customStyle={{ width: "95%" }}
-            register={register}
-            name={`${name}_answer`}
-          />
-          <Paragraph customClass="m-2">
-            You can leave the answer blank if it could be anything
-          </Paragraph>
-        </>
+        <AnswerInput
+          customClass={customClass}
+          customStyle={{ width: "95%" }}
+          onChange={onChange}
+          name={`${name}_answer`}
+        />
       ) : null}
       {!hasAnswer ? <Button>Add Answer?</Button> : null}
     </Column>

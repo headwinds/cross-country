@@ -19,10 +19,11 @@ const defaultData = {
 
 */
 
-const defaultQuestionData: QuestionType = {
+export const defaultQuestionData: QuestionType = {
   id: 1,
   name: "first_question",
   question: "What is your question?",
+  options: ["yes", "no"],
   answer: "",
   placeholder: "Enter your title",
   required: true,
@@ -86,9 +87,7 @@ export const buildFormMachine = createMachine({
         isComplete: false,
       },
     ],
-    // we ask a series of questions to build up the form fields to be displayed in the final quiz or survey
-    // do I really need this second list when they should match in length?!
-    formFields: [],
+    errors: [],
     customClasses: {
       headline: "text-3xl",
       paragraph: "m-2",
@@ -117,6 +116,14 @@ export const buildFormMachine = createMachine({
                 return question;
               });
               return updatedQuestions;
+            },
+          }),
+        },
+        UPDATE_QUESTIONS: {
+          actions: assign({
+            questions: ({ context: { questions }, event }) => {
+              console.log("UPDATE_QUESTIONS event: ", event);
+              return [...event.questions];
             },
           }),
         },

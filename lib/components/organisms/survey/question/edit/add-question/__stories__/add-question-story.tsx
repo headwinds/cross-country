@@ -38,19 +38,7 @@ const AddQuestionStory = () => {
     // this is where you would update the question in the parent component
     // see the build form story for how to handle the question change
   };
-  /*
-  const addQuestion = useMemo(() => {
-    console.log("AddQuestionStory useMemo question: ", question);
-    return (
-      <AddQuestion
-        register={register}
-        handleQuestionChange={handleQuestionChange}
-        data={question}
-      />
-    );
-  }, [question]);*/
 
-  console.log("AddQuestionStory render data: ", data);
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
