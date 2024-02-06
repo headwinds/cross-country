@@ -1,8 +1,7 @@
 import * as React from "react";
 import { useState, useMemo } from "react";
 import AddQuestion from "../";
-import { Form, Row, Paragraph, TextInput, RadioGroup } from "../../../../";
-import { useForm } from "react-hook-form";
+import { Form, Row, Paragraph, TextInput, RadioGroup } from "../../../../../";
 
 const defaultQuesiton = {
   id: null,
@@ -18,37 +17,11 @@ const defaultQuesiton = {
 };
 
 const AddQuestionStory = () => {
-
   const [data, setData] = useState({ ...defaultQuesiton });
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+  const onChange = (question) => {};
 
-  const onSubmit = () => {
-    console.log("AddQuestionStory submit");
-  };
-
-  const handleQuestionChange = (question) => {
-    console.log("AddQuestionStory handleQuestionChange question: ", question);
-    setData(question);
-    // this is where you would update the question in the parent component
-    // see the build form story for how to handle the question change
-  };
-
-
-  return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
-      <AddQuestion
-        register={register}
-        handleQuestionChange={handleQuestionChange}
-        data={data}
-      />
-    </Form>
-  );
+  return <AddQuestion onChange={onChange} data={data} />;
 };
 
 export default AddQuestionStory;

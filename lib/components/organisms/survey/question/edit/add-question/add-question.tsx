@@ -25,7 +25,7 @@ Flow
 2. ask what is the question? 
 */
 
-const AddQuestion = ({ onChange, data = defaultQuestionData }) => {
+const AddQuestion = ({ onChange, data = defaultQuestionData, handleAction }) => {
   console.log("AddQuestion data: ", data);
   const [state, setState] = useState({ ...defaultState });
 
@@ -69,12 +69,12 @@ const AddQuestion = ({ onChange, data = defaultQuestionData }) => {
 
   const completeQueston = () => {
     const action = "complete";
-    handleQuestionChange(data, action);
+    handleAction(data, action);
   };
 
   const cancelQuestion = () => {
     const action = "cancel";
-    handleQuestionChange(data, action);
+    handleAction(data, action);
   };
 
   return (

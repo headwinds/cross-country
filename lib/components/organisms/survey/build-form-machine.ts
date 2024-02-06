@@ -23,7 +23,10 @@ export const defaultQuestionData: QuestionType = {
   id: 1,
   name: "first_question",
   question: "What is your question?",
-  options: ["yes", "no"],
+  options: [
+    { id: 0, value: "yes" },
+    { id: 1, value: "no" },
+  ],
   answer: "",
   placeholder: "Enter your title",
   required: true,
@@ -66,7 +69,7 @@ export const buildFormMachine = createMachine({
         answer: "",
         placeholder: "Enter your title",
         isRequired: true,
-        questionType: "answerInput", // we only need the answer
+        questionType: "text", // we only need the answer
         errorMessage: "A title is required",
         order: 1,
         userId: "1",
@@ -80,7 +83,7 @@ export const buildFormMachine = createMachine({
         answer: "",
         placeholder: "Enter your description",
         isRequired: false,
-        questionType: "answerInput", // we only need the answer
+        questionType: "text", // we only need the answer
         order: 2,
         userId: "1",
         section: "",

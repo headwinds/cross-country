@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Column, SubHeadline, TextInput, Button, Row, Label } from "../../../";
+import {
+  Column,
+  SubHeadline,
+  TextInput,
+  Button,
+  Row,
+  Label,
+} from "../../../../";
 import OptionInput from "./option-input";
 
 const MultipleChoice = ({ data, onChange }) => {
