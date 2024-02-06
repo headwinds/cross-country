@@ -52,12 +52,17 @@ const BuildForm = ({
   const errors = state.context.errors;
   const isDisabled = errors.length > 0;
 
+  const handleAction = (data, question) => {
+    console.log("BuildForm handleAction ", { data, question });
+  };
+
   return (
     <Column>
       <Headline>{headlineText}</Headline>
+
       <EditQuestionList questions={questions} onChange={onChange} />
 
-      <AddQuestion onChange={onChange} />
+      <AddQuestion onChange={onChange} handleAction={handleAction} />
 
       <Paragraph>
         Submit is diabled until you have at least added a title
