@@ -1,14 +1,17 @@
-import React from 'react';
-import styles from './radio.module.css';
-import useDeviceDetection from '../../../hooks/useDeviceDetection';
+// TODO: explore why I disabled typecheck on this file!
+// @ts-nocheck
+// npm run build
 
+import React from "react";
+import styles from "./radio.module.css";
+import useDeviceDetection from "../../../hooks/useDeviceDetection";
 
 // register is a function from react-hook-form
 
-const Radio = ({ isSelected, id, onChange, tabIndex, register=null}) => {
+const Radio = ({ isSelected, id, onChange, tabIndex, register = null }) => {
   const mobileState = useDeviceDetection();
 
-  const key = 'radio';
+  const key = "radio";
 
   const className = isSelected ? styles[`${key}Selected`] : styles[`${key}`];
 

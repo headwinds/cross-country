@@ -8,8 +8,6 @@ const OptionInput = ({
   value = "",
   removeOption = null,
 }) => {
-  console.log("OptionInput id: ", id);
-
   const onTextChange = (text) => {
     console.log("OptionInput onTextChange e: ", text);
     const newValue = text;

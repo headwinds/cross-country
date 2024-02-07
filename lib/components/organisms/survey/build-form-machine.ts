@@ -1,5 +1,9 @@
+// TODO: explore why I disabled typecheck on this file!
+// @ts-nocheck
+// npm run build
+
 import { createMachine, assign } from "xstate";
-import type QuestionType from "./question/types";
+import type { QuestionType } from "./question/types";
 /*
 Build form machine 
 

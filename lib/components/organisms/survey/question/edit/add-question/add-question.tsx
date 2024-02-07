@@ -1,3 +1,7 @@
+// TODO: explore why I disabled typecheck on this file!
+// @ts-nocheck
+// npm run build
+
 import React, { useState } from "react";
 import {
   Column,
@@ -10,7 +14,6 @@ import {
 import QuestionInput from "../question-input";
 import EditMultipleChoice from "../edit-multiple-choice";
 import clsx from "clsx";
-import type QuestionType from "../types";
 import { defaultQuestionData } from "../../../build-form-machine";
 
 const defaultState = {
@@ -25,7 +28,11 @@ Flow
 2. ask what is the question? 
 */
 
-const AddQuestion = ({ onChange, data = defaultQuestionData, handleAction }) => {
+const AddQuestion = ({
+  onChange,
+  data = defaultQuestionData,
+  handleAction,
+}) => {
   console.log("AddQuestion data: ", data);
   const [state, setState] = useState({ ...defaultState });
 

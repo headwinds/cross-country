@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Column, Paragraph, RadioGroup, Link } from "../../../../";
-import OptionInput from "./option-input";
 
 const DefaultHtmlQuesiton = () => (
   <Paragraph>

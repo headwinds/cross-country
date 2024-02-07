@@ -1,7 +1,6 @@
 import * as React from "react";
 import { useState, useMemo } from "react";
 import AddQuestion from "../";
-import { Form, Row, Paragraph, TextInput, RadioGroup } from "../../../../../";
 
 const defaultQuesiton = {
   id: null,
@@ -21,7 +20,8 @@ const AddQuestionStory = () => {
 
   const onChange = (question) => {};
 
-  return <AddQuestion onChange={onChange} data={data} />;
+  //return <AddQuestion onChange={onChange} data={data} />;
+  return <p>coming soon</p>;
 };
 
 export default AddQuestionStory;

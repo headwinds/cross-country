@@ -4,6 +4,7 @@ import Question from "./question";
 type QuestionListProps = {
   questions: any[];
   register: any;
+  onChange: (text: string) => {};
 };
 
 /*

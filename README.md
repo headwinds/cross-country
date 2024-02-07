@@ -194,6 +194,7 @@ Since I had .npmrc setup in other projects, I had to one for this project [using
 - [nextra](https://nextra.vercel.app/)
 - [XState & React](https://xstate.js.org/docs/packages/xstate-react/#quick-start)
 - [Typescript & SCSS](https://lwebapp.com/en/post/cannot-find-module-scss)
+- [usehooks](https://usehooks.com/)
 
 ## Fullstack
 
