@@ -4,8 +4,8 @@ import QuestionInput from "./question-input";
 import EditMultipleChoice from "./edit-multiple-choice";
 
 interface EditQuestionProps {
-  question: string;
   onChange: any;
+  data: any;
 }
 
 const EditQuestion = ({ data, onChange }: EditQuestionProps) => {

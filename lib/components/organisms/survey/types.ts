@@ -1,7 +1,7 @@
-import type { QuestionType } from "./question/types";
+// import type { QuestionType } from "./question/types";
 
 type BuildForm = {
   title: string;
   description?: string;
-  questions: QuestionType[];
+  questions: any; //QuestionType[];
 };

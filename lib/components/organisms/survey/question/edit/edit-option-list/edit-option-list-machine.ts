@@ -1,19 +1,18 @@
 import { createMachine, assign } from "xstate";
-import type OptionType from "./types";
+import type { OptionType } from "./types";
 
 export const defaultOptionData: OptionType = {
-  id: 1;
-  option: "";
+  id: 1,
+  option: "",
 };
 
-const createNewOption = (): OptionType => {
+const createNewOption = () => {
   const id = `option_${new Date().getTime()}`;
-  return option: OptionType = {
+  return {
     id,
-    option: ""
-  }
+    option: "",
+  };
 };
-
 
 // Build Form State machine
 export const editOptionListMachine = createMachine({
