@@ -1,0 +1,23 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
+import RadioGroupFormStory from './radio-group-form-story';
+
+<Meta title="design system/molecules/radio group" />
+
+# Radio Group
+
+A radio group is a group of radio buttons. It is used to select one option exclusively.
+
+We can use the RadioGroup with or without the [react-hook-form](https://www.react-hook-form.com/) library but it is encouraged to use it with the library.
+
+I have included two stories so that you can see the difference between the two.
+
+The main difference is that react-hook-form supplies the register function instead of onChange. You shouldn't supply both register and onChange only register when using react-hook-form.
+
+<Canvas>
+  <Story name="radio group">
+    <RadioGroupFormStory />
+  </Story>
+    <Story name="radio group with react-hook-form">
+    <RadioGroupFormStory />
+  </Story>
+</Canvas>
