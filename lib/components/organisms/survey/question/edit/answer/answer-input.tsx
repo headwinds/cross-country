@@ -10,7 +10,7 @@ import {
   Paragraph,
   TextInput,
   Button,
-} from "../../../";
+} from "../../../../../";
 
 const AnswerInput = ({
   data,
