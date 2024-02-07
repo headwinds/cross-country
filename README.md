@@ -7,7 +7,7 @@
 Core Tech
 
 - React (18.02), react-spring & react-hook-form
-- CSS modules
+- CSS modules & Tailwind CSS compatible
 - D3
 - Storybook 7
 - Typescript 5
@@ -44,6 +44,10 @@ function MyApp({ Component, pageProps }) {
 
 export default MyApp;
 ```
+
+### Tailwind CSS Support 
+
+Each component provides a `customClass` propertity where you can supply your own tailwind css classes.
 
 After upgrading to Vite, this library did not with NextJS due to the way it imports its CSS. I [explored different approaches](https://dev.to/headwinds/comment/2bel0) and landed on [rollup-plugin-css-only](https://www.npmjs.com/package/rollup-plugin-css-only) which has minimal configuration.
 
@@ -100,7 +104,7 @@ When you ready, remember to expose the component in the index.ts file at the roo
 
 ## SCSS to CSS modules
 
-Originally, I started with SCSS Module but "downgraded" to CSS to upgrade Node from 12 to 18 and am planning to invest in PostCSS and Tailwind.
+Originally, I started with SCSS Module but "downgraded" to CSS to upgrade Node from 12 to 18. I'm currently experimenting PostCSS variables and Tailwind, and have found that both are supported via the existing `customClass` prop.
 
 [n 14.20.1](https://www.npmjs.com/package/n)
 
