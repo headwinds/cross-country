@@ -1,23 +1,43 @@
-import React, { Component } from 'react';
-import styles from './text-input.module.css';
+import React, { Component } from "react";
+import styles from "./text-input.module.css";
+import debounce from "debounce";
 
-import clsx from 'clsx';
+import clsx from "clsx";
 
 const TextInput = ({
   onTextChange,
   value,
-  customClass = '',
+  customClass = "",
   customStyle = {},
-  placeholder = 'enter your text',
-  type = 'text',
+  placeholder = "enter your text",
+  type = "text",
+  isDisabled = false,
+  name = null,
+  register = null,
   ...rest
 }) => {
+  // react-hook-form requires a name and register
+  if (register) {
+    return (
+      <>
+        <input
+          type={type}
+          disabled={isDisabled}
+          className={clsx(styles.textInput, customClass)}
+          style={customStyle}
+          placeholder={placeholder}
+          {...register(name)}
+        />
+      </>
+    );
+  }
+
   return (
     <input
       {...rest}
       type={type}
       className={clsx(styles.textInput, customClass)}
-      onChange={event => {
+      onChange={(event) => {
         event.preventDefault();
         const {
           target: { value },

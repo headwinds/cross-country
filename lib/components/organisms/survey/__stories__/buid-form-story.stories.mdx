@@ -1,0 +1,22 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
+import { Paragraph, SubHeadline } from '../../../';
+import BuildFormStory from './build-form-story';
+
+<Meta title="design system/organisms/survey/build form" />
+
+# Build a Survey or Quiz
+
+<Subtitle>users can create their own forms with different input components</Subtitle>
+
+Originally, I started to started to develop this form builder with [React Hook Form](https://react-hook-form.com/) but realized that react-hook-form was a better suited for a finalized form schema.
+
+While building the form and deciding on the question types, xstate is excellent at updating the state of this exploration while we decide on what questions are appropriate. 
+
+There are actually two state machines at play: the parent state machine manages the entire form and children state machines manage the options of the each multiple choice question. 
+
+
+<Canvas>
+  <Story name="build form">
+   <BuildFormStory />
+  </Story>
+</Canvas>

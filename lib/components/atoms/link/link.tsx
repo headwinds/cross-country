@@ -1,7 +1,7 @@
-import React from 'react';
-import styles from './link.module.css';
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
+import React from "react";
+import styles from "./link.module.css";
+import PropTypes from "prop-types";
+import clsx from "clsx";
 
 type LinkProps = {
   url: string;
@@ -12,10 +12,15 @@ type LinkProps = {
   customStyle?: {};
 };
 
-const Link = ({ url, children, size = 'small', target = '_blank', customClass = '', customStyle = {}, ...rest }) => {
-
-  console.log("Link url: ", url);
-
+const Link = ({
+  url,
+  children,
+  size = "small",
+  target = "_blank",
+  customClass = "",
+  customStyle = {},
+  ...rest
+}) => {
   return (
     <a
       {...rest}
@@ -29,6 +34,5 @@ const Link = ({ url, children, size = 'small', target = '_blank', customClass = 
     </a>
   );
 };
-
 
 export default Link;

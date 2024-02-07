@@ -11,7 +11,7 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: ['Cross Country', 'Design System', ['atoms', 'molecules', 'organisms', 'templates', 'pages']]
+        order: ['Cross Country', 'design system', ['atoms', 'molecules', 'organisms', 'templates', 'pages']]
       },
     },
   },
