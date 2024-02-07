@@ -16,8 +16,8 @@ import {
   Button,
 } from "../../";
 
-import AddQuestion from "./edit/add-question";
-import QuestionList from "./question/take.question-list";
+import AddQuestion from "./question/edit/add-question";
+import QuestionList from "./question/take/question-list";
 import { buildFormMachine } from "./build-form-machine";
 import { useMachine } from "@xstate/react";
 
