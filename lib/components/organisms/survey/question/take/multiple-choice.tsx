@@ -1,31 +1,25 @@
 import React, { useState } from "react";
-import {
-  Column,
-  SubHeadline,
-  TextInput,
-  Button,
-  Row,
-  Label,
-} from "../../../../";
+import { Column, Paragraph, RadioGroup, Link } from "../../../../";
 import OptionInput from "./option-input";
 
-const MultipleChoice = ({ data, onChange }) => {
-  const { options } = data;
-  console.log("QuestionInputWithOptions data: ", data);
+const DefaultHtmlQuesiton = () => (
+  <Paragraph>
+    Who did{" "}
+    <Link url="https://vikings.fandom.com/wiki/Ragnar">Ragnar Lothbrok</Link>{" "}
+    admit to 🖤 as a brother?
+  </Paragraph>
+);
 
-  if (!options || !Array.isArray(options)) {
-    return null;
-  }
-
-  const onQuestionChange = (question) => {};
-
-  /*
-  Options might be considered a form within a form?!
-  */
-
+const MultipleChoice = ({
+  data,
+  onChange,
+  selectedId,
+  htmlQuestion = null,
+}) => {
   return (
     <Column>
-      <SubHeadline>Take Multiple Chocie Question</SubHeadline>
+      {htmlQuestion ? data.question : <DefaultHtmlQuesiton />}
+      <RadioGroup data={data} onChange={onChange} selectedId={selectedId} />
     </Column>
   );
 };

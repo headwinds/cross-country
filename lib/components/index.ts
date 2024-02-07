@@ -4,7 +4,6 @@ export { default as Grid } from "./atoms/grid";
 export { default as Column } from "./atoms/column/column";
 export { default as Checkbox } from "./atoms/checkbox/";
 export { default as Radio } from "./atoms/radio/";
-export { default as RadioGroup } from "./molecules/radiogroup/";
 export { default as Button } from "./atoms/button/button-themed";
 export { default as PillButton } from "./atoms/button/pill-button";
 export { default as Row } from "./atoms/row/row";
@@ -54,6 +53,7 @@ export { default as Error } from "./molecules/error";
 export { default as PrivacyPolicy } from "./molecules/policies/privacy-policy";
 export { default as AddQuestion } from "./molecules/policies/privacy-policy";
 export { default as TermsOfUse } from "./molecules/policies/terms-of-use";
+export { default as RadioGroup } from "./molecules/radiogroup/";
 
 // organisms / collecting
 export { default as Login } from "./organisms/login";
@@ -62,6 +62,8 @@ export { default as Branches } from "./organisms/branches/branches";
 export { default as Chart } from "./organisms/charts/chart";
 export { default as Metrics } from "./organisms/metrics";
 export { default as ReverseTextAnimation } from "./organisms/animation/reverse-text-animation";
+// organisms / collection / survey
+export { default as MutlipleChoice } from "./organisms/survey/question/take/multiple-choice";
 // organisms / gaming
 export { default as Actor } from "./organisms/actors/actor";
 export { default as Stage } from "./organisms/stage";
