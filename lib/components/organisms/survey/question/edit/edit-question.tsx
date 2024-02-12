@@ -1,6 +1,6 @@
 import React from "react";
 import AnswerInput from "./answer-input";
-import QuestionInput from "./question-input";
+import QuestionAnswerInput from "./question-answer-input";
 import EditMultipleChoice from "./edit-multiple-choice";
 
 interface EditQuestionProps {
@@ -11,15 +11,16 @@ interface EditQuestionProps {
 const EditQuestion = ({ data, onChange }: EditQuestionProps) => {
   const { questionType } = data;
 
+  console.log("questionType: ", questionType);
   const RenderQuestion = ({ data }) => {
     switch (questionType) {
       case "answerInput":
         return <AnswerInput data={data} onChange={onChange} />;
-      case "multipleChoice":
+      case "multipleChoiceInput":
         return <EditMultipleChoice data={data} onChange={onChange} />;
-      case "text":
+      case "questionAnswerInput":
       default:
-        return <QuestionInput data={data} onChange={onChange} />;
+        return <QuestionAnswerInput data={data} onChange={onChange} />;
     }
   };
 

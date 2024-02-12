@@ -33,6 +33,8 @@ import { Column, Row, Paragraph, Table, Chart } from "cross-country"
 
 For this third-party library to work within NextJS, you need to make one change when you consume cross-country to import it's single css bundle.
 
+After upgrading to Vite, this library did not with NextJS due to the way it imports its CSS. I [explored different approaches](https://dev.to/headwinds/comment/2bel0) and landed on [rollup-plugin-css-only](https://www.npmjs.com/package/rollup-plugin-css-only) which has minimal configuration.
+
 Edit the _app.js file to:
 ```
 import "../styles/globals.css";
@@ -48,8 +50,6 @@ export default MyApp;
 ### Tailwind CSS Support 
 
 Each component provides a `customClass` propertity where you can supply your own tailwind css classes.
-
-After upgrading to Vite, this library did not with NextJS due to the way it imports its CSS. I [explored different approaches](https://dev.to/headwinds/comment/2bel0) and landed on [rollup-plugin-css-only](https://www.npmjs.com/package/rollup-plugin-css-only) which has minimal configuration.
 
 ### Example Page 
 
