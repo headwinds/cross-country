@@ -11,7 +11,7 @@ import {
   TextInput,
   RadioGroup,
 } from "../../../../../";
-import QuestionInput from "../question-input";
+import QuestionAnswerInput from "../question-answer-input";
 import EditMultipleChoice from "../edit-multiple-choice";
 import clsx from "clsx";
 import { defaultQuestionData } from "../../../build-form-machine";
@@ -33,7 +33,6 @@ const AddQuestion = ({
   data = defaultQuestionData,
   handleAction,
 }) => {
-  console.log("AddQuestion data: ", data);
   const [state, setState] = useState({ ...defaultState });
 
   const { questionType } = state;
@@ -55,10 +54,15 @@ const AddQuestion = ({
   if (!state.isOpen) {
     return (
       <Row>
-        <Button onClick={onAddInputTextQuestion}>+ Input Text Question</Button>
+        <Button onClick={onAddInputTextQuestion} customStyle={{ width: 160 }}>
+          Input Answer
+        </Button>
         <Paragraph>OR</Paragraph>
-        <Button onClick={onAddMultipleChoiceQuestion}>
-          + Multipe Choise Question
+        <Button
+          onClick={onAddMultipleChoiceQuestion}
+          customStyle={{ width: 160 }}
+        >
+          Multipe Choice
         </Button>
       </Row>
     );
@@ -70,7 +74,7 @@ const AddQuestion = ({
         return <EditMultipleChoice data={data} onChange={onChange} />;
       case "text":
       default:
-        return <QuestionInput data={data} onChange={onChange} />;
+        return <QuestionAnswerInput data={data} onChange={onChange} />;
     }
   };
 

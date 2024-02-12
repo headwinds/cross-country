@@ -1,4 +1,5 @@
 // atoms
+export { default as HeadwindsLogo } from "./atoms/logo/headwinds";
 export { default as CrossCountryLogo } from "./atoms/logo/cross-country";
 export { default as Grid } from "./atoms/grid";
 export { default as Column } from "./atoms/column/column";

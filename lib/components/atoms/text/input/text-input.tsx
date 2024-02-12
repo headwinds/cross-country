@@ -12,7 +12,7 @@ const TextInput = ({
   placeholder = "enter your text",
   type = "text",
   isDisabled = false,
-  name = null,
+  data = null,
   register = null,
   ...rest
 }) => {
@@ -26,7 +26,7 @@ const TextInput = ({
           className={clsx(styles.textInput, customClass)}
           style={customStyle}
           placeholder={placeholder}
-          {...register(name)}
+          {...register(data?.name)}
         />
       </>
     );

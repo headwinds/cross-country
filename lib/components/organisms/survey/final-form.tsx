@@ -28,40 +28,31 @@ we can use this final form to render and lean on react-hook-form to manage filli
 
 const defaultSubmit = (data) => {
   if (data) {
-    return console.log("ReactHookForm defaultSubmit data: ", data);
+    return console.log("FinalForm defaultSubmit data: ", data);
   }
-  console.log("ReactHookForm defaultSubmit no data!");
+  console.log("FinalForm defaultSubmit no data!");
 };
 
 // build the form fields from the fields array so it can work with react-hook-form
 // but remove the submit button
-const BuildForm = ({
+const FinalForm = ({
   submitForm = defaultSubmit,
-  headlineText = "Build your Form",
   onStateChange = null,
+  data,
 }) => {
-  const [state, send] = useMachine(buildFormMachine);
+  //const [state, send] = useMachine(buildFormMachine);
 
-  // state
-  const questionTotal = state.context.questions.length > 1 ? "next" : "first";
-  const firstQuestionInstruction = `Add your ${questionTotal} question`;
-
-  // we add one question at anytime so the addQuestion draft data should be the last question
-  const questions = state.context?.questions ?? [];
-  // is the title quesiton complete?
-  //const hasNextQuestion = questions[0].isComplete;
-  //const nextQuestionData = hasNextQuestion ? [...questions].pop() : null;
-  //
+  console.log("FinalForm data: ", data);
 
   const {
-    register,
+    register, // applies the onChange handler automatically!
     handleSubmit,
-    watch,
+    watch, // don't really need to watch anything - consider removing
     formState: { errors },
   } = useForm<Inputs>();
 
   const onSubmit = (data) => {
-    console.log("BuildForm onSubmit data: ", data);
+    console.log("FinalForm onSubmit data: ", data);
 
     // I need to build up the answers for the form
 
@@ -70,78 +61,17 @@ const BuildForm = ({
     // update the machine - each data is the answer
   };
 
-  const onSubscription = (changedValue, name, type) => {
-    console.log("BuildForm onSubscription...", { changedValue, name, type });
-
-    const question = questions.find((q) => q.name === name);
-    console.log("BuildForm onSubscription questions: ", questions);
-    console.log("BuildForm onSubscription question: ", question);
-
-    if (question) {
-      send({
-        type: "UPDATE_QUESTION",
-        question: { ...question, answer: changedValue },
-      });
-    }
-
-    //}
-  };
-
-  const onChange = (changeEvent) => {
-    console.log("BuildForm onChange changeEvent: ", changeEvent);
-    const { data, event } = changeEvent;
-    if (event === "delete") {
-      console.log("BuildForm onChange dispatching REMOVE_QUESTION");
-      send({ type: "REMOVE_QUESTION", question: data });
-    }
-
-    if (event === "save") {
-      console.log("BuildForm onChange dispatching UPDATE_QUESTION");
-      send({
-        type: "UPDATE_QUESTION",
-        question: { ...data, isComplete: true },
-      });
-    }
-  };
-
-  /*
-
-
-   useEffect(() => {
-    const subscription = watch((value, { name, type }) => {
-      const changedValue = value[name];
-      onSubscription(changedValue, name, type);
-    });
-
-    return () => subscription.unsubscribe();
-  }, [watch]);
-
-
-  useEffect(() => {
-    console.log("BuildForm useEffect state: ", state);
-    onStateChange(state);
-  }, [state, onStateChange]);
-
-  */
-  const isDisabled = errors.length > 0;
+  const isDisabled = true; //Object.keys(errors).length > 0:
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <Headline>{headlineText}</Headline>
-      <QuestionList
-        questions={questions}
-        register={register}
-        onChange={onChange}
-      />
+      <Headline>{data?.title ?? ""}</Headline>
+      <SubHeadline>{data?.description ?? ""}</SubHeadline>
+      <QuestionList questions={data?.questions ?? []} register={register} />
 
-      <AddQuestion register={register} />
-
-      <Paragraph>
-        Submit is diabled until you have at least added a title
-      </Paragraph>
       <TextInput type="submit" isDisabled={isDisabled} />
     </Form>
   );
 };
 
-export default BuildForm;
+export default FinalForm;

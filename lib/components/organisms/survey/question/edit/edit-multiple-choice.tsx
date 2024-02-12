@@ -12,7 +12,7 @@ import {
   Label,
 } from "../../../../";
 import OptionInput from "./edit-option-list/option-input";
-import QuestionInput from "./question-input";
+import QuestionAnswerInput from "./question-answer-input";
 import EditOptionList from "./edit-option-list/edit-option-list";
 import { PlusSquare } from "@phosphor-icons/react";
 
@@ -53,7 +53,7 @@ const EditMultipleChoice = ({ data, onChange }) => {
   return (
     <Column>
       <SubHeadline>Create Multiple Chocie Question</SubHeadline>
-      <QuestionInput data={data} onChange={onChange} />
+      <QuestionAnswerInput data={data} onChange={onChange} />
       <EditOptionList data={data} onChange={onChange} />
       <Row>
         <Button onClick={addOption}>

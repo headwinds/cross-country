@@ -12,9 +12,9 @@ import {
   Row,
 } from "../../../../";
 
-const AnswerInput = ({
+const TakeAnswerInput = ({
   data,
-  onChange,
+  register,
   customClass = "border-2 border-gray-200 rounded-sm m-2", // to support Tailwind CSS or any css class
 }) => {
   const [saveAnswer, setSaveAnswer] = useState(null);
@@ -68,23 +68,15 @@ const AnswerInput = ({
     >
       <Paragraph customClass="m-2">{question}</Paragraph>
       <TextInput
+        data={data}
         placeholder={"Enter the answer"}
         customClass={customClass}
         customStyle={{ width: "95%" }}
-        onTextChange={(text) => setSaveAnswer(text)}
-        name={`${name}_answer`}
+        //onTextChange={(text) => setSaveAnswer(text)}
+        register={register}
       />
-      <Paragraph customClass="m-2">
-        You can leave the answer blank if it could be anything
-      </Paragraph>
-      <Row>
-        <Button onClick={(data) => onSaveClick(data)}>Save</Button>
-        {!isRequired ? (
-          <Button onClick={(data) => onSkipClick(data)}>Skip</Button>
-        ) : null}
-      </Row>
     </Column>
   );
 };
 
-export default AnswerInput;
+export default TakeAnswerInput;
