@@ -1,5 +1,5 @@
 import React from "react";
-import { Column, Row, Button, SubHeadline, TextInput } from "../../../../../";
+import { Column, Row, Button, SubHeadline, TextArea } from "../../../../../";
 import { Trash } from "@phosphor-icons/react";
 
 const OptionInput = ({
@@ -19,10 +19,11 @@ const OptionInput = ({
         <Button onClick={() => removeOption(id)}>
           <Trash size={20} />
         </Button>
-        <TextInput
+        <TextArea
           value={value}
           onTextChange={onTextChange}
           customStyle={{ width: "80%" }}
+          rows={1}
         />
       </Row>
     </Column>

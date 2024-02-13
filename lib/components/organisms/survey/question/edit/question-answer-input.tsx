@@ -3,13 +3,7 @@
 // npm run build
 
 import React, { useState } from "react";
-import {
-  Column,
-  SubHeadline,
-  Paragraph,
-  TextInput,
-  Button,
-} from "../../../../";
+import { Column, SubHeadline, Paragraph, TextArea, Button } from "../../../../";
 import AnswerInput from "./answer-input";
 
 const QuestionAnswerInput = ({
@@ -39,21 +33,26 @@ const QuestionAnswerInput = ({
         padding: 16,
       }}
     >
-      <Paragraph customClass="m-2">{question}</Paragraph>
+      <Paragraph customClass="m-2">What is the question?</Paragraph>
 
-      <TextInput
+      <TextArea
         placeholder={"Enter text"}
         customClass={customClass}
         customStyle={{ width: "95%" }}
+        value={saveQuestion}
         onTextChange={(text) => setSaveQuestion(text)}
         name={name}
       />
 
-      <AnswerInput
+      <Paragraph customClass="m-2">What is the answer?</Paragraph>
+
+      <TextArea
+        placeholder={"Enter text"}
         customClass={customClass}
         customStyle={{ width: "95%" }}
-        onChange={(text) => setSaveAnswer(text)}
-        name={`${name}_answer`}
+        value={saveAnswer}
+        onTextChange={(text) => setSaveAnswer(text)}
+        name={name}
       />
 
       <Button onClick={(data) => onClick(data)}>Save</Button>

@@ -18,10 +18,14 @@ const defaultQuesiton = {
 const AddQuestionStory = () => {
   const [data, setData] = useState({ ...defaultQuesiton });
 
-  const onChange = (question) => {};
+  const onChange = (changeEvent) => {
+    if (typeof changeEvent === "string") {
+      return console.log("AddQuestionStory string changeEvent: ", changeEvent);
+    }
+    console.log("AddQuestionStory obj changeEvent: ", changeEvent);
+  };
 
-  //return <AddQuestion onChange={onChange} data={data} />;
-  return <p>coming soon</p>;
+  return <AddQuestion data={data} />;
 };
 
 export default AddQuestionStory;
