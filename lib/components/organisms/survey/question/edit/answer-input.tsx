@@ -8,6 +8,7 @@ import {
   SubHeadline,
   Paragraph,
   TextInput,
+  TextArea,
   Button,
   Row,
 } from "../../../../";
@@ -17,7 +18,7 @@ const AnswerInput = ({
   onChange,
   customClass = "border-2 border-gray-200 rounded-sm m-2", // to support Tailwind CSS or any css class
 }) => {
-  const [saveAnswer, setSaveAnswer] = useState(null);
+  const [saveAnswer, setSaveAnswer] = useState("");
   const [isSaved, toggleIsSaved] = useState(false);
 
   const onSaveClick = () => {
@@ -67,10 +68,11 @@ const AnswerInput = ({
       }}
     >
       <Paragraph customClass="m-2">{question}</Paragraph>
-      <TextInput
+      <TextArea
         placeholder={"Enter the answer"}
         customClass={customClass}
         customStyle={{ width: "95%" }}
+        value={saveAnswer}
         onTextChange={(text) => setSaveAnswer(text)}
         name={`${name}_answer`}
       />

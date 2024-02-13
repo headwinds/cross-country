@@ -64,27 +64,11 @@ type FormField = {
 export const buildFormMachine = createMachine({
   id: "buildForm",
   initial: "idle",
-  title: null,
-  description: null,
+  title: "",
+  description: "",
   context: {
     // form builder questions
-    questions: [
-      {
-        id: 1,
-        name: "title",
-        question: "What is the first question?", // draft
-        answer: null,
-        placeholder: "Enter your question",
-        isRequired: true,
-        questionType: QUESTION_VARIANTS.ANSWER, // we only need the answer
-        errorMessage: "A title is required",
-        order: 1,
-        userId: "1",
-        section: "",
-        isComplete: false,
-        event: "UPDATE_ANSWER",
-      },
-    ],
+    questions: [],
     errors: [],
     customClasses: {
       headline: "text-3xl",

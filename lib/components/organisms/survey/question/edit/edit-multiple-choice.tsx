@@ -55,12 +55,6 @@ const EditMultipleChoice = ({ data, onChange }) => {
       <SubHeadline>Create Multiple Chocie Question</SubHeadline>
       <QuestionAnswerInput data={data} onChange={onChange} />
       <EditOptionList data={data} onChange={onChange} />
-      <Row>
-        <Button onClick={addOption}>
-          <PlusSquare size={20} />
-        </Button>
-        <Label>Add Option</Label>
-      </Row>
     </Column>
   );
 };
