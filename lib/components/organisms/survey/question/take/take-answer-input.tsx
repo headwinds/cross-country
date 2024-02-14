@@ -14,7 +14,7 @@ import {
 
 const TakeAnswerInput = ({
   data,
-  register,
+  onChange,
   customClass = "border-2 border-gray-200 rounded-sm m-2", // to support Tailwind CSS or any css class
 }) => {
   const [saveAnswer, setSaveAnswer] = useState(null);

@@ -10,19 +10,49 @@ const QuestionAnswerInput = ({
   data,
   onChange,
   customClass = "border-2 border-gray-200 rounded-sm m-2", // to support Tailwind CSS or any css class
+  isMultipleChoice = false,
 }) => {
   const [saveQuestion, setSaveQuestion] = useState("");
   const [saveAnswer, setSaveAnswer] = useState("");
   const { question, answer, name } = data;
   const hasAnswer = answer?.length > -1;
+  const [isEdit, toggleIsEdit] = useState(true);
 
-  const onClick = (data) => {
+  const onSaveClick = () => {
     console.log("QuestionInput saveQuestion: ", saveQuestion);
     const updatedData = { ...data, question: saveQuestion, answer: saveAnswer };
-    const event = "UPDATE_QUESTION";
-    const changeEvent = { data: updatedData, event };
-    onChange(changeEvent);
+
+    toggleIsEdit(false);
+
+    onChange({
+      data: updatedData,
+      event: isMultipleChoice
+        ? "UPDATE_MULTIPLE_CHOICE_QUESTION"
+        : "UPDATE_QUESTION",
+    });
   };
+
+  const onEditClick = () => {
+    toggleIsEdit(true);
+  };
+
+  if (!isEdit) {
+    return (
+      <Column
+        customStyle={{
+          margin: 16,
+          backgroundColor: "#eeebeb",
+          borderRadius: 5,
+          padding: 16,
+        }}
+      >
+        <Paragraph customClass="m-2">{saveQuestion}</Paragraph>
+        <Paragraph customClass="m-2">{saveAnswer}</Paragraph>
+
+        <Button onClick={() => onEditClick()}>Edit</Button>
+      </Column>
+    );
+  }
 
   return (
     <Column
@@ -55,7 +85,7 @@ const QuestionAnswerInput = ({
         name={name}
       />
 
-      <Button onClick={(data) => onClick(data)}>Save</Button>
+      <Button onClick={() => onSaveClick()}>Save</Button>
     </Column>
   );
 };

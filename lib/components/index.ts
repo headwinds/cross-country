@@ -65,6 +65,8 @@ export { default as Metrics } from "./organisms/metrics";
 export { default as ReverseTextAnimation } from "./organisms/animation/reverse-text-animation";
 // organisms / collection / survey
 export { default as MultipleChoice } from "./organisms/survey/question/take/multiple-choice";
+export { default as TextAnswerInput } from "./organisms/survey/question/take/take-answer-input";
+export { default as Question } from "./organisms/survey/question/take/question";
 // organisms / gaming
 export { default as Actor } from "./organisms/actors/actor";
 export { default as Stage } from "./organisms/stage";
