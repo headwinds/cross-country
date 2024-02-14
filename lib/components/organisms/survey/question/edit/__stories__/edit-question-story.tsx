@@ -10,11 +10,8 @@ const defaultQuesiton = {
   required: false,
   errorMessage: null,
   question: "what is the question?",
-  options: [
-    { id: 0, value: "yes" },
-    { id: 1, value: "no" },
-  ],
-  answer: "yes",
+  options: [],
+  answer: "",
 };
 
 const EditQuestionStory = ({
@@ -31,7 +28,9 @@ const EditQuestionStory = ({
     console.log("QuestionStory submit");
   };
 
-  const onChange = (question) => {};
+  const onChange = (question) => {
+    console.log("EditQuestionStory question: ", question);
+  };
 
   return (
     <>

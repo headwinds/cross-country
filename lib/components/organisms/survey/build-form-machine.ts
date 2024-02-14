@@ -27,10 +27,7 @@ export const defaultQuestionData: QuestionType = {
   id: 1,
   name: "first_question",
   question: "What is your question?",
-  options: [
-    { id: 0, value: "yes" },
-    { id: 1, value: "no" },
-  ],
+  options: [],
   answer: "",
   placeholder: "Enter your title",
   required: true,
@@ -110,6 +107,31 @@ export const buildFormMachine = createMachine({
               const updatedQuestions = questions.map((question) => {
                 if (question.name === event.question.name) {
                   return { ...event.question };
+                }
+                return question;
+              });
+              return updatedQuestions;
+            },
+          }),
+        },
+        UPDATE_MULTIPLE_CHOICE_QUESTION: {
+          actions: assign({
+            questions: ({ context: { questions }, event }) => {
+              console.log("UPDATE_QUESTION event: ", event);
+              const updatedQuestions = questions.map((question) => {
+                if (question.name === event.question.name) {
+                  // make sure the answer is in the options
+                  // is it already present?
+                  const newOptions = [...questions.options];
+                  const isAnwerOptionPresent = !!options.find(
+                    (option) => (option.value = event.question.answer)
+                  );
+                  if (!isAnwerOptionPresent) {
+                    const id = `option_${new Date().getTime()}`;
+                    newOptions.push({ id, value: event.question.answer });
+                  }
+
+                  return { ...event.question, options: newOptions };
                 }
                 return question;
               });

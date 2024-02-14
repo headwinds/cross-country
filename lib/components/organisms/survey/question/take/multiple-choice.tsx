@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Column, Paragraph, RadioGroup, Link } from "../../../../";
 
+// Phase 2 html questions
 const DefaultHtmlQuesiton = () => (
   <Paragraph>
     Who did{" "}
@@ -8,17 +9,25 @@ const DefaultHtmlQuesiton = () => (
     admit to 🖤 as a brother?
   </Paragraph>
 );
+// {htmlQuestion ? data.question : <DefaultHtmlQuesiton />}
 
-const MultipleChoice = ({
-  data,
-  onChange,
-  selectedId,
-  htmlQuestion = null,
-}) => {
+const MultipleChoice = ({ data, onChange }) => {
+  const defaultSelectedId = data.options[0].id;
+  const [selectedId, setSelectedId] = useState(defaultSelectedId);
+
+  const onRadioChange = (selectedId) => {
+    setSelectedId(selectedId);
+    onChange(selectedId);
+  };
+
   return (
     <Column>
-      {htmlQuestion ? data.question : <DefaultHtmlQuesiton />}
-      <RadioGroup data={data} onChange={onChange} selectedId={selectedId} />
+      <Paragraph>{data.question}</Paragraph>
+      <RadioGroup
+        data={data}
+        onChange={onRadioChange}
+        selectedId={selectedId}
+      />
     </Column>
   );
 };

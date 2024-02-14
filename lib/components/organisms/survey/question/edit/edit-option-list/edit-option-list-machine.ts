@@ -10,7 +10,7 @@ const createNewOption = () => {
   const id = `option_${new Date().getTime()}`;
   return {
     id,
-    option: "",
+    value: "",
   };
 };
 
@@ -28,8 +28,8 @@ export const editOptionListMachine = createMachine({
           actions: assign({
             options: ({ context: { options } }) => {
               console.log("Machine ADD_OPTION");
-              const newQuestion = createNewOption();
-              return [...options, newQuestion];
+              const option = createNewOption();
+              return [...options, option];
             },
           }),
         },
@@ -37,19 +37,20 @@ export const editOptionListMachine = createMachine({
           actions: assign({
             options: ({ context: { options }, event }) => {
               console.log("UPDATE_OPTION event: ", event);
-              const updatedQuestions = options.map((question) => {
-                if (question.name === event.question.name) {
-                  return { ...event.question };
+              const { id, value } = event.data;
+              return options.map((option) => {
+                if (option.id === id) {
+                  return { id, value };
                 }
-                return question;
+                return option;
               });
-              return updatedQuestions;
             },
           }),
         },
         UPDATE_OPTIONS: {
           actions: assign({
             options: ({ context: { options }, event }) => {
+              console.log("Machine UPDATE_OPTIONS");
               console.log("UPDATE_OPTIONS event: ", event);
               return [...event.options];
             },
@@ -59,10 +60,10 @@ export const editOptionListMachine = createMachine({
           actions: assign({
             options: ({ context: { options }, event }) => {
               console.log("REMOVE_OPTION event: ", event);
-              const filteredQuestions = options.filter(
-                (question) => question.name !== event.question.name
+              const filteredOptions = options.filter(
+                (option) => option.id !== event.id
               );
-              return filteredQuestions;
+              return filteredOptions;
             },
           }),
         },

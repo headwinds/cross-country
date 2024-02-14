@@ -22,17 +22,17 @@ Take a question!
 see edit for creating/editing the question
 */
 
-const Question = ({ data, register }: any) => {
+const Question = ({ data, onChange }: any) => {
   const { questionType } = data;
 
   const RenderQuestion = ({ data }) => {
     console.log("questionType: ", questionType);
     switch (questionType) {
       case "multipleChoice":
-        return <MultipleChoice data={data} register={register} />;
+        return <MultipleChoice data={data} onChange={onChange} />;
       case "answerInput":
       default:
-        return <TakeAnswerInput data={data} register={register} />;
+        return <TakeAnswerInput data={data} onChange={onChange} />;
     }
   };
 
