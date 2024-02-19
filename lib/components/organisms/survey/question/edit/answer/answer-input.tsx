@@ -11,6 +11,7 @@ import {
   TextInput,
   Button,
 } from "../../../../../";
+import { Trash, CheckSquare } from "@phosphor-icons/react";
 
 const AnswerInput = ({
   data,
@@ -46,8 +47,9 @@ const AnswerInput = ({
               event: "save",
             })
           }
+          customStyle={{ width: 50 }}
         >
-          Save
+          <CheckSquare size={20} />
         </Button>
 
         {!isRequired ? (
@@ -58,8 +60,9 @@ const AnswerInput = ({
                 event: "delete",
               })
             }
+            customStyle={{ width: 50 }}
           >
-            Delete
+            <Trash size={20} />
           </Button>
         ) : null}
       </Row>

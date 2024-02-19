@@ -84,10 +84,9 @@ const EditOptionList = ({ data, onChange, isOptionListDisabled }) => {
         />
       ))}
       <Row>
-        <Button onClick={addOption}>
+        <Button onClick={addOption} customStyle={{ width: 50 }}>
           <PlusSquare size={20} />
         </Button>
-        <Label>Add Option</Label>
       </Row>
       <Paragraph>
         The options will be automatically shuffled so you don't need to reorder

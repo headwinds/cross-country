@@ -5,6 +5,12 @@
 import React, { useState } from "react";
 import { Column, SubHeadline, Paragraph, TextArea, Button } from "../../../../";
 import AnswerInput from "./answer-input";
+import {
+  Trash,
+  CheckSquare,
+  PencilSimple,
+  XSquare,
+} from "@phosphor-icons/react";
 
 const QuestionAnswerInput = ({
   data,
@@ -28,7 +34,7 @@ const QuestionAnswerInput = ({
       data: updatedData,
       event: isMultipleChoice
         ? "UPDATE_MULTIPLE_CHOICE_QUESTION"
-        : "UPDATE_QUESTION",
+        : "UPDATE_TEXT_INPUT_QUESTION",
     });
   };
 
@@ -49,7 +55,9 @@ const QuestionAnswerInput = ({
         <Paragraph customClass="m-2">{saveQuestion}</Paragraph>
         <Paragraph customClass="m-2">{saveAnswer}</Paragraph>
 
-        <Button onClick={() => onEditClick()}>Edit</Button>
+        <Button onClick={() => onEditClick()} customStyle={{ width: 50 }}>
+          <PencilSimple size={20} />
+        </Button>
       </Column>
     );
   }
@@ -85,7 +93,9 @@ const QuestionAnswerInput = ({
         name={name}
       />
 
-      <Button onClick={() => onSaveClick()}>Save</Button>
+      <Button onClick={() => onSaveClick()} customStyle={{ width: 50 }}>
+        <CheckSquare size={20} />
+      </Button>
     </Column>
   );
 };

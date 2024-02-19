@@ -7,7 +7,8 @@ import {
   TextArea,
   Paragraph,
 } from "../../../../../";
-import { Trash } from "@phosphor-icons/react";
+import { Trash, CheckSquare, PencilSimple } from "@phosphor-icons/react";
+import Option from "./option";
 
 const OptionInput = ({
   id = 0,
@@ -39,22 +40,24 @@ const OptionInput = ({
     return (
       <Column customStyle={{ padding: 0, margin: 0 }}>
         <Row>
-          <Button onClick={() => removeOption(id)}>
-            <Trash size={20} />
+          <Option data={{ value: option, id }} />
+          <Button
+            onClick={() => removeOption(id)}
+            customStyle={{ width: 50 }}
+          ></Button>
+          <Button onClick={() => editOption()} customStyle={{ width: 50 }}>
+            <PencilSimple size={20} />
           </Button>
-          <Paragraph customStyle={{ width: "60%" }}>{option}</Paragraph>
-          <Button onClick={() => editOption()}>Edit</Button>
         </Row>
       </Column>
     );
   }
 
   if (answer && answer === option) {
+    const data = { id, value: answer };
     return (
       <Column customStyle={{ padding: 0, margin: 0 }}>
-        <Row>
-          <Paragraph>{answer}</Paragraph>
-        </Row>
+        <Option data={data} />
       </Column>
     );
   }
@@ -68,16 +71,18 @@ const OptionInput = ({
   return (
     <Column customStyle={{ padding: 0, margin: 0 }}>
       <Row>
-        <Button onClick={() => removeOption(id)}>
-          <Trash size={20} />
-        </Button>
         <TextArea
           value={option}
           onTextChange={checkTextAgainstAnswer}
           customStyle={{ width: "60%" }}
           rows={1}
         />
-        <Button onClick={() => saveOption()}>Save</Button>
+        <Button onClick={() => removeOption(id)} customStyle={{ width: 50 }}>
+          <Trash size={20} />
+        </Button>
+        <Button onClick={() => saveOption()} customStyle={{ width: 50 }}>
+          <CheckSquare size={20} />
+        </Button>
       </Row>
     </Column>
   );
