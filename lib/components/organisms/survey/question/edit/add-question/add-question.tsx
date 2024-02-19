@@ -211,7 +211,14 @@ const AddQuestion = () => {
   };
 
   return (
-    <Column customStyle={{ padding: 0, margin: 0 }}>
+    <Column
+      customStyle={{
+        padding: 16,
+        margin: 16,
+        backgroundColor: "rgb(238, 235, 235)",
+        borderRadius: 5,
+      }}
+    >
       {getQuestionType(questionType)}
       <Row>
         <Button

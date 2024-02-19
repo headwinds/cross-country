@@ -67,9 +67,15 @@ const FinalForm = ({
     <Form onSubmit={handleSubmit(onSubmit)}>
       <Headline>{data?.title ?? ""}</Headline>
       <SubHeadline>{data?.description ?? ""}</SubHeadline>
-      <QuestionList questions={data?.questions ?? []} register={register} />
+      <QuestionList questions={data?.questions} register={register} />
 
-      <TextInput type="submit" isDisabled={isDisabled} />
+      {data?.questions.length > 0 ? (
+        <TextInput
+          type="submit"
+          isDisabled={isDisabled}
+          customStyle={{ width: 120 }}
+        />
+      ) : null}
     </Form>
   );
 };
