@@ -23,6 +23,11 @@ import { buildFormMachine } from "./build-form-machine";
 import { useMachine } from "@xstate/react";
 import type QuestionType from "./question/types";
 
+/*
+TODO: 
+needs local storage backup
+*/
+
 const BuildForm = ({
   submitForm = defaultSubmit,
   headlineText = "Build your Form",

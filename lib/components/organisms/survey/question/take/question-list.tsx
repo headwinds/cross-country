@@ -12,7 +12,7 @@ When taking a question, we are using react-hook-form
 
 const QuestionList = ({ questions, register }: QuestionListProps) => {
   const questionList = useMemo(() => {
-    return questions.map((question) => (
+    return questions?.map((question) => (
       <div key={question.id}>
         <Question data={question} register={register} />
       </div>

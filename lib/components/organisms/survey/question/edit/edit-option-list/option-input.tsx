@@ -41,10 +41,9 @@ const OptionInput = ({
       <Column customStyle={{ padding: 0, margin: 0 }}>
         <Row>
           <Option data={{ value: option, id }} />
-          <Button
-            onClick={() => removeOption(id)}
-            customStyle={{ width: 50 }}
-          ></Button>
+          <Button onClick={() => removeOption(id)} customStyle={{ width: 50 }}>
+            <Trash size={20} />
+          </Button>
           <Button onClick={() => editOption()} customStyle={{ width: 50 }}>
             <PencilSimple size={20} />
           </Button>
