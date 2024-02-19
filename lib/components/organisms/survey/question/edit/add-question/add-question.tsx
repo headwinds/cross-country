@@ -17,6 +17,12 @@ import EditMultipleChoice from "../edit-multiple-choice";
 import clsx from "clsx";
 import { defaultQuestionData } from "../../../build-form-machine";
 import type { QuestionType } from "../../types";
+import {
+  Trash,
+  CheckSquare,
+  PencilSimple,
+  XSquare,
+} from "@phosphor-icons/react";
 
 type ChangeEvent = {
   event: string;
@@ -48,6 +54,7 @@ const AddQuestion = () => {
   const { questionType } = state;
 
   const onAddInputTextQuestion = () => {
+    setData({ ...data, questionType: "textInput" });
     setState({
       isOpen: true,
       questionType: "text",
@@ -80,13 +87,13 @@ const AddQuestion = () => {
       setSelectedId(newSelectedId);
       return setData(changeEvent.data);
     }
+    // text answer input
+    if (changeEvent.event === "UPDATE_TEXT_INPUT_QUESTION") {
+      return setData({ ...changeEvent.data });
+    }
 
+    // multiple choice
     if (changeEvent.event === "UPDATE_MULTIPLE_CHOICE_QUESTION") {
-      //const newOptions = [...data.options];
-      //const id = `option_${new Date().getTime()}`;
-      //newOptions.push({ id, value: "" });
-      //setData({ ...data, options: [] });
-
       // do I need to update the answer option?
       const { answer } = changeEvent.data;
       if (answer && answer !== "") {
@@ -133,11 +140,19 @@ const AddQuestion = () => {
 
   console.log("AddQuestion render ", { isQuestionComplete, data });
 
+  const onEditClick = () => {};
+
   if (!state.isOpen) {
     if (isQuestionComplete) {
       return (
         <Column customStyle={{ padding: 0, margin: 0 }}>
           <Question data={data} onChange={onFinalQuestionChange} />
+          <Button
+            onClick={(data) => onEditClick(data)}
+            customStyle={{ width: 50 }}
+          >
+            <PencilSimple size={20} />
+          </Button>
         </Column>
       );
     }

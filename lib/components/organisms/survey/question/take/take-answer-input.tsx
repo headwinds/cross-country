@@ -11,6 +11,7 @@ import {
   Button,
   Row,
 } from "../../../../";
+import { PencilSimple } from "@phosphor-icons/react";
 
 const TakeAnswerInput = ({
   data,
@@ -52,7 +53,12 @@ const TakeAnswerInput = ({
         }}
       >
         <Paragraph customClass="m-2">{saveAnswer}</Paragraph>
-        <Button onClick={(data) => onEditClick(data)}>Edit</Button>
+        <Button
+          onClick={(data) => onEditClick(data)}
+          customStyle={{ width: 50 }}
+        >
+          <PencilSimple size={20} />
+        </Button>
       </Column>
     );
   }
@@ -72,8 +78,7 @@ const TakeAnswerInput = ({
         placeholder={"Enter the answer"}
         customClass={customClass}
         customStyle={{ width: "95%" }}
-        //onTextChange={(text) => setSaveAnswer(text)}
-        register={register}
+        onTextChange={(text) => setSaveAnswer(text)}
       />
     </Column>
   );

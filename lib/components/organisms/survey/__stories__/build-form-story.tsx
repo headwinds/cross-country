@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
 import BuildForm from "../build-form";
-import { Button, Column, Headline, Paragraph } from "../../../";
+import { Button, Wrapper, Headline, Paragraph, Wallpaper } from "../../../";
 import FinalForm from "../final-form";
 
 /*
@@ -40,7 +40,7 @@ const BuildFormStory = () => {
   console.log("Build form story data: ", data);
 
   return (
-    <Column>
+    <Wrapper backgroundColor="whitesmoke">
       <BuildForm
         submitForm={submitForm}
         onStateChange={onStateChange}
@@ -49,7 +49,7 @@ const BuildFormStory = () => {
       <Paragraph>As you build the form, you can preview it here...</Paragraph>
       <FinalForm data={data} />
       <Paragraph>Saved: needs local storage backup</Paragraph>
-    </Column>
+    </Wrapper>
   );
 };
 

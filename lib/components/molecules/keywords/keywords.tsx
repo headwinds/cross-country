@@ -22,7 +22,7 @@ const Keywords = ({ keywords = [] }) => {
           <Row>{keywordsList}</Row>
         </Column>
         <Row>
-          <Button onClick={addOption}>
+          <Button onClick={addOption} customStyle={{ width: 50 }}>
             <PlusSquare size={20} />
           </Button>
           <Label>Add Option</Label>

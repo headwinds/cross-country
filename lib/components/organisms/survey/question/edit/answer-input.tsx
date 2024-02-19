@@ -12,6 +12,12 @@ import {
   Button,
   Row,
 } from "../../../../";
+import {
+  Trash,
+  CheckSquare,
+  PencilSimple,
+  XSquare,
+} from "@phosphor-icons/react";
 
 const AnswerInput = ({
   data,
@@ -53,7 +59,12 @@ const AnswerInput = ({
         }}
       >
         <Paragraph customClass="m-2">{saveAnswer}</Paragraph>
-        <Button onClick={(data) => onEditClick(data)}>Edit</Button>
+        <Button
+          onClick={(data) => onEditClick(data)}
+          customStyle={{ width: 50 }}
+        >
+          <PencilSimple size={20} />
+        </Button>
       </Column>
     );
   }
@@ -80,9 +91,19 @@ const AnswerInput = ({
         You can leave the answer blank if it could be anything
       </Paragraph>
       <Row>
-        <Button onClick={(data) => onSaveClick(data)}>Save</Button>
+        <Button
+          onClick={(data) => onSaveClick(data)}
+          customStyle={{ width: 50 }}
+        >
+          <CheckSquare size={20} />
+        </Button>
         {!isRequired ? (
-          <Button onClick={(data) => onSkipClick(data)}>Skip</Button>
+          <Button
+            onClick={(data) => onSkipClick(data)}
+            customStyle={{ width: 50 }}
+          >
+            <XSquare size={20} />
+          </Button>
         ) : null}
       </Row>
     </Column>
