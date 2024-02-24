@@ -51,6 +51,7 @@ export { default as ProfilePorthole } from "./molecules/profile-porthole";
 export { default as KeyValuePairs } from "./molecules/key-value-pairs";
 export { default as Loading } from "./molecules/loading";
 export { default as Error } from "./molecules/error";
+export { default as Listicle } from "./molecules/listicle";
 export { default as PrivacyPolicy } from "./molecules/policies/privacy-policy";
 export { default as AddQuestion } from "./molecules/policies/privacy-policy";
 export { default as TermsOfUse } from "./molecules/policies/terms-of-use";

@@ -69,39 +69,6 @@ By wrapping html, each component is augmented for building accessible experience
 </Wrapper>
 ```
 
-### Generating New Components
-
-I've included a handy NodeJS util file under `generate-component` folder. Instead of copy pasting components to create a new component, you can instead run this command to generate all the files you need to plan & start building out a new component. To use it:
-
-```
-yarn new YourComponentName YourAtomicType
-```
-
-example
-
-```
-yarn new accordion molecules
-```
-
-This will generate the following files and your component name will also be captilized (ie import { Accordion } from "country-country"):
-
-```
-/src
-  /YourComponentName
-    /__stories__
-      YourComponentName.stories.tsx
-    /__tests__
-      YourComponentName.test.tsx
-    index.ts
-    YourComponentName.tsx
-    YourComponentName.types.ts
-    YourComponentName.module.css
-    index.d.ts
-    typings.d.ts
-```
-
-When you ready, remember to expose the component in the index.ts file at the root.
-
 ## SCSS to CSS modules
 
 Originally, I started with SCSS Module but "downgraded" to CSS to upgrade Node from 12 to 18. I'm currently experimenting PostCSS variables and Tailwind, and have found that both are supported via the existing `customClass` prop.

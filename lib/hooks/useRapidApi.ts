@@ -1,5 +1,25 @@
-import { useEffect, useState } from 'react';
-import config from '../../cross-country-config-private';
+import { useEffect, useState } from "react";
+import config from "../../cross-country-config-private";
+
+// https://rapidapi.com/techengine/api/link-preview4
+
+export const fetchTitleFromUrl = async (previewUrl) => {
+  const oembed = "false";
+
+  const url = `https://link-preview4.p.rapidapi.com/?url=${previewUrl}&oembed=${oembed}`;
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": config.RAPID_API_KEY,
+      "X-RapidAPI-Host": "link-preview4.p.rapidapi.com",
+    },
+  };
+
+  const response = await fetch(url, options);
+  const result = await response.text();
+
+  return result;
+};
 
 const useRapidApi = (previewUrl?: string) => {
   const [data, setData] = useState(null);
@@ -10,22 +30,11 @@ const useRapidApi = (previewUrl?: string) => {
     const fetchData = async () => {
       try {
         if (!config?.RAPID_API_KEY) {
-          return setError({ message: 'No Rapid API Key' });
+          return setError({ message: "No Rapid API Key" });
         }
 
-        const oembed = 'false';
+        const result = await fetchTitleFromUrl(previewUrl);
 
-        const url = `https://link-preview4.p.rapidapi.com/?url=4${previewUrl}&oembed=${oembed}`;
-        const options = {
-          method: 'GET',
-          headers: {
-            'X-RapidAPI-Key': config.RAPID_API_KEY,
-            'X-RapidAPI-Host': 'link-preview4.p.rapidapi.com',
-          },
-        };
-
-        const response = await fetch(url, options);
-        const result = await response.text();
         setData(result);
       } catch (error) {
         setError(error);

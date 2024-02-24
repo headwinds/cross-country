@@ -1,8 +1,7 @@
-import renderRow from './render-row';
+import renderRow from "./render-row";
 
-const buildTree = instructionList => {
-  const title = 'Simple Strategy';
-  console.log(title);
+const buildTree = (instructionList) => {
+  const title = "Simple Strategy";
 
   let htmlString = `<div><h1>${title}</h1>`;
 
@@ -14,7 +13,6 @@ const buildTree = instructionList => {
   while (rowCount < instructionList.length) {
     const instruction = instructionList[rowCount];
     const { indent, text, type } = instruction;
-    //const currentIndent = indent;
 
     htmlString += renderRow(text, type, indent, prevIndent, prevType, rowCount);
     prevIndent = indent;
@@ -28,10 +26,8 @@ const buildTree = instructionList => {
     rowCount++;
   }
 
-  console.log('...closing the last node prevType: ', prevType);
   htmlString += `</${prevType}>`;
   htmlString += `</div>`;
-  console.log('final htmlString: ', htmlString);
 
   return htmlString;
 };
