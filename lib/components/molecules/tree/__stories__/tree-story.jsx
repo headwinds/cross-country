@@ -19,6 +19,53 @@ const instructionList = [
   { indent: 0, text: "Enjoy your shed", type: "ul" },
 ];
 
+const jsonString = `{
+  "products": {
+    "laptop": [
+      { "brand": "Sony", "price": "$1000" },
+      { "brand": "Acer", "price": "$400" }
+    ],
+    "cellphone": [
+      { "brand": "iPhone", "price": "$800" },
+      { "brand": "HTC", "price": "$500" }
+    ],
+    "tablets": [
+      { "brand": "iPad", "price": "$800" },
+      { "brand": "HTC-Tab", "price": "$500" }
+    ]
+  }
+}`;
+
+const jsonObj = JSON.parse(jsonString);
+
+const printValues = (obj) => {
+  for (let key in obj) {
+    const candidateObj = obj[key];
+    if (typeof candidateObj === "object") {
+      printValues(candidateObj);
+    } else {
+      // console.log(`${key} : ${candidateObj}`);
+    }
+  }
+};
+printValues(jsonObj);
+
+const deepClone = (obj) => {
+  if (obj === null || typeof obj !== "object") {
+    return obj;
+  }
+
+  let clone = Array.isArray(obj) ? [] : {};
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      // recruse to build the up the clone
+      clone[key] = deepClone(obj[key]);
+    }
+  }
+  // finally return the clone
+  return clone;
+};
+
 const TreeStory = ({ size = 800, fill = "white", strategy = "simple" }) => {
   return (
     <Tree

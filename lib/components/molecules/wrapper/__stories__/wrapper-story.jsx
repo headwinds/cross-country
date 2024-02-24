@@ -1,4 +1,4 @@
-import Wrapper from './wrapper';
+import Wrapper from "../wrapper";
 
 const WrapperStory = () => <Wrapper backgroundColor="mintcream" />;
 
