@@ -1,20 +1,41 @@
-import { useState, useEffect } from 'react';
-import { animated, useTransition, useSpring, useChain, useSpringRef, config } from '@react-spring/web';
-import { Wisp, Hunter, Warrior, Cleric, Wizard, Column, Row, Paragraph, Button, Hilight } from '../../../../';
+import { useState, useEffect } from "react";
+import {
+  animated,
+  useTransition,
+  useSpring,
+  useChain,
+  useSpringRef,
+  config,
+} from "@react-spring/web";
+import {
+  Wisp,
+  Hunter,
+  Warrior,
+  Cleric,
+  Wizard,
+  Column,
+  Row,
+  Paragraph,
+  Button,
+  Hilight,
+} from "../../../../";
 
-const AnimateActorPatrol = ({ actorComponentName = 'cleric', targetPosition = { x: 100, y: 200, z: 0 } }) => {
+const AnimateActorPatrol = ({
+  actorComponentName = "cleric",
+  targetPosition = { x: 100, y: 200, z: 0 },
+}) => {
   const springRef = useSpringRef();
   const [isDisabled, setDisabled] = useState(false);
-  const [wispSpeach, setWispSpeechText] = useState('Halt!');
+  const [wispSpeach, setWispSpeechText] = useState("Halt!");
 
   const warriorReports = [
-    'All clear',
+    "All clear",
     "What's for supper?",
-    'I see nothing',
-    'I see something...nah it was nothing',
-    'Or did I?!',
+    "I see nothing",
+    "I see something...nah it was nothing",
+    "Or did I?!",
   ];
-  const [warriorReport, setWarriorReport] = useState('');
+  const [warriorReport, setWarriorReport] = useState("");
 
   const [props, api] = useSpring(
     () => ({
@@ -24,7 +45,7 @@ const AnimateActorPatrol = ({ actorComponentName = 'cleric', targetPosition = { 
     []
   );
 
-  const move = distance => {
+  const move = (distance) => {
     const { x, y, z } = props;
     const curX = x.get();
     const curY = y.get();
@@ -49,8 +70,8 @@ const AnimateActorPatrol = ({ actorComponentName = 'cleric', targetPosition = { 
 
     api.start({
       to: multipleTo,
-      onPause: () => console.log('move spring has paused'),
-      onResume: () => console.log('move spring has resumed'),
+      onPause: () => console.log("move spring has paused"),
+      onResume: () => console.log("move spring has resumed"),
       config: config.gentle,
       loop: true,
     });
@@ -60,13 +81,13 @@ const AnimateActorPatrol = ({ actorComponentName = 'cleric', targetPosition = { 
     // how can I access that cancel function?!
     // ok instead of using the cancel function
     // I can just use the pause and resume functions
-    if (wispSpeach === 'Halt!') {
+    if (wispSpeach === "Halt!") {
       api.pause();
-      setWispSpeechText('Carry on!');
-      setWarriorReport('Roger roger');
+      setWispSpeechText("Carry on!");
+      setWarriorReport("Roger roger");
     } else {
       api.resume();
-      setWispSpeechText('Halt!');
+      setWispSpeechText("Halt!");
     }
   };
 
@@ -79,7 +100,13 @@ const AnimateActorPatrol = ({ actorComponentName = 'cleric', targetPosition = { 
   return (
     <Column>
       <Row>
-        <Column customStyle={{ width: 200, height: 220, backgroundColor: 'whitesmoke' }}>
+        <Column
+          customStyle={{
+            width: 200,
+            height: 220,
+            backgroundColor: "whitesmoke",
+          }}
+        >
           <animated.div style={props}>
             <Warrior />
           </animated.div>
@@ -89,8 +116,10 @@ const AnimateActorPatrol = ({ actorComponentName = 'cleric', targetPosition = { 
         </Paragraph>
       </Row>
       <Column customStyle={{ width: 400 }}>
-        <Row customStyle={{ alignItems: 'center' }}>
-          <Wisp />
+        <Row customStyle={{ alignItems: "center" }}>
+          <Column customStyle={{ width: 40 }}>
+            <Wisp />
+          </Column>
           <Button onClick={handleClick}>{wispSpeach}</Button>
         </Row>
       </Column>

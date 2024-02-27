@@ -1,0 +1,24 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
+import { Paragraph, SubHeadline } from '../../../';
+import UserStory from './user-story';
+
+<Meta title="design system/molecules/user" />
+
+# user
+
+## anonymous 
+
+An anonymous user at the very least is identified by a [UUID](https://www.techtarget.com/searchapparchitecture/definition/UUID-Universal-Unique-Identifier)
+
+## rich
+
+a rich user also has a UUID along with as much personal data as they are willing to provide through the form as well as connecting to third-party social profiles.
+
+<Canvas>
+  <Story name="user">
+    <UserStory />
+  </Story>
+    <Story name="anonymous user">
+    <UserStory isAnon={true} />
+  </Story>
+</Canvas>

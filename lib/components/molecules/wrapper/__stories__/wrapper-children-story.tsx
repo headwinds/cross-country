@@ -1,15 +1,15 @@
-import Wrapper from './wrapper';
-import { Column, Paragraph, Cleric } from '../../';
+import Wrapper from "../wrapper";
+import { Column, Paragraph, Cleric } from "../../../";
 
 const WrapperChildrenStory = () => (
   <Wrapper
     backgroundColor="papayawhip"
     customStyle={{
-      justifyContent: 'center',
-      alignItems: 'center',
+      justifyContent: "center",
+      alignItems: "center",
     }}
   >
-    <Column customStyle={{ alignItems: 'center' }}>
+    <Column customStyle={{ alignItems: "center" }}>
       {/* note to shelf - we need to give the actor a column as a container since it has a relative position 
         while the actor is absolutely positioned
     */}
