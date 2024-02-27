@@ -24,7 +24,6 @@ export { default as Link } from "./atoms/link";
 export { default as List } from "./atoms/list";
 export { default as ListItem } from "./atoms/list/list-item/list-item";
 export { default as AnimateNumber } from "./atoms/text/number/animate-number";
-
 export { default as Table } from "./atoms/table";
 export { default as TableBody } from "./atoms/table/table-body";
 export { default as TableHead } from "./atoms/table/table-head";
@@ -47,7 +46,7 @@ export { default as RelatedArticles } from "./molecules/related-articles";
 export { default as Card } from "./molecules/card";
 export { default as GoldLeaf } from "./molecules/gold-leaf";
 export { default as Bolt } from "./molecules/icons/bolt/bolt";
-export { default as ProfilePorthole } from "./molecules/profile-porthole";
+export { default as User } from "./molecules/user";
 export { default as KeyValuePairs } from "./molecules/key-value-pairs";
 export { default as Loading } from "./molecules/loading";
 export { default as Error } from "./molecules/error";

@@ -8,7 +8,9 @@ What makes up the chat bot experience?
 
 Technically, I'm relying on websockets via PusherJS to provide real time data, Elasticsearch for fast response retrevial, and Perplexity as the AI. 
 
-The chat is composed of an avatar: the Wisp component, an input box and an optional button to send the text but the user can use the enter key instead. 
+The chat is composed of an avatar: the Wisp component, an input box and an optional button to send the text but the user can use the enter key instead.
+
+Personalization is a big part of chat so I will also use the profile component which can either create a richly detailed or anonymous user providing obviously more tailored results for the defined user.  
  
 ### Inspiration
 
