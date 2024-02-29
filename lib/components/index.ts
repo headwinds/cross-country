@@ -64,6 +64,8 @@ export { default as Chart } from "./organisms/charts/chart";
 export { default as Metrics } from "./organisms/metrics";
 export { default as ReverseTextAnimation } from "./organisms/animation/reverse-text-animation";
 // organisms / collection / survey
+export { default as EditTitleInput } from "./organisms/survey/question/edit/edit-title-input";
+export { default as EditQuestion } from "./organisms/survey/question/edit/edit-question";
 export { default as MultipleChoice } from "./organisms/survey/question/take/multiple-choice";
 export { default as TextAnswerInput } from "./organisms/survey/question/take/take-answer-input";
 export { default as Question } from "./organisms/survey/question/take/question";

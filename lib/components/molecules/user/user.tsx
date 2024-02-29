@@ -6,9 +6,9 @@ import AnonUser from "./anon-user";
 
 import * as React from "react";
 
-const User = ({ data, isAnon = false }: UserProps) => {
+const User = ({ data, isAnon = false, onChange = null }: UserProps) => {
   if (isAnon) {
-    return <AnonUser />;
+    return <AnonUser onChange={onChange} />;
   }
 
   return (

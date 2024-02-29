@@ -1,26 +1,30 @@
-import React from 'react';
-import styles from './button.module.css';
-import Button from './button';
-import clsx from 'clsx';
+import React from "react";
+import styles from "./button.module.css";
+import Button from "./button";
+import clsx from "clsx";
 
 const ButtonThemed = ({
-  type = 'button',
-  text = '',
+  type = "button",
+  text = "",
   onClick = null,
-  customClass = '',
+  customClass = "",
   customStyle = {},
   children = null,
-  ariaLabel = '',
+  ariaLabel = "",
+  isDisabled = false,
   ...rest
 }) => (
   <Button
     {...rest}
-    customClass={clsx(styles.button, styles.defaultButton, customClass)}
+    customClass={clsx(styles.button, styles.defaultButton, customClass, {
+      [styles.disabled]: isDisabled,
+    })}
     text={text}
     onClick={onClick}
     customStyle={customStyle}
     type={type}
     aria-label={ariaLabel}
+    disabled={isDisabled}
   >
     {text || children}
   </Button>

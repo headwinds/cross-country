@@ -9,7 +9,10 @@ interface EditQuestionProps {
   data: any;
 }
 
-const EditTitleInput = ({ onChange }: EditQuestionProps) => {
+const EditTitleInput = ({
+  onChange,
+  hasDescription = false,
+}: EditQuestionProps) => {
   const titleData = {
     id: 1,
     name: "title",
@@ -45,7 +48,9 @@ const EditTitleInput = ({ onChange }: EditQuestionProps) => {
   return (
     <>
       <AnswerInput data={titleData} onChange={onChange} />
-      <AnswerInput data={descriptionData} onChange={onChange} />
+      {hasDescription ? (
+        <AnswerInput data={descriptionData} onChange={onChange} />
+      ) : null}
     </>
   );
 };

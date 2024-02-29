@@ -7,9 +7,13 @@ random user name based on seed
 https://www.perplexity.ai/search/Is-there-a-Oos1GtsfT6.dc4ZQDt0JHg?s=c
 */
 
-const AnonUser = () => {
+const AnonUser = ({ onChange = null }) => {
   const [loginStatus, setLoginStatus] = useState(null);
   const [anonScoutUser, setAnonScoutUser] = useState(null);
+
+  useEffect(() => {
+    onChange ? onChange(anonScoutUser) : null;
+  }, [anonScoutUser]);
 
   useEffect(() => {
     const fetchData = async () => {
