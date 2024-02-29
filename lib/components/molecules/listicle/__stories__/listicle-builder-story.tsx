@@ -9,9 +9,10 @@ import {
   Link,
   Listicle,
 } from "../../../";
+import ListicleBuilder from "../listicle-builder";
 
-const ListicleStory = () => {
-  return <Listicle />;
+const ListicleBuilderStory = () => {
+  return <ListicleBuilder />;
 };
 
-export default ListicleStory;
+export default ListicleBuilderStory;

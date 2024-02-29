@@ -87,9 +87,12 @@ const AnswerInput = ({
         onTextChange={(text) => setSaveAnswer(text)}
         name={`${name}_answer`}
       />
-      <Paragraph customClass="m-2">
-        You can leave the answer blank if it could be anything
-      </Paragraph>
+
+      {!isRequired ? (
+        <Paragraph customClass="m-2">
+          You can leave the answer blank if it could be anything
+        </Paragraph>
+      ) : null}
       <Row>
         <Button
           onClick={(data) => onSaveClick(data)}
