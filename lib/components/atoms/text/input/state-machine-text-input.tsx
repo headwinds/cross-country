@@ -1,73 +1,44 @@
-import React from "react";
-import { useMachine } from "@xstate/react";
-import { createMachine, assign } from "xstate";
+import { useActor } from "@xstate/react";
+import { inputTextMachine } from "./input-text-machine";
+import type { ActorOptions, AnyActorLogic } from "xstate";
 import styles from "./text-input.module.css";
-
 import clsx from "clsx";
 
-const inputMachine = createMachine(
-  {
-    id: "input",
-    initial: "typing",
-    context: {
-      inputValue: "",
-      send: undefined, // Add send as a context property
-    },
-    states: {
-      typing: {
-        on: {
-          INPUT_CHANGE: {
-            actions: [
-              assign({
-                inputValue: (_, event) => event.value,
-              }),
-              "debounceInput",
-            ],
-          },
-        },
-      },
-    },
-    on: {
-      DEBOUNCED_INPUT: {
-        actions: assign({
-          inputValue: (_, event) => event.value,
-        }),
-      },
-    },
-  },
-  {
-    actions: {
-      debounceInput: (context) => {
-        context.send("DEBOUNCED_INPUT", {
-          value: context.inputValue,
-        });
-      },
-    },
-  }
-);
+interface TextInputProps {
+  actorOptions: ActorOptions<AnyActorLogic> | undefined;
+  placeholder: string;
+  customStyle?: React.CSSProperties;
+  customClass?: string;
+}
 
-const InputField = ({ customClass = "", customStyle = {}, placeholder }) => {
-  const [state, send] = useMachine(inputMachine);
-
-  const handleChange = (event) => {
-    send("INPUT_CHANGE", { value: event.target.value });
-  };
-
-  // Update the context with the send function
-  React.useEffect(() => {
-    send({ type: "xstate.assign", property: "send", value: send });
-  }, [send]);
+const TextInput = ({
+  actorOptions,
+  placeholder,
+  customStyle,
+  customClass,
+}: TextInputProps) => {
+  const [state, send] = useActor(inputTextMachine, actorOptions);
 
   return (
     <input
       type="text"
-      value={state.context.inputValue}
       className={clsx(styles.textInput, customClass)}
       style={customStyle}
-      onChange={handleChange}
       placeholder={placeholder}
+      value={state.context.searchInput}
+      onChange={(e) => {
+        send({
+          type: "input.change",
+          searchInput: e.target.value,
+        });
+      }}
+      onFocus={() => {
+        send({
+          type: "input.focus",
+        });
+      }}
     />
   );
 };
 
-export default InputField;
+export default TextInput;
