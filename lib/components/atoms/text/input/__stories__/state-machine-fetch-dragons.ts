@@ -1,25 +1,51 @@
-import { setup, createActor, fromPromise, assign } from "xstate";
+import { setup, createActor, fromPromise, assign, raise } from "xstate";
+import getPerplexityResponse from "./perplexity-service";
 
 const domain = "https://localhost:5000";
 
 // credit
 // https://stately.ai/docs/invoke
 
+const fetchFromPerplexityAPI = fromPromise<string[], { query: string }>(
+  async (props) => {
+    // await getPerplexityResponse(search)
+
+    console.log("FAKE fetchFromPerplexityAPI start props: ", props);
+
+    //await new Promise((resolve) => setTimeout(resolve, 500));
+    const { query, system, self } = props;
+    //const { search } = input; // search or command or query
+    const response = await getPerplexityResponse(query);
+    /*
+      if (search === "get dragons") {
+        //emit({ type: "GET_DRAGONS", data: { search } });
+        self._parent.send({ type: "GET_DRAGONS", data: { search } });
+        return console.log("get dragons called after 500 ms!");
+      }
+  
+      self._parent.send({ type: "PREPLEXITY_COMPLETE", response });*/
+
+    //raise({ type: "SET_PREPLEXITY_RESPONSE", response });
+    //self._parent.send({ type: "SET_PREPLEXITY_RESPONSE", response });
+
+    return { response }; //console.log("FAKE fetchFromPerplexityAPI response: ", response);
+  }
+);
+
 const fetchDragons = (userId: string) =>
   fetch(`${domain}/api/dragons`).then((response) => response.json());
 
 export const dragonsMachine = setup({
   actors: {
-    fetchDragons: fromPromise(async () => {
-      const json = await fetchDragons();
-      return json;
-    }),
+    "fetch preplexity": fetchFromPerplexityAPI,
   },
 }).createMachine({
   types: {} as {
     context: {
       message: object | null;
       status: string;
+      query: string;
+      response: object | null;
       error: unknown;
     };
   },
@@ -29,6 +55,8 @@ export const dragonsMachine = setup({
     message: null,
     error: null,
     status: "idle",
+    query: "",
+    response: null,
   },
   states: {
     idle: {
@@ -41,6 +69,61 @@ export const dragonsMachine = setup({
             },
           }),
         },
+        SET_PREPLEXITY_RESPONSE: {
+          actions: assign({
+            response: ({ context, event }) => {
+              return event.response;
+            },
+          }),
+        },
+        CALL_PERPLEXITY: {
+          /*
+          invoke: {
+            src: "fetch preplexity",
+            onDone: {
+              target: "fetchFromPerplexityAPISuccess",
+              //actions: raise("PERPLEXITY_RESPONSE_COMPLETE"), // Ensure this action is correctly defined
+            },
+          },*/
+          target: "ON_PERPLEXITY_QUERY",
+          actions: assign({
+            query: ({ context, event }) => {
+              //"fetchFromPerplexityAPISuccess",
+              return event.query;
+            },
+            status: ({ context, event }) => {
+              return "calling perplexity...";
+            },
+          }),
+        },
+      },
+    },
+    PREPLEXITY_COMPLETE: {
+      target: "idle",
+    },
+    ON_PERPLEXITY_QUERY: {
+      invoke: {
+        src: "fetch preplexity",
+        input: ({ context }) => ({
+          query: context.query,
+        }),
+        onDone: {
+          target: "PREPLEXITY_COMPLETE",
+          actions: assign({
+            response: ({ context, event }) => {
+              //"fetchFromPerplexityAPISuccess",
+              console.log("Perplexity response complete event: ", event);
+              return event.output.response;
+            },
+          }),
+          //actions: raise("PERPLEXITY_RESPONSE_COMPLETE"), // Ensure this action is correctly defined
+        },
+        actions: assign({
+          query: ({ context, event }) => {
+            //"fetchFromPerplexityAPISuccess",
+            return event.query;
+          },
+        }),
       },
     },
     loading: {
@@ -49,20 +132,37 @@ export const dragonsMachine = setup({
         src: "fetchDragons",
         input: ({ context: { userId } }) => ({ userId }),
         onDone: {
-          target: "success",
+          target: "getDragonsSuccess",
           actions: assign({ message: ({ event }) => event.output }),
         },
         onError: {
-          target: "failure",
+          target: "getDragonsFailure",
           actions: assign({ error: ({ event }) => event.error }),
         },
       },
     },
-    success: {},
-    failure: {
+    getDragonsSuccess: {},
+    getDragonsFailure: {
       on: {
         RETRY: { target: "loading" },
       },
+    },
+    PERPLEXITY_QUERY: {
+      invoke: {
+        src: "fetchFromPerplexityAPI",
+        onDone: {
+          target: "fetchFromPerplexityAPISuccess",
+          //actions: raise("PERPLEXITY_RESPONSE_COMPLETE"), // Ensure this action is correctly defined
+        },
+      },
+    },
+    fetchFromPerplexityAPISuccess: {
+      actions: assign({
+        status: ({ context, event }) => {
+          //"fetchFromPerplexityAPISuccess",
+          console.log("Perplexity response complete event: ", event);
+        },
+      }),
     },
   },
 });
