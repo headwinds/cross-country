@@ -1,6 +1,7 @@
-import { useActor } from "@xstate/react";
+import { useEffect, useState, useMemo } from "react";
+import { useActor, useMachine } from "@xstate/react";
 import { inputTextMachine } from "./input-text-machine";
-import type { ActorOptions, AnyActorLogic } from "xstate";
+import type { ActorOptions, AnyActorLogic, raise } from "xstate";
 import styles from "./text-input.module.css";
 import clsx from "clsx";
 
@@ -9,6 +10,7 @@ interface TextInputProps {
   placeholder: string;
   customStyle?: React.CSSProperties;
   customClass?: string;
+  onDebouncedQueryChange: (query: string) => void;
 }
 
 const TextInput = ({
@@ -16,8 +18,23 @@ const TextInput = ({
   placeholder,
   customStyle,
   customClass,
+  onDebouncedQueryChange = null,
 }: TextInputProps) => {
-  const [state, send] = useActor(inputTextMachine, actorOptions);
+  const [state, send, actor] = useActor(inputTextMachine, actorOptions);
+
+  const subscription = useMemo(() => {
+    return actor.subscribe((state) => {
+      // This function is called whenever the state changes
+      //console.log("Parent subscription New state:", state.value);
+      if (state.context.debouncedSearchInput === "get dragons") {
+        // console.log("Parent subscription heard get dragons");
+      }
+      const query = state.context.debouncedSearchInput;
+      if (onDebouncedQueryChange) {
+        onDebouncedQueryChange(query);
+      }
+    });
+  }, []);
 
   return (
     <input
