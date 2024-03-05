@@ -1,4 +1,5 @@
 // atoms
+export { default as HeadwindsLogo } from "./atoms/logo/headwinds";
 export { default as CrossCountryLogo } from "./atoms/logo/cross-country";
 export { default as Grid } from "./atoms/grid";
 export { default as Column } from "./atoms/column/column";
@@ -23,7 +24,6 @@ export { default as Link } from "./atoms/link";
 export { default as List } from "./atoms/list";
 export { default as ListItem } from "./atoms/list/list-item/list-item";
 export { default as AnimateNumber } from "./atoms/text/number/animate-number";
-
 export { default as Table } from "./atoms/table";
 export { default as TableBody } from "./atoms/table/table-body";
 export { default as TableHead } from "./atoms/table/table-head";
@@ -46,10 +46,11 @@ export { default as RelatedArticles } from "./molecules/related-articles";
 export { default as Card } from "./molecules/card";
 export { default as GoldLeaf } from "./molecules/gold-leaf";
 export { default as Bolt } from "./molecules/icons/bolt/bolt";
-export { default as ProfilePorthole } from "./molecules/profile-porthole";
+export { default as User } from "./molecules/user";
 export { default as KeyValuePairs } from "./molecules/key-value-pairs";
 export { default as Loading } from "./molecules/loading";
 export { default as Error } from "./molecules/error";
+export { default as Listicle } from "./molecules/listicle";
 export { default as PrivacyPolicy } from "./molecules/policies/privacy-policy";
 export { default as AddQuestion } from "./molecules/policies/privacy-policy";
 export { default as TermsOfUse } from "./molecules/policies/terms-of-use";
@@ -63,7 +64,11 @@ export { default as Chart } from "./organisms/charts/chart";
 export { default as Metrics } from "./organisms/metrics";
 export { default as ReverseTextAnimation } from "./organisms/animation/reverse-text-animation";
 // organisms / collection / survey
+export { default as EditTitleInput } from "./organisms/survey/question/edit/edit-title-input";
+export { default as EditQuestion } from "./organisms/survey/question/edit/edit-question";
 export { default as MultipleChoice } from "./organisms/survey/question/take/multiple-choice";
+export { default as TextAnswerInput } from "./organisms/survey/question/take/take-answer-input";
+export { default as Question } from "./organisms/survey/question/take/question";
 // organisms / gaming
 export { default as Actor } from "./organisms/actors/actor";
 export { default as Stage } from "./organisms/stage";

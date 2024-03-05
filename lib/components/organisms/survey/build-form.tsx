@@ -17,11 +17,16 @@ import {
 // edit the question
 import AddQuestion from "./question/edit/add-question";
 import EditQuestionList from "./question/edit/edit-question-list";
-
+import EditTitleInput from "./question/edit/edit-title-input";
 // machine
 import { buildFormMachine } from "./build-form-machine";
 import { useMachine } from "@xstate/react";
 import type QuestionType from "./question/types";
+
+/*
+TODO: 
+needs local storage backup
+*/
 
 const BuildForm = ({
   submitForm = defaultSubmit,
@@ -38,6 +43,7 @@ const BuildForm = ({
 
   const onChange = (changeEvent) => {
     console.log("BuildForm onChange changeEvent: ", changeEvent);
+
     const { data, event } = changeEvent;
     if (event === "delete") {
       console.log("BuildForm onChange dispatching REMOVE_QUESTION");
@@ -51,6 +57,13 @@ const BuildForm = ({
         question: { ...data, isComplete: true },
       });
     }
+
+    if (changeEvent?.event) {
+      send({
+        type: changeEvent?.event,
+        question: changeEvent.data,
+      });
+    }
   };
 
   const errors = state.context.errors;
@@ -60,10 +73,17 @@ const BuildForm = ({
     console.log("BuildForm handleAction ", { data, question });
   };
 
+  useEffect(() => {
+    console.log("machine state has changed!");
+    onStateChange(state);
+  }, [state]);
+
+  const saveQuiz = () => {};
+
   return (
     <Column>
       <Headline>{headlineText}</Headline>
-
+      <EditTitleInput onChange={onChange} />
       <EditQuestionList questions={questions} onChange={onChange} />
 
       <AddQuestion onChange={onChange} handleAction={handleAction} />
@@ -71,7 +91,10 @@ const BuildForm = ({
       <Paragraph>
         Submit is diabled until you have at least added a title
       </Paragraph>
-      <TextInput type="submit" isDisabled={isDisabled} />
+
+      <Button onClick={saveQuiz} customStyle={{ width: 100 }}>
+        Save
+      </Button>
     </Column>
   );
 };

@@ -7,8 +7,13 @@ import { useState, useMemo } from "react";
 import EditOptionList from "../edit-option-list";
 import { Form, Row, Paragraph, TextInput, RadioGroup } from "../../../../../";
 
-const EditOptionListStory = ({ data }) => {
-  return <p>hello</p>;
+const EditOptionListStory = () => {
+  const data = { options: [] };
+  const onChange = (event) => {
+    console.log("EditOptionListStory changed event: ", event);
+  };
+
+  return <EditOptionList data={data} />;
 };
 
 export default EditOptionListStory;

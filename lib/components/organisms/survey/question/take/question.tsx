@@ -1,6 +1,7 @@
 import React from "react";
 import { TextInput } from "../../../../";
 import MultipleChoice from "./multiple-choice";
+import TakeAnswerInput from "./take-answer-input";
 
 type QuestionProps = {
   [x: string]: any;
@@ -21,16 +22,17 @@ Take a question!
 see edit for creating/editing the question
 */
 
-const Question = ({ data, register, ...rest }: any) => {
+const Question = ({ data, onChange }: any) => {
   const { questionType } = data;
 
   const RenderQuestion = ({ data }) => {
+    console.log("questionType: ", questionType);
     switch (questionType) {
       case "multipleChoice":
-        return <MultipleChoice data={data} register={register} {...rest} />;
-      case "text":
+        return <MultipleChoice data={data} onChange={onChange} />;
+      case "answerInput":
       default:
-        return <TextInput data={data} register={register} {...rest} />;
+        return <TakeAnswerInput data={data} onChange={onChange} />;
     }
   };
 

@@ -1,0 +1,14 @@
+.url {
+    padding: 8px;
+    background-color: rgb(218, 239, 239);
+    border-radius: 5px;
+    margin: 0px 8px;
+    min-width: 400px;
+}
+
+.category {
+  padding: 8px;
+  background-color: aqua;
+  border-radius: 5px;
+  min-width: 100px;
+}

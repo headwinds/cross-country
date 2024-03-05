@@ -32,3 +32,9 @@
   font-size: 24px;
   height: 100%;
 }
+
+.disabled {
+  background-color: rgb(200, 200, 200);
+  color: rgb(100, 100, 100);
+  cursor: not-allowed;
+}
