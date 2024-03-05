@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import styles from './text-area.module.css';
+import React, { useEffect } from "react";
+import styles from "./text-area.module.css";
 
-import clsx from 'clsx';
+import clsx from "clsx";
 
 const TextArea = ({
   onTextChange,
-  value = 'It was a dark and stormy night...',
-  customClass = '',
+  value = "",
+  customClass = "",
   customStyle = {},
-  placeholder = 'enter your text',
-  type = 'text-area',
-  rows = 5,
+  placeholder = "enter your text",
+  type = "text-area",
+  rows = 2,
   cols = 33,
   isDraggable = false,
   ...rest
@@ -20,7 +20,7 @@ const TextArea = ({
       rows={rows}
       cols={cols}
       className={clsx(styles.textInput, customClass)}
-      onChange={event => {
+      onChange={(event) => {
         event.preventDefault();
         const {
           target: { value },
@@ -32,9 +32,7 @@ const TextArea = ({
       style={customStyle}
       placeholder={placeholder}
       draggable={isDraggable}
-    >
-      {value}
-    </textarea>
+    />
   );
 };
 

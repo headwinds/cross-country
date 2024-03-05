@@ -2,7 +2,7 @@
 // @ts-nocheck
 // npm run build
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Column,
   SubHeadline,
@@ -10,43 +10,82 @@ import {
   Button,
   Row,
   Label,
+  Paragraph,
 } from "../../../../../";
 import OptionInput from "./option-input";
 import { PlusSquare } from "@phosphor-icons/react";
+import { editOptionListMachine } from "./edit-option-list-machine";
+import { useMachine } from "@xstate/react";
 
-const EditOptionList = ({ data }) => {
-  const { options } = data;
+type EditOptionListProps = {
+  data: any;
+  onChange?: (data: {
+    event: string;
+    data: { id: string; value: string };
+  }) => void;
+  isOptionListDisabled?: boolean;
+};
+
+const EditOptionList = ({
+  data,
+  onChange,
+  isOptionListDisabled,
+}: EditOptionListProps) => {
+  const { options, answer } = data;
   console.log("EditOptionList data: ", data);
+
+  const [state, send] = useMachine(editOptionListMachine, {
+    context: { options },
+  });
+
+  console.log("EditOptionList data state.context: ", state.context);
+
+  useEffect(() => {
+    console.log(
+      "EditOptionList useEffect data changed so update the options: ",
+      data
+    );
+    send({
+      type: "UPDATE_OPTIONS",
+      options: data.options,
+    });
+  }, [data]);
 
   if (!options || !Array.isArray(options)) {
     return null;
   }
 
   const addOption = () => {
-    const newOption = { id: options.length, value: "" };
-    const newOptions = [...data.options, newOption];
-
-    const updatedData = { ...data, options: newOptions };
-  };
-
-  const removeOption = (id) => {
-    const newOptions = options.filter((option) => option.id !== id);
-  };
-
-  const updateOption = (id, newValue) => {
-    const newOptions = options.map((option) => {
-      if (option.id === id) {
-        return { ...option, value: newValue };
-      }
-      return option;
+    send({
+      type: "ADD_OPTION",
     });
   };
 
-  const onQuestionChange = (question) => {};
+  const removeOption = (id) => {
+    send({
+      type: "REMOVE_OPTION",
+      id,
+    });
+  };
+
+  const updateOption = (id, value) => {
+    const updatedOption = { id, value };
+    send({
+      type: "UPDATE_OPTION",
+      data: updatedOption,
+    });
+    onChange({ event: "EDIT_OPTION", data: updatedOption });
+  };
 
   return (
-    <Column customStyle={{ padding: 0 }}>
-      {options.map((option, index) => (
+    <Column
+      customStyle={{
+        padding: 0,
+        pointerEvents: isOptionListDisabled ? "none" : "auto",
+        opacity: isOptionListDisabled ? 0.5 : 1,
+      }}
+    >
+      {state.context.options.map((option, index) => (
         <OptionInput
           id={option.id}
           key={option.id}
@@ -54,14 +93,18 @@ const EditOptionList = ({ data }) => {
           removeOption={removeOption}
           updateOption={updateOption}
           customStyle={{ width: "100%" }}
+          answer={answer}
         />
       ))}
       <Row>
-        <Button onClick={addOption}>
+        <Button onClick={addOption} customStyle={{ width: 50 }}>
           <PlusSquare size={20} />
         </Button>
-        <Label>Add Option</Label>
       </Row>
+      <Paragraph>
+        The options will be automatically shuffled so you don't need to reorder
+        them.
+      </Paragraph>
     </Column>
   );
 };

@@ -17,11 +17,11 @@ export const RadioGroupFormStory = () => {
   };
 
   const list = [
-    { id: "1", text: "Thor" },
-    { id: "2", text: "Odin" },
-    { id: "3", text: "Loki" },
-    { id: "4", text: "Heimdall" },
-    { id: "5", text: "Njord" },
+    { id: "1", value: "Thor" },
+    { id: "2", value: "Odin" },
+    { id: "3", value: "Loki" },
+    { id: "4", value: "Heimdall" },
+    { id: "5", value: "Njord" },
   ];
 
   const onRagnarChange = (id) => {

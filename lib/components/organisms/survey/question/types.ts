@@ -17,8 +17,15 @@ export type QuestionType = {
   order?: number;
   userId?: string;
   isComplete: boolean; // begins in a draft mode while creating the question
+  event: string; // make enums for event types!
 };
 
 export type MultipleChoiceQuestionType = {
   options: OptionType[];
 } & QuestionType;
+
+export const QUESTION_VARIANTS = {
+  QUESTION_ANSWER: "questionAnswerInput",
+  MULTIPLE_CHOICE: "multipleChoiceInput",
+  ANSWER: "answerInput",
+};

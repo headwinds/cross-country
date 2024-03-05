@@ -1,0 +1,57 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
+import Wallpaper from '../wallpaper';
+import { Paragraph, Link, RelatedArticles } from '../../../';
+
+<Meta title="design system/molecules/wallpaper" />
+
+# wallpaper
+
+<Subtitle>a background for your project</Subtitle>
+
+<Paragraph>
+  I wanted to experiment with this awesome article on{' '}
+  <Link url="https://css-tricks.com/grainy-gradients/">css-tricks.com/grainy-gradients/</Link>
+  and see if I could inline the svg noise pattern in the css.
+</Paragraph>
+<Paragraph>
+  I really appreciate tools like this <Link url="https://grainy-gradients.vercel.app/">grainy-gradients</Link> that make
+  it easy to create these patterns, and inspires me to make similar tools!
+</Paragraph>
+
+[react-spring](https://codesandbox.io/s/xg8jhi) has an impressive gradient that I used to help make this wallpaper.
+
+<Canvas>
+  <Story name="wallpaper">
+    <Wallpaper backgroundColor="mintcream" customStyle={{}} />
+  </Story>
+  <Story name="wallpaper animated color">
+    <Wallpaper
+      backgroundColor="mintcream"
+      springModel={{
+        pause: false,
+        loop: false,
+        from: { backgroundColor: 'teal' },
+        to: { backgroundColor: 'magenta' },
+        config: { mass: 5, tension: 400, friction: 50, precision: 0.0001, extrapolate: 'clamp', duration: 5000 },
+      }}
+    />
+  </Story>
+  <Story name="wallpaper with linear gradient">
+    <Wallpaper backgroundColor="transparent" customStyle={{}} hasGradient hasNoise={false} />
+  </Story>
+  <Story name="wallpaper with noise">
+    <Wallpaper backgroundColor="transparent" customStyle={{}} hasGradient={false} hasNoise />
+  </Story>
+</Canvas>
+
+<RelatedArticles
+  articles={[
+    { title: 'react-spring svg codesandbox', url: 'https://codesandbox.io/s/m9zwk5zqm8?file=/src/index.js:681-689' },
+    { title: 'react-spring svg filter codesandbox', url: 'https://codesandbox.io/s/6l07h?file=/src/App.ts' },
+    { title: 'flood opactiy', url: 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/flood-opacity' },
+    {
+      title: 'Hooks in react-spring, a tutorial',
+      url: 'https://medium.com/@drcmda/hooks-in-react-spring-a-tutorial-c6c436ad7ee4',
+    },
+  ]}
+/>

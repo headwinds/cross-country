@@ -1,8 +1,27 @@
-import { useState } from 'react';
-import { animated, useTransition, useSpring, useChain, useSpringRef, config } from '@react-spring/web';
-import { Wisp, Hunter, Column, Row, Warrior, Cleric, Wizard, Button } from '../../../../';
+import { useState } from "react";
+import {
+  animated,
+  useTransition,
+  useSpring,
+  useChain,
+  useSpringRef,
+  config,
+} from "@react-spring/web";
+import {
+  Wisp,
+  Hunter,
+  Column,
+  Row,
+  Warrior,
+  Cleric,
+  Wizard,
+  Button,
+} from "../../../../";
 
-const AnimateActorUseSpringRef = ({ actorComponentName = 'cleric', targetPosition = { x: 100, y: 200, z: 0 } }) => {
+const AnimateActorUseSpringRef = ({
+  actorComponentName = "cleric",
+  targetPosition = { x: 100, y: 200, z: 0 },
+}) => {
   const springRef = useSpringRef();
   const [isDisabled, setDisabled] = useState(false);
 
@@ -14,7 +33,7 @@ const AnimateActorUseSpringRef = ({ actorComponentName = 'cleric', targetPositio
     []
   );
 
-  const moveRight = distance => {
+  const moveRight = (distance) => {
     const { x, y, z } = props;
     const curX = x.get();
     const newDistanceRight = curX + distance;
@@ -26,16 +45,16 @@ const AnimateActorUseSpringRef = ({ actorComponentName = 'cleric', targetPositio
 
     api.start({
       to,
-      onStart: () => console.log('the spring has started'),
-      onChange: () => console.log('the spring has frame changed'),
-      onRest: () => console.log('the spring has reached rest'),
-      onPause: () => console.log('the spring has paused'),
-      onResume: () => console.log('the spring has resumed'),
+      onStart: () => console.log("the spring has started"),
+      onChange: () => console.log("the spring has frame changed"),
+      onRest: () => console.log("the spring has reached rest"),
+      onPause: () => console.log("the spring has paused"),
+      onResume: () => console.log("the spring has resumed"),
       config: config.slow,
     });
   };
 
-  const move = direction => {
+  const move = (direction) => {
     moveRight(100);
   };
 
@@ -54,15 +73,21 @@ const AnimateActorUseSpringRef = ({ actorComponentName = 'cleric', targetPositio
 
   return (
     <Column>
-      <Column customStyle={{ width: 200, height: 120, backgroundColor: 'whitesmoke' }}>
+      <Column
+        customStyle={{ width: 200, height: 120, backgroundColor: "whitesmoke" }}
+      >
         <animated.div style={props}>
           <Cleric />
         </animated.div>
       </Column>
       <Column customStyle={{ width: 300 }}>
-        <Row customStyle={{ alignItems: 'center' }}>
-          <Wisp />
-          <Button onClick={handleClick}>Move Right +100</Button>
+        <Row customStyle={{ alignItems: "center" }}>
+          <Column customStyle={{ width: 40 }}>
+            <Wisp />
+          </Column>
+          <Button onClick={handleClick} customStyle={{ width: 150 }}>
+            Move Right +100
+          </Button>
         </Row>
       </Column>
     </Column>

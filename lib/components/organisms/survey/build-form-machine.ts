@@ -3,6 +3,7 @@
 // npm run build
 
 import { createMachine, assign } from "xstate";
+import { QUESTION_VARIANTS } from "./question/types";
 import type { QuestionType } from "./question/types";
 /*
 Build form machine 
@@ -20,17 +21,13 @@ const defaultData = {
     paragraph: "m-2",
   },
 };
-
 */
 
 export const defaultQuestionData: QuestionType = {
   id: 1,
   name: "first_question",
   question: "What is your question?",
-  options: [
-    { id: 0, value: "yes" },
-    { id: 1, value: "no" },
-  ],
+  options: [],
   answer: "",
   placeholder: "Enter your title",
   required: true,
@@ -40,6 +37,7 @@ export const defaultQuestionData: QuestionType = {
   userId: "1",
   section: "",
   isComplete: false, // while working on the question it should be false
+  event: "UPDATE_ANSWER",
 };
 
 const createNewQuestion = (): QuestionType => {
@@ -63,37 +61,11 @@ type FormField = {
 export const buildFormMachine = createMachine({
   id: "buildForm",
   initial: "idle",
+  title: "",
+  description: "",
   context: {
     // form builder questions
-    questions: [
-      {
-        id: 1,
-        name: "title",
-        question: "What is the title of your form?", // draft
-        answer: "",
-        placeholder: "Enter your title",
-        isRequired: true,
-        questionType: "text", // we only need the answer
-        errorMessage: "A title is required",
-        order: 1,
-        userId: "1",
-        section: "",
-        isComplete: false,
-      },
-      {
-        id: 2,
-        name: "description",
-        question: "What is the description of your form? (optional)", // draft
-        answer: "",
-        placeholder: "Enter your description",
-        isRequired: false,
-        questionType: "text", // we only need the answer
-        order: 2,
-        userId: "1",
-        section: "",
-        isComplete: false,
-      },
-    ],
+    questions: [],
     errors: [],
     customClasses: {
       headline: "text-3xl",
@@ -103,6 +75,22 @@ export const buildFormMachine = createMachine({
   states: {
     idle: {
       on: {
+        UPDATE_TITLE: {
+          actions: assign({
+            title: ({ event }) => {
+              console.log("UPDATE_TITLE event: ", event);
+              return event.question.answer;
+            },
+          }),
+        },
+        UPDATE_DESCRIPTION: {
+          actions: assign({
+            description: ({ event }) => {
+              console.log("UPDATE_DESCRIPTION event: ", event);
+              return event.question.answer;
+            },
+          }),
+        },
         ADD_QUESTION: {
           actions: assign({
             questions: ({ context: { questions } }) => {
@@ -116,6 +104,45 @@ export const buildFormMachine = createMachine({
           actions: assign({
             questions: ({ context: { questions }, event }) => {
               console.log("UPDATE_QUESTION event: ", event);
+              const updatedQuestions = questions.map((question) => {
+                if (question.name === event.question.name) {
+                  return { ...event.question };
+                }
+                return question;
+              });
+              return updatedQuestions;
+            },
+          }),
+        },
+        UPDATE_MULTIPLE_CHOICE_QUESTION: {
+          actions: assign({
+            questions: ({ context: { questions }, event }) => {
+              console.log("UPDATE_QUESTION event: ", event);
+              const updatedQuestions = questions.map((question) => {
+                if (question.name === event.question.name) {
+                  // make sure the answer is in the options
+                  // is it already present?
+                  const newOptions = [...questions.options];
+                  const isAnwerOptionPresent = !!options.find(
+                    (option) => (option.value = event.question.answer)
+                  );
+                  if (!isAnwerOptionPresent) {
+                    const id = `option_${new Date().getTime()}`;
+                    newOptions.push({ id, value: event.question.answer });
+                  }
+
+                  return { ...event.question, options: newOptions };
+                }
+                return question;
+              });
+              return updatedQuestions;
+            },
+          }),
+        },
+        UPDATE_ANSWER: {
+          actions: assign({
+            questions: ({ context: { questions }, event }) => {
+              console.log("Machine heard UPDATE_ANSWER event: ", event);
               const updatedQuestions = questions.map((question) => {
                 if (question.name === event.question.name) {
                   return { ...event.question };

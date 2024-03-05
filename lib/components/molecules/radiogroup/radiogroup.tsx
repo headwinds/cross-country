@@ -8,13 +8,23 @@ import Label from "../../atoms/text/label";
 
 // register is an optional function if are using react-hook-form
 
+type RadioGroupProps = {
+  data: {
+    options: { id: string; value: string }[];
+    question: string;
+    answer: string;
+  };
+  onChange: (selectedId: string) => void;
+  selectedId?: string;
+  name?: string;
+};
+
 const RadioGroup = ({
   onChange,
   data,
-  selectedId = 0,
+  selectedId = "0",
   name = "name",
-  register = null,
-}) => {
+}: RadioGroupProps) => {
   if (!data?.options) {
     return (
       <Column customStyle={{ color: "red" }}>
@@ -45,17 +55,16 @@ const RadioGroup = ({
   const getSelected = (id) => (id === selectedId ? true : false);
   const getTabIndex = (id) => (id === selectedId ? 0 : 1);
 
-  const radiobuttons = data.options.map(({ id, text }) => (
+  const radiobuttons = data.options.map(({ id, value }) => (
     <Row key={id}>
       <Radio
-        register={register}
         key={id}
         id={id}
         onChange={() => onChange(id)}
         isSelected={getSelected(id)}
         tabIndex={getTabIndex(id)}
       />
-      <Label forId={id}>{text}</Label>
+      <Label forId={id}>{value}</Label>
     </Row>
   ));
 

@@ -4,6 +4,19 @@ import debounce from "debounce";
 
 import clsx from "clsx";
 
+type TextInputProps = {
+  id?: string;
+  onTextChange: (text: string) => void;
+  value?: string;
+  customClass?: string;
+  customStyle?: React.CSSProperties;
+  placeholder?: string;
+  type?: string;
+  isDisabled?: boolean;
+  data?: any;
+  register?: any;
+};
+
 const TextInput = ({
   onTextChange,
   value,
@@ -12,10 +25,10 @@ const TextInput = ({
   placeholder = "enter your text",
   type = "text",
   isDisabled = false,
-  name = null,
+  data = null,
   register = null,
   ...rest
-}) => {
+}: TextInputProps) => {
   // react-hook-form requires a name and register
   if (register) {
     return (
@@ -26,7 +39,7 @@ const TextInput = ({
           className={clsx(styles.textInput, customClass)}
           style={customStyle}
           placeholder={placeholder}
-          {...register(name)}
+          {...register(data?.name)}
         />
       </>
     );

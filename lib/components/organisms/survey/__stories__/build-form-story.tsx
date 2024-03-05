@@ -1,14 +1,15 @@
 import * as React from "react";
 import { useState } from "react";
 import BuildForm from "../build-form";
-import { Button, Column, Headline, Paragraph } from "../../../";
+import { Button, Wrapper, Headline, Paragraph, Wallpaper } from "../../../";
+import FinalForm from "../final-form";
 
 /*
 Goal: the atoms should be compatible with react-hook-form support its register function.
 */
 
 const BuildFormStory = () => {
-  const [data, setData] = useState({});
+  const [data, setData] = useState(null);
   /*
   const fields = [
     {
@@ -25,7 +26,7 @@ const BuildFormStory = () => {
   ];*/
 
   const submitForm = (data) => {
-    console.log("ReactHookFormStory onFormSubmit", data);
+    console.log("Save built form", data);
   };
 
   const onStateChange = (data) => {
@@ -35,16 +36,19 @@ const BuildFormStory = () => {
 
   const headlineText = "Build your Survey";
 
+  const title = data?.questions?.length > 0 ? data.questions[0].answer : "";
+  console.log("Build form story data: ", data);
+
   return (
-    <Column>
+    <Wrapper backgroundColor="whitesmoke">
       <BuildForm
         submitForm={submitForm}
         onStateChange={onStateChange}
         headlineText={headlineText}
       />
       <Paragraph>As you build the form, you can preview it here...</Paragraph>
-      <Paragraph>Saved: needs local storage backup</Paragraph>
-    </Column>
+      <FinalForm data={data} />
+    </Wrapper>
   );
 };
 
