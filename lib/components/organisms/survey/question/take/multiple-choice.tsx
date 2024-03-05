@@ -11,13 +11,23 @@ const DefaultHtmlQuesiton = () => (
 );
 // {htmlQuestion ? data.question : <DefaultHtmlQuesiton />}
 
-const MultipleChoice = ({ data, onChange }) => {
-  const defaultSelectedId = data.options[0].id;
-  const [selectedId, setSelectedId] = useState(defaultSelectedId);
+type MultipleChoiceProps = {
+  data: {
+    options: { id: string; value: string }[];
+    question: string;
+    answer: string;
+  };
+  onChange: (selectedId: string) => void;
+  selectedId?: string;
+};
 
+const MultipleChoice = ({
+  data,
+  onChange,
+  selectedId = "0",
+}: MultipleChoiceProps) => {
   const onRadioChange = (selectedId) => {
-    setSelectedId(selectedId);
-    onChange(selectedId);
+    onChange(String(selectedId));
   };
 
   return (

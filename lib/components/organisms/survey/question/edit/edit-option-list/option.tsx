@@ -4,9 +4,9 @@ import { Row, Radio, Label } from "../../../../../";
 const Option = ({ data }) => {
   const { id, value } = data;
 
-  const onChange = () => {};
-  const getSelected = () => {};
-  const getTabIndex = () => {};
+  const onChange = (id) => {};
+  const getSelected = (id) => {};
+  const getTabIndex = (id) => {};
 
   return (
     <Row key={id}>

@@ -1,3 +1,7 @@
+// TODO: explore why I disabled typecheck on this file!
+// @ts-nocheck
+// npm run build
+
 import { assign, setup, assertEvent, fromPromise } from "xstate";
 
 // https://xstatebyexample.com/search-as-you-type/

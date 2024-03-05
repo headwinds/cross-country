@@ -5,8 +5,9 @@ import EditMultipleChoice from "./edit-multiple-choice";
 import { QUESTION_VARIANTS } from "../types";
 
 interface EditQuestionProps {
-  onChange: any;
-  data: any;
+  onChange?: any;
+  data?: any;
+  hasDescription?: boolean;
 }
 
 const EditTitleInput = ({

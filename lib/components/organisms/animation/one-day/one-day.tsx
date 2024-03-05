@@ -12,10 +12,12 @@ import {
 import { Actor, Column, Paragraph, Row } from "../../../../";
 import styles from "./one-day.module.css";
 
-type OneDay = {
+type OneDayProps = {
   staticText: string;
   animatedTextArr: string[];
   fontStyles?: unknown;
+  textWidth?: number;
+  textHeight?: number;
 };
 
 const defaultFontStyles = {
@@ -32,7 +34,7 @@ const OneDay = ({
   fontStyles = defaultFontStyles,
   textWidth = 200, // the animation jerks if the width is not set,
   textHeight = 78,
-}: OneDay) => {
+}: OneDayProps) => {
   const ref = useRef<ReturnType<typeof setTimeout>[]>([]);
   const [items, set] = useState<string[]>([]);
   const [animatedTextIndex, setAnimatedTextIndex] = useState(0);
@@ -80,7 +82,7 @@ const OneDay = ({
       const milliseconds = i * 2000;
       ref.current.push(
         setTimeout(() => {
-          set(animatedTextArr[i]);
+          set([...animatedTextArr[i]]);
           setAnimatedTextIndex(i);
         }, milliseconds)
       );
