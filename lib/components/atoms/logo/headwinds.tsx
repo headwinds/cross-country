@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import styles from "./logo.module.css";
 import headwinds from "./headwinds.svg";
 
-const HeadwindsLogo = ({ width }) => (
+type HeadwindsLogoProps = {
+  width?: number;
+};
+
+const HeadwindsLogo = ({ width }: HeadwindsLogoProps) => (
   <img
     src={headwinds}
     width={width || 50}

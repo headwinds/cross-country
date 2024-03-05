@@ -17,7 +17,20 @@ import { PlusSquare } from "@phosphor-icons/react";
 import { editOptionListMachine } from "./edit-option-list-machine";
 import { useMachine } from "@xstate/react";
 
-const EditOptionList = ({ data, onChange, isOptionListDisabled }) => {
+type EditOptionListProps = {
+  data: any;
+  onChange?: (data: {
+    event: string;
+    data: { id: string; value: string };
+  }) => void;
+  isOptionListDisabled?: boolean;
+};
+
+const EditOptionList = ({
+  data,
+  onChange,
+  isOptionListDisabled,
+}: EditOptionListProps) => {
   const { options, answer } = data;
   console.log("EditOptionList data: ", data);
 

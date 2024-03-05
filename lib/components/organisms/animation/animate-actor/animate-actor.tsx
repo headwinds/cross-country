@@ -34,7 +34,6 @@ const AnimateActor = () => {
 
     const onRest = () => {
       count = count < 4 ? count + 1 : 0;
-      setWarriorReport(warriorReports[count]);
     };
 
     const multipleTo = async (next, cancel) => {

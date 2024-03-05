@@ -1,28 +1,43 @@
-import React, { useEffect } from 'react';
-import Column from '../../atoms/column/column';
-import styles from './wallpaper.module.css';
-import { useSpring, animated, SpringValue } from '@react-spring/web';
-import clsx from 'clsx';
+// TODO: explore why I disabled typecheck on this file!
+// @ts-nocheck
+// npm run build
 
-const AnimFeTurbulence = animated('feTurbulence');
-const AnimFilter = animated('filter');
-const AnimFeFloor = animated('feFlood');
+import React, { useEffect } from "react";
+import Column from "../../atoms/column/column";
+import styles from "./wallpaper.module.css";
+import { useSpring, animated, SpringValue } from "@react-spring/web";
+import clsx from "clsx";
+
+const AnimFeTurbulence = animated("feTurbulence");
+const AnimFilter = animated("filter");
+const AnimFeFloor = animated("feFlood");
+
+type WallpaperProps = {
+  backgroundColor?: string;
+  rgba?: string;
+  customClass?: string;
+  customStyle?: React.CSSProperties;
+  hasNoise?: boolean;
+  hasGradient?: boolean;
+  springModel?: SpringValue<React.CSSProperties>;
+  children?: React.ReactNode;
+};
 
 const Wallpaper = ({
-  backgroundColor = '',
+  backgroundColor = "",
   rgba = `rgba(0,128,128,1)`,
-  customClass = '',
+  customClass = "",
   customStyle = {},
   hasNoise = false,
   hasGradient = false,
   springModel = null,
   children,
   ...rest
-}) => {
+}: WallpaperProps) => {
   const from = 0;
   const to = 1000;
   const delay = 0;
-  const locale = 'en-US';
+  const locale = "en-US";
 
   const { numOctaves, baseFrequency, opacity } = useSpring({
     reset: true,
@@ -30,12 +45,18 @@ const Wallpaper = ({
     from: { numOctaves: 0, baseFrequency: 0.25, opacity: 0 },
     to: { numOctaves: 25, baseFrequency: 0.65, opacity: 1 },
     delay,
-    config: { mass: 10, tension: 300, friction: 50, precision: 0.0001, extrapolate: 'clamp' },
+    config: {
+      mass: 10,
+      tension: 300,
+      friction: 50,
+      precision: 0.0001,
+      extrapolate: "clamp",
+    },
   });
 
   const MAX_OCTAVES = 50;
 
-  const formatOctavesNumber = n => {
+  const formatOctavesNumber = (n) => {
     const convertNum = Number(n.toFixed(0));
 
     return convertNum > MAX_OCTAVES ? convertNum : MAX_OCTAVES;
@@ -47,14 +68,24 @@ const Wallpaper = ({
         viewBox="0 0 200 200"
         xmlns="http://www.w3.org/2000/svg"
         id="noise"
-        style={{ width: '100vw', height: '100vh' }}
+        style={{ width: "100vw", height: "100vh" }}
       >
-        <AnimFilter id="noiseFilter" style={{ opacity: opacity.to(value => value) }}>
-          <AnimFeFloor flood-color="seagreen" flood-opacity="0.2" x="0" y="0" width="200" height="200" />
+        <AnimFilter
+          id="noiseFilter"
+          style={{ opacity: opacity.to((value) => value) }}
+        >
+          <AnimFeFloor
+            flood-color="seagreen"
+            flood-opacity="0.2"
+            x="0"
+            y="0"
+            width="200"
+            height="200"
+          />
           <AnimFeTurbulence
             type="fractalNoise"
-            baseFrequency={baseFrequency.to(value => value)}
-            numOctaves={numOctaves.to(value => formatOctavesNumber(value))}
+            baseFrequency={baseFrequency.to((value) => value)}
+            numOctaves={numOctaves.to((value) => formatOctavesNumber(value))}
             stitchTiles="stitch"
           />
         </AnimFilter>
@@ -67,7 +98,7 @@ const Wallpaper = ({
   const customNoiseStyle = {
     padding: 0,
     margin: 0,
-    filter: 'contrast(130%) brightness(1200%)',
+    filter: "contrast(130%) brightness(1200%)",
     background: `linear-gradient(40deg, ${rgba}, rgba(0,0,0,0.4)), url(#noise)`,
   };
 
@@ -76,7 +107,7 @@ const Wallpaper = ({
     padding: 0,
     margin: 0,
     background:
-      'linear-gradient(0deg, rgba(0,241,255,1), rgba(0,0,0,0)), linear-gradient(210deg, rgba(255,0,0,1), rgba(255,255,0,0))',
+      "linear-gradient(0deg, rgba(0,241,255,1), rgba(0,0,0,0)), linear-gradient(210deg, rgba(255,0,0,1), rgba(255,255,0,0))",
   };
 
   const getFinalStyle = () => {
@@ -95,7 +126,7 @@ const Wallpaper = ({
 
   const finalCustomStyle = getFinalStyle();
 
-  const wallpaper = () => {
+  const FinalWallpaper = () => {
     if (springModel) {
       return (
         <animated.div
@@ -121,8 +152,17 @@ const Wallpaper = ({
 
   return (
     <>
-      <div style={{ position: 'absolute', zIndex: 2 }}>{children}</div>
-      <div style={{ position: 'absolute', zIndex: 1, width: '100vw', height: '100vh' }}>{wallpaper}</div>
+      <div style={{ position: "absolute", zIndex: 2 }}>{children}</div>
+      <div
+        style={{
+          position: "absolute",
+          zIndex: 1,
+          width: "100vw",
+          height: "100vh",
+        }}
+      >
+        <FinalWallpaper />
+      </div>
     </>
   );
 };

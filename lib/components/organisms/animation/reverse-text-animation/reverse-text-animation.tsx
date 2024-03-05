@@ -1,16 +1,23 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Row, Stagger } from '../../../';
+import React, { useState, useEffect, useRef } from "react";
+import { Row, Stagger } from "../../../";
 
-const defaultReverseConfig = { startTask: 'Learning', endTask: 'Teaching', cursor: '_' };
+const defaultReverseConfig = {
+  startTask: "Learning",
+  endTask: "Teaching",
+  cursor: "_",
+};
 
 const ReverseTextAnimation = ({
-  color = 'darkgrey',
-  titleOne = 'Learn React, D3, XState',
-  titleTwo = '& Machine',
+  color = "darkgrey",
+  titleOne = "Learn React, D3, XState",
+  titleTwo = "& Machine",
   reverseConfig = defaultReverseConfig,
 }) => {
   const { startTask, endTask, cursor } = reverseConfig;
-  const [mlTask, setTask] = useState({ word: startTask, index: startTask.length - 1 });
+  const [mlTask, setTask] = useState({
+    word: startTask,
+    index: startTask.length - 1,
+  });
 
   const [isAnimating, setAnimating] = useState(false);
   const [hasCompletedPause, setCompletedPause] = useState(false);
@@ -18,13 +25,13 @@ const ReverseTextAnimation = ({
 
   const getNewTask = (word, index) => {
     const fromParts = startTask.substr(0, 2);
-    let newMlTask = '';
+    let newMlTask = "";
     let newMlTaskIndex = 0;
-    console.log('animate - word ', word);
+    console.log("animate - word ", word);
     if (word.includes(fromParts)) {
       newMlTask = `${startTask.substr(0, index)}${cursor}`;
       newMlTaskIndex = index - 1;
-      console.log('animate - index ', index);
+      console.log("animate - index ", index);
     } else {
       newMlTask = `${endTask.substr(0, index)}${cursor}`;
       newMlTaskIndex = index + 1;
@@ -60,7 +67,7 @@ const ReverseTextAnimation = ({
     }
   }, [hasCompletedPause]);
 
-  const staggerColor = [color, 'hotpink'];
+  const staggerColor = "hotpink"; //[color, 'hotpink'];
   const { word } = mlTask;
   const staggerText = [titleOne, `${titleTwo} ${word}`];
 
