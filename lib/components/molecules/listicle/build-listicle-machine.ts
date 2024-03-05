@@ -1,8 +1,7 @@
-// TODO: explore why I disabled typecheck on this file!
 // @ts-nocheck
 // npm run build
 
-import { createMachine, assign } from "xstate";
+import { createMachine, assign, fromPromise } from "xstate";
 import { ListicleItem, Listicle } from "./types";
 
 /*
@@ -20,7 +19,13 @@ The listicle story should include:
 
 state machine states
 - idle
-- edit 
+- edit
+- loading
+- saving
+- error
+- success
+- failure
+
 
 status
 - unsaved
@@ -97,6 +102,25 @@ const saveListicle = ({ context, event }) => {
   });
 };
 
+const loadListicle = fromPromise<
+  string[],
+  { user_account_id: string; user_account_id: string; title: title }
+>(async ({ input }) => {
+  console.log("Invoked loadListicle", input);
+  const { user_account_id, anon_user_account_id, title } = input;
+
+  const anon_url = `http://localhost:5000/api/listicle/anon/${anon_user_account_id}/${title}`;
+  const user_url = `http://localhost:5000/api/listicle/user/${user_account_id}/${title}`;
+
+  const fetchUrl = user_account_id ? user_url : anon_url;
+
+  const response = await fetch(fetchUrl, {
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+  });
+  return response.json();
+});
+
 const validateListicleItems = (listicleItems: Listicle[]) => {
   // there should only ever be one listicle item with status of unsaved
   const unsavedListicleItems = listicleItems.filter(
@@ -120,6 +144,10 @@ const validateListicleItems = (listicleItems: Listicle[]) => {
   }));
 };
 
+/*
+either working on a new listicle or editing an existing listicle
+*/
+
 export const buildListicleMachine = createMachine({
   id: "buildListicle",
   initial: "idle",
@@ -131,14 +159,48 @@ export const buildListicleMachine = createMachine({
     listicleItems: [],
     title: null,
     error: null,
-    title: null,
+    enteringTitle: null, // as the user types the title, it will be stored here until they save
     created_at: null,
     updated_at: null,
     status: "unsaved",
+    loadListiceResponse: null,
+    isExistingListicle: null,
+    lastSavedListicleTitle: null,
+    loadFeedback: null,
   },
   states: {
     idle: {
       on: {
+        CHECK_LAST_SAVED_LISTICLE_TITLE: {
+          actions: assign({
+            lastSavedListicleTitle: () => {
+              // check local storage for last saved listicle title
+              const lastSavedListicleTitle = localStorage.getItem(
+                "lastSavedListicleTitle"
+              );
+              const validTitle = lastSavedListicleTitle ?? "";
+              return validTitle;
+            },
+          }),
+        },
+        DECIDE_LOAD_OR_CREATE: {
+          actions: assign({
+            isExistingListicle: ({ context: { listicleItems }, event }) => {
+              console.log("Machine DECIDE_LOAD_OR_CREATE", event);
+              return event.data;
+            },
+            lastSavedListicleTitle: ({ context: { listicleItems }, event }) => {
+              if (event.data) {
+                // check local storage for last saved listicle title
+                const lastSavedListicleTitle = localStorage.getItem(
+                  "lastSavedListicleTitle"
+                );
+                const validTitle = lastSavedListicleTitle ?? "";
+                return validTitle;
+              }
+            },
+          }),
+        },
         ADD_LISTICLE_ITEM: {
           actions: assign({
             listicleItems: ({ context: { listicleItems }, event }) => {
@@ -172,8 +234,16 @@ export const buildListicleMachine = createMachine({
             },
           }),
         },
+        ENTERING_TITLE: {
+          actions: assign({
+            enteringTitle: ({ context, event }) => {
+              console.log("Machine ENTERING_TITLE", event);
+              return event.data.enteringTitle;
+            },
+          }),
+        },
         SAVE_LISTICLE: {
-          //target: "getting_dragons",
+          //target: "SAVING_LISTICLE",
           actions: assign({
             status: (event) => {
               const fetchData = async () => {
@@ -188,6 +258,9 @@ export const buildListicleMachine = createMachine({
               return "saving...";
             },
           }),
+        },
+        LOAD_LISTICLE: {
+          target: "LOADING_LISTICLE",
         },
       },
     },
@@ -207,13 +280,13 @@ export const buildListicleMachine = createMachine({
         },
       },
     },
-    posting_listicle: {
+    SAVING_LISTICLE: {
       invoke: {
         id: "saveListicle",
         src: saveListicle,
-        onDone: { target: "success" },
+        onDone: { target: "SAVING_LISTICLE_SUCCESS" },
         onError: {
-          target: "failure",
+          target: "SAVING_LISTICLE_ERROR",
           actions: assign({
             error: ({ context, event }) => {
               console.log("Machine posting onError", event);
@@ -224,13 +297,99 @@ export const buildListicleMachine = createMachine({
         },
       },
     },
-    success: {
+    SAVING_LISTICLE_SUCCESS: {
       // Handle success (e.g., navigate to another page or show a success message)
     },
-    failure: {
+    SAVING_LISTICLE_FAILURE: {
       // Handle failure (e.g., show an error message)
     },
-    error: {
+    SAVING_LISTICLE_ERROR: {
+      on: {
+        RETRY: "idle",
+        SET_ERROR: {
+          actions: assign({
+            error: ({ context, event }) => {
+              console.log("Machine SET_ERROR");
+              return event.error;
+            },
+          }),
+        },
+      },
+    },
+    LOADING_LISTICLE: {
+      invoke: {
+        id: "loadingListicle",
+        src: loadListicle,
+        input: ({ context }) => {
+          console.log("Machine LOADING_LISTICLE");
+          return {
+            user_account_id: context.userAccountId,
+            anon_user_account_id: context.anonUserAccountId,
+            title: context.title,
+          };
+        },
+        onDone: {
+          target: "LOADING_LISTICLE_SUCCESS",
+          actions: assign({
+            loadListiceResponse: ({ context, event }) => {
+              console.log(
+                "LOADING_LISTICLE_SUCCESS onDone loadListiceResponse: ",
+                event.output
+              );
+              return event.output;
+            },
+            isExistingListicle: ({ context, event }) => {
+              if (event.output?.message === "there is no listicle") {
+                return null;
+              }
+              return context.isExistingListicle;
+            },
+            loadFeedback: ({ context, event }) => {
+              if (event.output?.message === "there is no listicle") {
+                return "There is no listicle with that title";
+              }
+              return null;
+            },
+            title: ({ context, event }) => {
+              const title = event.output.listicle_items[0].title;
+              // also set the title to local storage
+              localStorage.setItem("lastSavedListicleTitle", title);
+
+              return title;
+            },
+            lastSavedListicleTitle: ({ context, event }) => {
+              // also set the title to local storage
+              localStorage.setItem(
+                "lastSavedListicleTitle",
+                event.output.title
+              );
+
+              return event.output.title;
+            },
+            listicleItems: ({ context, event }) => {
+              return event.output?.listicle_items ?? [];
+            },
+          }),
+        },
+        onError: {
+          target: "LOADING_LISTICLE_ERROR",
+          actions: assign({
+            error: ({ context, event }) => {
+              console.log("Machine posting onError", event);
+              //const {context, event } = event;
+              return "Something went wrong";
+            },
+          }),
+        },
+      },
+    },
+    LOADING_LISTICLE_SUCCESS: {
+      // Handle success (e.g., navigate to another page or show a success message)
+    },
+    LOADING_LISTICLE_FAILURE: {
+      // Handle failure (e.g., show an error message)
+    },
+    LOADING_LISTICLE_ERROR: {
       on: {
         RETRY: "idle",
         SET_ERROR: {

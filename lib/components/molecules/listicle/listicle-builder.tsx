@@ -17,6 +17,8 @@ import {
   EditTitleInput,
   Row,
   User,
+  TextInput,
+  Paragraph,
 } from "../..";
 // add listicle items
 import EditListicleItemList from "./edit-listicle-item-list";
@@ -27,7 +29,18 @@ import { buildListicleMachine } from "./build-listicle-machine";
 const ListicleBuilder = () => {
   const [state, send] = useMachine(buildListicleMachine);
 
-  const { error } = state.context;
+  const {
+    error,
+    isExistingListicle,
+    title,
+    enteringTitle,
+    listicleItems,
+    loadFeedback,
+  } = state.context;
+
+  useEffect(() => {
+    console.log("ListicleBuilder useEffect state.context: ", state.context);
+  }, [state.context]);
 
   const titleData = {
     id: 0,
@@ -36,6 +49,7 @@ const ListicleBuilder = () => {
     isRequired: true,
     answer: state.context.title ?? "",
   };
+
   const onTitleChange = (changeEvent) => {
     // dispatch to state machine
     // send("ADD_LISTICLE_ITEM", { data: { title: e.target.value } });
@@ -76,10 +90,105 @@ const ListicleBuilder = () => {
         type: "UPDATE_ANON_USER_ACCOUNT_ID",
         data: { userAccountId: user?.id },
       });
+    } else {
+      send({
+        type: "UPDATE_USER_ACCOUNT_ID",
+        data: { userAccountId: user?.id },
+      });
     }
   };
 
   console.log("ListicleBuilder render state.context: ", state.context);
+
+  const onDecideLoadOrCreate = (isExistingListicle) => {
+    send({
+      type: "UPDATE_LISTICLE_TITLE",
+      data: { title: enteringTitle },
+    });
+    send({
+      type: "DECIDE_LOAD_OR_CREATE",
+      data: isExistingListicle,
+    });
+
+    if (isExistingListicle) {
+      send({
+        type: "LOAD_LISTICLE",
+      });
+    }
+  };
+
+  const onEnteringTitleChange = (enteringTitle) => {
+    console.log("ListicleBuilder onLoadTextChange ", enteringTitle);
+    if (enteringTitle?.length >= 3) {
+      send({
+        type: "ENTERING_TITLE",
+        data: { enteringTitle },
+      });
+    }
+  };
+
+  const isLoadDisabled =
+    enteringTitle === null || enteringTitle === "" || enteringTitle.length < 3;
+
+  // build a new listicle or edit an existing one
+  if (isExistingListicle === null) {
+    return (
+      <Column className={styles.container}>
+        {error ? <Error /> : null}
+        <User isAnon={true} onChange={onUserChange} />
+        <Column customStyle={{ width: 400 }}>
+          <SubHeadline text="Load Existing or Create New Listicle" />
+          <Row>
+            <TextInput
+              onTextChange={onEnteringTitleChange}
+              placeholder="Enter the existing listicle name"
+              customStyle={{ flex: 1 }}
+            />
+            <Button
+              onClick={() => onDecideLoadOrCreate(true)}
+              isDisabled={isLoadDisabled}
+            >
+              Load
+            </Button>
+          </Row>
+          <HorizontalLine />
+          <Row>
+            <TextInput
+              onTextChange={onEnteringTitleChange}
+              placeholder="Enter a new listicle name"
+              customStyle={{ flex: 1 }}
+            />
+
+            <Button
+              onClick={() => onDecideLoadOrCreate(false)}
+              customStyle={{ backgroundColor: "pink" }}
+            >
+              Create
+            </Button>
+          </Row>
+        </Column>
+        {loadFeedback ? (
+          <Row>
+            <Error message={loadFeedback} />
+          </Row>
+        ) : null}
+      </Column>
+    );
+  }
+
+  console.log("ListicleBuilder isExistingListicle ", isExistingListicle);
+
+  if (isExistingListicle) {
+    return (
+      <Column className={styles.container}>
+        {error ? <Error /> : null}
+
+        <Column>
+          <SubHeadline text={title} />
+        </Column>
+      </Column>
+    );
+  }
 
   return (
     <Column className={styles.container}>

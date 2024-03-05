@@ -8,27 +8,10 @@ const domain = "https://localhost:5000";
 
 const fetchFromPerplexityAPI = fromPromise<string[], { query: string }>(
   async (props) => {
-    // await getPerplexityResponse(search)
-
-    console.log("FAKE fetchFromPerplexityAPI start props: ", props);
-
-    //await new Promise((resolve) => setTimeout(resolve, 500));
     const { query, system, self } = props;
-    //const { search } = input; // search or command or query
     const response = await getPerplexityResponse(query);
-    /*
-      if (search === "get dragons") {
-        //emit({ type: "GET_DRAGONS", data: { search } });
-        self._parent.send({ type: "GET_DRAGONS", data: { search } });
-        return console.log("get dragons called after 500 ms!");
-      }
-  
-      self._parent.send({ type: "PREPLEXITY_COMPLETE", response });*/
 
-    //raise({ type: "SET_PREPLEXITY_RESPONSE", response });
-    //self._parent.send({ type: "SET_PREPLEXITY_RESPONSE", response });
-
-    return { response }; //console.log("FAKE fetchFromPerplexityAPI response: ", response);
+    return { response }; 
   }
 );
 
