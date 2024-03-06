@@ -110,7 +110,11 @@ const ListicleBuilder = () => {
       data: isExistingListicle,
     });
 
-    if (isExistingListicle) {
+    const hasEitherAnonOrUserAccountId =
+      state.context.anonUserAccountId !== null ||
+      state.context.userAccountId !== null;
+    const hasTitle = state.context.title !== null && state.context.title !== "";
+    if (isExistingListicle && hasEitherAnonOrUserAccountId && hasTitle) {
       send({
         type: "LOAD_LISTICLE",
       });

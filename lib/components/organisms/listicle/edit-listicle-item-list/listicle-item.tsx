@@ -1,8 +1,9 @@
 import React from "react";
 import { Row, Radio, Paragraph, Column } from "../../../";
 import styles from "./listicle-item.module.css";
+import { ListicleItemType } from "./types";
 
-const ListicleItem = ({ data }) => {
+const ListicleItem = ({ data }: ListicleItemType) => {
   const { id, value, category = "design" } = data;
 
   return (
