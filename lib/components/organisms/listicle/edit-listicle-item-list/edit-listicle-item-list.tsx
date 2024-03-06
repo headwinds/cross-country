@@ -14,7 +14,7 @@ import {
 } from "../../../";
 import ListicleItemInput from "./listicle-item-input";
 import { PlusSquare } from "@phosphor-icons/react";
-import { createEditListicleItemListMachine } from "./edit-listicle-item-list-machine";
+import { editListicleItemListMachine } from "./edit-listicle-item-list-machine";
 import { useMachine } from "@xstate/react";
 
 type EditListicleItemListProps = {
@@ -25,7 +25,8 @@ type EditListicleItemListProps = {
       category: string;
       status: string;
     }>;
-    answer: string;
+    answer: string; // do I need this?!
+    title: string;
   };
   onChange: any;
   isListicleItemListDisabled?: boolean;
@@ -38,20 +39,27 @@ const EditListicleItemList = ({
 }: EditListicleItemListProps) => {
   const { listicleItems, answer } = data;
   console.log("EditListicleItemList data: ", data);
-
+  /*
   const editListicleItemListMachine = useMemo(
     () =>
       createEditListicleItemListMachine({
-        listicleItems,
+        listicleItems: data?.listicleItems ?? [],
       }),
-    [listicleItems]
-  );
+    [data]
+  );*/
 
-  const [state, send] = useMachine(editListicleItemListMachine, {
-    context: { listicleItems },
-  });
+  const [state, send] = useMachine(editListicleItemListMachine);
 
   console.log("EditListicleItemList data state.context: ", state.context);
+
+  const dataUpdate = useMemo(() => {
+    console.log("EditListicleItemList dataUpdate: ", data?.listicleItems);
+    // need a better way to update the listicle items after first render!
+    setTimeout(() => {
+      send({ type: "UPDATE_LISTICLE_ITEMS", data: data?.listicleItems ?? [] });
+    }, 0);
+    // 0 timeout does ensure it runs last
+  }, [data]);
 
   const addListicleItem = () => {
     send({

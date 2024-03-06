@@ -63,8 +63,12 @@ const ListicleBuilder = () => {
     });
   };
 
-  // TODO: replace with actual data
-  const data = { options: [], answer: "hello world" };
+
+  const data = {
+    title: state.context.title,
+    listicleItems: state.context.listicleItems,
+  };
+
   const onChange = (changeEvent) => {
     console.log("EditOptionListStory changed event: ", changeEvent);
     const { event, data } = changeEvent;
@@ -113,8 +117,8 @@ const ListicleBuilder = () => {
     const hasEitherAnonOrUserAccountId =
       state.context.anonUserAccountId !== null ||
       state.context.userAccountId !== null;
-    const hasTitle = state.context.title !== null && state.context.title !== "";
-    if (isExistingListicle && hasEitherAnonOrUserAccountId && hasTitle) {
+
+    if (isExistingListicle && hasEitherAnonOrUserAccountId) {
       send({
         type: "LOAD_LISTICLE",
       });
@@ -181,7 +185,7 @@ const ListicleBuilder = () => {
   }
 
   console.log("ListicleBuilder isExistingListicle ", isExistingListicle);
-
+  // existing listicle
   if (isExistingListicle) {
     return (
       <Column className={styles.container}>
@@ -190,10 +194,23 @@ const ListicleBuilder = () => {
         <Column>
           <SubHeadline text={title} />
         </Column>
+
+        <EditListicleItemList data={data} onChange={onChange} />
+        <Button isDisabled={isDisabled} onClick={saveListicleItem}>
+          Save
+        </Button>
+
+        <HorizontalLine />
+        <Column>
+          <SubHeadline text="Preview" />
+          <Listicle data={data} />
+        </Column>
+
+        <HeadwindsLogo />
       </Column>
     );
   }
-
+  // new listicle
   return (
     <Column className={styles.container}>
       {error ? <Error /> : null}
@@ -223,7 +240,7 @@ const ListicleBuilder = () => {
       <HorizontalLine />
       <Column>
         <SubHeadline text="Preview" />
-        <Listicle />
+        <Listicle data={data} />
       </Column>
 
       <HeadwindsLogo />

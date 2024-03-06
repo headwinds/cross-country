@@ -275,7 +275,10 @@ export const buildListicleMachine = createMachine({
         onError: {
           //target: 'failure',
           actions: assign({
-            error: ({ context, event }) => "somethng went wrong",
+            error: ({ context, event }) => {
+              // "somethng went wrong"
+              console.log("Machine getting_dragons onError", event);
+            },
           }),
         },
       },
@@ -367,7 +370,13 @@ export const buildListicleMachine = createMachine({
               return event.output.title;
             },
             listicleItems: ({ context, event }) => {
-              return event.output?.listicle_items ?? [];
+              // ensure ids are strings
+              const listicleItems = event.output?.listicle_items ?? [];
+              const listicleItemsWithStringIds = listicleItems.map((item) => ({
+                ...item,
+                id: item.id.toString(),
+              }));
+              return listicleItemsWithStringIds;
             },
           }),
         },
@@ -375,9 +384,9 @@ export const buildListicleMachine = createMachine({
           target: "LOADING_LISTICLE_ERROR",
           actions: assign({
             error: ({ context, event }) => {
-              console.log("Machine posting onError", event);
+              console.log("Machine LOADING_LISTICLE_ERROR onError", event);
               //const {context, event } = event;
-              return "Something went wrong";
+              return event?.message ?? "Something went wrong";
             },
           }),
         },
