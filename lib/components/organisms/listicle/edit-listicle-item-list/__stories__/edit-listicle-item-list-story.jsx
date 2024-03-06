@@ -5,38 +5,56 @@
 import * as React from "react";
 import { useState, useMemo } from "react";
 import EditListicleItemList from "../edit-listicle-item-list";
-//import { Form, Row, Paragraph, TextInput, RadioGroup } from "../../../../../";
+import {
+  Form,
+  Row,
+  Column,
+  SubHeadline,
+  Paragraph,
+  TextInput,
+  RadioGroup,
+} from "../../../../../";
+
+/*
+{
+  anon_user_account_id: "304cc1c5-e76f-4023-af36-479df7fe8b8f";
+  category: "programming";
+  created_at: "Thu, 29 Feb 2024 13:30:15 GMT";
+  description: "";
+  id: 1;
+  title: "asdf";
+  updated_at: null;
+  url: "asdfasd";
+  user_account_id: null;
+}
+*/
+
 
 const editListicleItems = [
   {
     id: "1",
     url: "https://www.google.com",
     category: "search",
-    status: "draft",
   },
   {
     id: "2",
     url: "https://www.yahoo.com",
     category: "search",
-    status: "draft",
   },
   {
     id: "3",
     url: "https://www.bing.com",
     category: "search",
-    status: "draft",
   },
   {
     id: "4",
     url: "https://www.duckduckgo.com",
     category: "search",
-    status: "draft",
   },
   {
     id: "5",
     url: "https://www.ask.com",
     category: "search",
-    status: "draft",
   },
 ];
 
@@ -52,15 +70,23 @@ const EditListicleItemListStory = ({ isEditStory = false }) => {
   if (isEditStory) {
     const data = { listicleItems: editListicleItems, answer: null };
 
-    return <EditListicleItemList data={data} onChange={onChange} />;
+    return (
+      <Column>
+        <SubHeadline>Edit Listicle</SubHeadline>
+        <EditListicleItemList data={data} onChange={onChange} />
+      </Column>
+    );
   }
 
   // there are no items to edit
   return (
-    <EditListicleItemList
-      data={{ listicleItems: null, answer: null }}
-      onChange={onChange}
-    />
+    <Column>
+      <SubHeadline>Create Listicle</SubHeadline>
+      <EditListicleItemList
+        data={{ listicleItems: [], answer: null }}
+        onChange={onChange}
+      />
+    </Column>
   );
 };
 

@@ -11,7 +11,19 @@ import {
 } from "../../../";
 
 const ListicleStory = () => {
-  return <Listicle />;
+  const data = {
+    listicleItems: [
+      {
+        url: "https://github.com/headwinds/cross-country",
+        title: "cross country",
+        category: "programming",
+        description: "Cross Country design system",
+      },
+    ],
+    title: "March 2024",
+  };
+
+  return <Listicle data={data} />;
 };
 
 export default ListicleStory;

@@ -54,13 +54,46 @@ const ListicleItem = ({ url }: ListicleItem) => {
   );
 };
 
-const Listicle = ({ url }: { url?: string }) => {
-  const { data, error, isLoading } = useListicle();
+type ListicleProps = {
+  data: {
+    title: string;
+    listicleItems: ListicleItem[];
+  };
+};
 
-  const cachedData = useMemo(() => {
-    console.log("listicle data: ", data);
-  }, [data]);
+const ListicleItemList = ({
+  listicleItems,
+}: {
+  listicleItems: ListicleItem[];
+}) => {
+  return (
+    <List>
+      {listicleItems.map((listicleItem, index) => {
+        return (
+          <ListicleItem
+            key={index}
+            url={listicleItem.url}
+            title={listicleItem.title}
+            category={listicleItem.category}
+            description={listicleItem.description}
+          />
+        );
+      })}
+    </List>
+  );
+};
 
+const Listicle = ({ data }: ListicleProps) => {
+  // MVP test where I load the listicle from a file
+  // const { data, error, isLoading } = useListicle();
+  console.log("Listicle data: ", data);
+  if (!data.listicleItems) {
+    return console.error("Listicle data.listicleItems is not defined");
+  }
+  const { listicleItems, title } = data;
+
+  /*
+  create listicle machine here!
   if (isLoading) {
     return <Loading />;
   }
@@ -71,11 +104,12 @@ const Listicle = ({ url }: { url?: string }) => {
 
   if (error) {
     return <Error />;
-  }
+  }*/
+  const error = false;
 
   // loop through catogories
-
-  const listicle = Object.entries(data).map((arr, index) => {
+  /*
+  const listicle = Object.entries(listicleItems).map((arr, index) => {
     const category = arr[0];
     const urlModels = arr[1];
 
@@ -95,13 +129,14 @@ const Listicle = ({ url }: { url?: string }) => {
         {list}
       </Column>
     );
-  });
+  });*/
 
   return (
     <Column>
       <User isAnon={true} />
       <Column className={styles.container}>
-        {error ? <Error /> : listicle}
+        <SubHeadline>{title}</SubHeadline>
+        <ListicleItemList listicleItems={listicleItems} />
       </Column>
     </Column>
   );

@@ -23,64 +23,63 @@ const createNewListicleItem = () => {
 };
 
 // Build Form State machine
-export const createEditListicleItemListMachine = ({ listicleItems = [] }) =>
-  createMachine({
-    id: "listicleItemList",
-    initial: "idle",
-    context: {
-      listicleItems,
-    },
-    states: {
-      idle: {
-        on: {
-          ADD_LISTICLE_ITEM: {
-            actions: assign({
-              listicleItems: ({ context: { listicleItems } }) => {
-                console.log("Machine ADD_OPTION");
-                const option = createNewListicleItem();
-                return [...listicleItems, option];
-              },
-            }),
-          },
-          UPDATE_LISTICLE_ITEM: {
-            actions: assign({
-              listicleItems: ({ context: { listicleItems }, event }) => {
-                console.log("UPDATE_LISTICLE_ITEM event: ", event);
-                const { id, value, category } = event.data;
-                return listicleItems.map((option) => {
-                  if (option.id === id) {
-                    return { id, value, category };
-                  }
-                  return option;
-                });
-              },
-            }),
-          },
-          UPDATE_LISTICLE_ITEMS: {
-            actions: assign({
-              listicleItems: ({ context: { listicleItems }, event }) => {
-                console.log("Machine UPDATE_LISTICLE_ITEMS");
-                console.log("UPDATE_LISTICLE_ITEMS event: ", event);
-                const updatedListicleItems = event?.listicleItems ?? [];
-                if (updatedListicleItems.length === 0) {
-                  return listicleItems;
+export const editListicleItemListMachine = createMachine({
+  id: "listicleItemList",
+  initial: "idle",
+  context: {
+    listicleItems: [],
+  },
+  states: {
+    idle: {
+      on: {
+        ADD_LISTICLE_ITEM: {
+          actions: assign({
+            listicleItems: ({ context: { listicleItems } }) => {
+              console.log("Machine ADD_OPTION");
+              const option = createNewListicleItem();
+              return [...listicleItems, option];
+            },
+          }),
+        },
+        UPDATE_LISTICLE_ITEM: {
+          actions: assign({
+            listicleItems: ({ context: { listicleItems }, event }) => {
+              console.log("UPDATE_LISTICLE_ITEM event: ", event);
+              const { id, value, category } = event.data;
+              return listicleItems.map((option) => {
+                if (option.id === id) {
+                  return { id, value, category };
                 }
-                return [...updatedListicleItems];
-              },
-            }),
-          },
-          REMOVE_LISTICLE_ITEM: {
-            actions: assign({
-              listicleItems: ({ context: { listicleItems }, event }) => {
-                console.log("REMOVE_LISTICLE_ITEM event: ", event);
-                const filteredOptions = listicleItems.filter(
-                  (option) => option.id !== event.id
-                );
-                return filteredOptions;
-              },
-            }),
-          },
+                return option;
+              });
+            },
+          }),
+        },
+        UPDATE_LISTICLE_ITEMS: {
+          actions: assign({
+            listicleItems: ({ context: { listicleItems }, event }) => {
+              console.log("Machine UPDATE_LISTICLE_ITEMS");
+              console.log("UPDATE_LISTICLE_ITEMS event: ", event);
+              const updatedListicleItems = event?.data ?? [];
+              if (updatedListicleItems.length === 0) {
+                return listicleItems;
+              }
+              return [...updatedListicleItems];
+            },
+          }),
+        },
+        REMOVE_LISTICLE_ITEM: {
+          actions: assign({
+            listicleItems: ({ context: { listicleItems }, event }) => {
+              console.log("REMOVE_LISTICLE_ITEM event: ", event);
+              const filteredOptions = listicleItems.filter(
+                (option) => option.id !== event.id
+              );
+              return filteredOptions;
+            },
+          }),
         },
       },
     },
-  });
+  },
+});
