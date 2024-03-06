@@ -6,6 +6,7 @@ import {
   SubHeadline,
   TextArea,
   Paragraph,
+  Select,
 } from "../../../";
 import { Trash, CheckSquare, PencilSimple } from "@phosphor-icons/react";
 import ListicleItem from "./listicle-item";
@@ -17,6 +18,15 @@ const selectStyle = {
   fontFamily: "Helvetica",
 };
 
+type ListicleItemInputProps = {
+  id: number;
+  updateListicleItem: any;
+  value: string;
+  category: string;
+  removeListicleItem: any;
+  answer?: string;
+};
+
 const ListicleItemInput = ({
   id = 0,
   updateListicleItem,
@@ -26,12 +36,12 @@ const ListicleItemInput = ({
   answer,
 }) => {
   const [option, setListicleItem] = useState(value);
-  const [selectedCategorgy, setSelectedCategory] = useState(category);
+  const [selectedCategory, setSelectedCategory] = useState(category);
   const [isEdit, toggleIsEdit] = useState(false);
 
   const saveListicleItem = () => {
     toggleIsEdit(true);
-    updateListicleItem(id, option, selectedCategorgy);
+    updateListicleItem(id, option, selectedCategory);
   };
 
   const editListicleItem = () => {
@@ -43,7 +53,7 @@ const ListicleItemInput = ({
       <Column customStyle={{ padding: 0, margin: 0 }}>
         <Row>
           <ListicleItem
-            data={{ value: option, id, category: selectedCategorgy }}
+            data={{ value: option, id, category: selectedCategory }}
           />
           <Button
             onClick={() => removeListicleItem(id)}
@@ -77,17 +87,18 @@ const ListicleItemInput = ({
     }
   };
 
-  const onSelectChange = (event) => {
-    const selectedCategory = event.target.value;
-    setSelectedCategory(selectedCategory);
+  const onSelectChange = (newSelectedCategory) => {
+    setSelectedCategory(newSelectedCategory);
   };
 
   const isSaveDisabled =
     option === "" ||
     option === null ||
-    selectedCategorgy === "" ||
-    selectedCategorgy === "select" ||
-    selectedCategorgy === null;
+    selectedCategory === "" ||
+    selectedCategory === "select" ||
+    selectedCategory === null;
+
+  const options = ["design", "programming", "gaming", "search"];
 
   return (
     <Column customStyle={{ padding: 0, margin: 0 }}>
@@ -99,16 +110,12 @@ const ListicleItemInput = ({
           rows={1}
           placeholder="Enter your link"
         />
-        <select
+        <Select
+          options={options}
+          value={selectedCategory}
           onChange={onSelectChange}
-          style={selectStyle}
-          value={selectedCategorgy}
-        >
-          <option value="select">select...</option>
-          <option value="design">design</option>
-          <option value="programming">programming</option>
-          <option value="gaming">gaming</option>
-        </select>
+        />
+
         <Button
           onClick={() => removeListicleItem(id)}
           customStyle={{ width: 50 }}
