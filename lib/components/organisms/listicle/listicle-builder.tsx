@@ -24,7 +24,7 @@ import {
 import EditListicleItemList from "./edit-listicle-item-list";
 // state machine
 import { useMachine } from "@xstate/react";
-import { buildListicleMachine } from "./build-listicle-machine";
+import buildListicleMachine from "./build-listicle-machine";
 
 const ListicleBuilder = () => {
   const [state, send] = useMachine(buildListicleMachine);
@@ -39,8 +39,18 @@ const ListicleBuilder = () => {
   } = state.context;
 
   useEffect(() => {
-    console.log("ListicleBuilder useEffect state.context: ", state.context);
-  }, [state.context]);
+    console.log("ListicleBuilder useEffect state: ", state);
+  }, [state]);
+
+  useEffect(() => {
+    const savedTitle = localStorage.getItem("lastSavedListicleTitle");
+    if (savedTitle && savedTitle !== "" && savedTitle !== "undefined") {
+      send({
+        type: "ENTERING_TITLE",
+        data: { enteringTitle: savedTitle },
+      });
+    }
+  }, []);
 
   const titleData = {
     id: 0,
@@ -63,16 +73,53 @@ const ListicleBuilder = () => {
     });
   };
 
-
   const data = {
     title: state.context.title,
     listicleItems: state.context.listicleItems,
   };
 
   const onChange = (changeEvent) => {
-    console.log("EditOptionListStory changed event: ", changeEvent);
+    console.log("ListicleBuilder changed event: ", changeEvent);
+    console.log(
+      "ListicleBuilder changed state.context.listicleItems: ",
+      state.context.listicleItems
+    );
     const { event, data } = changeEvent;
-    send({ type: event, data });
+
+    if (event === "LISTICLE_ITEM_CHANGE") {
+      const existingListicleItem = state.context.listicleItems.find(
+        (item) => item.id === data.id
+      );
+      console.log("ListicleBuilder existingListicleItem ", {
+        existingListicleItem,
+        data,
+      });
+
+      if (
+        existingListicleItem?.created_at &&
+        new Date(existingListicleItem?.created_a)
+      ) {
+        console.log("ListicleBuilder UPDATE_LISTICLE_ITEM");
+        send({
+          type: "UPDATE_LISTICLE_ITEM",
+          data: { ...data, status: "update" },
+        });
+      } else {
+        // make sure we add it first because only the sub machine has the right item and then save it!
+        /*
+        send({
+          type: "ADD_LISTICLE_ITEM",
+          data,
+        });*/
+
+        send({
+          type: "SAVE_LISTICLE_ITEM",
+          data,
+        });
+      }
+    } else {
+      send({ type: event, data });
+    }
   };
 
   const isDisabled =
@@ -120,6 +167,9 @@ const ListicleBuilder = () => {
 
     if (isExistingListicle && hasEitherAnonOrUserAccountId) {
       send({
+        type: "SET_LAST_SAVED_LISTICLE_TITLE",
+      });
+      send({
         type: "LOAD_LISTICLE",
       });
     }
@@ -151,6 +201,7 @@ const ListicleBuilder = () => {
               onTextChange={onEnteringTitleChange}
               placeholder="Enter the existing listicle name"
               customStyle={{ flex: 1 }}
+              defaultValue={enteringTitle}
             />
             <Button
               onClick={() => onDecideLoadOrCreate(true)}
@@ -196,9 +247,13 @@ const ListicleBuilder = () => {
         </Column>
 
         <EditListicleItemList data={data} onChange={onChange} />
+        {/*
         <Button isDisabled={isDisabled} onClick={saveListicleItem}>
           Save
-        </Button>
+    </Button>*/}
+        <Paragraph>
+          Need to make it more clear save happens automatically
+        </Paragraph>
 
         <HorizontalLine />
         <Column>

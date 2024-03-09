@@ -21,27 +21,28 @@ const selectStyle = {
 type ListicleItemInputProps = {
   id: number;
   updateListicleItem: any;
-  value: string;
+  url: string;
   category: string;
   removeListicleItem: any;
-  answer?: string;
 };
 
 const ListicleItemInput = ({
   id = 0,
   updateListicleItem,
-  value = "",
+  url = "",
   category = "design",
+  status = "unknown",
   removeListicleItem = null,
-  answer,
-}) => {
-  const [option, setListicleItem] = useState(value);
+}: ListicleItemInputProps) => {
+  const [displayUrl, setDisplayUrl] = useState(url);
   const [selectedCategory, setSelectedCategory] = useState(category);
   const [isEdit, toggleIsEdit] = useState(false);
 
+  console.log("ListicleItemInput url: ", url);
+
   const saveListicleItem = () => {
     toggleIsEdit(true);
-    updateListicleItem(id, option, selectedCategory);
+    updateListicleItem(id, displayUrl, selectedCategory, status);
   };
 
   const editListicleItem = () => {
@@ -53,7 +54,7 @@ const ListicleItemInput = ({
       <Column customStyle={{ padding: 0, margin: 0 }}>
         <Row>
           <ListicleItem
-            data={{ value: option, id, category: selectedCategory }}
+            data={{ url: displayUrl, id, category: selectedCategory }}
           />
           <Button
             onClick={() => removeListicleItem(id)}
@@ -72,28 +73,21 @@ const ListicleItemInput = ({
     );
   }
 
-  if (answer && answer === option) {
-    const data = { id, value: answer };
-    return (
-      <Column customStyle={{ padding: 0, margin: 0 }}>
-        <ListicleItem data={data} />
-      </Column>
-    );
-  }
-
-  const checkTextAgainstAnswer = (text) => {
-    if (text !== answer) {
-      setListicleItem(text);
-    }
+  const onTextChange = (text) => {
+    setDisplayUrl(text);
   };
 
   const onSelectChange = (newSelectedCategory) => {
     setSelectedCategory(newSelectedCategory);
   };
 
+  // did the url or category change?
+  const isChange = displayUrl !== url || selectedCategory !== category;
+
   const isSaveDisabled =
-    option === "" ||
-    option === null ||
+    displayUrl === "" ||
+    displayUrl === null ||
+    !isChange || // no change
     selectedCategory === "" ||
     selectedCategory === "select" ||
     selectedCategory === null;
@@ -104,8 +98,8 @@ const ListicleItemInput = ({
     <Column customStyle={{ padding: 0, margin: 0 }}>
       <Row>
         <TextArea
-          value={option}
-          onTextChange={checkTextAgainstAnswer}
+          value={displayUrl}
+          onTextChange={onTextChange}
           customStyle={{ width: "60%" }}
           rows={1}
           placeholder="Enter your link"
