@@ -1,5 +1,6 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
 import TextInputStory from './text-input-story';
+import TextInputDefaultValueStory from './text-input-default-value-story';
 import StateMachineTextInputStory from './state-machine-text-input-story';
 
 <Meta title="design system/atoms/text/text input" />
@@ -24,7 +25,10 @@ The user will input text for a route that will be used to fetch data from an API
   <Story name="standard">
     <TextInputStory />
   </Story>
-    <Story name="state machine">
+  <Story name="standard with default value">
+    <TextInputDefaultValueStory />
+  </Story>
+  <Story name="state machine">
     <StateMachineTextInputStory />
   </Story>
 </Canvas>

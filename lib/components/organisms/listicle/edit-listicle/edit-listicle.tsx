@@ -26,12 +26,11 @@ import {
 import ListicleItemInput from "./listicle-item-input";
 import { PlusSquare } from "@phosphor-icons/react";
 import { editListicleItemListMachine } from "./edit-listicle-item-list-machine";
+import EditListicleItemList from "../edit-listicle-item-list";
 import { useMachine } from "@xstate/react";
 
 const EditListicle = ({ data, onChange }) => {
   const onTitleChange = (changeEvent) => {};
-
-  const { listicleItems } = data;
 
   const onListicleItemChange = (changeEvent) => {};
 
@@ -49,10 +48,7 @@ const EditListicle = ({ data, onChange }) => {
       </Column>
       <EditTitleInput onChange={onTitleChange} />
 
-      <EditListicleItemList
-        data={listicleItems}
-        onChange={onListicleItemChange}
-      />
+      <EditListicleItemList data={data} onChange={onListicleItemChange} />
       {/*<Button isDisabled={isDisabled} onClick={saveListicleItem}>
         Save
       </Button>*/}

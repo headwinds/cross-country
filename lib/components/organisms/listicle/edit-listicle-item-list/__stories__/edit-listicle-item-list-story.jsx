@@ -1,9 +1,5 @@
-// TODO: explore why I disabled typecheck on this file!
-// @ts-nocheck
-// npm run build
-
 import * as React from "react";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import EditListicleItemList from "../edit-listicle-item-list";
 import {
   Form,
@@ -14,6 +10,8 @@ import {
   TextInput,
   RadioGroup,
 } from "../../../../../";
+import { useMachine } from "@xstate/react";
+import buildListicleMachine from "../../build-listicle-machine";
 
 /*
 {
@@ -28,7 +26,6 @@ import {
   user_account_id: null;
 }
 */
-
 
 const editListicleItems = [
   {
@@ -59,21 +56,30 @@ const editListicleItems = [
 ];
 
 const EditListicleItemListStory = ({ isEditStory = false }) => {
-  const defaultData = isEditStory ? editListicleItems : [];
-  const [data, setData] = useState(defaultData);
+  const [state, send] = useMachine(buildListicleMachine);
+  const data = { listicleItems: state.context.listicleItems };
 
-  const onChange = (data) => {
-    console.log("EditListicleItemListStory changed data: ", data);
-  };
+  useEffect(() => {
+    if (isEditStory) {
+      // simulate load of listicle
+      send({
+        type: "UPDATE_LISTICLE_ITEMS",
+        data: editListicleItems,
+      });
+    }
+  }, []);
 
   // edit a list of items
   if (isEditStory) {
-    const data = { listicleItems: editListicleItems, answer: null };
+    console.log(
+      "EditListicleItemListStory render state.context: ",
+      state.context
+    );
 
     return (
       <Column>
         <SubHeadline>Edit Listicle</SubHeadline>
-        <EditListicleItemList data={data} onChange={onChange} />
+        <EditListicleItemList data={data} send={send} />
       </Column>
     );
   }
@@ -82,10 +88,7 @@ const EditListicleItemListStory = ({ isEditStory = false }) => {
   return (
     <Column>
       <SubHeadline>Create Listicle</SubHeadline>
-      <EditListicleItemList
-        data={{ listicleItems: [], answer: null }}
-        onChange={onChange}
-      />
+      <EditListicleItemList data={data} send={send} />
     </Column>
   );
 };

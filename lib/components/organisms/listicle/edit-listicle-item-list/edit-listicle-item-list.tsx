@@ -25,41 +25,17 @@ type EditListicleItemListProps = {
       category: string;
       status: string;
     }>;
-    answer: string; // do I need this?!
     title: string;
   };
-  onChange: any;
   isListicleItemListDisabled?: boolean;
 };
 
 const EditListicleItemList = ({
   data,
-  onChange,
   isListicleItemListDisabled = false,
+  send,
 }: EditListicleItemListProps) => {
-  const { listicleItems, answer } = data;
-  console.log("EditListicleItemList data: ", data);
-  /*
-  const editListicleItemListMachine = useMemo(
-    () =>
-      createEditListicleItemListMachine({
-        listicleItems: data?.listicleItems ?? [],
-      }),
-    [data]
-  );*/
-
-  const [state, send] = useMachine(editListicleItemListMachine);
-
-  console.log("EditListicleItemList data state.context: ", state.context);
-
-  const dataUpdate = useMemo(() => {
-    console.log("EditListicleItemList dataUpdate: ", data?.listicleItems);
-    // need a better way to update the listicle items after first render!
-    setTimeout(() => {
-      send({ type: "UPDATE_LISTICLE_ITEMS", data: data?.listicleItems ?? [] });
-    }, 0);
-    // 0 timeout does ensure it runs last
-  }, [data]);
+  const { listicleItems } = data;
 
   const addListicleItem = () => {
     send({
@@ -74,15 +50,15 @@ const EditListicleItemList = ({
       id,
     });
   };
-  // saved vs unsaved
-  const updateListicleItem = (id, url, category) => {
-    const updatedListicleItem = { id, url, category, status: "unsaved" };
+
+  const updateListicleItem = (id, url, category, status) => {
+    const updatedListicleItem = { id, url, category, status };
+
     send({
       type: "UPDATE_LISTICLE_ITEM",
       data: updatedListicleItem,
     });
-    // broadcast to parent that the listicle item has been created and filled out
-    onChange({ event: "ADD_LISTICLE_ITEM", data: updatedListicleItem });
+
   };
 
   return (
@@ -94,16 +70,16 @@ const EditListicleItemList = ({
       }}
     >
       <Paragraph>Links</Paragraph>
-      {state.context.listicleItems.map((option, index) => (
+      {listicleItems.map((option, index) => (
         <ListicleItemInput
           id={option.id}
           key={option.id}
-          value={option.url}
+          url={option.url}
           category={option.category}
+          status={option.status}
           removeListicleItem={removeListicleItem}
           updateListicleItem={updateListicleItem}
           customStyle={{ width: "100%" }}
-          answer={answer}
         />
       ))}
       <Row>

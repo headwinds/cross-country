@@ -1,5 +1,9 @@
 export type ListicleItemType = {
-  option: string;
-  id: string | number;
-  category: string;
+  url: string;
+  title?: string;
+  category?: string;
+  description?: string;
+  created_at?: Date;
+  updated_at?: Date;
+  status: "unsaved" | "update" | "saved";
 };
