@@ -28,26 +28,54 @@ type ListicleItemInputProps = {
 
 const ListicleItemInput = ({
   id = 0,
-  updateListicleItem,
   url = "",
   category = "design",
   status = "unknown",
   removeListicleItem = null,
+  onChange,
 }: ListicleItemInputProps) => {
   const [displayUrl, setDisplayUrl] = useState(url);
   const [selectedCategory, setSelectedCategory] = useState(category);
-  const [isEdit, toggleIsEdit] = useState(false);
+
+  const [isEdit, toggleIsEdit] = useState(status === "unsaved" ? false : true);
 
   console.log("ListicleItemInput url: ", url);
 
   const saveListicleItem = () => {
     toggleIsEdit(true);
-    updateListicleItem(id, displayUrl, selectedCategory, status);
+    const changedListicleItem = {
+      id,
+      url: displayUrl,
+      category: selectedCategory,
+      status,
+    };
+    onChange(changedListicleItem);
   };
 
   const editListicleItem = () => {
     toggleIsEdit(false);
   };
+
+  const onTextChange = (text) => {
+    setDisplayUrl(text);
+  };
+
+  const onSelectChange = (newSelectedCategory) => {
+    setSelectedCategory(newSelectedCategory);
+  };
+
+  // did the url or category change?
+  const isChange = displayUrl !== url || selectedCategory !== category;
+
+  const isSaveDisabled =
+    displayUrl === "" ||
+    displayUrl === null ||
+    !isChange || // no change
+    selectedCategory === "" ||
+    selectedCategory === "select" ||
+    selectedCategory === null;
+
+  const options = ["design", "programming", "gaming", "search"];
 
   if (isEdit) {
     return (
@@ -73,34 +101,13 @@ const ListicleItemInput = ({
     );
   }
 
-  const onTextChange = (text) => {
-    setDisplayUrl(text);
-  };
-
-  const onSelectChange = (newSelectedCategory) => {
-    setSelectedCategory(newSelectedCategory);
-  };
-
-  // did the url or category change?
-  const isChange = displayUrl !== url || selectedCategory !== category;
-
-  const isSaveDisabled =
-    displayUrl === "" ||
-    displayUrl === null ||
-    !isChange || // no change
-    selectedCategory === "" ||
-    selectedCategory === "select" ||
-    selectedCategory === null;
-
-  const options = ["design", "programming", "gaming", "search"];
-
   return (
     <Column customStyle={{ padding: 0, margin: 0 }}>
       <Row>
         <TextArea
           value={displayUrl}
           onTextChange={onTextChange}
-          customStyle={{ width: "60%" }}
+          customStyle={{ minWidth: 400 }}
           rows={1}
           placeholder="Enter your link"
         />
@@ -109,7 +116,6 @@ const ListicleItemInput = ({
           value={selectedCategory}
           onChange={onSelectChange}
         />
-
         <Button
           onClick={() => removeListicleItem(id)}
           customStyle={{ width: 50 }}

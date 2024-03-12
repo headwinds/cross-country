@@ -1,29 +1,44 @@
 import { assign, fromPromise } from "xstate";
 import { getUserOrAnonUserRoute } from "./util";
 
-type UpdateListicleInputType = {
+export type ListicleInputType = {
   user_account_id: string;
   anon_user_account_id: string;
   title: string;
-  updateListicleItem: ListicleItem;
+  url: string;
+  category: string;
+  description: string;
 };
 
 // PUT /api/listicle
 // update the saved listicle item
-const updateListicleItem = fromPromise<string[], UpdateListicleInputType>(
+const updateListicleItem = fromPromise<string[], ListicleInputType>(
   async ({ input }) => {
-    console.log("Invoked updateListicleItem input", input);
-    const { updateListicleItem } = input;
-    console.log("Invoked updateListicleItem", updateListicleItem);
+    const {
+      user_account_id,
+      anon_user_account_id,
+      title,
+      url,
+      category,
+      description,
+    } = input;
 
+    const body = {
+      user_account_id,
+      anon_user_account_id,
+      title,
+      url,
+      category,
+      description,
+    };
     const fetchUrl = getUserOrAnonUserRoute(input);
 
-    console.log("Invoked updateListicleItem fetchUrl", fetchUrl);
+    console.log("Invoked updateListicleItem body ", body);
 
     const response = await fetch(fetchUrl, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updateListicleItem),
+      body: JSON.stringify(body),
     });
 
     return response.json();
@@ -35,19 +50,36 @@ const UPDATING_LISTICLE_ITEM = {
     id: "updatingListicleItem",
     src: updateListicleItem,
     input: ({ context }) => {
-      console.log("Machine UPDATING_LISTICLE_ITEM");
-
       console.log("Machine UPDATING_LISTICLE_ITEM context", context);
 
-      const updateListicleItem = context.listicleItems.find(
+      // should only be able to update a listicle item that has a status of update and has already been saved!
+
+      const unsavedListicleItem = context.listicleItems.find(
         (item) => item.status === "update"
       );
 
+      const { url, category, description } = unsavedListicleItem;
+
+      const user_account_id = context.userAccountId;
+      const anon_user_account_id = context.anonUserAccountId;
+
+      const hasId = user_account_id || anon_user_account_id;
+
+      if (!hasId) {
+        return console.error("No user or anon account id!");
+      }
+
+      if (!url || !category || url === "" || category === "") {
+        return console.error("No url or category!");
+      }
+
       return {
-        title: context.title,
-        user_account_id: context.userAccountId,
-        anon_user_account_id: context.anonUserAccountId,
-        updateListicleItem,
+        user_account_id: context?.userAccountId ?? null,
+        anon_user_account_id: context?.anonUserAccountId ?? null,
+        title: context?.title ?? null,
+        url,
+        category,
+        description: description ?? "",
       };
     },
     onDone: {

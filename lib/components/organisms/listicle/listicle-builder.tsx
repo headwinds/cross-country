@@ -78,50 +78,6 @@ const ListicleBuilder = () => {
     listicleItems: state.context.listicleItems,
   };
 
-  const onChange = (changeEvent) => {
-    console.log("ListicleBuilder changed event: ", changeEvent);
-    console.log(
-      "ListicleBuilder changed state.context.listicleItems: ",
-      state.context.listicleItems
-    );
-    const { event, data } = changeEvent;
-
-    if (event === "LISTICLE_ITEM_CHANGE") {
-      const existingListicleItem = state.context.listicleItems.find(
-        (item) => item.id === data.id
-      );
-      console.log("ListicleBuilder existingListicleItem ", {
-        existingListicleItem,
-        data,
-      });
-
-      if (
-        existingListicleItem?.created_at &&
-        new Date(existingListicleItem?.created_a)
-      ) {
-        console.log("ListicleBuilder UPDATE_LISTICLE_ITEM");
-        send({
-          type: "UPDATE_LISTICLE_ITEM",
-          data: { ...data, status: "update" },
-        });
-      } else {
-        // make sure we add it first because only the sub machine has the right item and then save it!
-        /*
-        send({
-          type: "ADD_LISTICLE_ITEM",
-          data,
-        });*/
-
-        send({
-          type: "SAVE_LISTICLE_ITEM",
-          data,
-        });
-      }
-    } else {
-      send({ type: event, data });
-    }
-  };
-
   const isDisabled =
     state.context.title === null ||
     state.context.title === "" ||
@@ -191,10 +147,10 @@ const ListicleBuilder = () => {
   // build a new listicle or edit an existing one
   if (isExistingListicle === null) {
     return (
-      <Column className={styles.container}>
+      <Column customClass={styles.container}>
         {error ? <Error /> : null}
         <User isAnon={true} onChange={onUserChange} />
-        <Column customStyle={{ width: 400 }}>
+        <Column customClass={styles.container} customStyle={{ width: 400 }}>
           <SubHeadline text="Load Existing or Create New Listicle" />
           <Row>
             <TextInput
@@ -239,14 +195,14 @@ const ListicleBuilder = () => {
   // existing listicle
   if (isExistingListicle) {
     return (
-      <Column className={styles.container}>
+      <Column customClass={styles.container}>
         {error ? <Error /> : null}
 
-        <Column>
+        <Column customClass={styles.container}>
           <SubHeadline text={title} />
         </Column>
 
-        <EditListicleItemList data={data} onChange={onChange} />
+        <EditListicleItemList data={data} send={send} />
         {/*
         <Button isDisabled={isDisabled} onClick={saveListicleItem}>
           Save
@@ -256,7 +212,7 @@ const ListicleBuilder = () => {
         </Paragraph>
 
         <HorizontalLine />
-        <Column>
+        <Column customClass={styles.container}>
           <SubHeadline text="Preview" />
           <Listicle data={data} />
         </Column>
@@ -267,14 +223,14 @@ const ListicleBuilder = () => {
   }
   // new listicle
   return (
-    <Column className={styles.container}>
+    <Column customClass={styles.container}>
       {error ? <Error /> : null}
 
-      <Column>
+      <Column customClass={styles.container}>
         <SubHeadline text="Build" />
         <User isAnon={true} onChange={onUserChange} />
         {/* STEPS */}
-        <Column>
+        <Column customClass={styles.container}>
           <List isOrdered>
             <ListItem>
               <Row>
@@ -286,14 +242,14 @@ const ListicleBuilder = () => {
         </Column>
         <EditTitleInput onChange={onTitleChange} />
 
-        <EditListicleItemList data={data} onChange={onChange} />
+        <EditListicleItemList data={data} send={send} />
         <Button isDisabled={isDisabled} onClick={saveListicleItem}>
           Save
         </Button>
       </Column>
 
       <HorizontalLine />
-      <Column>
+      <Column customClass={styles.container}>
         <SubHeadline text="Preview" />
         <Listicle data={data} />
       </Column>
