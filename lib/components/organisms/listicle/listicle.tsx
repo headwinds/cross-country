@@ -50,10 +50,14 @@ const Listicle = ({ data }: ListicleProps) => {
   }
   const { listicleItems, title } = data;
 
+  console.log("Listicle listicleItems ", listicleItems);
+
+  // should re-load as it the remote versions that have the created_at defined!
+
   return (
-    <Column>
+    <Column customClass={styles.container}>
       <User isAnon={true} />
-      <Column className={styles.container}>
+      <Column customClass={styles.container}>
         <SubHeadline>{title}</SubHeadline>
         <ListicleItemList listicleItems={listicleItems} />
       </Column>

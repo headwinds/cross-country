@@ -55,26 +55,23 @@ const LOADING_LISTICLE = {
           }
           return null;
         },
-        title: ({ context, event }) => {
-          const title = event.output.listicle_items[0].title;
-          // also set the title to local storage
-          localStorage.setItem("lastSavedListicleTitle", title);
-
-          return title;
-        },
         lastSavedListicleTitle: ({ context, event }) => {
           // also set the title to local storage
           console.log(
             "LOADING_LISTICLE_SUCCESS onDone lastSavedListicleTitle: ",
             event
           );
-          const lastSavedListicleTitle = event.output?.listicle_items[0].title;
-          localStorage.setItem(
-            "lastSavedListicleTitle",
-            lastSavedListicleTitle
-          );
+          if (event.output?.listicle_items?.length > 0) {
+            const lastSavedListicleTitle =
+              event.output?.listicle_items[0].title;
+            localStorage.setItem(
+              "lastSavedListicleTitle",
+              lastSavedListicleTitle
+            );
+            return lastSavedListicleTitle;
+          }
 
-          return lastSavedListicleTitle;
+          return context.title;
         },
         listicleItems: ({ context, event }) => {
           // ensure ids are strings

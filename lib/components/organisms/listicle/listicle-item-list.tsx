@@ -32,13 +32,13 @@ const ListicleItemList = ({
     ([category, listicleItems], index) => {
       const list = listicleItems.map((listicleItem, index) => {
         return (
-          <Column key={index} customStyle={{ margin: 0, padding: 0 }}>
+          <Column key={index} customClass={styles.container}>
             <ListicleItem data={listicleItem} />
           </Column>
         );
       });
       return (
-        <Column key={`${category}`}>
+        <Column key={`${category}`} customClass={styles.container}>
           <SubHeadline size="small">{category}</SubHeadline>
           <List>{list}</List>
         </Column>

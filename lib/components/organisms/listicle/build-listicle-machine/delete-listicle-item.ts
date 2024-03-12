@@ -3,11 +3,11 @@ import { getUserOrAnonUserRoute, domain } from "./util";
 import type { ListicleInputType } from "./update-listicle-item";
 
 // POST /api/listicle
-// save the unsaved listicle item
-const saveListicleItem = fromPromise<string[], ListicleInputType>(
+// delete the undeleted listicle item
+const deleteListicleItem = fromPromise<string[], ListicleInputType>(
   async ({ input }) => {
     const fetchUrl = getUserOrAnonUserRoute(input);
-    console.log("Invoked saveListicleItem", input);
+    console.log("Invoked deleteListicleItem", input);
     const {
       user_account_id,
       anon_user_account_id,
@@ -31,15 +31,17 @@ const saveListicleItem = fromPromise<string[], ListicleInputType>(
     const hasId = user_account_id || anon_user_account_id;
 
     if (!hasId) {
-      return console.error("No user or anon account id!");
+      return console.error("Delete validation - no user or anon account id!");
     }
 
     if (!url || !category || url === "" || category === "") {
-      return console.error("No url or category!");
+      return console.error("Delete validation - no url or category!");
     }
 
+    console.log("deleting listicle item body", body);
+
     const response = await fetch(fetchUrl, {
-      method: "POST",
+      method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
     });
@@ -48,24 +50,28 @@ const saveListicleItem = fromPromise<string[], ListicleInputType>(
   }
 );
 
-const SAVING_LISTICLE_ITEM = {
+const DELETING_LISTICLE_ITEM = {
   invoke: {
-    id: "savingListicleItem",
-    src: saveListicleItem,
+    id: "deletingListicleItem",
+    src: deleteListicleItem,
     input: ({ context }) => {
-      console.log("Machine SAVING_LISTICLE_ITEM context", context);
+      console.log("Machine DELETING_LISTICLE_ITEM context", context);
 
       const totalListicleItems = context.listicleItems.length;
       console.log(
-        "Machine SAVING_LISTICLE_ITEM totalListicleItems",
+        "Machine DELETING_LISTICLE_ITEM totalListicleItems",
         totalListicleItems
       );
 
-      const unsavedListicleItem = context.listicleItems.find(
-        (item) => item.status === "unsaved"
+      const deletedListicleItem = context.listicleItems.find(
+        (item) => item.status === "delete"
       );
 
-      const { url, category, description } = unsavedListicleItem;
+      if (!deletedListicleItem) {
+        return console.error("No deleted listicle item!");
+      }
+
+      const { url, category, description } = deletedListicleItem;
 
       const user_account_id = context.userAccountId;
       const anon_user_account_id = context.anonUserAccountId;
@@ -87,21 +93,32 @@ const SAVING_LISTICLE_ITEM = {
     onDone: {
       target: "idle",
       actions: assign({
-        saveListiceResponse: ({ context, event }) => {
-          console.log("SAVING_LISTICLE_ITEM onDone", event.output);
+        listicleItems: ({ context, event }) => {
+          // remove it
+          console.log("DELETING_LISTICLE_ITEM onDone", event.output);
+          if (event.output.message === "deleted successfully") {
+            const deletedListicleItems = context.listicleItems.filter(
+              (item) => item.status !== "delete"
+            );
+            return deletedListicleItems;
+          }
+          return context.listicleItems;
+        },
+        deleteListiceResponse: ({ context, event }) => {
+          console.log("DELETING_LISTICLE_ITEM onDone", event.output);
           return event.output;
         },
-        saveFeedback: ({ context, event }) => {
+        deleteFeedback: ({ context, event }) => {
           // do I really need this?
           return "success";
         },
       }),
     },
     onError: {
-      target: "SAVING_LISTICLE_ITEM_ERROR",
+      target: "DELETING_LISTICLE_ITEM_ERROR",
       actions: assign({
         error: ({ context, event }) => {
-          console.log("Machine SAVING_LISTICLE_ITEM_ERROR onError", event);
+          console.log("Machine DELETING_LISTICLE_ITEM_ERROR onError", event);
           //const {context, event } = event;
           return event?.message ?? "Something went wrong";
         },
@@ -110,7 +127,7 @@ const SAVING_LISTICLE_ITEM = {
   },
 };
 
-const SAVING_LISTICLE_ITEM_ERROR = {
+const DELETING_LISTICLE_ITEM_ERROR = {
   on: {
     RETRY: "idle",
     SET_ERROR: {
@@ -124,7 +141,7 @@ const SAVING_LISTICLE_ITEM_ERROR = {
   },
 };
 
-export const SAVING_LISTICLE_ITEM_EVENTS = {
-  SAVING_LISTICLE_ITEM,
-  SAVING_LISTICLE_ITEM_ERROR,
+export const DELETING_LISTICLE_ITEM_EVENTS = {
+  DELETING_LISTICLE_ITEM,
+  DELETING_LISTICLE_ITEM_ERROR,
 };

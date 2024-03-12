@@ -46,19 +46,42 @@ const EditListicleItemList = ({
   const removeListicleItem = (id) => {
     console.log("removeListicleItem id: ", id);
     send({
-      type: "REMOVE_LISTICLE_ITEM",
+      type: "DELETE_LISTICLE_ITEM",
       id,
     });
   };
 
-  const updateListicleItem = (id, url, category, status) => {
-    const updatedListicleItem = { id, url, category, status };
+  const saveListicleItem = (saveListicleItem) => {
+    console.log("updateListicleItem id: ", saveListicleItem);
+    const { status } = saveListicleItem;
 
-    send({
-      type: "UPDATE_LISTICLE_ITEM",
-      data: updatedListicleItem,
-    });
+    if (status === "unsaved") {
+      send({
+        type: "SAVE_LISTICLE_ITEM",
+        data: saveListicleItem,
+      });
+    }
+  };
 
+  const updateListicleItem = (updateListicleItem) => {
+    console.log("updateListicleItem id: ", updateListicleItem);
+    const { status } = updateListicleItem;
+
+    if (status === "update") {
+      send({
+        type: "UPDATE_LISTICLE_ITEM",
+        data: updateListicleItem,
+      });
+    }
+  };
+
+  const onChange = (changedListicleItem) => {
+    const { status } = updateListicleItem;
+    if (status === "update") {
+      updateListicleItem(changedListicleItem);
+    } else {
+      saveListicleItem(changedListicleItem);
+    }
   };
 
   return (
@@ -70,15 +93,15 @@ const EditListicleItemList = ({
       }}
     >
       <Paragraph>Links</Paragraph>
-      {listicleItems.map((option, index) => (
+      {listicleItems.map((item, index) => (
         <ListicleItemInput
-          id={option.id}
-          key={option.id}
-          url={option.url}
-          category={option.category}
-          status={option.status}
+          id={item.id}
+          key={item.id}
+          url={item.url}
+          category={item.category}
+          status={item.status}
           removeListicleItem={removeListicleItem}
-          updateListicleItem={updateListicleItem}
+          onChange={onChange}
           customStyle={{ width: "100%" }}
         />
       ))}

@@ -4,7 +4,6 @@ import styles from "./listicle-item.module.css";
 import { ListicleItemType } from "./types";
 
 const ListicleItem = ({ data }: ListicleItemType) => {
-  console.log("ListicleItem data: ", data);
   const { id, url, category = "design" } = data;
 
   return (
