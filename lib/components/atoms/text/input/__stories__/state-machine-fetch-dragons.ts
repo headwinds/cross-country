@@ -42,7 +42,7 @@ export const dragonsMachine = setup({
     message: null,
     error: null,
     status: "idle",
-    query: "",
+    query: "hello",
     response: null,
   },
   states: {

@@ -27,6 +27,7 @@ const TextInput = ({
   isDisabled = false,
   data = null,
   register = null,
+  defaultValue = null,
   ...rest
 }: TextInputProps) => {
   // react-hook-form requires a name and register
@@ -45,6 +46,7 @@ const TextInput = ({
     );
   }
 
+  value;
   return (
     <input
       {...rest}
@@ -57,9 +59,11 @@ const TextInput = ({
         } = event;
         return onTextChange(value);
       }}
-      value={value}
+      // conditionally add value if defaultValue is null
+      {...(!defaultValue && { value })}
       style={customStyle}
       placeholder={placeholder}
+      defaultValue={defaultValue}
     />
   );
 };
