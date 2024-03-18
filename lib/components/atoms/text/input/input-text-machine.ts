@@ -1,6 +1,3 @@
-// TODO: explore why I disabled typecheck on this file!
-// @ts-nocheck
-// npm run build
 import { assign, setup, assertEvent, fromPromise, raise } from "xstate";
 
 const debounceFetch = fromPromise<string[], { search: string }>(

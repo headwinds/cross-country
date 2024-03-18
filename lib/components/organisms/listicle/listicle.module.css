@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  padding: 0;
+  margin: 0;
+}
+
+li.listicle {
+  list-style-type: none;
+}

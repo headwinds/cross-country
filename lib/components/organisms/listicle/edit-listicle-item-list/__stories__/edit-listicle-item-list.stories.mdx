@@ -1,0 +1,17 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
+import EditListicleItemListStory from './edit-listicle-item-list-story';
+
+<Meta title="design system/organisms/listicle/edit listicle item list" />
+
+# Edit Listicle Item List
+
+<Subtitle>Allows a user to edit a list of listicle items</Subtitle>
+
+<Canvas>
+  <Story name="create">
+    <EditListicleItemListStory isEditStory={false}   />
+  </Story>
+    <Story name="edit">
+    <EditListicleItemListStory isEditStory={true}  />
+  </Story>
+</Canvas>
