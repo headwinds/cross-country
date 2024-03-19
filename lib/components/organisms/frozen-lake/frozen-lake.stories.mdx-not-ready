@@ -141,5 +141,10 @@ import FrozenLake from './frozen-lake';
       title: 'Tweet: figures that float above the frozen lakes',
       url: 'https://twitter.com/valdevia_art/status/1512121037328158723?s=11&t=xZ9VIhyH6gxuYLprZWFKpg',
     },
+        {
+      id: 10,
+      title: 'Stardew Valley's 1.6 Update Will Fix Your Marriage',
+      url: 'https://kotaku.com/stardew-valley-16-update-honeymoon-phase-1851340503',
+    },
   ]}
 />

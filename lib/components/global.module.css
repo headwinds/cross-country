@@ -4,4 +4,9 @@
   --spearmint: #98d7c2;
   --template-color: #eee;
   --template-hero-color: var(--mint);
+
+  --primary: #f0f0f0;
+  --secondary: #f0f0f0;
+  --tertiary: #f0f0f0;
+  --accent: #f0f0f0;
 }
