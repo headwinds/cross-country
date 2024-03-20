@@ -57,6 +57,7 @@ export { default as TermsOfUse } from "./molecules/policies/terms-of-use";
 export { default as RadioGroup } from "./molecules/radiogroup/";
 
 // organisms / collecting
+export { default as Bento } from "./organisms/bento";
 export { default as Listicle } from "./organisms/listicle";
 export { default as Login } from "./organisms/login";
 export { default as Branch } from "./organisms/branch/branch";
