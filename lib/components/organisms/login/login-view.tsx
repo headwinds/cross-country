@@ -28,7 +28,7 @@ const LoginView = ({
   hasTitle = true,
   hasRememberMeChecked,
   handleRememberMeClicked,
-  customStyle = { padding: 0 },
+  customStyle = { padding: 0, width: 280 },
 }) => {
   const isAuthenticated = user ? true : false;
   console.log("LoginView: user: ", user);

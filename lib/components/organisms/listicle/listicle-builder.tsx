@@ -26,7 +26,7 @@ import EditListicleItemList from "./edit-listicle-item-list";
 import { useMachine } from "@xstate/react";
 import buildListicleMachine from "./build-listicle-machine";
 
-const ListicleBuilder = () => {
+const ListicleBuilder = ({ apiDomain = "localhost:5000" }) => {
   const [state, send] = useMachine(buildListicleMachine);
 
   const {
@@ -50,6 +50,11 @@ const ListicleBuilder = () => {
         data: { enteringTitle: savedTitle },
       });
     }
+    // configure the domain
+    send({
+      type: "SET_DOMAIN",
+      data: { domain: apiDomain },
+    });
   }, []);
 
   const titleData = {

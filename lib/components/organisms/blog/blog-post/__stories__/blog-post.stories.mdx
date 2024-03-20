@@ -1,0 +1,25 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
+import BlogPostStory from './blog-post-story';
+
+<Meta title="design system/organisms/blog/blog post" />
+
+# Blog Post
+
+As a first time user with no posts, I want to authenticate once, and set a cookie,
+
+Then it will remember me for a while so that I don't have to authenticate every time I want to write a post.
+
+My post should be in draft status until I'm ready to publish it.
+
+When I return, my most recent draft should be loaded.
+
+### Gold Leaf Post
+
+When reviewing the golf leaf cards, at any time, if inspiration strikes, I should be able to make a new post. The `BlogPost` component can be the size of a card, and can be placed anywhere on the page.
+
+
+<Canvas>
+  <Story name="blog post">
+    <BlogPostStory />
+  </Story>
+</Canvas>

@@ -5,8 +5,11 @@
   --template-color: #eee;
   --template-hero-color: var(--mint);
 
-  --primary: #f0f0f0;
-  --secondary: #f0f0f0;
-  --tertiary: #f0f0f0;
-  --accent: #f0f0f0;
+  --primary: #3F725E;
+  --secondary: #F0DFB5;
+  --background: #F3F3F3;
+  --accent: #FA9636;
+
+  --font: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+  'Segoe UI Symbol';
 }

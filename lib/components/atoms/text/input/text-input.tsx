@@ -46,7 +46,6 @@ const TextInput = ({
     );
   }
 
-  value;
   return (
     <input
       {...rest}
@@ -63,7 +62,7 @@ const TextInput = ({
       {...(!defaultValue && { value })}
       style={customStyle}
       placeholder={placeholder}
-      defaultValue={defaultValue}
+      {...(defaultValue && { defaultValue })}
     />
   );
 };
