@@ -1,27 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import { useTransition, animated, useSpringRef } from '@react-spring/web';
+import React, { useEffect, useState } from "react";
+import { useTransition, animated, useSpringRef } from "@react-spring/web";
 
 // components
-import { Row, Paragraph } from '../..';
+import { Row, Paragraph, Error } from "../..";
+import { StringUtil } from "../../../utils";
 
 // styles
-import clsx from 'clsx';
-import styles from './login.module.css';
+import clsx from "clsx";
+import styles from "./login.module.css";
 
-const Response = ({ user }) => {
-  if (user) {
-    const hasError = user ? false : true;
-    const isSuccessful = user ? true : false;
+const Response = ({ user, error }) => {
+  if (error) {
     return (
       <Row>
-        <Paragraph
-          customClass={clsx(styles.login__response, {
-            [styles.login__error]: hasError,
-            [styles.login__success]: isSuccessful,
-          })}
-        >
-          {user ? "You're logged in!" : "Sorry, we couldn't log you in!"}
-        </Paragraph>
+        <Error message={StringUtil.capitalize(error.message)} />
+      </Row>
+    );
+  }
+
+  if (user) {
+    const username = user?.username ?? "";
+    const message =
+      username !== "" ? `Welcome back, ${username}!` : "Welcome back!";
+    return (
+      <Row>
+        <Paragraph customClass={styles.login__response}>{message}</Paragraph>
       </Row>
     );
   }
@@ -33,41 +36,59 @@ type LoginResponseTransitionProps = {
   isAnimated: boolean;
   user: any;
   isAuthenticated?: boolean;
-}
+  error: any;
+};
 
-const LoginResponseTransition = ({ isAnimated, user }: LoginResponseTransitionProps) => {
+const LoginResponseTransition = ({
+  isAnimated,
+  user,
+  error,
+}: LoginResponseTransitionProps) => {
   const [data, setData] = useState([1]);
-
   const transRef = useSpringRef();
 
   const [transitions, api] = useTransition(data, () => ({
     ref: transRef,
-    from: { opacity: 0, transform: 'translate3d(0px, 0px, 0px)' },
-    enter: { opacity: 1, transform: 'translate3d(0px, 10px, 0px)', delay: 900 },
-    leave: { opacity: 0, transform: 'translate3d(0px, 20px, 0px)' },
+    from: { opacity: 0, transform: "translate3d(0px, 0px, 0px)" },
+    enter: {
+      opacity: 1,
+      transform: "translate3d(0px, 20px, 0px)",
+      delay: 500,
+    },
+    leave: { opacity: 0, transform: "translate3d(0px, 0px, 0px)" },
   }));
 
   useEffect(() => {
-    if (user) {
-      // ok this works but I want to do it with the leave animation!
-      transRef.start({
-        opacity: 0,
-        transform: 'translate3d(0px, 0px, 0px)',
-      });
-    } else {
-      transRef.start();
+    if (isAnimated) {
+      if (user || error) {
+        // ok this works but I want to do it with the leave animation!
+        transRef.start({
+          opacity: 1,
+          transform: "translate3d(0px, 20px, 0px)",
+        });
+      } else {
+        transRef.start();
+      }
     }
-  }, [user]);
+  }, [isAnimated, user, error]);
 
-  if (isAnimated) {
-    return transitions(style => (
+  if (isAnimated && !error) {
+    return transitions((style) => (
       <animated.div style={style}>
         <Response user={user} />
       </animated.div>
     ));
   }
 
-  return <Response user={user} />;
+  if (isAnimated && error) {
+    return transitions((style) => (
+      <animated.div style={style}>
+        <Response error={error} />
+      </animated.div>
+    ));
+  }
+
+  return <Response user={user} error={error} />;
 };
 
 export default LoginResponseTransition;

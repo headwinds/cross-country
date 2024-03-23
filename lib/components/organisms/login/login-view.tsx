@@ -29,11 +29,13 @@ const LoginView = ({
   hasRememberMeChecked,
   handleRememberMeClicked,
   customStyle = { padding: 0, width: 280 },
+  error,
 }) => {
   const isAuthenticated = user ? true : false;
   console.log("LoginView: user: ", user);
   console.log("LoginView: isAuthenticated: ", isAuthenticated);
   console.log("LoginView: username: ", user?.get?.("username") ?? "no user");
+  console.log("LoginView: error: ", error);
 
   return (
     <Column customClass={styles.login__view} customStyle={customStyle}>
@@ -62,7 +64,14 @@ const LoginView = ({
           onSubmitHandler={onSubmitHandler}
           isAuthenticated={isAuthenticated}
         />
-        {/*<LoginResponse isAnimated={isAnimated} user={user} isAuthenticated={isAuthenticated} />*/}
+        {error ? (
+          <LoginResponse
+            isAnimated={isAnimated}
+            user={user}
+            isAuthenticated={isAuthenticated}
+            error={error}
+          />
+        ) : null}
       </Form>
       <LoginFetching isAnimated={isAnimated} isFetching={isFetching} />
     </Column>

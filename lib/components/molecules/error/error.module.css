@@ -1,3 +1,4 @@
 .Error {
-  color: red;
+  font-family: var(--font);
+  color: rgb(197, 31, 31);
 }

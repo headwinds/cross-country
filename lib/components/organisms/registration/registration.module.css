@@ -1,0 +1,18 @@
+.registration {
+
+}
+
+.sendButton {
+    width: 100px;
+}
+
+.send {
+    justify-content: flex-end;
+}
+
+.fieldRow {
+    display: flex;
+    justify-content: flex-end;
+    height: 40px;
+    text-align: left;
+}
