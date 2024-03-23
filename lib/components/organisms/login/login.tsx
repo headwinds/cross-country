@@ -114,6 +114,7 @@ const loginReducer = (state, action) => {
         message: action.payload.message,
       };
     case reduceActionTypes.SET_LOGIN_ERROR:
+      console.log("Login error SET_LOGIN_ERROR: ", action.payload);
       return {
         ...state,
         error: action.payload,
@@ -180,6 +181,7 @@ const Login = ({
       a11y,
       user,
       hasRememberMeChecked,
+      error,
     },
     dispatch,
   ] = useReducer(loginReducer, null, createInitialState);
@@ -236,7 +238,8 @@ const Login = ({
   };
 
   /*
-  no need for this feature anymore - consider deleting it
+  no need for this feature anymore - consider deleting it or making it better?! 
+  the idea is to somehow reward the login but I think I should do so outside of this login component 
   useEffect(() => {
     const { UNSPLASH_API_KEY } = crossCountryConfig;
 
@@ -357,6 +360,7 @@ const Login = ({
     hasBackground,
     handleRememberMeClicked,
     user,
+    error,
   };
 
   return <LoginView {...loginViewProps} hasRememberMeChecked={storedValue} />;

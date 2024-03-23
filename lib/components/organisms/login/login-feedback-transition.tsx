@@ -1,3 +1,4 @@
+/*
 import React, { useEffect } from 'react';
 import { useTransition, animated, useSpringRef } from '@react-spring/web';
 
@@ -43,4 +44,4 @@ const LoginSubmitTransition = ({ isAnimated, handleClick, isAuthenticated }) => 
   );
 };
 
-export default LoginSubmitTransition;
+export default LoginSubmitTransition;*/
