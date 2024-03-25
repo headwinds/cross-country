@@ -1,4 +1,10 @@
 /* global.css */
+
+/* import fonts 
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+Electrolize
+*/
+
 :root {
   --mint: #ddffe7;
   --spearmint: #98d7c2;

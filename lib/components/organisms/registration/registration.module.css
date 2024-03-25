@@ -2,12 +2,19 @@
 
 }
 
+
+
 .sendButton {
-    width: 100px;
+    justify-content: flex-end;
+    background-color: var(--primary) !important;
+    margin-top: 16px;
+
 }
 
-.send {
+.icon {
     justify-content: flex-end;
+    background-color: #999;
+    width: 40px !important;
 }
 
 .fieldRow {
@@ -15,4 +22,32 @@
     justify-content: flex-end;
     height: 40px;
     text-align: left;
+}
+
+.passwordStrengthHelperContainer {
+    position: absolute;
+    border: 1px solid blue;
+    border-radius: 8px;
+    border-radius: 8px;
+    z-index: 1;
+    background: white;
+    padding: 16px;
+    margin: 0;
+    padding: 16px;
+    top: 5px;
+    left: 150px;
+}
+
+.passwordStrengthHelperContainer:after {
+    content:'';
+    position: absolute;
+    top: 129px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-top: 10px solid blue;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
 }

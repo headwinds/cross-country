@@ -19,6 +19,7 @@ const TextInput = ({
   customStyle,
   customClass,
   onDebouncedQueryChange = null,
+  ...rest
 }: TextInputProps) => {
   const [state, send, actor] = useActor(inputTextMachine, actorOptions);
 
@@ -38,6 +39,7 @@ const TextInput = ({
 
   return (
     <input
+      {...rest}
       type="text"
       className={clsx(styles.textInput, customClass)}
       style={customStyle}

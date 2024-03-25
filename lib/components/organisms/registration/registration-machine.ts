@@ -1,5 +1,6 @@
 import { createMachine, assign } from "xstate";
-
+import { POSTING_REGISTRATION_EVENTS } from "./post-registration";
+import { validatePassword } from "./registration-util";
 /*
 Registration
 
@@ -21,13 +22,17 @@ const machine = {
   id: "registration",
   initial: "idle",
   context: {
-    firstName: "",
-    lastName: "",
+    // firstName: "", move to profile
+    // lastName: "",
     username: "",
     password: "",
     email: "",
     isFormValid: false,
     isPasswordPlainText: false,
+    isPasswordStrong: false,
+    isPasswordFocussed: false,
+    error: null,
+    domain: null,
   },
   states: {
     idle: {
@@ -47,21 +52,45 @@ const machine = {
         TYPING_USERNAME: {
           actions: "typingUsername",
         },
+        SET_FOCUS_ON_PASSWORD: {
+          actions: "setFocussOnPassword",
+        },
+        REMOVE_FOCUS_ON_PASSWORD: {
+          actions: "removeFocussOnPassword",
+        },
         TYPING_PASSWORD: {
           actions: "typingPassword",
         },
-        SUBMIT: "submitting",
+        SET_DOMAIN: {
+          actions: "settingDomain",
+        },
+        SUBMIT: {
+          target: "POSTING_REGISTRATION",
+        },
       },
     },
-    submitting: {
-      entry: "logForm",
-    },
     validate: {},
+    ...POSTING_REGISTRATION_EVENTS,
   },
 };
 
 const config = {
   actions: {
+    setFocussOnPassword: assign({
+      isPasswordFocussed: ({ context }) => {
+        return true;
+      },
+    }),
+    removeFocussOnPassword: assign({
+      isPasswordFocussed: ({ context }) => {
+        return false;
+      },
+    }),
+    settingDomain: assign({
+      domain: ({ context, event }) => {
+        return event.value;
+      },
+    }),
     toggleEye: assign({
       isPasswordPlainText: ({ context }) => {
         return !context.isPasswordPlainText;
@@ -86,14 +115,16 @@ const config = {
       password: ({ context, event }) => {
         return event.value;
       },
+      isPasswordStrong: ({ context, event }) => {
+        const candidatePassword = event.value;
+        return validatePassword(candidatePassword);
+      },
     }),
     typingEmail: assign({
       email: ({ context, event }) => {
-        return event.email;
+        return event.value;
       },
     }),
-    logForm: (ctx, e) =>
-      console.log("Registration Machine firstName: ", ctx.firstName),
   },
   activities: {
     /* ... */
