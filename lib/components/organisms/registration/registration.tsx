@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import {
   Image,
   Column,
@@ -8,12 +8,14 @@ import {
   TextInput,
   Button,
   Label,
+  Paragraph,
 } from "../../";
 import { useMachine } from "@xstate/react";
 import { registrationMachine } from "./registration-machine";
 import styles from "./registration.module.css";
 import clsx from "clsx";
 import { Eye, EyeSlash } from "@phosphor-icons/react";
+import PasswordStrengthHelper from "./password-strength-helper";
 
 const FieldRow = ({ children }) => {
   return <Row customClass={styles.fieldRow}>{children}</Row>;
@@ -32,14 +34,40 @@ const Registration = ({ config: { text, hasBackground, width = 500 } }) => {
     });
   };
 
-  const isPasswordPlainText = state.context.isPasswordPlainText;
+  const handleFocusOnPassword = () => {
+    send({
+      type: "SET_FOCUS_ON_PASSWORD",
+    });
+  };
+
+  const handleBlurOnPassword = () => {
+    send({
+      type: "REMOVE_FOCUS_ON_PASSWORD",
+    });
+  };
+
+  useEffect(() => {
+    send({
+      type: "SET_DOMAIN",
+      value: "http://localhost:5000",
+    });
+  }, []);
+
+  const { isPasswordPlainText, isPasswordFocussed, password } = state.context;
 
   return (
     <Column hasBackground={hasBackground} customStyle={{ width }}>
       <SubHeadline text={text} />
+
+      <PasswordStrengthHelper
+        isPasswordFocussed={isPasswordFocussed}
+        candidatePassword={password}
+      />
+
       <Form>
         <Row customStyle={{ alignItems: "flex-start" }}>
           <Column customStyle={{ padding: 0 }}>
+            {/* TODO: move to new profile component
             <FieldRow>
               <Label>First Name</Label>
               <TextInput
@@ -64,10 +92,10 @@ const Registration = ({ config: { text, hasBackground, width = 500 } }) => {
                 }
               />
             </FieldRow>
+            */}
             <FieldRow>
               <Label>Email</Label>
               <TextInput
-                value={state.context.email}
                 onTextChange={(value) =>
                   send({
                     type: "TYPING_EMAIL",
@@ -79,7 +107,6 @@ const Registration = ({ config: { text, hasBackground, width = 500 } }) => {
             <FieldRow>
               <Label>Username</Label>
               <TextInput
-                value={state.context.username}
                 onTextChange={(value) =>
                   send({
                     type: "TYPING_USERNAME",
@@ -88,24 +115,27 @@ const Registration = ({ config: { text, hasBackground, width = 500 } }) => {
                 }
               />
             </FieldRow>
+
             <FieldRow>
               <Label>Password</Label>
               <TextInput
                 type={isPasswordPlainText ? "text" : "password"}
-                value={state.context.password}
                 onTextChange={(value) =>
                   send({
                     type: "TYPING_PASSWORD",
                     value,
                   })
                 }
+                onFocus={handleFocusOnPassword}
+                onBlur={handleBlurOnPassword}
               />
             </FieldRow>
+
             <FieldRow customClass={styles.send}>
               <Button
                 onClick={(e) => {
                   e.preventDefault();
-                  send("SUBMIT");
+                  send({ type: "SUBMIT" });
                 }}
                 customClass={styles.sendButton}
               >
@@ -116,11 +146,8 @@ const Registration = ({ config: { text, hasBackground, width = 500 } }) => {
           <Column customStyle={{ padding: 0 }}>
             <FieldRow></FieldRow>
             <FieldRow></FieldRow>
-            <FieldRow></FieldRow>
-            <FieldRow></FieldRow>
             <FieldRow>
-              {" "}
-              <Button onClick={() => toggleEye()} customStyle={{ width: 50 }}>
+              <Button onClick={() => toggleEye()} customClass={styles.icon}>
                 {isPasswordPlainText ? (
                   <EyeSlash size={20} />
                 ) : (
