@@ -16,6 +16,8 @@ import styles from "./registration.module.css";
 import clsx from "clsx";
 import { Eye, EyeSlash } from "@phosphor-icons/react";
 import PasswordStrengthHelper from "./password-strength-helper";
+import RegistrationForm from "./registration-form";
+import RegistrationResponse from "./registration-response";
 
 const FieldRow = ({ children }) => {
   return <Row customClass={styles.fieldRow}>{children}</Row>;
@@ -25,8 +27,6 @@ const Registration = ({ config: { text, hasBackground, width = 500 } }) => {
   const [state, send] = useMachine(registrationMachine);
 
   console.log("Registration state: ", state);
-
-  const handleFormSubmit = () => {};
 
   const toggleEye = () => {
     send({
@@ -53,10 +53,59 @@ const Registration = ({ config: { text, hasBackground, width = 500 } }) => {
     });
   }, []);
 
-  const { isPasswordPlainText, isPasswordFocussed, password } = state.context;
+  const {
+    isPasswordPlainText,
+    isPasswordFocussed,
+    password,
+    isPasswordStrong,
+    isUsernameValid,
+    isEmailValid,
+    hasSendBeenClicked,
+    registrationResponse,
+    isRegistrationSuccessful,
+  } = state.context;
+
+  const getBorderColorStyle = (field) => {
+    console.log(
+      "getBorderColorStyle: hasSendBeenClicked ",
+      hasSendBeenClicked,
+      field
+    );
+    if (hasSendBeenClicked) {
+      let borderColor = "";
+      switch (field) {
+        case "email":
+          borderColor = isEmailValid ? "green" : "red";
+          break;
+        case "username":
+          borderColor = isUsernameValid ? "green" : "red";
+          break;
+        case "password":
+          borderColor = isPasswordStrong ? "green" : "red";
+          break;
+        default:
+          borderColor = "";
+      }
+
+      const customStyle = {
+        borderColor,
+        borderWidth: 2,
+        borderStyle: "solid",
+        borderRadius: 4,
+      };
+      console.log("getBorderColorStyle: hasSendBeenClicked ", customStyle);
+      return customStyle;
+    }
+
+    return {};
+  };
 
   return (
-    <Column hasBackground={hasBackground} customStyle={{ width }}>
+    <Column
+      hasBackground={hasBackground}
+      customClass={styles.registration}
+      customStyle={{ width }}
+    >
       <SubHeadline text={text} />
 
       <PasswordStrengthHelper
@@ -64,100 +113,17 @@ const Registration = ({ config: { text, hasBackground, width = 500 } }) => {
         candidatePassword={password}
       />
 
-      <Form>
-        <Row customStyle={{ alignItems: "flex-start" }}>
-          <Column customStyle={{ padding: 0 }}>
-            {/* TODO: move to new profile component
-            <FieldRow>
-              <Label>First Name</Label>
-              <TextInput
-                value={state.context.firstName}
-                onTextChange={(text) =>
-                  send({
-                    type: "TYPING_FIRST_NAME",
-                    value: text,
-                  })
-                }
-              />
-            </FieldRow>
-            <FieldRow>
-              <Label>Last Name</Label>
-              <TextInput
-                value={state.context.lastName}
-                onTextChange={(value) =>
-                  send({
-                    type: "TYPING_LAST_NAME",
-                    value,
-                  })
-                }
-              />
-            </FieldRow>
-            */}
-            <FieldRow>
-              <Label>Email</Label>
-              <TextInput
-                onTextChange={(value) =>
-                  send({
-                    type: "TYPING_EMAIL",
-                    value,
-                  })
-                }
-              />
-            </FieldRow>
-            <FieldRow>
-              <Label>Username</Label>
-              <TextInput
-                onTextChange={(value) =>
-                  send({
-                    type: "TYPING_USERNAME",
-                    value,
-                  })
-                }
-              />
-            </FieldRow>
-
-            <FieldRow>
-              <Label>Password</Label>
-              <TextInput
-                type={isPasswordPlainText ? "text" : "password"}
-                onTextChange={(value) =>
-                  send({
-                    type: "TYPING_PASSWORD",
-                    value,
-                  })
-                }
-                onFocus={handleFocusOnPassword}
-                onBlur={handleBlurOnPassword}
-              />
-            </FieldRow>
-
-            <FieldRow customClass={styles.send}>
-              <Button
-                onClick={(e) => {
-                  e.preventDefault();
-                  send({ type: "SUBMIT" });
-                }}
-                customClass={styles.sendButton}
-              >
-                Send
-              </Button>
-            </FieldRow>
-          </Column>
-          <Column customStyle={{ padding: 0 }}>
-            <FieldRow></FieldRow>
-            <FieldRow></FieldRow>
-            <FieldRow>
-              <Button onClick={() => toggleEye()} customClass={styles.icon}>
-                {isPasswordPlainText ? (
-                  <EyeSlash size={20} />
-                ) : (
-                  <Eye size={20} />
-                )}
-              </Button>
-            </FieldRow>
-          </Column>
-        </Row>
-      </Form>
+      {isRegistrationSuccessful ? (
+        <RegistrationResponse response={registrationResponse} />
+      ) : (
+        <RegistrationForm
+          state={state}
+          send={send}
+          handleFocusOnPassword={handleFocusOnPassword}
+          handleBlurOnPassword={handleBlurOnPassword}
+          toggleEye={toggleEye}
+        />
+      )}
     </Column>
   );
 };

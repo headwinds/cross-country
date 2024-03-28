@@ -1,5 +1,6 @@
 import LeafModel from "../../../../models/LeafModel";
 import UserModel from "../../../../models/UserModel";
+import type { UserModelType } from "../../../../models/UserModel";
 
 import { z } from "zod";
 
@@ -24,5 +25,5 @@ export interface BlogPostProps {
   mode?: string;
   children?: React.ReactNode | React.ReactNode[];
   onSaveClick?: (leafModel: LeafModel) => void;
-  user: typeof UserModel | null;
+  user: UserModelType | null;
 }

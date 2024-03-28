@@ -8,7 +8,7 @@ import {
   validatePasswordHasSpecialCharacter,
   validatePasswordMinimumLength,
 } from "./registration-util";
-import { CheckCircle } from "@phosphor-icons/react";
+import { ShieldWarning, CheckCircle } from "@phosphor-icons/react";
 
 const passwordParagraphStyle = { margin: 0, padding: 0, fontSize: 12 };
 
@@ -32,24 +32,12 @@ const PasswordStrengthHelper = ({
   return isPasswordFocussed ? (
     <Column customClass={styles.passwordStrengthHelperContainer}>
       {!isPasswordValid ? (
-        <Paragraph
-          customStyle={{
-            paddingTop: 0,
-            marginTop: 0,
-          }}
-        >
-          Password Rules
-        </Paragraph>
+        <Column customClass={styles.passwordHelperIcon}>
+          <ShieldWarning size={32} color="grey" />
+        </Column>
       ) : (
-        <Column
-          customStyle={{
-            alignItems: "center",
-            justifyContent: "center",
-            padding: 0,
-            //height: 40,
-          }}
-        >
-          <CheckCircle size={26} color="green" />
+        <Column customClass={styles.passwordHelperIcon}>
+          <CheckCircle size={32} color="green" />
         </Column>
       )}
       <Paragraph

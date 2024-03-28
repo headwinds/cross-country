@@ -62,6 +62,7 @@ const buildListicleMachine = createMachine({
     loadListiceResponse: null,
     updateListiceResponse: null,
     saveListiceResponse: null,
+    saveListiceItemResponse: null,
     isExistingListicle: null,
     lastSavedListicleTitle: null,
     loadFeedback: null,

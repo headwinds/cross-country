@@ -87,7 +87,7 @@ const SAVING_LISTICLE_ITEM = {
     onDone: {
       target: "idle",
       actions: assign({
-        saveListiceResponse: ({ context, event }) => {
+        saveListiceItemResponse: ({ context, event }) => {
           console.log("SAVING_LISTICLE_ITEM onDone", event.output);
           return event.output;
         },
