@@ -1,6 +1,10 @@
 import { createMachine, assign } from "xstate";
 import { POSTING_REGISTRATION_EVENTS } from "./post-registration";
-import { validatePassword } from "./registration-util";
+import {
+  validatePassword,
+  validateUsername,
+  validateEmail,
+} from "./registration-util";
 /*
 Registration
 
@@ -27,12 +31,16 @@ const machine = {
     username: "",
     password: "",
     email: "",
-    isFormValid: false,
     isPasswordPlainText: false,
     isPasswordStrong: false,
     isPasswordFocussed: false,
+    isUsernameValid: false,
+    isEmailValid: false,
     error: null,
     domain: null,
+    hasSendBeenClicked: false,
+    registrationResponse: null,
+    isRegistrationSuccessful: false,
   },
   states: {
     idle: {
@@ -66,6 +74,11 @@ const machine = {
         },
         SUBMIT: {
           target: "POSTING_REGISTRATION",
+          actions: assign({
+            hasSendBeenClicked: () => {
+              return true;
+            },
+          }),
         },
       },
     },
@@ -77,12 +90,12 @@ const machine = {
 const config = {
   actions: {
     setFocussOnPassword: assign({
-      isPasswordFocussed: ({ context }) => {
+      isPasswordFocussed: () => {
         return true;
       },
     }),
     removeFocussOnPassword: assign({
-      isPasswordFocussed: ({ context }) => {
+      isPasswordFocussed: () => {
         return false;
       },
     }),
@@ -96,19 +109,13 @@ const config = {
         return !context.isPasswordPlainText;
       },
     }),
-    typingFirstName: assign({
-      firstName: ({ context, event }) => {
-        return event.value;
-      },
-    }),
-    typingLastName: assign({
-      lastName: ({ context, event }) => {
-        return event.value;
-      },
-    }),
     typingUsername: assign({
       username: ({ context, event }) => {
         return event.value;
+      },
+      isUsernameValid: ({ context, event }) => {
+        const candidateUsername = event.value;
+        return validateUsername(candidateUsername);
       },
     }),
     typingPassword: assign({
@@ -123,6 +130,10 @@ const config = {
     typingEmail: assign({
       email: ({ context, event }) => {
         return event.value;
+      },
+      isEmailValid: ({ context, event }) => {
+        const candidateEmail = event.value;
+        return validateEmail(candidateEmail);
       },
     }),
   },

@@ -5,9 +5,9 @@ import LoginView from "./login-view";
 
 // utils
 import { postLoginUser } from "../../../services/login-service";
-import { getUnsplashPhoto } from "../../../services/image-service";
 import useLoginLocalStorage from "../../../hooks/useLoginLocalStorage";
 import UserModel from "../../../models/UserModel";
+import type { UserModelType } from "../../../models/UserModel";
 
 /*
 Authenticate the user with a JWT token and set access token in a secure cookie 
@@ -147,7 +147,6 @@ const loginReducer = (state, action) => {
 };
 
 const Login = ({
-  crossCountryConfig = { UNSPLASH_API_KEY: "YOUR-API-KEY" },
   isAnimated = false,
   hasImage = false, // true is busted!
   hasBackground = false,
@@ -217,11 +216,8 @@ const Login = ({
   };
 
   useEffect(() => {
-    console.log("Login user useEffect: ", user);
     onChange(user);
   }, [user]);
-
-  console.log("Login localStorageState ", localStorageState);
 
   const handleRememberMeClicked = () => {
     console.log("Login handleRememberMeClicked ", {
@@ -236,23 +232,6 @@ const Login = ({
       type: reduceActionTypes.TOGGLE_REMEMBER_ME,
     });
   };
-
-  /*
-  no need for this feature anymore - consider deleting it or making it better?! 
-  the idea is to somehow reward the login but I think I should do so outside of this login component 
-  useEffect(() => {
-    const { UNSPLASH_API_KEY } = crossCountryConfig;
-
-    if (UNSPLASH_API_KEY !== 'YOUR-API-KEY' && unsplashImgUrl === null && hasImage)
-      getUnsplashPhoto(UNSPLASH_API_KEY).then(({ type, response, status }) => {
-        if (status === 200) {
-          const { urls } = response;
-          const { small } = urls;
-          setState({ ...state, unsplashImgUrl: small, a11y: 'record player' });
-        }
-      });
-  }, []);
-  */
 
   useEffect(() => {
     if (storedValue && storedUsername && storedPassword) {
@@ -303,12 +282,12 @@ const Login = ({
             console.log("login json: ", json);
             if (isAuthenticated) {
               const { isAuthenticated, access_token, refresh_token } = json;
-              const user = new UserModel({
+              const user: UserModelType = {
                 ...json.user_account,
                 access_token,
                 refresh_token,
                 isAuthenticated,
-              });
+              };
               dispatch({
                 type: reduceActionTypes.SET_LOGIN_SUCCESS,
                 payload: {
@@ -346,7 +325,6 @@ const Login = ({
   };
 
   const loginViewProps = {
-    crossCountryConfig,
     usernameValue,
     passwordValue,
     onSubmitHandler,

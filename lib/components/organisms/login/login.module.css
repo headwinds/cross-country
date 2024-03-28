@@ -2,6 +2,7 @@
   display: flex;
   overflow: hidden;
   padding: 0px;
+  position: relative;
 }
 
 .login__view {

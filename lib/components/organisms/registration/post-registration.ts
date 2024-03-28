@@ -7,18 +7,41 @@ type RegistrationInputType = {
   password: string;
 };
 
+// TODO: don't hardcode this as it might change and will be different for other APIs
+const successMessage = "Please check your email to verify.";
+
 const postRegistration = fromPromise<string[], RegistrationInputType>(
   async ({ input }) => {
-    console.log("Invoked registration input", input);
     const { domain } = input;
 
-    const response = fetch(`${domain}/api/signup`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(input),
-    });
+    // is everything valid?
+    const {
+      isEmailValid,
+      isUsernameValid,
+      isPasswordStrong,
+      username,
+      password,
+      email,
+    } = input;
 
-    return response.json();
+    if (isEmailValid && isUsernameValid && isPasswordStrong) {
+      try {
+        const response = await fetch(`${domain}/api/signup`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password, email }),
+        });
+        const json = await response.json();
+
+        return json;
+      } catch (error) {
+        console.error("Registration failed", error);
+        return { message: "Registration failed - Please try again later" };
+      }
+    } else {
+      console.error("Registration validation failed");
+      return { message: "Please fix any form errors" };
+    }
   }
 );
 
@@ -33,9 +56,26 @@ const POSTING_REGISTRATION = {
         username: context.username,
         password: context.password,
         domain: context.domain,
+        isEmailValid: context.isEmailValid,
+        isUsernameValid: context.isUsernameValid,
+        isPasswordStrong: context.isPasswordStrong,
       };
     },
-    onDone: { target: "idle" },
+    onDone: {
+      target: "idle",
+      actions: assign({
+        registrationResponse: ({ context, event }) => {
+          console.log("SAVING_LISTICLE_ITEM onDone", event.output);
+          return event.output;
+        },
+        isRegistrationSuccessful: ({ context, event }) => {
+          console.log("SAVING_LISTICLE_ITEM onDone", event.output);
+          const isRegistrationSuccessful =
+            event.output.message === successMessage;
+          return isRegistrationSuccessful;
+        },
+      }),
+    },
     onError: {
       target: "POSTING_REGISTRATION_ERROR",
       actions: assign({
@@ -56,7 +96,7 @@ const POSTING_REGISTRATION_ERROR = {
       actions: assign({
         error: ({ context, event }) => {
           console.log("Machine SET_ERROR");
-          return event.error;
+          return { message: "Registration failed - Please try again later" };
         },
       }),
     },

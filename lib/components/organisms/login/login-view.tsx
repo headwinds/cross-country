@@ -32,10 +32,6 @@ const LoginView = ({
   error,
 }) => {
   const isAuthenticated = user ? true : false;
-  console.log("LoginView: user: ", user);
-  console.log("LoginView: isAuthenticated: ", isAuthenticated);
-  console.log("LoginView: username: ", user?.get?.("username") ?? "no user");
-  console.log("LoginView: error: ", error);
 
   return (
     <Column customClass={styles.login__view} customStyle={customStyle}>
