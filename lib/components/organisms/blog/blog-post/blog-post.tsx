@@ -5,6 +5,7 @@ import PostModel from "../../../../models/PostModel";
 import { Card, TextArea, Button, Form, Column, Paragraph } from "../../..";
 import { BlogPostProps } from "./blog-post.types";
 import blogPostMachine from "./blog-post-machine";
+import type { PostModelType } from "../../../../models/PostModel";
 
 const initialState = {
   text: "",
@@ -12,7 +13,7 @@ const initialState = {
 
 const BlogPost = ({
   goldLeafModel = null,
-  dataTestId = "golf-leaf-view",
+  dataTestId = "blogPost",
   user,
 }: BlogPostProps) => {
   const [state, setState] = useState(initialState);
@@ -43,9 +44,9 @@ const BlogPost = ({
       status: "draft",
     });
 
-    const plainObject = newBlog.toObject();
+    const postModel: PostModelType = newBlog.toObject();
 
-    console.log("sending plainObject: ", plainObject);
+    console.log("sending postModel: ", postModel);
 
     const options = {
       method: "POST",
@@ -53,7 +54,7 @@ const BlogPost = ({
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
       },
-      body: JSON.stringify(newBlog.toObject()),
+      body: JSON.stringify(postModel),
     };
     try {
       const response = await fetch(url, options);
@@ -95,7 +96,7 @@ const BlogPost = ({
   };
 
   const onSaveClick = () => {
-    console.log("GoldLeafPost about to save...", state);
+    console.log("BlogPost about to save...", state);
     const { text } = state;
     const { id } = { id: "1" };
     postBlog(text, id);
@@ -108,7 +109,17 @@ const BlogPost = ({
         dataTestId={dataTestId}
         customStyle={{ height: "auto", width: 370, background: "whitesmoke" }}
       >
-        <TextArea onTextChange={onTextChange} value={state.text} />
+        {/* question */}
+        <TextArea
+          onTextChange={onTextChange}
+          value={state.text}
+          placeholder="Do you have a title?"
+        />
+        <TextArea
+          onTextChange={onTextChange}
+          value={state.text}
+          placeholder="What's on your mind?"
+        />
         <Button onClick={onSaveClick}>Save</Button>
       </Card>
       <Card>

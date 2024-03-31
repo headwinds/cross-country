@@ -20,6 +20,7 @@ I want the ability to:
 - Delete a blog post
 - View a blog post
 - View a list of blog posts
+- Blog needs to auto save drafts so I don't lose my work or only lose a little bit of it
 
 You can either see the blog posts route or the blog post details page 
 

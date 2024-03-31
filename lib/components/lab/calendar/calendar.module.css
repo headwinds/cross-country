@@ -1,0 +1,34 @@
+.daysOfWeekGrid {
+  display: grid !important; 
+  grid-template-columns: repeat(7, 1fr); 
+  grid-gap: 10px; /* Space between grid items */
+  padding: 10px;
+  height: 40px;
+  width: 100%;
+}
+
+.calendarGrid {
+  display: grid !important; 
+  grid-template-columns: repeat(7, 1fr); /* 7 columns for 7 days of the week */
+  grid-gap: 10px; /* Space between grid items */
+  padding: 10px;
+  width: 100%;
+}
+
+.calendarAbbrDay {
+  background-color: #f0f0f0; /* Light grey background for day cells */
+  text-align: center;
+  padding: 8px 0; /* Vertical padding */
+  border-radius: 5px; /* Rounded corners for day cells */
+}
+
+.calendarDay {
+  background-color: #f0f0f0; /* Light grey background for day cells */
+  text-align: center;
+  padding: 20px 0; /* Vertical padding */
+  border-radius: 5px; /* Rounded corners for day cells */
+}
+
+.empty {
+  background-color: transparent; /* Empty cells have no background */
+}

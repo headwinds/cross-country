@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Column from "../../atoms/column/column";
+import { Column } from "../../";
 import styles from "./card.module.css";
 import clsx from "clsx";
 
@@ -7,6 +7,7 @@ const Card = ({
   backgroundColor = "",
   customClass = "",
   customStyle = {},
+  children,
   ...rest
 }) => {
   return (
@@ -14,7 +15,9 @@ const Card = ({
       {...rest}
       customClass={clsx(styles.card, customClass)}
       customStyle={{ backgroundColor, ...customStyle }}
-    ></Column>
+    >
+      {children}
+    </Column>
   );
 };
 
