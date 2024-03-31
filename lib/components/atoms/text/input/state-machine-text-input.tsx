@@ -11,6 +11,9 @@ interface TextInputProps {
   customStyle?: React.CSSProperties;
   customClass?: string;
   onDebouncedQueryChange: (query: string) => void;
+  isDraggable: boolean;
+  rows?: number;
+  cols?: number;
 }
 
 const TextInput = ({
@@ -19,6 +22,10 @@ const TextInput = ({
   customStyle,
   customClass,
   onDebouncedQueryChange = null,
+  isDraggable = false,
+  rows = null,
+  cols = null,
+  isContentEditable = false,
   ...rest
 }: TextInputProps) => {
   const [state, send, actor] = useActor(inputTextMachine, actorOptions);
@@ -36,6 +43,55 @@ const TextInput = ({
       }
     });
   }, []);
+
+  if (isContentEditable) {
+    const handleContentChange = (event) => {
+      const { innerText } = event.target;
+      send({
+        type: "input.change",
+        searchInput: innerText,
+      });
+    };
+
+    // TODO support focus later...
+    // https://www.perplexity.ai/search/blog-13SAPvEGSASP1WK.9dveMQ#2
+    return (
+      <div
+        // ref={editorRef} do I want to set focus like this?!
+        contentEditable
+        suppressContentEditableWarning={true}
+        onInput={handleContentChange}
+        className={clsx(styles.textInput, customClass)}
+      >
+        {state.context.searchInput}
+      </div>
+    );
+  }
+
+  if (rows && cols) {
+    return (
+      <textarea
+        {...rest}
+        rows={rows}
+        cols={cols}
+        className={clsx(styles.textInput, customClass)}
+        style={customStyle}
+        placeholder={placeholder}
+        draggable={isDraggable}
+        onChange={(e) => {
+          send({
+            type: "input.change",
+            searchInput: e.target.value,
+          });
+        }}
+        onFocus={() => {
+          send({
+            type: "input.focus",
+          });
+        }}
+      />
+    );
+  }
 
   return (
     <input

@@ -14,27 +14,27 @@ import {
 import { useMachine } from "@xstate/react";
 import { dragonsMachine } from "./state-machine-fetch-dragons";
 
-const StateMachineTextInputStory = () => {
+const StateMachineContentEditableStory = () => {
   const [route, setRoute] = useState("");
   const [state, send] = useMachine(dragonsMachine);
 
-  console.log("StateMachineTextInputStory context: ", state.context);
+  console.log("StateMachineContentEditableStory context: ", state.context);
 
   const onTextChange = (newText) => {
-    console.log("StateMachineTextInputStory onTextChange: ", newText);
+    console.log("StateMachineContentEditableStory onTextChange: ", newText);
   };
 
   const onDebouncedQueryChange = (query) => {
     console.log(
-      "StateMachineTextInputStory onDebouncedQueryChange query: ",
+      "StateMachineContentEditableStory onDebouncedQueryChange query: ",
       query
     );
     console.log(
-      "StateMachineTextInputStory onDebouncedQueryChange state: ",
+      "StateMachineContentEditableStory onDebouncedQueryChange state: ",
       state
     );
     if (query === "get dragons") {
-      console.log("StateMachineTextInputStory calling....: ");
+      console.log("StateMachineContentEditableStory calling....: ");
       send({ type: "CALL_PERPLEXITY", query });
     }
     //send({ type: "ON_PERPLEXITY_QUERY", query });
@@ -70,6 +70,7 @@ const StateMachineTextInputStory = () => {
           placeholder="What's on your mind?"
           onDebouncedQueryChange={onDebouncedQueryChange}
           value={state.context.query}
+          isContentEditable={true}
         />
       </Form>
       {response ? <Paragraph>{response}</Paragraph> : null}
@@ -85,4 +86,4 @@ const StateMachineTextInputStory = () => {
   );
 };
 
-export default StateMachineTextInputStory;
+export default StateMachineContentEditableStory;

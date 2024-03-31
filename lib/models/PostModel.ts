@@ -1,4 +1,4 @@
-import { Record } from 'immutable';
+import { Record } from "immutable";
 
 // do I really want markup or plain text?! or even markdown!
 
@@ -15,13 +15,23 @@ example post data
         */
 
 const PostModel = Record({
-  title: '',
-  description: '',
-  content: '',
-  blogpost_type: '',
-  slug: '',
-  user_account_id: '',
-  status: '',
+  title: "",
+  description: "",
+  content: "",
+  blogpost_type: "",
+  slug: "",
+  user_account_id: "",
+  status: "",
 });
+
+export type PostModelType = {
+  title: string,
+  description: string,
+  content: string,
+  blogpost_type: string,
+  slug: string,
+  user_account_id: string,
+  status: string,
+};
 
 export default PostModel;

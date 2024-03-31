@@ -3,19 +3,9 @@ import { assign, setup, assertEvent, fromPromise, raise } from "xstate";
 const debounceFetch = fromPromise<string[], { search: string }>(
   async (props) => {
     await new Promise((resolve) => setTimeout(resolve, 500));
-    //console.log("debounceFetch props ", props);
+
     const { input, system, self } = props;
-    //console.log("Actor debounceFetch props:", props);
-
     const { search } = input; // search or command or query
-
-    if (search === "get dragons") {
-      //emit({ type: "GET_DRAGONS", data: { search } });
-      //self._parent.send({ type: "GET_DRAGONS", data: { search } });
-      return console.log("get dragons called after 500 ms!");
-    }
-
-    //self._parent.send({ type: "DEBOUNCE_COMPLETE" });
 
     return console.log("debounceFetch called after 500 ms ", search);
   }
@@ -27,7 +17,6 @@ export const inputTextMachine = setup({
       | { type: "input.focus" }
       | { type: "input.change"; searchInput: string }
       | { type: "DEBOUNCE_COMPLETE"; searchInput: string }
-      | { type: "GET_DRAGONS"; searchInput: string }
       | { type: "item.click"; itemId: number }
       | { type: "item.mouseenter"; itemId: number }
       | { type: "item.mouseleave" },
