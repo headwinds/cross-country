@@ -1,6 +1,6 @@
 ### Vision
 
-I want to be able to post a url and the service pull the importat parts like a the title, summary and nice photo preview. 
+I want to be able to post a url and pull the important parts like a the title, summary and nice photo preview. 
 
 ### The Angeline Tetteh-Wayoe challenge
 
@@ -14,7 +14,8 @@ From the following links, can I grab a title, image, and summary?
 - [the-pitfalls-of-ai-health-coaches](https://nautil.us/the-pitfalls-of-ai-health-coaches-522836/?_sp=7d882769-8411-4e43-bbeb-a262060a75a3.1710264804384)
 - [midjourney-bans-stability-ai-employees-data-theft-outage](https://www.theverge.com/2024/3/11/24097495/midjourney-bans-stability-ai-employees-data-theft-outage)
 
+### Andor Challenge
 
-pull image and drop/drop hotspots 
+Can I present image and offer the ability to drop & drop hotspots? 
 
 - [andor](https://www.goonhammer.com/andor-star-wars-wont-ever-be-permitted-to-be-better-than-this/)
