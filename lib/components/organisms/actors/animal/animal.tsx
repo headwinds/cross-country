@@ -32,6 +32,7 @@ const Animal = ({
   customSkinStyle = {},
   model = defaultModel,
   tileSize = 40,
+  children,
 }) => (
   <Actor
     type={model.type}
@@ -40,7 +41,9 @@ const Animal = ({
     customClass={customClass}
     customSkinStyle={{ ...model.customSkinStyle, ...customSkinStyle }}
     tileSize={tileSize}
-  />
+  >
+    {children}
+  </Actor>
 );
 
 export default Animal;
