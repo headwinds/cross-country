@@ -1,5 +1,5 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
-import Card from '../card';
+import { PhotoCardStory } from './card-story';
 
 <Meta title="design system/molecules/card" />
 
@@ -9,13 +9,13 @@ I first learned of the card metaphor strategy for web design via [Material UI Ca
 
 It can help to organize information in a way that is easy to understand and navigate and follows the principles of a [mobile first design](https://www.uxpin.com/studio/blog/a-hands-on-guide-to-mobile-first-design/).
 
-On most eCommerce stores, the card design is used to display products. The card design is also used in social media platforms to display posts.
+On most eCommerce stores, the card design is used to display products. The card design is also used in social media platforms to display posts or within a game to display a character or item.
 
 A card usually features a large image or video, a title, a description, and a call to action like a Learn More or Buy button.
 
 The card is a versatile design element that can be used in many different ways. It can be used to display a product, a blog post, a video, a photo, or any other type of content. It has fluid dimension is designed to be contained within a parent grid, or we can pass in a custom class or style. 
 
-### Inspiration
+### Game Inspiration
 
 - [magic the gathering](https://magic.wizards.com/)
 - [rendsword](https://play.date/games/rendsword/)
@@ -23,12 +23,15 @@ The card is a versatile design element that can be used in many different ways. 
 - [Marvel snap](https://www.marvelsnap.com/)
 - [react spring examples](https://www.react-spring.dev/examples)
 - [featurebase blog cards](https://www.featurebase.app/blog/founder-stories)
+- [stop designing backgrounds](https://vm.tiktok.com/ZMMav34sK/)
+
+### eCommerce Inspiration
+
+Visit any product list page on a major brand site and study the card design. For instance, [Balenciaga hoodies](https://www.balenciaga.com/en-ca/men/ready-to-wear/sweatshirts-and-hoodies) have a card design within a grid.
 
 <Canvas>
-  <Story name="card">
-    <Card>
-      Land
-    </Card>
+  <Story name="full photo">
+    <PhotoCardStory />
   </Story>
 </Canvas>
 
