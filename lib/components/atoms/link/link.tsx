@@ -19,6 +19,7 @@ const Link = ({
   target = "_blank",
   customClass = "",
   customStyle = {},
+  hasUnderline = true,
   ...rest
 }) => {
   return (
@@ -27,7 +28,9 @@ const Link = ({
       href={url}
       target={target}
       rel="noopener, noreferrer"
-      className={clsx(styles.link, customClass)}
+      className={clsx(styles.link, customClass, {
+        [styles.underline]: hasUnderline,
+      })}
       style={customStyle}
     >
       {children}
