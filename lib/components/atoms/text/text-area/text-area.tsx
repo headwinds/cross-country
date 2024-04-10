@@ -10,7 +10,7 @@ const TextArea = ({
   customStyle = {},
   placeholder = "enter your text",
   type = "text-area",
-  rows = 2,
+  rows = 1,
   cols = 33,
   isDraggable = false,
   ...rest
