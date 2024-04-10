@@ -1,1 +1,1 @@
-export { default } from "./amazon-service-card";
+export { default } from "./amazon-card";

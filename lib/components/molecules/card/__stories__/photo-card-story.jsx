@@ -1,6 +1,6 @@
 import * as React from "react";
 import Card from "../card";
-import oceanSlide from "./ocean-slice.png";
+import waves from "./ocean-slice.png";
 import {
   Paragraph,
   SubHeadline,
@@ -34,11 +34,7 @@ I drew a bunch of thumbnails to show the different layouts to decide on the card
 export const PhotoCardStory = () => {
   return (
     <Card>
-      <Image
-        url={oceanSlide}
-        a11y={"aerial photo of ocean waves"}
-        width={200}
-      />
+      <Image url={waves} a11y={"aerial photo of ocean waves"} width={200} />
       <Column customStyle={{ margin: 0, padding: 0 }}>
         <Paragraph customStyle={{ fontWeight: 700, fontSize: 18 }}>
           ocean wave
@@ -60,12 +56,4 @@ export const PhotoCardStory = () => {
   );
 };
 
-const CardStory = () => {
-  return (
-    <Grid>
-      <PhotoCard />
-    </Grid>
-  );
-};
-
-export default CardStory;
+export default PhotoCardStory;

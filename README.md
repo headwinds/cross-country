@@ -33,18 +33,17 @@ import { Column, Row, Paragraph, Table, Chart } from "cross-country"
 
 For this third-party library to work within NextJS, you need to make one change when you consume cross-country to import it's single css bundle.
 
-After upgrading to Vite, this library did not with NextJS due to the way it imports its CSS. I [explored different approaches](https://dev.to/headwinds/comment/2bel0) and landed on [rollup-plugin-css-only](https://www.npmjs.com/package/rollup-plugin-css-only) which has minimal configuration.
+After upgrading to Vite, this css modules did not work with NextJS. I [explored different approaches](https://dev.to/headwinds/comment/2bel0) and landed on [rollup-plugin-css-only](https://www.npmjs.com/package/rollup-plugin-css-only) which has minimal configuration. 
 
-Edit the _app.js file to:
+All you need to do is import the cross-country css in the main layout.tsx file.
+
+Edit the layout.tsx file like so:
 ```
-import "../styles/globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
 import "cross-country/dist/bundle.css";
-
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
-}
-
-export default MyApp;
+import { GoogleAnalytics } from "@next/third-parties/google";
 ```
 
 ### Tailwind CSS Support 

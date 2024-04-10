@@ -11,12 +11,13 @@ import {
   Button,
   Row,
 } from "../../../../";
-import { PencilSimple } from "@phosphor-icons/react";
+import { PencilSimple, CheckCircle } from "@phosphor-icons/react";
 
 const TakeAnswerInput = ({
   data,
   onChange,
   customClass = "border-2 border-gray-200 rounded-sm m-2", // to support Tailwind CSS or any css class
+  hasSave = false,
 }) => {
   const [saveAnswer, setSaveAnswer] = useState(null);
   const [isSaved, toggleIsSaved] = useState(false);
@@ -79,7 +80,16 @@ const TakeAnswerInput = ({
         customClass={customClass}
         customStyle={{ width: "95%" }}
         onTextChange={(text) => setSaveAnswer(text)}
+        defaultValue={saveAnswer}
       />
+      {hasSave ? (
+        <Button
+          onClick={(data) => onSaveClick(data)}
+          customStyle={{ width: 50 }}
+        >
+          <CheckCircle size={20} />
+        </Button>
+      ) : null}
     </Column>
   );
 };

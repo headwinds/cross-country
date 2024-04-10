@@ -1,0 +1,22 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
+import AnswerInput from '../answer-input';
+import TakeAnswerInput from '../../take/take-answer-input';
+
+<Meta title="design system/organisms/survey/question" />
+
+# Answer
+
+When you need a user an answer a question
+
+what is the differnce between AnswerInput and TakeAnswerInput?
+
+<Canvas>
+  <Story name="text input single row">
+    <TakeAnswerInput hasActions={false} helperText={""} data={{ question: "Who lead the creation of Rez?", answer: "Tetsuya Mizuguchi", isRequired: false }} />
+  </Story>
+  <Story name="text input multi row">
+    <AnswerInput rows={10} hasActions={false} helperText={""} data={{ question: "What makes Rez so special?", answer: "Tetsuya Mizuguchi", isRequired: false }} />
+  </Story>
+</Canvas>
+
+- [Wants to Make Magic](https://www.vice.com/en/article/nevq3k/rez-designer-tetsuya-mizuguchi-wants-to-make-magic)
