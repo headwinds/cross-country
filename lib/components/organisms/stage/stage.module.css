@@ -1,8 +1,8 @@
 .stage {
   position: absolute;
   z-index: 1;
-  background-color: transparent;
+  background-color: whitesmoke;
   opacity: 1;
   width: 600px;
-  height: 400px; 
+  height: 200px; 
 }
