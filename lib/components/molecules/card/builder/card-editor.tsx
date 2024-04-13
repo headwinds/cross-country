@@ -76,15 +76,18 @@ export const CardEditor = ({ send, context }) => {
   if (context.isEditing) {
     const stageDimensions = { width: 500, height: 100 };
 
+    // https://amzn.to/3vQDe6E - C3PO
+
     return (
       <Column customStyle={{ width: stageDimensions.width }}>
         <Column customStyle={stageDimensions}>
           <Stage
-            config={{ column: { customStyle: stageDimensions } }}
+            config={{ customStyle: stageDimensions } }
             actorModels={[wispActorModel]}
           />
         </Column>
         <Paragraph>{context.wispText}</Paragraph>
+        <UrlQuestion send={send} />
       </Column>
     );
 

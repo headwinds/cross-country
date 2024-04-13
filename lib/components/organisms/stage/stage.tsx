@@ -6,11 +6,13 @@ import Warrior from "../actors/party/warrior";
 import Wisp from "../actors/wisp";
 import clsx from "clsx";
 
-const defaultConfig = {
-  column: { customClass: "", customStyle: {}, rest: {} },
-  text: { customClass: "", customStyle: {}, rest: {} },
-};
+type StageConfig = {
+  customClass?:string;
+  customStyle?:any;
+  rest?: any;
+}
 
+const defaultConfig: StageConfig = { customClass: "", customStyle: {}, rest: {} };
 const defaultActorModel = {
   id: 0,
   variant: "hunter",
@@ -24,10 +26,15 @@ const defaultActorModel = {
   config: null,
 };
 
+type StageProps = {
+  config?: StageConfig;
+  actorModels: any[];
+}
+
 const Stage = ({
   config = defaultConfig,
   actorModels = [defaultActorModel],
-}) => {
+}: StageProps) => {
   const getActor = (model) => {
     switch (model.variant) {
       case "wisp":
@@ -44,11 +51,13 @@ const Stage = ({
     return actorModels.map((model) => getActor(model));
   };
 
+  console.log("Stage config: ", config)
+
   return (
     <Column
-      customClass={clsx(styles.stage, config?.column?.customClass)}
-      style={config?.column?.customStyle}
-      {...config?.column?.rest}
+      customClass={clsx(styles.stage, config?.customClass)}
+      customStyle={config?.customStyle}
+      {...config?.rest}
     >
       {renderActors()}
     </Column>
