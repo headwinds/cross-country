@@ -1,9 +1,9 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef } from "react";
 // components
-import { Tile, Column, Row } from '../../';
-import styles from './tile-grid.module.css';
-import ColorUtil from '../../../utils/colour-util';
-import clsx from 'clsx';
+import { Tile, Column, Row } from "../../";
+import styles from "./tile-grid.module.css";
+import ColorUtil from "../../../utils/colour-util";
+import clsx from "clsx";
 
 //const DefaultTile = Tile;
 
@@ -20,24 +20,24 @@ damage = Column(Integer)
 age = Column(Integer)
 */
 const scoutTile = {
-  label: '',
-  description: '',
-  material: '',
+  label: "",
+  description: "",
+  material: "",
   movement_cost: 0,
   elevation: 0,
-  color: '#000',
-  skin: '',
+  color: "#000",
+  skin: "",
   damage: 0,
   age: -1, // doesn't age
 };
 const createDemoModels = () => {
   //const range = [...Array(64).keys()]; // chess!
   const range = [...Array(12).keys()];
-  return range.map(index => {
+  return range.map((index) => {
     return { id: index, ...scoutTile };
   });
 };
-const rgb = ColorUtil.hexToRgb('#67bd67');
+const rgb = ColorUtil.hexToRgb("#67bd67");
 const darkenColor = -0.1; // 10% darker
 const shadedColor = ColorUtil.getShadedColor(rgb, darkenColor);
 const demoModels = createDemoModels();
@@ -48,7 +48,7 @@ const TileGrid = ({
   models = demoModels,
   isDemo = false,
   width = 400,
-  tileConfig = { size: 100, fill: '#67bd67', cornerColor: shadedColor },
+  tileConfig = { size: 100, fill: "#67bd67", cornerColor: shadedColor },
   isIsometric = false,
   customClass = null,
   tileRefs,
@@ -70,7 +70,7 @@ const TileGrid = ({
   };
 
   const initialModelGrid = createGrid();
-  const renderGrid = grid => {
+  const renderGrid = (grid) => {
     let count = -1;
 
     const createColumns = (columns, x) => {
@@ -81,17 +81,24 @@ const TileGrid = ({
         }
         const keyId = `${x}${y}`;
 
-        const isSelected = tileSeleted ? tileModel.id === tileSeleted.id : false;
+        const isSelected = tileSeleted
+          ? tileModel.id === tileSeleted.id
+          : false;
 
         return (
           <Tile
             key={keyId}
             model={tileModel}
             {...tileConfig}
-            customStyle={{ margin: gapSize }}
+            customStyle={{
+              margin: gapSize,
+              backgroundColor: "blue", //tileModel.color,
+              width: size,
+              height: size,
+            }}
             setSelected={setSelected}
             isSelected={isSelected}
-            ref={ref => (tileRefs ? (tileRefs.current[count] = ref) : null)}
+            ref={(ref) => (tileRefs ? (tileRefs.current[count] = ref) : null)}
             id={`tile${tileModel.id}`}
           />
         );
