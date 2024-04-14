@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Tile from './tile';
-import Column from '../../atoms/column';
-import Button from '../../atoms/button';
+import Tile from '../tile';
+import Column from '../../../atoms/column';
+import Button from '../../../atoms/button';
 import { useSpring, animated } from '@react-spring/web';
 
 const AniamtedTileStory = ({ size = 100, fill = 'blue' }) => {

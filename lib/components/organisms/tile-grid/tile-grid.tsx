@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 // components
-import { Tile, Column, Row } from "../../";
+import { Tile, Column, Row } from "../..";
 import styles from "./tile-grid.module.css";
 import ColorUtil from "../../../utils/colour-util";
 import clsx from "clsx";

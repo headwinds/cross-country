@@ -1,11 +1,6 @@
-import React, { forwardRef } from 'react';
-import { useSpring, animated } from '@react-spring/web';
+import { forwardRef } from 'react';
 
-// components
-import { Column, Row } from '../..';
-import styles from './tile.module.css';
 import InteractiveTile from './tile-interactive';
-
 import type { TileType, InteractiveTileType } from './types';
 
 const Tile = forwardRef((props: TileType | InteractiveTileType, ref) => {

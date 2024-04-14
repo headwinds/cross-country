@@ -1,7 +1,8 @@
 // @ts-nocheck
-import { Row, Tile } from '../../../..';
-import { ColourUtil } from '../../../../utils';
-import styles from './area-of-affect.module.css';
+import { Tile } from '../../../';
+import { ColourUtil } from '../../../utils';
+import styles from './island-tile-grid.module.css';
+import { GridRow } from "./grid-row";
 
 const islandMap = [
   ['0', '0', '0', '1', '0'],
@@ -9,14 +10,6 @@ const islandMap = [
   ['0', '1', '1', '0', '0'],
   ['0', '0', '0', '0', '0'],
 ];
-
-export const RowOfTiles = ({ tiles, index, styles }) => {
-  return (
-    <Row customClass={styles.row} key={index}>
-      {tiles}
-    </Row>
-  );
-};
 
 
 export const getMapNewGrid = grid => {
@@ -67,7 +60,7 @@ type GridResponseType = {
  * @param {string[]} palette - an array of strings
  * @returns {GridResponseType} response
  */
-export const getIsland = (grid, GridTile = Tile, GridRow = RowOfTiles, palette): GridIsland => {
+export const getIsland = (grid, palette): GridIsland => {
   const ROWS = grid.length;
   const COLS = grid[0].length;
 
@@ -102,9 +95,9 @@ export const getIsland = (grid, GridTile = Tile, GridRow = RowOfTiles, palette):
         islandCount += 1;
         markVisited(i, j);
       }
-      tiles.push(<GridTile model={model} setSelected={setSelected}></GridTile>);
+      tiles.push(<Tile model={model} setSelected={setSelected}></Tile>);
     }
-    gridTiles.push(<GridRow styles={styles} tiles={tiles} index={`${i}`} />);
+    gridTiles.push(<GridRow styles={styles} tiles={tiles} id={`${i}`} />);
   }
 
   return { islandCount, gridTiles };
@@ -148,3 +141,9 @@ export const getLargestIsland = grid => {
 
   return largestIslandArea;
 };
+
+const IslandTileGrid = () => {
+    return (<div>island tile grid</div>)
+}
+
+export default IslandTileGrid;
