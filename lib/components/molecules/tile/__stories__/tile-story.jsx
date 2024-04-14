@@ -1,5 +1,6 @@
-import Tile from './tile';
+import Tile from '../tile';
 import { useState } from 'react';
+
 
 const TileStory = ({ size = 100, model = { fill: 'green', id: 0 } }) => {
   const { selectedTile, setSelected } = useState(null);
@@ -11,7 +12,7 @@ const TileStory = ({ size = 100, model = { fill: 'green', id: 0 } }) => {
 
   const isSelected = selectedTile ? selectedTile.id === model.id : false;
 
-  return <Tile size={size} model={model} setSelected={handleSelected} isInteractive />;
-};
-
+  return (<Tile size={size} model={model} setSelected={handleSelected} isInteractive />)
+}
 export default TileStory;
+

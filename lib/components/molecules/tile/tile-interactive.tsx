@@ -41,6 +41,10 @@ const InteractiveTile = forwardRef(
     const finalCustomStyle = { ...customStyle, width: size, height: size, backgroundColor: fill, padding: 0 };
     const { value } = model;
     const handleTileSelected = () => {
+      if (!setSelected) {
+        return null;
+      }
+
       if (isSelected) {
         return setSelected(null);
       }
