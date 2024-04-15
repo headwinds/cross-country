@@ -1,6 +1,4 @@
 // @ts-nocheck
-import { Row, Tile } from "../../../..";
-import styles from "./area-of-affect.module.css";
 
 const islandMap = [
   ["0", "0", "0", "1", "0"],

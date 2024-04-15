@@ -1,40 +1,10 @@
-/*
-import React, { useRef } from "react";
-import TileGrid from "../tile-grid";
-import IslandTileGrid from "../island-tile-grid";
-import Tile from "../../../molecules/tile";
-
-const islandMap = [
-  ["0", "0", "0", "1", "0"],
-  ["0", "1", "0", "0", "0"],
-  ["0", "1", "1", "0", "0"],
-  ["0", "0", "0", "0", "0"],
-];
-
-const createDemoModels = () => {
-  //const range = [...Array(64).keys()]; // chess!
-  const range = [...Array(12).keys()]; // not chess!
-  return range.map((index) => {
-    return { id: index };
-  });
-};
-
-const demoModels = createDemoModels();
-
-const IslandTileGridStory = () => {
-  const tileRefs = useRef([]);
-  //return <TileGrid models={demoModels} totalInRow={3} Tile={Tile} tileRefs={tileRefs} />;
-  return <IslandTileGrid />;
-};
-
-export default IslandTileGridStory;
-*/
-
 // @ts-nocheck
 import React from "react";
 import { Column, Paragraph, Tile } from "../../../../";
 import { GridRow } from "../grid-row";
-import { getIsland, getMapNewGrid } from "./area-of-affect";
+import { getIsland, getMapNewGrid } from "./island-util";
+import IslandTileGrid from "../island-tile-grid";
+import styles from "../tile-grid.module.css";
 
 const largerIslandMap = [
   ["-1", "-1", "0", "0", "-1", "-1"],
@@ -50,8 +20,8 @@ const islandPalette = [
   { hex: "lightgreen", id: 2 },
 ];
 
-export const Island = (grid, palette) => {
-  if (!grid || !grid.length || !grid[0].length) {
+export const Island = ({ grid, palette }) => {
+  if (!grid?.[0]?.length) {
     return null;
   }
 
@@ -59,7 +29,7 @@ export const Island = (grid, palette) => {
   const COLS = grid[0].length;
 
   let islandCount = 0;
-  let gridTiles = [];
+  const gridTiles = [];
 
   // depth first search with recursion
   const markVisited = (x, y) => {
@@ -94,7 +64,7 @@ export const Island = (grid, palette) => {
         islandCount += 1;
         markVisited(i, j);
       }
-      tiles.push(<Tile model={model} setSelected={setSelected}></Tile>);
+      tiles.push(<Tile model={model} setSelected={null}></Tile>);
     }
     gridTiles.push(<GridRow styles={styles} tiles={tiles} index={`${i}`} />);
   }
@@ -114,8 +84,7 @@ const IslandTileGridStory = () => {
   return (
     <Column>
       <Paragraph>Islands</Paragraph>
-      {/* <Column>{gridTiles}</Column> */}
-      <Island palette={islandPalette} grid={island} />
+      <IslandTileGrid palette={islandPalette} grid={island} />
       <Paragraph>Island count: {islandCount}</Paragraph>
     </Column>
   );
