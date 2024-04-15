@@ -1,71 +1,19 @@
 // @ts-nocheck
-import { Tile } from '../../../';
-import { ColourUtil } from '../../../utils';
-import styles from './island-tile-grid.module.css';
+import { Tile, Column } from "../../../";
+import { ColourUtil } from "../../../utils";
+import styles from "./island-tile-grid.module.css";
 import { GridRow } from "./grid-row";
 
-const islandMap = [
-  ['0', '0', '0', '1', '0'],
-  ['0', '1', '0', '0', '0'],
-  ['0', '1', '1', '0', '0'],
-  ['0', '0', '0', '0', '0'],
-];
-
-
-export const getMapNewGrid = grid => {
-  const islandDigitMap = [];
-  for (let i = 0; i < grid.length; i++) {
-    if (!islandDigitMap[i]) {
-      islandDigitMap[i] = [];
-    }
-    for (let j = 0; j < grid[i].length; j++) {
-      if (!islandDigitMap[i][j]) {
-        islandDigitMap[i][j] = [];
-      }
-      const value = Number(grid[i][j]);
-      islandDigitMap[i][j] = value;
-    }
+export const IslandTileGrid = ({ grid, palette }) => {
+  if (!grid?.[0]?.length) {
+    return null;
   }
 
-  return islandDigitMap;
-};
-
-const islandDigitMap = getMapNewGrid(islandMap);
-const largestIslandDigitMap = getMapNewGrid(islandMap);
-
-const setSelected = tile => {
-  console.log('setSelected tile: ', tile);
-};
-
-// https://leetcode.com/problems/max-area-of-island/
-
-type GridIsland = {
-  grid: any;
-  GridTile: any;
-  GridRow: any;
-};
-
-const defaultPalette = ColourUtil.getSplashPalette();
-
-type GridResponseType = {
-  islandCount: number;
-  gridTiles: JSX.Element;
-};
-
-/**
- * provide to the ability to accept a grid and return an island count as well as the tiles
- * @param {string[]} grid - a 2d array of strings
- * @param {JSX.Element} GridTile - a component
- * @param {JSX.Element} GridRow - a component
- * @param {string[]} palette - an array of strings
- * @returns {GridResponseType} response
- */
-export const getIsland = (grid, palette): GridIsland => {
   const ROWS = grid.length;
   const COLS = grid[0].length;
 
   let islandCount = 0;
-  let gridTiles = [];
+  const gridTiles = [];
 
   // depth first search with recursion
   const markVisited = (x, y) => {
@@ -85,8 +33,13 @@ export const getIsland = (grid, palette): GridIsland => {
     for (let j = 0; j < COLS; j++) {
       const value = grid[i][j];
 
-      const tileColor = value === -1 ? 'transparent' : palette.find(tile => tile.id === value).hex;
-      console.log('tileColor: ', tileColor);
+      const validPalette = palette ? palette : defaultPalette;
+
+      const tileColor =
+        value === -1
+          ? "transparent"
+          : validPalette?.find((tile) => tile.id === value).hex;
+
       const id = `${i}${j}`;
 
       const model = { fill: tileColor, value, id };
@@ -95,55 +48,12 @@ export const getIsland = (grid, palette): GridIsland => {
         islandCount += 1;
         markVisited(i, j);
       }
-      tiles.push(<Tile model={model} setSelected={setSelected}></Tile>);
+      tiles.push(<Tile model={model} setSelected={null}></Tile>);
     }
-    gridTiles.push(<GridRow styles={styles} tiles={tiles} id={`${i}`} />);
+    gridTiles.push(<GridRow styles={styles} tiles={tiles} index={`${i}`} />);
   }
 
-  return { islandCount, gridTiles };
+  return <Column>{gridTiles}</Column>;
 };
-
-export const getLargestIsland = grid => {
-  const recurseArea = (rowIdx, colIdx) => {
-    if (
-      rowIdx < 0 ||
-      rowIdx >= grid.length ||
-      colIdx < 0 ||
-      colIdx >= grid[0].length ||
-      grid[rowIdx][colIdx] === 2 ||
-      grid[rowIdx][colIdx] === 0
-    ) {
-      return 0;
-    }
-
-    grid[rowIdx][colIdx] = 2;
-
-    const newTotal =
-      1 +
-      recurseArea(rowIdx + 1, colIdx) +
-      recurseArea(rowIdx - 1, colIdx) +
-      recurseArea(rowIdx, colIdx - 1) +
-      recurseArea(rowIdx, colIdx + 1);
-    return newTotal;
-  };
-
-  const maxAreaOfIsland = grid => {
-    let ans = 0;
-    for (let r = 0; r < grid.length; r++) {
-      for (let c = 0; c < grid[0].length; c++) {
-        ans = Math.max(ans, recurseArea(r, c));
-      }
-    }
-    return ans;
-  };
-
-  const largestIslandArea = maxAreaOfIsland(grid);
-
-  return largestIslandArea;
-};
-
-const IslandTileGrid = () => {
-    return (<div>island tile grid</div>)
-}
 
 export default IslandTileGrid;
