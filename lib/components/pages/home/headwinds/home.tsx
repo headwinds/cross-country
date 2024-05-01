@@ -1,14 +1,27 @@
-import * as React from 'react';
-import { useState } from 'react';
-import { HomeProps } from './home.types';
-import HomeTemplateHero from '../../../templates/home/headwinds/headwinds-home-hero';
-import Header from './header/headwinds-header';
-import Hero from './headwinds-hero';
+import * as React from "react";
+import { useState } from "react";
+import { HomeProps } from "./home.types";
+import HomeTemplateHero from "../../../templates/home/headwinds/headwinds-home-hero";
+import Header from "./header/headwinds-header";
+import Hero from "./headwinds-hero";
 //import SideQuest from './headwinds-sidequest';
-import Footer from './headwinds-footer';
-import { Loading, Error } from '../../../';
+import Footer from "./headwinds-footer";
+import { Loading, Error } from "../../../";
+import { useSelector } from "@xstate/store/react";
+import { headwindsStore } from "./headwinds-store";
 
 const Home = ({ isBlockedIn = false }: HomeProps) => {
+  // state management
+  const meetings = useSelector(
+    headwindsStore,
+    (state) => state.context.meetings
+  );
+  const isLoading = useSelector(
+    headwindsStore,
+    (state) => state.context.isLoading
+  );
+  // store.send({ type: 'inc' })
+
   // the parent component should manage the relationship between its children
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(null);
@@ -27,20 +40,20 @@ const Home = ({ isBlockedIn = false }: HomeProps) => {
     }
   };
 
-  const onHeroLoaded = error => {
-    console.log('onHeroLoaded');
+  const onHeroLoaded = (error) => {
+    console.log("onHeroLoaded");
     updateProgress(error, 100);
   };
 
-  const onSideQuestLoaded = error => {
+  const onSideQuestLoaded = (error) => {
     updateProgress(error);
   };
 
-  const onListiclesLoaded = error => {
+  const onListiclesLoaded = (error) => {
     updateProgress(error);
   };
 
-  console.log('home rendered');
+  console.log("home rendered");
 
   if (error) {
     return <Error />;

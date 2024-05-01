@@ -1,18 +1,15 @@
-import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
-import { Paragraph, SubHeadline } from '../../../';
-import HomeStory from './home-story';
+import { Meta, Canvas, Story, Subtitle } from "@storybook/addon-docs";
+import { Paragraph, SubHeadline } from "../../../";
+import HomeStory from "./home-story";
 
 <Meta title="design system/pages/home" />
 
-<Subtitle>hi fi layout</Subtitle>
-
 As the final level of [atomic design](https://www.uxpin.com/studio/blog/atomic-ui-components/), the page is the end product that you deliver to the world.
+
+This page is not very exciting as decided to put more effort into the [headwinds](../?path=/docs/design-system-pages-home-headwinds--docs) version page.
 
 <Canvas>
   <Story name="home">
     <HomeStory />
-  </Story>
-  <Story name="loading">
-    <HomeStory isLoading />
   </Story>
 </Canvas>

@@ -1,21 +1,35 @@
-import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
-import { Paragraph, SubHeadline } from '../../../../';
-import HeadwindsStory from './headwinds-story';
+import { Meta, Canvas, Story, Subtitle } from "@storybook/addon-docs";
+import { Paragraph, SubHeadline, HeadwindsLogo } from "../../../../";
+import HeadwindsStory from "./headwinds-story";
 
 <Meta title="design system/pages/home/headwinds" />
 
-<Subtitle>headwinds layout</Subtitle>
+<HeadwindsLogo />
+
+## Headwinds Home
 
 What do I want to achieve with my own home page?
 
 - I'm a professional web developer with an eye for desgin and typically focus on frontend UI
 - I want to work with analytics and collaborate with data scientists
-- work within a service industry that cares about the environment
+- work within a service industry that cares about the environment and general welfare of people and the planet!
 - I enjoy prototyping and gamification
 - flexibility: since I'm not looking for work, my site could express more of my personality as ulimately it's nice to connect with people that enjoy sharing experiments
-- currently my site is more of window than a bridge and I want to play more with RabbitMQ, Pusher, and emerging LLMs like ChatGpt.
+- currently my site is more of window than a bridge and I want to play more with RabbitMQ, Pusher, and emerging LLMs like Claude or Perplexity.
 
-In's the early days of the web, we had web rings. I want to build something similar but more inspired by graph theory to build more of a networked fleet than a ring.
+The home should include the common shell sections of the site like the header, footer, and navigation but also include a section for my blog, projects, and a network of friends. As well as something secret; something to discover; an Easter egg to unlock!
+
+- header with auth
+- navigation
+- blog
+- projects
+- network
+- secret
+- footer
+
+In the early days of the web, we had web rings and I really liked that concept of a small social cirlce.
+
+I want to build something similar but more inspired by graph theory to build more of a networked fleet than a ring.
 
 <Canvas>
   <Story name="headwinds">

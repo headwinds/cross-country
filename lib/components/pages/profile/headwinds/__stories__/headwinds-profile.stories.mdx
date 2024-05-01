@@ -1,6 +1,6 @@
-import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
-import { Paragraph, SubHeadline } from '../../../..';
-import HeadwindsProfileStory from './headwinds-profile-story';
+import { Meta, Canvas, Story, Subtitle } from "@storybook/addon-docs";
+import { Paragraph, SubHeadline } from "../../../..";
+import HeadwindsProfileStory from "./headwinds-profile-story";
 
 <Meta title="design system/pages/profile/headwinds" />
 
@@ -8,10 +8,15 @@ import HeadwindsProfileStory from './headwinds-profile-story';
 
 As the final level of [atomic design](https://www.uxpin.com/studio/blog/atomic-ui-components/), the page is the end product that you deliver to the world.
 
+#### Profile
+
 <Canvas>
   <Story name="headwinds profile">
     <HeadwindsProfileStory />
   </Story>
+</Canvas>
+#### Loading
+<Canvas>
   <Story name="loading">
     <HeadwindsProfileStory isLoading />
   </Story>
