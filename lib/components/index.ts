@@ -60,6 +60,7 @@ export { default as RadioGroup } from "./molecules/radiogroup/";
 export { default as Bento } from "./organisms/bento";
 export { default as Listicle } from "./organisms/listicle";
 export { default as Login } from "./organisms/login";
+export { default as Registration } from "./organisms/registration";
 export { default as Branch } from "./organisms/branch/branch";
 export { default as Branches } from "./organisms/branches/branches";
 export { default as Chart } from "./organisms/charts/chart";

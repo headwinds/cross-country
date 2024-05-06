@@ -11,13 +11,7 @@ import {
   Row,
   Paragraph,
 } from "../../..";
-
-
-type BlogModel = {
-  url: string;
-  title: string;
-  updated_at: string;
-};
+import { BlogType } from "./blog.types";
 
 const defaultBlogpostModel = {
   url: "default",
@@ -40,13 +34,15 @@ const BlogpostListItem = ({ postModel = defaultBlogpostModel }) => {
 };
 
 interface BlogPostListProps {
-  blogPostList: BlogModel[];
+  blogPostList: BlogType[];
 }
 
-const BlogPostList = ({blogPostList}) => {
+const BlogPostList = ({ blogPostList }: BlogPostListProps) => {
   // get from route
 
-  const blogPostListItems = blogPostList.map((postModel) => (<BlogpostListItem postModel={postModel} />);
+  const blogPostListItems = blogPostList.map((postModel) => (
+    <BlogpostListItem postModel={postModel} />
+  ));
 
   return <List>{blogPostListItems}</List>;
 };

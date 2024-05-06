@@ -152,6 +152,7 @@ const Login = ({
   hasBackground = false,
   imageUrl = null,
   onChange = (user: any) => {},
+  onRegisterClick = () => {},
 }) => {
   // remember me & local storage
   const [localStorageState, toggleRememberMe] = useLoginLocalStorage(
@@ -339,6 +340,7 @@ const Login = ({
     handleRememberMeClicked,
     user,
     error,
+    onRegisterClick,
   };
 
   return <LoginView {...loginViewProps} hasRememberMeChecked={storedValue} />;

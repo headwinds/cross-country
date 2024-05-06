@@ -1,20 +1,8 @@
-import React, { useEffect } from "react";
-import {
-  Image,
-  Column,
-  Row,
-  SubHeadline,
-  Form,
-  TextInput,
-  Button,
-  Label,
-  Paragraph,
-} from "../../";
+import { useEffect } from "react";
+import { Column, Row, SubHeadline } from "../../";
 import { useMachine } from "@xstate/react";
 import { registrationMachine } from "./registration-machine";
 import styles from "./registration.module.css";
-import clsx from "clsx";
-import { Eye, EyeSlash } from "@phosphor-icons/react";
 import PasswordStrengthHelper from "./password-strength-helper";
 import RegistrationForm from "./registration-form";
 import RegistrationResponse from "./registration-response";
@@ -23,7 +11,9 @@ const FieldRow = ({ children }) => {
   return <Row customClass={styles.fieldRow}>{children}</Row>;
 };
 
-const Registration = ({ config: { text, hasBackground, width = 500 } }) => {
+const Registration = ({
+  config: { text, hasBackground, width = 600, isStrongPasswordEnforced },
+}) => {
   const [state, send] = useMachine(registrationMachine);
 
   console.log("Registration state: ", state);
@@ -93,7 +83,6 @@ const Registration = ({ config: { text, hasBackground, width = 500 } }) => {
         borderStyle: "solid",
         borderRadius: 4,
       };
-      console.log("getBorderColorStyle: hasSendBeenClicked ", customStyle);
       return customStyle;
     }
 

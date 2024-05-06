@@ -12,7 +12,7 @@ import {
   Paragraph,
 } from "../../../";
 import BlogPostList from "./blog-post-list";
-import type BlogType from "./blog.types";
+import type { BlogType } from "./blog.types";
 /*
 What do I want from a blog?
 
