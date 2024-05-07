@@ -11,9 +11,9 @@ Core Tech
 - D3
 - Storybook 7
 - Typescript 5
-- Vite 
+- Vite
 
-Do you pour over your personal stats from Github, Strava or Spotify? Is your year always in review?! By experimenting with code, you can hone your developer skills while exploring subject matter that interests you. 
+Do you pour over your personal stats from Github, Strava or Spotify? Is your year always in review?! By experimenting with code, you can hone your developer skills while exploring subject matter that interests you.
 
 [storybook](https://cross-country-storybook.vercel.app/)
 
@@ -31,20 +31,10 @@ import { Column, Row, Paragraph, Table, Chart } from "cross-country"
 
 ### NextJS Support
 
-<<<<<<< HEAD
-For this third-party library to work within NextJS, you need to make one change when you consume cross-country to import it's single css bundle.
-
-After upgrading to Vite, this css modules did not work with NextJS. I [explored different approaches](https://dev.to/headwinds/comment/2bel0) and landed on [rollup-plugin-css-only](https://www.npmjs.com/package/rollup-plugin-css-only) which has minimal configuration. 
-
-All you need to do is import the cross-country css in the main layout.tsx file.
-
-Edit the layout.tsx file like so:
-=======
 For this third-party library to work within NextJS, there is one change required to import it's single css bundle.
 
-Edit the _app.js file to:
+Edit the \_app.js file to:
 
->>>>>>> trunk
 ```
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -53,11 +43,11 @@ import "cross-country/dist/bundle.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 ```
 
-### Tailwind CSS Support 
+### Tailwind CSS Support
 
 Each component provides a `customClass` propertity where you can supply your own tailwind css classes.
 
-### Example Page 
+### Example Page
 
 By wrapping html, each component is augmented for building accessible experiences across screens. A simple page may look like this:
 
@@ -91,8 +81,7 @@ export const privateConfig = {
 };
 ```
 
-## Storybook 
-
+## Storybook
 
 While creating compoents, you can use Storybook
 
@@ -104,9 +93,9 @@ Open your browser to http://localhost:6006/
 
 ## Build the Static Site for Storybook
 
-After running `npm run build-storybook`, I had to make one change to the iframe.html file in the storybook-static folder. 
+After running `npm run build-storybook`, I had to make one change to the iframe.html file in the storybook-static folder.
 
-The bundle.css isn't added so I had to add it manually. 
+The bundle.css isn't added so I had to add it manually.
 
 ```
   <link rel="stylesheet" href="./bundle.css" />
