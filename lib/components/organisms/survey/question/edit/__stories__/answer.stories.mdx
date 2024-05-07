@@ -1,6 +1,16 @@
-import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
-import AnswerInput from '../answer-input';
-import TakeAnswerInput from '../../take/take-answer-input';
+import { Meta, Canvas, Story, Subtitle } from "@storybook/addon-docs";
+import {
+  Column,
+  SubHeadline,
+  TextInput,
+  Button,
+  Row,
+  Label,
+  Paragraph,
+  TextAnswerInput,
+  AnswerInput,
+  TextAreaAnswerInput,
+} from "../../../../../";
 
 <Meta title="design system/organisms/survey/question" />
 
@@ -10,12 +20,50 @@ When you need a user an answer a question
 
 what is the differnce between AnswerInput and TakeAnswerInput?
 
+<Subtitle>TextAnswerInput</Subtitle>
 <Canvas>
-  <Story name="text input single row">
-    <TakeAnswerInput hasActions={false} helperText={""} data={{ question: "Who lead the creation of Rez?", answer: "Tetsuya Mizuguchi", isRequired: false }} />
+  <Story name="text input">
+    <TextAnswerInput
+      hasActions={false}
+      helperText={""}
+      data={{
+        question: "Who lead the creation of Rez?",
+        answer: "Tetsuya Mizuguchi",
+        isRequired: false,
+      }}
+    />
   </Story>
+</Canvas>
+
+<Subtitle>TextAreaAnswerInput</Subtitle>
+<Canvas>
+  <Story name="text area">
+    <TextAreaAnswerInput
+      rows={10}
+      hasActions={false}
+      helperText={""}
+      data={{
+        question: "What makes Rez so special?",
+        answer: "Tetsuya Mizuguchi",
+        isRequired: false,
+      }}
+    />
+  </Story>
+</Canvas>
+
+<Subtitle>AnswerInput</Subtitle>
+<Canvas>
   <Story name="text input multi row">
-    <AnswerInput rows={10} hasActions={false} helperText={""} data={{ question: "What makes Rez so special?", answer: "Tetsuya Mizuguchi", isRequired: false }} />
+    <AnswerInput
+      rows={10}
+      hasActions={false}
+      helperText={""}
+      data={{
+        question: "What makes Rez so special?",
+        answer: "Tetsuya Mizuguchi",
+        isRequired: false,
+      }}
+    />
   </Story>
 </Canvas>
 

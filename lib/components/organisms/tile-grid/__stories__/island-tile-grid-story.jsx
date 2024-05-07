@@ -6,6 +6,14 @@ import { getIsland, getMapNewGrid } from "./island-util";
 import IslandTileGrid from "../island-tile-grid";
 import styles from "../tile-grid.module.css";
 
+/*
+Isometric
+rotateX(60deg) rotateY(0deg) rotateZ(-45deg)
+- https://webdesign.tutsplus.com/create-an-isometric-layout-with-3d-transforms--cms-27134t
+- https://codepen.io/airen/pen/yabVzR
+- https://www.midwinter-dg.com/permalink-css3-isometric-text-demo-2011-03-14.html
+*/
+
 const largerIslandMap = [
   ["-1", "-1", "0", "0", "-1", "-1"],
   ["0", "1", "0", "0", "1", "1"],
