@@ -1,9 +1,6 @@
-import React, { useEffect } from "react";
 import {
-  Image,
   Column,
   Row,
-  SubHeadline,
   Form,
   TextInput,
   Button,
@@ -11,12 +8,11 @@ import {
   Paragraph,
   HorizontalLine,
 } from "../../";
-import { useMachine } from "@xstate/react";
-import { registrationMachine } from "./registration-machine";
+
 import styles from "./registration.module.css";
-import clsx from "clsx";
+
 import { Eye, EyeSlash } from "@phosphor-icons/react";
-import PasswordStrengthHelper from "./password-strength-helper";
+import RegistrationResponse from "./registration-response";
 
 const FieldRow = ({ children }) => {
   return <Row customClass={styles.fieldRow}>{children}</Row>;
@@ -28,6 +24,8 @@ const RegistrationForm = ({
   handleFocusOnPassword,
   handleBlurOnPassword,
   toggleEye,
+  onLoginClick,
+  onChange
 }) => {
   const {
     isPasswordPlainText,
@@ -59,7 +57,7 @@ const RegistrationForm = ({
 
       const customStyle = {
         borderColor,
-        borderWidth: 2,
+        borderWidth: 1,
         borderStyle: "solid",
         borderRadius: 4,
       };
@@ -83,7 +81,7 @@ const RegistrationForm = ({
                   value,
                 })
               }
-              customStyle={{ ...getBorderColorStyle("email") }}
+              customStyle={{ ...getBorderColorStyle("email"), width: 240 }}
               placeholder="Enter your email"
             />
           </FieldRow>
@@ -133,14 +131,9 @@ const RegistrationForm = ({
               Send
             </Button>
           </FieldRow>
-
-          {registrationResponse ? (
-            <FieldRow>
-              <Paragraph>{registrationResponse?.message}</Paragraph>
-            </FieldRow>
-          ) : null}
         </Column>
         <Column customStyle={{ padding: 0 }}>
+          {/* hack to get the password eye icon to appear on the right row  */}
           <FieldRow></FieldRow>
           <FieldRow></FieldRow>
           <FieldRow></FieldRow>
@@ -150,6 +143,16 @@ const RegistrationForm = ({
             </Button>
           </FieldRow>
         </Column>
+      </Row>
+      <Row>
+        {registrationResponse ? (
+          <FieldRow>
+            <RegistrationResponse
+              response={registrationResponse}
+              onLoginClick={onLoginClick}
+            />
+          </FieldRow>
+        ) : null}
       </Row>
     </Form>
   );

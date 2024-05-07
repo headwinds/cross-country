@@ -65,11 +65,11 @@ const POSTING_REGISTRATION = {
       target: "idle",
       actions: assign({
         registrationResponse: ({ context, event }) => {
-          console.log("SAVING_LISTICLE_ITEM onDone", event.output);
+          console.log("REGISTRATION respoonse", event.output);
           return event.output;
         },
         isRegistrationSuccessful: ({ context, event }) => {
-          console.log("SAVING_LISTICLE_ITEM onDone", event.output);
+          console.log("REGISTRATION success", event.output);
           const isRegistrationSuccessful =
             event.output.message === successMessage;
           return isRegistrationSuccessful;

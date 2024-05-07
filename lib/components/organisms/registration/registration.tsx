@@ -1,20 +1,8 @@
-import React, { useEffect } from "react";
-import {
-  Image,
-  Column,
-  Row,
-  SubHeadline,
-  Form,
-  TextInput,
-  Button,
-  Label,
-  Paragraph,
-} from "../../";
+import { useEffect } from "react";
+import { Column, Row, SubHeadline } from "../../";
 import { useMachine } from "@xstate/react";
 import { registrationMachine } from "./registration-machine";
 import styles from "./registration.module.css";
-import clsx from "clsx";
-import { Eye, EyeSlash } from "@phosphor-icons/react";
 import PasswordStrengthHelper from "./password-strength-helper";
 import RegistrationForm from "./registration-form";
 import RegistrationResponse from "./registration-response";
@@ -23,7 +11,27 @@ const FieldRow = ({ children }) => {
   return <Row customClass={styles.fieldRow}>{children}</Row>;
 };
 
-const Registration = ({ config: { text, hasBackground, width = 500 } }) => {
+interface RegistrationProps {
+  config: {
+    text?: string;
+    hasBackground?: boolean;
+    width?: number;
+    isStrongPasswordEnforced?: boolean;
+    onLoginClick: () => void;
+    onChange: (event: any) => void;
+  };
+}
+
+const Registration = ({
+  config: {
+    text,
+    hasBackground,
+    width = 600,
+    isStrongPasswordEnforced = true,
+    onLoginClick,
+    onChange,
+  },
+}) => {
   const [state, send] = useMachine(registrationMachine);
 
   console.log("Registration state: ", state);
@@ -46,13 +54,6 @@ const Registration = ({ config: { text, hasBackground, width = 500 } }) => {
     });
   };
 
-  useEffect(() => {
-    send({
-      type: "SET_DOMAIN",
-      value: "http://localhost:5000",
-    });
-  }, []);
-
   const {
     isPasswordPlainText,
     isPasswordFocussed,
@@ -64,6 +65,18 @@ const Registration = ({ config: { text, hasBackground, width = 500 } }) => {
     registrationResponse,
     isRegistrationSuccessful,
   } = state.context;
+
+  useEffect(() => {
+    send({
+      type: "SET_DOMAIN",
+      value: "http://localhost:5000",
+    });
+  }, []);
+
+  // broadcast the registration response to the parent component
+  useEffect(() => {
+    onChange(registrationResponse);
+  }, [registrationResponse]);
 
   const getBorderColorStyle = (field) => {
     console.log(
@@ -93,7 +106,6 @@ const Registration = ({ config: { text, hasBackground, width = 500 } }) => {
         borderStyle: "solid",
         borderRadius: 4,
       };
-      console.log("getBorderColorStyle: hasSendBeenClicked ", customStyle);
       return customStyle;
     }
 
@@ -113,17 +125,15 @@ const Registration = ({ config: { text, hasBackground, width = 500 } }) => {
         candidatePassword={password}
       />
 
-      {isRegistrationSuccessful ? (
-        <RegistrationResponse response={registrationResponse} />
-      ) : (
-        <RegistrationForm
-          state={state}
-          send={send}
-          handleFocusOnPassword={handleFocusOnPassword}
-          handleBlurOnPassword={handleBlurOnPassword}
-          toggleEye={toggleEye}
-        />
-      )}
+      <RegistrationForm
+        state={state}
+        send={send}
+        handleFocusOnPassword={handleFocusOnPassword}
+        handleBlurOnPassword={handleBlurOnPassword}
+        toggleEye={toggleEye}
+        onLoginClick={onLoginClick}
+        onChange={onChange}
+      />
     </Column>
   );
 };

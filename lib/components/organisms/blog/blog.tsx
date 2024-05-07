@@ -4,13 +4,15 @@ import {
   Wrapper,
   Column,
   TextInput,
+  SubHeadline,
   Link,
   List,
   ListItem,
   Row,
   Paragraph,
 } from "../../../";
-
+import BlogPostList from "./blog-post-list";
+import type { BlogType } from "./blog.types";
 /*
 What do I want from a blog?
 
@@ -32,29 +34,15 @@ OR
 
 */
 
-interface BlogProps {
-  // Define your component props here
-}
-
 const defaultBlogpostModel = {
   url: "default",
   title: "default",
   updated_at: "March 19, 2024",
 };
 
-const BlogpostListItem = ({ postModel = defaultBlogpostModel }) => {
-  const { url, title, updated_at } = postModel;
-  return (
-    <ListItem>
-      <Row>
-        <Link href={url}>{title}</Link>
-        <Paragraph customStyle={{ marginLeft: 8, fontSize: 12 }}>
-          {updated_at}
-        </Paragraph>
-      </Row>
-    </ListItem>
-  );
-};
+interface BlogProps {
+  // Define your component props here
+}
 
 const Blog = (props: BlogProps) => {
   // get from route
@@ -70,18 +58,23 @@ const Blog = (props: BlogProps) => {
     );
   }
 
-  const blopostListItems = [
-    <BlogpostListItem postModel={defaultBlogpostModel} />,
-    <BlogpostListItem postModel={defaultBlogpostModel} />,
-    <BlogpostListItem postModel={defaultBlogpostModel} />,
+  const blogPostList: BlogType[] = [
+    defaultBlogpostModel,
+    defaultBlogpostModel,
+    defaultBlogpostModel,
   ];
 
   return (
     <Wrapper>
       <Wallpaper>
-        <Column>
-          <List>{blopostListItems}</List>
-        </Column>
+        <Row>
+          <Column>
+            <SubHeadline>Write</SubHeadline>
+          </Column>
+          <Column>
+            <BlogPostList blogPostList={blogPostList} />
+          </Column>
+        </Row>
       </Wallpaper>
     </Wrapper>
   );

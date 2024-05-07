@@ -10,10 +10,37 @@ import clsx from "clsx";
 import styles from "./login.module.css";
 
 const Response = ({ user, error }) => {
+  // Cannot read properties of undefined (reading 'json')
+  const validDisplayErrorMessages = [
+    "Failed to fetch",
+    "NetworkError when attempting to fetch resource.",
+    "invalid username or password",
+  ];
+
+  const validDisplayErrorMessage = validDisplayErrorMessages.includes(
+    error.message
+  )
+    ? error.message
+    : "Network error. Please try again later.";
+
+  if (error?.message.toLowerCase().includes("Cannot read")) {
+    return (
+      <Row>
+        <Error
+          message={"Account not found. Please try again or register."}
+          customStyle={{ fontSize: 14 }}
+        />
+      </Row>
+    );
+  }
+
   if (error) {
     return (
       <Row>
-        <Error message={StringUtil.capitalize(error.message)} />
+        <Error
+          message={StringUtil.capitalize(validDisplayErrorMessage)}
+          customStyle={{ fontSize: 14 }}
+        />
       </Row>
     );
   }

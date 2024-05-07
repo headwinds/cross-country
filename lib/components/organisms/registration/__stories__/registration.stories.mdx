@@ -1,27 +1,41 @@
-import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
+import { Meta, Canvas, Story, Subtitle } from "@storybook/addon-docs";
 import Registration from "../registration";
 import PasswordStrengthHelper from "../password-strength-helper";
 
-<Meta title="design system/organisms/registration" parameters={{xstate: true}} />
+<Meta
+  title="design system/organisms/registration"
+  parameters={{ xstate: true }}
+/>
 
 # Registration
 
-The minimal form registration is basically an email address but I'll also capture the username and password at this point, everything else like first and last name will be collected later as part of the onboarding process and profile setup. 
-
+The minimal form registration is basically an email address but I'll also capture the username and password at this point, everything else like first and last name will be collected later as part of the onboarding process and profile setup.
 
 <Canvas>
   <Story name="registration">
-   <Registration config={{text: "Registration", hasBackground: false}} />
+    <Registration
+      config={{
+        text: "Registration",
+        hasBackground: false,
+        onChange: () => {},
+      }}
+    />
   </Story>
   <Story name="password helper invalid">
-   <PasswordStrengthHelper isPasswordFocussed={true} candidatePassword="hellowo" />
+    <PasswordStrengthHelper
+      isPasswordFocussed={true}
+      candidatePassword="hellowo"
+    />
   </Story>
   <Story name="password helper valid">
-   <PasswordStrengthHelper isPasswordFocussed={true} candidatePassword="Hello1world!" />
+    <PasswordStrengthHelper
+      isPasswordFocussed={true}
+      candidatePassword="Hello1world!"
+    />
   </Story>
 </Canvas>
 
-- [basic form input example](https://xstate-catalogue.com/machines/form-input) 
+- [basic form input example](https://xstate-catalogue.com/machines/form-input)
 - [Maher Alkendi](https://dev.to/ma7eer/basic-form-flow-using-xstate-and-react-4fgg)
 - [thewidlarzgroup](https://thewidlarzgroup.com/multistep-form-xstate-formik/)
 - [css-tricks](https://css-tricks.com/using-react-and-xstate-to-build-a-sign-in-form/)
