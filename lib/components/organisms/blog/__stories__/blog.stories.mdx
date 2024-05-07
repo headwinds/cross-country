@@ -1,0 +1,22 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/addon-docs";
+import BlogStory from "./blog-story";
+
+<Meta title="design system/organisms/blog" />
+
+# Blog
+
+A blog is the ultimate form of content marketing and self publishing.
+
+It’s a platform for sharing your ideas, connecting with your audience, and establishing yourself as an authority in your niche; or at least that you've been done that path and can offer guidance.
+
+### Auth
+
+It is a bit tempting to allow the ability to blog anonymously, but for this version, we will require a user to be authenticated to post a blog.
+
+<Canvas>
+  <Story name="blog">
+    <BlogStory />
+  </Story>
+</Canvas>
+
+- [ISR](https://vercel.com/docs/incremental-static-regeneration)

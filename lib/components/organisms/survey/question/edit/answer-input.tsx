@@ -23,6 +23,10 @@ const AnswerInput = ({
   data,
   onChange,
   customClass = "border-2 border-gray-200 rounded-sm m-2", // to support Tailwind CSS or any css class
+  helperText = "You can leave the answer blank if it could be anything",
+  hasActions = true,
+  rows = 1,
+  cols = 33,
 }) => {
   const [saveAnswer, setSaveAnswer] = useState("");
   const [isSaved, toggleIsSaved] = useState(false);
@@ -40,8 +44,6 @@ const AnswerInput = ({
   const onEditClick = () => {
     toggleIsSaved(false);
   };
-
-  const onSkipClick = () => {};
 
   const { question, answer, name, isRequired } = data;
   const hasAnswer = answer?.length > -1;
@@ -86,29 +88,23 @@ const AnswerInput = ({
         value={saveAnswer}
         onTextChange={(text) => setSaveAnswer(text)}
         name={`${name}_answer`}
+        rows={rows}
+        cols={cols}
       />
 
       {!isRequired ? (
-        <Paragraph customClass="m-2">
-          You can leave the answer blank if it could be anything
-        </Paragraph>
+        <Paragraph customClass="m-2">{helperText}</Paragraph>
       ) : null}
-      <Row>
-        <Button
-          onClick={(data) => onSaveClick(data)}
-          customStyle={{ width: 50 }}
-        >
-          <CheckSquare size={20} />
-        </Button>
-        {!isRequired ? (
+      {hasActions ? (
+        <Row>
           <Button
-            onClick={(data) => onSkipClick(data)}
+            onClick={(data) => onSaveClick(data)}
             customStyle={{ width: 50 }}
           >
-            <XSquare size={20} />
+            <CheckSquare size={20} />
           </Button>
-        ) : null}
-      </Row>
+        </Row>
+      ) : null}
     </Column>
   );
 };

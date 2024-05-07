@@ -1,22 +1,26 @@
-import React, { useEffect } from 'react';
-import { useSpring, animated } from '@react-spring/web';
+import React, { useEffect } from "react";
+import { useSpring, animated } from "@react-spring/web";
 
 // components
-import { Row, Button, Checkbox, Label, Column } from '../..';
+import { Row, Button, Checkbox, Label, Column } from "../..";
 
 // styles
-import styles from './login.module.css';
+import styles from "./login.module.css";
 
 const LoginSubmitTransition = ({
   isAnimated,
   isAuthenticated = false,
   handleRememberMeClicked,
   hasRememberMeChecked,
-  onSubmitHandler
+  onSubmitHandler,
 }) => {
-  const start = { opacity: 0, transform: 'translate3d(0px, 0px, 0px)' };
-  const enter = { opacity: 1, transform: 'translate3d(0px, 10px, 0px)', delay: 900 };
-  const leave = { opacity: 0, transform: 'translate3d(0px, 0px, 0px)' };
+  const start = { opacity: 0, transform: "translate3d(0px, 0px, 0px)" };
+  const enter = {
+    opacity: 1,
+    transform: "translate3d(0px, 10px, 0px)",
+    delay: 900,
+  };
+  const leave = { opacity: 0, transform: "translate3d(0px, 0px, 0px)" };
   const [animatedStyles, api] = useSpring(() => start);
 
   useEffect(() => {
@@ -28,10 +32,13 @@ const LoginSubmitTransition = ({
   }, [isAuthenticated]);
 
   const RememberMe = () => (
-    <Column>
+    <Column customStyle={{ padding: 0 }}>
       <Row>
         <Label>Remember me?</Label>
-        <Checkbox handleChange={handleRememberMeClicked} isChecked={hasRememberMeChecked} />
+        <Checkbox
+          handleChange={handleRememberMeClicked}
+          isChecked={hasRememberMeChecked}
+        />
       </Row>
     </Column>
   );
@@ -41,7 +48,11 @@ const LoginSubmitTransition = ({
       <animated.div style={animatedStyles}>
         <Row customClass={styles.login__rowSend}>
           <RememberMe />
-          <Button type="submit" label="login" customClass={styles.login__button}>
+          <Button
+            type="submit"
+            label="login"
+            customClass={styles.login__button}
+          >
             Send
           </Button>
         </Row>

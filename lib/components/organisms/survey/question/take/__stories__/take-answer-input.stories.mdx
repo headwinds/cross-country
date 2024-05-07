@@ -1,0 +1,24 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/addon-docs";
+import MultipleChoiceStory from "./multiple-choice-story";
+import TakeAnswerInputStory from "./take-answer-input-story";
+import TakeAnswerDateTimeInputStory from "./take-answer-date-time-input-story";
+
+<Meta title="design system/organisms/survey/question/text input single row" />
+
+# Text Input Question & Answer
+
+`TakeAnswerInput` allows a user to enter a text answer to a question in a single row which is ideal for pasting in a url.
+
+<Subtitle>Text Input</Subtitle>
+<Canvas>
+  <Story name="text input">
+    <TakeAnswerInputStory />
+  </Story>
+</Canvas>
+
+<Subtitle>Date Input</Subtitle>
+<Canvas>
+  <Story name="date time">
+    <TakeAnswerDateTimeInputStory />
+  </Story>
+</Canvas>

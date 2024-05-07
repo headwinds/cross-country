@@ -15,4 +15,9 @@ We might take a [de-make approach](https://www.thegamer.com/best-game-demakes/) 
   <Story name="stage">
     <Stage actorModels={actors} />
   </Story>
+  <Story name="configure">
+    <Stage actorModels={actors} config={{
+      customStyle: { width: 600, height: 300, backgroundColor: "pink" }
+    }} />
+  </Story>
 </Canvas>

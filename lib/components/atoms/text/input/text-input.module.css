@@ -1,4 +1,7 @@
 .textInput {
-  padding: 8px;
-  margin: 4px;
+  border: 1px solid #ccc;
+  cursor: text;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
 }

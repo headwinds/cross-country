@@ -2,6 +2,7 @@
   display: flex;
   overflow: hidden;
   padding: 0px;
+  position: relative;
 }
 
 .login__view {
@@ -11,37 +12,36 @@
 
 .login__title {
   color: #666;
-  opacity: 0.7;
   font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font);
+  font-weight: 500;
 }
 
 .login__label {
-  color: mediumvioletred;
-  opacity: 0.7;
+  color: #333;
   font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font);
 }
 
 .login__label_valid {
-  color: $valid-text;
+  color: #333;
 }
 
 .login__input {
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 1px solid mediumvioletred;
+  border-bottom: 1px solid #666;
   border-style: dashed;
   border-top-style: none;
   border-left-style: none;
   border-right-style: none;
   color: #000;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font);
 }
 
 .login__input::placeholder {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font);
 }
 
 .login__input_valid {
@@ -51,8 +51,8 @@
 .login__button {
   margin: 8px;
   width: 120px;
-  background-color: mediumvioletred;
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--primary);
+  font-family: var(--font);
   font-weight: 300;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .login__rowSend {
-  justify-content: flex-start !important;
+  justify-content: flex-end !important;
 }
 
 .login__response {

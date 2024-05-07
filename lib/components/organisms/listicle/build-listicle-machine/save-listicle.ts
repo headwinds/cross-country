@@ -30,13 +30,14 @@ const saveListicle = fromPromise<string[], UpdateListicleInputType>(
       description: "", // deprecated? maybe...probably ...hmmmm could be move to an enrich table
     };
 
-    const response = fetch(`${domain}/api/listicle`, {
+    const response = await fetch(`${domain}/api/listicle`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
     });
+    const json = await response.json();
 
-    return response.json();
+    return json;
   }
 );
 

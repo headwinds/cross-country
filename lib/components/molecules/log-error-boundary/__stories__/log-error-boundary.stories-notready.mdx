@@ -1,0 +1,19 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
+import { Paragraph, SubHeadline } from '../../../';
+import LogErrorBoundaryStory from './log-error-boundary-story';
+
+<Meta title="design system/molecules/log error boundary" />
+
+Whenever a react component crashes, we don't want to crash the entire page and present a white screen to the user. Instead, we want to log the error and present a friendly error message to the user. 
+
+This is where the LogErrorBoundary comes in. It's a simple react component that wraps the React [ErrorBoundary](https://react.dev/reference/react/useTransition#displaying-an-error-to-users-with-error-boundary) that catches any errors that occur within its children and logs the error to the console. 
+
+It also presents a friendly error message to the user or it can fail gracefully without an error message.
+
+We can pump this error message to third party analytics tools like Sentry or New Relic to track the errors that occur in our application.
+
+<Canvas>
+  <Story name="log error boundary">
+    <LogErrorBoundaryStory />
+  </Story>
+</Canvas>

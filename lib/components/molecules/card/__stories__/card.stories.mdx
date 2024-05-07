@@ -1,16 +1,61 @@
 import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
-import Card from '../card';
+import PhotoCardStory from './photo-card-story';
+import AmazonCardStory from './amazon-card-story';
+import CardBuilderStory from './card-builder-story';
 
 <Meta title="design system/molecules/card" />
 
 # Card
 
-<Subtitle>to build a deck, we start with a card</Subtitle>
+I first learned of the card metaphor strategy for web design via [Material UI Cards](https://m2.material.io/components/cards). 
+
+It can help to organize information in a way that is easy to understand and navigate and follows the principles of a [mobile first design](https://www.uxpin.com/studio/blog/a-hands-on-guide-to-mobile-first-design/).
+
+On most eCommerce stores, the card design is used to display products. The card design is also used in social media platforms to display posts or within a game to display a character or item.
+
+A card usually features a large image or video, a title, a description, and a call to action like a Learn More or Buy button.
+
+The card is a versatile design element that can be used in many different ways. It can be used to display a product, a blog post, a video, a photo, or any other type of content. It has fluid dimension is designed to be contained within a parent grid, or we can pass in a custom class or style. 
+
+### Game Inspiration
+
+- [magic the gathering](https://magic.wizards.com/)
+- [rendsword](https://play.date/games/rendsword/)
+- [hearthstone](https://hearthstone.blizzard.com/)
+- [Marvel snap](https://www.marvelsnap.com/)
+- [react spring examples](https://www.react-spring.dev/examples)
+- [featurebase blog cards](https://www.featurebase.app/blog/founder-stories)
+- [stop designing backgrounds](https://vm.tiktok.com/ZMMav34sK/)
+
+### eCommerce Inspiration
+
+Visit any product list page on a major brand site and study the card design. For instance, [Balenciaga hoodies](https://www.balenciaga.com/en-ca/men/ready-to-wear/sweatshirts-and-hoodies) have a card design within a grid.
+
+### Amazon Affliate 
+
+While browsing [golds](https://golds.vercel.app/), I spotted an interesting card design for a [Keychron K8 Wireless Mechanical Keyboard](https://www.polygon.com/deals/24115480/keychron-k8-wireless-mechanical-keyboard-deal-sale) and looked it up on [Amazon](https://www.amazon.com/Keychron-Bluetooth-Mechanical-Keyboard-Backlight/dp/B08LZLZPQJ) as well as youtube for a [review](https://www.youtube.com/watch?v=Ie4dkqvNK6Q).
+
+What type of questions to do I ask myself when considering a purchase? Beside myself, I'd like to know what would my friends think and would they also recommend it. Is it a popular item? What is the return policy? What is the warranty? What is the shipping time? What is the quality of the product? What is the
+Cost? Any discounts?
+
+Any products that are branded with nature imagery or are eco-friendly are of interest to me. For instance, I like the [cedar smoke candle](https://www.amazon.ca/dp/B08WCCQZBN?pd_rd_i=B08WCCQZBN&pd_rd_w=3sSdC&content-id=amzn1.sym.ce8c76eb-f5b4-45c3-9781-2b2c804518c0&pf_rd_p=ce8c76eb-f5b4-45c3-9781-2b2c804518c0&pf_rd_r=7F8DCGH28ZPG9SZXV2G4&pd_rd_wg=hWnVU&pd_rd_r=c88be83f-272e-45df-9384-bcb1f9144025&s=electronics&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&th=1&linkCode=ll1&tag=headwinds0d-20&linkId=8c2e6b7649f85c04f79fce018e85a9b9&language=en_CA&ref_=as_li_ss_tl) and the [Nature's Garden Heart Healthy Trail Mix](https://amzn.to/4aJgB31).
+
+
+Why does it feel a bit shady to get some super small percentage for recommending a product and becoming an [Amazon Affiliate](https://affiliate-program.amazon.com/)?!
+
+There is a pyschological aspect to it, where I feel like I am selling out or that I am not being genuine. I think it is important to be transparent and honest about the products that I recommend and to only recommend products that I truly believe in. 
+
+I also don't want to handle all the grunt work and logistics of managing an inventory or shipping products. I'd rather focus on creating content and designing the online store.
 
 <Canvas>
-  <Story name="card">
-    <Card>
-      Land
-    </Card>
+  <Story name="full photo">
+    <PhotoCardStory />
+  </Story>
+   <Story name="amazon affliate">
+    <AmazonCardStory />
+  </Story>
+  <Story name="card builder">
+    <CardBuilderStory />
   </Story>
 </Canvas>
+

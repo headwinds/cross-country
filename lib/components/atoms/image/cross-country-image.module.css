@@ -1,4 +1,5 @@
 .image {
-    font-family: Helvetica;
-    padding: 10px;
+    font-family: var(--font);
+    padding: 0px;
+    margin: 0px;
 }

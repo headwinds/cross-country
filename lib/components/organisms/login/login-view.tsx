@@ -1,7 +1,7 @@
 import React from "react";
 
 // components
-import { Image, Column, Form } from "../..";
+import { Image, Column, Form, Link } from "../..";
 import LoginTitle from "./login-title-transition";
 import LoginFields from "./login-fields-transition";
 import LoginSubmit from "./login-submit-transition";
@@ -28,12 +28,11 @@ const LoginView = ({
   hasTitle = true,
   hasRememberMeChecked,
   handleRememberMeClicked,
-  customStyle = { padding: 0 },
+  customStyle = { padding: 0, width: 280 },
+  error,
+  onRegisterClick = () => {},
 }) => {
   const isAuthenticated = user ? true : false;
-  console.log("LoginView: user: ", user);
-  console.log("LoginView: isAuthenticated: ", isAuthenticated);
-  console.log("LoginView: username: ", user?.get?.("username") ?? "no user");
 
   return (
     <Column customClass={styles.login__view} customStyle={customStyle}>
@@ -62,9 +61,22 @@ const LoginView = ({
           onSubmitHandler={onSubmitHandler}
           isAuthenticated={isAuthenticated}
         />
-        {/*<LoginResponse isAnimated={isAnimated} user={user} isAuthenticated={isAuthenticated} />*/}
+        {error ? (
+          <LoginResponse
+            isAnimated={isAnimated}
+            user={user}
+            isAuthenticated={isAuthenticated}
+            error={error}
+          />
+        ) : null}
       </Form>
       <LoginFetching isAnimated={isAnimated} isFetching={isFetching} />
+      <Link
+        onClick={onRegisterClick}
+        customStyle={{ fontSize: 14, margin: 16, cursor: "pointer" }}
+      >
+        Register
+      </Link>
     </Column>
   );
 };

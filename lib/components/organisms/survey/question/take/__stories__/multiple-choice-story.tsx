@@ -36,8 +36,6 @@ const MultipeChoiceStory = () => {
   }, []);
 
   const onChange = (selectedId: string) => {
-    // dispatch change to an external store
-    //console.log("MultipeChoiceStory onChange selectedId: ", selectedId);
     setSelectedId(selectedId);
   };
 

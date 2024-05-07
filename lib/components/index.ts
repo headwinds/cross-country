@@ -57,8 +57,10 @@ export { default as TermsOfUse } from "./molecules/policies/terms-of-use";
 export { default as RadioGroup } from "./molecules/radiogroup/";
 
 // organisms / collecting
+export { default as Bento } from "./organisms/bento";
 export { default as Listicle } from "./organisms/listicle";
 export { default as Login } from "./organisms/login";
+export { default as Registration } from "./organisms/registration";
 export { default as Branch } from "./organisms/branch/branch";
 export { default as Branches } from "./organisms/branches/branches";
 export { default as Chart } from "./organisms/charts/chart";
@@ -67,8 +69,10 @@ export { default as ReverseTextAnimation } from "./organisms/animation/reverse-t
 // organisms / collection / survey
 export { default as EditTitleInput } from "./organisms/survey/question/edit/edit-title-input";
 export { default as EditQuestion } from "./organisms/survey/question/edit/edit-question";
+export { default as AnswerInput } from "./organisms/survey/question/edit/edit-question";
 export { default as MultipleChoice } from "./organisms/survey/question/take/multiple-choice";
 export { default as TextAnswerInput } from "./organisms/survey/question/take/take-answer-input";
+export { default as TextAreaAnswerInput } from "./organisms/survey/question/edit/answer-input";
 export { default as Question } from "./organisms/survey/question/take/question";
 // organisms / gaming
 export { default as Actor } from "./organisms/actors/actor";
@@ -78,7 +82,7 @@ export { default as Warrior } from "./organisms/actors/party/warrior";
 export { default as Cleric } from "./organisms/actors/party/cleric";
 export { default as Wizard } from "./organisms/actors/party/wizard";
 export { default as Wisp } from "./organisms/actors/wisp";
-export { default as FrozenLake } from "./organisms/frozen-lake";
+//export { default as FrozenLake } from "./organisms/frozen-lake";
 export { default as TileGrid } from "./organisms/tile-grid";
 
 // templates

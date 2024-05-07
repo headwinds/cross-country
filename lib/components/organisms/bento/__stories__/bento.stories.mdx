@@ -1,0 +1,42 @@
+
+import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
+import BentoStory from './bento-story';
+
+<Meta title="design system/organisms/bento" />
+
+# Bento
+
+The bento component provides a grid layout for displaying content and we can pass in components for each slot by the `boxes` prop. 
+
+The grid can be configured to have a specific number of rows and columns. The border radius and the gap between the grid items can also be configured. 
+
+There are 4 layouts that can be used: 2x2, 3x3, 4x4, 5x4.
+
+Only the 2x2 layout has a special prop `isMainRight` to reverse the position of the main component placing it on either the right or left side of the grid.
+
+
+<Canvas>
+  <Story name="2 x 2 Grid">
+    <BentoStory grid="2x2" gap={2} borderRadius={0} isMainRight={true} />
+  </Story>
+  <Story name="3 x 3 Grid" >
+    <BentoStory grid="3x3" gap={5} borderRadius={20}/>
+  </Story>
+    <Story name="4 x 4 Grid" >
+    <BentoStory grid="4x4" gap={5} borderRadius={8} />
+  </Story>
+  <Story name="5 x 4 Grid" >
+    <BentoStory grid="5x4" gap={2} borderRadius={5} />
+  </Story>
+</Canvas>
+
+
+- [bento design trend](https://bootcamp.uxdesign.cc/web-design-trend-bento-box-95814d99ac62)
+- [Bento Box Design: A Complete Guide On Improving Your Web Aesthetics](https://alphaefficiency.com/bento-box-design)
+- [bentogrids](https://bentogrids.com/)
+- [Z pattern](https://vanseodesign.com/web-design/3-design-layouts/)
+- [CodePen Bento Style](https://codepen.io/ecemgo/pen/YzBZjjb)
+- [CodePen CWC 2023 Bento Grid](https://codepen.io/aryancodeworm/pen/mdvwGVZ?anon=true&view=pen)
+- [CodePen Minimal Bento](https://codepen.io/ghaste/pen/gOqmXQa)
+- [Codepen Colours & Theming](https://codepen.io/_rahul/pen/dyKagre)
+- [Guide to CSS Grid](https://www.joshwcomeau.com/css/interactive-guide-to-grid/)

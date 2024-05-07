@@ -44,8 +44,6 @@ status
 
 // Build Form State machine
 
-
-
 const buildListicleMachine = createMachine({
   id: "buildListicle",
   initial: "idle",
@@ -69,6 +67,7 @@ const buildListicleMachine = createMachine({
     loadFeedback: null,
     updateFeedback: null,
     saveFeedback: null,
+    domain: "localhost:5000",
   },
   states: {
     idle: {

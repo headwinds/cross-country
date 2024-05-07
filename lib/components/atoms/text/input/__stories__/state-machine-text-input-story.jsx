@@ -67,7 +67,7 @@ const StateMachineTextInputStory = () => {
         <TextInput
           actorOptions={{ context: { searchInput: "hello" } }}
           onTextChange={onTextChange}
-          placeholder="Enter the command: get dragons"
+          placeholder="What's on your mind?"
           onDebouncedQueryChange={onDebouncedQueryChange}
           value={state.context.query}
         />

@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
-import { Column, Image, SVG } from '../../../';
-import styles from './actor.module.css';
-import clsx from 'clsx';
-import ActorModel from '../../../../models/ActorModel';
+import React, { Component } from "react";
+import { Column, Image, SVG } from "../../../";
+import styles from "./actor.module.css";
+import clsx from "clsx";
+import ActorModel from "../../../../models/ActorModel";
 
 const defaultTileSize = 50;
 
-const head = { color: 'purple' };
-const body = { color: 'green' };
-const legs = { color: 'cornflowerblue' };
-const defaultConfig = { head, body, legs, type: 'humanoid' };
+const head = { color: "purple" };
+const body = { color: "green" };
+const legs = { color: "cornflowerblue" };
+const defaultConfig = { head, body, legs, type: "humanoid" };
 
 // should be taken from windsong!
-const actorModel = new ActorModel({ name: 'Actor' }).toObject();
+const actorModel = new ActorModel({ name: "Actor" }).toObject();
 //{ health: 100, speed: 1, attack: 1, defense: 1, isDead: false };
 
 // the actor should be relative to the tile size so that they're larger than the tile
@@ -21,13 +21,23 @@ const renderHeadBodyFeet = (config, tileSize) => {
   const { head, body, legs } = config;
 
   const third = Math.floor(tileSize / 3) - 4;
-  const validThird = String(third) === 'NaN' ? 0 : third;
+  const validThird = String(third) === "NaN" ? 0 : third;
 
   return (
     <div>
-      <div style={{ backgroundColor: head.color, width: 40, height: validThird }}></div>
-      <div style={{ backgroundColor: body.color, width: 40, height: validThird }}></div>
-      <div style={{ backgroundColor: legs.color, width: 40, height: validThird - 10 }}></div>
+      <div
+        style={{ backgroundColor: head.color, width: 40, height: validThird }}
+      ></div>
+      <div
+        style={{ backgroundColor: body.color, width: 40, height: validThird }}
+      ></div>
+      <div
+        style={{
+          backgroundColor: legs.color,
+          width: 40,
+          height: validThird - 10,
+        }}
+      ></div>
     </div>
   );
 };
@@ -38,32 +48,33 @@ const defaultCustomTileStyle = {
   opacity: 1,
   width: defaultTileSize,
   height: 80,
-  alignItems: 'center',
+  alignItems: "center",
 };
 
 // skin
 const defaultCustomSkinStyle = {
-  backgroundColor: 'red',
+  backgroundColor: "red",
 };
 
 const Actor = ({
   position = defaultPosition,
-  customClass = '', // for the tile container
+  customClass = "", // for the tile container
   customTileStyle = defaultCustomTileStyle,
   customSkinStyle = defaultCustomSkinStyle,
   config = defaultConfig,
   tileSize = defaultTileSize,
+  children = null,
   ...rest
 }) => {
   const columnCustomClass = clsx(styles.actor, customClass);
-  const type = config?.type || 'humanoid';
+  const type = config?.type || null;
 
   const renderSubType = () => {
     switch (type) {
-      case 'humanoid':
-      case 'one':  
+      case "humanoid":
+      case "one":
         return null;
-      case 'three':
+      case "three":
       default:
         return config ? renderHeadBodyFeet(config, tileSize) : null;
     }
@@ -74,7 +85,10 @@ const Actor = ({
   return (
     <Column
       customClass={styles.actor}
-      customStyle={{ ...customTileStyle, transform: `translate3d(${x}px, ${y}px, ${z}px)` }}
+      customStyle={{
+        ...customTileStyle,
+        transform: `translate3d(${x}px, ${y}px, ${z}px)`,
+      }}
       name="actor tile"
       {...rest}
     >
@@ -83,7 +97,7 @@ const Actor = ({
         customStyle={{ ...defaultCustomSkinStyle, ...customSkinStyle }}
         name="actor skin"
       >
-        {renderSubType()}
+        {type ? renderSubType() : children}
       </Column>
     </Column>
   );

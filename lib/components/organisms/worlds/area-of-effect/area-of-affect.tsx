@@ -1,21 +1,7 @@
 // @ts-nocheck
-//import { AgnosticRowOfTiles as RowOfTiles, AgnosticTile as Tile } from './agnostic-acre';
 import { Row, Tile } from '../../../..';
-
-// utils
 import { ColourUtil } from '../../../../utils';
-
-// styles
-//import { Column, Row, Tile, SubHeadline, Paragraph, List, ListItem, Link, RelatedArticles } from '../../components';
 import styles from './area-of-affect.module.css';
-
-export const RowOfTiles = ({ tiles, key, styles }) => {
-  return (
-    <Row customClass={styles.row} key={key}>
-      {tiles}
-    </Row>
-  );
-};
 
 const islandMap = [
   ['0', '0', '0', '1', '0'],
@@ -23,6 +9,14 @@ const islandMap = [
   ['0', '1', '1', '0', '0'],
   ['0', '0', '0', '0', '0'],
 ];
+
+export const RowOfTiles = ({ tiles, index, styles }) => {
+  return (
+    <Row customClass={styles.row} key={index}>
+      {tiles}
+    </Row>
+  );
+};
 
 
 export const getMapNewGrid = grid => {
@@ -110,7 +104,7 @@ export const getIsland = (grid, GridTile = Tile, GridRow = RowOfTiles, palette):
       }
       tiles.push(<GridTile model={model} setSelected={setSelected}></GridTile>);
     }
-    gridTiles.push(<GridRow styles={styles} tiles={tiles} key={`${i}`} />);
+    gridTiles.push(<GridRow styles={styles} tiles={tiles} index={`${i}`} />);
   }
 
   return { islandCount, gridTiles };
