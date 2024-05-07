@@ -12,7 +12,7 @@ import {
 import styles from "./registration.module.css";
 
 import { Eye, EyeSlash } from "@phosphor-icons/react";
-import PasswordStrengthHelper from "./password-strength-helper";
+import RegistrationResponse from "./registration-response";
 
 const FieldRow = ({ children }) => {
   return <Row customClass={styles.fieldRow}>{children}</Row>;
@@ -24,6 +24,7 @@ const RegistrationForm = ({
   handleFocusOnPassword,
   handleBlurOnPassword,
   toggleEye,
+  onLoginClick,
 }) => {
   const {
     isPasswordPlainText,
@@ -129,22 +130,6 @@ const RegistrationForm = ({
               Send
             </Button>
           </FieldRow>
-
-          {registrationResponse ? (
-            <FieldRow>
-              <Paragraph
-                customStyle={{
-                  maxWidth: 300,
-                  margin: 8,
-                  color: registrationResponse?.message?.includes("fail")
-                    ? "red"
-                    : "#666",
-                }}
-              >
-                {registrationResponse?.message}
-              </Paragraph>
-            </FieldRow>
-          ) : null}
         </Column>
         <Column customStyle={{ padding: 0 }}>
           {/* hack to get the password eye icon to appear on the right row  */}
@@ -157,6 +142,16 @@ const RegistrationForm = ({
             </Button>
           </FieldRow>
         </Column>
+      </Row>
+      <Row>
+        {registrationResponse ? (
+          <FieldRow>
+            <RegistrationResponse
+              response={registrationResponse}
+              onLoginClick={onLoginClick}
+            />
+          </FieldRow>
+        ) : null}
       </Row>
     </Form>
   );

@@ -11,8 +11,26 @@ const FieldRow = ({ children }) => {
   return <Row customClass={styles.fieldRow}>{children}</Row>;
 };
 
+interface RegistrationProps {
+  config: {
+    text?: string;
+    hasBackground?: boolean;
+    width?: number;
+    isStrongPasswordEnforced?: boolean;
+    onLoginClick: () => void;
+    onChange: (event: any) => void;
+  };
+}
+
 const Registration = ({
-  config: { text, hasBackground, width = 600, isStrongPasswordEnforced },
+  config: {
+    text,
+    hasBackground,
+    width = 600,
+    isStrongPasswordEnforced = true,
+    onLoginClick,
+    onChange,
+  },
 }) => {
   const [state, send] = useMachine(registrationMachine);
 
@@ -36,13 +54,6 @@ const Registration = ({
     });
   };
 
-  useEffect(() => {
-    send({
-      type: "SET_DOMAIN",
-      value: "http://localhost:5000",
-    });
-  }, []);
-
   const {
     isPasswordPlainText,
     isPasswordFocussed,
@@ -54,6 +65,17 @@ const Registration = ({
     registrationResponse,
     isRegistrationSuccessful,
   } = state.context;
+
+  useEffect(() => {
+    send({
+      type: "SET_DOMAIN",
+      value: "http://localhost:5000",
+    });
+  }, []);
+
+  useEffect(() => {
+    onChange(registrationResponse);
+  }, [registrationResponse]);
 
   const getBorderColorStyle = (field) => {
     console.log(
@@ -102,17 +124,15 @@ const Registration = ({
         candidatePassword={password}
       />
 
-      {isRegistrationSuccessful ? (
-        <RegistrationResponse response={registrationResponse} />
-      ) : (
-        <RegistrationForm
-          state={state}
-          send={send}
-          handleFocusOnPassword={handleFocusOnPassword}
-          handleBlurOnPassword={handleBlurOnPassword}
-          toggleEye={toggleEye}
-        />
-      )}
+      <RegistrationForm
+        state={state}
+        send={send}
+        handleFocusOnPassword={handleFocusOnPassword}
+        handleBlurOnPassword={handleBlurOnPassword}
+        toggleEye={toggleEye}
+        onLoginClick={onLoginClick}
+        onChange={onChange}
+      />
     </Column>
   );
 };

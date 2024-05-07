@@ -12,13 +12,34 @@ const BlogStory = () => {
     setHasRegister(true);
   };
 
+  const onLoginClick = () => {
+    // setIsAuthenciated(true);
+    console.log("login clicked");
+    setHasRegister(false);
+  };
+
+  const onChange = (event) => {
+    console.log("event: ", event);
+
+    if (event?.confirmed_on) {
+      setIsAuthenciated(true);
+    }
+  };
+
   const LoginOrRegister = ({ hasToRegister }) => {
     if (hasToRegister) {
       return (
-        <Registration config={{ text: "Registration", hasBackground: false }} />
+        <Registration
+          config={{
+            text: "Registration",
+            hasBackground: false,
+            onLoginClick,
+            onChange,
+          }}
+        />
       );
     } else {
-      return <Login onRegisterClick={onRegisterClick} />;
+      return <Login onRegisterClick={onRegisterClick} onChange={onChange} />;
     }
   };
 
@@ -27,7 +48,7 @@ const BlogStory = () => {
       {isAuthenciated && !hasToRegister ? (
         <Blog />
       ) : (
-        <LoginOrRegister hasToRegister={hasToRegister} />
+        <LoginOrRegister hasToRegister={hasToRegister} onChange={onChange} />
       )}
     </Column>
   );
