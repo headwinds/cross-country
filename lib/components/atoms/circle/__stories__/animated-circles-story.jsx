@@ -1,5 +1,5 @@
 import SVG from "../../svg";
-import AnimatedCircles from "../animated-circles";
+import AnimatedCircles from "./animated-circles";
 
 const AnimatedCirclesStory = () => {
   const svgCustomStyle = {
