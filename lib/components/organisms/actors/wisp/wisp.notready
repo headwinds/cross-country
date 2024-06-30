@@ -1,0 +1,19 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import Wisp from './wisp';
+import { Link } from '../../../';
+import styles from './wisp.module.css';
+import * as WispStories from './wisp.stories';
+
+<Meta of={WispStories} />
+
+# Meta
+
+<Subtitle>a template to create other components</Subtitle>
+
+<Link url="https://en.wikipedia.org/wiki/Will-o%27-the-wisp">Will-o'-the-wisp in folkfore</Link>
+
+<Canvas>
+  <Story of={WispStories.Wisp} />
+</Canvas>
+
+* [codium](https://www.codium.ai/)

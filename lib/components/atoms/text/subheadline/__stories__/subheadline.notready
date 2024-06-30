@@ -1,0 +1,10 @@
+import { Meta, Canvas } from "@storybook/blocks";
+import * as SubheadlineStories from "./__stories__/subheadline.stories";
+
+<Meta of={SubheadlineStories} />
+
+# Sub Headline
+
+a post many have many sub headlines to title content sections
+
+<Canvas of={SubheadlineStories.Default} />

@@ -1,0 +1,29 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import { Paragraph, SubHeadline, RelatedArticles } from '../../../';
+import HomeStory from './home-story';
+import Prism from 'prismjs';
+import * as HomeStories from './home.stories';
+
+<Meta of={HomeStories} />
+
+<Subtitle>Designing a Lo Fi Layout</Subtitle>
+
+The home page is the first impression of your site. There is a certain science to its layout depending on your design and business objectives. There is good reason why most of them feel the same but you can take advantage of your content and creativily to break the mold and make them stand out.
+
+For my own site, I want to take inspiration from the conventional home page but boost the hero!
+
+We cam use tiles to block in areas of the home to help us organize and visualize the final result and see if will achieve our goals.
+
+I'm using this exercise to learn more about css variables. After switching from SCSS to pure CSS, I missed the ability to create a centralized theme. So after chatting with [Perplexity](https://www.perplexity.ai/) about how to best scope global CSS variables and import them into components, I had a decent solution.
+
+### conventional home
+
+<Canvas>
+  <Story of={HomeStories.CanonicalHome} />
+</Canvas>
+
+<RelatedArticles
+  articles={[{ id: 0, title: 'ark ui splitter', url: 'https://ark-ui.com/docs/react/components/splitter' },
+  { id: 1, title: 'Create holy grail layout using CSS grid', url: 'https://twitter.com/davidm_ml/status/1764256604407415210?s=43&t=JosrImXLm25J_T3QQadmMw' },
+  ]}
+/>

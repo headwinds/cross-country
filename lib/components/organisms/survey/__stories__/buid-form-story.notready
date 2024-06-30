@@ -1,0 +1,28 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import { Paragraph, SubHeadline } from '../../../';
+import BuildFormStory from './build-form-story';
+import * as BuidFormStoryStories from './buid-form-story.stories';
+
+<Meta of={BuidFormStoryStories} />
+
+# Build a Survey or Quiz
+
+<Subtitle>users can create their own forms with different input components</Subtitle>
+
+Originally, I started to started to develop this form builder with [React Hook Form](https://react-hook-form.com/) but realized that react-hook-form was a better suited for a finalized form schema.
+
+While building the form and deciding on the question types, xstate is excellent at updating the state of this exploration while we decide on what questions are appropriate.
+
+There are actually two state machines at play: the parent state machine manages the entire form and children state machines manage the options of the each multiple choice question.
+
+Perhaps, I can find a cute way to use `register` and `onChange`...
+
+<Canvas>
+  <Story of={BuidFormStoryStories.BuildForm} />
+</Canvas>
+
+### Carbon
+
+* [carbon credit](https://carbon.credit/)
+* [is Brookfield really so green?](https://www.theglobeandmail.com/business/commentary/article-brookfield-private-equity-decarbonization/)
+* [Eunice Newton Foote: The forgotten scientist who discovered the greenhouse effect in 1856](https://boingboing.net/2024/03/16/eunice-newton-foote-the-forgotten-scientist-who-discovered-the-greenhouse-effect-in-1856.html)

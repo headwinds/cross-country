@@ -1,0 +1,14 @@
+import { Meta, Canvas } from "@storybook/blocks";
+import * as TableStories from "./table.stories";
+
+<Meta of={TableStories} />
+
+# Row
+
+A TableHead
+
+<Canvas of={TableStories.Default} />
+
+### With Text
+
+<Canvas of={TableStories.WithText} />

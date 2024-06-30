@@ -1,0 +1,16 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import { ChickenStory } from "./animal-story";
+import * as AnimalStories from './animal.stories';
+
+<Meta of={AnimalStories} />
+
+# Animal
+
+This provides the concept of inheritennce where we have a base actor to give all other actors the same elements like a name or health bars
+
+<Canvas>
+  <Story of={AnimalStories.Chicken} />
+</Canvas>
+
+* [3 chickens per house](https://vm.tiktok.com/ZMMavs7ap/)
+* [crows count](https://www.perplexity.ai/page/Crows-Count-Using-fnNa2K5IQWyTO_AH8MXb.Q?utm_source=emaildigest\&utm_campaign=digest052824)

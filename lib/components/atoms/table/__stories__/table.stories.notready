@@ -1,0 +1,49 @@
+import type { Meta, StoryObj } from "@storybook/react";
+import Table from "..";
+import TableHead from "../table-head";
+import TableRow from "../table-row";
+import TableBody from "../table-body";
+import TableData from "../table-data";
+
+const meta: Meta<typeof Table> = {
+  component: Table,
+  title: "design system/atoms/table",
+} satisfies Meta<typeof Table>;
+
+export default meta;
+type Story = StoryObj<typeof Table>;
+
+export const Default: Story = {
+  render: () => <Table />,
+};
+
+export const WithText: Story = {
+  render: () => (
+    <Table>
+      <TableHead>
+        <TableRow>
+          <TableData isHead>Item</TableData>
+          <TableData isHead>Price</TableData>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        <TableRow>
+          <TableData>Axe</TableData>
+          <TableData>300</TableData>
+        </TableRow>
+        <TableRow>
+          <TableData>Coffee</TableData>
+          <TableData>50</TableData>
+        </TableRow>
+        <TableRow>
+          <TableData>Wind Turbine</TableData>
+          <TableData>2500</TableData>
+        </TableRow>
+        <TableRow>
+          <TableData>Fishing Lure</TableData>
+          <TableData>25</TableData>
+        </TableRow>
+      </TableBody>
+    </Table>
+  ),
+};

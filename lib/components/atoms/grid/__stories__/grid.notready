@@ -1,0 +1,16 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import * as GridStories from "./grid.stories";
+
+<Meta of={GridStories} />
+
+# Grid
+
+Similar to Column or Row, the Grid component is a layout component that allows you to create a layout to contain children in a certain pattern; obviously a grid.
+
+It is a div container that wraps its children using [css grid](https://css-tricks.com/snippets/css/complete-guide-grid/).
+
+<Canvas of={GridStories.Default} />
+
+### Numbers
+
+<Canvas of={GridStories.Numbers} />

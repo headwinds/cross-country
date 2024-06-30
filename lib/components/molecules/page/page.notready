@@ -1,0 +1,16 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import Page from './page';
+import PageStory from './page-story';
+import * as PageStories from './page.stories';
+
+<Meta of={PageStories} />
+
+# Page
+
+<Subtitle>a page to simulate what you see in your sketch book</Subtitle>
+
+<Canvas>
+  <Story of={PageStories.Page} />
+
+  <Story of={PageStories.CustomPage} />
+</Canvas>

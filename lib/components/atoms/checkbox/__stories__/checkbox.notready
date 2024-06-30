@@ -1,0 +1,12 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import * as CheckboxStories from "./checkbox.stories";
+
+<Meta of={CheckboxStories} />
+
+# Checkbox
+
+<Subtitle>a checkbox to mark that an item has been selected or not</Subtitle>
+
+A checkbox is usually associated with a Label component.
+
+<Canvas of={CheckboxStories.Default} />

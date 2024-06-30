@@ -1,0 +1,16 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import HorizontalLine from '../horizontal-line';
+import * as HorizontalLineStories from './horizontal-line.stories';
+
+<Meta of={HorizontalLineStories} />
+
+# Horizontal Line
+
+A design element to separate content.
+
+<Canvas>
+  <Story of={HorizontalLineStories.HorizontalLine} />
+</Canvas>
+
+// https://codepen.io/rvinay88/pen/OJpeaW
+// https://css-tricks.com/examples/hrs/

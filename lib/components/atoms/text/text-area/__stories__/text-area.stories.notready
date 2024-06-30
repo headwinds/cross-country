@@ -1,0 +1,15 @@
+import { Meta, StoryObj } from "@storybook/react";
+import TextAreaStory from "./text-area-story";
+import TextArea from "../text-area";
+
+const meta: Meta<typeof TextArea> = {
+  component: TextArea,
+  title: "design system/atoms/text area",
+} satisfies Meta<typeof TextArea>;
+
+export default meta;
+type Story = StoryObj<typeof TextArea>;
+
+export const WithText: Story = {
+  render: () => <TextAreaStory />,
+};

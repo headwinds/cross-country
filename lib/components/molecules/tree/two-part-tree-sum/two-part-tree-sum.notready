@@ -1,0 +1,11 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import TwoPartTreeSum from './two-part-tree-sum';
+import * as TwoPartTreeSumStories from './two-part-tree-sum.stories';
+
+<Meta of={TwoPartTreeSumStories} />
+
+# How to Sum up values from nodes in a tree
+
+<Canvas>
+  <Story of={TwoPartTreeSumStories.TreeSum} />
+</Canvas>

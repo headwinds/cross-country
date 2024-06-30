@@ -1,0 +1,19 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import Column from "../column";
+import Label from "../../text/label";
+
+import * as ColumnStories from "./column.stories";
+
+<Meta of={ColumnStories} />
+
+# Column
+
+A vertical column of components.
+
+<Canvas of={ColumnStories.Default} />
+
+### Multiple columns
+
+Multiple columns can be placed side by side.
+
+<Canvas of={ColumnStories.Multiple} />

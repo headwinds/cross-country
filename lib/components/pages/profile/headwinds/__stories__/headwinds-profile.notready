@@ -1,0 +1,16 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import { Paragraph, SubHeadline } from '../../../..';
+import HeadwindsProfileStory from './headwinds-profile-story';
+import * as HeadwindsProfileStories from './headwinds-profile.stories';
+
+<Meta of={HeadwindsProfileStories} />
+
+<Subtitle>hi fi layout</Subtitle>
+
+As the final level of [atomic design](https://www.uxpin.com/studio/blog/atomic-ui-components/), the page is the end product that you deliver to the world.
+
+<Canvas>
+  <Story of={HeadwindsProfileStories.HeadwindsProfile} />
+
+  <Story of={HeadwindsProfileStories.Loading} />
+</Canvas>

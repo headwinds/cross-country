@@ -1,0 +1,13 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import Quote from './quote';
+import * as QuoteStories from './quote.stories';
+
+<Meta of={QuoteStories} />
+
+# Quote
+
+<Subtitle>a quote</Subtitle>
+
+<Canvas>
+  <Story of={QuoteStories.Quote} />
+</Canvas>

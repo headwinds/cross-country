@@ -1,0 +1,16 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import Cleric from '../cleric';
+import { Link, RelatedArticles, Stage, Paragraph } from '../../../../../';
+import styles from '../cleric.module.css';
+import { clericStoryModel } from './cleric-story-model';
+import * as ClericStories from './cleric.stories';
+
+<Meta of={ClericStories} />
+
+# Cleric
+
+<Subtitle>a cleric</Subtitle>
+
+<Canvas>
+  <Story of={ClericStories.Cleric} />
+</Canvas>

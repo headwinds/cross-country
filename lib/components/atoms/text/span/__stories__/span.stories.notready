@@ -1,0 +1,19 @@
+import { Meta, StoryObj } from "@storybook/react";
+import SpanStory from "./span-story";
+import Span from "../span";
+
+const meta: Meta<typeof Span> = {
+  component: Span,
+  title: "design system/atoms/span",
+} satisfies Meta<typeof Span>;
+
+export default meta;
+type Story = StoryObj<typeof Span>;
+
+export const Default: Story = {
+  args: {},
+};
+
+export const Bar: Story = {
+  render: () => <SpanStory />,
+};

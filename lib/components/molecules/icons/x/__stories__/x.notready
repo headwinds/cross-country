@@ -1,0 +1,11 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import X from '../x';
+import * as XStories from './x.stories';
+
+<Meta of={XStories} />
+
+Until [phosphoricons](https://phosphoricons.com/) supports new X logo, we can use this icon.
+
+<Canvas>
+  <Story of={XStories.X} />
+</Canvas>

@@ -1,0 +1,11 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import AddQuestionStory from './add-question-story';
+import * as AddQuestionStories from './add-question.stories';
+
+<Meta of={AddQuestionStories} />
+
+<Subtitle>Add a question to your quiz</Subtitle>
+
+<Canvas>
+  <Story of={AddQuestionStories.AddQuestion} />
+</Canvas>

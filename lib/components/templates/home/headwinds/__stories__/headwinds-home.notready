@@ -1,0 +1,35 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import { Paragraph, SubHeadline, RelatedArticles } from '../../../../';
+import HeadwindsHomeStory from './headwinds-home-story';
+import HeadwindsHomeHeroStory from './headwinds-home-hero-story';
+import Prism from 'prismjs';
+import * as HeadwindsHomeStories from './headwinds-home.stories';
+
+<Meta of={HeadwindsHomeStories} />
+
+<Subtitle>Headwinds Home as a Lo Fi Layout</Subtitle>
+
+...
+
+### headwinds home
+
+<Canvas>
+  <Story of={HeadwindsHomeStories.HeadwindsHome} />
+
+  <Story of={HeadwindsHomeStories.HeadwindsHomeHero} />
+</Canvas>
+
+<RelatedArticles
+  articles={[
+    { id: 0, title: 'the death of 2advanced', url: 'https://www.malandarras.com/2advanced' },
+    { id: 1, title: 'teehanlax labs', url: 'https://www.designboom.com/tag/teehanlax-labs/' },
+    { id: 2, title: 'dom2d', url: 'http://www.dom2d.com/' },
+    { id: 3, title: 'josh davis', url: 'https://joshuadavis.com/' },
+    { id: 4, title: 'k10k', url: '  http://www.cubancouncil.com/work/project/kaliber-10000' },
+    {
+      id: 5,
+      title: 'The cursed demise of Habbo Hotel',
+      url: 'https://www.wired.co.uk/article/habbo-hotel-update-chaos',
+    },
+  ]}
+/>

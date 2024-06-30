@@ -1,0 +1,9 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import GoldLeafViewStory from './gold-leaf-view-story';
+import * as GoldLeafViewStories from './gold-leaf-view.stories';
+
+<Meta of={GoldLeafViewStories} />
+
+<Canvas>
+  <Story of={GoldLeafViewStories.GoldLeafView} />
+</Canvas>

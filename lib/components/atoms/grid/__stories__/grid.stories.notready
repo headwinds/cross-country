@@ -1,0 +1,38 @@
+import type { Meta, StoryObj } from "@storybook/react";
+
+import Grid from "../grid";
+
+const meta: Meta<typeof Grid> = {
+  component: Grid,
+  title: "Atoms/Template",
+} satisfies Meta<typeof Grid>;
+
+export default meta;
+type Story = StoryObj<typeof Grid>;
+
+export const Default: Story = {
+  args: {},
+};
+
+export const Numbers: Story = {
+  render: () => (
+    <Grid
+      customStyle={{
+        width: 120,
+      }}
+    >
+      <div>
+        <p>1</p>
+      </div>
+      <div>
+        <p>3</p>
+      </div>
+      <div>
+        <p>3</p>
+      </div>
+      <div>
+        <p>4</p>
+      </div>
+    </Grid>
+  ),
+};

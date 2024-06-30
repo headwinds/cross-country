@@ -1,0 +1,16 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import { Paragraph, SubHeadline } from '../../../';
+import HomeStory from './home-story';
+import * as HomeStories from './home.stories';
+
+<Meta of={HomeStories} />
+
+<Subtitle>hi fi layout</Subtitle>
+
+As the final level of [atomic design](https://www.uxpin.com/studio/blog/atomic-ui-components/), the page is the end product that you deliver to the world.
+
+<Canvas>
+  <Story of={HomeStories.Home} />
+
+  <Story of={HomeStories.Loading} />
+</Canvas>

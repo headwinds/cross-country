@@ -1,0 +1,16 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import Warrior from '../warrior';
+import { Link, RelatedArticles, Stage, Paragraph } from '../../../../../';
+import styles from '../warrior.module.css';
+import { warriorStoryModel } from './warrior-story-model';
+import * as WarriorStories from './warrior.stories';
+
+<Meta of={WarriorStories} />
+
+# Warriior
+
+<Subtitle>a warrior</Subtitle>
+
+<Canvas>
+  <Story of={WarriorStories.Warrior} />
+</Canvas>

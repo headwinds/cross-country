@@ -1,0 +1,13 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import EditOptionListStory from './edit-option-list-story';
+import * as EditOptionListStories from './edit-option-list.stories';
+
+<Meta of={EditOptionListStories} />
+
+# Edit Option List
+
+<Subtitle>Allows a user to edit options of a multiple choice question</Subtitle>
+
+<Canvas>
+  <Story of={EditOptionListStories.EditOptionList} />
+</Canvas>

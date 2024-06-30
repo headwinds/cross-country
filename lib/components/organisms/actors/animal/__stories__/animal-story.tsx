@@ -10,10 +10,12 @@ Starting with the base animal component, we can add a few more components to cre
 2. rabbit
 3. boar
 4. deer
-5. bear
-6. wolf
-7. rhino
-8. unicorn
+5. crow
+6. bear
+7. wolf
+8. rhino
+9. unicorn
+10 dragon
 
 */
 
@@ -26,3 +28,4 @@ const AnimalStory = () => {
 };
 
 export default AnimalStory;
+

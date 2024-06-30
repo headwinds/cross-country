@@ -1,0 +1,18 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import { STORYBOOK } from "../../../constants";
+import List from "./";
+import ListItem from "./list-item";
+import styles from "./list.module.css";
+import * as ListStories from "./__stories__/list.stories";
+
+<Meta of={ListStories} />
+
+# List & List Items
+
+<Subtitle>displays a list of items</Subtitle>
+
+<Canvas>
+  <Story of={ListStories.VerticalList} />
+
+  <Story of={ListStories.HorizontalList} />
+</Canvas>

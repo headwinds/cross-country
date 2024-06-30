@@ -1,0 +1,13 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import { STORYBOOK } from '../../../../constants';
+import { Paragraph, SubHeadline } from '../../../';
+import BranchesStory from './branches-story';
+import * as BranchesStories from './branches.stories';
+
+<Meta of={BranchesStories} />
+
+<Subtitle>gold leaves along the branches</Subtitle>
+
+<Canvas>
+  <Story of={BranchesStories.Branches} />
+</Canvas>

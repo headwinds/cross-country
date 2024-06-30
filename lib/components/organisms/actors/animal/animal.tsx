@@ -15,6 +15,7 @@ const ANIMAL_VARIANTS = {
   MOOSE: "MOOSE",
   BEAR: "BEAR",
   SALMON: "SALMON",
+  CROW: "CROW",
 };
 
 const defaultModel = {

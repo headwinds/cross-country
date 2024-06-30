@@ -1,0 +1,42 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import {
+  Column,
+  SubHeadline,
+  TextInput,
+  Button,
+  Row,
+  Label,
+  Paragraph,
+  TextAnswerInput,
+  AnswerInput,
+  TextAreaAnswerInput,
+} from "../../../../../";
+import * as AnswerStories from './answer.stories';
+
+<Meta of={AnswerStories} />
+
+# Answer
+
+When you need a user an answer a question
+
+what is the differnce between AnswerInput and TakeAnswerInput?
+
+<Subtitle>TextAnswerInput</Subtitle>
+
+<Canvas>
+  <Story of={AnswerStories.TextInput} />
+</Canvas>
+
+<Subtitle>TextAreaAnswerInput</Subtitle>
+
+<Canvas>
+  <Story of={AnswerStories.TextArea} />
+</Canvas>
+
+<Subtitle>AnswerInput</Subtitle>
+
+<Canvas>
+  <Story of={AnswerStories.TextInputMultiRow} />
+</Canvas>
+
+* [Wants to Make Magic](https://www.vice.com/en/article/nevq3k/rez-designer-tetsuya-mizuguchi-wants-to-make-magic)

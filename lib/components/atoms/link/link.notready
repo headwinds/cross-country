@@ -1,0 +1,18 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import { STORYBOOK } from "../../../constants";
+import { Paragraph, Image, Link } from "../../";
+import * as LinkStories from "./__stories__/link.stories";
+
+<Meta of={LinkStories} />
+
+# Link
+
+<Subtitle>a hyperlink.</Subtitle>
+
+https://stackoverflow.com/questions/24691460/how-does-wired-magazine-achieve-this-thick-underline-link-effect/24691535
+
+<Canvas>
+  <Story of={LinkStories.Link} />
+
+  <Story of={LinkStories.LinkWithinAParagraph} />
+</Canvas>

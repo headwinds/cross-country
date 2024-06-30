@@ -1,0 +1,23 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import MultipleChoiceStory from "./multiple-choice-story";
+import TakeAnswerInputStory from "./take-answer-input-story";
+import TakeAnswerDateTimeInputStory from "./take-answer-date-time-input-story";
+import * as TakeAnswerInputStories from './take-answer-input.stories';
+
+<Meta of={TakeAnswerInputStories} />
+
+# Text Input Question & Answer
+
+`TakeAnswerInput` allows a user to enter a text answer to a question in a single row which is ideal for pasting in a url.
+
+<Subtitle>Text Input</Subtitle>
+
+<Canvas>
+  <Story of={TakeAnswerInputStories.TextInput} />
+</Canvas>
+
+<Subtitle>Date Input</Subtitle>
+
+<Canvas>
+  <Story of={TakeAnswerInputStories.DateTime} />
+</Canvas>

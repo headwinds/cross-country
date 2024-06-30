@@ -1,0 +1,14 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import { Paragraph, SubHeadline, Link } from '../../../';
+import KeywordsStory from './keywords-story';
+import * as KeywordsStories from './keywords.stories';
+
+<Meta of={KeywordsStories} />
+
+<Subtitle>Keyworkds help with SEO and scanning.</Subtitle>
+
+In the age of AI, perhaps keywords will become less important for SEO but still they can help a user quickly scan an article for topics.
+
+<Canvas>
+  <Story of={KeywordsStories.Keywords} />
+</Canvas>

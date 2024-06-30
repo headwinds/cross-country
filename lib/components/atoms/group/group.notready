@@ -1,0 +1,18 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import * as GroupStories from "./group.stories";
+
+<Meta of={GroupStories} />
+
+# SVG
+
+In SVG, we use a group to contain and manipulate elements together.
+
+### Group
+
+A vertical column of components.
+
+<Canvas of={ColumnStories.Default} />
+
+### Groups
+
+<Canvas of={ColumnStories.Multiple} />

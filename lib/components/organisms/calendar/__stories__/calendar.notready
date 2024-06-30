@@ -1,0 +1,11 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import CalendarStory from './calendar-story';
+import * as CalendarStories from './calendar.stories';
+
+<Meta of={CalendarStories} />
+
+# Calendar
+
+<Canvas>
+  <Story of={CalendarStories.Calendar} />
+</Canvas>

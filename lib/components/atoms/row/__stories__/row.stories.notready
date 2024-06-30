@@ -1,0 +1,30 @@
+import type { Meta, StoryObj } from "@storybook/react";
+import Row from "../row";
+
+const meta: Meta<typeof Row> = {
+  component: Row,
+  title: "design system/atoms/row",
+} satisfies Meta<typeof Row>;
+
+export default meta;
+type Story = StoryObj<typeof Row>;
+
+export const Default: Story = {
+  args: {},
+};
+
+export const Bar: Story = {
+  render: () => (
+    <Row
+      customStyle={{
+        width: 300,
+        backgroundColor: "green",
+        color: "white",
+        height: 30,
+        alignItems: "center",
+      }}
+    >
+      hello, I'm row that looks like a bar
+    </Row>
+  ),
+};

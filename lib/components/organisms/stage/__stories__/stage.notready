@@ -1,0 +1,19 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import Stage from '../stage';
+import styles from '../stage.module.css';
+import {actors} from './actors-dataset';
+import * as StageStories from './stage.stories';
+
+<Meta of={StageStories} />
+
+# Stage
+
+<Subtitle>All the world's a stage, and all the men and women merely players</Subtitle>
+
+We might take a [de-make approach](https://www.thegamer.com/best-game-demakes/) and attempt to build a game that's a clone; or better yet re-interupt a scene within a game. Once you have a foundation, then you can start to add your own ideas and make it your own.
+
+<Canvas>
+  <Story of={StageStories.Stage} />
+
+  <Story of={StageStories.Configure} />
+</Canvas>

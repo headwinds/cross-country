@@ -1,0 +1,11 @@
+import { Meta, Canvas } from "@storybook/blocks";
+import * as TextAreaStories from "./text-area.stories";
+
+<Meta of={TextAreaStories} />
+
+# Text Area
+
+An input text to tell a story beyond a single line.
+
+<Canvas of={TextAreaStory} />
+```
