@@ -13,7 +13,7 @@ const preview: Preview = {
       storySort: {
         order: [
           "Cross Country",
-          "design system",
+          "components",
           ["atoms", "molecules", "organisms", "templates", "pages"],
         ],
       },

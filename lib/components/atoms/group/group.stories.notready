@@ -5,7 +5,7 @@ import SVG from "../svg";
 
 const meta: Meta<typeof Group> = {
   component: Group,
-  title: "design system/atoms/column",
+  title: "components/atoms/column",
 } satisfies Meta<typeof Group>;
 
 export default meta;

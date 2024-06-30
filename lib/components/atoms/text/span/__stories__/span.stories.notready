@@ -4,7 +4,7 @@ import Span from "../span";
 
 const meta: Meta<typeof Span> = {
   component: Span,
-  title: "design system/atoms/span",
+  title: "components/atoms/span",
 } satisfies Meta<typeof Span>;
 
 export default meta;

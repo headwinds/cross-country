@@ -4,7 +4,7 @@ import { SubHeadline, Paragraph, List, ListItem, Bold, Link, RelatedArticles } f
 import Prism from 'prismjs';
 import FrozenLake from './frozen-lake';
 
-<Meta title="design system/organisms/frozen lake" />
+<Meta title="components/organisms/frozen lake" />
 
 # Frozen Lake
 

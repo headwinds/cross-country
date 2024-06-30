@@ -18,7 +18,7 @@ const ListicleStory = () => {
         url: "https://github.com/headwinds/cross-country",
         title: "cross country",
         category: "programming",
-        description: "Cross Country design system",
+        description: "Cross Country components",
       },
       {
         id: "2",

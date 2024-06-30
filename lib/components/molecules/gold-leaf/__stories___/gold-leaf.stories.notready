@@ -5,7 +5,7 @@ import GoldLeafStory from "./gold-leaf-story";
 
 const meta: Meta<typeof GoldLeaf> = {
   component: GoldLeaf,
-  title: "design system/molecules/gold leaf",
+  title: "components/molecules/gold leaf",
 } satisfies Meta<typeof GoldLeaf>;
 
 export default meta;

@@ -4,7 +4,7 @@ import DayNumber from "../day-number";
 
 const meta: Meta<typeof DayNumber> = {
   component: DayNumber,
-  title: "design system/molecules/day number",
+  title: "components/molecules/day number",
 } satisfies Meta<typeof DayNumber>;
 
 export default meta;

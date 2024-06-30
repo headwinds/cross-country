@@ -2,7 +2,7 @@ import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
 import { Paragraph, SubHeadline } from '../../../';
 import LogErrorBoundaryStory from './log-error-boundary-story';
 
-<Meta title="design system/molecules/log error boundary" />
+<Meta title="components/molecules/log error boundary" />
 
 Whenever a react component crashes, we don't want to crash the entire page and present a white screen to the user. Instead, we want to log the error and present a friendly error message to the user. 
 

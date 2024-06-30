@@ -2,7 +2,7 @@ import { StoryObj, Meta } from "@storybook/react";
 import Paragraph from "../paragraph";
 
 export default {
-  title: "design system/atoms/text/paragraph",
+  title: "components/atoms/text/paragraph",
   component: Paragraph,
 } as Meta;
 

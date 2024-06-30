@@ -8,7 +8,7 @@ import {
   RelatedArticles,
 } from "../../../src/components";
 
-<Meta title="design system/organisms/worlds/one acre" />
+<Meta title="components/organisms/worlds/one acre" />
 
 # One Acre
 

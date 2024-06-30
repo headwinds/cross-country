@@ -1,6 +1,6 @@
 import { Meta, Canvas, Story, Subtitle } from "@storybook/addon-docs";
 
-<Meta title="design system/organisms/graph" />
+<Meta title="components/organisms/graph" />
 
 # Graph
 

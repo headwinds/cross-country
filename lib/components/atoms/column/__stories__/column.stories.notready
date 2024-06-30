@@ -6,7 +6,7 @@ import Link from "../../link/link";
 
 const meta: Meta<typeof Column> = {
   component: Column,
-  title: "design system/atoms/column",
+  title: "components/atoms/column",
 } satisfies Meta<typeof Column>;
 
 export default meta;

@@ -3,7 +3,7 @@ import SubHeadline from "../subheadline";
 
 const meta: Meta<typeof SubHeadline> = {
   component: SubHeadline,
-  title: "design system/atoms/sub headline",
+  title: "components/atoms/sub headline",
 } satisfies Meta<typeof SubHeadline>;
 
 export default meta;

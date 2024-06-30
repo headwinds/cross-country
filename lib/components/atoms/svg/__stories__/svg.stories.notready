@@ -3,7 +3,7 @@ import SVG from "../svg";
 
 const meta: Meta<typeof SVG> = {
   component: SVG,
-  title: "design system/atoms/svg",
+  title: "components/atoms/svg",
 } satisfies Meta<typeof SVG>;
 
 export default meta;

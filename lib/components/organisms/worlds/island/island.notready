@@ -11,7 +11,7 @@ import {
 } from "../../../";
 import IslandStory from "./island-story";
 
-<Meta title="design system/organisms/worlds/island" />
+<Meta title="components/organisms/worlds/island" />
 
 ### Islands
 

@@ -5,7 +5,7 @@ import Field from "../field";
 
 const meta: Meta<typeof Field> = {
   component: Field,
-  title: "design system/molecules/field",
+  title: "components/molecules/field",
 };
 
 export default meta;

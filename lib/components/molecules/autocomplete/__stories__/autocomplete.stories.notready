@@ -4,7 +4,7 @@ import Autocomplete from "../autocomplete";
 
 const meta: Meta<typeof Autocomplete> = {
   component: Autocomplete,
-  title: "design system/molecules/autocomplete",
+  title: "components/molecules/autocomplete",
 } satisfies Meta<typeof Autocomplete>;
 
 export default meta;

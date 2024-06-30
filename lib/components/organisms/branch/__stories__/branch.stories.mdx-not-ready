@@ -2,7 +2,7 @@ import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
 import { Paragraph, SubHeadline } from '../../../';
 import BranchStory from './branch-story';
 
-<Meta title="design system/organisms/branch" />
+<Meta title="components/organisms/branch" />
 
 <Subtitle>a branch of gold leaves</Subtitle>
 

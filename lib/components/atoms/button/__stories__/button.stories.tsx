@@ -3,7 +3,7 @@ import Button from "../button-themed";
 
 const meta: Meta<typeof Button> = {
   component: Button,
-  title: "design system/atoms/button",
+  title: "components/atoms/button",
 } satisfies Meta<typeof Button>;
 
 export default meta;

@@ -3,7 +3,7 @@ import Checkbox from "../checkbox";
 
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
-  title: "design system/atoms/checkbox",
+  title: "components/atoms/checkbox",
 } satisfies Meta<typeof Checkbox>;
 
 export default meta;

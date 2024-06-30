@@ -4,7 +4,7 @@ import AnimatedCirclesStory from "./animated-circles-story";
 
 const meta: Meta<typeof Circle> = {
   component: Circle,
-  title: "design system/atoms/svg/circle",
+  title: "components/atoms/svg/circle",
 } satisfies Meta<typeof Circle>;
 
 export default meta;

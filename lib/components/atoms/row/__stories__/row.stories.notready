@@ -3,7 +3,7 @@ import Row from "../row";
 
 const meta: Meta<typeof Row> = {
   component: Row,
-  title: "design system/atoms/row",
+  title: "components/atoms/row",
 } satisfies Meta<typeof Row>;
 
 export default meta;

@@ -5,7 +5,7 @@ import styles from "./number.module.css";
 
 const meta: Meta<typeof Number> = {
   component: Number,
-  title: "Atoms/Template",
+  title: "atoms/Template",
 } satisfies Meta<typeof Number>;
 
 export default meta;

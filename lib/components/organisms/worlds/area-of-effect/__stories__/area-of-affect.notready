@@ -2,7 +2,7 @@ import { Meta, Subtitle } from '@storybook/blocks';
 import { SubHeadline, Paragraph, List, ListItem, Link, RelatedArticles, Image, Column } from '../../../../';
 import AreaOfAffecStory from './area-of-affect-story';
 
-<Meta title="design system/organisms/worlds/area of effect" />
+<Meta title="components/organisms/worlds/area of effect" />
 
 ### Area of Effect (AOE)
 

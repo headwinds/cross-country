@@ -1,7 +1,7 @@
 import { Meta, Canvas, Story, Subtitle } from "@storybook/addon-docs";
 import AdsStory from "./ads-story";
 
-<Meta title="design system/organisms/ads" />
+<Meta title="components/organisms/ads" />
 
 # Ads
 

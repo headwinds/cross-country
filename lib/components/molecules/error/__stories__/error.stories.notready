@@ -5,7 +5,7 @@ import Error from "../error";
 
 const meta: Meta<typeof Error> = {
   component: Error,
-  title: "design system/atoms/error",
+  title: "components/atoms/error",
 } satisfies Meta<typeof Error>;
 
 export default meta;
