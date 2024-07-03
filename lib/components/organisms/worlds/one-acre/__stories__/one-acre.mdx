@@ -6,49 +6,32 @@ import {
   ListItem,
   Link,
   RelatedArticles,
-} from "../../../src/components";
+} from "../../../../";
 
 <Meta title="components/organisms/worlds/one acre" />
 
 # One Acre
 
-<Subtitle>The Dream to Work a One Acre Farm for a Day</Subtitle>
+The Dream to Work a One Acre Farm for a Day (or Farm Game for a lifetime!)
 
-<Paragraph>
-  Can I convince my daughter that tile games are anywhere near as fun as
-  Roblox?!
-</Paragraph>
+Can I convince my daughter that tile games are anywhere near as fun as
+Roblox?!
 
-<RelatedArticles
-  articles={[
-    {
-      id: 0,
-      title: "Investigation: How Roblox Is Exploiting Young Game Developers",
-      url: "https://www.youtube.com/watch?v=_gXlauRB1EQ",
-    },
-  ]}
-/>
+Inspired by an epside of Lost when Desmond mentions the{" "}
 
-<Paragraph>
-  Inspired by an epside of Lost when Desmond mentions the{" "}
-  <Link url="https://lostpedia.fandom.com/wiki/Snowglobe">Snowglobe</Link> and
-  Brad hypes{" "}
-  <Link url="https://mythic-quest.fandom.com/wiki/Battle_Royale_mode">
-    Battle Royale Mode
-  </Link>{" "}
-  on Mythic Quest, I wanted to build a small, diorama-type experiment which
-  features an Area of Affect where a circle will the affect tiles hilighting
-  those within the circle and darkening those beyond.
-</Paragraph>
-<Paragraph>
-  As the cirlce shrinks, the agents will need to move closer to the center and
-  come in closer contact. Each agent will be able to cast an AOE spell that
-  could push (a nod to{" "}
-  <Link url="https://www.polygon.com/2018/2/26/17053646/into-the-breach-preview-impressions-difficulty-ftl-roguelike-pc">
-    Into the Breach
-  </Link>
-  ) the other agent outside of the circle and perish.
-</Paragraph>
+<Link url="https://lostpedia.fandom.com/wiki/Snowglobe">Snowglobe</Link> and Brad
+hypes <Link url="https://mythic-quest.fandom.com/wiki/Battle_Royale_mode">
+  Battle Royale Mode
+</Link> on Mythic Quest, I wanted to build a small, diorama-type experiment which
+features an Area of Affect where a circle will the affect tiles hilighting those
+within the circle and darkening those beyond.
+
+As the cirlce shrinks, the agents will need to move closer to the center and
+come in closer contact. Each agent will be able to cast an AOE spell that
+could push (a nod to <Link url="https://www.polygon.com/2018/2/26/17053646/into-the-breach-preview-impressions-difficulty-ftl-roguelike-pc">
+Into the Breach</Link>) the other agent outside of the circle and perish.
+
+the quest to produce energy instead of consuming it. How can we tip the scales?!
 
 <List>
   <ListItem>Polar bear</ListItem>
@@ -60,31 +43,28 @@ import {
   <ListItem>Sweat lodge</ListItem>
 </List>
 
-<Subtitle>Data Trees & Directed Graphs</Subtitle>
+### Data Trees & Directed Graphs
 
-<Paragraph>
-  When harvesting D3 scripts from{" "}
-  <Link url="https://bl.ocks.org/">Bl.ocks</Link> or{" "}
-  <Link url="https://observablehq.com/">Observerable</Link>, you may discover
-  that they do a lot in each function. Any time you see long functions, this is
-  an opportunity to refactor and make it easier to maintain. These long
-  functions are basically pipelines that assemble the final visualization.
-</Paragraph>
+When harvesting D3 scripts from
 
-<Paragraph>
-  Each step in the pipeline can (and should be) its own function. So when you
-  copy and paste in a long function, take this opportunity to break it up and
-  learn from each step!
-</Paragraph>
+<Link url="https://bl.ocks.org/">Bl.ocks</Link>
 
-<Paragraph>
-  As port each function, you begin to explore the codebase and learn more about
-  the complexities of color through{" "}
-  <Link url="https://github.com/d3/d3-scale-chromatic">d3-scale-chromatic</Link>{" "}
-  and how color can potentialy confuse your audience.
-</Paragraph>
+<Link url="https://observablehq.com/">Observerable</Link>, you may discover that
+they do a lot in each function. Any time you see long functions, this is an
+opportunity to refactor and make it easier to maintain. These long functions are
+basically pipelines that assemble the final visualization and their attention
+to <Link url="https://d3js.org/d3-scale-chromatic">
+  colour and cartography
+</Link> drew in me.
 
-<Subtitle>text-parser</Subtitle>
+Each step in the pipeline can (and should be) its own function. So when you
+copy and paste in a long function, take this opportunity to break it up and
+learn from each step!
+
+As port each function, you begin to explore the codebase and learn more about
+the complexities of color through{" "}
+
+## text-parser
 
 ### Robot Farmers
 
@@ -191,5 +171,26 @@ import {
     },
     { id: 25, title: "stardew valley planner", url: "https://stardew.info/" },
     { id: 26, title: "gameuidatabase", url: "https://www.gameuidatabase.com/" },
+    { id: 27, title: "aigen", url: "https://www.aigen.io/" },
+    {
+      id: 28,
+      title: "Investigation: How Roblox Is Exploiting Young Game Developers",
+      url: "https://www.youtube.com/watch?v=_gXlauRB1EQ",
+    },
+    {
+      id: 29,
+      title: "DJI",
+      url: "https://x.com/djiglobal/status/1783481093762469998?s=43&t=JosrImXLm25J_T3QQadmMw",
+    },
+    {
+      id: 30,
+      title: "DJI",
+      url: "https://x.com/djiglobal/status/1783481093762469998?s=43&t=JosrImXLm25J_T3QQadmMw",
+    },
+    {
+      id: 31,
+      title: "Energy efficient farming - city vs country - spectrum!",
+      url: "https://www.thecooldown.com/green-tech/new-forest-home-energy-consumption-neg-energy/",
+    },
   ]}
 />
