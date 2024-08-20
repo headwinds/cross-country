@@ -27,3 +27,6 @@ storybook-static
 
 .env
 ./src/config.js
+
+# you can download this file yourself from https://observablehq.com/@enjalot/blockbuilder-search-data
+./lib/scripts/python/blockbuilder/blocks.json
