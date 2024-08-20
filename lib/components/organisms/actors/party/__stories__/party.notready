@@ -28,7 +28,8 @@ import * as PartyStories from './party.stories';
     { id: 1, title: 'Elasmotherium', url: 'https://en.wikipedia.org/wiki/Elasmotherium' },
     { id: 2, title: 'John Locke', url: 'https://lostpedia.fandom.com/wiki/John_Locke' },
     { id: 3, title: 'Collectable Cities', url: 'https://www.collectablecities.com/'},
-    { id: 4, title: 'Tripo3D Turn 2D sketches into 3D models!', url: 'https://www.tripo3d.ai/'}
+    { id: 4, title: 'Tripo3D Turn 2D sketches into 3D models!', url: 'https://www.tripo3d.ai/'},
+    { id: 5, title: 'fighter or scout', url: 'https://www.gamespot.com/articles/should-you-choose-fighter-or-scout-in-stardew-valley/1100-6525117/?ftag=CAD-01-10abi2f'},
   ]}
 />
 
