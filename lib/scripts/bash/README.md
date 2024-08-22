@@ -15,5 +15,3 @@ Questons to ask myself before committing?
 This folder has a hidden .git folder so shift-command-. to reveal it
 
 - [Perplexity convo](https://www.perplexity.ai/search/i-want-to-a-write-custom-git-c-FYki.Te7Q0qi1j2noCOQ2g#0)
-
-- [READ ME](https://www.tiktok.com/@soph.workbaby/video/7403305628057259280)
