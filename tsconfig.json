@@ -12,7 +12,16 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "./",
+    "paths": {
+      "@cross-country/*": ["*"],
+      "@cross-country/lib": ["lib"],
+      "@cross-country/hooks/*": ["lib/hooks/*"],
+      "@cross-country/atoms/*": ["lib/components/atoms/*"],
+      "@cross-country/molecules/*": ["lib/components/molecules/*"],
+      "@cross-country/organisms/*": ["lib/components/organisms/*"]
+    }
 
     /* Linting 
     "strict": true,

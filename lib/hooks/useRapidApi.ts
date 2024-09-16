@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import config from "../../cross-country-config-private";
+import config from "@cross-country/cross-country-config-private";
 
 // https://rapidapi.com/techengine/api/link-preview4
 
