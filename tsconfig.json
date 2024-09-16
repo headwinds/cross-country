@@ -15,8 +15,8 @@
     "jsx": "react-jsx",
     "baseUrl": "./",
     "paths": {
-      "@cross-country/*": ["*"],
-      "@cross-country/lib": ["lib"],
+      "@cross-country/*": ["lib/*"],
+      "@cross-country/components": ["lib/components/*"],
       "@cross-country/hooks/*": ["lib/hooks/*"],
       "@cross-country/atoms/*": ["lib/components/atoms/*"],
       "@cross-country/molecules/*": ["lib/components/molecules/*"],

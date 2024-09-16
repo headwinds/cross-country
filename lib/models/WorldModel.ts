@@ -1,4 +1,4 @@
-import { Record } from 'immutable';
+import { Record } from "immutable";
 
 const WorldModel = Record({
   playerSet: [],
@@ -9,13 +9,13 @@ const WorldModel = Record({
   shieldSet: [],
   weaponSet: [],
   storySet: [],
-  type: 'worldset',
-  name: '',
-  description: '',
+  type: "worldset",
+  name: "",
+  description: "",
   population: 0,
-  skin: '',
-  created_on: '',
-  updated_on: '',
+  skin: "",
+  created_on: "",
+  updated_on: "",
   bookSet: [],
 });
 

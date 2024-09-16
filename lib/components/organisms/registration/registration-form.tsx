@@ -7,7 +7,7 @@ import {
   Label,
   Paragraph,
   HorizontalLine,
-} from "@cross-country/lib";
+} from "@cross-country/components";
 
 import styles from "./registration.module.css";
 
