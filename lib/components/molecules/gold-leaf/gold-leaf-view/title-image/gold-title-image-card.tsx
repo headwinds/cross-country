@@ -6,7 +6,7 @@ import { Card, Column, Link, SubHeadline } from "../../../../";
 import GoldLeafNotFound from "../../gold-leaf-not-found";
 
 import styles from "../gold-leaf-view.module.css";
-import GoldLeafImage from "./golf-leaf-image";
+import GoldLeafImage from "./gold-leaf-image";
 import type { GoldLeafProps } from "../../gold-leaf.types";
 
 export const GoldTitleImageCard = ({
