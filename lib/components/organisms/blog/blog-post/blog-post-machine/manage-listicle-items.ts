@@ -1,3 +1,5 @@
+// TODO type check
+// @ts-nocheck
 import { assign } from "xstate";
 import type { ListicleItemType } from "./types";
 

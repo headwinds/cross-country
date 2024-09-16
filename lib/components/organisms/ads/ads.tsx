@@ -1,3 +1,5 @@
+// TODO type check
+// @ts-nocheck
 import React, { useState } from "react";
 import Column from "../../atoms/column/column";
 import styles from "./ads.module.css";

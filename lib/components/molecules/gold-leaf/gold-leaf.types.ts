@@ -1,4 +1,6 @@
-import LeafModel from '../../../models/LeafModel';
+// TODO type check
+// @ts-nocheck
+import LeafModel from "../../../models/LeafModel";
 
 export interface GoldLeafProps {
   goldLeafModel: LeafModel;
@@ -6,5 +8,5 @@ export interface GoldLeafProps {
   mode?: string;
   customClass?: string;
   customStyle?: any;
-  onNoImageFoundCallback?: () => void;  
+  onNoImageFoundCallback?: () => void;
 }

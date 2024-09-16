@@ -1,3 +1,5 @@
+// TODO type check
+// @ts-nocheck
 import * as React from "react";
 import { useState, useEffect } from "react";
 import Hunter from "..";

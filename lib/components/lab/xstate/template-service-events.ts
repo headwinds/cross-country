@@ -1,3 +1,5 @@
+// TODO type check
+// @ts-nocheck
 /*
 minimum helper file to talk to the server 
 

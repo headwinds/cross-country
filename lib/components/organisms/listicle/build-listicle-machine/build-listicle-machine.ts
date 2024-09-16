@@ -1,5 +1,5 @@
+// TODO type check
 // @ts-nocheck
-// npm run build
 
 import { createMachine, assign, fromPromise } from "xstate";
 import { ListicleItem, Listicle } from "./types";

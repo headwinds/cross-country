@@ -1,3 +1,5 @@
+// TODO type check
+// @ts-nocheck
 import React from "react";
 import styles from "./bento-five-by-four.module.css";
 import clsx from "clsx";

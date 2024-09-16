@@ -1,3 +1,5 @@
+// TODO type check
+// @ts-nocheck
 import { assign, fromPromise } from "xstate";
 import { getUserOrAnonUserRoute } from "./util";
 

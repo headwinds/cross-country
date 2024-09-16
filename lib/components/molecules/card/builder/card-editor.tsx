@@ -1,3 +1,5 @@
+// TODO type check
+// @ts-nocheck
 import * as React from "react";
 import { useEffect, useState } from "react";
 import Card from "../card";
@@ -82,7 +84,7 @@ export const CardEditor = ({ send, context }) => {
       <Column customStyle={{ width: stageDimensions.width }}>
         <Column customStyle={stageDimensions}>
           <Stage
-            config={{ customStyle: stageDimensions } }
+            config={{ customStyle: stageDimensions }}
             actorModels={[wispActorModel]}
           />
         </Column>

@@ -1,43 +1,51 @@
-export default class PortholeBranchModel {
-    constructor(
-      id,
-      tags,
-      photoUrl,
-      photoLargeUrl,
-      images,
-      link,
-      publishedDate,
-      branchTitleUnescape,
-      feedLink,
-      feedTitle,
-      aboutUnescape,
-      index,
-      textUnescape,
-      bUseText,
-      x,
-      y,
-      bViewed,
-      bTrashed
-    ) {
-      this.id = id
-      this.tags = tags
-      this.photoUrl = photoUrl
-      this.photoLargeUrl = photoLargeUrl
-      this.images = images
-      this.link = link
-      this.publishedDate = publishedDate
-      this.title = branchTitleUnescape
-      this.feedLink = feedLink
-      this.feedTitle = feedTitle
-      this.about = aboutUnescape
-      this.index = index
-      this.text = textUnescape
-      this.useText = bUseText
-      this.x = x
-      this.y = y
-      this.bViewed = bViewed
-      this.bTrashed = bTrashed
-      this.origin = 'porthole'
-    }
+import { Record } from "immutable";
+
+export type PortholeBranchModelType = {
+  id: string;
+  tags: string[];
+  photoUrl: string;
+  photoLargeUrl: string;
+  images: string[];
+  link: string;
+  publishedDate: string;
+  title: string;
+  feedLink: string;
+  feedTitle: string;
+  about: string;
+  index: number;
+  text: string;
+  useText: boolean;
+  x: number;
+  y: number;
+  bViewed: boolean;
+  bTrashed: boolean;
+  origin: string;
+};
+
+export default class PortholeBranchModel extends Record<PortholeBranchModelType>(
+  {
+    id: "",
+    tags: [],
+    photoUrl: "",
+    photoLargeUrl: "",
+    images: [],
+    link: "",
+    publishedDate: "",
+    title: "",
+    feedLink: "",
+    feedTitle: "",
+    about: "",
+    index: 0,
+    text: "",
+    useText: false,
+    x: 0,
+    y: 0,
+    bViewed: false,
+    bTrashed: false,
+    origin: "porthole",
   }
-  
+) {
+  constructor(props: PortholeBranchModelType) {
+    super(props);
+  }
+}

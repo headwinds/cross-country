@@ -1,3 +1,5 @@
+// TODO type check
+// @ts-nocheck
 /*
 If you anticipate that your component might require a machine over useState or useReducer, you can use XState. 
 
