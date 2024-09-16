@@ -101,6 +101,12 @@ The bundle.css isn't added so I had to add it manually.
   <link rel="stylesheet" href="./bundle.css" />
 ```
 
+## Before Publishing Check Types
+
+```
+npx tsc --noEmit
+```
+
 ## Publish to NPM
 
 Update the version number before publishing via `npm version patch`

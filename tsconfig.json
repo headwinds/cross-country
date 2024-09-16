@@ -20,7 +20,12 @@
       "@cross-country/hooks/*": ["lib/hooks/*"],
       "@cross-country/atoms/*": ["lib/components/atoms/*"],
       "@cross-country/molecules/*": ["lib/components/molecules/*"],
-      "@cross-country/organisms/*": ["lib/components/organisms/*"]
+      "@cross-country/organisms/*": ["lib/components/organisms/*"],
+      "@cross-country/services/*": ["lib/services/*"],
+      "@cross-country/models/*": ["lib/models/*"],
+      "@cross-country/types/*": ["lib/types/*"],
+      "@cross-country/utils/*": ["lib/utils/*"],
+      "@cross-country/constants/*": ["lib/constants/*"]
     }
 
     /* Linting 

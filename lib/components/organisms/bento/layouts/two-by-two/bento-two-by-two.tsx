@@ -4,15 +4,15 @@ import clsx from "clsx";
 import { Card, Column, Paragraph } from "../../../../";
 
 interface BentoTwoByTwoProps {
-  boxes: {
-    main: React.ReactNode;
-    top: React.ReactNode;
-    bottom: React.ReactNode;
+  boxes?: {
+    main?: React.ReactNode;
+    top?: React.ReactNode;
+    bottom?: React.ReactNode;
   };
   borderRadius?: number;
   gap?: number;
   entireBoxBackgroundColor?: string;
-  isMainRight: boolean;
+  isMainRight?: boolean;
 }
 
 const MainContent = () => {
