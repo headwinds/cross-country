@@ -1,0 +1,14 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import { Paragraph, SubHeadline, Link } from '../../../';
+import KeyValuePairsStory from './key-value-pairs-story';
+import * as KeyValuePairsStories from './key-value-pairs.stories';
+
+<Meta of={KeyValuePairsStories} />
+
+<Subtitle>takes a list of key and value pairs and combining Span and Paragraph components</Subtitle>
+
+<Link url="https://www.totaltypescript.com/">total typescript</Link>
+
+<Canvas>
+  <Story of={KeyValuePairsStories.KeyValuePairs} />
+</Canvas>

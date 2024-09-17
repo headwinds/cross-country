@@ -1,0 +1,15 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import Actor from '../actor';
+import * as ActorStories from './actor.stories';
+
+<Meta of={ActorStories} />
+
+# Actor
+
+This provides the concept of inheritennce where we have a base actor to give all other actors the same elements like a name or health bars
+
+<Canvas>
+  <Story of={ActorStories.BasicActor} />
+
+  <Story of={ActorStories.PositionedActors} />
+</Canvas>

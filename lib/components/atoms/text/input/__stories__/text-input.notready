@@ -1,0 +1,39 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import TextInputStory from './text-input-story';
+import TextInputDefaultValueStory from './text-input-default-value-story';
+import StateMachineTextInputStory from './state-machine-text-input-story';
+import StateMachineContentEditableStory from './state-machine-content-editable-story';
+import * as TextInputStories from './text-input.stories';
+
+<Meta of={TextInputStories} />
+
+# Text Input
+
+There text input comes in two flavors: the regular text input and the state machine text input.
+
+## Text Input
+
+This is the first text input that I developed and may deprecate since the state machine text input is more flexible and has more features.
+
+## State Machine Text Input
+
+In the state machine story, I will show it's ability debounce input so that the API endpoint isn't overwhelmed.
+
+The user will input text for a route that will be used to fetch data from an API demonstrating how to
+[invoke](https://stately.ai/docs/invoke) an actor using XState.
+
+## Medium
+
+In creating a blog, it's always a good idea to review the competition. Medium is a popular platform for writers and I wanted to see how their text input works. Or doesn't work! When editing a post, their text input is actually a content editable div.
+
+I found this both surprising and interesting so after [asking perplexity](https://www.perplexity.ai/search/blog-13SAPvEGSASP1WK.9dveMQ#0) on the value of `contenteditable`, I have attempted to recreate it in the state machine.
+
+<Canvas>
+  <Story of={TextInputStories.Standard} />
+
+  <Story of={TextInputStories.StandardWithDefaultValue} />
+
+  <Story of={TextInputStories.StateMachineInput} />
+
+  <Story of={TextInputStories.StateMachineContenteditable} />
+</Canvas>

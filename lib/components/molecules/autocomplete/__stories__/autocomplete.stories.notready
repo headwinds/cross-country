@@ -1,0 +1,19 @@
+import type { Meta, StoryObj } from "@storybook/react";
+import AutocompleteStory from "./autocomplete-story";
+import Autocomplete from "../autocomplete";
+
+const meta: Meta<typeof Autocomplete> = {
+  component: Autocomplete,
+  title: "components/molecules/autocomplete",
+} satisfies Meta<typeof Autocomplete>;
+
+export default meta;
+type Story = StoryObj<typeof Autocomplete>;
+
+export const Default: Story = {
+  args: {},
+};
+
+export const Options: Story = {
+  render: () => <AutocompleteStory />,
+};

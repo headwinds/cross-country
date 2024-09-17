@@ -1,0 +1,10 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import * as LabelStories from "./__stories__/label.stories";
+
+<Meta of={LabelStories} />
+
+# Label
+
+A label is a piece of text that describes the purpose of a form control.
+
+<Canvas of={LabelStories.Default} />

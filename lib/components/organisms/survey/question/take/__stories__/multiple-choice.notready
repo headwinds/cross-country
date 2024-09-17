@@ -1,0 +1,13 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import MultipleChoiceStory from './multiple-choice-story';
+import * as MultipleChoiceStories from './multiple-choice.stories';
+
+<Meta of={MultipleChoiceStories} />
+
+# Multiple Choice
+
+<Subtitle>offer a multiple choice question within your survey or quiz!</Subtitle>
+
+<Canvas>
+  <Story of={MultipleChoiceStories.MultipleChoice} />
+</Canvas>

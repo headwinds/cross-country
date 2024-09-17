@@ -1,0 +1,18 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import { STORYBOOK } from '../../../../constants';
+import Headline from './headline';
+import { SubHeadline, Column, Image } from '../../../';
+import styles from './headline.module.css';
+import * as HeadlineStories from './headline.stories';
+
+<Meta of={HeadlineStories} />
+
+# Headline
+
+<Subtitle>a headline for a post - this wraps an h1 so use one per post</Subtitle>
+
+<Canvas>
+  <Story of={HeadlineStories.Headline} />
+
+  <Story of={HeadlineStories.HeadlineWithSubheadline} />
+</Canvas>

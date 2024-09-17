@@ -1,0 +1,17 @@
+import { Meta, Canvas } from "@storybook/blocks";
+import DayNumberStory from "./day-number-story";
+import * as DayNumberStories from "./day-number.stories";
+
+<Meta of={DayNumberStories} />
+
+# Day Number
+
+Override day
+Antarctica, Winter 1982
+The Thing
+
+<Canvas of={DayNumberStories.Default} />
+
+### With Options
+
+<Canvas of={DayNumberStories.Options} />

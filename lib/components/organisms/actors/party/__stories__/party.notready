@@ -1,0 +1,38 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import Hunter from '../hunter';
+import Cleric from '../cleric';
+import Wizard from '../wizard';
+import Warrior from '../warrior';
+import Wisp from '../../wisp';
+import { Link, RelatedArticles, Stage } from '../../../../';
+import { hunterStoryModel, warriorStoryModel, clericStoryModel, wizardStoryModel } from './party-story-model';
+import * as PartyStories from './party.stories';
+
+<Meta of={PartyStories} />
+
+# Hunter
+
+<Subtitle>a hunting party</Subtitle>
+
+<Link url="https://www.theatlantic.com/notes/2015/09/radiolab-on-whether-trophy-hunting-can-aid-conservation/404350/">
+  Does Trophy Hunting Actually Aid Conservation?
+</Link>
+
+<RelatedArticles
+  articles={[
+    {
+      id: 0,
+      title: 'Radiolab Podcast',
+      url: 'https://www.theatlantic.com/notes/2015/09/radiolab-on-whether-trophy-hunting-can-aid-conservation/404350/',
+    },
+    { id: 1, title: 'Elasmotherium', url: 'https://en.wikipedia.org/wiki/Elasmotherium' },
+    { id: 2, title: 'John Locke', url: 'https://lostpedia.fandom.com/wiki/John_Locke' },
+    { id: 3, title: 'Collectable Cities', url: 'https://www.collectablecities.com/'},
+    { id: 4, title: 'Tripo3D Turn 2D sketches into 3D models!', url: 'https://www.tripo3d.ai/'},
+    { id: 5, title: 'fighter or scout', url: 'https://www.gamespot.com/articles/should-you-choose-fighter-or-scout-in-stardew-valley/1100-6525117/?ftag=CAD-01-10abi2f'},
+  ]}
+/>
+
+<Canvas>
+  <Story of={PartyStories.Party} />
+</Canvas>

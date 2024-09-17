@@ -1,0 +1,8 @@
+import { Meta, Canvas } from "@storybook/blocks";
+import * as ErrorStories from "./__stories__/error.stories";
+
+<Meta of={ErrorStories} />
+
+provide feedback to the user when an error occurs
+
+<Canvas of={ErrorStories.Default} />

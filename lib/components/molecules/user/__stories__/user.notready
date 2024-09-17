@@ -1,0 +1,22 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import { Paragraph, SubHeadline } from '../../../';
+import UserStory from './user-story';
+import * as UserStories from './user.stories';
+
+<Meta of={UserStories} />
+
+# user
+
+## anonymous
+
+An anonymous user at the very least is identified by a [UUID](https://www.techtarget.com/searchapparchitecture/definition/UUID-Universal-Unique-Identifier)
+
+## rich
+
+a rich user also has a UUID along with as much personal data as they are willing to provide through the form as well as connecting to third-party social profiles.
+
+<Canvas>
+  <Story of={UserStories.User} />
+
+  <Story of={UserStories.AnonymousUser} />
+</Canvas>

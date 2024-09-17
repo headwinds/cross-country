@@ -1,0 +1,13 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import RelatedArticles from './related-articles';
+import * as RelatedArticlesStories from './related-articles.stories';
+
+<Meta of={RelatedArticlesStories} />
+
+# Related Articles
+
+<Subtitle>related articles</Subtitle>
+
+<Canvas>
+  <Story of={RelatedArticlesStories.RelatedArticles} />
+</Canvas>

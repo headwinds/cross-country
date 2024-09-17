@@ -1,0 +1,22 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import BlogStory from "./blog-story";
+import * as BlogStories from './blog.stories';
+
+<Meta of={BlogStories} />
+
+# Blog
+
+A blog is the ultimate form of content marketing and self publishing.
+
+It’s a platform for sharing your ideas, connecting with your audience, and establishing yourself as an authority in your niche; or at least that you've been done that path and can offer guidance.
+
+### Auth
+
+It is a bit tempting to allow the ability to blog anonymously, but for this version, we will require a user to be authenticated to post a blog.
+
+<Canvas>
+  <Story of={BlogStories.Blog} />
+</Canvas>
+
+* [ISR](https://vercel.com/docs/incremental-static-regeneration)
+* [Seth's blog](https://seths.blog/2024/03/headwinds/)

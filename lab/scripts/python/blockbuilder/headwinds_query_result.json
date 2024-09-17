@@ -1,0 +1,2486 @@
+[
+  {
+    "api": {
+      "d3.select": 6
+    },
+    "colors": {
+      "#000000": 4,
+      "#0000ff": 1,
+      "#666666": 1,
+      "#add8e6": 1,
+      "#d2b48c": 12,
+      "#d3d3d3": 1,
+      "#d7bf00": 1,
+      "#dddddd": 1,
+      "#ffa500": 1,
+      "#ffc0cb": 1,
+      "#ffff00": 2,
+      "#ffffff": 1
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/8457979/comments",
+    "commits_url": "https://api.github.com/gists/8457979/commits",
+    "created_at": "2014-01-16T16:26:58Z",
+    "d3version": "v4",
+    "description": "Orbitting Moons",
+    "files": {
+      "A-Pen-by-brandon-flowers.markdown": {
+        "filename": "A-Pen-by-brandon-flowers.markdown",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/8457979/raw/2333ed6d0a54a95b77c339fe15f64590ac3787d1/A-Pen-by-brandon-flowers.markdown",
+        "size": 241,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/8457979/raw/169fa9d1974f0c647f642e8ecb1a79894250390b/README.md",
+        "size": 33,
+        "type": "text/plain"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/8457979/raw/7ed8125f9cd1e0929a498c611e18f5f690e1837f/index.html",
+        "size": 7587,
+        "type": "text/html"
+      },
+      "script.js": {
+        "filename": "script.js",
+        "language": "JavaScript",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/8457979/raw/52f9ec555ad1ded9726328d9f115130ff957c4f8/script.js",
+        "size": 2993,
+        "type": "application/javascript"
+      },
+      "style.css": {
+        "filename": "style.css",
+        "language": "CSS",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/8457979/raw/be989b239ac6645fd958082bbccd7596e44e21b8/style.css",
+        "size": 145,
+        "type": "text/css"
+      },
+      "thumbnail.png": {
+        "filename": "thumbnail.png",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/8457979/raw/3a59a5d73dd2beaa790ed2c6bf3bdfbe2b63c11a/thumbnail.png",
+        "size": 67240,
+        "type": "image/png"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/8457979/forks",
+    "git_pull_url": "https://gist.github.com/8457979.git",
+    "git_push_url": "https://gist.github.com/8457979.git",
+    "html_url": "https://gist.github.com/8457979",
+    "id": "8457979",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/68402?v=3",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "thumbnail": "https://gist.githubusercontent.com/headwinds/8457979/raw/3a59a5d73dd2beaa790ed2c6bf3bdfbe2b63c11a/thumbnail.png",
+    "truncated": false,
+    "updated_at": "2016-04-16T20:23:27Z",
+    "url": "https://api.github.com/gists/8457979",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.active": 1,
+      "d3.range": 1,
+      "d3.scaleLinear": 1,
+      "d3.scalePoint": 1,
+      "d3.select": 3,
+      "d3.svg.transform": 1
+    },
+    "colors": {
+      "#000000": 1,
+      "#242a42": 1,
+      "#d2b48c": 3,
+      "#fdffcc": 1
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/98fadafeff932b17b274/comments",
+    "commits_url": "https://api.github.com/gists/98fadafeff932b17b274/commits",
+    "created_at": "2016-03-13T00:57:12Z",
+    "d3version": "v4",
+    "description": "Slinky Chained Transitions",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/98fadafeff932b17b274/raw/703d310b399098a243a76a50bc209167e924cfd2/.block",
+        "size": 17,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/98fadafeff932b17b274/raw/71c497b850dd04ba06aacb6badd3ed950f06a3ce/README.md",
+        "size": 586,
+        "type": "text/plain"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/98fadafeff932b17b274/raw/8f739554f9415f1c6057a37ae5254e98dff06c3a/index.html",
+        "size": 3967,
+        "type": "text/html"
+      },
+      "thumbnail.png": {
+        "filename": "thumbnail.png",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/98fadafeff932b17b274/raw/dd2f0de8b9ae9152817a5a2fe29636f6b15416b2/thumbnail.png",
+        "size": 54650,
+        "type": "image/png"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/98fadafeff932b17b274/forks",
+    "git_pull_url": "https://gist.github.com/98fadafeff932b17b274.git",
+    "git_push_url": "https://gist.github.com/98fadafeff932b17b274.git",
+    "html_url": "https://gist.github.com/98fadafeff932b17b274",
+    "id": "98fadafeff932b17b274",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/68402?v=3",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "thumbnail": "https://gist.githubusercontent.com/headwinds/98fadafeff932b17b274/raw/dd2f0de8b9ae9152817a5a2fe29636f6b15416b2/thumbnail.png",
+    "truncated": false,
+    "updated_at": "2016-04-26T16:43:05Z",
+    "url": "https://api.github.com/gists/98fadafeff932b17b274",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.extent": 1,
+      "d3.keys": 1,
+      "d3.max": 2,
+      "d3.min": 2,
+      "d3.scale.category10": 1,
+      "d3.scale.linear": 1,
+      "d3.select": 2,
+      "d3.svg.axis": 2,
+      "d3.svg.line": 1,
+      "d3.time.format": 1,
+      "d3.time.scale": 1,
+      "d3.tip": 1,
+      "d3.tsv": 1
+    },
+    "colors": {
+      "#0000ff": 2,
+      "#17becf": 1,
+      "#1f77b4": 1,
+      "#2ca02c": 1,
+      "#4682b4": 2,
+      "#7f7f7f": 1,
+      "#8c564b": 1,
+      "#9467bd": 1,
+      "#999999": 1,
+      "#bcbd22": 1,
+      "#d3d3d3": 1,
+      "#d62728": 1,
+      "#dddddd": 3,
+      "#e377c2": 1,
+      "#ff7f0e": 1,
+      "#ffc0cb": 2,
+      "#ffffff": 2
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/7dbc789cdf32572aef3596fbb22748d8/comments",
+    "commits_url": "https://api.github.com/gists/7dbc789cdf32572aef3596fbb22748d8/commits",
+    "created_at": "2016-08-19T01:13:12Z",
+    "d3version": "v3",
+    "description": "D3 v3 Multi-Series Line ",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/7dbc789cdf32572aef3596fbb22748d8/raw/703d310b399098a243a76a50bc209167e924cfd2/.block",
+        "size": 17,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/7dbc789cdf32572aef3596fbb22748d8/raw/8c67f77da4f064d0b145996606f415a13ff68cb7/README.md",
+        "size": 1593,
+        "type": "text/plain"
+      },
+      "data.tsv": {
+        "filename": "data.tsv",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/7dbc789cdf32572aef3596fbb22748d8/raw/1400cdb79e985d6b2c64c8aa3ee27982955499eb/data.tsv",
+        "size": 182,
+        "type": "text/tab-separated-values"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/7dbc789cdf32572aef3596fbb22748d8/raw/c5e7cfd979d5a4ec01ee02a2143b21c8b02cee05/index.html",
+        "size": 7715,
+        "type": "text/html"
+      },
+      "thumbnail.png": {
+        "filename": "thumbnail.png",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/7dbc789cdf32572aef3596fbb22748d8/raw/1815f1cfdd7102709f03b018f9cb652697270290/thumbnail.png",
+        "size": 9032,
+        "type": "image/png"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/7dbc789cdf32572aef3596fbb22748d8/forks",
+    "git_pull_url": "https://gist.github.com/7dbc789cdf32572aef3596fbb22748d8.git",
+    "git_push_url": "https://gist.github.com/7dbc789cdf32572aef3596fbb22748d8.git",
+    "html_url": "https://gist.github.com/7dbc789cdf32572aef3596fbb22748d8",
+    "id": "7dbc789cdf32572aef3596fbb22748d8",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/68402?v=3",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "thumbnail": "https://gist.githubusercontent.com/headwinds/7dbc789cdf32572aef3596fbb22748d8/raw/1815f1cfdd7102709f03b018f9cb652697270290/thumbnail.png",
+    "truncated": false,
+    "updated_at": "2016-08-27T18:15:57Z",
+    "url": "https://api.github.com/gists/7dbc789cdf32572aef3596fbb22748d8",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.arc": 1,
+      "d3.interpolate": 1,
+      "d3.pie": 1
+    },
+    "colors": {
+      "#009900": 1,
+      "#990000": 1,
+      "#cccccc": 1
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/819858db2e4e79dfa3d5820c7f1fa9fa/comments",
+    "commits_url": "https://api.github.com/gists/819858db2e4e79dfa3d5820c7f1fa9fa/commits",
+    "created_at": "2016-07-25T22:42:28Z",
+    "d3version": "v4",
+    "description": "Arc Sentiment Canvas",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/819858db2e4e79dfa3d5820c7f1fa9fa/raw/703d310b399098a243a76a50bc209167e924cfd2/.block",
+        "size": 17,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/819858db2e4e79dfa3d5820c7f1fa9fa/raw/c3ee6776592ea87686a8e3ab5a8304ca8712d0fa/README.md",
+        "size": 235,
+        "type": "text/plain"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/819858db2e4e79dfa3d5820c7f1fa9fa/raw/4e1f03bc03b236b21bc978bea36a041a49d8169a/index.html",
+        "size": 1149,
+        "type": "text/html"
+      },
+      "thumbnail.png": {
+        "filename": "thumbnail.png",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/819858db2e4e79dfa3d5820c7f1fa9fa/raw/a9e0c1be9a346a87c76b4f2eded952d96c679484/thumbnail.png",
+        "size": 10138,
+        "type": "image/png"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/819858db2e4e79dfa3d5820c7f1fa9fa/forks",
+    "git_pull_url": "https://gist.github.com/819858db2e4e79dfa3d5820c7f1fa9fa.git",
+    "git_push_url": "https://gist.github.com/819858db2e4e79dfa3d5820c7f1fa9fa.git",
+    "html_url": "https://gist.github.com/819858db2e4e79dfa3d5820c7f1fa9fa",
+    "id": "819858db2e4e79dfa3d5820c7f1fa9fa",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/68402?v=3",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "thumbnail": "https://gist.githubusercontent.com/headwinds/819858db2e4e79dfa3d5820c7f1fa9fa/raw/a9e0c1be9a346a87c76b4f2eded952d96c679484/thumbnail.png",
+    "truncated": false,
+    "updated_at": "2016-08-18T18:51:33Z",
+    "url": "https://api.github.com/gists/819858db2e4e79dfa3d5820c7f1fa9fa",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.line": 1,
+      "d3.select": 1,
+      "d3.selectAll": 2
+    },
+    "colors": {
+      "#0000ff": 1,
+      "#008000": 1,
+      "#009999": 1,
+      "#33a02c": 1,
+      "#808080": 1,
+      "#999999": 1,
+      "#add8e6": 1,
+      "#b15928": 1,
+      "#d2b48c": 1,
+      "#fdbf6f": 1,
+      "#ff0000": 2,
+      "#ffd700": 1,
+      "#ffff00": 2,
+      "#ffffff": 1
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/99aa4034f423531642343127115d1185/comments",
+    "commits_url": "https://api.github.com/gists/99aa4034f423531642343127115d1185/commits",
+    "created_at": "2016-08-16T17:53:26Z",
+    "d3version": "v5",
+    "description": "Segment path study",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/99aa4034f423531642343127115d1185/raw/95c691a27ca5201997d4e215ca600674c8db0d38/.block",
+        "size": 16,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/99aa4034f423531642343127115d1185/raw/28a6b8f8b0ead0d81c23f52ee6e733f3fa7ce4f9/README.md",
+        "size": 355,
+        "type": "text/plain"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/99aa4034f423531642343127115d1185/raw/196e3edd5dce68dff05c57df52e2d1f8272c362c/index.html",
+        "size": 8927,
+        "type": "text/html"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/99aa4034f423531642343127115d1185/forks",
+    "git_pull_url": "https://gist.github.com/99aa4034f423531642343127115d1185.git",
+    "git_push_url": "https://gist.github.com/99aa4034f423531642343127115d1185.git",
+    "html_url": "https://gist.github.com/99aa4034f423531642343127115d1185",
+    "id": "99aa4034f423531642343127115d1185",
+    "node_id": "MDQ6R2lzdDk5YWE0MDM0ZjQyMzUzMTY0MjM0MzEyNzExNWQxMTg1",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "truncated": false,
+    "updated_at": "2018-09-23T14:12:14Z",
+    "url": "https://api.github.com/gists/99aa4034f423531642343127115d1185",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.ease": 1,
+      "d3.layout.pie": 1,
+      "d3.select": 1,
+      "d3.svg.arc": 1,
+      "d3.timer": 1
+    },
+    "colors": {
+      "#009900": 1,
+      "#990000": 1,
+      "#cccccc": 2
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/5d30212a387f099b0fc00a087d73f8ec/comments",
+    "commits_url": "https://api.github.com/gists/5d30212a387f099b0fc00a087d73f8ec/commits",
+    "created_at": "2016-07-25T23:55:03Z",
+    "d3version": "v3",
+    "description": "Arc Sentiment SVG",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/5d30212a387f099b0fc00a087d73f8ec/raw/703d310b399098a243a76a50bc209167e924cfd2/.block",
+        "size": 17,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/5d30212a387f099b0fc00a087d73f8ec/raw/4f0654018108bdc82920122092de0d95e16dfbba/README.md",
+        "size": 152,
+        "type": "text/plain"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/5d30212a387f099b0fc00a087d73f8ec/raw/a3379ec88d2bbd70081c4e93e8e45170faddf6bb/index.html",
+        "size": 2146,
+        "type": "text/html"
+      },
+      "thumbnail.png": {
+        "filename": "thumbnail.png",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/5d30212a387f099b0fc00a087d73f8ec/raw/a4c43c5fbc62a588257a8256fce2eb655d2889db/thumbnail.png",
+        "size": 11725,
+        "type": "image/png"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/5d30212a387f099b0fc00a087d73f8ec/forks",
+    "git_pull_url": "https://gist.github.com/5d30212a387f099b0fc00a087d73f8ec.git",
+    "git_push_url": "https://gist.github.com/5d30212a387f099b0fc00a087d73f8ec.git",
+    "html_url": "https://gist.github.com/5d30212a387f099b0fc00a087d73f8ec",
+    "id": "5d30212a387f099b0fc00a087d73f8ec",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/68402?v=3",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "thumbnail": "https://gist.githubusercontent.com/headwinds/5d30212a387f099b0fc00a087d73f8ec/raw/a4c43c5fbc62a588257a8256fce2eb655d2889db/thumbnail.png",
+    "truncated": false,
+    "updated_at": "2016-08-18T18:49:41Z",
+    "url": "https://api.github.com/gists/5d30212a387f099b0fc00a087d73f8ec",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.arc": 1,
+      "d3.interpolate": 1,
+      "d3.select": 1
+    },
+    "colors": {
+      "#000000": 1,
+      "#0000ff": 3,
+      "#d2b48c": 1,
+      "#dddddd": 1,
+      "#ff0000": 3,
+      "#ffd700": 3
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/c8730e6df1ad408c3aa102d663a16cf5/comments",
+    "commits_url": "https://api.github.com/gists/c8730e6df1ad408c3aa102d663a16cf5/commits",
+    "created_at": "2016-07-16T23:08:06Z",
+    "d3version": "v5",
+    "description": "Arc Tween Percent Rings",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/c8730e6df1ad408c3aa102d663a16cf5/raw/95c691a27ca5201997d4e215ca600674c8db0d38/.block",
+        "size": 16,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/c8730e6df1ad408c3aa102d663a16cf5/raw/4379a2b9979572eddda810158cc8b37a6107c8df/README.md",
+        "size": 255,
+        "type": "text/plain"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/c8730e6df1ad408c3aa102d663a16cf5/raw/5d2d2613a06fad70d7ac1c986fa0c4fdd2f6f162/index.html",
+        "size": 2598,
+        "type": "text/html"
+      },
+      "thumbnail.png": {
+        "filename": "thumbnail.png",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/c8730e6df1ad408c3aa102d663a16cf5/raw/eb57006f532ac23e9378dcd6d06986cea9eb2cff/thumbnail.png",
+        "size": 18231,
+        "type": "image/png"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/c8730e6df1ad408c3aa102d663a16cf5/forks",
+    "git_pull_url": "https://gist.github.com/c8730e6df1ad408c3aa102d663a16cf5.git",
+    "git_push_url": "https://gist.github.com/c8730e6df1ad408c3aa102d663a16cf5.git",
+    "html_url": "https://gist.github.com/c8730e6df1ad408c3aa102d663a16cf5",
+    "id": "c8730e6df1ad408c3aa102d663a16cf5",
+    "node_id": "MDQ6R2lzdGM4NzMwZTZkZjFhZDQwOGMzYWExMDJkNjYzYTE2Y2Y1",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "thumbnail": "https://gist.githubusercontent.com/headwinds/c8730e6df1ad408c3aa102d663a16cf5/raw/eb57006f532ac23e9378dcd6d06986cea9eb2cff/thumbnail.png",
+    "truncated": false,
+    "updated_at": "2018-10-11T14:34:03Z",
+    "url": "https://api.github.com/gists/c8730e6df1ad408c3aa102d663a16cf5",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.interval": 1,
+      "d3.select": 1
+    },
+    "colors": {
+      "#00ffff": 1,
+      "#666666": 1,
+      "#808080": 2,
+      "#999999": 1,
+      "#ff0000": 1,
+      "#ffc0cb": 1,
+      "#ffffff": 1
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/72a26d9f5b420d90bfe182774771c15f/comments",
+    "commits_url": "https://api.github.com/gists/72a26d9f5b420d90bfe182774771c15f/commits",
+    "created_at": "2018-09-06T15:23:40Z",
+    "d3version": "v5",
+    "description": "cards update pattern",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/72a26d9f5b420d90bfe182774771c15f/raw/243230d8f9f80320d839db1f944ac7918ffdaa68/.block",
+        "size": 12,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/72a26d9f5b420d90bfe182774771c15f/raw/ecf1bf8bf9108c871cc8049a5b270405b5b54fe6/README.md",
+        "size": 54,
+        "type": "text/markdown"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/72a26d9f5b420d90bfe182774771c15f/raw/8817cd90e05e020786a5667890ad9c588f3b6450/index.html",
+        "size": 4970,
+        "type": "text/html"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/72a26d9f5b420d90bfe182774771c15f/forks",
+    "git_pull_url": "https://gist.github.com/72a26d9f5b420d90bfe182774771c15f.git",
+    "git_push_url": "https://gist.github.com/72a26d9f5b420d90bfe182774771c15f.git",
+    "html_url": "https://gist.github.com/72a26d9f5b420d90bfe182774771c15f",
+    "id": "72a26d9f5b420d90bfe182774771c15f",
+    "node_id": "MDQ6R2lzdDcyYTI2ZDlmNWI0MjBkOTBiZmUxODI3NzQ3NzFjMTVm",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "truncated": false,
+    "updated_at": "2019-07-27T12:56:41Z",
+    "url": "https://api.github.com/gists/72a26d9f5b420d90bfe182774771c15f",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.select": 1
+    },
+    "colors": {
+      "#666666": 1,
+      "#b7b7b7": 2,
+      "#d2b48c": 1,
+      "#eeeeee": 1,
+      "#ff0000": 1,
+      "#ffd700": 18
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/5fbd8dd902ad671f7ba633f572e1c16f/comments",
+    "commits_url": "https://api.github.com/gists/5fbd8dd902ad671f7ba633f572e1c16f/commits",
+    "created_at": "2018-09-08T12:05:33Z",
+    "d3version": "v5",
+    "description": "golds",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/5fbd8dd902ad671f7ba633f572e1c16f/raw/243230d8f9f80320d839db1f944ac7918ffdaa68/.block",
+        "size": 12,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/5fbd8dd902ad671f7ba633f572e1c16f/raw/ecf1bf8bf9108c871cc8049a5b270405b5b54fe6/README.md",
+        "size": 54,
+        "type": "text/plain"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/5fbd8dd902ad671f7ba633f572e1c16f/raw/cac5159279e4672c5c96e903b4f016ca9c330c40/index.html",
+        "size": 6787,
+        "type": "text/html"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/5fbd8dd902ad671f7ba633f572e1c16f/forks",
+    "git_pull_url": "https://gist.github.com/5fbd8dd902ad671f7ba633f572e1c16f.git",
+    "git_push_url": "https://gist.github.com/5fbd8dd902ad671f7ba633f572e1c16f.git",
+    "html_url": "https://gist.github.com/5fbd8dd902ad671f7ba633f572e1c16f",
+    "id": "5fbd8dd902ad671f7ba633f572e1c16f",
+    "node_id": "MDQ6R2lzdDVmYmQ4ZGQ5MDJhZDY3MWY3YmE2MzNmNTcyZTFjMTZm",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "truncated": false,
+    "updated_at": "2018-09-23T14:08:34Z",
+    "url": "https://api.github.com/gists/5fbd8dd902ad671f7ba633f572e1c16f",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.select": 11
+    },
+    "colors": {
+      "#000000": 1,
+      "#0000ff": 1,
+      "#008000": 2,
+      "#61e4b4": 1,
+      "#800080": 1,
+      "#a0e0b6": 1,
+      "#b7dddf": 2,
+      "#bbc3be": 1,
+      "#d2b48c": 1,
+      "#dde0a0": 1,
+      "#eeeeee": 1,
+      "#ff0000": 5,
+      "#ffffff": 2
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/45e885415aca6f219e4415a27dce15a7/comments",
+    "commits_url": "https://api.github.com/gists/45e885415aca6f219e4415a27dce15a7/commits",
+    "created_at": "2018-09-10T16:14:21Z",
+    "d3version": "v5",
+    "description": "creeps",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/45e885415aca6f219e4415a27dce15a7/raw/243230d8f9f80320d839db1f944ac7918ffdaa68/.block",
+        "size": 12,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/45e885415aca6f219e4415a27dce15a7/raw/b47602fe71f796702e95fdecb33d6690a4a0dfe7/README.md",
+        "size": 745,
+        "type": "text/markdown"
+      },
+      "audio.js": {
+        "filename": "audio.js",
+        "language": "JavaScript",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/45e885415aca6f219e4415a27dce15a7/raw/37143217182cf4da14fa32e15cf5a1e678467abe/audio.js",
+        "size": 1322,
+        "type": "application/ecmascript"
+      },
+      "homes.js": {
+        "filename": "homes.js",
+        "language": "JavaScript",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/45e885415aca6f219e4415a27dce15a7/raw/aaf39bfba9fe379413534d697f82bed359cc94c2/homes.js",
+        "size": 1948,
+        "type": "application/ecmascript"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/45e885415aca6f219e4415a27dce15a7/raw/d04959cf4990a6463fda60289ed26937174d1bd0/index.html",
+        "size": 2001,
+        "type": "text/html"
+      },
+      "lanes.js": {
+        "filename": "lanes.js",
+        "language": "JavaScript",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/45e885415aca6f219e4415a27dce15a7/raw/c3252b168880baf3e0ac61b2351feee92c5a3749/lanes.js",
+        "size": 4165,
+        "type": "application/ecmascript"
+      },
+      "setup.js": {
+        "filename": "setup.js",
+        "language": "JavaScript",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/45e885415aca6f219e4415a27dce15a7/raw/a07b9f3b4a3b231986f702165a015c453c2db8cb/setup.js",
+        "size": 1716,
+        "type": "application/ecmascript"
+      },
+      "step.js": {
+        "filename": "step.js",
+        "language": "JavaScript",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/45e885415aca6f219e4415a27dce15a7/raw/decdeb3ae7276c96838872e9326ea39271e3e891/step.js",
+        "size": 4683,
+        "type": "application/ecmascript"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/45e885415aca6f219e4415a27dce15a7/forks",
+    "git_pull_url": "https://gist.github.com/45e885415aca6f219e4415a27dce15a7.git",
+    "git_push_url": "https://gist.github.com/45e885415aca6f219e4415a27dce15a7.git",
+    "html_url": "https://gist.github.com/45e885415aca6f219e4415a27dce15a7",
+    "id": "45e885415aca6f219e4415a27dce15a7",
+    "node_id": "MDQ6R2lzdDQ1ZTg4NTQxNWFjYTZmMjE5ZTQ0MTVhMjdkY2UxNWE3",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "truncated": false,
+    "updated_at": "2019-10-03T18:38:57Z",
+    "url": "https://api.github.com/gists/45e885415aca6f219e4415a27dce15a7",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.axisBottom": 1,
+      "d3.axisLeft": 1,
+      "d3.csv": 4,
+      "d3.extent": 2,
+      "d3.line": 1,
+      "d3.max": 2,
+      "d3.scaleLinear": 1,
+      "d3.scaleTime": 1,
+      "d3.select": 1,
+      "d3.timeParse": 1
+    },
+    "colors": {
+      "#000000": 1,
+      "#0000ff": 2,
+      "#008080": 1,
+      "#008281": 2,
+      "#0e1a36": 2,
+      "#4682b4": 2,
+      "#999999": 1,
+      "#c1c1c1": 1,
+      "#d2b48c": 1,
+      "#dddddd": 4,
+      "#f2f2f2": 1,
+      "#fafafa": 1,
+      "#ffbd00": 1,
+      "#ffd700": 1,
+      "#ffffff": 1
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/0d4cd73a04c6f3984aae052980582ff6/comments",
+    "commits_url": "https://api.github.com/gists/0d4cd73a04c6f3984aae052980582ff6/commits",
+    "created_at": "2018-09-30T23:54:04Z",
+    "d3version": "v5",
+    "description": "rivalry performance",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/0d4cd73a04c6f3984aae052980582ff6/raw/243230d8f9f80320d839db1f944ac7918ffdaa68/.block",
+        "size": 12,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/0d4cd73a04c6f3984aae052980582ff6/raw/ecf1bf8bf9108c871cc8049a5b270405b5b54fe6/README.md",
+        "size": 54,
+        "type": "text/plain"
+      },
+      "actual.csv": {
+        "filename": "actual.csv",
+        "language": "CSV",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/0d4cd73a04c6f3984aae052980582ff6/raw/0aeb0dec16d1b3fecd5e4726cd431f6d6bfbb632/actual.csv",
+        "size": 119,
+        "type": "text/csv"
+      },
+      "data.csv": {
+        "filename": "data.csv",
+        "language": "CSV",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/0d4cd73a04c6f3984aae052980582ff6/raw/b9a688b0db58ce72db0cef5b581e92fd02aa1220/data.csv",
+        "size": 442,
+        "type": "text/csv"
+      },
+      "expected.csv": {
+        "filename": "expected.csv",
+        "language": "CSV",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/0d4cd73a04c6f3984aae052980582ff6/raw/7b667d420674ae6a3909f81c2938e765d306066c/expected.csv",
+        "size": 119,
+        "type": "text/csv"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/0d4cd73a04c6f3984aae052980582ff6/raw/26ab699073a2fad0818c089c5498bc7836e60476/index.html",
+        "size": 4871,
+        "type": "text/html"
+      },
+      "rivalry.csv": {
+        "filename": "rivalry.csv",
+        "language": "CSV",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/0d4cd73a04c6f3984aae052980582ff6/raw/ab5a577f7bf777a3f13618154a783341f00ae7ce/rivalry.csv",
+        "size": 119,
+        "type": "text/csv"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/0d4cd73a04c6f3984aae052980582ff6/forks",
+    "git_pull_url": "https://gist.github.com/0d4cd73a04c6f3984aae052980582ff6.git",
+    "git_push_url": "https://gist.github.com/0d4cd73a04c6f3984aae052980582ff6.git",
+    "html_url": "https://gist.github.com/0d4cd73a04c6f3984aae052980582ff6",
+    "id": "0d4cd73a04c6f3984aae052980582ff6",
+    "node_id": "MDQ6R2lzdDBkNGNkNzNhMDRjNmYzOTg0YWFlMDUyOTgwNTgyZmY2",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "truncated": false,
+    "updated_at": "2018-10-07T18:51:03Z",
+    "url": "https://api.github.com/gists/0d4cd73a04c6f3984aae052980582ff6",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.forceCollide": 1,
+      "d3.forceManyBody": 1,
+      "d3.forceSimulation": 1,
+      "d3.forceX": 2,
+      "d3.forceY": 1,
+      "d3.json": 1,
+      "d3.select": 2
+    },
+    "colors": {
+      "#0000ff": 1,
+      "#add8e6": 1,
+      "#b19cd9": 1,
+      "#ffa500": 1
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/6f7db75f05489c8978e3ae56298b89ab/comments",
+    "commits_url": "https://api.github.com/gists/6f7db75f05489c8978e3ae56298b89ab/commits",
+    "created_at": "2018-10-05T16:48:16Z",
+    "d3version": "IDK",
+    "description": "rivalry profile",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/6f7db75f05489c8978e3ae56298b89ab/raw/243230d8f9f80320d839db1f944ac7918ffdaa68/.block",
+        "size": 12,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/6f7db75f05489c8978e3ae56298b89ab/raw/a5e74a4819cf00e24f78778813e416f16651c8e9/README.md",
+        "size": 245,
+        "type": "text/plain"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/6f7db75f05489c8978e3ae56298b89ab/raw/77383c8b2ec753a47858df61de58a08861a51a87/index.html",
+        "size": 3018,
+        "type": "text/html"
+      },
+      "marvel.json": {
+        "filename": "marvel.json",
+        "language": "JSON",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/6f7db75f05489c8978e3ae56298b89ab/raw/7153b6fdc7ab581adf0e50fce490fbdb92922797/marvel.json",
+        "size": 5528,
+        "type": "application/json"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/6f7db75f05489c8978e3ae56298b89ab/forks",
+    "git_pull_url": "https://gist.github.com/6f7db75f05489c8978e3ae56298b89ab.git",
+    "git_push_url": "https://gist.github.com/6f7db75f05489c8978e3ae56298b89ab.git",
+    "html_url": "https://gist.github.com/6f7db75f05489c8978e3ae56298b89ab",
+    "id": "6f7db75f05489c8978e3ae56298b89ab",
+    "node_id": "MDQ6R2lzdDZmN2RiNzVmMDU0ODljODk3OGUzYWU1NjI5OGI4OWFi",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "truncated": false,
+    "updated_at": "2018-10-07T20:23:34Z",
+    "url": "https://api.github.com/gists/6f7db75f05489c8978e3ae56298b89ab",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.hierarchy": 2,
+      "d3.select": 2,
+      "d3.stratify": 2,
+      "d3.tree": 3
+    },
+    "colors": {
+      "#0000ff": 1,
+      "#4682b4": 1,
+      "#666666": 1,
+      "#cccccc": 1,
+      "#ffffff": 5
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/f7a059e8865d5baacd11ffc8a2112792/comments",
+    "commits_url": "https://api.github.com/gists/f7a059e8865d5baacd11ffc8a2112792/commits",
+    "created_at": "2018-10-13T12:44:06Z",
+    "d3version": "v5",
+    "description": "tech tree",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/f7a059e8865d5baacd11ffc8a2112792/raw/243230d8f9f80320d839db1f944ac7918ffdaa68/.block",
+        "size": 12,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/f7a059e8865d5baacd11ffc8a2112792/raw/c0afe80637119e9bda63962e74bc46e659cbb098/README.md",
+        "size": 133,
+        "type": "text/markdown"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/f7a059e8865d5baacd11ffc8a2112792/raw/b7b1d3779a232b321b939dd3aaf70777eceda4b8/index.html",
+        "size": 10101,
+        "type": "text/html"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/f7a059e8865d5baacd11ffc8a2112792/forks",
+    "git_pull_url": "https://gist.github.com/f7a059e8865d5baacd11ffc8a2112792.git",
+    "git_push_url": "https://gist.github.com/f7a059e8865d5baacd11ffc8a2112792.git",
+    "html_url": "https://gist.github.com/f7a059e8865d5baacd11ffc8a2112792",
+    "id": "f7a059e8865d5baacd11ffc8a2112792",
+    "node_id": "MDQ6R2lzdGY3YTA1OWU4ODY1ZDViYWFjZDExZmZjOGEyMTEyNzky",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "truncated": false,
+    "updated_at": "2019-07-26T13:15:10Z",
+    "url": "https://api.github.com/gists/f7a059e8865d5baacd11ffc8a2112792",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.range": 2,
+      "d3.scaleOrdinal": 1,
+      "d3.select": 2
+    },
+    "colors": {
+      "#0000ff": 2,
+      "#008080": 7,
+      "#008281": 7,
+      "#0e1a36": 3,
+      "#333333": 1,
+      "#663399": 1,
+      "#800080": 1,
+      "#c1c1c1": 1,
+      "#c7efff": 1,
+      "#ccccee": 1,
+      "#d2b48c": 2,
+      "#f2f2f2": 1,
+      "#fafafa": 1,
+      "#ffbd00": 5,
+      "#ffd700": 5,
+      "#ffffff": 2
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/d224b8b99788e4c15575253c5f46db9e/comments",
+    "commits_url": "https://api.github.com/gists/d224b8b99788e4c15575253c5f46db9e/commits",
+    "created_at": "2018-11-11T15:57:05Z",
+    "d3version": "v5",
+    "description": "hexagon achievements",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/d224b8b99788e4c15575253c5f46db9e/raw/243230d8f9f80320d839db1f944ac7918ffdaa68/.block",
+        "size": 12,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/d224b8b99788e4c15575253c5f46db9e/raw/ecf1bf8bf9108c871cc8049a5b270405b5b54fe6/README.md",
+        "size": 54,
+        "type": "text/plain"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/d224b8b99788e4c15575253c5f46db9e/raw/1d24daaa746b3667a267389cc9e3c94f4f932221/index.html",
+        "size": 6063,
+        "type": "text/html"
+      },
+      "style.css": {
+        "filename": "style.css",
+        "language": "CSS",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/d224b8b99788e4c15575253c5f46db9e/raw/387551e8a3b7dedc844587755cd720e20541ba1e/style.css",
+        "size": 664,
+        "type": "text/css"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/d224b8b99788e4c15575253c5f46db9e/forks",
+    "git_pull_url": "https://gist.github.com/d224b8b99788e4c15575253c5f46db9e.git",
+    "git_push_url": "https://gist.github.com/d224b8b99788e4c15575253c5f46db9e.git",
+    "html_url": "https://gist.github.com/d224b8b99788e4c15575253c5f46db9e",
+    "id": "d224b8b99788e4c15575253c5f46db9e",
+    "node_id": "MDQ6R2lzdGQyMjRiOGI5OTc4OGU0YzE1NTc1MjUzYzVmNDZkYjll",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "truncated": false,
+    "updated_at": "2018-11-11T15:58:04Z",
+    "url": "https://api.github.com/gists/d224b8b99788e4c15575253c5f46db9e",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.axisBottom": 1,
+      "d3.axisLeft": 1,
+      "d3.scaleLinear": 2,
+      "d3.scaleSequential": 1,
+      "d3.select": 7,
+      "d3.selectAll": 2,
+      "d3.set": 1,
+      "d3.tsv": 1
+    },
+    "colors": {
+      "#bfbfbf": 1
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/b07e1cdf8446a2d50f8d70fd9e47d025/comments",
+    "commits_url": "https://api.github.com/gists/b07e1cdf8446a2d50f8d70fd9e47d025/commits",
+    "created_at": "2018-11-18T14:37:55Z",
+    "d3version": "v5",
+    "description": "formations",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/b07e1cdf8446a2d50f8d70fd9e47d025/raw/243230d8f9f80320d839db1f944ac7918ffdaa68/.block",
+        "size": 12,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/b07e1cdf8446a2d50f8d70fd9e47d025/raw/dda73bf664263f1c432eff362e0dce025e324de8/README.md",
+        "size": 192,
+        "type": "text/plain"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/b07e1cdf8446a2d50f8d70fd9e47d025/raw/5395601579a98e15a3a153faf003255cee36bec6/index.html",
+        "size": 3490,
+        "type": "text/html"
+      },
+      "quartet.tsv": {
+        "filename": "quartet.tsv",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/b07e1cdf8446a2d50f8d70fd9e47d025/raw/df15a3d29262fcf8f3a40a07a35409b9e6875638/quartet.tsv",
+        "size": 465,
+        "type": "text/tab-separated-values"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/b07e1cdf8446a2d50f8d70fd9e47d025/forks",
+    "git_pull_url": "https://gist.github.com/b07e1cdf8446a2d50f8d70fd9e47d025.git",
+    "git_push_url": "https://gist.github.com/b07e1cdf8446a2d50f8d70fd9e47d025.git",
+    "html_url": "https://gist.github.com/b07e1cdf8446a2d50f8d70fd9e47d025",
+    "id": "b07e1cdf8446a2d50f8d70fd9e47d025",
+    "node_id": "MDQ6R2lzdGIwN2UxY2RmODQ0NmEyZDUwZjhkNzBmZDllNDdkMDI1",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "truncated": false,
+    "updated_at": "2018-11-18T14:38:57Z",
+    "url": "https://api.github.com/gists/b07e1cdf8446a2d50f8d70fd9e47d025",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.arc": 1,
+      "d3.pie": 1,
+      "d3.select": 1,
+      "d3.timer": 1
+    },
+    "colors": {
+      "#00f1ba": 1,
+      "#999999": 1,
+      "#cccccc": 1,
+      "#ea0061": 1
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/c3264516e498d902eb01d9e309c74db7/comments",
+    "commits_url": "https://api.github.com/gists/c3264516e498d902eb01d9e309c74db7/commits",
+    "created_at": "2018-12-02T14:48:38Z",
+    "d3version": "v5",
+    "description": "arc ring v5",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/c3264516e498d902eb01d9e309c74db7/raw/243230d8f9f80320d839db1f944ac7918ffdaa68/.block",
+        "size": 12,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/c3264516e498d902eb01d9e309c74db7/raw/ecf1bf8bf9108c871cc8049a5b270405b5b54fe6/README.md",
+        "size": 54,
+        "type": "text/markdown"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/c3264516e498d902eb01d9e309c74db7/raw/d4dba22aaf0b828cc41fe50847a396f07378105b/index.html",
+        "size": 1974,
+        "type": "text/html"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/c3264516e498d902eb01d9e309c74db7/forks",
+    "git_pull_url": "https://gist.github.com/c3264516e498d902eb01d9e309c74db7.git",
+    "git_push_url": "https://gist.github.com/c3264516e498d902eb01d9e309c74db7.git",
+    "html_url": "https://gist.github.com/c3264516e498d902eb01d9e309c74db7",
+    "id": "c3264516e498d902eb01d9e309c74db7",
+    "node_id": "MDQ6R2lzdGMzMjY0NTE2ZTQ5OGQ5MDJlYjAxZDllMzA5Yzc0ZGI3",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "truncated": false,
+    "updated_at": "2019-07-26T13:16:38Z",
+    "url": "https://api.github.com/gists/c3264516e498d902eb01d9e309c74db7",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.random.normal": 1,
+      "d3.range": 1,
+      "d3.scale.linear": 4,
+      "d3.select": 1,
+      "d3.svg.area": 1,
+      "d3.svg.axis": 3,
+      "d3.svg.brush": 1,
+      "d3.svg.line": 1,
+      "d3.time.scale": 2
+    },
+    "colors": {
+      "#000000": 4,
+      "#008000": 1,
+      "#808080": 1,
+      "#d2b48c": 2,
+      "#d3d3d3": 1,
+      "#f5f5f5": 2,
+      "#ff0000": 1
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/80392565c97af6a4a42df4c15a602ad9/comments",
+    "commits_url": "https://api.github.com/gists/80392565c97af6a4a42df4c15a602ad9/commits",
+    "created_at": "2019-02-08T18:50:12Z",
+    "d3version": "v3",
+    "description": "Real Time Chart v5 Port",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/80392565c97af6a4a42df4c15a602ad9/raw/243230d8f9f80320d839db1f944ac7918ffdaa68/.block",
+        "size": 12,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/80392565c97af6a4a42df4c15a602ad9/raw/07b13abb7153c8c1f4024c754a95f6b8f9412656/README.md",
+        "size": 473,
+        "type": "text/plain"
+      },
+      "d3Setup.js": {
+        "filename": "d3Setup.js",
+        "language": "JavaScript",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/80392565c97af6a4a42df4c15a602ad9/raw/b2c1ad4d50b626d9e85f93c62287b72c6b9ed7d1/d3Setup.js",
+        "size": 2006,
+        "type": "application/javascript"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/80392565c97af6a4a42df4c15a602ad9/raw/fb8e9606701bc481a32856bb74c6d2dc12c67d47/index.html",
+        "size": 646,
+        "type": "text/html"
+      },
+      "realTimeChart.js": {
+        "filename": "realTimeChart.js",
+        "language": "JavaScript",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/80392565c97af6a4a42df4c15a602ad9/raw/ab5e168e6f172c932a7d9a5ff9b0de8194ccd681/realTimeChart.js",
+        "size": 13555,
+        "type": "application/javascript"
+      },
+      "style.css": {
+        "filename": "style.css",
+        "language": "CSS",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/80392565c97af6a4a42df4c15a602ad9/raw/bd2faaf2dcf96d0dbf5f51fec9d577fed3a6d7eb/style.css",
+        "size": 715,
+        "type": "text/css"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/80392565c97af6a4a42df4c15a602ad9/forks",
+    "git_pull_url": "https://gist.github.com/80392565c97af6a4a42df4c15a602ad9.git",
+    "git_push_url": "https://gist.github.com/80392565c97af6a4a42df4c15a602ad9.git",
+    "html_url": "https://gist.github.com/80392565c97af6a4a42df4c15a602ad9",
+    "id": "80392565c97af6a4a42df4c15a602ad9",
+    "node_id": "MDQ6R2lzdDgwMzkyNTY1Yzk3YWY2YTRhNDJkZjRjMTVhNjAyYWQ5",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "truncated": false,
+    "updated_at": "2019-03-04T15:00:44Z",
+    "url": "https://api.github.com/gists/80392565c97af6a4a42df4c15a602ad9",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.select": 1
+    },
+    "colors": {
+      "#000000": 4,
+      "#800080": 2,
+      "#ff0000": 3,
+      "#ffc0cb": 3
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/629136197b84cd4fed6a92b865e50386/comments",
+    "commits_url": "https://api.github.com/gists/629136197b84cd4fed6a92b865e50386/commits",
+    "created_at": "2019-03-05T19:06:05Z",
+    "d3version": "v5",
+    "description": "enter exit merge",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/629136197b84cd4fed6a92b865e50386/raw/243230d8f9f80320d839db1f944ac7918ffdaa68/.block",
+        "size": 12,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/629136197b84cd4fed6a92b865e50386/raw/ecf1bf8bf9108c871cc8049a5b270405b5b54fe6/README.md",
+        "size": 54,
+        "type": "text/plain"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/629136197b84cd4fed6a92b865e50386/raw/b543d698e3af16d882252c1c31da696565280a27/index.html",
+        "size": 2846,
+        "type": "text/html"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/629136197b84cd4fed6a92b865e50386/forks",
+    "git_pull_url": "https://gist.github.com/629136197b84cd4fed6a92b865e50386.git",
+    "git_push_url": "https://gist.github.com/629136197b84cd4fed6a92b865e50386.git",
+    "html_url": "https://gist.github.com/629136197b84cd4fed6a92b865e50386",
+    "id": "629136197b84cd4fed6a92b865e50386",
+    "node_id": "MDQ6R2lzdDYyOTEzNjE5N2I4NGNkNGZlZDZhOTJiODY1ZTUwMzg2",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "truncated": false,
+    "updated_at": "2019-03-08T16:40:44Z",
+    "url": "https://api.github.com/gists/629136197b84cd4fed6a92b865e50386",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.active": 1,
+      "d3.line": 1,
+      "d3.select": 6,
+      "d3.selectAll": 2
+    },
+    "colors": {
+      "#000000": 1,
+      "#0000ff": 2,
+      "#008000": 1,
+      "#8b0000": 1,
+      "#ff0000": 2,
+      "#ffc0cb": 1,
+      "#ffffff": 2
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/bdcd79a533a0e25a8afc3bb1d7e0e24f/comments",
+    "commits_url": "https://api.github.com/gists/bdcd79a533a0e25a8afc3bb1d7e0e24f/commits",
+    "created_at": "2019-04-17T16:22:56Z",
+    "d3version": "v5",
+    "description": "meadow",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/bdcd79a533a0e25a8afc3bb1d7e0e24f/raw/243230d8f9f80320d839db1f944ac7918ffdaa68/.block",
+        "size": 12,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/bdcd79a533a0e25a8afc3bb1d7e0e24f/raw/11fdd87f88cbfefed387ebd758c96580e041e9fc/README.md",
+        "size": 151,
+        "type": "text/markdown"
+      },
+      "aoe.js": {
+        "filename": "aoe.js",
+        "language": "JavaScript",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/bdcd79a533a0e25a8afc3bb1d7e0e24f/raw/4c0c84d4b77e50e3b0fd1267248aab571857b028/aoe.js",
+        "size": 1338,
+        "type": "application/ecmascript"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/bdcd79a533a0e25a8afc3bb1d7e0e24f/raw/87f7b7e10c8936bf2175b27f9ec93b84413ab85a/index.html",
+        "size": 328,
+        "type": "text/html"
+      },
+      "meadow.js": {
+        "filename": "meadow.js",
+        "language": "JavaScript",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/bdcd79a533a0e25a8afc3bb1d7e0e24f/raw/61a9f24d75a13dfcd9bb882f1f2bac39951cbd59/meadow.js",
+        "size": 2613,
+        "type": "application/ecmascript"
+      },
+      "serra.js": {
+        "filename": "serra.js",
+        "language": "JavaScript",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/bdcd79a533a0e25a8afc3bb1d7e0e24f/raw/cacec31265810e69af8e9a450832ad6958ae002e/serra.js",
+        "size": 2197,
+        "type": "application/ecmascript"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/bdcd79a533a0e25a8afc3bb1d7e0e24f/forks",
+    "git_pull_url": "https://gist.github.com/bdcd79a533a0e25a8afc3bb1d7e0e24f.git",
+    "git_push_url": "https://gist.github.com/bdcd79a533a0e25a8afc3bb1d7e0e24f.git",
+    "html_url": "https://gist.github.com/bdcd79a533a0e25a8afc3bb1d7e0e24f",
+    "id": "bdcd79a533a0e25a8afc3bb1d7e0e24f",
+    "node_id": "MDQ6R2lzdGJkY2Q3OWE1MzNhMGUyNWE4YWZjM2JiMWQ3ZTBlMjRm",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "truncated": false,
+    "updated_at": "2020-02-26T14:34:42Z",
+    "url": "https://api.github.com/gists/bdcd79a533a0e25a8afc3bb1d7e0e24f",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.select": 1
+    },
+    "colors": {
+      "#808080": 1,
+      "#ff0000": 1
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/62fab76f78e282f1425d1fe35990719b/comments",
+    "commits_url": "https://api.github.com/gists/62fab76f78e282f1425d1fe35990719b/commits",
+    "created_at": "2019-08-02T00:19:09Z",
+    "d3version": "v4",
+    "description": "Gr4y5kull",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/62fab76f78e282f1425d1fe35990719b/raw/243230d8f9f80320d839db1f944ac7918ffdaa68/.block",
+        "size": 12,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/62fab76f78e282f1425d1fe35990719b/raw/ecf1bf8bf9108c871cc8049a5b270405b5b54fe6/README.md",
+        "size": 54,
+        "type": "text/markdown"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/62fab76f78e282f1425d1fe35990719b/raw/0ccfebace5348a3ce1126ebd284122622027f263/index.html",
+        "size": 2559,
+        "type": "text/html"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/62fab76f78e282f1425d1fe35990719b/forks",
+    "git_pull_url": "https://gist.github.com/62fab76f78e282f1425d1fe35990719b.git",
+    "git_push_url": "https://gist.github.com/62fab76f78e282f1425d1fe35990719b.git",
+    "html_url": "https://gist.github.com/62fab76f78e282f1425d1fe35990719b",
+    "id": "62fab76f78e282f1425d1fe35990719b",
+    "node_id": "MDQ6R2lzdDYyZmFiNzZmNzhlMjgyZjE0MjVkMWZlMzU5OTA3MTli",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "truncated": false,
+    "updated_at": "2019-08-24T14:12:05Z",
+    "url": "https://api.github.com/gists/62fab76f78e282f1425d1fe35990719b",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.axisBottom": 1,
+      "d3.axisLeft": 1,
+      "d3.extent": 2,
+      "d3.line": 1,
+      "d3.max": 2,
+      "d3.scaleLinear": 1,
+      "d3.scaleTime": 1,
+      "d3.select": 1,
+      "d3.timeParse": 1
+    },
+    "colors": {
+      "#000000": 1,
+      "#0000ff": 3,
+      "#008000": 1,
+      "#008080": 1,
+      "#008281": 1,
+      "#0e1a36": 1,
+      "#4682b4": 2,
+      "#800080": 1,
+      "#999999": 1,
+      "#c1c1c1": 1,
+      "#d2b48c": 1,
+      "#dc143c": 1,
+      "#dddddd": 3,
+      "#f2f2f2": 1,
+      "#fafafa": 1,
+      "#ff0000": 9,
+      "#ffa500": 1,
+      "#ffbd00": 1,
+      "#ffd700": 1,
+      "#ffffff": 2
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/50d13549237db3713591d47d43f172e8/comments",
+    "commits_url": "https://api.github.com/gists/50d13549237db3713591d47d43f172e8/commits",
+    "created_at": "2019-12-23T17:54:44Z",
+    "d3version": "v5",
+    "description": "lighthouse audits",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/50d13549237db3713591d47d43f172e8/raw/243230d8f9f80320d839db1f944ac7918ffdaa68/.block",
+        "size": 12,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/50d13549237db3713591d47d43f172e8/raw/83105446efc1c0da5a03e91bbef886f98869c995/README.md",
+        "size": 226,
+        "type": "text/markdown"
+      },
+      "comparisonTable.js": {
+        "filename": "comparisonTable.js",
+        "language": "JavaScript",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/50d13549237db3713591d47d43f172e8/raw/c5c2d747ef8cf54321f0365c1953bb1a06151421/comparisonTable.js",
+        "size": 6269,
+        "type": "application/ecmascript"
+      },
+      "data.json": {
+        "filename": "data.json",
+        "language": "JSON",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/50d13549237db3713591d47d43f172e8/raw/8fe6c60ea80c755872dd9f68db8f9649084e2c16/data.json",
+        "size": 107526,
+        "type": "application/json"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/50d13549237db3713591d47d43f172e8/raw/88117a8e4c401edeb55c08233deb591a3e7d04b2/index.html",
+        "size": 1807,
+        "type": "text/html"
+      },
+      "interact.js": {
+        "filename": "interact.js",
+        "language": "JavaScript",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/50d13549237db3713591d47d43f172e8/raw/34dec6d853bf4a021f4e2ce4a963b327b7c55c9e/interact.js",
+        "size": 1202,
+        "type": "application/ecmascript"
+      },
+      "service.js": {
+        "filename": "service.js",
+        "language": "JavaScript",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/50d13549237db3713591d47d43f172e8/raw/aa111f8d89568853f59c8bf72a0696da36cd4566/service.js",
+        "size": 1463,
+        "type": "application/ecmascript"
+      },
+      "style.css": {
+        "filename": "style.css",
+        "language": "CSS",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/50d13549237db3713591d47d43f172e8/raw/d0401648dec418146968a3f3e6687d39b299f0a9/style.css",
+        "size": 968,
+        "type": "text/css"
+      },
+      "visualize.js": {
+        "filename": "visualize.js",
+        "language": "JavaScript",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/50d13549237db3713591d47d43f172e8/raw/b4849fa1b5eaebcb5b7e1a921aa8b6454e7af79b/visualize.js",
+        "size": 3542,
+        "type": "application/ecmascript"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/50d13549237db3713591d47d43f172e8/forks",
+    "git_pull_url": "https://gist.github.com/50d13549237db3713591d47d43f172e8.git",
+    "git_push_url": "https://gist.github.com/50d13549237db3713591d47d43f172e8.git",
+    "html_url": "https://gist.github.com/50d13549237db3713591d47d43f172e8",
+    "id": "50d13549237db3713591d47d43f172e8",
+    "node_id": "MDQ6R2lzdDUwZDEzNTQ5MjM3ZGIzNzEzNTkxZDQ3ZDQzZjE3MmU4",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "truncated": false,
+    "updated_at": "2019-12-26T02:56:24Z",
+    "url": "https://api.github.com/gists/50d13549237db3713591d47d43f172e8",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.select": 3
+    },
+    "colors": {
+      "#008080": 1,
+      "#ff0000": 1,
+      "#ffc0cb": 1
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/7ab5384673b916456a05b2900cf4ba75/comments",
+    "commits_url": "https://api.github.com/gists/7ab5384673b916456a05b2900cf4ba75/commits",
+    "created_at": "2019-12-30T19:18:31Z",
+    "d3version": "v4",
+    "description": "Recursion",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/7ab5384673b916456a05b2900cf4ba75/raw/243230d8f9f80320d839db1f944ac7918ffdaa68/.block",
+        "size": 12,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/7ab5384673b916456a05b2900cf4ba75/raw/ecf1bf8bf9108c871cc8049a5b270405b5b54fe6/README.md",
+        "size": 54,
+        "type": "text/markdown"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/7ab5384673b916456a05b2900cf4ba75/raw/e719e9c2e52afd8ed3d058fd202f616abbe5a2b2/index.html",
+        "size": 2894,
+        "type": "text/html"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/7ab5384673b916456a05b2900cf4ba75/forks",
+    "git_pull_url": "https://gist.github.com/7ab5384673b916456a05b2900cf4ba75.git",
+    "git_push_url": "https://gist.github.com/7ab5384673b916456a05b2900cf4ba75.git",
+    "html_url": "https://gist.github.com/7ab5384673b916456a05b2900cf4ba75",
+    "id": "7ab5384673b916456a05b2900cf4ba75",
+    "node_id": "MDQ6R2lzdDdhYjUzODQ2NzNiOTE2NDU2YTA1YjI5MDBjZjRiYTc1",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "truncated": false,
+    "updated_at": "2020-02-25T17:45:49Z",
+    "url": "https://api.github.com/gists/7ab5384673b916456a05b2900cf4ba75",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.scaleOrdinal": 1,
+      "d3.select": 1
+    },
+    "colors": {
+      "#008000": 3,
+      "#dddddd": 1
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/0c217686bd7582d54fdb1244c03b5cfb/comments",
+    "commits_url": "https://api.github.com/gists/0c217686bd7582d54fdb1244c03b5cfb/commits",
+    "created_at": "2020-01-25T16:05:23Z",
+    "d3version": "v5",
+    "description": "big O - O(N2)",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/0c217686bd7582d54fdb1244c03b5cfb/raw/243230d8f9f80320d839db1f944ac7918ffdaa68/.block",
+        "size": 12,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/0c217686bd7582d54fdb1244c03b5cfb/raw/7cf66ca91f3bdfe19d9483a378b6e2516d565eeb/README.md",
+        "size": 405,
+        "type": "text/markdown"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/0c217686bd7582d54fdb1244c03b5cfb/raw/c476ddbb79a0216ec8dbcb3b7d334d423a6b42d4/index.html",
+        "size": 1485,
+        "type": "text/html"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/0c217686bd7582d54fdb1244c03b5cfb/forks",
+    "git_pull_url": "https://gist.github.com/0c217686bd7582d54fdb1244c03b5cfb.git",
+    "git_push_url": "https://gist.github.com/0c217686bd7582d54fdb1244c03b5cfb.git",
+    "html_url": "https://gist.github.com/0c217686bd7582d54fdb1244c03b5cfb",
+    "id": "0c217686bd7582d54fdb1244c03b5cfb",
+    "node_id": "MDQ6R2lzdDBjMjE3Njg2YmQ3NTgyZDU0ZmRiMTI0NGMwM2I1Y2Zi",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "truncated": false,
+    "updated_at": "2020-01-26T17:32:31Z",
+    "url": "https://api.github.com/gists/0c217686bd7582d54fdb1244c03b5cfb",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.select": 2
+    },
+    "colors": {
+      "#008080": 2,
+      "#8b0000": 1,
+      "#ff0000": 2
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/e5b8c7e79846edf955be843956e8c7f3/comments",
+    "commits_url": "https://api.github.com/gists/e5b8c7e79846edf955be843956e8c7f3/commits",
+    "created_at": "2020-02-24T19:18:43Z",
+    "d3version": "v4",
+    "description": "Character Combinations",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/e5b8c7e79846edf955be843956e8c7f3/raw/243230d8f9f80320d839db1f944ac7918ffdaa68/.block",
+        "size": 12,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/e5b8c7e79846edf955be843956e8c7f3/raw/ecf1bf8bf9108c871cc8049a5b270405b5b54fe6/README.md",
+        "size": 54,
+        "type": "text/markdown"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/e5b8c7e79846edf955be843956e8c7f3/raw/c04d8f10a462553eacedd77075c10d4dbd2ee8b5/index.html",
+        "size": 4155,
+        "type": "text/html"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/e5b8c7e79846edf955be843956e8c7f3/forks",
+    "git_pull_url": "https://gist.github.com/e5b8c7e79846edf955be843956e8c7f3.git",
+    "git_push_url": "https://gist.github.com/e5b8c7e79846edf955be843956e8c7f3.git",
+    "html_url": "https://gist.github.com/e5b8c7e79846edf955be843956e8c7f3",
+    "id": "e5b8c7e79846edf955be843956e8c7f3",
+    "node_id": "MDQ6R2lzdGU1YjhjN2U3OTg0NmVkZjk1NWJlODQzOTU2ZThjN2Yz",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "truncated": false,
+    "updated_at": "2020-02-25T14:16:00Z",
+    "url": "https://api.github.com/gists/e5b8c7e79846edf955be843956e8c7f3",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.select": 2
+    },
+    "colors": {
+      "#008080": 2,
+      "#8b0000": 1,
+      "#ff0000": 1
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/b1b68bfb33e17cdfa80e7f50015bd50b/comments",
+    "commits_url": "https://api.github.com/gists/b1b68bfb33e17cdfa80e7f50015bd50b/commits",
+    "created_at": "2020-02-25T02:36:28Z",
+    "d3version": "v4",
+    "description": "Word Combinations",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/b1b68bfb33e17cdfa80e7f50015bd50b/raw/243230d8f9f80320d839db1f944ac7918ffdaa68/.block",
+        "size": 12,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/b1b68bfb33e17cdfa80e7f50015bd50b/raw/cff3efc6e4fb06f94184875d3c6f48ff4d693c1f/README.md",
+        "size": 229,
+        "type": "text/markdown"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/b1b68bfb33e17cdfa80e7f50015bd50b/raw/6f2e5c757ce472606aa1e289b6b7bcf052f6522d/index.html",
+        "size": 4940,
+        "type": "text/html"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/b1b68bfb33e17cdfa80e7f50015bd50b/forks",
+    "git_pull_url": "https://gist.github.com/b1b68bfb33e17cdfa80e7f50015bd50b.git",
+    "git_push_url": "https://gist.github.com/b1b68bfb33e17cdfa80e7f50015bd50b.git",
+    "html_url": "https://gist.github.com/b1b68bfb33e17cdfa80e7f50015bd50b",
+    "id": "b1b68bfb33e17cdfa80e7f50015bd50b",
+    "node_id": "MDQ6R2lzdGIxYjY4YmZiMzNlMTdjZGZhODBlN2Y1MDAxNWJkNTBi",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "truncated": false,
+    "updated_at": "2020-02-26T02:04:31Z",
+    "url": "https://api.github.com/gists/b1b68bfb33e17cdfa80e7f50015bd50b",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.select": 3
+    },
+    "colors": {
+      "#008080": 1,
+      "#ff0000": 1,
+      "#ffc0cb": 1
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/d8050ab8f401ca86ff2087c325ce9ca4/comments",
+    "commits_url": "https://api.github.com/gists/d8050ab8f401ca86ff2087c325ce9ca4/commits",
+    "created_at": "2020-02-25T17:53:16Z",
+    "d3version": "v4",
+    "description": "Resursion 2",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/d8050ab8f401ca86ff2087c325ce9ca4/raw/243230d8f9f80320d839db1f944ac7918ffdaa68/.block",
+        "size": 12,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/d8050ab8f401ca86ff2087c325ce9ca4/raw/ecf1bf8bf9108c871cc8049a5b270405b5b54fe6/README.md",
+        "size": 54,
+        "type": "text/markdown"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/d8050ab8f401ca86ff2087c325ce9ca4/raw/4b0589b97ad26669bd309f569ad2fa72b43763e7/index.html",
+        "size": 3063,
+        "type": "text/html"
+      },
+      "thumbnail.png": {
+        "filename": "thumbnail.png",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/d8050ab8f401ca86ff2087c325ce9ca4/raw/dea729e85d1b593abbe248628784bbf53de2443b/thumbnail.png",
+        "size": 8080,
+        "type": "image/png"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/d8050ab8f401ca86ff2087c325ce9ca4/forks",
+    "git_pull_url": "https://gist.github.com/d8050ab8f401ca86ff2087c325ce9ca4.git",
+    "git_push_url": "https://gist.github.com/d8050ab8f401ca86ff2087c325ce9ca4.git",
+    "html_url": "https://gist.github.com/d8050ab8f401ca86ff2087c325ce9ca4",
+    "id": "d8050ab8f401ca86ff2087c325ce9ca4",
+    "node_id": "MDQ6R2lzdGQ4MDUwYWI4ZjQwMWNhODZmZjIwODdjMzI1Y2U5Y2E0",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "thumbnail": "https://gist.githubusercontent.com/headwinds/d8050ab8f401ca86ff2087c325ce9ca4/raw/dea729e85d1b593abbe248628784bbf53de2443b/thumbnail.png",
+    "truncated": false,
+    "updated_at": "2020-02-25T22:32:18Z",
+    "url": "https://api.github.com/gists/d8050ab8f401ca86ff2087c325ce9ca4",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.active": 1,
+      "d3.select": 2
+    },
+    "colors": {
+      "#663399": 1,
+      "#800080": 1,
+      "#d2b48c": 1,
+      "#ff0000": 1,
+      "#ffc0cb": 2
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/4bcb12c433569d7e1a86c75341793944/comments",
+    "commits_url": "https://api.github.com/gists/4bcb12c433569d7e1a86c75341793944/commits",
+    "created_at": "2020-03-14T12:31:21Z",
+    "d3modules": {
+      "d3-ease": 1
+    },
+    "d3version": "v5",
+    "description": "animate a div with D3",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/4bcb12c433569d7e1a86c75341793944/raw/243230d8f9f80320d839db1f944ac7918ffdaa68/.block",
+        "size": 12,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/4bcb12c433569d7e1a86c75341793944/raw/b15a3bba4421da8709d9bab4a06327774460217d/README.md",
+        "size": 347,
+        "type": "text/markdown"
+      },
+      "complexAnimations.js": {
+        "filename": "complexAnimations.js",
+        "language": "JavaScript",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/4bcb12c433569d7e1a86c75341793944/raw/b43f2f2aa7a4c783ddf78705423c57f23e22c642/complexAnimations.js",
+        "size": 1204,
+        "type": "application/javascript"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/4bcb12c433569d7e1a86c75341793944/raw/eff1eb4c69352d2755827a96c3d51dd5bfbad1f7/index.html",
+        "size": 3610,
+        "type": "text/html"
+      },
+      "party.css": {
+        "filename": "party.css",
+        "language": "CSS",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/4bcb12c433569d7e1a86c75341793944/raw/4d785df5f7ffd11189085c968418c02b0952d5b2/party.css",
+        "size": 746,
+        "type": "text/css"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/4bcb12c433569d7e1a86c75341793944/forks",
+    "git_pull_url": "https://gist.github.com/4bcb12c433569d7e1a86c75341793944.git",
+    "git_push_url": "https://gist.github.com/4bcb12c433569d7e1a86c75341793944.git",
+    "html_url": "https://gist.github.com/4bcb12c433569d7e1a86c75341793944",
+    "id": "4bcb12c433569d7e1a86c75341793944",
+    "node_id": "MDQ6R2lzdDRiY2IxMmM0MzM1NjlkN2UxYTg2Yzc1MzQxNzkzOTQ0",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "truncated": false,
+    "updated_at": "2020-03-18T22:01:38Z",
+    "url": "https://api.github.com/gists/4bcb12c433569d7e1a86c75341793944",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.curveCardinalClosed.tension": 1,
+      "d3.interpolateString": 5,
+      "d3.line": 1,
+      "d3.range": 1,
+      "d3.scaleLinear": 1,
+      "d3.select": 1
+    },
+    "colors": {
+      "#0000ff": 1,
+      "#483d8b": 1,
+      "#6a5acd": 1,
+      "#800080": 1,
+      "#dddddd": 1,
+      "#f08080": 1,
+      "#ff0000": 1,
+      "#ff7f50": 1
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/73bcdf347a775b99d66a6f7460110592/comments",
+    "commits_url": "https://api.github.com/gists/73bcdf347a775b99d66a6f7460110592/commits",
+    "created_at": "2020-06-23T00:28:21Z",
+    "d3version": "v5",
+    "description": "animated dashed+solid path with gradient",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/73bcdf347a775b99d66a6f7460110592/raw/703d310b399098a243a76a50bc209167e924cfd2/.block",
+        "size": 17,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/73bcdf347a775b99d66a6f7460110592/raw/a78172ac6d4560071f909884d0b4ff0c8fd51ac8/README.md",
+        "size": 522,
+        "type": "text/markdown"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/73bcdf347a775b99d66a6f7460110592/raw/830f11f4b08fe5e69b3ddb3c48f1b3e2aaa95cdd/index.html",
+        "size": 4434,
+        "type": "text/html"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/73bcdf347a775b99d66a6f7460110592/forks",
+    "git_pull_url": "https://gist.github.com/73bcdf347a775b99d66a6f7460110592.git",
+    "git_push_url": "https://gist.github.com/73bcdf347a775b99d66a6f7460110592.git",
+    "html_url": "https://gist.github.com/73bcdf347a775b99d66a6f7460110592",
+    "id": "73bcdf347a775b99d66a6f7460110592",
+    "node_id": "MDQ6R2lzdDczYmNkZjM0N2E3NzViOTlkNjZhNmY3NDYwMTEwNTky",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "truncated": false,
+    "updated_at": "2020-06-23T00:28:21Z",
+    "url": "https://api.github.com/gists/73bcdf347a775b99d66a6f7460110592",
+    "user": null
+  },
+  {
+    "api": {
+      "d3.select": 1
+    },
+    "colors": {
+      "#000000": 3,
+      "#006600": 1,
+      "#008000": 2,
+      "#00cc00": 1,
+      "#112266": 2,
+      "#224488": 2,
+      "#447799": 2,
+      "#ffc0cb": 2
+    },
+    "comments": 0,
+    "comments_url": "https://api.github.com/gists/78280948e8f393390b3236790f0a7c76/comments",
+    "commits_url": "https://api.github.com/gists/78280948e8f393390b3236790f0a7c76/commits",
+    "created_at": "2020-07-02T13:59:03Z",
+    "d3version": "v4",
+    "description": "programmatic gradient",
+    "files": {
+      ".block": {
+        "filename": ".block",
+        "language": null,
+        "raw_url": "https://gist.githubusercontent.com/headwinds/78280948e8f393390b3236790f0a7c76/raw/243230d8f9f80320d839db1f944ac7918ffdaa68/.block",
+        "size": 12,
+        "type": "text/plain"
+      },
+      "README.md": {
+        "filename": "README.md",
+        "language": "Markdown",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/78280948e8f393390b3236790f0a7c76/raw/ecf1bf8bf9108c871cc8049a5b270405b5b54fe6/README.md",
+        "size": 54,
+        "type": "text/markdown"
+      },
+      "index.html": {
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.githubusercontent.com/headwinds/78280948e8f393390b3236790f0a7c76/raw/af4dd80a2ebd4af42e984f1fbff19b405fe389d9/index.html",
+        "size": 3830,
+        "type": "text/html"
+      }
+    },
+    "forks_url": "https://api.github.com/gists/78280948e8f393390b3236790f0a7c76/forks",
+    "git_pull_url": "https://gist.github.com/78280948e8f393390b3236790f0a7c76.git",
+    "git_push_url": "https://gist.github.com/78280948e8f393390b3236790f0a7c76.git",
+    "html_url": "https://gist.github.com/78280948e8f393390b3236790f0a7c76",
+    "id": "78280948e8f393390b3236790f0a7c76",
+    "node_id": "MDQ6R2lzdDc4MjgwOTQ4ZThmMzkzMzkwYjMyMzY3OTBmMGE3Yzc2",
+    "owner": {
+      "avatar_url": "https://avatars2.githubusercontent.com/u/68402?v=4",
+      "events_url": "https://api.github.com/users/headwinds/events{/privacy}",
+      "followers_url": "https://api.github.com/users/headwinds/followers",
+      "following_url": "https://api.github.com/users/headwinds/following{/other_user}",
+      "gists_url": "https://api.github.com/users/headwinds/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/headwinds",
+      "id": 68402,
+      "login": "headwinds",
+      "node_id": "MDQ6VXNlcjY4NDAy",
+      "organizations_url": "https://api.github.com/users/headwinds/orgs",
+      "received_events_url": "https://api.github.com/users/headwinds/received_events",
+      "repos_url": "https://api.github.com/users/headwinds/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/headwinds/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/headwinds/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/headwinds"
+    },
+    "public": true,
+    "truncated": false,
+    "updated_at": "2020-07-02T13:59:03Z",
+    "url": "https://api.github.com/gists/78280948e8f393390b3236790f0a7c76",
+    "user": null
+  }
+]

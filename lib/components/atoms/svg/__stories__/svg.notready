@@ -1,0 +1,13 @@
+import * as SvgStories from "../svg.stories";
+
+<Meta of={SvgStories} />
+
+# SVG
+
+A blank canvas where we can create data visualizations, games and other experiences with vector graphics.
+
+<Canvas of={RowStories.Default} />
+
+### Text
+
+<Canvas of={RowStories.WithText} />

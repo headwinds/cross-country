@@ -1,0 +1,18 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import { Column, Paragraph, SubHeadline, Link, Headline } from '../../../../../';
+import Hilight from '../hilight';
+import * as HilightStories from './hilight.stories';
+
+<Meta of={HilightStories} />
+
+# Template
+
+<Subtitle>a post many have many sub headlines to title content sections</Subtitle>
+
+<Link url="https://www.nytimes.com/2023/01/27/business/energy-environment/copper-mine-arizona.html">
+  full article
+</Link>
+
+<Canvas>
+  <Story of={HilightStories.Subheadline} />
+</Canvas>

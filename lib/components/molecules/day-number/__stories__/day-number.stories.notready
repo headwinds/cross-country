@@ -1,0 +1,19 @@
+import type { Meta, StoryObj } from "@storybook/react";
+import DayNumberStory from "./day-number-story";
+import DayNumber from "../day-number";
+
+const meta: Meta<typeof DayNumber> = {
+  component: DayNumber,
+  title: "components/molecules/day number",
+} satisfies Meta<typeof DayNumber>;
+
+export default meta;
+type Story = StoryObj<typeof DayNumber>;
+
+export const Default: Story = {
+  args: {},
+};
+
+export const Options: Story = {
+  render: () => <DayNumberStory />,
+};

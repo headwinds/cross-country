@@ -1,0 +1,17 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import OneDay from '../one-day';
+import * as OneDayStories from './one-day.stories';
+
+<Meta of={OneDayStories} />
+
+# One day
+
+We often see flipping text on website or mobile app. This is a simple example of flipping text animation.
+
+Let's combine some static and dynamic text to create a flipping text animation.
+
+Let's turn one day into day one!
+
+<Canvas>
+  <Story of={OneDayStories.OneDay} />
+</Canvas>

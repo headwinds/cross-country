@@ -1,0 +1,11 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import ChartStory from './chart-story';
+import * as ChartStories from './chart.stories';
+
+<Meta of={ChartStories} />
+
+<Subtitle>Chart</Subtitle>
+
+<Canvas>
+  <Story of={ChartStories.Chart} />
+</Canvas>

@@ -1,0 +1,23 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import { Paragraph, SubHeadline } from '../../../../';
+import HeadwindsStory from './headwinds-story';
+import * as HeadwindsStories from './headwinds.stories';
+
+<Meta of={HeadwindsStories} />
+
+<Subtitle>headwinds layout</Subtitle>
+
+What do I want to achieve with my own home page?
+
+* I'm a professional web developer with an eye for desgin and typically focus on frontend UI
+* I want to work with analytics and collaborate with data scientists
+* work within a service industry that cares about the environment
+* I enjoy prototyping and gamification
+* flexibility: since I'm not looking for work, my site could express more of my personality as ulimately it's nice to connect with people that enjoy sharing experiments
+* currently my site is more of window than a bridge and I want to play more with RabbitMQ, Pusher, and emerging LLMs like ChatGpt.
+
+In's the early days of the web, we had web rings. I want to build something similar but more inspired by graph theory to build more of a networked fleet than a ring.
+
+<Canvas>
+  <Story of={HeadwindsStories.Headwinds} />
+</Canvas>

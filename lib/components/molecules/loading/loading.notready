@@ -1,0 +1,10 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import { Paragraph, SubHeadline } from '../../../';
+import LoadingStory from './loading-story';
+import * as LoadingStories from './loading.stories';
+
+<Meta of={LoadingStories} />
+
+<Canvas>
+  <Story of={LoadingStories.Loading} />
+</Canvas>

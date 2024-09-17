@@ -1,0 +1,9 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import Bolt from '../bolt';
+import * as BoltStories from './bolt.stories';
+
+<Meta of={BoltStories} />
+
+<Canvas>
+  <Story of={BoltStories.Bolt} />
+</Canvas>

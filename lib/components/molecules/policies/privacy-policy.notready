@@ -1,0 +1,15 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import PrivacyPolicy from './privacy-policy';
+import * as PrivacyPolicyStories from './privacy-policy.stories';
+
+<Meta of={PrivacyPolicyStories} />
+
+# Privacy Policy
+
+<Subtitle>
+  a document required by the app store and an opportunity to demonstrate how you are protecting your users
+</Subtitle>
+
+<Canvas>
+  <Story of={PrivacyPolicyStories.PrivacyPolicy} />
+</Canvas>

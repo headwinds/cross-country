@@ -1,0 +1,13 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import Radio from '../radio';
+import * as RadioStories from './radio.stories';
+
+<Meta of={RadioStories} />
+
+# Radio
+
+A radio is used within a [radio group](/story/design-system-molecules-radio-group--radio-group) which provides the interactivity and relationship.
+
+<Canvas>
+  <Story of={RadioStories.Radio} />
+</Canvas>

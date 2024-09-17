@@ -1,0 +1,34 @@
+import type { Meta, StoryObj } from "@storybook/react";
+import SVG from "../svg";
+
+const meta: Meta<typeof SVG> = {
+  component: SVG,
+  title: "components/atoms/svg",
+} satisfies Meta<typeof SVG>;
+
+export default meta;
+type Story = StoryObj<typeof SVG>;
+
+export const Default = {
+  render: () => <SVG />,
+};
+
+export const WithText = {
+  render: () => (
+    <SVG
+      customStyle={{
+        border: "4px solid pink",
+      }}
+    >
+      <text
+        x={20}
+        y={30}
+        style={{
+          font: "bold 30px sans-serif",
+        }}
+      >
+        hello world
+      </text>
+    </SVG>
+  ),
+};

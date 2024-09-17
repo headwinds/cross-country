@@ -1,0 +1,11 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import BottomAxis from '../bottom-axis';
+import * as BottomAxisStories from './bottom-axis.stories';
+
+<Meta of={BottomAxisStories} />
+
+<Subtitle>Bottom Axis</Subtitle>
+
+<Canvas>
+  <Story of={BottomAxisStories.BottomAxis} />
+</Canvas>

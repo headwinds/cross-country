@@ -3,7 +3,7 @@ import Cluster from './cluster';
 import { Link } from '../../../';
 import styles from './cluster.module.css';
 
-<Meta title="design system/organisms/cluster" />
+<Meta title="components/organisms/cluster" />
 
 # Meta
 

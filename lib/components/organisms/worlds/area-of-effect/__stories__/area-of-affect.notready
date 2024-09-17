@@ -1,0 +1,23 @@
+import { Meta, Subtitle } from '@storybook/blocks';
+import { SubHeadline, Paragraph, List, ListItem, Link, RelatedArticles, Image, Column } from '../../../../';
+import AreaOfAffecStory from './area-of-affect-story';
+
+<Meta title="components/organisms/worlds/area of effect" />
+
+### Area of Effect (AOE)
+
+I think I first of heard of AOE in the context of World of Warcraft. WOW had a lot of acroynms to learn and use in chat to discuss the game and strategies with other players; and not feel like a n00b.
+
+Unlike a single arrow that targets a single player, an AOE is an attack that affects all players within a certain radius.
+
+Besides effects, we are also interested in the area around the player to determine movement and their proximity to potential targets and threats in the game.
+
+Along with AOE, agro was another term I learned from WOW. Agro is the attention of a mob or monster.
+
+If you have agro, you are the target of the mob. If you are a healer, you want to avoid agro. If you are a tank, you want to have agro so that the mob is focused on you and not the healer or other players.
+
+<Link url="https://www.perplexity.ai/search/I-am-working-CWn4yxcZQi22qn_g8fHICw?s=c/">AI chat about AOE grid math</Link>
+
+<AreaOfAffecStory />
+
+- https://www.explorersdesign.com/the-1-hp-dragon/

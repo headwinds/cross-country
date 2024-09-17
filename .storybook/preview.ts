@@ -1,17 +1,21 @@
-import type { Preview } from '@storybook/react'
+import type { Preview } from "@storybook/react";
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
+    //actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {
-       color: /(background|color)$/i,
-       date: /Date$/i,
+        color: /(background|color)$/i,
+        date: /Date$/i,
       },
     },
     options: {
       storySort: {
-        order: ['Cross Country', 'design system', ['atoms', 'molecules', 'organisms', 'templates', 'pages']]
+        order: [
+          "Cross Country",
+          "components",
+          ["atoms", "molecules", "organisms", "templates", "pages"],
+        ],
       },
     },
   },

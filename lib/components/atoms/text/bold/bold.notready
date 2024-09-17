@@ -1,0 +1,14 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import Bold from './bold';
+import Paragraph from '../paragraph';
+import * as BoldStories from './bold.stories';
+
+<Meta of={BoldStories} />
+
+# Bold
+
+<Subtitle>bold text</Subtitle>
+
+<Canvas>
+  <Story of={BoldStories.Bold} />
+</Canvas>

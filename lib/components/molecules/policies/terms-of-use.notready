@@ -1,0 +1,13 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import TermsOfUse from './terms-of-use';
+import * as TermsOfUseStories from './terms-of-use.stories';
+
+<Meta of={TermsOfUseStories} />
+
+# Terms of Use
+
+<Subtitle>a document required by the app store about how your app should and should not be used</Subtitle>
+
+<Canvas>
+  <Story of={TermsOfUseStories.TermsOfUse} />
+</Canvas>

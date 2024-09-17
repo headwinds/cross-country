@@ -1,0 +1,19 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import Wrapper from '../wrapper';
+import WrapperStory from './wrapper-story';
+import WrapperChildrenStory from './wrapper-children-story';
+import * as WrapperStories from './wrapper.stories';
+
+<Meta of={WrapperStories} />
+
+# Wrapper
+
+<Subtitle>a wrapper usually placed at the root covering the entire screen</Subtitle>
+
+<Canvas>
+  <Story of={WrapperStories.Wrapper} />
+
+  <Story of={WrapperStories.WrapperWithNoise} />
+
+  <Story of={WrapperStories.WrapperWithChildCenteredHorizontallyVertically} />
+</Canvas>

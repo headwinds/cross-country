@@ -1,0 +1,14 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import { Paragraph, SubHeadline } from "../../../../../";
+import AddMedia from '../add-media';
+import * as AddMediaStories from './add-media.stories';
+
+<Meta of={AddMediaStories} />
+
+# Add Media
+
+<Subtitle>Allows a user to add media url like images and videos to their question</Subtitle>
+
+<Canvas>
+  <Story of={AddMediaStories.AddMedia} />
+</Canvas>

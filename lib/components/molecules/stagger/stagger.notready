@@ -1,0 +1,19 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import { STORYBOOK } from '../../../constants';
+import Stagger from './stagger';
+import styles from './stagger.module.css';
+import * as StaggerStories from './stagger.stories';
+
+<Meta of={StaggerStories} />
+
+# Stagger
+
+<Subtitle>visually stagger a column of components</Subtitle>
+
+[national geographic article on the Artic National Park](https://www.nationalgeographic.com/environment/article/wilderness-crown-jewel-opening-for-drilling-industry-interest-weak)
+
+<Canvas>
+  <Story of={StaggerStories.TwoWords} />
+
+  <Story of={StaggerStories.ThreeWords} />
+</Canvas>

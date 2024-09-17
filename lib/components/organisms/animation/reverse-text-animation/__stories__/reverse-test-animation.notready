@@ -1,0 +1,11 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import ReverseTextAnimation from '../reverse-text-animation';
+import * as ReverseTestAnimationStories from './reverse-test-animation.stories';
+
+<Meta of={ReverseTestAnimationStories} />
+
+# Reverse text animation
+
+<Canvas>
+  <Story of={ReverseTestAnimationStories.ReverseTextAnimation} />
+</Canvas>

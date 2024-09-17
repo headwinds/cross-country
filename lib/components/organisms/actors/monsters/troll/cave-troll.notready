@@ -1,0 +1,18 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import { Paragraph } from '../../../../../';
+import CaveTroll from './cave-troll';
+import * as CaveTrollStories from './cave-troll.stories';
+
+<Meta of={CaveTrollStories} />
+
+# Versus
+
+<Subtitle>a single lane tile game</Subtitle>
+
+<Paragraph>They have a cave troll...</Paragraph>
+
+[Diceless Combat](https://undergroundadv.blogspot.com/2023/01/an-example-of-fkr-near-diceless-combat.html)
+
+<Canvas>
+  <Story of={CaveTrollStories.CaveTroll} />
+</Canvas>

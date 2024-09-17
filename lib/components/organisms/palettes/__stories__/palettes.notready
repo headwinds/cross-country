@@ -1,0 +1,22 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import { Paragraph, SubHeadline } from '../../../';
+import PalettesStory from './palettes-story';
+import * as PalettesStories from './palettes.stories';
+
+<Meta of={PalettesStories} />
+
+<Subtitle>For the love of Colour and Rules</Subtitle>
+
+Colour is a powerful tool in design. It can be used to create a mood, to evoke an emotion, to create a feeling of warmth or freeze you to the bone.
+
+When making colour decision, it is important to consider the context in which the colour will be used and then limit the number of colours used to be less than 10 but there is no hard rule here. I try to limit the colour palette to 5-6 colours.
+
+<Canvas>
+  <Story of={PalettesStories.Palettes} />
+</Canvas>
+
+* https://colordesigner.io/
+* https://randoma11y.com/
+* https://colorhunt.co/
+
+why shouldn't we let our user choose their own colours from a curated list of accessible palettes?!

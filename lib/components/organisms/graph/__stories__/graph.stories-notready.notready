@@ -1,0 +1,29 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/addon-docs";
+
+<Meta title="components/organisms/graph" />
+
+# Graph
+
+is a bit tempting to allow the ability to blog anonymously, but for this version, we will require a user to be authenticated to post a blog.
+
+- https://towardsdatascience.com/the-essential-guide-to-graph-theory-from-an-18th-century-riddle-to-artificial-intelligence-c441cb9400de
+
+### What is a Graph Story?!
+
+- https://www-corporateknights-com.cdn.ampproject.org/c/s/www.corporateknights.com/category-finance/four-ways-canadian-banks-can-deliver-on-climate-promises/?amp
+
+### Data Galaxy
+
+Engineer & Astronaut
+
+- https://cprimozic.net/blog/building-embedding-visualizations-from-user-profiles/?utm_campaign=Data_Elixir&utm_source=Data_Elixir_486
+
+<Canvas>
+  <Story name="graph">
+    <div>flow + graph theory</div>
+  </Story>
+</Canvas>
+
+- https://www.flowmapp.com/
+- https://github.com/kieler/elkjs
+- https://reactflow.dev/examples/layout/elkjs

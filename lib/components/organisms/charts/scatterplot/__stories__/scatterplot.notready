@@ -1,0 +1,11 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import ScatterplotStory from './scatterplot-story';
+import * as ScatterplotStories from './scatterplot.stories';
+
+<Meta of={ScatterplotStories} />
+
+<Subtitle>Scatterplot</Subtitle>
+
+<Canvas>
+  <Story of={ScatterplotStories.Scatterplot} />
+</Canvas>

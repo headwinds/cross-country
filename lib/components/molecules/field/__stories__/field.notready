@@ -1,0 +1,14 @@
+import { Meta, Canvas } from "@storybook/blocks";
+import * as FieldStories from "./field.stories";
+
+<Meta of={FieldStories} />
+
+## Field
+
+an input field for writing or filling out a form
+
+<Canvas of={FieldStories.Default} />
+
+### Creative
+
+<Canvas of={FieldStories.Creative} />

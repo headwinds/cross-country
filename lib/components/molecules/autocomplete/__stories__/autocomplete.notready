@@ -1,0 +1,17 @@
+import { Meta, Canvas } from "@storybook/addon-docs";
+import * as AutocompleteStories from "./autocomplete.stories";
+
+<Meta of={AutocompleteStories} />
+
+## Text Input
+
+In the state machine story, I will show it's ability debounce input so that the API endpoint isn't overwhelmed.
+
+The user will input text for a route that will be used to fetch data from an API demonstrating how to
+[invoke](https://stately.ai/docs/invoke) an actor using XState.
+
+<Canvas of={SubheadlineStories.Default} />
+
+### With Options
+
+<Canvas of={SubheadlineStories.Options} />

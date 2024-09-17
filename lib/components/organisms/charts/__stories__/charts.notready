@@ -1,0 +1,12 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+//import ChartStory from './chart-story';
+import * as ChartsStories from './charts.stories';
+
+<Meta of={ChartsStories} />
+
+<Canvas>
+  <Story of={ChartsStories.Charts} />
+</Canvas>
+
+* [chart library](https://www.fikristudio.com/project/chart-library)
+* [tremor](https://www.tremor.so/)

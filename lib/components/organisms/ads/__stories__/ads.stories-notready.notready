@@ -1,0 +1,41 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/addon-docs";
+import AdsStory from "./ads-story";
+
+<Meta title="components/organisms/ads" />
+
+# Ads
+
+[Google Ad Sense](https://stately.ai/docs/invoke)
+
+So you want to monetize your website?
+
+You can use Google Ad Sense to do that but how long does it take to get approved and setup an ad on your site?
+
+Let's find out! Copilot has generated these 3 steps which I'll take and confirm with you.
+
+1. [Sign up for Google Ad Sense](https://www.google.com/adsense/start/)
+2. [Create an ad unit](https://www.google.com/adsense/start/)
+3. [Add the ad unit to your website](https://www.google.com/adsense/start/)
+
+My first decision after clicking Get Started was to choose what ad type that I wanted to display on my website.
+
+I'm going to start with a vertical ad unit. I named my ad unit "Vertical Ad" and left it as responsive. I clicked "Create" and then "Copy code" to get the code to add to my website.
+
+Next, I had to choose between HTML and AMP. I chose HTML and then copied the code to my clipboard.
+
+### Usuage & Monetization
+
+Instead of subscription, pay for what you use. I like this concept of credits but not the design
+
+- https://validator.yazero.io/pricing
+
+<Canvas>
+  <Story name="ads">
+    <AdsStory />
+  </Story>
+</Canvas>
+
+- [what is google ad sense](https://www.semrush.com/blog/what-is-google-adsense)
+- [How Facebook Remains Free](https://www.youtube.com/watch?v=n2H8wx1aBiQ)
+- [perplexity ads](https://www.perplexity.ai/search/product-nubJVQOlR3.JZd0gHu94EQ#0)
+- [aicarousels](https://www.aicarousels.com/)

@@ -1,9 +1,9 @@
-import * as React from 'react';
-import GoldLeaf from '../gold-leaf';
-import { getRSSBranch } from '../../../../utils/golds/feed-util';
-import behanceBranches from '../behance-raw-branches';
+import * as React from "react";
+import GoldLeaf from "../gold-leaf";
+import { getRSSBranch } from "../../../../utils/golds/feed-util";
+import behanceBranches from "../behance-raw-branches";
 
-const convertToPortholeBranches = branches => {
+const convertToPortholeBranches = (branches) => {
   const index = 0;
   // raw
   const newBranches = branches;
@@ -12,7 +12,9 @@ const convertToPortholeBranches = branches => {
     return getRSSBranch(candidateBranch, index, ix);
   });
   // validated
-  const portholeBranchesValid = portholeBranches.filter(branch => branch !== null);
+  const portholeBranchesValid = portholeBranches.filter(
+    (branch) => branch !== null
+  );
 
   return portholeBranchesValid;
 };
@@ -22,7 +24,7 @@ export const getGoldLeafModel = () => {
   return portholeBranchModels[6];
 };
 
-const GoldLeafStory = ({ isOnlyText, hasMultiple, isKillScreen }) => {
+const GoldLeafStory = () => {
   const goldLeafModel = getGoldLeafModel();
   return <GoldLeaf goldLeafModel={goldLeafModel} />;
 };

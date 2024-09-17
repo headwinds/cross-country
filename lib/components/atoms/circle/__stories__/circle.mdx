@@ -1,0 +1,35 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+
+import * as CirclesStories from "./circle.stories";
+
+<Meta of={CirclesStories} />
+
+# Circle
+
+<Subtitle>a collection of animated circle</Subtitle>
+
+In D3, we can chain transitons by placing them after another without having to add a delay.
+When the duration has finished, the next transition will run.
+
+```
+exit
+  .transition()
+  .duration(1000)
+  .attr('fill', 'tomato')
+  .transition()
+  .duration(1000)
+  .attr('fill', 'blue')
+  .transition()
+  .duration(1000)
+  .attr('fill', 'green')
+  .duration(1000)
+  .attr('r', 0)
+  .style('opacity', 0)
+  .remove()
+```
+
+<Canvas of={CirclesStories.Default} />
+
+### Circles
+
+<Canvas of={CirclesStories.Circles} />

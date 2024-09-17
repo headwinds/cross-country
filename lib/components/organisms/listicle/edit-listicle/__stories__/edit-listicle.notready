@@ -1,0 +1,13 @@
+import { Meta, Canvas, Story, Subtitle } from '@storybook/blocks';
+import EditListicleStory from './edit-listicle-story';
+import * as EditListicleStories from './edit-listicle.stories';
+
+<Meta of={EditListicleStories} />
+
+# Edit Listicle
+
+<Subtitle>Allows a user to edit their listicle</Subtitle>
+
+<Canvas>
+  <Story of={EditListicleStories.EditListicle} />
+</Canvas>
