@@ -1,7 +1,7 @@
 // TODO type check
 // @ts-nocheck
 import React from "react";
-import { Header } from "../../molecules/header";
+import Header from "../header";
 import styles from "./screen.module.css";
 
 type User = {

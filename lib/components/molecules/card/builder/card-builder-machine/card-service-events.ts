@@ -4,7 +4,7 @@ import { assign, fromPromise } from "xstate";
 import {
   getUserOrAnonUserRoute,
   domain,
-} from "../../../../utils/server-side-util";
+} from "@cross-country/utils/server-side-util";
 
 type ServiceInputType = {
   domain: string;

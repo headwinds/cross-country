@@ -1,5 +1,7 @@
 // TODO type check
 // @ts-nocheck
+// all the folders need index.ts
+/*
 export * from "./button";
 export * from "./checkbox";
 export * from "./circle";
@@ -18,3 +20,4 @@ export * from "./select";
 export * from "./svg";
 export * from "./table";
 export * from "./text";
+*/

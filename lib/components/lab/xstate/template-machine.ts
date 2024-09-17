@@ -7,7 +7,7 @@ You can copy and paste these 3 template files into your project to get started m
 */
 
 import { createMachine } from "xstate";
-import { MANAGE_STATES } from "./template-manage-state";
+import { MANAGE_STATES } from "./template-manage-states";
 import { POSTING_SERVICE_NAME_HERE_EVENTS } from "./template-service-events";
 
 const templateMachine = createMachine({
