@@ -1,10 +1,13 @@
 import { assign, fromPromise } from "xstate";
-import { getUserOrAnonUserRoute } from "./util";
 
 type RegistrationInputType = {
   email: string;
   username: string;
   password: string;
+  isPasswordStrong: boolean;
+  isEmailValid: boolean;
+  isUsernameValid: boolean;
+  domain: string;
 };
 
 // TODO: don't hardcode this as it might change and will be different for other APIs
@@ -22,7 +25,7 @@ const postRegistration = fromPromise<string[], RegistrationInputType>(
       username,
       password,
       email,
-    } = input;
+    } = input as RegistrationInputType;
 
     if (isEmailValid && isUsernameValid && isPasswordStrong) {
       try {

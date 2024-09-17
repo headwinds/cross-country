@@ -15,8 +15,8 @@ import {
   Column,
   SubHeadline,
   Error,
+  Keywords,
 } from "../..";
-import Keywords from "../keywords";
 
 const PostLink = () => {
   const {

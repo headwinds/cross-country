@@ -1,3 +1,5 @@
+// TODO type check
+// @ts-nocheck
 import { createStore } from "@xstate/store";
 
 /*

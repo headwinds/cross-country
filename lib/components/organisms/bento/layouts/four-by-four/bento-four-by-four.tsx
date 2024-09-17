@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { Card, Column, Paragraph } from "../../../../";
 
 interface BentoFourByFourProps {
-  boxes: {
+  boxes?: {
     one: React.ReactNode;
     two: React.ReactNode;
     three: React.ReactNode;

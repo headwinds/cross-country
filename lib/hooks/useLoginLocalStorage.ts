@@ -10,7 +10,21 @@
 
 import { useState, useEffect } from "react";
 
-const useLoginLocalStorage = (key: string, initialValue: any) => {
+type LocalStorageValue = {
+  storedValue: unknown;
+  storedUsername: string;
+  storedPassword: string;
+};
+
+type UseLoginResult = [
+  localStorageValue: LocalStorageValue,
+  toggleMe: (username: string, password: string) => void
+];
+
+const useLoginLocalStorage = (
+  key: string,
+  initialValue: any
+): UseLoginResult => {
   const [storedValue, setStoredValue] = useState(null);
   const [storedUsername, setStoredUsername] = useState(null);
   const [storedPassword, setStoredPassword] = useState(null);

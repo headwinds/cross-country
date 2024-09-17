@@ -15,6 +15,9 @@ type TextInputProps = {
   isDisabled?: boolean;
   data?: any;
   register?: any;
+  defaultValue?: string;
+  onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
+  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
 };
 
 const TextInput = ({
@@ -28,6 +31,8 @@ const TextInput = ({
   data = null,
   register = null,
   defaultValue = null,
+  onFocus,
+  onBlur,
   ...rest
 }: TextInputProps) => {
   // react-hook-form requires a name and register

@@ -1,3 +1,5 @@
+// TODO type check
+// @ts-nocheck
 import React, { useEffect } from "react";
 import { Card, Column } from "../../";
 

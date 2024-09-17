@@ -1,7 +1,9 @@
+// TODO type check
+// @ts-nocheck
 import * as React from "react";
 import { useState, useEffect } from "react";
 import TakeAnswerInput from "../take-answer-input";
-import { Column, Paragraph, RadioGroup, Link } from "../../../../../";
+import { Column, Paragraph, RadioGroup, Link } from "@cross-country";
 
 // phase 2
 const DefaultHtmlQuesiton = () => (

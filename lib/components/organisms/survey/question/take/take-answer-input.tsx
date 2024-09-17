@@ -14,13 +14,14 @@ import {
 import { PencilSimple, CheckCircle } from "@phosphor-icons/react";
 import InputManager from "./inputs/input-manager";
 
-interface TakeAnswerInput {
+interface TakeAnswerInputProps {
   data: any;
   onChange: (data: any) => void;
   customClass?: string;
   hasSave?: boolean;
   variant?: "text" | "date-time";
   placeholder?: string;
+  selectedId?: string;
 }
 
 const TakeAnswerInput = ({
@@ -30,8 +31,11 @@ const TakeAnswerInput = ({
   hasSave = false,
   variant = "text",
   placeholder = "Enter the answer",
-}) => {
-  const [saveAnswer, setSaveAnswer] = useState(null);
+  selectedId,
+}: TakeAnswerInputProps) => {
+  const [saveAnswer, setSaveAnswer] = useState<string | null>(
+    selectedId | null
+  );
   const [isSaved, toggleIsSaved] = useState(false);
 
   const onSaveClick = () => {

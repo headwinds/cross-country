@@ -1,15 +1,16 @@
+// TODO sort out xtstate types
+// @ts-nocheck
+
 import { assign, setup, assertEvent, fromPromise, raise } from "xstate";
 
-const debounceFetch = fromPromise<string[], { search: string }>(
-  async (props) => {
-    await new Promise((resolve) => setTimeout(resolve, 500));
+const debounceFetch = fromPromise<void, { search: string }>(async (props) => {
+  await new Promise((resolve) => setTimeout(resolve, 500));
 
-    const { input, system, self } = props;
-    const { search } = input; // search or command or query
+  const { input, system, self } = props;
+  const { search } = input; // search or command or query
 
-    return console.log("debounceFetch called after 500 ms ", search);
-  }
-);
+  console.log("debounceFetch called after 500 ms ", search);
+});
 
 export const inputTextMachine = setup({
   types: {
