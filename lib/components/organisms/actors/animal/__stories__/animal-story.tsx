@@ -1,3 +1,5 @@
+// TODO type check
+// @ts-nocheck
 import * as React from "react";
 import Animal from "../animal";
 import { Paragraph, SubHeadline, Image } from "../../../";

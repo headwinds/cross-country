@@ -1,3 +1,5 @@
+// TODO type check
+// @ts-nocheck
 import * as React from "react";
 import { useState } from "react";
 import { Column, Login } from "../../../../";

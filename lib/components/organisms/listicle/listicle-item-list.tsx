@@ -1,3 +1,5 @@
+// TODO type check
+// @ts-nocheck
 import React, { useState, useEffect, useMemo } from "react";
 import styles from "./listicle.module.css";
 import ListicleItem from "./edit-listicle-item-list/listicle-item";

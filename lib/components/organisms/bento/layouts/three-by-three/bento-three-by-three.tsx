@@ -4,13 +4,13 @@ import clsx from "clsx";
 import { Card, Column, Paragraph } from "../../../../";
 
 interface BentoThreeByThreeProps {
-  boxes: {
-    one: React.ReactNode;
-    two: React.ReactNode;
-    three: React.ReactNode;
-    four: React.ReactNode;
-    five: React.ReactNode;
-    six: React.ReactNode;
+  boxes?: {
+    one?: React.ReactNode;
+    two?: React.ReactNode;
+    three?: React.ReactNode;
+    four?: React.ReactNode;
+    five?: React.ReactNode;
+    six?: React.ReactNode;
   };
   borderRadius?: number;
   gap?: number;

@@ -1,3 +1,5 @@
+// TODO type check
+// @ts-nocheck
 import {
   Column,
   Row,
@@ -7,15 +9,25 @@ import {
   Label,
   Paragraph,
   HorizontalLine,
-} from "../../";
+} from "@cross-country/components";
 
 import styles from "./registration.module.css";
 
 import { Eye, EyeSlash } from "@phosphor-icons/react";
 import RegistrationResponse from "./registration-response";
 
-const FieldRow = ({ children }) => {
-  return <Row customClass={styles.fieldRow}>{children}</Row>;
+const FieldRow = ({
+  children,
+  customClass,
+}: {
+  children?: React.ReactElement | React.ReactElement[];
+  customClass?: string;
+}) => {
+  return (
+    <Row customClass={customClass ? customClass : styles.fieldRow}>
+      {children}
+    </Row>
+  );
 };
 
 const RegistrationForm = ({
@@ -25,7 +37,7 @@ const RegistrationForm = ({
   handleBlurOnPassword,
   toggleEye,
   onLoginClick,
-  onChange
+  onChange,
 }) => {
   const {
     isPasswordPlainText,

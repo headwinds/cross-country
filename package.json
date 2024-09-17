@@ -1,7 +1,7 @@
 {
   "name": "cross-country",
-  "version": "1.2.9",
-  "description": "an atomic components built for personal metrics & lonely forest bathers",
+  "version": "1.2.11",
+  "description": "an atomic design system built for personal metrics & lonely forest bathers",
   "author": "headwinds",
   "license": "MIT",
   "repository": "headwinds/cross-country",
@@ -24,8 +24,8 @@
     "new": "node ./generate-component"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^8.1.6",
@@ -74,6 +74,7 @@
     "@testing-library/react": "^14.1.2",
     "@xstate/inspect": "^0.8.0",
     "@xstate/react": "4.1.0",
+    "@xstate/store": "^2.4.0",
     "clsx": "^1.1.0",
     "d3": "^7.8.2",
     "d3-axis": "^3.0.0",

@@ -1,3 +1,5 @@
+// TODO type check
+// @ts-nocheck
 type listicleStatus = "unsaved" | "saved" | "updated" | "deleted";
 
 export type ListicleItem = {

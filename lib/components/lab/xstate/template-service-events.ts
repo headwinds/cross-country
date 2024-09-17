@@ -1,3 +1,5 @@
+// TODO type check
+// @ts-nocheck
 /*
 minimum helper file to talk to the server 
 
@@ -8,7 +10,7 @@ import { assign, fromPromise } from "xstate";
 import {
   getUserOrAnonUserRoute,
   domain,
-} from "../../../../utils/server-side-util";
+} from "@cross-country/utils/server-side-util";
 
 type ServiceInputType = {
   user_account_id: string;

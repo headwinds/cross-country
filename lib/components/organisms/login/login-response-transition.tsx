@@ -1,15 +1,21 @@
-import React, { useEffect, useState } from "react";
-import { useTransition, animated, useSpringRef } from "@react-spring/web";
-
-// components
-import { Row, Paragraph, Error } from "../..";
+import { animated, useSpringRef, useTransition } from "@react-spring/web";
+import { useEffect, useState } from "react";
+import { Error, Paragraph, Row } from "../..";
 import { StringUtil } from "../../../utils";
-
-// styles
-import clsx from "clsx";
 import styles from "./login.module.css";
+import { UserModelType } from "@cross-country/models/UserModel";
 
-const Response = ({ user, error }) => {
+type CommonError = {
+  message?: string;
+};
+
+const Response = ({
+  user,
+  error,
+}: {
+  user?: UserModelType;
+  error?: CommonError;
+}) => {
   // Cannot read properties of undefined (reading 'json')
   const validDisplayErrorMessages = [
     "Failed to fetch",

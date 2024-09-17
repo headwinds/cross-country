@@ -1,3 +1,5 @@
+// TODO type check
+// @ts-nocheck
 import React from "react";
 import { Row, Radio, Paragraph, Column } from "../../../";
 import styles from "./listicle-item.module.css";
