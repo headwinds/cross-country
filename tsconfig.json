@@ -16,6 +16,7 @@
     "jsx": "react-jsx",
     "baseUrl": "./",
     "paths": {
+      "@/*": ["*"],
       "@cross-country/*": ["lib/*"],
       "@cross-country/components": ["lib/components/*"],
       "@cross-country/hooks/*": ["lib/hooks/*"],

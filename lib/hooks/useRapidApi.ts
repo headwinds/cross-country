@@ -1,7 +1,9 @@
 // TODO type check
 // @ts-nocheck
 import { useEffect, useState } from "react";
-import config from "@/cross-country-config-private";
+//import config from "@/cross-country-config-private"; path alias not working!
+
+const config = {};
 
 // https://rapidapi.com/techengine/api/link-preview4
 
@@ -12,7 +14,7 @@ export const fetchTitleFromUrl = async (previewUrl) => {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": config.RAPID_API_KEY,
+      "X-RapidAPI-Key": config?.RAPID_API_KEY ?? "",
       "X-RapidAPI-Host": "link-preview4.p.rapidapi.com",
     },
   };

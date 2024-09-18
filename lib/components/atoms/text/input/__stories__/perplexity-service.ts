@@ -1,6 +1,6 @@
 import config from "../../../../../../cross-country-config-private";
 
-const PERPLEXITY_API_KEY = config.PERPLEXITY_API_KEY;
+const PERPLEXITY_API_KEY = config?.PERPLEXITY_API_KEY ?? "";
 const perplexityEndpoint = "https://api.perplexity.ai";
 
 const getPerplexityResponse = async (
