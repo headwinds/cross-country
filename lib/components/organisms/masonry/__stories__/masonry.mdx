@@ -1,0 +1,26 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import * as MasonryStories from "./masonry.stories";
+
+<Meta of={MasonryStories} />
+
+# Masonry
+
+<Subtitle>Built with React Masonary CSS</Subtitle>
+
+Masonry uses the [react-masonry-css](https://github.com/paulcollett/react-masonry-css) library
+
+```jsx
+<Masonary actors=[
+  "warrior",
+  "mage",
+  "rogue",
+  "cleric",
+  "ranger",
+  "bard",
+] />
+```
+
+### Story
+
+<Canvas of={MasonryStories.MasonryStory} />
+```

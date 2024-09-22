@@ -1,10 +1,13 @@
+// TODO type check
+// @ts-nocheck
 import Tree from "../tree";
 import { useState } from "react";
+import { defaultInstructionList } from "./tree-story";
 
 type BinarySearchTree = {
-  value: number,
-  left: BinarySearchTree | null,
-  right: BinarySearchTree | null,
+  value: number;
+  left: BinarySearchTree | null;
+  right: BinarySearchTree | null;
 };
 
 // 2 children example
@@ -34,7 +37,12 @@ const getTotal = (obj, total = 0) => {
 const total = getTotal(twoChildrenNodeBST);
 
 // find total
-const TreeStory = ({ size = 800, fill = "white", strategy = "simple" }) => {
+const TreeStory = ({
+  size = 800,
+  fill = "white",
+  strategy = "simple",
+  instructionList = defaultInstructionList,
+}) => {
   return (
     <Tree
       size={size}

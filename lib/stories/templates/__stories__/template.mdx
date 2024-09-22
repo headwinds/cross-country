@@ -1,19 +1,19 @@
 import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
-import * as ButtonStories from "./button.stories";
+import * as TemplateStories from "./template.stories";
 
-<Meta of={ButtonStories} />
+<Meta of={TemplateStories} />
 
-# Button
+# Template
 
 <Subtitle>copy and paste into a folder to scaffold out a new story</Subtitle>
 
 This is a template for creating a new story.
 
 ```jsx
-<Button text="hello world" />
+<Template message="hello there " />
 ```
 
 ### Story
 
-<Canvas of={ButtonStories.ButtonStory} />
+<Canvas of={TemplateStories.TemplateStory} />
 ```
