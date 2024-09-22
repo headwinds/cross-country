@@ -13,7 +13,13 @@ export const defaultActors = [
   "bard",
 ];
 
-const CrossCountryMasonry = ({ actors = defaultActors }) => {
+interface CrossCountryMasonryProps {
+  actors?: string[];
+}
+
+const CrossCountryMasonry = ({
+  actors = defaultActors,
+}: CrossCountryMasonryProps) => {
   const breakpointColumnsObj = {
     default: 5,
     1500: 4,

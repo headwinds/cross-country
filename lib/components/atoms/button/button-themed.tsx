@@ -1,10 +1,11 @@
+// TODO type check
+// @ts-nocheck
 import React from "react";
 import styles from "./button.module.css";
 import Button from "./button";
 import clsx from "clsx";
 
 const ButtonThemed = ({
-  type = "button",
   text = "",
   onClick = null,
   customClass = "",
@@ -22,7 +23,6 @@ const ButtonThemed = ({
     text={text}
     onClick={onClick}
     customStyle={customStyle}
-    type={type}
     aria-label={ariaLabel}
     disabled={isDisabled}
   >

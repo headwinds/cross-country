@@ -1,7 +1,7 @@
 import Tree from "../tree";
 import { useState } from "react";
 
-const instructionList = [
+export const defaultInstructionList = [
   { indent: 0, text: "Build a Backyard Office", type: "ul" },
   { indent: 1, text: "scout your backyard", type: "ol" },
   { indent: 1, text: "convince your partner", type: "ol" },
@@ -66,7 +66,12 @@ const deepClone = (obj) => {
   return clone;
 };
 
-const TreeStory = ({ size = 800, fill = "white", strategy = "simple" }) => {
+const TreeStory = ({
+  size = 800,
+  fill = "white",
+  strategy = "simple",
+  instructionList = defaultInstructionList,
+}) => {
   return (
     <Tree
       size={size}
