@@ -92,7 +92,8 @@
     "uuid": "^8.0.0",
     "vite-plugin-css-injected-by-js": "^3.3.0",
     "xstate": "5.9.0",
-    "zod": "^3.22.4"
+    "zod": "^3.22.4",
+    "react-masonry-css": "^1.0.16"
   },
   "sideEffects": [
     "**/*.css"

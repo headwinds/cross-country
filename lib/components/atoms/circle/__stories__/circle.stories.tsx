@@ -10,10 +10,6 @@ const meta: Meta<typeof Circle> = {
 export default meta;
 type Story = StoryObj<typeof Circle>;
 
-export const Default: Story = {
-  args: {},
-};
-
 export const Circles: Story = {
   render: () => <AnimatedCirclesStory />,
 };

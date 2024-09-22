@@ -1,14 +1,9 @@
+import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
+import { Button } from "../components";
 
-const Intro = (props: { primary: boolean; label: string }) => {
-  return (
-    <button
-      type="button"
-      style={{ backgroundColor: props.primary ? "blue" : "white" }}
-    >
-      {props.label}
-    </button>
-  );
+const Intro = ({ children }: { children: React.ReactNode }) => {
+  return <Button>{children}</Button>;
 };
 
 const meta: Meta<typeof Intro> = {
@@ -19,9 +14,8 @@ const meta: Meta<typeof Intro> = {
 export default meta;
 type Story = StoryObj<typeof Intro>;
 
-export const Primary: Story = {
+export const ButtonStory: Story = {
   args: {
-    primary: true,
-    label: "Button",
+    children: "Click Me",
   },
 };
