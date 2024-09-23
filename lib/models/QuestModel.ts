@@ -1,18 +1,20 @@
-import { Record } from 'immutable';
+import { Record } from "immutable";
 
 const QuestModel = Record({
   id: 0,
-  title: 'generic item',
-  description: 'health',
+  title: "generic item",
+  description: "health",
   reward: [],
-  giver: 'quest giver',
-  receiver: '',
+  giver: "quest giver",
+  receiver: "",
   relatedTo: [],
   started_at: new Date(),
   completed_at: new Date(),
-  status: 'none',
+  status: "none",
   progress: 0,
   steps: 1,
 });
+
+export type QuestModelType = typeof QuestModel;
 
 export default QuestModel;

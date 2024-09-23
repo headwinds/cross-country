@@ -9,6 +9,10 @@ const meta: Meta<typeof GoldLeafViewStory> = {
 export default meta;
 type Story = StoryObj<typeof GoldLeafViewStory>;
 
-export const GoldLeafView: Story = {
+export const ArticleLeaf: Story = {
+  args: {},
+};
+
+export const EmailLeaf: Story = {
   args: {},
 };

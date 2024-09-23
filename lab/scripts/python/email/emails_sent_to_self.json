@@ -13,8 +13,8 @@
     "subject": "eat the reich",
     "to": "[{\"email\":\"brandonflowers@gmail.com\",\"name\":\"Brandon Flowers\"}]",
     "uid": 249940
-  }
- ,{
+  },
+  {
     "_from": "[{\"email\":\"brandonflowers@gmail.com\",\"name\":\"Brandon Flowers\"}]",
     "bcc": "[]",
     "cc": "[]",
@@ -28,8 +28,8 @@
     "subject": "will kirby",
     "to": "[{\"email\":\"brandonflowers@gmail.com\",\"name\":\"Brandon Flowers\"}]",
     "uid": 249942
-  }
- ,{
+  },
+  {
     "_from": "[{\"email\":\"brandonflowers@gmail.com\",\"name\":\"Brandon Flowers\"}]",
     "bcc": "[]",
     "cc": "[]",
@@ -43,8 +43,8 @@
     "subject": "hexroll",
     "to": "[{\"email\":\"brandonflowers@gmail.com\",\"name\":\"Brandon Flowers\"}]",
     "uid": 249944
-  }
- ,{
+  },
+  {
     "_from": "[{\"email\":\"brandonflowers@gmail.com\",\"name\":\"Brandon Flowers\"}]",
     "bcc": "[]",
     "cc": "[]",
@@ -59,6 +59,4 @@
     "to": "[{\"email\":\"brandonflowers@gmail.com\",\"name\":\"Brandon Flowers\"}]",
     "uid": 249945
   }
-could not request the rows from the plugin                                                      
-failed to select folder [Gmail]: Unknown Mailbox: [Gmail] (now in authenticated state) (Failure)
 ]
