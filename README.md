@@ -107,9 +107,16 @@ The bundle.css isn't added so I had to add it manually.
 npx tsc --noEmit
 ```
 
+```
+npx changeset
+npx changeset version
+```
+
 ## Publish to NPM
 
-Update the version number before publishing via `npm version patch`
+```
+npx changeset publish
+```
 
 ```
 npm login

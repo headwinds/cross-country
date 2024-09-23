@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Template from "../template";
+import GoldLeafStory from "./gold-leaf-view-story";
 
-const meta: Meta<typeof Template> = {
-  component: Template,
+const meta: Meta<typeof GoldLeafStory> = {
+  component: GoldLeafStory,
   title: "storybook/templates",
-} satisfies Meta<typeof Template>;
+} satisfies Meta<typeof GoldLeafStory>;
 
 export default meta;
-type Story = StoryObj<typeof Template>;
+type Story = StoryObj<typeof GoldLeafStory>;
 
 export const TemplateStory: Story = {
   args: {
