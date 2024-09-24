@@ -1,10 +1,10 @@
-import * as React from "react";
+import { EmailModelType } from "@cross-country/models/EmailModel";
 import { useState } from "react";
-import styles from "./gold-leaf-view.module.css";
 import { Card } from "../../..";
-import GoldTitleImageCard from "./title-image/gold-title-image-card";
-import GoldLeafViewControls from "./controls/gold-leaf-view-controls";
+import GoldLeafEmailView from "./email/gold-leaf-email-view";
+import styles from "./gold-leaf-view.module.css";
 import type { GoldLeafViewProps } from "./gold-leaf-view.types";
+import GoldTitleImageCard from "./title-image/gold-title-image-card";
 
 const defaultCustomStyle = {
   height: "auto",
@@ -13,12 +13,14 @@ const defaultCustomStyle = {
 };
 
 const GoldLeafView = ({
-  goldLeafModel = null,
+  goldLeafModel,
   dataTestId = "golf-leaf-view",
   customStyle = defaultCustomStyle,
   variant = "article",
 }: GoldLeafViewProps) => {
   const [hasImage, setHasImage] = useState(true);
+
+  console.log("GoldLeafView: ", { goldLeafModel, variant });
 
   const onNoImageFoundCallback = () => {
     // should check I setting if we want to show the image or not
@@ -27,18 +29,15 @@ const GoldLeafView = ({
   };
 
   if (variant === "email") {
-    // return <GoldLeafEmailView goldLeafModel={goldLeafModel} />;
     return (
       <Card
         customClass={styles.GoldLeafView}
         dataTestId={dataTestId}
         customStyle={customStyle}
       >
-        <GoldTitleImageCard
-          goldLeafModel={goldLeafModel}
-          onNoImageFoundCallback={onNoImageFoundCallback}
+        <GoldLeafEmailView
+          goldLeafEmailModel={goldLeafModel as EmailModelType}
         />
-        {/*<GoldLeafViewControls goldLeafModel={goldLeafModel} dataTestId={`${dataTestId}-controls`} />*/}
       </Card>
     );
   }

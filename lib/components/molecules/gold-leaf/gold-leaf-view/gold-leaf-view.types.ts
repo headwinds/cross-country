@@ -8,7 +8,7 @@ import { PortholeBranchModelType } from "@cross-country/models/PortholeBranchMod
 import { EmailModelType } from "@cross-country/models/EmailModel";
 
 export interface GoldLeafViewProps {
-  goldLeafModel?: PortholeBranchModelType | EmailModelType; // optionall for now to support <GoldLeafViewControls but should decide on a type
+  goldLeafModel: PortholeBranchModelType | EmailModelType; // optionall for now to support <GoldLeafViewControls but should decide on a type
   dataTestId?: string;
   mode?: string;
   children?: React.ReactNode | React.ReactNode[];
