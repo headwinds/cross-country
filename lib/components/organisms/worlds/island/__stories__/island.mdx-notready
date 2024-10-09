@@ -191,5 +191,15 @@ be able to cast an AOE spell that could push (a nod to{' '}
       title: "Stardew Valley 8 years later",
       url: "https://www.polygon.com/24115870/stardew-valley-8-years-later-concernedape",
     },
+    {
+      id: 37,
+      title: "Mod Stardew Valley Expanded",
+      url: "https://kotaku.com/stardew-valley-expanded-mod-concernedape-1851668970"
+    },
+    {
+      id: 38,
+      title: "Frogger set in a dense, walkable city",
+      url: "https://boingboing.net/2024/10/07/frogger-set-in-a-dense-walkable-city.html"
+    }
   ]}
 />
