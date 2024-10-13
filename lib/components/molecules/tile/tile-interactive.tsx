@@ -1,18 +1,18 @@
-import React, { forwardRef, useCallback, useState } from 'react';
-import { useSpring, animated } from '@react-spring/web';
-import { Column, Row, Button, Paragraph, KeyValuePairs } from '../../..';
-import Corners from './corners';
-import styles from './tile.module.css';
-import clsx from 'clsx';
+import React, { forwardRef, useCallback, useState } from "react";
+import { useSpring, animated } from "@react-spring/web";
+import { Column, Row, Button, Paragraph, KeyValuePairs } from "../../..";
+import Corners from "./corners";
+import styles from "./tile.module.css";
+import clsx from "clsx";
 
-import type { InteractiveTileType } from './types';
+import type { InteractiveTileType } from "./types";
 
-const defaultModel = { fill: '#eee', value: 0, id: 0 };
+const defaultModel = { fill: "#eee", value: 0, id: 0 };
 
 const SUBSTRACT_SIZE_MODIFIER = 5;
 
 // a tile should be empty and we should nest the Actor
-const Actor = ({ value = 'Farmer' }) => {
+const Actor = ({ value = "Farmer" }) => {
   return <Paragraph>{value}</Paragraph>;
 };
 
@@ -24,7 +24,7 @@ const InteractiveTile = forwardRef(
       isInteractive = true,
       customClass,
       size = 100,
-      cornerColor = '#ddd',
+      cornerColor = "#ddd",
       customStyle = {},
       type,
       model = defaultModel,
@@ -38,7 +38,13 @@ const InteractiveTile = forwardRef(
   ) => {
     const [isHovered, toggleHovered] = useState(false);
     const { fill, id } = model;
-    const finalCustomStyle = { ...customStyle, width: size, height: size, backgroundColor: fill, padding: 0 };
+    const finalCustomStyle = {
+      ...customStyle,
+      width: size,
+      height: size,
+      backgroundColor: fill,
+      padding: 0,
+    };
     const { value } = model;
     const handleTileSelected = () => {
       if (!setSelected) {
@@ -54,19 +60,21 @@ const InteractiveTile = forwardRef(
     const colorProps = useSpring(springModel);
 
     const onMouseEnter = () => {
-      console.log('Tile onMouseEnter');
+      console.log("Tile onMouseEnter");
       toggleHovered(true);
     };
 
     const onMouseLeave = () => {
-      console.log('Tile onMouseLeave');
+      console.log("Tile onMouseLeave");
       toggleHovered(false);
     };
 
     const keyValues = [
-      { id: 0, key: 'name', value: 'water' },
-      { id: 1, key: 'movement cost', value: '3' },
+      { id: 0, key: "name", value: "water" },
+      { id: 1, key: "movement cost", value: "3" },
     ];
+
+    console.log("InteractiveTile", { model, customStyle });
 
     return (
       <Column
@@ -77,7 +85,13 @@ const InteractiveTile = forwardRef(
           customClass
         )}
         hasChildrenCentered
-        customStyle={{ ...finalCustomStyle, backgroundColor: 'tranparent', borderColor: fill }}
+        customStyle={{
+          ...finalCustomStyle,
+          backgroundColor: fill,
+          borderRadius: 8,
+          margin: 2,
+          borderColor: fill,
+        }}
         onClick={handleTileSelected}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
@@ -88,7 +102,7 @@ const InteractiveTile = forwardRef(
           <animated.div
             style={{
               ...finalCustomStyle,
-              backgroundColor: colorProps.backgroundColor.to(value => value),
+              backgroundColor: colorProps.backgroundColor.to((value) => value),
               width: size - SUBSTRACT_SIZE_MODIFIER,
               height: size - SUBSTRACT_SIZE_MODIFIER,
             }}

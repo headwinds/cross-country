@@ -92,7 +92,7 @@ const TileGrid = ({
             {...tileConfig}
             customStyle={{
               margin: gapSize,
-              backgroundColor: "blue", //tileModel.color,
+              backgroundColor: tileModel?.fill ?? "pink", //tileModel.color,
               width: size,
               height: size,
             }}

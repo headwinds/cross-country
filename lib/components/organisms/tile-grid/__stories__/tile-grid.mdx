@@ -16,7 +16,30 @@ A 6 tile row could be perfect for a shop keeper and I've certainly plently time 
 This is a template for creating a new story.
 
 ```jsx
-<Button text="hello world" />
+const tile = {
+  label: "",
+  description: "",
+  material: "",
+  movement_cost: 0,
+  elevation: 0,
+  color: "#000",
+  skin: "",
+  damage: 0,
+  age: -1, // doesn't age
+};
+
+const createDemoModels = () => {
+  //const range = [...Array(64).keys()]; // chess!
+  const range = [...Array(12).keys()];
+  return range.map((index) => {
+    return { id: index, ...tile };
+  });
+};
+
+const demoModels = createDemoModels();
+const tileRefs = useRef([]);
+
+<TileGrid models={demoModels} totalInRow={3} tileRefs={tileRefs} />;
 ```
 
 ### Story

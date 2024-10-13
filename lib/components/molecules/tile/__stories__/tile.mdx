@@ -1,0 +1,44 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import { Link } from "@cross-country/components";
+import * as TileStories from "./tile.stories";
+
+<Meta of={TileStories} />
+
+# Tile
+
+What can we do with a tile? Or better what can't we do!
+
+In games or sci-fi films, it is common to see the corners of tile hilight and pulse when the tile is activated.
+
+I wanted a similar effect, and first I searched the web for inspiration finding <Link customClass="story-link" url="https://codepen.io/NyX/pen/JYOzWW">this take</Link> which is perfect for this story.
+
+Color intrepolation is an interesting approach to transitioning a tile's colour from one to another.
+
+We can use react-spring to animate the tile's color.
+
+While this is certainly an [impressive threejs color example](https://github.com/pmndrs/react-three-fiber/discussions/763#discussion-27296), I have no enough problems in the 2D space so wil continue to focus on the flat. My hunch is that other creators share this passion for tile-based art like this [tweet by @bwalter_indie](https://twitter.com/bwalter_indie/status/1779169035218739625?s=43&t=JosrImXLm25J_T3QQadmMw) and likewise are looking for anything that could [reduce the friction](https://twitter.com/startuparchive_/status/1779477221788561734?s=43&t=JosrImXLm25J_T3QQadmMw).
+
+```jsx
+<Tile
+  isSelected={false}
+  setSelected={setSelected}
+  isInteractive={true}
+  customClass={customClass}
+  size={100}
+  cornerColor="#ddd"
+  customStyle={{}}
+  type={type}
+  model={defaultModel}
+  springModel={null}
+  borderRadius={10}
+  children={children}
+  // sample="light-grey" // shallow-water
+  {...rest}
+/>
+```
+
+### Story
+
+<Canvas of={TileStories.ConcreteTileStory} />
+
+<Canvas of={TileStories.WaterTile} />
