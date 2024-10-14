@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import React, { useRef } from "react";
 import TileGrid from "../tile-grid";
+import IslandStory from "./island-tile-grid-story";
 
 const meta: Meta<typeof TileGrid> = {
   component: TileGrid,
@@ -36,5 +37,12 @@ export const TileGridStory: Story = {
     const demoModels = createDemoModels();
     const tileRefs = useRef([]);
     return <TileGrid models={demoModels} totalInRow={3} tileRefs={tileRefs} />;
+  },
+};
+
+export const IslandTileGridStory: Story = {
+  args: {},
+  render: () => {
+    return <IslandStory />;
   },
 };

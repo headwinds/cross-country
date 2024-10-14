@@ -1,0 +1,28 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import * as JsonMapTileGridStories from "./json-map-tile-grid.stories";
+
+<Meta of={JsonMapTileGridStories} />
+
+# Json Map Tile Grid
+
+Have you visited a map and wanted to build a game and data visualizaton on top of it? The JsonMapTileGrid is a component that allows you to do just that. It's for low fidelity data visualization and game building.
+
+```jsx
+// export the map data as json and import it into your projec
+import mapData from "./humber_map_data.json";
+
+// a map data is collection of tiles with
+interface JsonMapTileModelInterface {
+  x: number;
+  y: number;
+  color: string;
+  height: number;
+  width: number;
+}
+
+<JsonMapTileGrid models={mapData} />;
+```
+
+#### Satellite Map
+
+<Canvas of={JsonMapTileGridStories.SimTileGridStory} />

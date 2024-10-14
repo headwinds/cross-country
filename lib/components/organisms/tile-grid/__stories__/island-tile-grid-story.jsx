@@ -99,10 +99,3 @@ const IslandTileGridStory = () => {
 };
 
 export default IslandTileGridStory;
-/*
-const IslandTileGridStory = () => {
-  return <div>hi</div>;
-};
-
-export default IslandTileGridStory;
-*/

@@ -3,17 +3,25 @@ import * as TileGridStories from "./tile-grid.stories";
 
 <Meta of={TileGridStories} />
 
+#### Satellite Map
+
+<Canvas of={TileGridStories.SimTileGridStory} />
+
 # Tile Grid
 
 So just how many tiles do we need to create a game? Tic tac toe has 6 while chess has 64 but in a terms of a grid we usually the think of a minimum of 4 tiles since 2 tiles is either a row or column. 3 tiles could be an island.
 
 A 6 tile row could be perfect for a shop keeper and I've certainly plently time buying and selling items within this space and never find confined or limited in game play especially when complimenting the experience with inventory and other decision-based modals.
 
-### Gaming on Graph Paper
+### Memories of Gaming on Graph Paper
 
-<Subtitle>copy and paste into a folder to scaffold out a new story</Subtitle>
+When I was about 10, I was playing RPGs on an early IBM clone, a 256 KB RAM machine with a 5 inch floppy disk drive.
+My mom mentioned this to one of her friends who had an older son (maybe 14 or 15) who was also always playing the same game.
 
-This is a template for creating a new story.
+I have a fond memory of receiving a package in the mail from him filled with graph paper of his detailed dungeon maps, and remember calling him as he walked me through them and explained various encounters.
+I think the game might have been [Pool of Radiance](https://en.wikipedia.org/wiki/Pool_of_Radiance) but exactly remember but I do remember the maps and the experience, especially a particularly frigid, ice-themed dungeon.
+
+This is package was basically the only co-operative experience I with games otherwise I played everything (Ultima, Might & Magic, Sierra) basically alone. I have no memories of discussing RPGs with friends except for Michael Barenburg who introduced me to Mech and Matzo ball soup. And lox! We also earned our winter camping badge together. I considered him "rich" because they had a massive house on many acres of woodlands which was a pretty safe place to camp in 4 feet of snow.
 
 ```jsx
 const tile = {
@@ -42,9 +50,16 @@ const tileRefs = useRef([]);
 <TileGrid models={demoModels} totalInRow={3} tileRefs={tileRefs} />;
 ```
 
-### Story
+### Tile Grid
 
 <Canvas of={TileGridStories.TileGridStory} />
 
+#### Island
+
+<Canvas of={TileGridStories.IslandTileGridStory} />
+
 - https://www.perplexity.ai/search/In-2D-array-u95pvL7oQiOgeekB6ntiuw?s=c
 - https://kotaku.com/fallout-game-excel-dynamic-pear-1851442166
+- https://github.com/This-Game/monte-carlo-werewolf-simulation
+- https://github.com/xuyuzhuang11/Werewolf
+- https://machinations.io/community/tailk/00cfa1aeec7e1f994a7d835539b231e91
