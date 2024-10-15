@@ -4,6 +4,14 @@ import JsonMapTileGrid from "../json-map-tile-grid";
 import Column from "../../../atoms/column/column";
 import map from "./humber_map_data.json";
 
+type Tile = {
+  x: number;
+  y: number;
+  color: string;
+  height: number;
+  width: number;
+};
+
 const meta: Meta<typeof JsonMapTileGrid> = {
   component: JsonMapTileGrid,
   title: "components/organisms/json map tile grid",
@@ -33,20 +41,14 @@ export const SimTileGridStory: Story = {
       displayName: "",
     };
 
-    // map is a json array with 16K tiles
-    // and only want to use 2K for this story
-    // map is a json array so we need to convert it to an array
-    // Explicitly type map as an array
-    const map2k = (map as any[]).slice(0, 200);
-
-    const models = map2k.map((obj: Record<string, unknown>, index) => ({
-      ...tile,
-      ...(obj as Record<string, unknown>),
-      id: index,
-      x: index % 50, // Assuming a 50x40 grid
-      y: Math.floor(index / 50),
-      displayName: `Tile ${index}`,
-    }));
+    const models = (map as Tile[]).map(
+      (obj: Record<string, unknown>, index) => ({
+        ...tile,
+        ...obj,
+        id: `id_${obj.x}_${obj.y}`,
+        fill: obj.color,
+      })
+    );
 
     return (
       <Column customStyle={{ height: 400 }}>

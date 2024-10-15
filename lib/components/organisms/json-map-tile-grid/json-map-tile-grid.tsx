@@ -47,24 +47,13 @@ const JsonMapTileGrid = ({
           key={tileModel.id}
           style={{
             position: "absolute",
-            left: `${tileModel.x * tileConfig.size}px`,
-            top: `${tileModel.y * tileConfig.size}px`,
+            left: `${tileModel.x}px`,
+            top: `${tileModel.y}px`,
+            width: `${tileModel.width}px`,
+            height: `${tileModel.height}px`,
+            backgroundColor: tileModel.fill,
           }}
-        >
-          <Tile
-            model={tileModel}
-            {...tileConfig}
-            customStyle={{
-              backgroundColor: tileModel.fill ?? "pink",
-              width: tileModel.width,
-              height: tileModel.height,
-            }}
-            setSelected={setSelected}
-            isSelected={isSelected}
-            ref={(ref) => (tileRefs.current[index] = ref)}
-            id={tileModel.id}
-          />
-        </div>
+        />
       );
     });
   };
@@ -84,3 +73,18 @@ const JsonMapTileGrid = ({
 };
 
 export default JsonMapTileGrid;
+
+/*
+          <Tile
+            model={tileModel}
+            {...tileConfig}
+            customStyle={{
+              backgroundColor: tileModel.fill ?? "pink",
+              width: tileModel.width,
+              height: tileModel.height,
+            }}
+            setSelected={setSelected}
+            isSelected={isSelected}
+            ref={(ref) => (tileRefs.current[index] = ref)}
+            id={tileModel.id}
+          />*/
