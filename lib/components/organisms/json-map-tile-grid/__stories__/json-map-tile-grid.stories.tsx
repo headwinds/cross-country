@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import React, { useRef } from "react";
 import JsonMapTileGrid from "../json-map-tile-grid";
 import Column from "../../../atoms/column/column";
-import map from "./humber_map_data.json";
+//import map from "./humber_map_data.json";
+import map from "./solo_scout_map_data.json";
 
 type Tile = {
   x: number;
