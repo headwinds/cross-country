@@ -1,13 +1,11 @@
-// @ts-nocheck
-//import { AgnosticRowOfTiles as RowOfTiles, AgnosticTile as Tile } from './agnostic-acre';
-import { Row, Tile } from '../../../..';
+import { Row, Tile } from "../../../..";
 
 // utils
-import { ColourUtil } from '../../../../utils';
+import { ColourUtil } from "../../../../../utils";
 
 // styles
 //import { Column, Row, Tile, SubHeadline, Paragraph, List, ListItem, Link, RelatedArticles } from '../../components';
-import styles from './island-story.module.css';
+import styles from "./island-story.module.css";
 
 export const RowOfTiles = ({ tiles, key, styles }) => {
   return (
@@ -18,22 +16,22 @@ export const RowOfTiles = ({ tiles, key, styles }) => {
 };
 
 const islandMap = [
-  ['0', '0', '0', '1', '0'],
-  ['0', '1', '0', '0', '0'],
-  ['0', '1', '1', '0', '0'],
-  ['0', '0', '0', '0', '0'],
+  ["0", "0", "0", "1", "0"],
+  ["0", "1", "0", "0", "0"],
+  ["0", "1", "1", "0", "0"],
+  ["0", "0", "0", "0", "0"],
 ];
 
 const largerIslandMap = [
-  ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0'],
-  ['0', '1', '0', '0', '1', '1', '1', '0', '1', '1'],
-  ['0', '1', '1', '0', '0', '1', '1', '0', '0', '0'],
-  ['0', '0', '0', '0', '1', '1', '0', '0', '1', '0'],
-  ['0', '0', '0', '1', '1', '1', '1', '0', '1', '0'],
-  ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0'],
+  ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
+  ["0", "1", "0", "0", "1", "1", "1", "0", "1", "1"],
+  ["0", "1", "1", "0", "0", "1", "1", "0", "0", "0"],
+  ["0", "0", "0", "0", "1", "1", "0", "0", "1", "0"],
+  ["0", "0", "0", "1", "1", "1", "1", "0", "1", "0"],
+  ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
 ];
 
-export const getMapNewGrid = grid => {
+export const getMapNewGrid = (grid) => {
   const islandDigitMap = [];
   for (let i = 0; i < grid.length; i++) {
     if (!islandDigitMap[i]) {
@@ -54,16 +52,20 @@ export const getMapNewGrid = grid => {
 const islandDigitMap = getMapNewGrid(islandMap);
 const largestIslandDigitMap = getMapNewGrid(islandMap);
 
-const setSelected = tile => {
-  console.log('setSelected tile: ', tile);
+const setSelected = (tile) => {
+  console.log("setSelected tile: ", tile);
 };
 
 // https://leetcode.com/problems/max-area-of-island/
 
 type GridIsland = {
-  grid: any;
-  GridTile: any;
-  GridRow: any;
+  grid?: any;
+  GridTile?: any;
+  GridRow?: any;
+  palette?: any;
+  setSelected?: any;
+  islandCount?: number;
+  gridTiles?: any[];
 };
 
 const defaultPalette = ColourUtil.getSplashPalette();
@@ -81,7 +83,12 @@ type GridResponseType = {
  * @param {string[]} palette - an array of strings
  * @returns {GridResponseType} response
  */
-export const getIsland = (grid, GridTile = Tile, GridRow = RowOfTiles, palette): GridIsland => {
+export const getIsland = (
+  grid,
+  GridTile = Tile,
+  GridRow = RowOfTiles,
+  palette
+): GridIsland => {
   const ROWS = grid.length;
   const COLS = grid[0].length;
 
@@ -106,8 +113,11 @@ export const getIsland = (grid, GridTile = Tile, GridRow = RowOfTiles, palette):
     for (let j = 0; j < COLS; j++) {
       const value = grid[i][j];
 
-      const tileColor = value === -1 ? 'transparent' : palette.find(tile => tile.id === value).hex;
-      console.log('tileColor: ', tileColor);
+      const tileColor =
+        value === -1
+          ? "transparent"
+          : palette.find((tile) => tile.id === value).hex;
+      console.log("tileColor: ", tileColor);
       const id = `${i}${j}`;
 
       const model = { fill: tileColor, value, id };
@@ -124,7 +134,7 @@ export const getIsland = (grid, GridTile = Tile, GridRow = RowOfTiles, palette):
   return { islandCount, gridTiles };
 };
 
-export const getLargestIsland = grid => {
+export const getLargestIsland = (grid) => {
   const recurseArea = (rowIdx, colIdx) => {
     if (
       rowIdx < 0 ||
@@ -148,7 +158,7 @@ export const getLargestIsland = grid => {
     return newTotal;
   };
 
-  const maxAreaOfIsland = grid => {
+  const maxAreaOfIsland = (grid) => {
     let ans = 0;
     for (let r = 0; r < grid.length; r++) {
       for (let c = 0; c < grid[0].length; c++) {

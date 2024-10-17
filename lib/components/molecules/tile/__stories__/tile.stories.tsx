@@ -46,7 +46,7 @@ export const AnimateTileColor = {
 import type { Meta, StoryObj } from "@storybook/react";
 import TileStory from "./tile-story";
 import AnimatedTileStory from "./tile-animated-story";
-import { Column } from "@cross-country/components";
+import Column from "@cross-country/atoms/column";
 import Tile from "../tile";
 
 interface TileProps {

@@ -1,8 +1,11 @@
-import * as React from 'react';
-import { useState } from 'react';
-import { removeAllImagesFromText, defaultFullScreenImageUrl } from '../../../../../utils/golds/image-find-util';
-import { tweet, email } from '../../../../../utils/golds/share-util';
-import styles from '../gold-leaf-view.module.css';
+import * as React from "react";
+import { useState } from "react";
+import {
+  removeAllImagesFromText,
+  defaultFullScreenImageUrl,
+} from "../../../../../utils/golds/image-find-util";
+import { tweet, email } from "../../../../../utils/golds/share-util";
+import styles from "../gold-leaf-view.module.css";
 import {
   ArticleIcon,
   TweetIcon,
@@ -12,22 +15,25 @@ import {
   HideIcon,
   ClusterOffIcon,
   ArticleNoneIcon,
-} from '../icons';
-import { fetchRetry } from '../../../../../utils/fetch-util';
-import { Column, Row, Span, Button } from '../../../../';
+} from "../icons";
+import { fetchRetry } from "../../../../../utils/fetch-util";
+import { Column, Row, Span, Button } from "../../../../";
 
-import { GoldLeafViewProps } from '../gold-leaf-view.types';
+import { GoldLeafViewProps } from "../gold-leaf-view.types";
 
-const GOLD_COLOUR = '#E3D597';
+const GOLD_COLOUR = "#E3D597";
 
 //TODO: repalce he
 //const he = require('he');
 
-const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = null, dataTestId = 'golf-leaf-view' }) => {
+const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({
+  goldLeafModel = null,
+  dataTestId = "golf-leaf-view",
+}) => {
   const [state, setState] = useState({
     showImages: false,
     showArticle: false,
-    text: '',
+    text: "",
     read: false,
     curScroll: 0,
     trained: goldLeafModel?.bViewed ?? false,
@@ -35,7 +41,7 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = nul
   });
 
   const handleEmail = () => {
-    email(goldLeafModel, '');
+    email(goldLeafModel, "");
   };
 
   const handleTweet = () => {
@@ -51,10 +57,10 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = nul
     setState({ ...state, showImages: newShowImages, showArticle: false });
   };
 
-  const stripImagesFromText = goldLeafModel => {
+  const stripImagesFromText = (goldLeafModel) => {
     const articleWithoutImages = removeAllImagesFromText(goldLeafModel);
 
-    const stripedHtml = articleWithoutImages.replace(/<[^>]+>/g, '');
+    const stripedHtml = articleWithoutImages.replace(/<[^>]+>/g, "");
     const decodedStripedHtml = stripedHtml; //he.decode(stripedHtml);
     return decodedStripedHtml.trim();
   };
@@ -65,28 +71,36 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = nul
 
     const decodedStripedHtml = stripImagesFromText(goldLeafModel);
 
-    if (decodedStripedHtml !== '' && String(decodedStripedHtml) !== 'true') {
-      setState({ ...state, showImages: false, showArticle: newShowArticle, text: decodedStripedHtml });
+    if (decodedStripedHtml !== "" && String(decodedStripedHtml) !== "true") {
+      setState({
+        ...state,
+        showImages: false,
+        showArticle: newShowArticle,
+        text: decodedStripedHtml,
+      });
     }
   };
 
   const handleToggleTrainGoldLeaf = async () => {
     // is the goldLeafModel already present?
-    const userGoldLeafModel = { ...goldLeafModel, user_account_id: 'a4dc18a4-0389-4844-880e-c776d927b42f' };
+    const userGoldLeafModel = {
+      ...goldLeafModel,
+      user_account_id: "a4dc18a4-0389-4844-880e-c776d927b42f",
+    };
     const { trained } = state;
 
     // can we unheart it?
-    const url = 'http://localhost:5000/api/post/heart';
+    const url = "http://localhost:5000/api/post/heart";
     const accessToken =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3NjE0ODAzNywianRpIjoiNzhiYmUxMDUtMWM4OS00MzU3LTg2YzktOTQ0OGUzMTRlMTM2IiwibmJmIjoxNjc2MTQ4MDM3LCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiaGVhZHdpbmRzIiwiZXhwIjoxNjc2MTQ4OTM3fQ.A0BxgS8347Q74MUM2ficxhwNy0uvy-jKrh-9p5BmliY';
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3NjE0ODAzNywianRpIjoiNzhiYmUxMDUtMWM4OS00MzU3LTg2YzktOTQ0OGUzMTRlMTM2IiwibmJmIjoxNjc2MTQ4MDM3LCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiaGVhZHdpbmRzIiwiZXhwIjoxNjc2MTQ4OTM3fQ.A0BxgS8347Q74MUM2ficxhwNy0uvy-jKrh-9p5BmliY";
     // msg: "Signature verification failed"
     //const accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9'
     const config = {
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify(userGoldLeafModel),
-      mode: 'cors',
+      mode: "cors",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
         Authorization: `Bearer ${accessToken}`,
       },
     };
@@ -113,7 +127,9 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = nul
         <ClusterOffIcon />
         <Column customClass={styles.GoldLeaf__total}>
           {/* what is happening here? */}
-          <Span customClass={styles.GoldLeaf__total__text}>{totalGoldLeafes || 0}</Span>
+          <Span customClass={styles.GoldLeaf__total__text}>
+            {totalGoldLeafes || 0}
+          </Span>
         </Column>
       </Button>
     );
@@ -149,20 +165,39 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = nul
       }
     }) ?? null;
 
-  const image = goldLeafModel.useText ? null : <img src={goldLeafModel.images[0].imageUrl} alt={goldLeafModel.title} />;
+  const image = goldLeafModel.useText ? null : (
+    <img
+      src={
+        typeof goldLeafModel.images[0] === "string"
+          ? goldLeafModel.images[0]
+          : goldLeafModel.images[0].imageUrl
+      }
+      alt={goldLeafModel.title}
+    />
+  );
   const totalGoldLeafes =
-    goldLeafModel.useText || goldLeafModel.images.length === 1 ? null : goldLeafModel.images.length;
+    goldLeafModel.useText || goldLeafModel.images.length === 1
+      ? null
+      : goldLeafModel.images.length;
 
   const goldLeafText = stripImagesFromText(goldLeafModel);
 
   return (
     <Column customClass={styles.GoldLeaf} dataTestId={dataTestId}>
       <Row customClass={styles.GoldLeaf__controls}>
-        <Button customClass={styles.GoldLeaf__item} onClick={handleEmail} aria-label="email">
+        <Button
+          customClass={styles.GoldLeaf__item}
+          onClick={handleEmail}
+          aria-label="email"
+        >
           <EmailIcon />
         </Button>
 
-        <Button customClass={styles.GoldLeaf__item} onClick={handleTweet} aria-label="tweet">
+        <Button
+          customClass={styles.GoldLeaf__item}
+          onClick={handleTweet}
+          aria-label="tweet"
+        >
           <TweetIcon />
         </Button>
         {/*
@@ -176,17 +211,27 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({ goldLeafModel = nul
         */}
         {renderImageBtn(showImages, totalGoldLeafes)}
 
-        <Button customClass={styles.GoldLeaf__item} onClick={handleViewArticle} aria-label="view artilce">
-          {goldLeafText !== '' && goldLeafText !== 'true' ? <ArticleIcon /> : <ArticleNoneIcon />}
+        <Button
+          customClass={styles.GoldLeaf__item}
+          onClick={handleViewArticle}
+          aria-label="view artilce"
+        >
+          {goldLeafText !== "" && goldLeafText !== "true" ? (
+            <ArticleIcon />
+          ) : (
+            <ArticleNoneIcon />
+          )}
         </Button>
       </Row>
       {/* images */}
-      {showImages ? <Column customClass={styles.GoldLeaf__images}>{images}</Column> : null}
+      {showImages ? (
+        <Column customClass={styles.GoldLeaf__images}>{images}</Column>
+      ) : null}
       {showArticle ? (
         <div
           contentEditable="true"
           dangerouslySetInnerHTML={{ __html: text }}
-          style={{ color: '#666', outline: 'none', padding: 16 }}
+          style={{ color: "#666", outline: "none", padding: 16 }}
         ></div>
       ) : null}
       {/* footer controls 
