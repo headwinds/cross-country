@@ -1,0 +1,413 @@
+{
+  "emails": [
+    {
+      "body": "https://visualgo.net/en\r\n",
+      "date": "Fri, 13 Sep 2024 06:31:57 -0400",
+      "email_id": ["191eaf0b32470066"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "visualising data structures and algorithms through animation - VisuAlgo",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "https://algomap.io/\r\n",
+      "date": "Wed, 11 Sep 2024 23:11:09 -0400",
+      "email_id": ["191e436c7bfdb1d4"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "AlgoMap - Free Data Structures & Algorithms Roadmap",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "\r\nhttps://t.co/WDQkqUpc3q\r\n",
+      "date": "Tue, 10 Sep 2024 17:08:40 -0400",
+      "email_id": ["191ddc675d095ab5"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": null,
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "\r\nhttps://octolens.com/\r\n",
+      "date": "Sun, 25 Aug 2024 18:43:40 -0400",
+      "email_id": ["1918bb5a2719e0a9"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Octolens - AI social monitoring for B2B",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "\r\nhttps://udara.io/\r\n",
+      "date": "Sat, 24 Aug 2024 19:07:41 -0400",
+      "email_id": ["19186a54027ef383"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Udara Jay",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "<html><head><meta http-equiv=3D\"content-type\" content=3D\"text/html; charset=3D=\r\nutf-8\"></head><body dir=3D\"auto\"><div dir=3D\"ltr\"><a href=3D\"https://x.com/s=\r\nandromaglione/status/1827406099621757407?s=3D43&amp;t=3DJosrImXLm25J_T3QQadm=\r\nMw\"><table cellpadding=3D\"0\" cellspacing=3D\"0\" border=3D\"0\" style=3D\"border:=\r\n1px solid #ccd6dd; border-radius: 12px;\" width=3D\"500\" bgcolor=3D\"#ffffff\"><=\r\ntbody><tr><td colspan=3D\"3\" style=3D\"font-size: 0px; line-height: 0px;\" heig=\r\nht=3D\"12\">&nbsp;</td></tr><tr><td width=3D\"18\" style=3D\"font-size: 0px; line=\r\n-height: 0px; min-width: 18px;\">&nbsp;</td><td><table cellpadding=3D\"0\" cell=\r\nspacing=3D\"0\" border=3D\"0\" width=3D\"464\" align=3D\"left\"><tbody><tr valign=3D=\r\n\"top\"><td width=3D\"48\" valign=3D\"top\"><a href=3D\"https://x.com/sandromaglion=\r\ne?s=3D43\"><img src=3D\"https://pbs.twimg.com/profile_images/18059713499506769=\r\n92/CIWSZiKB_normal.jpg\" style=3D\"border-radius: 50%; padding: 0px;\" height=3D=\r\n\"48\" width=3D\"48\" data-unique-identifier=3D\"\"></a></td><td width=3D\"8\" style=\r\n=3D\"font-size: 0px; line-height: 0px; min-width:8px;\"><img src=3D\"https://ea=\r\n.twimg.com/email/self_serve/media/spacer.png\" width=3D\"8\" data-unique-identi=\r\nfier=3D\"\"></td><td valign=3D\"middle\" width=3D\"388\" style=3D\"min-width: 388px=\r\n;\"><table cellpadding=3D\"0\" cellspacing=3D\"0\" border=3D\"0\" align=3D\"left\" wi=\r\ndth=3D\"388\"><tbody><tr><td align=3D\"left\" width=3D\"388\"><b><a href=3D\"https:=\r\n//x.com/sandromaglione?s=3D43\" style=3D\"font-family: Helvetica, Arial, san-s=\r\nerif; font-size: 14px; line-height: 18px; color: #292c2f; text-decoration: n=\r\none;\">Sandro Maglione</a></b></td></tr><tr><td align=3D\"left\"><a href=3D\"htt=\r\nps://x.com/sandromaglione?s=3D43\" style=3D\"font-family: Helvetica, Arial, sa=\r\nn-serif; font-size: 14px; line-height: 18px; text-decoration: none; color: #=\r\n7e8c98;\">=E2=81=A6=E2=80=AA@SandroMaglione=E2=80=AC=E2=81=A9</a></td></tr></=\r\ntbody></table></td><td valign=3D\"top\" width=3D\"20\"><img src=3D\"https://ea.tw=\r\nimg.com/email/self_serve/media/logo_twitter-1497383721365.png\" height=3D\"20\"=\r\n width=3D\"24\" data-unique-identifier=3D\"\"></td></tr><tr><td height=3D\"9\" col=\r\nspan=3D\"4\" style=3D\"font-size: 0px; line-height:0px;\"><img src=3D\"https://ea=\r\n.twimg.com/self_serve/media/spacer_464x1-1582829598167.png\" width=3D\"464\" he=\r\night=3D\"1\" data-unique-identifier=3D\"\"></td></tr><tr><td colspan=3D\"4\" style=\r\n=3D\"font-family: Helvetica, Arial, san-serif;color: #292c2f; font-size: 18px=\r\n; line-height: 24px; text-decoration: none;\">I am exploring differences betw=\r\neen useState, useReducer (Redux), and actors<br><br>Not all actors need to b=\r\ne state machines =F0=9F=92=A1<br><br>All the details in my upcoming (free) c=\r\nourse =F0=9F=91=87<br><br><a href=3D\"https://t.co/0xD2F2uN3V\"><span>typeonce=\r\n.dev/course/xstate-=E2=80=A6</span></a></td></tr><tr><td height=3D\"3\" colspa=\r\nn=3D\"4\" style=3D\"font-size: 0px; line-height:0px;\">&nbsp;</td></tr><tr><td c=\r\nolspan=3D\"4\"><a href=3D\"https://x.com/sandromaglione/status/1827406099621757=\r\n407?s=3D43&amp;t=3DJosrImXLm25J_T3QQadmMw\" style=3D\"font-family: Helvetica, A=\r\nrial, san-serif;color: #667785; font-size: 14px; line-height: 18px; text-dec=\r\noration:none;\">2024-08-24, 2:02=E2=80=AFPM</a></td></tr></tbody></table></td=\r\n><td width=3D\"18\" style=3D\"font-size: 0px; line-height: 0px; min-width: 18px=\r\n;\">&nbsp;</td></tr><tr><td colspan=3D\"3\" style=3D\"font-size: 0px; line-heigh=\r\nt: 0px;\" height=3D\"12\">&nbsp;</td></tr></tbody></table></a><br></div><div di=\r\nr=3D\"ltr\"></div></body></html>=\r\n",
+      "date": "Sat, 24 Aug 2024 14:37:40 -0400",
+      "email_id": ["19185ae0c1eca1f9"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Post by Sandro Maglione on X",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "<html><head><meta http-equiv=3D\"content-type\" content=3D\"text/html; charset=3D=\r\nutf-8\"></head><body dir=3D\"auto\"><div dir=3D\"ltr\"><a href=3D\"https://x.com/s=\r\nhadcn/status/1823427229424267334?s=3D43&amp;t=3DJosrImXLm25J_T3QQadmMw\"><tab=\r\nle cellpadding=3D\"0\" cellspacing=3D\"0\" border=3D\"0\" style=3D\"border:1px soli=\r\nd #ccd6dd; border-radius: 12px;\" width=3D\"500\" bgcolor=3D\"#ffffff\"><tbody><t=\r\nr><td colspan=3D\"3\" style=3D\"font-size: 0px; line-height: 0px;\" height=3D\"12=\r\n\">&nbsp;</td></tr><tr><td width=3D\"18\" style=3D\"font-size: 0px; line-height:=\r\n 0px; min-width: 18px;\">&nbsp;</td><td><table cellpadding=3D\"0\" cellspacing=3D=\r\n\"0\" border=3D\"0\" width=3D\"464\" align=3D\"left\"><tbody><tr valign=3D\"top\"><td w=\r\nidth=3D\"48\" valign=3D\"top\"><a href=3D\"https://x.com/shadcn?s=3D43\"><img src=3D=\r\n\"https://pbs.twimg.com/profile_images/1593304942210478080/TUYae5z7_normal.jp=\r\ng\" style=3D\"border-radius: 50%; padding: 0px;\" height=3D\"48\" width=3D\"48\" da=\r\nta-unique-identifier=3D\"\"></a></td><td width=3D\"8\" style=3D\"font-size: 0px; l=\r\nine-height: 0px; min-width:8px;\"><img src=3D\"https://ea.twimg.com/email/self=\r\n_serve/media/spacer.png\" width=3D\"8\" data-unique-identifier=3D\"\"></td><td va=\r\nlign=3D\"middle\" width=3D\"388\" style=3D\"min-width: 388px;\"><table cellpadding=\r\n=3D\"0\" cellspacing=3D\"0\" border=3D\"0\" align=3D\"left\" width=3D\"388\"><tbody><t=\r\nr><td align=3D\"left\" width=3D\"388\"><b><a href=3D\"https://x.com/shadcn?s=3D43=\r\n\" style=3D\"font-family: Helvetica, Arial, san-serif; font-size: 14px; line-h=\r\neight: 18px; color: #292c2f; text-decoration: none;\">shadcn</a></b></td></tr=\r\n><tr><td align=3D\"left\"><a href=3D\"https://x.com/shadcn?s=3D43\" style=3D\"fon=\r\nt-family: Helvetica, Arial, san-serif; font-size: 14px; line-height: 18px; t=\r\next-decoration: none; color: #7e8c98;\">=E2=81=A6=E2=80=AA@shadcn=E2=80=AC=E2=\r\n=81=A9</a></td></tr></tbody></table></td><td valign=3D\"top\" width=3D\"20\"><im=\r\ng src=3D\"https://ea.twimg.com/email/self_serve/media/logo_twitter-1497383721=\r\n365.png\" height=3D\"20\" width=3D\"24\" data-unique-identifier=3D\"\"></td></tr><t=\r\nr><td height=3D\"9\" colspan=3D\"4\" style=3D\"font-size: 0px; line-height:0px;\">=\r\n<img src=3D\"https://ea.twimg.com/self_serve/media/spacer_464x1-1582829598167=\r\n.png\" width=3D\"464\" height=3D\"1\" data-unique-identifier=3D\"\"></td></tr><tr><=\r\ntd colspan=3D\"4\" style=3D\"font-family: Helvetica, Arial, san-serif;color: #2=\r\n92c2f; font-size: 18px; line-height: 24px; text-decoration: none;\">:mind_blo=\r\nwn:</td></tr><tr><td height=3D\"3\" colspan=3D\"4\" style=3D\"font-size: 0px; lin=\r\ne-height:0px;\">&nbsp;</td></tr><tr><td colspan=3D\"4\"><a href=3D\"https://x.co=\r\nm/shadcn/status/1823427229424267334?s=3D43&amp;t=3DJosrImXLm25J_T3QQadmMw\" s=\r\ntyle=3D\"font-family: Helvetica, Arial, san-serif;color: #667785; font-size: 1=\r\n4px; line-height: 18px; text-decoration:none;\">2024-08-13, 2:31=E2=80=AFPM</=\r\na></td></tr></tbody></table></td><td width=3D\"18\" style=3D\"font-size: 0px; l=\r\nine-height: 0px; min-width: 18px;\">&nbsp;</td></tr><tr><td colspan=3D\"3\" sty=\r\nle=3D\"font-size: 0px; line-height: 0px;\" height=3D\"12\">&nbsp;</td></tr></tbo=\r\ndy></table></a><br></div><div dir=3D\"ltr\"></div></body></html>=\r\n",
+      "date": "Wed, 14 Aug 2024 14:11:34 -0400",
+      "email_id": ["19152168e05ff56d"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Post by shadcn on X",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "\r\nhttps://postgres.new/\r\n",
+      "date": "Mon, 12 Aug 2024 16:55:03 -0400",
+      "email_id": ["191485f85bd6f3f9"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Postgres Sandbox",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "<html><head><meta http-equiv=3D\"content-type\" content=3D\"text/html; charset=3D=\r\nutf-8\"></head><body dir=3D\"auto\"><div dir=3D\"ltr\"><a href=3D\"https://x.com/g=\r\namesparable/status/1813190344672223439?s=3D43&amp;t=3DJosrImXLm25J_T3QQadmMw=\r\n\"><table cellpadding=3D\"0\" cellspacing=3D\"0\" border=3D\"0\" style=3D\"border:1p=\r\nx solid #ccd6dd; border-radius: 12px;\" width=3D\"500\" bgcolor=3D\"#ffffff\"><tb=\r\nody><tr><td colspan=3D\"3\" style=3D\"font-size: 0px; line-height: 0px;\" height=\r\n=3D\"12\">&nbsp;</td></tr><tr><td width=3D\"18\" style=3D\"font-size: 0px; line-h=\r\neight: 0px; min-width: 18px;\">&nbsp;</td><td><table cellpadding=3D\"0\" cellsp=\r\nacing=3D\"0\" border=3D\"0\" width=3D\"464\" align=3D\"left\"><tbody><tr valign=3D\"t=\r\nop\"><td width=3D\"48\" valign=3D\"top\"><a href=3D\"https://x.com/gamesparable?s=3D=\r\n43\"><img src=3D\"https://pbs.twimg.com/profile_images/1685895549755813888/6Qf=\r\nfQpgw_normal.jpg\" style=3D\"border-radius: 50%; padding: 0px;\" height=3D\"48\" w=\r\nidth=3D\"48\" data-unique-identifier=3D\"\"></a></td><td width=3D\"8\" style=3D\"fo=\r\nnt-size: 0px; line-height: 0px; min-width:8px;\"><img src=3D\"https://ea.twimg=\r\n.com/email/self_serve/media/spacer.png\" width=3D\"8\" data-unique-identifier=3D=\r\n\"\"></td><td valign=3D\"middle\" width=3D\"388\" style=3D\"min-width: 388px;\"><tab=\r\nle cellpadding=3D\"0\" cellspacing=3D\"0\" border=3D\"0\" align=3D\"left\" width=3D\"=\r\n388\"><tbody><tr><td align=3D\"left\" width=3D\"388\"><b><a href=3D\"https://x.com=\r\n/gamesparable?s=3D43\" style=3D\"font-family: Helvetica, Arial, san-serif; fon=\r\nt-size: 14px; line-height: 18px; color: #292c2f; text-decoration: none;\">Par=\r\nable Games - ION Heart Live Now on @Backerkit</a></b></td></tr><tr><td align=\r\n=3D\"left\"><a href=3D\"https://x.com/gamesparable?s=3D43\" style=3D\"font-family=\r\n: Helvetica, Arial, san-serif; font-size: 14px; line-height: 18px; text-deco=\r\nration: none; color: #7e8c98;\">=E2=81=A6=E2=80=AA@GamesParable=E2=80=AC=E2=81=\r\n=A9</a></td></tr></tbody></table></td><td valign=3D\"top\" width=3D\"20\"><img s=\r\nrc=3D\"https://ea.twimg.com/email/self_serve/media/logo_twitter-1497383721365=\r\n.png\" height=3D\"20\" width=3D\"24\" data-unique-identifier=3D\"\"></td></tr><tr><=\r\ntd height=3D\"9\" colspan=3D\"4\" style=3D\"font-size: 0px; line-height:0px;\"><im=\r\ng src=3D\"https://ea.twimg.com/self_serve/media/spacer_464x1-1582829598167.pn=\r\ng\" width=3D\"464\" height=3D\"1\" data-unique-identifier=3D\"\"></td></tr><tr><td c=\r\nolspan=3D\"4\" style=3D\"font-family: Helvetica, Arial, san-serif;color: #292c2=\r\nf; font-size: 18px; line-height: 24px; text-decoration: none;\">ION Heart. Ex=\r\nplore a post-war galaxy with your mech best friend. =F0=9F=9A=80 Discover ne=\r\nw planets, communities and cultures in this lo-fi solo mech <a href=3D\"https=\r\n://x.com/search?q=3D%23TTRPG&amp;src=3Dhash\">#TTRPG</a>. =F0=9F=A4=96</td></=\r\ntr><tr><td height=3D\"3\" colspan=3D\"4\" style=3D\"font-size: 0px; line-height:0=\r\npx;\">&nbsp;</td></tr><tr><td colspan=3D\"4\"><a href=3D\"https://x.com/gamespar=\r\nable/status/1813190344672223439?s=3D43&amp;t=3DJosrImXLm25J_T3QQadmMw\" style=\r\n=3D\"font-family: Helvetica, Arial, san-serif;color: #667785; font-size: 14px=\r\n; line-height: 18px; text-decoration:none;\">2024-07-16, 8:34=E2=80=AFAM</a><=\r\n/td></tr></tbody></table></td><td width=3D\"18\" style=3D\"font-size: 0px; line=\r\n-height: 0px; min-width: 18px;\">&nbsp;</td></tr><tr><td colspan=3D\"3\" style=3D=\r\n\"font-size: 0px; line-height: 0px;\" height=3D\"12\">&nbsp;</td></tr></tbody></=\r\ntable></a><br></div><div dir=3D\"ltr\"></div></body></html>=\r\n",
+      "date": "Sun, 11 Aug 2024 11:34:01 -0400",
+      "email_id": ["19142134569fe5ed"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Post by Parable Games - ION Heart Live Now on @Backerkit on X",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "https://www.bookprinter.ca/\r\n",
+      "date": "Sun, 11 Aug 2024 07:28:07 -0400",
+      "email_id": ["19141321f65d9b02"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "=?utf-8?Q?Book_Printing_for_Canada_Ontario_Sudbury_Timmins?=\r\n =?utf-8?Q?=E2=80=A6?=",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "https://craftyramen.com/ \r\n\r\nMomofuko or scout \r\n",
+      "date": "Wed, 7 Aug 2024 16:42:26 -0400",
+      "email_id": ["1912e9451f6d3a65"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Crafty Ramen",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "Backyard oil AOE black gold\r\n",
+      "date": "Tue, 6 Aug 2024 22:25:25 -0400",
+      "email_id": ["1912aa81e4303156"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Osage",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "https://public.work/\r\n",
+      "date": "Fri, 2 Aug 2024 17:11:35 -0400",
+      "email_id": ["19114ef35cfcb288"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Pub",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "https://ca.bestreviews.guide/peloton-seat-cushion\r\n",
+      "date": "Fri, 2 Aug 2024 16:38:18 -0400",
+      "email_id": ["19114d0bccb95fef"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "=?utf-8?Q?10_Best_Peloton_Seat_Cushions_2024_|_There's_One?=\r\n =?utf-8?Q?=E2=80=A6?=",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "\r\nhttps://kotaku.com/elden-ring-shadow-erdtree-how-to-beat-gaius-boss-18516077=\r\n84\r\n",
+      "date": "Wed, 31 Jul 2024 17:40:07 -0400",
+      "email_id": ["1910abc75ea156f0"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "How To Defeat Commander Gaius In Shadow Of The Erdtree",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "https://www.veritree.com/\r\n",
+      "date": "Sat, 27 Jul 2024 18:25:06 -0400",
+      "email_id": ["190f64c323191d1b"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Verities",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "\r\nhttps://boingboing.net/2024/07/24/competitive-eaters-jaw-dropping-feat-7-pou=\r\nnds-of-pho-in-15-minutes-video.html\r\n",
+      "date": "Wed, 24 Jul 2024 19:02:55 -0400",
+      "email_id": ["190e6fbc765f033c"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Competitive eater's jaw-dropping feat: 7 Pounds of Pho in 15 minutes (video) - Boing Boing",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "\r\nhttps://mysqlexplain.com/\r\n",
+      "date": "Tue, 16 Jul 2024 12:12:45 +0200",
+      "email_id": ["190bb07c78c8cf2a"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "MySQL Visual Explain",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "<html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"></head><body dir=\"auto\"><div dir=\"ltr\"><br><br><b>James Steidle: Tree planters are misinformed about the impact of what they are doing</b><br><a href=\"https://flip.it/n5k6tY\">https://www.princegeorgecitizen.com/opinion/james-steidle-tree-planters-are-misinformed-about-the-impact-of-what-they-are-doing-9210676</a><br><br>View the article + more on Flipboard.<br><a href=\"https://flip.it/zda5F3\">https://flip.it/zda5F3</a><br><br>Find your favorite topics on Flipboard. Download here.<br><a href=\"http://flip.it/now\">http://flip.it/now</a></div><div dir=\"ltr\"></div></body></html>",
+      "date": "Fri, 12 Jul 2024 19:23:57 +0200",
+      "email_id": ["190a7f91b6155b52"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "James Steidle: Tree planters are misinformed about the impact of what they are doing",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "https://mouseholepress.itch.io/orbital\r\n",
+      "date": "Fri, 12 Jul 2024 12:24:20 +0200",
+      "email_id": ["190a678ff46351f6"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Orbital by Jack Harrison",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "\r\nhttps://www.deep-ml.com/\r\n",
+      "date": "Fri, 12 Jul 2024 12:12:36 +0200",
+      "email_id": ["190a66ea1248c281"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Deep-ML",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "\r\nhttps://www.breakthroughenergy.org/\r\n",
+      "date": "Fri, 12 Jul 2024 12:06:05 +0200",
+      "email_id": ["190a6683a23d050b"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Breakthrough Energy",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "\r\nhttps://vectormagic.com/\r\n",
+      "date": "Sun, 7 Jul 2024 08:53:10 +0200",
+      "email_id": ["1908bf7ce620e8e6"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Vector Magic: Convert JPG, PNG images to SVG, EPS, AI vectors",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "https://mybirdbuddy.com/\r\n",
+      "date": "Wed, 3 Jul 2024 20:14:31 -0400",
+      "email_id": ["1907b17d5d5e8c17"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Bird Buddy: Home",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "\r\nhttps://www.explorersdesign.com/the-1-hp-dragon/\r\n",
+      "date": "Tue, 2 Jul 2024 14:32:34 -0400",
+      "email_id": ["19074b87986ed5d9"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "The 1 HP Dragon",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "Make pipe appointment \r\n",
+      "date": "Sun, 30 Jun 2024 12:22:36 -0400",
+      "email_id": ["19069f4d0f5636cf"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "311",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "https://www.google.com/search?q=3Dsong+emergency+emergency+calling+dr.bleep&=\r\nsca_esv=3D681d2c6e37d88c1e&rlz=3D1CDGOYI_enCA817CA817&hl=3Den-US&sxsrf=3DADL=\r\nYWIJ0S0Te3AydgRBaocQ3JWlmqSxfjA%3A1719693097914&ei=3DKW-AZvq4N7e3wN4PhvuB4As=\r\n&oq=3Dsong+emergency+emergency+calling+dr.bleep&gs_lp=3DEhNtb2JpbGUtZ3dzLXdp=\r\nei1zZXJwIilzb25nIGVtZXJnZW5jeSBlbWVyZ2VuY3kgY2FsbGluZyBkci5ibGVlcDIIEAAYgAQY=\r\nogQyCBAAGIAEGKIEMggQABiABBiiBDIIEAAYogQYiQVIniNQ1hRY3R9wAHgAkAEBmAHvAaABkgmq=\r\nAQUwLjUuMrgBA8gBAPgBAZgCBqACpQjCAgsQABiABBiwAxiiBMICCxAAGLADGKIEGIkFwgIHECMY=\r\nsAIYJ8ICChAhGKABGMMEGAqYAwCIBgGQBgWSBwUwLjQuMqAH4Rs&sclient=3Dmobile-gws-wiz=\r\n-serp#fpstate=3Dive&vld=3Dcid:9b7d476e,vid:gjGG6Y4zPi8,st:0\r\n",
+      "date": "Sat, 29 Jun 2024 16:32:59 -0400",
+      "email_id": ["19065b388682d026"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "https://www.google.com/search?q=song+emergency+emergency+calling+dr.bleep&sca_esv=681d2c6e37d88c1e&rlz=1CDGOYI_enCA817CA817&hl=en-US&sxsrf=ADLYWIJ0S0Te3AydgRBaocQ3JWlmqSxfjA%3A1719693097914&ei=KW-AZvq4N7e3wN4PhvuB4As&oq=song+emergency+emergency+calling+dr.bleep&gs_lp=EhNtb2JpbGUtZ3dzLXdpei1zZXJwIilzb25nIGVtZXJnZW5jeSBlbWVyZ2VuY3kgY2FsbGluZyBkci5ibGVlcDIIEAAYgAQYogQyCBAAGIAEGKIEMggQABiABBiiBDIIEAAYogQYiQVIniNQ1hRY3R9wAHgAkAEBmAHvAaABkgmqAQUwLjUuMrgBA8gBAPgBAZgCBqACpQjCAgsQABiABBiwAxiiBMICCxAAGLADGKIEGIkFwgIHECMYsAIYJ8ICChAhGKABGMMEGAqYAwCIBgGQBgWSBwUwLjQuMqAH4Rs&sclient=mobile-gws-wiz-serp#fpstate=ive&vld=cid:9b7d476e,vid:gjGG6Y4zPi8,st:0",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "https://pca.st/episode/c3ba865e-9233-47c3-9007-c9bf650b5a43\r\n",
+      "date": "Tue, 18 Jun 2024 14:31:21 -0400",
+      "email_id": ["1902c9e308f09ade"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Listicle",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "<html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"></head><body dir=\"auto\"><div dir=\"ltr\"><br><br><b>This Is What a 97-Square-Foot Apartment In Paris Looks Like</b><br><a href=\"https://flip.it/Q3HhGr\">https://www.cubbyathome.com/97-square-foot-paris-apartment-80038204</a><br><br>View the article + more on Flipboard.<br><a href=\"https://flip.it/LPiOEw\">https://flip.it/LPiOEw</a><br><br>Find your favorite topics on Flipboard. Download here.<br><a href=\"http://flip.it/now\">http://flip.it/now</a></div><div dir=\"ltr\"></div></body></html>",
+      "date": "Mon, 17 Jun 2024 18:50:52 -0400",
+      "email_id": ["190286574559bdf0"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "This Is What a 97-Square-Foot Apartment In Paris Looks Like",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "<html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"></head><body dir=\"auto\"><div dir=\"ltr\"><br><br><b>Scientists found a power source with negative carbon emissions</b><br><a href=\"https://flip.it/ftVDLn\">https://bgr.com/science/scientists-found-a-power-source-with-negative-carbon-emissions/</a><br><br>View the article + more on Flipboard.<br><a href=\"https://flip.it/RayjMI\">https://flip.it/RayjMI</a><br><br>Find your favorite topics on Flipboard. Download here.<br><a href=\"http://flip.it/now\">http://flip.it/now</a></div><div dir=\"ltr\"></div></body></html>",
+      "date": "Mon, 17 Jun 2024 18:48:45 -0400",
+      "email_id": ["1902863970d2f501"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Scientists found a power source with negative carbon emissions",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "\r\nhttps://www.canadianminingjournal.com/news/sms-delivers-worlds-largest-excav=\r\nator-komatsu-pc800-to-copper-mountain/\r\n",
+      "date": "Sun, 16 Jun 2024 19:38:35 -0400",
+      "email_id": ["190236ae577bb82e"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "=?utf-8?Q?SMS_delivers_world=E2=80=99s_largest_excavator_?=\r\n =?utf-8?Q?=E2=80=93_Komatsu_PC8000_=E2=80=93_to_Copper_Mountain_?=\r\n =?utf-8?Q?-_Canadian_Mining_Journal?=",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "https://www.thewhiskyexchange.com/p/650/vat-69\r\n",
+      "date": "Sat, 15 Jun 2024 21:43:29 -0400",
+      "email_id": ["1901eb6b9b8d5ef1"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Vat 69 : The Whisky Exchange",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "https://www.suzanneandrew.com/post/episode-1-optimize-your-writing-brain\r\n",
+      "date": "Thu, 13 Jun 2024 18:10:18 -0400",
+      "email_id": ["19013a6daa5b5db2"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "High stardust",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "https://pca.st/episode/f47ced1b-a72f-4abb-a097-0f07bca0020a\r\n",
+      "date": "Wed, 12 Jun 2024 21:56:21 -0400",
+      "email_id": ["1900f4f6ed77e49c"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Usage",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "https://pca.st/episode/c3ba865e-9233-47c3-9007-c9bf650b5a43\r\n",
+      "date": "Wed, 12 Jun 2024 21:55:51 -0400",
+      "email_id": ["1900f4ef81ec5b7f"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Listicle",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "https://en.wikipedia.org/wiki/Holmgang\r\n",
+      "date": "Sat, 8 Jun 2024 12:03:54 -0400",
+      "email_id": ["18ff8e45a63408cf"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Holmgang - Wikipedia",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "Strenuous\r\n",
+      "date": "Fri, 7 Jun 2024 22:37:02 -0400",
+      "email_id": ["18ff5b509910fdeb"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Streaming",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "<html><head><meta http-equiv=3D\"content-type\" content=3D\"text/html; charset=3D=\r\nutf-8\"></head><body dir=3D\"auto\"><div dir=3D\"ltr\"><a href=3D\"https://x.com/s=\r\nteventey/status/1797677045964743151?s=3D43&amp;t=3DJosrImXLm25J_T3QQadmMw\"><=\r\ntable cellpadding=3D\"0\" cellspacing=3D\"0\" border=3D\"0\" style=3D\"border:1px s=\r\nolid #ccd6dd; border-radius: 12px;\" width=3D\"500\" bgcolor=3D\"#ffffff\"><tbody=\r\n><tr><td colspan=3D\"3\" style=3D\"font-size: 0px; line-height: 0px;\" height=3D=\r\n\"12\">&nbsp;</td></tr><tr><td width=3D\"18\" style=3D\"font-size: 0px; line-heig=\r\nht: 0px; min-width: 18px;\">&nbsp;</td><td><table cellpadding=3D\"0\" cellspaci=\r\nng=3D\"0\" border=3D\"0\" width=3D\"464\" align=3D\"left\"><tbody><tr valign=3D\"top\"=\r\n><td width=3D\"48\" valign=3D\"top\"><a href=3D\"https://x.com/steventey?s=3D43\">=\r\n<img src=3D\"https://pbs.twimg.com/profile_images/1506792347840888834/dS-r50J=\r\ne_normal.jpg\" style=3D\"border-radius: 50%; padding: 0px;\" height=3D\"48\" widt=\r\nh=3D\"48\" data-unique-identifier=3D\"\"></a></td><td width=3D\"8\" style=3D\"font-=\r\nsize: 0px; line-height: 0px; min-width:8px;\"><img src=3D\"https://ea.twimg.co=\r\nm/email/self_serve/media/spacer.png\" width=3D\"8\" data-unique-identifier=3D\"\"=\r\n></td><td valign=3D\"middle\" width=3D\"388\" style=3D\"min-width: 388px;\"><table=\r\n cellpadding=3D\"0\" cellspacing=3D\"0\" border=3D\"0\" align=3D\"left\" width=3D\"38=\r\n8\"><tbody><tr><td align=3D\"left\" width=3D\"388\"><b><a href=3D\"https://x.com/s=\r\nteventey?s=3D43\" style=3D\"font-family: Helvetica, Arial, san-serif; font-siz=\r\ne: 14px; line-height: 18px; color: #292c2f; text-decoration: none;\">Steven T=\r\ney</a></b></td></tr><tr><td align=3D\"left\"><a href=3D\"https://x.com/stevente=\r\ny?s=3D43\" style=3D\"font-family: Helvetica, Arial, san-serif; font-size: 14px=\r\n; line-height: 18px; text-decoration: none; color: #7e8c98;\">=E2=81=A6=E2=80=\r\n=AA@steventey=E2=80=AC=E2=81=A9</a></td></tr></tbody></table></td><td valign=\r\n=3D\"top\" width=3D\"20\"><img src=3D\"https://ea.twimg.com/email/self_serve/medi=\r\na/logo_twitter-1497383721365.png\" height=3D\"20\" width=3D\"24\" data-unique-ide=\r\nntifier=3D\"\"></td></tr><tr><td height=3D\"9\" colspan=3D\"4\" style=3D\"font-size=\r\n: 0px; line-height:0px;\"><img src=3D\"https://ea.twimg.com/self_serve/media/s=\r\npacer_464x1-1582829598167.png\" width=3D\"464\" height=3D\"1\" data-unique-identi=\r\nfier=3D\"\"></td></tr><tr><td colspan=3D\"4\" style=3D\"font-family: Helvetica, A=\r\nrial, san-serif;color: #292c2f; font-size: 18px; line-height: 24px; text-dec=\r\noration: none;\">`streamObject` in the <a href=3D\"https://x.com/vercel\">=E2=81=\r\n=A6=E2=80=AA@vercel=E2=80=AC=E2=81=A9</a> AI SDK is such a powerful primitiv=\r\ne for building AI UX.<br><br>It makes streaming structured objects (via <a h=\r\nref=3D\"https://x.com/zodtypes\">=E2=81=A6=E2=80=AA@zodtypes=E2=80=AC=E2=81=A9=\r\n</a>) to the client unbelievably simple.<br><br>=E2=97=86 Example =E2=86=92 <=\r\na href=3D\"https://t.co/Innj9z0DQH\"><span>git.new/SU5snVq</span></a><br>=E2=97=\r\n=86 Docs =E2=86=92 <a href=3D\"https://t.co/ePEzHNHsr2\"><span>d.to/streamObje=\r\nct</span></a><br><br><a href=3D\"https://t.co/VEO4qfYmeK\"><span>x.com/stevent=\r\ney/stat=E2=80=A6</span></a> <a href=3D\"https://t.co/KS0LVc189f\"><span>pic.tw=\r\nitter.com/KS0LVc189f</span></a></td></tr><tr><td height=3D\"3\" colspan=3D\"4\" s=\r\ntyle=3D\"font-size: 0px; line-height:0px;\">&nbsp;</td></tr><tr><td colspan=3D=\r\n\"4\"><a href=3D\"https://x.com/steventey/status/1797677045964743151?s=3D43&amp=\r\n;t=3DJosrImXLm25J_T3QQadmMw\" style=3D\"font-family: Helvetica, Arial, san-ser=\r\nif;color: #667785; font-size: 14px; line-height: 18px; text-decoration:none;=\r\n\">2024-06-03, 1:09=E2=80=AFPM</a></td></tr></tbody></table></td><td width=3D=\r\n\"18\" style=3D\"font-size: 0px; line-height: 0px; min-width: 18px;\">&nbsp;</td=\r\n></tr><tr><td colspan=3D\"3\" style=3D\"font-size: 0px; line-height: 0px;\" heig=\r\nht=3D\"12\">&nbsp;</td></tr></tbody></table></a><br></div><div dir=3D\"ltr\"></d=\r\niv></body></html>=\r\n",
+      "date": "Tue, 4 Jun 2024 08:09:50 -0400",
+      "email_id": ["18fe32801e12a4c1"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Post by Steven Tey on X",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "\r\nhttps://itch.io/jam/songs-and-sagas-jam\r\n",
+      "date": "Tue, 4 Jun 2024 08:02:31 -0400",
+      "email_id": ["18fe321520d8d6e9"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Songs and Sagas Game Jam - itch.io",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "<html><head><meta http-equiv=3D\"content-type\" content=3D\"text/html; charset=3D=\r\nutf-8\"></head><body dir=3D\"auto\"><div dir=3D\"ltr\"><a href=3D\"https://x.com/c=\r\nlaynotestine/status/1796364540487340090?s=3D43&amp;t=3DJosrImXLm25J_T3QQadmM=\r\nw\"><table cellpadding=3D\"0\" cellspacing=3D\"0\" border=3D\"0\" style=3D\"border:1=\r\npx solid #ccd6dd; border-radius: 12px;\" width=3D\"500\" bgcolor=3D\"#ffffff\"><t=\r\nbody><tr><td colspan=3D\"3\" style=3D\"font-size: 0px; line-height: 0px;\" heigh=\r\nt=3D\"12\">&nbsp;</td></tr><tr><td width=3D\"18\" style=3D\"font-size: 0px; line-=\r\nheight: 0px; min-width: 18px;\">&nbsp;</td><td><table cellpadding=3D\"0\" cells=\r\npacing=3D\"0\" border=3D\"0\" width=3D\"464\" align=3D\"left\"><tbody><tr valign=3D\"=\r\ntop\"><td width=3D\"48\" valign=3D\"top\"><a href=3D\"https://x.com/claynotestine?=\r\ns=3D43\"><img src=3D\"https://pbs.twimg.com/profile_images/1686817554558238735=\r\n/2O0Mc_IV_normal.jpg\" style=3D\"border-radius: 50%; padding: 0px;\" height=3D\"=\r\n48\" width=3D\"48\" data-unique-identifier=3D\"\"></a></td><td width=3D\"8\" style=3D=\r\n\"font-size: 0px; line-height: 0px; min-width:8px;\"><img src=3D\"https://ea.tw=\r\nimg.com/email/self_serve/media/spacer.png\" width=3D\"8\" data-unique-identifie=\r\nr=3D\"\"></td><td valign=3D\"middle\" width=3D\"388\" style=3D\"min-width: 388px;\">=\r\n<table cellpadding=3D\"0\" cellspacing=3D\"0\" border=3D\"0\" align=3D\"left\" width=\r\n=3D\"388\"><tbody><tr><td align=3D\"left\" width=3D\"388\"><b><a href=3D\"https://x=\r\n.com/claynotestine?s=3D43\" style=3D\"font-family: Helvetica, Arial, san-serif=\r\n; font-size: 14px; line-height: 18px; color: #292c2f; text-decoration: none;=\r\n\">Clayton Notestine</a></b></td></tr><tr><td align=3D\"left\"><a href=3D\"https=\r\n://x.com/claynotestine?s=3D43\" style=3D\"font-family: Helvetica, Arial, san-s=\r\nerif; font-size: 14px; line-height: 18px; text-decoration: none; color: #7e8=\r\nc98;\">=E2=81=A6=E2=80=AA@ClayNotestine=E2=80=AC=E2=81=A9</a></td></tr></tbod=\r\ny></table></td><td valign=3D\"top\" width=3D\"20\"><img src=3D\"https://ea.twimg.=\r\ncom/email/self_serve/media/logo_twitter-1497383721365.png\" height=3D\"20\" wid=\r\nth=3D\"24\" data-unique-identifier=3D\"\"></td></tr><tr><td height=3D\"9\" colspan=\r\n=3D\"4\" style=3D\"font-size: 0px; line-height:0px;\"><img src=3D\"https://ea.twi=\r\nmg.com/self_serve/media/spacer_464x1-1582829598167.png\" width=3D\"464\" height=\r\n=3D\"1\" data-unique-identifier=3D\"\"></td></tr><tr><td colspan=3D\"4\" style=3D\"=\r\nfont-family: Helvetica, Arial, san-serif;color: #292c2f; font-size: 18px; li=\r\nne-height: 24px; text-decoration: none;\">Anyway. It's been a year since I ma=\r\nde the template. So, it's time I started work on the sequels:<br><br>The Spa=\r\nce Explorer &amp; The Library Explorer.<br><br>Until then, the Classic Explo=\r\nrer, designed for rules-lite, old-school rpgs=E2=80=94has a free version wit=\r\nh a manual.<br><a href=3D\"https://t.co/tJQKguYJDo\"><span>explorers.itch.io/c=\r\nlassic-starte=E2=80=A6</span></a></td></tr><tr><td height=3D\"3\" colspan=3D\"4=\r\n\" style=3D\"font-size: 0px; line-height:0px;\">&nbsp;</td></tr><tr><td colspan=\r\n=3D\"4\"><a href=3D\"https://x.com/claynotestine/status/1796364540487340090?s=3D=\r\n43&amp;t=3DJosrImXLm25J_T3QQadmMw\" style=3D\"font-family: Helvetica, Arial, s=\r\nan-serif;color: #667785; font-size: 14px; line-height: 18px; text-decoration=\r\n:none;\">2024-05-30, 10:14=E2=80=AFPM</a></td></tr></tbody></table></td><td w=\r\nidth=3D\"18\" style=3D\"font-size: 0px; line-height: 0px; min-width: 18px;\">&nb=\r\nsp;</td></tr><tr><td colspan=3D\"3\" style=3D\"font-size: 0px; line-height: 0px=\r\n;\" height=3D\"12\">&nbsp;</td></tr></tbody></table></a><br></div><div dir=3D\"l=\r\ntr\"></div></body></html>=\r\n",
+      "date": "Sat, 1 Jun 2024 11:36:21 -0400",
+      "email_id": ["18fd4720058f5c17"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Post by Clayton Notestine on X",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "<html><head><meta http-equiv=3D\"content-type\" content=3D\"text/html; charset=3D=\r\nutf-8\"></head><body dir=3D\"auto\"><div dir=3D\"ltr\"><a href=3D\"https://x.com/d=\r\narennkeller/status/1796487615237300460?s=3D43&amp;t=3DJosrImXLm25J_T3QQadmMw=\r\n\"><table cellpadding=3D\"0\" cellspacing=3D\"0\" border=3D\"0\" style=3D\"border:1p=\r\nx solid #ccd6dd; border-radius: 12px;\" width=3D\"500\" bgcolor=3D\"#ffffff\"><tb=\r\nody><tr><td colspan=3D\"3\" style=3D\"font-size: 0px; line-height: 0px;\" height=\r\n=3D\"12\">&nbsp;</td></tr><tr><td width=3D\"18\" style=3D\"font-size: 0px; line-h=\r\neight: 0px; min-width: 18px;\">&nbsp;</td><td><table cellpadding=3D\"0\" cellsp=\r\nacing=3D\"0\" border=3D\"0\" width=3D\"464\" align=3D\"left\"><tbody><tr valign=3D\"t=\r\nop\"><td width=3D\"48\" valign=3D\"top\"><a href=3D\"https://x.com/darennkeller?s=3D=\r\n43\"><img src=3D\"https://pbs.twimg.com/profile_images/1771512160734044160/l_2=\r\nvnD6N_normal.jpg\" style=3D\"border-radius: 50%; padding: 0px;\" height=3D\"48\" w=\r\nidth=3D\"48\" data-unique-identifier=3D\"\"></a></td><td width=3D\"8\" style=3D\"fo=\r\nnt-size: 0px; line-height: 0px; min-width:8px;\"><img src=3D\"https://ea.twimg=\r\n.com/email/self_serve/media/spacer.png\" width=3D\"8\" data-unique-identifier=3D=\r\n\"\"></td><td valign=3D\"middle\" width=3D\"388\" style=3D\"min-width: 388px;\"><tab=\r\nle cellpadding=3D\"0\" cellspacing=3D\"0\" border=3D\"0\" align=3D\"left\" width=3D\"=\r\n388\"><tbody><tr><td align=3D\"left\" width=3D\"388\"><b><a href=3D\"https://x.com=\r\n/darennkeller?s=3D43\" style=3D\"font-family: Helvetica, Arial, san-serif; fon=\r\nt-size: 14px; line-height: 18px; color: #292c2f; text-decoration: none;\">Dar=\r\nenn</a></b></td></tr><tr><td align=3D\"left\"><a href=3D\"https://x.com/darennk=\r\neller?s=3D43\" style=3D\"font-family: Helvetica, Arial, san-serif; font-size: 1=\r\n4px; line-height: 18px; text-decoration: none; color: #7e8c98;\">=E2=81=A6=E2=\r\n=80=AA@DarennKeller=E2=80=AC=E2=81=A9</a></td></tr></tbody></table></td><td v=\r\nalign=3D\"top\" width=3D\"20\"><img src=3D\"https://ea.twimg.com/email/self_serve=\r\n/media/logo_twitter-1497383721365.png\" height=3D\"20\" width=3D\"24\" data-uniqu=\r\ne-identifier=3D\"\"></td></tr><tr><td height=3D\"9\" colspan=3D\"4\" style=3D\"font=\r\n-size: 0px; line-height:0px;\"><img src=3D\"https://ea.twimg.com/self_serve/me=\r\ndia/spacer_464x1-1582829598167.png\" width=3D\"464\" height=3D\"1\" data-unique-i=\r\ndentifier=3D\"\"></td></tr><tr><td colspan=3D\"4\" style=3D\"font-family: Helveti=\r\nca, Arial, san-serif;color: #292c2f; font-size: 18px; line-height: 24px; tex=\r\nt-decoration: none;\">My solo indie game reached 10000 wishlists! I never tho=\r\nught it would be possible without a proper marketing team, budget or followi=\r\nng. =F0=9F=99=8F<br><br>How did I get those 10000 wishlists? Time to share w=\r\nhat worked for me! =E2=AC=87=EF=B8=8F=F0=9F=A7=B5 <a href=3D\"https://x.com/s=\r\nearch?q=3D%23gamedev&amp;src=3Dhash\">#gamedev</a> <a href=3D\"https://t.co/IW=\r\nonyvAhiy\"><span>pic.twitter.com/IWonyvAhiy</span></a></td></tr><tr><td heigh=\r\nt=3D\"3\" colspan=3D\"4\" style=3D\"font-size: 0px; line-height:0px;\">&nbsp;</td>=\r\n</tr><tr><td colspan=3D\"4\"><a href=3D\"https://x.com/darennkeller/status/1796=\r\n487615237300460?s=3D43&amp;t=3DJosrImXLm25J_T3QQadmMw\" style=3D\"font-family:=\r\n Helvetica, Arial, san-serif;color: #667785; font-size: 14px; line-height: 1=\r\n8px; text-decoration:none;\">2024-05-31, 6:23=E2=80=AFAM</a></td></tr></tbody=\r\n></table></td><td width=3D\"18\" style=3D\"font-size: 0px; line-height: 0px; mi=\r\nn-width: 18px;\">&nbsp;</td></tr><tr><td colspan=3D\"3\" style=3D\"font-size: 0p=\r\nx; line-height: 0px;\" height=3D\"12\">&nbsp;</td></tr></tbody></table></a><br>=\r\n</div><div dir=3D\"ltr\"></div></body></html>=\r\n",
+      "date": "Sat, 1 Jun 2024 11:34:45 -0400",
+      "email_id": ["18fd4706465bb49d"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Post by Darenn on X",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "\r\nhttps://kotaku.com/animal-well-review-metroidvania-puzzle-2024-goty-18514657=\r\n30\r\n",
+      "date": "Tue, 28 May 2024 16:45:17 -0400",
+      "email_id": ["18fc0f369bf2f063"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "=?utf-8?Q?Animal_Well_Review:_2024=E2=80=99s_Newest_GOTY_Contend?=\r\n =?utf-8?Q?er_Has_Arrived?=",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "\r\nhttps://www.val.town/\r\n",
+      "date": "Sun, 26 May 2024 18:32:30 -0400",
+      "email_id": ["18fb708b28a8a189"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Val Town",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "\r\nhttps://www.youtube.com/watch?v=3DwLXizxVIu6k&embeds_referring_euri=3Dhttps%=\r\n3A%2F%2Fwww.windowscentral.com%2F&source_ve_path=3DMTM5MTE3LDIzODUx&feature=3D=\r\nemb_title\r\n",
+      "date": "Fri, 24 May 2024 18:09:16 -0400",
+      "email_id": ["18faca6ca3ce9b7d"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Alters",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "<html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"></head><body dir=\"auto\"><div dir=\"ltr\"><br><br><b>Reintroduction of 170 European Bison Could Help Remove CO2 Equivalent of 43,000 Cars, Study Finds</b><br><a href=\"https://flip.it/YYCHJb\">https://www.ecowatch.com/bison-reintroduction-carbon-sequestration-climate-science.html</a><br><br>View the article + more on Flipboard.<br><a href=\"https://flip.it/x0cuth\">https://flip.it/x0cuth</a><br><br>Find your favorite topics on Flipboard. Download here.<br><a href=\"http://flip.it/now\">http://flip.it/now</a></div><div dir=\"ltr\"></div></body></html>",
+      "date": "Tue, 21 May 2024 18:57:28 -0400",
+      "email_id": ["18f9d5fee481c022"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Reintroduction of 170 European Bison Could Help Remove CO2 Equivalent of 43,000 Cars, Study Finds",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "https://dprtmnt.com/events/\r\n",
+      "date": "Mon, 20 May 2024 23:02:28 -0400",
+      "email_id": ["18f9919da0a96b00"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "=?utf-8?Q?Events_=E2=80=93_DPRTMNT?=",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "https://earthsea.fandom.com/wiki/Ged\r\n",
+      "date": "Mon, 20 May 2024 09:35:17 -0400",
+      "email_id": ["18f9636dcf5b0fca"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Ged | Earthsea Wiki | Fandom",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "\r\nhttps://www.behance.net/gallery/196059457/Green-Growth-Futura\r\n",
+      "date": "Thu, 16 May 2024 15:38:41 -0400",
+      "email_id": ["18f82ea1c58c98c4"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Green Growth Futura :: Behance",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "https://medium.com/understanding-games/the-magic-circle-febdba265c22\r\n",
+      "date": "Sat, 11 May 2024 13:54:35 -0400",
+      "email_id": ["18f68cadc73c7d91"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "=?utf-8?Q?The_Magic_Circle._Understanding_Games:_How_Video?=\r\n =?utf-8?Q?=E2=80=A6?=",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "Alejandro \r\nadwalldesigns@gmail.com\r\n\r\n",
+      "date": "Sun, 5 May 2024 15:45:47 -0400",
+      "email_id": ["18f4a4acb5c45670"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Fireplace ",
+      "to": "brandonflowers@gmail.com"
+    },
+    {
+      "body": "<html><head><meta http-equiv=3D\"content-type\" content=3D\"text/html; charset=3D=\r\nutf-8\"></head><body dir=3D\"auto\"><div dir=3D\"ltr\"><a href=3D\"https://x.com/d=\r\navehariri/status/1778226222075375674?s=3D43&amp;t=3DJosrImXLm25J_T3QQadmMw\">=\r\n<table cellpadding=3D\"0\" cellspacing=3D\"0\" border=3D\"0\" style=3D\"border:1px s=\r\nolid #ccd6dd; border-radius: 12px;\" width=3D\"500\" bgcolor=3D\"#ffffff\"><tbody=\r\n><tr><td colspan=3D\"3\" style=3D\"font-size: 0px; line-height: 0px;\" height=3D=\r\n\"12\">&nbsp;</td></tr><tr><td width=3D\"18\" style=3D\"font-size: 0px; line-heig=\r\nht: 0px; min-width: 18px;\">&nbsp;</td><td><table cellpadding=3D\"0\" cellspaci=\r\nng=3D\"0\" border=3D\"0\" width=3D\"464\" align=3D\"left\"><tbody><tr valign=3D\"top\"=\r\n><td width=3D\"48\" valign=3D\"top\"><a href=3D\"https://x.com/davehariri?s=3D43\"=\r\n><img src=3D\"https://pbs.twimg.com/profile_images/1685759238134444035/uzRLef=\r\nZs_normal.jpg\" style=3D\"border-radius: 50%; padding: 0px;\" height=3D\"48\" wid=\r\nth=3D\"48\" data-unique-identifier=3D\"\"></a></td><td width=3D\"8\" style=3D\"font=\r\n-size: 0px; line-height: 0px; min-width:8px;\"><img src=3D\"https://ea.twimg.c=\r\nom/email/self_serve/media/spacer.png\" width=3D\"8\" data-unique-identifier=3D\"=\r\n\"></td><td valign=3D\"middle\" width=3D\"388\" style=3D\"min-width: 388px;\"><tabl=\r\ne cellpadding=3D\"0\" cellspacing=3D\"0\" border=3D\"0\" align=3D\"left\" width=3D\"3=\r\n88\"><tbody><tr><td align=3D\"left\" width=3D\"388\"><b><a href=3D\"https://x.com/=\r\ndavehariri?s=3D43\" style=3D\"font-family: Helvetica, Arial, san-serif; font-s=\r\nize: 14px; line-height: 18px; color: #292c2f; text-decoration: none;\">David H=\r\nariri</a></b></td></tr><tr><td align=3D\"left\"><a href=3D\"https://x.com/daveh=\r\nariri?s=3D43\" style=3D\"font-family: Helvetica, Arial, san-serif; font-size: 1=\r\n4px; line-height: 18px; text-decoration: none; color: #7e8c98;\">=E2=81=A6=E2=\r\n=80=AA@davehariri=E2=80=AC=E2=81=A9</a></td></tr></tbody></table></td><td va=\r\nlign=3D\"top\" width=3D\"20\"><img src=3D\"https://ea.twimg.com/email/self_serve/=\r\nmedia/logo_twitter-1497383721365.png\" height=3D\"20\" width=3D\"24\" data-unique=\r\n-identifier=3D\"\"></td></tr><tr><td height=3D\"9\" colspan=3D\"4\" style=3D\"font-=\r\nsize: 0px; line-height:0px;\"><img src=3D\"https://ea.twimg.com/self_serve/med=\r\nia/spacer_464x1-1582829598167.png\" width=3D\"464\" height=3D\"1\" data-unique-id=\r\nentifier=3D\"\"></td></tr><tr><td colspan=3D\"4\" style=3D\"font-family: Helvetic=\r\na, Arial, san-serif;color: #292c2f; font-size: 18px; line-height: 24px; text=\r\n-decoration: none;\">It's too hard to publish a blog post on this site.<br><a=\r\n href=3D\"https://t.co/UmzzPJoExL\"><span>dhariri.com/blog/friction-=E2=80=A6<=\r\n/span></a></td></tr><tr><td height=3D\"3\" colspan=3D\"4\" style=3D\"font-size: 0=\r\npx; line-height:0px;\">&nbsp;</td></tr><tr><td colspan=3D\"4\"><a href=3D\"https=\r\n://x.com/davehariri/status/1778226222075375674?s=3D43&amp;t=3DJosrImXLm25J_T=\r\n3QQadmMw\" style=3D\"font-family: Helvetica, Arial, san-serif;color: #667785; f=\r\nont-size: 14px; line-height: 18px; text-decoration:none;\">2024-04-10, 8:59 P=\r\nM</a></td></tr></tbody></table></td><td width=3D\"18\" style=3D\"font-size: 0px=\r\n; line-height: 0px; min-width: 18px;\">&nbsp;</td></tr><tr><td colspan=3D\"3\" s=\r\ntyle=3D\"font-size: 0px; line-height: 0px;\" height=3D\"12\">&nbsp;</td></tr></t=\r\nbody></table></a><br></div><div dir=3D\"ltr\"></div></body></html>=\r\n",
+      "date": "Thu, 25 Apr 2024 19:20:43 -0400",
+      "email_id": ["18f178fb07d4d894"],
+      "from": "Brandon Flowers <brandonflowers@gmail.com>",
+      "subject": "Post by David Hariri on X",
+      "to": "brandonflowers@gmail.com"
+    }
+  ],
+  "total": 51
+}

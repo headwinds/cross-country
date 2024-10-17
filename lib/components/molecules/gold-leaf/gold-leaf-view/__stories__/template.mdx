@@ -1,0 +1,22 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import * as GoldLeafViewStories from "./template.stories";
+
+<Meta of={GoldLeafViewStories} />
+
+# GoldLeafView
+
+<Subtitle>a feed card</Subtitle>
+
+A feed card presents data from an RSS feed
+
+```jsx
+<GoldLeafView />
+```
+
+### Article Leaf
+
+<Canvas of={GoldLeafViewStories.ArticleLeaf} />
+
+### Email Leaf
+
+<Canvas of={GoldLeafViewStories.EmailLeaf} />

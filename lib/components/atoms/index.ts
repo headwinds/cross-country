@@ -1,7 +1,4 @@
-// TODO type check
-// @ts-nocheck
-// all the folders need index.ts
-/*
+// I want to export all the atoms here so that there are available to all the components with alias as "@cross-country/components"
 export * from "./button";
 export * from "./checkbox";
 export * from "./circle";
@@ -19,5 +16,4 @@ export * from "./row";
 export * from "./select";
 export * from "./svg";
 export * from "./table";
-export * from "./text";
-*/
+// export * from "./text";

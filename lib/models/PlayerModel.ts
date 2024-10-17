@@ -37,4 +37,6 @@ const PlayerModel = Record({
   username: "",
 });
 
+export type PlayerModelType = typeof PlayerModel;
+
 export default PlayerModel;

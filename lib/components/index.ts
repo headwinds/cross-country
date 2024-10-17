@@ -85,6 +85,7 @@ export { default as Wizard } from "./organisms/actors/party/wizard";
 export { default as Wisp } from "./organisms/actors/wisp";
 //export { default as FrozenLake } from "./organisms/frozen-lake";
 export { default as TileGrid } from "./organisms/tile-grid";
+export { default as JsonMapTileGrid } from "./organisms/json-map-tile-grid";
 export { default as Masonry } from "./organisms/masonry";
 
 // templates

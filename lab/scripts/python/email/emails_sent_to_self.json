@@ -1,0 +1,62 @@
+[
+  {
+    "_from": "[{\"email\":\"brandonflowers@gmail.com\",\"name\":\"Brandon Flowers\"}]",
+    "bcc": "[]",
+    "cc": "[]",
+    "flags": "null",
+    "folder": "INBOX",
+    "message_id": "\u003cCADc=5K6rV3N3CAVzgaPfkExib6bFR1_JAXsVha7472t3XT+DDA@mail.gmail.com\u003e",
+    "received_at": "2024-08-03T22:32:46Z",
+    "reply_to": "[{\"email\":\"brandonflowers@gmail.com\",\"name\":\"Brandon Flowers\"}]",
+    "sent_at": "2024-08-03T18:32:46-04:00",
+    "size": 820,
+    "subject": "eat the reich",
+    "to": "[{\"email\":\"brandonflowers@gmail.com\",\"name\":\"Brandon Flowers\"}]",
+    "uid": 249940
+  },
+  {
+    "_from": "[{\"email\":\"brandonflowers@gmail.com\",\"name\":\"Brandon Flowers\"}]",
+    "bcc": "[]",
+    "cc": "[]",
+    "flags": "null",
+    "folder": "INBOX",
+    "message_id": "\u003cCADc=5K70XS2N--Eiu5+sFTWYNb_QXtiwmjXcqG7Jx8mJo_WqbA@mail.gmail.com\u003e",
+    "received_at": "2024-08-03T22:35:39Z",
+    "reply_to": "[{\"email\":\"brandonflowers@gmail.com\",\"name\":\"Brandon Flowers\"}]",
+    "sent_at": "2024-08-03T18:35:39-04:00",
+    "size": 685,
+    "subject": "will kirby",
+    "to": "[{\"email\":\"brandonflowers@gmail.com\",\"name\":\"Brandon Flowers\"}]",
+    "uid": 249942
+  },
+  {
+    "_from": "[{\"email\":\"brandonflowers@gmail.com\",\"name\":\"Brandon Flowers\"}]",
+    "bcc": "[]",
+    "cc": "[]",
+    "flags": "null",
+    "folder": "INBOX",
+    "message_id": "\u003cCADc=5K7YFqEzHYABOSbQqfRr-0gDMQ02cNd5Pa+-iL=ZHgwckQ@mail.gmail.com\u003e",
+    "received_at": "2024-08-04T14:32:40Z",
+    "reply_to": "[{\"email\":\"brandonflowers@gmail.com\",\"name\":\"Brandon Flowers\"}]",
+    "sent_at": "2024-08-04T10:32:40-04:00",
+    "size": 628,
+    "subject": "hexroll",
+    "to": "[{\"email\":\"brandonflowers@gmail.com\",\"name\":\"Brandon Flowers\"}]",
+    "uid": 249944
+  },
+  {
+    "_from": "[{\"email\":\"brandonflowers@gmail.com\",\"name\":\"Brandon Flowers\"}]",
+    "bcc": "[]",
+    "cc": "[]",
+    "flags": "null",
+    "folder": "INBOX",
+    "message_id": "\u003cCADc=5K4qqjzGhSgGU2ZO5MnjwMWdezN9+bh2gta4BH6ioq6T7g@mail.gmail.com\u003e",
+    "received_at": "2024-08-04T14:32:56Z",
+    "reply_to": "[{\"email\":\"brandonflowers@gmail.com\",\"name\":\"Brandon Flowers\"}]",
+    "sent_at": "2024-08-04T10:32:56-04:00",
+    "size": 862,
+    "subject": "scout request",
+    "to": "[{\"email\":\"brandonflowers@gmail.com\",\"name\":\"Brandon Flowers\"}]",
+    "uid": 249945
+  }
+]

@@ -1,5 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Template from "../template";
+
+interface TemplateProps {
+  message: string;
+}
+const Template = ({ message }: TemplateProps) => <p>{message}</p>;
 
 const meta: Meta<typeof Template> = {
   component: Template,
@@ -11,6 +15,6 @@ type Story = StoryObj<typeof Template>;
 
 export const TemplateStory: Story = {
   args: {
-    message: "hello there",
+    message: "hello world",
   },
 };

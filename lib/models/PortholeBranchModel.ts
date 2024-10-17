@@ -1,11 +1,20 @@
 import { Record } from "immutable";
 
+type Image = {
+  imageUrl: string;
+  useText: boolean;
+  defaultImageUrl?: string;
+  text?: string;
+  large?: boolean;
+};
+
 export type PortholeBranchModelType = {
   id: string;
   tags: string[];
   photoUrl: string;
   photoLargeUrl: string;
-  images: string[];
+  images: string[] | Image[];
+  defaultImageUrl?: string;
   link: string;
   publishedDate: string;
   title: string;
