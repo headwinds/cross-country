@@ -1,6 +1,6 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import VennDiagram from "./venn-diagram";
+import { VennDiagram } from "@cross-country/components/molecules";
 
 const meta: Meta<typeof VennDiagram> = {
   component: VennDiagram,
