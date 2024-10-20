@@ -79,7 +79,7 @@ const VennDiagram = () => {
           fontSize="20"
           fontWeight="bold"
         >
-          Wizards
+          Gandalf
         </text>
 
         {/* Center dot */}

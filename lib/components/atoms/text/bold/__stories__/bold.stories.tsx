@@ -12,9 +12,6 @@ export default meta;
 type Story = StoryObj<typeof Bold>;
 
 export const BoldStory: Story = {
-  args: {
-    message: "hello world",
-  },
   render: (args) => (
     <Paragraph>
       Joan of{" "}
