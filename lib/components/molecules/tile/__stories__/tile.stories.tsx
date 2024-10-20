@@ -1,52 +1,7 @@
-/*
-import TileStory from "./tile-story";
-import AnimatedTileStory from "./tile-animated-story";
-import { Column, SubHeadline, Link } from "../../..";
-
-export default {
-  title: "components/molecules/tile",
-};
-
-export const LandTile = {
-  render: () => (
-    <Column>
-      <TileStory
-        model={{
-          id: 0,
-          fill: "green",
-        }}
-      />
-    </Column>
-  ),
-
-  name: "land tile",
-};
-
-export const WaterTile = {
-  render: () => (
-    <Column>
-      <TileStory
-        model={{
-          id: 0,
-          fill: "lightblue",
-        }}
-      />
-    </Column>
-  ),
-
-  name: "water tile",
-};
-
-export const AnimateTileColor = {
-  render: () => <AnimatedTileStory />,
-  name: "animate tile color",
-};
-*/
-
 import type { Meta, StoryObj } from "@storybook/react";
 import TileStory from "./tile-story";
 import AnimatedTileStory from "./tile-animated-story";
-import Column from "@cross-country/atoms/column";
+import { Column } from "../../../";
 import Tile from "../tile";
 
 interface TileProps {
@@ -83,7 +38,9 @@ export const WaterTile = {
   name: "water tile",
 };
 
+/*
 export const AnimateTileColor = {
   render: () => <AnimatedTileStory />,
   name: "animate tile color",
 };
+*/

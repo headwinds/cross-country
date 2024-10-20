@@ -1,3 +1,22 @@
 .bold {
-  font-weight: bold;
+  font-weight: 700;
+}
+
+.storyBold {
+  font-weight: 500;
+  display: inline-block; /* Ensures the transform works as expected */
+  animation: bounceAndGrow 2s ease-in-out 1s;
+}
+
+@keyframes bounceAndGrow {
+  0%,
+  100% {
+    transform: scale(1);
+    color: black;
+  }
+  50% {
+    transform: scale(2) translateX(10px);
+    color: red;
+    font-weight: 900;
+  }
 }

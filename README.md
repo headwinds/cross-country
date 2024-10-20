@@ -9,7 +9,7 @@ Core Tech
 - React (18.02), react-spring & react-hook-form
 - CSS modules & Tailwind CSS compatible
 - D3
-- Storybook 7
+- Storybook 8
 - Typescript 5
 - Vite
 
@@ -67,7 +67,7 @@ By wrapping html, each component is augmented for building accessible experience
 
 ## Server Side Rendering
 
-Part of my dogfooding process is to use my library on my own site, [headwinds](https://headwinds.vercel.app).
+Part of my [dogfooding](https://uxinsight.org/dogfooding-a-powerful-addition-to-the-user-research-toolkit/) process is to use my library on my own site, [headwinds](https://headwinds.vercel.app).
 
 Initially, I ran into a build error where I had to account for every `window` and `document` ensuring that they are not referenced until the UI hits the client. After hunting through my webpack build file, I was ble to eliminate them all, and it now works 100% server side!
 
@@ -115,6 +115,14 @@ npx changeset version
 ```
 
 Need to run both commands `npx changeset` only creates the changeset while `npx changeset version` will then update the package.json
+
+## Unit Tests
+
+This library uses Jest & React Testing Library for unit tests.
+
+```
+npm test
+```
 
 ## Publish to NPM
 

@@ -1,21 +1,15 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "../components";
+import VennDiagram from "./venn-diagram";
 
-const Intro = ({ children }: { children: React.ReactNode }) => {
-  return <Button>{children}</Button>;
-};
-
-const meta: Meta<typeof Intro> = {
-  component: Intro,
+const meta: Meta<typeof VennDiagram> = {
+  component: VennDiagram,
   title: "Cross Country",
-} satisfies Meta<typeof Intro>;
+} satisfies Meta<typeof VennDiagram>;
 
 export default meta;
-type Story = StoryObj<typeof Intro>;
+type Story = StoryObj<typeof VennDiagram>;
 
-export const ButtonStory: Story = {
-  args: {
-    children: "Click Me",
-  },
+export const VennDiagramStory: Story = {
+  render: () => <VennDiagram />,
 };

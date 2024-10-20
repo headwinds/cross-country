@@ -1,3 +1,5 @@
+"use client";
+
 import { EmailModelType } from "@cross-country/models/EmailModel";
 import { useState } from "react";
 import { Card } from "../../..";

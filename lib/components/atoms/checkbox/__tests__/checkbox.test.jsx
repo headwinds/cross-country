@@ -4,7 +4,7 @@ import Checkbox from "../";
 import { vi } from "vitest";
 
 const handleClick = vi.fn();
-npm 
+
 describe("<Button />", () => {
   test("renders", () => {
     const { container } = render(

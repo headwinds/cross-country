@@ -1,5 +1,11 @@
 # cross-country
 
+## 1.2.15
+
+### Patch Changes
+
+- new article template
+
 ## 1.2.14
 
 ### Patch Changes

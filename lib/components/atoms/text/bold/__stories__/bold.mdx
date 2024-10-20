@@ -1,0 +1,37 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import * as BoldStories from "./bold.stories";
+
+<Meta of={BoldStories} />
+
+# Bold
+
+In most cases, we can use a simple bold class instead of a component but since bold acts like a span and can take any style, there is an opportunity to reinvest bold with animation and flare.
+
+```jsx
+.storyBold {
+  font-weight: 500;
+  display: inline-block; /* Ensures the transform works as expected */
+  animation: bounceAndGrow 2s ease-in-out 1s;
+}
+
+@keyframes bounceAndGrow {
+  0%,
+  100% {
+    transform: scale(1);
+    color: black;
+  }
+  50% {
+    transform: scale(2) translateX(10px);
+    color: red;
+    font-weight: 900;
+  }
+}
+
+<Paragraph>
+  Joan of <Bold>Arc</Bold>
+</Paragraph>
+```
+
+### Story
+
+<Canvas of={BoldStories.BoldStory} />
