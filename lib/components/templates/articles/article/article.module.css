@@ -1,0 +1,69 @@
+@import "../../../global.module.css";
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(6, auto);
+  grid-template-areas:
+    "header header header header header header header header"
+    "hero hero hero hero hero hero hero hero"
+    "content content content content content content content content"
+    "article article article article article ai ai ai"
+    "articles articles articles articles articles articles articles articles"
+    "footer footer footer footer footer footer footer footer";
+  grid-gap: 8px;
+  transition: grid-template-areas 0.3s ease-in-out;
+}
+
+.header {
+  grid-area: header;
+  min-height: 50px;
+}
+
+.hero {
+  grid-area: hero;
+  min-height: 400px;
+}
+
+.curator {
+  grid-area: content;
+  min-height: 50px;
+}
+
+.article {
+  grid-area: article;
+}
+
+.ai {
+  grid-area: ai;
+}
+
+/* add expanded class to parent to animate on click */
+.expanded .ai {
+  width: 0;
+  opacity: 0;
+}
+
+.article,
+.ai {
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.articles {
+  grid-area: articles;
+  min-height: 200px;
+}
+
+.footer {
+  grid-area: footer;
+  min-height: 200px;
+}
+
+.commonBlockedIn {
+  background-color: var(--template-color);
+}
+
+.heroBlockedIn {
+  background-color: var(--template-hero-color);
+}
