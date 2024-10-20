@@ -116,6 +116,14 @@ npx changeset version
 
 Need to run both commands `npx changeset` only creates the changeset while `npx changeset version` will then update the package.json
 
+## Unit Tests
+
+This library uses Jest & React Testing Library for unit tests.
+
+```
+npm test
+```
+
 ## Publish to NPM
 
 ```

@@ -91,6 +91,7 @@ export { default as Masonry } from "./organisms/masonry";
 // templates
 export { default as HomeTemplate } from "./templates/home";
 export { default as HeadwindsHomeTemplate } from "./templates/home/headwinds";
+export { default as ArticleTemplate } from "./templates/articles/article";
 
 // pages
 export { default as HeadwindsHomePage } from "./pages/home/headwinds";
