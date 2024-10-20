@@ -33,8 +33,10 @@ const setDomain = (
     typeof window !== "undefined" && typeof document !== "undefined";
 
   if (isRunningOnWeb) {
-    if (document) {
-      return document?.domain.includes("localhost") ? localhost : hosted;
+    if (typeof window !== "undefined") {
+      return window.location.hostname.includes("localhost")
+        ? localhost
+        : hosted;
     }
     console.log("React native - see getDocument on server-side-util.ts");
   }
