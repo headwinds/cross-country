@@ -1,22 +1,19 @@
 import React from "react";
-import { SVG, Circle } from "@cross-country/components/atoms";
+import VennDiagramCircle from "./venn-diagram-circle";
+import VennDiagramCrossLabel from "./venn-diagram-cross-label";
+import { Column } from "@cross-country/components/atoms";
+import { defaultCircles } from "./venn-diagram-default-circles";
+import { VennDiagramProps } from "./venn-diagram.types";
 
-const VennDiagram = () => {
+const VennDiagram: React.FC<VennDiagramProps> = ({
+  circles = defaultCircles,
+  crossLabel = "Cross Country",
+  width = 500,
+  height = 400,
+}) => {
   return (
-    <div className="w-full max-w-2xl mx-auto">
-      <SVG
-        viewBox="0 0 500 350"
-        className="w-full h-auto"
-        aria-labelledby="venn-title venn-desc"
-      >
-        <title id="venn-title">
-          Venn Diagram: Wizards, Data Viz, and Simulation
-        </title>
-        <desc id="venn-desc">
-          A Venn diagram showing the relationships between Wizards, Data Viz,
-          and Simulation, with a callout for the Cross Country intersection
-        </desc>
-
+    <Column>
+      <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`}>
         <defs>
           <pattern
             id="diagonalHatch"
@@ -31,57 +28,15 @@ const VennDiagram = () => {
           </pattern>
         </defs>
 
-        {/* Simulation Circle */}
-        <Circle cx="250" cy="120" r="99" fill="#6b8e23" opacity="0.6" />
-
-        {/* Data Visualization Circle */}
-        <Circle cx="195" cy="230" r="99" fill="#508b8b" opacity="0.6" />
-
-        {/* Wizards Circle */}
-        <Circle cx="305" cy="230" r="99" fill="#b0b7b9" opacity="0.6" />
+        {circles.map((circle, index) => (
+          <VennDiagramCircle circle={circle} />
+        ))}
 
         {/* Intersections with diagonal lines */}
         <path
           d="M250,120 A99,99 0 0,1 305,230 A99,99 0 0,1 195,230 A99,99 0 0,1 250,120"
           fill="url(#diagonalHatch)"
         />
-
-        {/* Labels */}
-        <text
-          x="250"
-          y="85"
-          textAnchor="middle"
-          fill="#4a4a4a"
-          fontSize="20"
-          fontWeight="bold"
-        >
-          Simulation
-        </text>
-        <text
-          x="140"
-          y="250"
-          textAnchor="middle"
-          fill="#4a4a4a"
-          fontSize="20"
-          fontWeight="bold"
-        >
-          <tspan x="140" dy="0">
-            Data
-          </tspan>
-          <tspan x="140" dy="24">
-            Viz
-          </tspan>
-        </text>
-        <text
-          x="350"
-          y="260"
-          textAnchor="middle"
-          fill="#4a4a4a"
-          fontSize="20"
-          fontWeight="bold"
-        >
-          Wizards
-        </text>
 
         {/* Center dot */}
         <circle cx="250" cy="175" r="3" fill="#4a4a4a" />
@@ -93,25 +48,9 @@ const VennDiagram = () => {
           stroke="#4a4a4a"
           strokeWidth="1"
         />
-
-        {/* Cross Country label */}
-        <text
-          x="365"
-          y="82"
-          textAnchor="start"
-          fill="#767676"
-          fontSize="30"
-          fontWeight="bold"
-        >
-          <tspan x="365" dy="0">
-            Cross
-          </tspan>
-          <tspan x="375" dy="32">
-            Country
-          </tspan>
-        </text>
-      </SVG>
-    </div>
+        <VennDiagramCrossLabel label={crossLabel} />
+      </svg>
+    </Column>
   );
 };
 

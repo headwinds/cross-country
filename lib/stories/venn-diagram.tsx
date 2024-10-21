@@ -1,7 +1,105 @@
 import React from "react";
 import { SVG, Circle } from "@cross-country/components/atoms";
 
-const VennDiagram = () => {
+type VennDiagramCircleLabel = {
+  label: string;
+  x: string;
+  y: string;
+  textAnchor: string;
+  fill: string;
+  fontSize: string;
+  fontWeight: string;
+};
+
+type VennDiagramCircle = {
+  label: string;
+  fill: string;
+  opacity: number;
+  radius: number;
+  cx: string;
+  cy: string;
+  circleLabel: VennDiagramCircleLabel;
+};
+interface VennDiagramProps {
+  circles: VennDiagramCircle[];
+  mainLabel: string;
+}
+
+const MainLabel = ({ label }: { label: string }) => {
+  const indent = 365;
+
+  if (label.split(" ").length > 1) {
+    return label.split(" ").map((char, index) => (
+      <tspan x={indent} dy={index * 32}>
+        {label}
+      </tspan>
+    ));
+  }
+
+  return (
+    <tspan x={indent} dy={32}>
+      {label}
+    </tspan>
+  );
+};
+const defaultCircles: VennDiagramCircle[] = [
+  {
+    label: "Simulation",
+    fill: "#6b8e23",
+    opacity: 0.6,
+    radius: 99,
+    cx: "250",
+    cy: "120",
+    circleLabel: {
+      label: "Simulation",
+      x: "250",
+      y: "85",
+      textAnchor: "middle",
+      fill: "#4a4a4a",
+      fontSize: "20",
+      fontWeight: "bold",
+    },
+  },
+  {
+    label: "Data Viz",
+    fill: "#508b8b",
+    opacity: 0.6,
+    radius: 99,
+    cx: "195",
+    cy: "230",
+    circleLabel: {
+      label: "Data Viz",
+      x: "140",
+      y: "250",
+      textAnchor: "middle",
+      fill: "#4a4a4a",
+      fontSize: "20",
+      fontWeight: "bold",
+    },
+  },
+  {
+    label: "Wizards",
+    fill: "#b0b7b9",
+    opacity: 0.6,
+    radius: 99,
+    cx: "305",
+    cy: "230",
+    circleLabel: {
+      label: "Wizards",
+      x: "350",
+      y: "260",
+      textAnchor: "middle",
+      fill: "#4a4a4a",
+      fontSize: "20",
+      fontWeight: "bold",
+    },
+  },
+];
+
+const VennDiagram = ({
+  circles = defaultCircles,
+  mainLabel = "Cross Country",
+}: VennDiagramProps) => {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <SVG
@@ -31,14 +129,27 @@ const VennDiagram = () => {
           </pattern>
         </defs>
 
-        {/* Simulation Circle */}
-        <Circle cx="250" cy="120" r="99" fill="#6b8e23" opacity="0.6" />
-
-        {/* Data Visualization Circle */}
-        <Circle cx="195" cy="230" r="99" fill="#508b8b" opacity="0.6" />
-
-        {/* Wizards Circle */}
-        <Circle cx="305" cy="230" r="99" fill="#b0b7b9" opacity="0.6" />
+        {circles.map((circle) => (
+          <g>
+            <Circle
+              cx={circle.cx}
+              cy={circle.cy}
+              r={circle.radius}
+              fill={circle.fill}
+              opacity={circle.opacity}
+            />
+            <text
+              x="250"
+              y="85"
+              textAnchor="middle"
+              fill="#4a4a4a"
+              fontSize="20"
+              fontWeight="bold"
+            >
+              Simulation
+            </text>
+          </g>
+        ))}
 
         {/* Intersections with diagonal lines */}
         <path
@@ -103,12 +214,7 @@ const VennDiagram = () => {
           fontSize="30"
           fontWeight="bold"
         >
-          <tspan x="365" dy="0">
-            Cross
-          </tspan>
-          <tspan x="375" dy="32">
-            Country
-          </tspan>
+          <MainLabel label={mainLabel} />
         </text>
       </SVG>
     </div>
