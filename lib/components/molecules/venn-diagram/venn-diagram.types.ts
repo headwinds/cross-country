@@ -5,6 +5,7 @@ export type VennDiagramCircleLabel = {
   textAnchor: string;
   fontSize: string;
   fontWeight: string;
+  fontFamily: string;
   labelFill: string;
 };
 
@@ -23,8 +24,9 @@ export interface VennDiagramCircleProps {
 }
 
 export interface VennDiagramProps {
-  circles: VennDiagramCircle[];
-  crossLabel: string;
-  width: number;
-  height: number;
+  circles?: VennDiagramCircle[];
+  crossLabel?: string;
+  width?: number;
+  height?: number;
+  angleLineLength?: number;
 }

@@ -1,11 +1,13 @@
 import { VennDiagramCircle } from "./venn-diagram.types";
 
+const circleRadius = 105;
+
 export const defaultCircles: VennDiagramCircle[] = [
   {
     label: "Simulation",
     fill: "#6b8e23",
     opacity: 0.6,
-    radius: 99,
+    radius: circleRadius,
     cx: "250",
     cy: "120",
     circleLabel: {
@@ -16,13 +18,14 @@ export const defaultCircles: VennDiagramCircle[] = [
       labelFill: "#4a4a4a",
       fontSize: "20",
       fontWeight: "bold",
+      fontFamily: "Nunito Sans",
     },
   },
   {
     label: "Data Viz",
     fill: "#508b8b",
     opacity: 0.6,
-    radius: 99,
+    radius: circleRadius,
     cx: "195",
     cy: "230",
     circleLabel: {
@@ -33,13 +36,14 @@ export const defaultCircles: VennDiagramCircle[] = [
       labelFill: "#4a4a4a",
       fontSize: "20",
       fontWeight: "bold",
+      fontFamily: "Nunito Sans",
     },
   },
   {
     label: "Wizards",
     fill: "#b0b7b9",
     opacity: 0.6,
-    radius: 99,
+    radius: circleRadius,
     cx: "305",
     cy: "230",
     circleLabel: {
@@ -50,6 +54,7 @@ export const defaultCircles: VennDiagramCircle[] = [
       labelFill: "#4a4a4a",
       fontSize: "20",
       fontWeight: "bold",
+      fontFamily: "Nunito Sans",
     },
   },
 ];

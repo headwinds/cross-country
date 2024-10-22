@@ -11,5 +11,7 @@ export default meta;
 type Story = StoryObj<typeof VennDiagram>;
 
 export const VennDiagramStory: Story = {
-  render: () => <VennDiagram />,
+  render: () => (
+    <VennDiagram crossLabel="Cross Country" width={500} height={500} />
+  ),
 };

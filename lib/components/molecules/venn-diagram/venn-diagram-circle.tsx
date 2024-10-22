@@ -10,7 +10,16 @@ const VennDiagramCircle: React.FC<VennDiagramCircleProps> = ({
     radius,
     fill,
     opacity,
-    circleLabel: { label, x, y, textAnchor, labelFill, fontSize, fontWeight },
+    circleLabel: {
+      label,
+      x,
+      y,
+      textAnchor,
+      labelFill,
+      fontSize,
+      fontWeight,
+      fontFamily = "Nunito Sans",
+    },
   },
 }: VennDiagramCircleProps) => {
   return (
@@ -23,6 +32,7 @@ const VennDiagramCircle: React.FC<VennDiagramCircleProps> = ({
         fill={labelFill}
         fontSize={fontSize}
         fontWeight={fontWeight}
+        fontFamily={fontFamily}
       >
         {label}
       </text>

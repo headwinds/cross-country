@@ -7,9 +7,10 @@ import { VennDiagramProps } from "./venn-diagram.types";
 
 const VennDiagram: React.FC<VennDiagramProps> = ({
   circles = defaultCircles,
-  crossLabel = "Cross Country",
+  crossLabel = "Cross Section Label",
   width = 500,
   height = 400,
+  angleLineLength = 370,
 }) => {
   return (
     <Column>
@@ -43,12 +44,20 @@ const VennDiagram: React.FC<VennDiagramProps> = ({
 
         {/* Angled callout line */}
         <path
-          d="M250,175 L250,120 L360,92"
+          d={`M250,175 L250,120 L${angleLineLength},92`}
           fill="none"
           stroke="#4a4a4a"
           strokeWidth="1"
         />
-        <VennDiagramCrossLabel label={crossLabel} />
+        <VennDiagramCrossLabel
+          label={crossLabel}
+          leftPad={10}
+          textAnchor="start"
+          fontSize="28px"
+          fontWeight="700"
+          fontFamily="Nunito Sans"
+          fill="#4a4a4a"
+        />
       </svg>
     </Column>
   );
