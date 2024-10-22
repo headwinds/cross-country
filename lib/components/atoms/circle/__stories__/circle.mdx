@@ -1,7 +1,7 @@
 import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
-import * as CirclesStories from "./circle.stories";
+import * as CircleStories from "./circle.stories";
 
-<Meta of={CirclesStories} />
+<Meta of={CircleStories} />
 
 # Circle
 
@@ -27,6 +27,10 @@ exit
   .remove()
 ```
 
+### Circle
+
+<Canvas of={CircleStories.CircleStory} />
+
 ### Circles
 
-<Canvas of={CirclesStories.Circles} />
+<Canvas of={CircleStories.CirclesStory} />
