@@ -4,41 +4,53 @@ import { Tile, Column, Row } from "../..";
 import styles from "./tile-grid.module.css";
 import ColorUtil from "../../../utils/colour-util";
 import clsx from "clsx";
+import { TileModelType } from "@cross-country/models/TileModel";
 
-const defaultTile = {
+const defaultTile: TileModelType = {
+  id: "0",
+  name: "snowbank",
   label: "",
   description: "",
-  material: "",
+  material: "snow",
   movement_cost: 0,
-  elevation: 0,
-  color: "#000",
+  color: 10,
+  type: "tile",
   skin: "",
   damage: 0,
+  is_obstacle: true,
+  obstacle_remover: "shovel",
+  fill: "#67bd67",
+  elevation: 0,
   age: -1, // doesn't age
 };
-const createDemoModels = () => {
-  //const range = [...Array(64).keys()]; // chess!
-  const range = [...Array(12).keys()];
-  return range.map((index) => {
-    return { id: index, ...defaultTile };
-  });
-};
+
 const rgb = ColorUtil.hexToRgb("#67bd67");
 const darkenColor = -0.1; // 10% darker
 const shadedColor = ColorUtil.getShadedColor(rgb, darkenColor);
-const demoModels = createDemoModels();
+
+interface TileGridProps {
+  totalInRow?: number;
+  gapSize?: number;
+  models?: TileModelType[];
+  isDemo?: boolean;
+  width?: number;
+  tileConfig?: { size: number; fill: string; cornerColor: string };
+  isIsometric?: boolean;
+  customClass?: string | null;
+  tileRefs?: React.RefObject<HTMLDivElement[]>;
+}
 
 const TileGrid = ({
   totalInRow = 4,
   gapSize = 0,
-  models = demoModels,
+  models = [defaultTile],
   isDemo = false,
   width = 400,
   tileConfig = { size: 100, fill: "#67bd67", cornerColor: shadedColor },
   isIsometric = false,
   customClass = null,
   tileRefs,
-}) => {
+}: TileGridProps) => {
   const [tileSeleted, setSelected] = useState(null);
 
   const size = Math.floor(width / totalInRow - gapSize);
