@@ -24,7 +24,12 @@ const VennDiagramCrossLabel = ({
   const children =
     label.split(" ").length > 1 ? (
       label.split(" ").map((part, index) => (
-        <tspan x={indent + leftPad * index} y={index * startY + 50} dy={startY}>
+        <tspan
+          x={indent + leftPad * index}
+          y={index * startY + 50}
+          dy={startY}
+          key={index}
+        >
           {part}
         </tspan>
       ))

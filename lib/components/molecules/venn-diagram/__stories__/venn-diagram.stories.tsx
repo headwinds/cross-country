@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 import VennDiagram from "../venn-diagram";
-import { defaultCircles } from "../venn-diagram-default-circles";
+import { defaultCircles, twoCircles } from "../venn-diagram-default-circles";
 
 const meta: Meta<typeof VennDiagram> = {
   component: VennDiagram,
@@ -13,4 +13,10 @@ type Story = StoryObj<typeof VennDiagram>;
 
 export const VennDiagramStory: Story = {
   render: () => <VennDiagram circles={defaultCircles} />,
+};
+
+export const VennDiagramTwoCirclesStory: Story = {
+  render: () => {
+    return <VennDiagram circles={twoCircles} crossLabel="Magic" />;
+  },
 };

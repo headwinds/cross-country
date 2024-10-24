@@ -10,7 +10,6 @@ export type VennDiagramCircleLabel = {
 };
 
 export type VennDiagramCircle = {
-  label: string;
   fill: string;
   opacity: number;
   radius: number;

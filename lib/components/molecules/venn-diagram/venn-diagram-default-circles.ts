@@ -4,7 +4,6 @@ const circleRadius = 105;
 
 export const defaultCircles: VennDiagramCircle[] = [
   {
-    label: "Simulation",
     fill: "#6b8e23",
     opacity: 0.6,
     radius: circleRadius,
@@ -22,7 +21,6 @@ export const defaultCircles: VennDiagramCircle[] = [
     },
   },
   {
-    label: "Data Viz",
     fill: "#508b8b",
     opacity: 0.6,
     radius: circleRadius,
@@ -40,7 +38,6 @@ export const defaultCircles: VennDiagramCircle[] = [
     },
   },
   {
-    label: "Wizards",
     fill: "#b0b7b9",
     opacity: 0.6,
     radius: circleRadius,
@@ -53,6 +50,43 @@ export const defaultCircles: VennDiagramCircle[] = [
       textAnchor: "middle",
       labelFill: "#4a4a4a",
       fontSize: "20",
+      fontWeight: "bold",
+      fontFamily: "Nunito Sans",
+    },
+  },
+];
+
+export const twoCircles: VennDiagramCircle[] = [
+  {
+    fill: "pink",
+    opacity: 0.6,
+    radius: circleRadius,
+    cx: "150",
+    cy: "120",
+    circleLabel: {
+      label: "Art",
+      x: "110",
+      y: "85",
+      textAnchor: "middle",
+      labelFill: "#4a4a4a",
+      fontSize: "22",
+      fontWeight: "bold",
+      fontFamily: "Nunito Sans",
+    },
+  },
+  {
+    fill: "grey",
+    opacity: 0.6,
+    radius: circleRadius,
+    cx: "295",
+    cy: "120",
+    circleLabel: {
+      label: "Technology",
+      x: "320",
+      y: "160",
+      textAnchor: "middle",
+      labelFill: "#4a4a4a",
+      fontSize: "22",
       fontWeight: "bold",
       fontFamily: "Nunito Sans",
     },
