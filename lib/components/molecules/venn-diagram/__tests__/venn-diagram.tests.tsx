@@ -7,7 +7,12 @@ import { VennDiagramProps } from "../venn-diagram.types";
 import { defaultCircles } from "../venn-diagram-default-circles";
 const vennDiagramProps: VennDiagramProps = {
   circles: defaultCircles,
-  crossLabel: "Cross Section Label",
+  crossLabel: {
+    label: "Cross Section Label",
+    indent: 380,
+    textY: 0,
+    startY: 30,
+  },
   width: 500,
   height: 400,
   angleLineLength: 370,

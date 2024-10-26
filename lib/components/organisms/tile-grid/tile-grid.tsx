@@ -13,7 +13,7 @@ const defaultTile: TileModelType = {
   description: "",
   material: "snow",
   movement_cost: 0,
-  color: 10,
+  color: "#67bd67",
   type: "tile",
   skin: "",
   damage: 0,

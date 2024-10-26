@@ -25,12 +25,17 @@ export const TileGridStory: Story = {
       damage: 0,
       age: -1, // doesn't age
       fill: "lightblue",
+      name: "",
+      type: "default",
+      is_obstacle: false,
+      obstacle_remover: "none",
+      id: "",
     };
     const createDemoModels = () => {
       //const range = [...Array(64).keys()]; // chess!
       const range = [...Array(12).keys()];
       return range.map((index) => {
-        return { id: index, ...tile };
+        return { id: String(index), ...tile };
       });
     };
 

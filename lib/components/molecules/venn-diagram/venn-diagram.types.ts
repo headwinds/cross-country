@@ -38,7 +38,7 @@ type Intersection = {
   r: number;
 };
 
-type Dot = {
+export type Dot = {
   cx: number;
   cy: number;
   r: number;
