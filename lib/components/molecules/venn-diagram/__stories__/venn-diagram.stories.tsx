@@ -17,9 +17,13 @@ export const VennDiagramStory: Story = {
       circles={defaultCircles}
       crossLabel={{
         label: "Cross Country",
+        indent: 380,
+        textY: 0,
+        startY: 30,
       }}
       x={0}
       y={0}
+      dot={{ cx: 250, cy: 210, r: 3 }}
     />
   ),
 };

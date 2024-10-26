@@ -38,6 +38,12 @@ type Intersection = {
   r: number;
 };
 
+type Dot = {
+  cx: number;
+  cy: number;
+  r: number;
+};
+
 export interface VennDiagramProps {
   circles?: VennDiagramCircle[];
   crossLabel?: CrossLabel;
@@ -49,4 +55,5 @@ export interface VennDiagramProps {
   x?: number;
   y?: number;
   intersection?: Intersection;
+  dot?: Dot;
 }

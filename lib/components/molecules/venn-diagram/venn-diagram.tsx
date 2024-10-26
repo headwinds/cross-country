@@ -20,6 +20,7 @@ const VennDiagram = ({
   verticalLineY = 120,
   x = 50,
   y = 50,
+  dot = { cx: 250, cy: 175, r: 3 },
 }: VennDiagramProps) => {
   console.log("VennDiagram circles", circles);
 
@@ -53,6 +54,7 @@ const VennDiagram = ({
               crossPosition={
                 circles.length === 3 ? { x: 0, y: 0 } : { x: -28, y: -60 }
               }
+              dot={dot}
             />
           )}
         </g>

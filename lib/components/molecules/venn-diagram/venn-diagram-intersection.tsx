@@ -1,6 +1,6 @@
 import React from "react";
 import VennDiagramCrossLabel from "./venn-diagram-cross-label";
-import { VennDiagramProps, CrossLabel } from "./venn-diagram.types";
+import { VennDiagramProps, CrossLabel, Dot } from "./venn-diagram.types";
 
 interface VennDiagramIntersectionProps extends VennDiagramProps {
   angleLineLength: number;
@@ -8,10 +8,8 @@ interface VennDiagramIntersectionProps extends VennDiagramProps {
   crossLabel: CrossLabel;
   crossPosition: { x: number; y: number };
   verticalLineY: number;
+  dot: Dot;
 }
-
-const hatchBottom = 100;
-const hatchRightSide = 300;
 
 const VennDiagramIntersection: React.FC<VennDiagramIntersectionProps> = ({
   crossLabel = {
@@ -24,6 +22,7 @@ const VennDiagramIntersection: React.FC<VennDiagramIntersectionProps> = ({
   angleLineY = 100,
   crossPosition = { x: 0, y: 0 },
   verticalLineY = 120,
+  dot = { cx: 250, cy: 175, r: 3 },
 }) => {
   return (
     <g transform={`translate(12, -14) scale(0.95)`}>
@@ -71,10 +70,10 @@ const VennDiagramIntersection: React.FC<VennDiagramIntersectionProps> = ({
         </g>
 
         {/* Center dot */}
-        <circle cx="250" cy="175" r="3" fill="#4a4a4a" />
+        <circle cx={dot.cx} cy={dot.cy} r={dot.r} fill="#4a4a4a" />
         {/* Angled callout line */}
         <path
-          d={`M250,175 L250,${verticalLineY} L${angleLineLength},${angleLineY}`}
+          d={`M250,${dot.cy} L250,${verticalLineY} L${angleLineLength},${angleLineY}`}
           fill="none"
           stroke="#4a4a4a"
           strokeWidth="1"
