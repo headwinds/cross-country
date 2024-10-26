@@ -40,6 +40,10 @@ export const SimTileGridStory: Story = {
       width: 1,
       height: 1,
       displayName: "",
+      type: "default",
+      name: "",
+      is_obstacle: false,
+      obstacle_remover: "none",
     };
 
     const models = (map as Tile[]).map(
@@ -47,7 +51,7 @@ export const SimTileGridStory: Story = {
         ...tile,
         ...obj,
         id: `id_${obj.x}_${obj.y}`,
-        fill: obj.color,
+        fill: String(obj.color),
       })
     );
 

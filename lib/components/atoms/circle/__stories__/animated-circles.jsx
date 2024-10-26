@@ -25,7 +25,7 @@ const applyTransitions = (state) => {
     .remove();
 };
 
-const AnimatedCircles = () => {
+const AnimatedCircles = ({ width = 500, height = 500 }) => {
   const dataset = generateDataset();
 
   const [visibleCircles, setVisibleCircles] = useState(dataset);
@@ -37,8 +37,8 @@ const AnimatedCircles = () => {
   }, 5000);
 
   const renderCirlces = () => {
-    const svgElement = d3.select(ref.current);
-    svgElement
+    const groupElement = d3.select(ref.current);
+    groupElement
       .selectAll("circle")
       .data(visibleCircles, (d) => d)
       .join(
@@ -70,7 +70,7 @@ const AnimatedCircles = () => {
       renderCirlces();
     }
   }, [visibleCircles]);
-  return <g ref={ref} />;
+  return <g ref={ref} transform={`translate(${width / 3}, ${height / 3})`} />;
 };
 
 export default AnimatedCircles;

@@ -1,5 +1,11 @@
 # cross-country
 
+## 1.2.16
+
+### Patch Changes
+
+- update to venn diagram to create 2 versions
+
 ## 1.2.15
 
 ### Patch Changes
