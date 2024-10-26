@@ -7,8 +7,23 @@ import * as VennDiagramStories from "./venn-diagram.stories";
 
 This is a [Venn](https://theconversation.com/venn-the-man-behind-the-famous-diagrams-and-why-his-work-still-matters-today-199127) Diagram component featuring 2 or 3 circles.
 
+In order to produce the hatched area, the `venn-diagram-intersection` component is used which applies a clipPath to the intersecting area.
+
+By nesting clipPaths with parent/child relationships, we can stack the hatched areas to produce a more complex diagram.
+
 ```jsx
-<VennDiagramStory />
+<VennDiagram
+  circles={defaultCircles}
+  crossLabel={{
+    label: "Cross Country",
+    indent: 380,
+    textY: 0,
+    startY: 30,
+  }}
+  x={0}
+  y={0}
+  dot={{ cx: 250, cy: 210, r: 3 }}
+/>
 ```
 
 ### Story
