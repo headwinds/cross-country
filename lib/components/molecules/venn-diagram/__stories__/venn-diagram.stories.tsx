@@ -12,11 +12,32 @@ export default meta;
 type Story = StoryObj<typeof VennDiagram>;
 
 export const VennDiagramStory: Story = {
-  render: () => <VennDiagram circles={defaultCircles} />,
+  render: () => (
+    <VennDiagram
+      circles={defaultCircles}
+      crossLabel={{
+        label: "Cross Country",
+      }}
+      x={0}
+      y={0}
+    />
+  ),
 };
 
 export const VennDiagramTwoCirclesStory: Story = {
   render: () => {
-    return <VennDiagram circles={twoCircles} crossLabel="Magic" />;
+    return (
+      <VennDiagram
+        circles={twoCircles}
+        crossLabel={{
+          label: "Magic",
+          indent: 350,
+          textY: -20,
+          startY: 30,
+        }}
+        verticalLineY={70}
+        angleLineY={60}
+      />
+    );
   },
 };

@@ -7,6 +7,9 @@ export type VennDiagramCircleLabel = {
   fontWeight: string;
   fontFamily: string;
   labelFill: string;
+  indent?: number;
+  textY?: number;
+  startY?: number;
 };
 
 export type VennDiagramCircle = {
@@ -22,10 +25,28 @@ export interface VennDiagramCircleProps {
   circle: VennDiagramCircle;
 }
 
+export type CrossLabel = {
+  label: string;
+  indent?: number;
+  textY?: number;
+  startY?: number;
+};
+
+type Intersection = {
+  cx: number;
+  cy: number;
+  r: number;
+};
+
 export interface VennDiagramProps {
   circles?: VennDiagramCircle[];
-  crossLabel?: string;
+  crossLabel?: CrossLabel;
   width?: number;
   height?: number;
   angleLineLength?: number;
+  angleLineY?: number;
+  verticalLineY?: number;
+  x?: number;
+  y?: number;
+  intersection?: Intersection;
 }

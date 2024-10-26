@@ -8,6 +8,9 @@ const VennDiagramCrossLabel = ({
   fontWeight = "bold",
   fontFamily = "Nunito Sans",
   fill = "#767676",
+  indent = 380,
+  textY = 0,
+  startY = 30,
 }: {
   label: string;
   leftPad: number;
@@ -16,11 +19,10 @@ const VennDiagramCrossLabel = ({
   fontWeight: string;
   fontFamily: string;
   fill: string;
+  indent: number;
+  textY: number;
+  startY: number;
 }) => {
-  const indent = 380;
-  const textY = 0;
-  const startY = 30;
-
   const children =
     label.split(" ").length > 1 ? (
       label.split(" ").map((part, index) => (

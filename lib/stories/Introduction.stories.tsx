@@ -15,9 +15,11 @@ export const VennDiagramStory: Story = {
   render: () => (
     <VennDiagram
       circles={defaultCircles}
-      crossLabel="Cross Country"
-      width={500}
-      height={500}
+      crossLabel={{
+        label: "Cross Country",
+      }}
+      x={0}
+      y={0}
     />
   ),
 };
