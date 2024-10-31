@@ -56,6 +56,7 @@ export { default as PrivacyPolicy } from "./molecules/policies/privacy-policy";
 export { default as AddQuestion } from "./molecules/policies/privacy-policy";
 export { default as TermsOfUse } from "./molecules/policies/terms-of-use";
 export { default as RadioGroup } from "./molecules/radiogroup/";
+export { default as Carousel } from "./molecules/carousel";
 
 // organisms / collecting
 export { default as Bento } from "./organisms/bento";

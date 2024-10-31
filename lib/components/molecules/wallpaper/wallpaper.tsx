@@ -2,26 +2,15 @@
 // @ts-nocheck
 // npm run build
 
-import React, { useEffect } from "react";
+import { animated, useSpring } from "@react-spring/web";
+import clsx from "clsx";
 import Column from "../../atoms/column/column";
 import styles from "./wallpaper.module.css";
-import { useSpring, animated, SpringValue } from "@react-spring/web";
-import clsx from "clsx";
+import { WallpaperProps } from "./wallpaper.types";
 
 const AnimFeTurbulence = animated("feTurbulence");
 const AnimFilter = animated("filter");
 const AnimFeFloor = animated("feFlood");
-
-type WallpaperProps = {
-  backgroundColor?: string;
-  rgba?: string;
-  customClass?: string;
-  customStyle?: React.CSSProperties;
-  hasNoise?: boolean;
-  hasGradient?: boolean;
-  springModel?: SpringValue<React.CSSProperties>;
-  children?: React.ReactNode;
-};
 
 const Wallpaper = ({
   backgroundColor = "",
