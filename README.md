@@ -15,7 +15,7 @@ Core Tech
 
 Do you pour over your personal stats from Github, Strava or Spotify? Is your year always in review?! By experimenting with code, you can hone your developer skills while exploring subject matter that interests you.
 
-[storybook](https://cross-country-storybook.vercel.app/)
+[storybook](https://cross-country-guide.vercel.app/)
 
 ### Install
 
@@ -136,6 +136,14 @@ your-username-not-your-email
 your-password
 now-your-email
 npm publish
+```
+
+## Deploy to Vercel
+
+```
+npm run build-storybook
+cd storybook-static
+vercel --prod
 ```
 
 ## Wiki
