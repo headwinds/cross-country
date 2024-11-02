@@ -1,0 +1,29 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import * as ColumnStories from "./column.stories";
+
+<Meta of={ColumnStories} />
+
+# Column
+
+A Column is one of the building blocks of this library.
+
+To build a page, we typically use either a Column or a Row to layout the page unless we need a grid.
+
+A Column wraps a `div` and can be simplied thought as a container to stack elements vertically.
+
+As a container, it may appear on a wide desktop or a narrow mobile device so it includes a container queries to manage the presentation state.
+
+For this primary story, I will use a large screenshot from the game []"The Pale Beyond the Pale"](https://www.fellowtraveller.games/the-pale-beyond
+) which was directed by [Thomas Hislop](https://twitter.com/thomashislop1).
+
+```jsx
+<Column>
+  <img src={pale} />
+</Column>
+```
+
+### Story
+
+Try to resize the window to see the container queries in action.
+
+<Canvas of={ColumnStories.ColumnStory} />

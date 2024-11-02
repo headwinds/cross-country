@@ -25,13 +25,11 @@ export * from "./screen";
 export * from "./stagger";
 export * from "./search";
 export * from "./tree";
-export * from "./skin";
 export * from "./tile";
 export * from "./time-progress";
 export * from "./user";
 export * from "./wallpaper";
 export * from "./wrapper";
-export * from "./write";
 // export all the components in the molecules folder
 export { default as DayNumber } from "./day-number";
 export { default as Error } from "./error";
