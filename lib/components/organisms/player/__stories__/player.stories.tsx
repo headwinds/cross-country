@@ -1,20 +1,25 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import Player from "../player";
+import { Column } from "../../../";
 
-interface TemplateProps {
-  message: string;
-}
-const Template = ({ message }: TemplateProps) => <p>{message}</p>;
-
-const meta: Meta<typeof Template> = {
-  component: Template,
+const meta: Meta<typeof Player> = {
+  component: Player,
   title: "components/organisms/player",
-} satisfies Meta<typeof Template>;
+} satisfies Meta<typeof Player>;
 
 export default meta;
-type Story = StoryObj<typeof Template>;
+type Story = StoryObj<typeof Player>;
 
 export const PlayerStory: Story = {
-  args: {
-    message: "hello world",
-  },
+  render: () => (
+    <Column customStyle={{ width: 300, height: 150 }}>
+      <Player
+        artist={{
+          artistName: "Brené Brown",
+          websiteUrl: "https://brenebrown.com/",
+          youtubeUrl: "https://www.youtube.com/watch?v=iCvmsMzlF7o",
+        }}
+      />
+    </Column>
+  ),
 };
