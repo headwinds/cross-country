@@ -4,6 +4,7 @@ import Column from "../column";
 import Image from "../../image";
 import { Paragraph } from "@cross-country/components/atoms";
 import pale from "./the_pale_beyond.jpg";
+import distracted from "./distracted_robot_meme.jpg";
 import styles from "./story.module.css";
 
 const meta: Meta<typeof Column> = {
@@ -34,6 +35,9 @@ export const MultipleColumnStory: Story = {
         backgroundColor: "hsla(60, 100%, 25%, 75%)",
       }}
     >
+      <SingleColumn>
+        <Image url={distracted} />
+      </SingleColumn>
       <SingleColumn>
         <Paragraph>hello</Paragraph>
       </SingleColumn>
