@@ -1,10 +1,16 @@
 # cross-country
 
+## 1.2.19
+
+### Patch Changes
+
+- had to change the import
+
 ## 1.2.18
 
 ### Patch Changes
 
-- upgraded html parser
+- updating parse but forgot to exclude it from the package
 
 ## 1.2.17
 
