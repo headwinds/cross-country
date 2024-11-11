@@ -1,5 +1,11 @@
 # cross-country
 
+## 1.2.18
+
+### Patch Changes
+
+- updating parse but forgot to exclude it from the package
+
 ## 1.2.17
 
 ### Patch Changes
