@@ -16,7 +16,7 @@
 
 ### Patch Changes
 
-- export types
+- swap parsers for html
 
 ## 1.2.16
 
