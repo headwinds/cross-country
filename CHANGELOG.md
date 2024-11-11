@@ -1,10 +1,16 @@
 # cross-country
 
+## 1.2.18
+
+### Patch Changes
+
+- upgraded html parser
+
 ## 1.2.17
 
 ### Patch Changes
 
-- export types
+- swap parsers for html
 
 ## 1.2.16
 
