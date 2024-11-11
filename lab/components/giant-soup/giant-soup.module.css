@@ -1,0 +1,11 @@
+.giantSoup {
+    display: flex;
+}
+
+.sendButton {
+    width: 100px;
+}
+
+.send {
+    justify-content: flex-end;
+}
