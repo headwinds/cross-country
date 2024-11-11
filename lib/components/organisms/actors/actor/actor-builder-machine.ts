@@ -1,48 +1,77 @@
-import { createMachine, assign } from "xstate";
+import { setup, assign } from "xstate";
 
 interface ActorContext {
-  selectedHead: string | null;
-  selectedBody: string | null;
-  selectedShoes: string | null;
+  selectedHeadId: string | null;
+  selectedBodyId: string | null;
+  selectedShoesId: string | null;
+}
+
+type Payload<T> = T | null;
+
+interface SelectHeadEvent<T> {
+  type: "SELECT_HEAD";
+  payload: Payload<T>;
+}
+
+interface SelectBodyEvent<T> {
+  type: "SELECT_BODY";
+  payload: Payload<T>;
+}
+
+interface SelectShoesEvent<T> {
+  type: "SELECT_SHOES";
+  payload: Payload<T>;
+}
+
+interface ResetEvent {
+  type: "RESET";
 }
 
 type ActorEvent =
-  | { type: "SELECT_HEAD"; head: string }
-  | { type: "SELECT_BODY"; body: string }
-  | { type: "SELECT_SHOES"; shoes: string }
-  | { type: "RESET" };
+  | SelectHeadEvent<string>
+  | SelectBodyEvent<string>
+  | SelectShoesEvent<string>
+  | ResetEvent;
 
-const actorBuilderMachine = createMachine<ActorContext, ActorEvent>({
+const actorBuilderMachine = setup({
+  types: {
+    context: {} as ActorContext,
+    events: {} as ActorEvent,
+  },
+}).createMachine({
   id: "actorBuilder",
   initial: "idle",
   context: {
-    selectedHead: null,
-    selectedBody: null,
-    selectedShoes: null,
+    selectedHeadId: null,
+    selectedBodyId: null,
+    selectedShoesId: null,
   },
   states: {
     idle: {
       on: {
         SELECT_HEAD: {
           actions: assign({
-            selectedHead: (_, event) => event.head,
+            selectedHeadId: (_, event: SelectHeadEvent<string>) =>
+              event.payload,
           }),
         },
         SELECT_BODY: {
           actions: assign({
-            selectedBody: (_, event) => event.body,
+            selectedBodyId: (_, event: SelectBodyEvent<string>) =>
+              event.payload,
           }),
         },
         SELECT_SHOES: {
           actions: assign({
-            selectedShoes: (_, event) => event.shoes,
+            selectedShoesId: (_, event: SelectShoesEvent<string>) =>
+              event.payload,
           }),
         },
         RESET: {
           actions: assign({
-            selectedHead: () => null,
-            selectedBody: () => null,
-            selectedShoes: () => null,
+            selectedHeadId: () => null,
+            selectedBodyId: () => null,
+            selectedShoesId: () => null,
           }),
         },
       },

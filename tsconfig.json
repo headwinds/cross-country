@@ -40,5 +40,6 @@
   "include": ["src", "lib"],
   "references": [{ "path": "./tsconfig.node.json" }],
   "declaration": true,
-  "declarationDir": "types"
+  "declarationDir": "./dist/types",
+  "outDir": "./dist"
 }

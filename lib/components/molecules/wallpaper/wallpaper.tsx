@@ -21,6 +21,8 @@ const Wallpaper = ({
   hasGradient = false,
   springModel = null,
   children,
+  imageUrl,
+  altText,
   ...rest
 }: WallpaperProps) => {
   const from = 0;

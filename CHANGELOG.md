@@ -1,5 +1,11 @@
 # cross-country
 
+## 1.2.17
+
+### Patch Changes
+
+- export types
+
 ## 1.2.16
 
 ### Patch Changes

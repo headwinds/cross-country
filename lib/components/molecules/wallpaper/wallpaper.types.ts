@@ -9,4 +9,6 @@ export interface WallpaperProps {
   hasGradient?: boolean;
   springModel?: SpringValue<React.CSSProperties>;
   children?: React.ReactNode;
+  imageUrl?: string;
+  altText?: string;
 }
