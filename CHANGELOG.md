@@ -1,5 +1,11 @@
 # cross-country
 
+## 1.2.17
+
+### Patch Changes
+
+- swap parsers for html
+
 ## 1.2.16
 
 ### Patch Changes
