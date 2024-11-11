@@ -19,7 +19,7 @@ import {
   Warrior,
   Stage,
   Button,
-} from "../../";
+} from "../../../lib/components";
 //import PusherService from '../../../services/pusher-service';
 import FrozenLakeBoard from "./frozen-lake-board";
 //import c from '../../../constants/';

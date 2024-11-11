@@ -3,20 +3,25 @@ import * as PlayerStories from "./player.stories";
 
 <Meta of={PlayerStories} />
 
-# Template
+# Player
 
-<Subtitle>copy and paste into a folder to scaffold out a new story</Subtitle>
-
-This is a template for creating a new story.
+This Player wraps the [react-player](https://www.npmjs.com/package/react-player) component and specializes in presenting Artist information in various media like audio, video, or podcast.
 
 ```jsx
-<Template message="hello there " />
+<Player
+  artist={{
+    artistName: "Brené Brown",
+    websiteUrl: "https://brenebrown.com/",
+    youtubeUrl: "https://youtu.be/iCvmsMzlF7o?si=a5Ez4-uI31vBDSZs",
+  }}
+/>
 ```
 
 ### Story
 
 <Canvas of={PlayerStories.PlayerStory} />
 
-- [react-player](https://www.npmjs.com/package/react-player)
+### Prototypes
+
 - [sun-and-bass](https://github.com/headwinds/sun-and-bass)
 - [loom radio](https://github.com/headwinds/loom-radio)

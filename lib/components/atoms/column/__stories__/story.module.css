@@ -1,0 +1,44 @@
+.imgStoryColumn {
+  margin: 0px;
+  padding: 0px;
+}
+/* mobile: when the screen is less than 500px, the column will take up the full width */
+@container (min-width < 500px) {
+  .imgStoryColumn {
+    width: 100%;
+    margin: 8px;
+  }
+}
+
+/* tablet: when the screen is greater than or equal to 500px and less than 1000px, the column will take up no more than 500px */
+@container (min-width >= 500px) and (max-width < 1000px) {
+  .imgStoryColumn {
+    max-width: 500px;
+    margin: 16px;
+  }
+}
+
+/* desktop: when the screen is greater than 500px, the column will take up no more than 500px */
+@container (max-width >= 1000px) {
+  .imgStoryColumn {
+    max-width: 1000px;
+    margin: 16px;
+  }
+}
+
+.multipleColumn {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+.singleColumn {
+  border: 1px dashed #ddd;
+  width: 100%;
+  background-color: hsla(0, 0%, 100%, 0.5);
+  margin: 0px;
+  padding: 0px;
+}

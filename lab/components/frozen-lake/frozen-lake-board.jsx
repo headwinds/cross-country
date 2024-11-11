@@ -1,5 +1,11 @@
-import React, { useState, useEffect, createRef, useRef } from 'react';
-import { Hunter, Warrior, TileGrid, Stage, Tile } from '../../';
+import React, { useState, useEffect, createRef, useRef } from "react";
+import {
+  Hunter,
+  Warrior,
+  TileGrid,
+  Stage,
+  Tile,
+} from "../../../lib/components";
 
 const FrozenLakeBoard = ({
   tileModels,
@@ -16,16 +22,19 @@ const FrozenLakeBoard = ({
   useEffect(() => {
     frozenLakeBoardRef.current = true;
     const el = document.getElementById(`tile18`);
-    console.log('el: ', el);
+    console.log("el: ", el);
 
     if (el && tileModelCollection?.length > 0) {
-      const updatedTileModels = tileModelCollection.map(model => {
+      const updatedTileModels = tileModelCollection.map((model) => {
         const newEl = document.getElementById(`tile${model.id}`);
         const boundingRect = newEl.getBoundingClientRect();
 
         return { ...model, x: boundingRect.x, y: boundingRect.y };
       });
-      console.log('yes we have an element! updatedTileModels: ', updatedTileModels);
+      console.log(
+        "yes we have an element! updatedTileModels: ",
+        updatedTileModels
+      );
       //wipes the board clean!
       //service.send({ type: 'UPDATE_TILE_MODELS', updatedTileModels });
       //service.send({ type: 'UPDATE_TILE_MODELS' });
@@ -56,7 +65,7 @@ const FrozenLakeBoard = ({
         Tile={Tile}
         isIsometric={isIsometric}
         palette={palette}
-        tileConfig={{ size: tileSize, cornerColor: '#999' }}
+        tileConfig={{ size: tileSize, cornerColor: "#999" }}
         customClass={customClass}
         tileRefs={tileRefs}
       />

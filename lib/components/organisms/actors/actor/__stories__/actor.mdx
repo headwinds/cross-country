@@ -1,0 +1,39 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import * as ActorStories from "./actor.stories";
+
+<Meta of={ActorStories} />
+
+# Actor
+
+```jsx
+<Actor
+  position={{
+    x: 0,
+    y: 0,
+    z: 0,
+  }}
+  customSkinStyle={{
+    backgroundColor: "grey",
+  }}
+/>
+```
+
+### Story
+
+The Actor component is a base component for every character in our world as acts like a paper doll where we can change the skin, hair, clothes and accessories. By adding new props, we can change the appearance of the Actor, and the character creation ideas are potentially endless.
+
+With a Actor, we can mold them into any shape, size, or color we want.
+
+An Actor could be player controlled or an automated NPC. It could be a tree, a rock, or a house. It could be a car, a plane, or a boat. It could be a monster, a robot, or a ghost. It could be anything we want it to be.
+
+But mainly our Actors will be people. They will be the main characters in our world. They will be the ones we control, the ones we interact with, the ones we care about in our simulations.
+
+### NPC
+
+An NPC actor will be controlled by the computer. It will have its own AI, its own goals, its own behaviors. It will be a character in our world that we can interact with, that we can talk to, that we can fight with, that we can befriend.
+
+The NPC will have a state machine which will control its behaviors. It will have a set of actions it can perform, a set of goals it can achieve, a set of emotions it can feel and express over the course of the week. In most cases, the character will loop each week if no other seasonal and major events are introduced.
+
+Partially inspired by the viral hit [Elf Yourself](https://www.marketingdive.com/news/office-depots-elf-yourself-lands-on-facebook-with-ar-filter/542413/); my own work in AI and [Habbo hotel](https://www.gameshub.com/news/opinions-analysis/habbo-hotel-origins-review-2642378/) fandom, I wanted to challenge to create NPC myself and think it would be fun for others to do the same so that we could create something like an [AI town](https://stack.convex.dev/building-ai-town-character-ids) together but based on us!
+
+<Canvas of={ActorStories.ActorStory} />

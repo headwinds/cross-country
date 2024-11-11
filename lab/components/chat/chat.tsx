@@ -1,5 +1,5 @@
 import React from "react";
-import { Column, TextInput, Link } from "../../../";
+import { Column, TextInput, Link } from "../../../lib";
 
 interface Props {
   // Define your component props here
