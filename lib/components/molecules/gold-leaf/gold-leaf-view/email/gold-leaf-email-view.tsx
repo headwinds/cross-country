@@ -4,7 +4,7 @@ import React from "react";
 import { useState } from "react";
 import { EmailModelType } from "@cross-country/models/EmailModel";
 import { Column, Row, Checkbox } from "@cross-country/components";
-import ReactHtmlParser from "react-html-parser";
+import parse from "html-react-parser";
 import goldLeaf from "../..";
 import { Trash } from "@phosphor-icons/react";
 import DOMPurify from "dompurify";
@@ -35,7 +35,7 @@ export const GoldLeafEmailView = ({
       <Column
         customStyle={{ height: 200, overflow: "hidden", overflowY: "auto" }}
       >
-        {ReactHtmlParser(sanitizedHtml)}
+        {parse(sanitizedHtml)}
       </Column>
       <Row customStyle={{ backgroundColor: "white", padding: 8 }}>
         <Checkbox id={"0"} isChecked={isChecked} handleChange={handleChange} />
