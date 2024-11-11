@@ -1,5 +1,4 @@
-// export all the atoms here so that there are available to all the components with alias as "@cross-country/components"
-export * from "./bold";
-export * from "./headline";
-export * from "./number";
-export * from "./paragraph";
+export { default as Paragraph } from "./paragraph";
+export { default as Number } from "./number";
+export { default as Headline } from "./headline";
+export { default as Bold } from "./bold";

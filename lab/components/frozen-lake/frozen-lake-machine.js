@@ -2,7 +2,7 @@ import { createMachine, assign, interpret } from "xstate";
 // import PusherService from '../../../services/pusher-service';
 // import c from '../../../constants/'; // bad path
 import book from "./frozen-lake-book";
-import { getDocument } from "../../../utils/server-side-util";
+import { getDocument } from "../../../lib/utils/server-side-util";
 
 const localUrl = "http://0.0.0.0:5000";
 const remoteUrl = "https://scout.vercel.app";

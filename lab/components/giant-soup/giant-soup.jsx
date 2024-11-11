@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
-import { Column, Form, Button, Row, Tile, TextInput, Wisp } from '../../';
-import styles from './giant-soup.module.css';
-import { useMachine } from '@xstate/react';
-import { giantSoupMachine } from './giant-soup-machine';
+import React, { useState } from "react";
+import {
+  Column,
+  Form,
+  Button,
+  Row,
+  Tile,
+  TextInput,
+  Wisp,
+} from "../../../lib/components";
+import styles from "./giant-soup.module.css";
+import { useMachine } from "@xstate/react";
+import { giantSoupMachine } from "./giant-soup-machine";
 
 /*
 However all the sand got into her backpack from this planet supposedly devoid of the substance, 
@@ -19,14 +27,17 @@ const GiantSoup = () => {
   const [state, send] = useMachine(giantSoupMachine);
 
   return (
-    <Column className={styles.giantSoup} style={{ textAlign: 'left', margin: 20 }}>
+    <Column
+      className={styles.giantSoup}
+      style={{ textAlign: "left", margin: 20 }}
+    >
       <Form>
         <Row>
           <TextInput
             value={state.context.firstName}
-            onChange={e =>
+            onChange={(e) =>
               send({
-                type: 'TYPING_FIRST_NAME',
+                type: "TYPING_FIRST_NAME",
                 value: e.target.value,
               })
             }
@@ -37,9 +48,9 @@ const GiantSoup = () => {
         </Row>
         <Row customClass={styles.send}>
           <Button
-            onClick={e => {
+            onClick={(e) => {
               e.preventDefault();
-              send('SUBMIT');
+              send("SUBMIT");
             }}
             customClass={styles.sendButton}
           >

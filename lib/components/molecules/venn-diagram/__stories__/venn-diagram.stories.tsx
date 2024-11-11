@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 import VennDiagram from "../venn-diagram";
+import { Column } from "../../..";
 import { defaultCircles, twoCircles } from "../venn-diagram-default-circles";
 
 const meta: Meta<typeof VennDiagram> = {
@@ -44,4 +45,26 @@ export const VennDiagramTwoCirclesStory: Story = {
       />
     );
   },
+};
+
+export const VennDiagramMobileStory: Story = {
+  // should render on mobile with a width of 300 and not be clipped
+  render: () => (
+    <Column customStyle={{ width: 300, height: 500 }}>
+      <VennDiagram
+        circles={defaultCircles}
+        crossLabel={{
+          label: "Cross Country",
+          indent: 380,
+          textY: 0,
+          startY: 30,
+        }}
+        x={0}
+        y={0}
+        dot={{ cx: 250, cy: 210, r: 3 }}
+        width={300}
+        height={200}
+      />
+    </Column>
+  ),
 };
