@@ -1,5 +1,11 @@
 # cross-country
 
+## 1.2.18
+
+### Patch Changes
+
+- upgraded html parser
+
 ## 1.2.17
 
 ### Patch Changes
