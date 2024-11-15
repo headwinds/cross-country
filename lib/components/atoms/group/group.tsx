@@ -1,15 +1,21 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef } from "react";
 
-const Group = forwardRef((props, ref) => {
+export type GroupProps = {
+  children: React.ReactNode;
+  customStyle?: React.CSSProperties;
+  customClass?: string;
+  dataTestId?: string;
+};
+const Group = forwardRef<SVGGElement, GroupProps>((props, ref) => {
   const { children } = props;
   return (
-    <svg>
+    <>
       <g {...props} ref={ref}>
         {children}
       </g>
-    </svg>
+    </>
   );
-});
+}) as React.FC<GroupProps>;
 
 export default Group;
 

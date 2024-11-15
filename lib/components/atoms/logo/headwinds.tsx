@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styles from "./logo.module.css";
 import headwinds from "./headwinds.svg";
 
-type HeadwindsLogoProps = {
+export type HeadwindsLogoProps = {
   width?: number;
 };
 

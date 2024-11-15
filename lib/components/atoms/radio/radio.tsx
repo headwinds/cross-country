@@ -8,6 +8,14 @@ import useDeviceDetection from "../../../hooks/useDeviceDetection";
 
 // register is a function from react-hook-form
 
+export interface RadioProps {
+  isSelected: boolean;
+  id: string;
+  onChange: any;
+  tabIndex: number;
+  register?: any;
+}
+
 const Radio = ({ isSelected, id, onChange, tabIndex, register = null }) => {
   const mobileState = useDeviceDetection();
 

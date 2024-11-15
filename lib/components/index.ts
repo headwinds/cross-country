@@ -1,40 +1,103 @@
 // atoms
 export { default as HeadwindsLogo } from "./atoms/logo/headwinds";
+export type { HeadwindsLogoProps } from "./atoms/logo/headwinds";
+
 export { default as CrossCountryLogo } from "./atoms/logo/cross-country";
+export type { CrossCountryLogoProps } from "./atoms/logo/cross-country";
+
 export { default as Grid } from "./atoms/grid";
-export { default as Column } from "./atoms/column/column";
-export { default as Checkbox } from "./atoms/checkbox/";
+export type { GridProps } from "./atoms/grid";
+
+export { default as Column } from "./atoms/column";
+export type { ColumnProps } from "./atoms/column";
+
+export { default as Checkbox } from "./atoms/checkbox";
+export type { CheckboxProps } from "./atoms/checkbox";
+
 export { default as Radio } from "./atoms/radio/";
-export { default as Button } from "./atoms/button/button-themed";
-export { default as PillButton } from "./atoms/button/pill-button";
+export type { RadioProps } from "./atoms/radio/";
+
+export { default as Button } from "./atoms/button";
+export type { ButtonProps } from "./atoms/button";
+
 export { default as Row } from "./atoms/row/row";
-export { default as Image } from "./atoms/image/cross-country-image";
+export type { RowProps } from "./atoms/row/row";
+
+export { default as Image } from "./atoms/image";
+export type { ImageProps } from "./atoms/image";
+
 export { default as HorizontalLine } from "./atoms/horizontal-line";
+export type { HorizontalLineProps } from "./atoms/horizontal-line";
+
 export { default as Headline } from "./atoms/text/headline/headline";
+export type { HeadlineProps } from "./atoms/text/headline/headline";
+
 export { default as SubHeadline } from "./atoms/text/subheadline/subheadline";
+export type { SubHeadlineProps } from "./atoms/text/subheadline/subheadline";
+
 export { default as Paragraph } from "./atoms/text/paragraph/paragraph";
+export type { ParagraphProps } from "./atoms/text/paragraph/paragraph";
+
 export { default as Form } from "./atoms/form";
+export type { FormProps } from "./atoms/form";
+
 export { default as TextInput } from "./atoms/text/input";
+export type { TextInputProps } from "./atoms/text/input";
+
 export { default as TextArea } from "./atoms/text/text-area";
+export type { TextAreaProps } from "./atoms/text/text-area";
+
 export { default as Span } from "./atoms/text/span";
+export type { SpanProps } from "./atoms/text/span";
+
 export { default as Select } from "./atoms/select";
+export type { SelectProps } from "./atoms/select";
+
 export { default as Hilight } from "./atoms/text/hilight";
+export type { HilightProps } from "./atoms/text/hilight";
+
 export { default as Bold } from "./atoms/text/bold";
+export type { BoldProps } from "./atoms/text/bold";
+
 export { default as Label } from "./atoms/text/label";
+export type { LabelProps } from "./atoms/text/label";
+
 export { default as Link } from "./atoms/link";
+export type { LinkProps } from "./atoms/link";
+
 export { default as List } from "./atoms/list";
+export type { ListProps } from "./atoms/list";
+
 export { default as ListItem } from "./atoms/list/list-item/list-item";
-export { default as AnimateNumber } from "./atoms/text/number/animate-number";
+export type { ListItemProps } from "./atoms/list/list-item/list-item";
+
+export { default as AnimateNumber } from "./atoms/text/animate-number/animate-number";
+export type { AnimateNumberProps } from "./atoms/text/animate-number/animate-number";
+
 export { default as Table } from "./atoms/table";
+export type { TableProps } from "./atoms/table";
+
 export { default as TableBody } from "./atoms/table/table-body";
+export type { TableBodyProps } from "./atoms/table/table-body";
+
 export { default as TableHead } from "./atoms/table/table-head";
+export type { TableHeadProps } from "./atoms/table/table-head";
+
 export { default as TableRow } from "./atoms/table/table-row";
+export type { TableRowProps } from "./atoms/table/table-row";
+
 export { default as TableData } from "./atoms/table/table-data";
+export type { TableDataProps } from "./atoms/table/table-data";
 
 // atoms / svg
 export { default as SVG } from "./atoms/svg";
+export type { SVGProps } from "./atoms/svg";
+
 export { default as Circle } from "./atoms/circle";
+export type { CircleProps } from "./atoms/circle";
+
 export { default as Group } from "./atoms/group";
+export type { GroupProps } from "./atoms/group";
 
 // molecules
 export { default as CheckboxLabel } from "./molecules/checkboxlabel";

@@ -4,7 +4,8 @@ import debounce from "debounce";
 
 import clsx from "clsx";
 
-type TextInputProps = {
+export interface TextInputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   id?: string;
   onTextChange: (text: string) => void;
   value?: string;
@@ -18,7 +19,7 @@ type TextInputProps = {
   defaultValue?: string;
   onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
   onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
-};
+}
 
 const TextInput = ({
   onTextChange,

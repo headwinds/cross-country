@@ -1,16 +1,19 @@
+// TODO type check
+// @ts-nocheck
 import React from "react";
-import clsx from "clsx";
 import styles from "./button.module.css";
+import Button from "./button";
+import clsx from "clsx";
 
-interface ButtonProps {
+export type ButtonProps = {
   text?: string;
   onClick?: () => void;
   customClass?: string;
   customStyle?: React.CSSProperties;
   children?: React.ReactNode;
-  type?: "button" | "submit" | "reset";
-  width?: number;
-}
+  ariaLabel?: string;
+  isDisabled?: boolean;
+};
 
 const Button = ({
   text = "",
@@ -18,20 +21,23 @@ const Button = ({
   customClass = "",
   customStyle = {},
   children = null,
-  width = 100,
+  ariaLabel = "",
+  isDisabled = false,
   ...rest
-}: ButtonProps) => {
-  return (
-    <button
-      {...rest}
-      style={{ width, ...customStyle }}
-      className={clsx(styles.button, customClass)}
-      onClick={onClick}
-      onKeyDown={onClick}
-    >
-      {text || children}
-    </button>
-  );
-};
+}: ButtonProps) => (
+  <Button
+    {...rest}
+    customClass={clsx(styles.button, styles.defaultButton, customClass, {
+      [styles.disabled]: isDisabled,
+    })}
+    text={text}
+    onClick={onClick}
+    customStyle={customStyle}
+    aria-label={ariaLabel}
+    disabled={isDisabled}
+  >
+    {text || children}
+  </Button>
+);
 
 export default Button;

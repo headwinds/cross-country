@@ -16,14 +16,15 @@ const Options = ({ options }) => {
   );
 };
 
-type SelectProps = {
+export interface SelectProps
+  extends React.SelectHTMLAttributes<HTMLSelectElement> {
   onChange: any;
   value?: string;
   customClass?: string;
   customStyle?: object;
   placeholder?: string;
   options?: string[];
-};
+}
 
 const Select = ({
   onChange,

@@ -1,7 +1,16 @@
-import React, { Component, forwardRef } from 'react';
-import clsx from 'clsx';
-import styles from './column.module.css';
-import { ColumnProps } from './column.types';
+import React, { forwardRef } from "react";
+import clsx from "clsx";
+import styles from "./column.module.css";
+
+interface ColumnProps extends React.HTMLAttributes<HTMLHRElement> {
+  children: React.ReactElement | React.ReactElement[];
+  hasBackground?: boolean;
+  hasChildrenCentered?: boolean;
+  backgroundColor?: string;
+  dataTestId?: string;
+  customStyle?: React.CSSProperties;
+  customClass?: string;
+}
 
 const Column = forwardRef(
   (
@@ -9,10 +18,10 @@ const Column = forwardRef(
       children,
       hasBackground = false,
       hasChildrenCentered = false,
-      backgroundColor = '#eee',
-      dataTestId = 'column',
+      backgroundColor = "#eee",
+      dataTestId = "column",
       customStyle = null,
-      customClass = '',
+      customClass = "",
       ...rest
     }: any,
     ref
@@ -30,7 +39,7 @@ const Column = forwardRef(
           },
           customClass
         )}
-        style={{...customStyle}} // doesn't to work? TODO: fix
+        style={{ ...customStyle }} // doesn't to work? TODO: fix
       >
         {children}
       </div>

@@ -1,5 +1,5 @@
 import * as React from "react";
-import CrossCountryImage from "../cross-country-image";
+import CrossCountryImage from "../image";
 import dom2d from "./dom2d.png";
 
 // TODO

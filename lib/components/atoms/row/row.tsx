@@ -1,13 +1,39 @@
-import React, { Component, forwardRef } from 'react';
-import styles from './row.module.css';
-import clsx from 'clsx';
+import React, { Component, forwardRef } from "react";
+import styles from "./row.module.css";
+import clsx from "clsx";
 
-const Row = forwardRef(({ id, children, hasChildrenCentered = true, customClass = '', customStyle = {}, ...rest }: any, ref) => {
-  return (
-    <div {...rest} key={id} className={clsx(styles.row, customClass)} style={customStyle} ref={ref}>
-      {children}
-    </div>
-  );
-});
+export interface RowProps extends React.HTMLAttributes<HTMLHRElement> {
+  id?: string;
+  children: React.ReactElement | React.ReactElement[];
+  hasChildrenCentered?: boolean;
+  customStyle?: React.CSSProperties;
+  customClass?: string;
+}
+
+const Row = forwardRef<HTMLDivElement, RowProps>(
+  (
+    {
+      id,
+      children,
+      hasChildrenCentered = true,
+      customClass = "",
+      customStyle = {},
+      ...rest
+    }: RowProps,
+    ref
+  ) => {
+    return (
+      <div
+        {...rest}
+        key={id}
+        className={clsx(styles.row, customClass)}
+        style={customStyle}
+        ref={ref}
+      >
+        {children}
+      </div>
+    );
+  }
+);
 
 export default Row;

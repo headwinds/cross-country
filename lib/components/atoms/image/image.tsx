@@ -1,9 +1,19 @@
 import React, { useState } from "react";
 import clsx from "clsx";
-import styles from "./cross-country-image.module.css";
-import { CrossCountryImageProps } from "./cross-country-image.types";
+import styles from "./image.module.css";
 
-const CrossCountryImage = ({
+export interface ImageProps {
+  url: string;
+  width: number;
+  a11y: string;
+  height?: string;
+  customClass?: string;
+  customStyle?: React.CSSProperties;
+  dataTestId?: string;
+  onNoImageFoundCallback?: () => void;
+}
+
+const Image = ({
   url,
   width,
   a11y,
@@ -12,7 +22,7 @@ const CrossCountryImage = ({
   customStyle = {},
   dataTestId = "image",
   onNoImageFoundCallback = () => {},
-}: CrossCountryImageProps) => {
+}: ImageProps) => {
   const [imageError, setImageError] = useState(false);
 
   const handleImageError = () => {
@@ -38,4 +48,4 @@ const CrossCountryImage = ({
   );
 };
 
-export default CrossCountryImage;
+export default Image;
