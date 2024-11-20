@@ -1,14 +1,18 @@
 import React from "react";
 import { useMemo } from "react";
 // components
-import { Row, Column, Paragraph, PillButton, Button, Label } from "../..";
+import { Row, Column, Paragraph, Button, Label } from "../..";
 import { PlusSquare } from "@phosphor-icons/react";
 import styles from "./keywords.module.css";
+
+export interface KeywordsProps {
+  keywords?: string[];
+}
 
 const Keywords = ({ keywords = [] }) => {
   const keywordsList = useMemo(() => {
     return keywords.map((keyword, index) => {
-      return <PillButton key={index} label={keyword} />;
+      return <Button key={index}>{keyword}</Button>;
     });
   }, [keywords]);
 

@@ -12,6 +12,19 @@ const AnimFeTurbulence = animated("feTurbulence");
 const AnimFilter = animated("filter");
 const AnimFeFloor = animated("feFlood");
 
+export interface WallpaperProps {
+  backgroundColor?: string;
+  rgba?: string;
+  customClass?: string;
+  customStyle?: any;
+  hasNoise?: boolean;
+  hasGradient?: boolean;
+  springModel?: any;
+  children?: any;
+  imageUrl?: string;
+  altText?: string;
+}
+
 const Wallpaper = ({
   backgroundColor = "",
   rgba = `rgba(0,128,128,1)`,

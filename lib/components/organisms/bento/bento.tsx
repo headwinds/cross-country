@@ -4,7 +4,7 @@ import BentoFourByFour from "./layouts/four-by-four/bento-four-by-four";
 import BentoThreeByThree from "./layouts/three-by-three/bento-three-by-three";
 import BentoTwoByTwo from "./layouts/two-by-two/bento-two-by-two";
 
-interface BentoProps {
+export interface BentoProps {
   grid: "2x2" | "3x3" | "4x4" | "5x4";
   borderRadius?: number;
   entireBoxBackgroundColor?: string;

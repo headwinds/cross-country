@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import Masonry from "react-masonry-css";
+import ThirdPartyMasonry from "react-masonry-css";
 import styles from "./masonry.module.css";
 
 export const defaultActors = [
@@ -13,13 +13,11 @@ export const defaultActors = [
   "bard",
 ];
 
-interface CrossCountryMasonryProps {
+export interface MasonryProps {
   actors?: string[];
 }
 
-const CrossCountryMasonry = ({
-  actors = defaultActors,
-}: CrossCountryMasonryProps) => {
+const Masonry = ({ actors = defaultActors }: MasonryProps) => {
   const breakpointColumnsObj = {
     default: 5,
     1500: 4,
@@ -29,7 +27,7 @@ const CrossCountryMasonry = ({
   };
 
   return (
-    <Masonry
+    <ThirdPartyMasonry
       breakpointCols={breakpointColumnsObj}
       className={styles["my-masonry-grid"]}
       columnClassName={styles["my-masonry-grid_column"]}
@@ -49,8 +47,8 @@ const CrossCountryMasonry = ({
           {name}
         </div>
       ))}
-    </Masonry>
+    </ThirdPartyMasonry>
   );
 };
 
-export default CrossCountryMasonry;
+export default Masonry;

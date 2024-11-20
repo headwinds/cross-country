@@ -12,7 +12,7 @@ import {
   Paragraph,
 } from "../../../";
 import BlogPostList from "./blog-post-list";
-import type { BlogType } from "./blog.types";
+
 /*
 What do I want from a blog?
 
@@ -40,8 +40,10 @@ const defaultBlogpostModel = {
   updated_at: "March 19, 2024",
 };
 
-interface BlogProps {
-  // Define your component props here
+export interface BlogProps {
+  url: string;
+  title: string;
+  updated_at: string;
 }
 
 const Blog = (props: BlogProps) => {

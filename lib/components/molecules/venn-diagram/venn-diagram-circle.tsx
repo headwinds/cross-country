@@ -1,5 +1,5 @@
 import React from "react";
-import { Circle, Group } from "../../atoms";
+import { Circle, Group } from "@cross-country/components/";
 import { VennDiagramCircleProps } from "./venn-diagram.types";
 import { YoutubeLogo } from "@phosphor-icons/react/dist/ssr";
 
@@ -26,7 +26,13 @@ const VennDiagramCircle: React.FC<VennDiagramCircleProps> = ({
   console.log("VennDiagramCircle label", label);
   return (
     <Group {...rest}>
-      <Circle cx={cx} cy={cy} r={radius} fill={fill} opacity={opacity} />
+      <Circle
+        cx={Number(cx)}
+        cy={Number(cy)}
+        r={radius}
+        fill={fill}
+        opacity={opacity}
+      />
       <text
         x={x}
         y={y}

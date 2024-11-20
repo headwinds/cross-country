@@ -1,11 +1,18 @@
 import React, { forwardRef } from "react";
 // components
-import { Column, Row } from "../../";
+import { Column, Row } from "../..";
 import styles from "./tree.module.css";
 import TreeBuilder from "./tree-simple-algorithm";
 import RecursiveTreeBuilder from "./tree-recursive-algorithm";
 
-const Tree = forwardRef((props, ref) => {
+export interface TreeProps {
+  size?: number;
+  fill?: string;
+  instructionList?: string[];
+  strategy?: "simple" | "recursive";
+}
+
+const Tree = forwardRef<HTMLDivElement, TreeProps>((props, ref) => {
   const {
     size = 600,
     fill = "white",

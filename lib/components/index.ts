@@ -101,25 +101,63 @@ export type { GroupProps } from "./atoms/group";
 
 // molecules
 export { default as CheckboxLabel } from "./molecules/checkboxlabel";
+export type { CheckboxLabelProps } from "./molecules/checkboxlabel";
+
 export { default as Wrapper } from "./molecules/wrapper";
+export type { WrapperProps } from "./molecules/wrapper";
+
 export { default as Wallpaper } from "./molecules/wallpaper";
+export type { WallpaperProps } from "./molecules/wallpaper";
+
 export { default as Tile } from "./molecules/tile";
+export type { TileProps } from "./molecules/tile";
+
 export { default as Modal } from "./molecules/modal";
+export type { ModalProps } from "./molecules/modal";
 export { default as Stagger } from "./molecules/stagger";
+export type { StaggerProps } from "./molecules/stagger";
+
 export { default as RelatedArticles } from "./molecules/related-articles";
+export type { RelatedArticlesProps } from "./molecules/related-articles";
+
 export { default as Card } from "./molecules/card";
+export type { CardProps } from "./molecules/card";
+
 export { default as GoldLeaf } from "./molecules/gold-leaf";
+export type { GoldLeafProps } from "./molecules/gold-leaf";
+
 export { default as Bolt } from "./molecules/icons/bolt/bolt";
+export type { BoltProps } from "./molecules/icons/bolt/bolt";
+
 export { default as User } from "./molecules/user";
+export type { UserProps } from "./molecules/user";
+
 export { default as KeyValuePairs } from "./molecules/key-value-pairs";
+export type { KeyValuePairsProps } from "./molecules/key-value-pairs";
+
 export { default as Loading } from "./molecules/loading";
+export type { LoadingProps } from "./molecules/loading";
+
 export { default as Error } from "./molecules/error";
+export type { ErrorProps } from "./molecules/error";
+
 export { default as Keywords } from "./molecules/keywords";
+export type { KeywordsProps } from "./molecules/keywords";
+
 export { default as PrivacyPolicy } from "./molecules/policies/privacy-policy";
-export { default as AddQuestion } from "./molecules/policies/privacy-policy";
+export type { PrivacyPolicyProps } from "./molecules/policies/privacy-policy";
+
 export { default as TermsOfUse } from "./molecules/policies/terms-of-use";
+export type { TermsOfUseProps } from "./molecules/policies/terms-of-use";
+
 export { default as RadioGroup } from "./molecules/radiogroup/";
+export type { RadioGroupProps } from "./molecules/radiogroup/";
+
 export { default as Carousel } from "./molecules/carousel";
+export type { CarouselProps } from "./molecules/carousel";
+
+export { default as VennDiagram } from "./molecules/venn-diagram";
+export type { VennDiagramProps } from "./molecules/venn-diagram";
 
 // organisms / collecting
 export { default as Bento } from "./organisms/bento";

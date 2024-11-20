@@ -28,7 +28,7 @@ const rgb = ColorUtil.hexToRgb("#67bd67");
 const darkenColor = -0.1; // 10% darker
 const shadedColor = ColorUtil.getShadedColor(rgb, darkenColor);
 
-interface TileGridProps {
+export interface TileGridProps {
   totalInRow?: number;
   gapSize?: number;
   models?: TileModelType[];

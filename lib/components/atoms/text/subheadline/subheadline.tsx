@@ -9,6 +9,7 @@ export interface SubHeadlineProps
   size?: "small" | "medium" | "large";
   customStyle?: React.CSSProperties;
   customClass?: string;
+  children?: React.ReactNode;
 }
 
 const SubHeadline = ({
@@ -18,7 +19,7 @@ const SubHeadline = ({
   children,
   customStyle = {},
   customClass = "",
-}) => {
+}: SubHeadlineProps) => {
   const key = `subheadline__${size}`;
   const className = `${styles.subheadline} ${styles[key]}`;
   return (

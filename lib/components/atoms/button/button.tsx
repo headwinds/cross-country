@@ -2,7 +2,6 @@
 // @ts-nocheck
 import React from "react";
 import styles from "./button.module.css";
-import Button from "./button";
 import clsx from "clsx";
 
 export type ButtonProps = {

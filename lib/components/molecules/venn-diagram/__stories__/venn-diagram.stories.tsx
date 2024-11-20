@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import React from "react";
-import VennDiagram from "../venn-diagram";
 import { Column } from "../../..";
+import VennDiagram from "../venn-diagram";
 import { defaultCircles, twoCircles } from "../venn-diagram-default-circles";
 
 const meta: Meta<typeof VennDiagram> = {
