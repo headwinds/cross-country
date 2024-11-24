@@ -15,6 +15,10 @@ export const getNavigator = () => {
 };
 
 export const getDocument = () => {
+  /*
+  don't rely on document or the window but use ENV variables
+  */
+  // only consider ENV dont even consider window or document
   if (typeof document === "undefined") {
     /* we're on the server */
     return null;
@@ -22,6 +26,7 @@ export const getDocument = () => {
   return document ? document : null;
 };
 
+// this is still causing issues on the react native side
 const setDomain = (
   localhost = "http://localhost:5000",
   hosted = "https://scout.vercel.app",
@@ -32,9 +37,11 @@ const setDomain = (
   const isRunningOnWeb =
     typeof window !== "undefined" && typeof document !== "undefined";
 
+  //const isReactNative =
+
   if (isRunningOnWeb) {
     if (typeof window !== "undefined") {
-      return window.location.hostname.includes("localhost")
+      return window?.location?.hostname?.includes("localhost")
         ? localhost
         : hosted;
     }
