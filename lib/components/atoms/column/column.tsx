@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 import clsx from "clsx";
 import styles from "./column.module.css";
 
-interface ColumnProps extends React.HTMLAttributes<HTMLHRElement> {
+export interface ColumnProps extends React.HTMLAttributes<HTMLHRElement> {
   children: React.ReactElement | React.ReactElement[];
   hasBackground?: boolean;
   hasChildrenCentered?: boolean;

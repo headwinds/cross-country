@@ -31,7 +31,11 @@ export const GoldTitleImageCard = ({
               <SubHeadline
                 text={goldLeafModel.title}
                 customClass={styles.GoldLeaf__title}
-                customStyle={{ lineHeight: "26px", fontWeight: 700 }}
+                customStyle={{
+                  fontWeight: 700,
+                  padding: 8,
+                  marginBottom: 0,
+                }}
               />
             </Link>
           </Column>
