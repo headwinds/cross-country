@@ -1,6 +1,9 @@
-import * as React from 'react';
-import { HomeProps } from './home.types';
-import HomeTemplate from '../../templates/home/home';
+import * as React from "react";
+import HomeTemplate from "../../templates/home/home";
+
+export interface HomeProps {
+  isBlockedIn?: boolean;
+}
 
 const Home = ({ isBlockedIn = false }: HomeProps) => {
   return <HomeTemplate isBlockedIn={isBlockedIn} />;

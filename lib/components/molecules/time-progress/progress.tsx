@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Column } from "../../";
-import { ProgressProps } from "./progress.types";
 import styles from "./progress.module.css";
 
 export interface ProgressProps {

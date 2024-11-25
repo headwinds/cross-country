@@ -12,6 +12,7 @@ import {
   Paragraph,
 } from "../../../";
 import BlogPostList from "./blog-post-list";
+import { BlogPostProps } from "./blog-post/blog-post.types";
 
 /*
 What do I want from a blog?
@@ -38,6 +39,7 @@ const defaultBlogpostModel = {
   url: "default",
   title: "default",
   updated_at: "March 19, 2024",
+  user: null, // Add a default user property
 };
 
 export interface BlogProps {
@@ -60,7 +62,7 @@ const Blog = (props: BlogProps) => {
     );
   }
 
-  const blogPostList: BlogType[] = [
+  const blogPostList: BlogPostProps[] = [
     defaultBlogpostModel,
     defaultBlogpostModel,
     defaultBlogpostModel,

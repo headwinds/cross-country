@@ -14,6 +14,7 @@ export interface ModalProps {
   type?: string;
   model?: any;
   sample?: string;
+  size?: number;
 }
 
 const Modal = ({
@@ -28,6 +29,7 @@ const Modal = ({
   model = {},
   sample = "metal",
   children,
+  size = 200,
   ...rest
 }) => {
   const finalCustomStyle = {

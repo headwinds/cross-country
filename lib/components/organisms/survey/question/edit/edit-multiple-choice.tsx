@@ -17,6 +17,11 @@ import QuestionAnswerInput from "./question-answer-input";
 import EditOptionList from "./edit-option-list/edit-option-list";
 import { PlusSquare } from "@phosphor-icons/react";
 
+export interface EditMultipleChoiceProps {
+  data: any;
+  onChange: any;
+}
+
 const EditMultipleChoice = ({ data, onChange }) => {
   const { options, answer } = data;
   console.log("QuestionInputWithOptions data: ", data);

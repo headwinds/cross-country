@@ -4,7 +4,7 @@ import QuestionAnswerInput from "./question-answer-input";
 import EditMultipleChoice from "./edit-multiple-choice";
 import { QUESTION_VARIANTS } from "../types";
 
-interface EditQuestionProps {
+export interface EditTitleInputProps {
   onChange?: any;
   data?: any;
   hasDescription?: boolean;
@@ -13,7 +13,7 @@ interface EditQuestionProps {
 const EditTitleInput = ({
   onChange,
   hasDescription = false,
-}: EditQuestionProps) => {
+}: EditTitleInputProps) => {
   const titleData = {
     id: 1,
     name: "title",

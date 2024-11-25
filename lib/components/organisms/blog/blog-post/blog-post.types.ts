@@ -28,4 +28,7 @@ export interface BlogPostProps {
   children?: React.ReactNode | React.ReactNode[];
   onSaveClick?: (leafModel: LeafModel) => void;
   user: UserModelType | null;
+  url?: string;
+  title?: string;
+  updated_at?: string;
 }

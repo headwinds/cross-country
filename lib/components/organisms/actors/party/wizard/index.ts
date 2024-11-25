@@ -1,1 +1,2 @@
-export { default } from './wizard';
+export { default } from "./wizard";
+export type { WizardProps } from "./wizard";

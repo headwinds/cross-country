@@ -3,7 +3,7 @@ import clsx from "clsx";
 import styles from "./column.module.css";
 
 export interface ColumnProps extends React.HTMLAttributes<HTMLHRElement> {
-  children: React.ReactElement | React.ReactElement[];
+  children: React.ReactElement | React.ReactElement[] | React.ReactNode;
   hasBackground?: boolean;
   hasChildrenCentered?: boolean;
   backgroundColor?: string;

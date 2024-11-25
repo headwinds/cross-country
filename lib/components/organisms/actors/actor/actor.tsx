@@ -65,6 +65,7 @@ export interface ActorProps {
   config?: any;
   tileSize?: number;
   children?: any;
+  type?: string;
 }
 
 const Actor = ({

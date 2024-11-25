@@ -15,13 +15,8 @@ export interface CheckboxLabelProps {
 const CheckboxLabel = ({ config: { text, id, isChecked, handleChange } }) => {
   return (
     <Row>
-      <Checkbox
-        text={text}
-        id={id}
-        isChecked={isChecked}
-        handleChange={handleChange}
-      />
-      <Label text={text} forId={id} />
+      <Checkbox id={id} isChecked={isChecked} handleChange={handleChange} />
+      <Label forId={id}>{text}</Label>
     </Row>
   );
 };

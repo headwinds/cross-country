@@ -114,6 +114,7 @@ export type { TileProps } from "./molecules/tile";
 
 export { default as Modal } from "./molecules/modal";
 export type { ModalProps } from "./molecules/modal";
+
 export { default as Stagger } from "./molecules/stagger";
 export type { StaggerProps } from "./molecules/stagger";
 
@@ -161,40 +162,96 @@ export type { VennDiagramProps } from "./molecules/venn-diagram";
 
 // organisms / collecting
 export { default as Bento } from "./organisms/bento";
+export type { BentoProps } from "./organisms/bento";
+
 export { default as Listicle } from "./organisms/listicle";
+export type { ListicleProps } from "./organisms/listicle";
+
 export { default as Login } from "./organisms/login";
+export type { LoginProps } from "./organisms/login";
+
 export { default as Registration } from "./organisms/registration";
+export type { RegistrationProps } from "./organisms/registration";
+
 export { default as Branch } from "./organisms/branch/branch";
+export type { BranchProps } from "./organisms/branch/branch";
+
 export { default as Branches } from "./organisms/branches/branches";
+export type { BranchesProps } from "./organisms/branches/branches";
+
 export { default as Chart } from "./organisms/charts/chart";
+export type { ChartProps } from "./organisms/charts/chart";
+
 export { default as Metrics } from "./organisms/metrics";
+export type { MetricsProps } from "./organisms/metrics";
+
 export { default as ReverseTextAnimation } from "./organisms/animation/reverse-text-animation";
+export type { ReverseTextAnimationProps } from "./organisms/animation/reverse-text-animation";
+
 // organisms / collection / survey
 export { default as EditTitleInput } from "./organisms/survey/question/edit/edit-title-input";
+export type { EditTitleInputProps } from "./organisms/survey/question/edit/edit-title-input";
+
 export { default as EditQuestion } from "./organisms/survey/question/edit/edit-question";
-export { default as AnswerInput } from "./organisms/survey/question/edit/edit-question";
+export type { EditQuestionProps } from "./organisms/survey/question/edit/edit-question";
+
 export { default as MultipleChoice } from "./organisms/survey/question/take/multiple-choice";
-export { default as TextAnswerInput } from "./organisms/survey/question/take/take-answer-input";
-export { default as TextAreaAnswerInput } from "./organisms/survey/question/edit/answer-input";
+export type { MultipleChoiceProps } from "./organisms/survey/question/take/multiple-choice";
+
+export { default as TakeAnswerInput } from "./organisms/survey/question/take/take-answer-input";
+export type { TakeAnswerInputProps } from "./organisms/survey/question/take/take-answer-input";
+
+export { default as AnswerInput } from "./organisms/survey/question/edit/answer-input";
+export type { AnswerInputProps } from "./organisms/survey/question/edit/answer-input";
+
 export { default as Question } from "./organisms/survey/question/take/question";
+export type { QuestionProps } from "./organisms/survey/question/take/question";
+
 // organisms / gaming
 export { default as Actor } from "./organisms/actors/actor";
+export type { ActorProps } from "./organisms/actors/actor";
+
 export { default as Stage } from "./organisms/stage";
+export type { StageProps } from "./organisms/stage";
+
 export { default as Hunter } from "./organisms/actors/party/hunter";
+export type { HunterProps } from "./organisms/actors/party/hunter";
+
 export { default as Warrior } from "./organisms/actors/party/warrior";
+export type { WarriorProps } from "./organisms/actors/party/warrior";
+
 export { default as Cleric } from "./organisms/actors/party/cleric";
+export type { ClericProps } from "./organisms/actors/party/cleric";
+
 export { default as Wizard } from "./organisms/actors/party/wizard";
+export type { WizardProps } from "./organisms/actors/party/wizard";
+
 export { default as Wisp } from "./organisms/actors/wisp";
+export type { WispProps } from "./organisms/actors/wisp";
+
 //export { default as FrozenLake } from "./organisms/frozen-lake";
 export { default as TileGrid } from "./organisms/tile-grid";
+export type { TileGridProps } from "./organisms/tile-grid";
+
 export { default as JsonMapTileGrid } from "./organisms/json-map-tile-grid";
+export type { JsonMapTileGridProps } from "./organisms/json-map-tile-grid";
+
 export { default as Masonry } from "./organisms/masonry";
+export type { MasonryProps } from "./organisms/masonry";
 
 // templates
 export { default as HomeTemplate } from "./templates/home";
+export type { HomeTemplateProps } from "./templates/home";
+
 export { default as HeadwindsHomeTemplate } from "./templates/home/headwinds";
+export type { HeadwindsHomeTemplateProps } from "./templates/home/headwinds";
+
 export { default as ArticleTemplate } from "./templates/articles/article";
+export type { ArticleTemplateProps } from "./templates/articles/article";
 
 // pages
 export { default as HeadwindsHomePage } from "./pages/home/headwinds";
+export type { HeadwindsHomeProps } from "./pages/home/headwinds";
+
 export { default as HomePage } from "./pages/home";
+export type { HomeProps } from "./pages/home";

@@ -1,12 +1,8 @@
-import * as React from 'react';
-import { Column } from '../../';
-import { ProgressProps } from './progress.types';
-import * as d3 from 'd3';
-import { detechOnline } from '../../../utils/golds/offline-util';
-import ip_local from '../../../utils/golds/ip-util';
+import * as React from "react";
+import { Column } from "../../";
 //import PilotHeader from './pilot-header';
-import Connection from './connection';
-import styles from './progress.module.css';
+import { ProgressProps } from "./progress";
+import styles from "./progress.module.css";
 
 const getWeek = function () {
   const today: any = new Date();
@@ -14,14 +10,13 @@ const getWeek = function () {
   return Math.ceil(((today - onejan) / 86400000 + onejan.getDay() + 1) / 7);
 };
 
-
 /**
  * tracks progress over a year and includes a particle effect
  */
 const ProgressOverYear: React.FC<ProgressProps> = ({ foo }) => {
   return (
     <Column dataTestId="progress" customClass={styles.Progress}>
-      {foo || 'plan & start building'}
+      {foo || "plan & start building"}
     </Column>
   );
 };

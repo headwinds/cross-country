@@ -5,7 +5,7 @@ import styles from "./field.module.css";
 
 export interface FieldProps {
   text?: string;
-  onTextChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onTextChange: (text: string) => void;
   value: string;
   type: string;
   isValid: boolean;

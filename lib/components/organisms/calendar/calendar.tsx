@@ -25,6 +25,10 @@ const Day = ({ day, key }) => {
   );
 };
 
+export interface CalendarProps {
+  isFullGrid?: boolean;
+}
+
 const Calendar = ({ isFullGrid = false }) => {
   const currentDate = new Date();
   const currentMonthName = months[currentDate.getMonth()];

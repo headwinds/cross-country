@@ -7,6 +7,11 @@ export interface WrapperProps {
   backgroundColor?: string;
   customClass?: string;
   customStyle?: any;
+  children?:
+    | React.ReactNode
+    | React.ReactNode[]
+    | React.ReactElement
+    | React.ReactElement[];
 }
 
 const Wrapper = forwardRef<HTMLDivElement, WrapperProps>(
@@ -15,6 +20,7 @@ const Wrapper = forwardRef<HTMLDivElement, WrapperProps>(
       backgroundColor = "",
       customClass = "",
       customStyle = { margin: 0, padding: 0 },
+      children,
       ...rest
     },
     ref
@@ -28,7 +34,9 @@ const Wrapper = forwardRef<HTMLDivElement, WrapperProps>(
           backgroundColor,
           ...customStyle,
         }}
-      ></Column>
+      >
+        {children}
+      </Column>
     );
   }
 );

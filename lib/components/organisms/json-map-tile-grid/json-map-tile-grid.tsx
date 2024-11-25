@@ -6,7 +6,7 @@ import clsx from "clsx";
 import { Column, Tile } from "../..";
 import styles from "./json-map-tile-grid.module.css";
 
-interface JsonMapTileGridProps {
+export interface JsonMapTileGridProps {
   models: JsonMapTileModelInterface[];
   isIsometric?: boolean;
   customClass?: string;

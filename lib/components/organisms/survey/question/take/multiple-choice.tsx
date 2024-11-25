@@ -11,7 +11,7 @@ const DefaultHtmlQuesiton = () => (
 );
 // {htmlQuestion ? data.question : <DefaultHtmlQuesiton />}
 
-type MultipleChoiceProps = {
+export interface MultipleChoiceProps {
   data: {
     options: { id: string; value: string }[];
     question: string;
@@ -19,7 +19,7 @@ type MultipleChoiceProps = {
   };
   onChange: (selectedId: string) => void;
   selectedId?: string;
-};
+}
 
 const MultipleChoice = ({
   data,

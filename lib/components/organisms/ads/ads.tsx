@@ -6,12 +6,18 @@ import styles from "./ads.module.css";
 import AdCard from "./ad-card";
 import clsx from "clsx";
 
+export interface AdsProps {
+  backgroundColor?: string;
+  customClass?: string;
+  customStyle?: any;
+}
+
 const Ads = ({
   backgroundColor = "",
   customClass = "",
   customStyle = {},
   ...rest
-}) => {
+}: AdsProps) => {
   return (
     <Column
       {...rest}

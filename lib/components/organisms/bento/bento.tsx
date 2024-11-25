@@ -12,6 +12,12 @@ export interface BentoProps {
   boxes?: any;
 }
 
+export interface BoxProps {
+  backgroundColor: string;
+  borderRadius: number;
+  children: React.ReactNode;
+}
+
 const Bento: React.FC<BentoProps> = (props) => {
   const { grid } = props;
 

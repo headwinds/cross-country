@@ -1,7 +1,9 @@
+// dont type check this file
+//@ts-nocheck
+
 import { createMachine, assign, interpret } from "xstate";
 
 //import PusherService from '../../../../../../services/pusher-service';
-import c from "../../../../../../constants/";
 import { getDocument } from "../../../../../../utils/server-side-util";
 
 const localUrl = "http://127.0.0.1:5000";

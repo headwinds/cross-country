@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Grid, Column, Row } from "../../../";
-import { ArticleProps } from "./article.types";
 import clsx from "clsx";
 import styles from "./article.module.css";
 
@@ -16,6 +15,17 @@ GRID
 - footer
 */
 
+export interface ArticleTemplateProps {
+  header: any;
+  hero: any;
+  curator: any;
+  article: any;
+  ai: any;
+  articles: any;
+  footer: any;
+  isBlockedIn?: boolean;
+}
+
 const ArticleTemplate = ({
   header,
   hero,
@@ -25,7 +35,7 @@ const ArticleTemplate = ({
   articles,
   footer,
   isBlockedIn = true,
-}: ArticleProps) => {
+}: ArticleTemplateProps) => {
   return (
     <Grid customClass={styles.gridContainer}>
       <Row

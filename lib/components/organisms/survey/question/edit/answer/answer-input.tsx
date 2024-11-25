@@ -13,6 +13,13 @@ import {
 } from "../../../../../";
 import { Trash, CheckSquare } from "@phosphor-icons/react";
 
+export interface AnswerInputProps {
+  data: any;
+  register: any;
+  customClass?: string;
+  onChange?: any;
+}
+
 const AnswerInput = ({
   data,
   register,

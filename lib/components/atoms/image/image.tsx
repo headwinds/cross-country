@@ -4,9 +4,9 @@ import styles from "./image.module.css";
 
 export interface ImageProps {
   url: string;
-  width: number;
+  width: number | string;
   a11y: string;
-  height?: string;
+  height?: number | string;
   customClass?: string;
   customStyle?: React.CSSProperties;
   dataTestId?: string;

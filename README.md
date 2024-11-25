@@ -127,7 +127,7 @@ npm test
 ## Publish to NPM
 
 ```
-npx changeset publish
+npx publish
 ```
 
 ```

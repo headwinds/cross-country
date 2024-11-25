@@ -3,7 +3,7 @@ import AnswerInput from "./answer-input";
 import QuestionAnswerInput from "./question-answer-input";
 import EditMultipleChoice from "./edit-multiple-choice";
 
-interface EditQuestionProps {
+export interface EditQuestionProps {
   onChange: any;
   data: any;
 }

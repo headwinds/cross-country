@@ -17,14 +17,14 @@ import { PlusSquare } from "@phosphor-icons/react";
 import { editOptionListMachine } from "./edit-option-list-machine";
 import { useMachine } from "@xstate/react";
 
-type EditOptionListProps = {
+export interface EditOptionListProps {
   data: any;
   onChange?: (data: {
     event: string;
     data: { id: string; value: string };
   }) => void;
   isOptionListDisabled?: boolean;
-};
+}
 
 const EditOptionList = ({
   data,

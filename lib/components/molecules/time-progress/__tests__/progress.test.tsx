@@ -1,15 +1,13 @@
-import React from "react";
 import { render } from "@testing-library/react";
-
 import Progress from "../";
-import { ProgressProps } from "../progress.types";
+import { ProgressProps } from "../progress";
 
 describe("<Progress />", () => {
   let props: ProgressProps;
 
   beforeEach(() => {
     props = {
-      foo: "bar"
+      foo: "bar",
     };
   });
 

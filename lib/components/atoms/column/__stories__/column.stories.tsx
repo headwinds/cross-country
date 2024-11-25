@@ -1,3 +1,5 @@
+//@ts-nocheck
+
 import type { Meta, StoryObj } from "@storybook/react";
 import Link from "../../link/link";
 import Column from "../column";

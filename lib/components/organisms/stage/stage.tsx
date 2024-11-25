@@ -1,18 +1,21 @@
-import React, { Component } from "react";
-import { Column, SubHeadline } from "../../";
-import styles from "./stage.module.css";
+import clsx from "clsx";
+import { Column } from "../../";
 import Hunter from "../actors/party/hunter";
 import Warrior from "../actors/party/warrior";
 import Wisp from "../actors/wisp";
-import clsx from "clsx";
+import styles from "./stage.module.css";
 
 type StageConfig = {
-  customClass?:string;
-  customStyle?:any;
+  customClass?: string;
+  customStyle?: any;
   rest?: any;
-}
+};
 
-const defaultConfig: StageConfig = { customClass: "", customStyle: {}, rest: {} };
+const defaultConfig: StageConfig = {
+  customClass: "",
+  customStyle: {},
+  rest: {},
+};
 const defaultActorModel = {
   id: 0,
   variant: "hunter",
@@ -26,7 +29,7 @@ const defaultActorModel = {
   config: null,
 };
 
-type StageProps = {
+export interface StageProps {
   config?: StageConfig;
   actorModels: any[];
 }
@@ -51,7 +54,7 @@ const Stage = ({
     return actorModels.map((model) => getActor(model));
   };
 
-  console.log("Stage config: ", config)
+  console.log("Stage config: ", config);
 
   return (
     <Column

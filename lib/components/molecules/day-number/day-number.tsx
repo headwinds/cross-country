@@ -8,7 +8,7 @@ import styles from "./day-number.module.css";
 export interface DayNumberProps {
   number?: number;
   subHeadlineCustomStyle?: any;
-  subHeadlineSize?: string;
+  subHeadlineSize?: "small" | "medium" | "large";
   customClass?: string;
 }
 

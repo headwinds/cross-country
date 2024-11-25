@@ -1,13 +1,4 @@
-import * as React from "react";
-import {
-  Headline,
-  Column,
-  Span,
-  Paragraph,
-  Image,
-  Stagger,
-  Link,
-} from "../../../";
+import { Column, Image, Stagger } from "../../../";
 import andor from "./andor.png";
 
 const AndorStory = () => {
@@ -22,7 +13,7 @@ const AndorStory = () => {
         stagger={{ key: "marginLeft", value: 16 }}
         color={["#666", "#666", "#d9be2a"]}
       />
-      <Image url={andor} width={400} />
+      <Image url={andor} width={400} a11y="Andor image" />
     </Column>
   );
 };

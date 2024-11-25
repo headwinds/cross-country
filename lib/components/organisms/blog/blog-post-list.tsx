@@ -1,19 +1,7 @@
-import React from "react";
-import {
-  Wallpaper,
-  Wrapper,
-  Column,
-  TextInput,
-  SubHeadline,
-  Link,
-  List,
-  ListItem,
-  Row,
-  Paragraph,
-} from "../../..";
-import { BlogType } from "./blog.types";
+import { Link, List, ListItem, Paragraph, Row } from "../../..";
+import { BlogPostProps } from "./blog-post/blog-post.types";
 
-const defaultBlogpostModel = {
+const defaultBlogpostModel: Partial<BlogPostProps> = {
   url: "default",
   title: "default",
   updated_at: "March 19, 2024",
@@ -34,7 +22,7 @@ const BlogpostListItem = ({ postModel = defaultBlogpostModel }) => {
 };
 
 interface BlogPostListProps {
-  blogPostList: BlogType[];
+  blogPostList: BlogPostProps[];
 }
 
 const BlogPostList = ({ blogPostList }: BlogPostListProps) => {

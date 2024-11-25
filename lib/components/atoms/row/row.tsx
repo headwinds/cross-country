@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 export interface RowProps extends React.HTMLAttributes<HTMLHRElement> {
   id?: string;
-  children: React.ReactElement | React.ReactElement[];
+  children: React.ReactElement | React.ReactElement[] | React.ReactNode;
   hasChildrenCentered?: boolean;
   customStyle?: React.CSSProperties;
   customClass?: string;

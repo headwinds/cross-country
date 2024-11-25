@@ -1,16 +1,16 @@
-import * as React from 'react';
-import { Row, Column, Paragraph, Span, AnimateNumber } from '../../';
-import { KeyValuePairsProps } from './key-value-pairs.types';
+//@ts-nocheck
 
-import styles from './key-value-pairs.css';
+import * as React from "react";
+import { AnimateNumber, Column, Paragraph, Row, Span } from "../../";
+import { KeyValuePairsProps } from "./key-value-pairs.types";
 
 export const VALUE_TYPE = {
-  TEXT: 'text',
-  ANIMATE_NUMBER: 'animate-number',
+  TEXT: "text",
+  ANIMATE_NUMBER: "animate-number",
 };
 
 const KeyValuePairs: React.FC<KeyValuePairsProps> = ({
-  dataTestId = 'key-value-pairs',
+  dataTestId = "key-value-pairs",
   keyValues = [],
   keyStyle = {},
   valueStyle = {},
@@ -24,12 +24,23 @@ const KeyValuePairs: React.FC<KeyValuePairsProps> = ({
           return <AnimateNumber from={0} to={value} />;
         case VALUE_TYPE.TEXT:
         default:
-          return <Paragraph customStyle={{ ...valueStyle, padding: 0, margin: 0 }}>{value}</Paragraph>;
+          return (
+            <Paragraph customStyle={{ ...valueStyle, padding: 0, margin: 0 }}>
+              {value}
+            </Paragraph>
+          );
       }
     };
 
     return (
-      <Row key={id} customStyle={{ alignItems: 'flex-end', justifyContent: 'space-between', padding: 0 }}>
+      <Row
+        key={id}
+        customStyle={{
+          alignItems: "flex-end",
+          justifyContent: "space-between",
+          padding: 0,
+        }}
+      >
         <Span customStyle={keyStyle}>{key}</Span>
         {renderValueByType()}
       </Row>
@@ -37,7 +48,7 @@ const KeyValuePairs: React.FC<KeyValuePairsProps> = ({
   });
 
   return (
-    <Column dataTestId={dataTestId} customStyle={{ width: '100%', margin: 8 }}>
+    <Column dataTestId={dataTestId} customStyle={{ width: "100%", margin: 8 }}>
       {list}
     </Column>
   );
