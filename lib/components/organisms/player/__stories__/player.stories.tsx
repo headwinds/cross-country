@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Player from "../player";
-import { Column } from "../../../";
+import { Column, Row } from "../../../";
 import Input from "@cross-country/components/atoms/text/input";
 import Label from "@cross-country/components/atoms/text/label";
 
@@ -60,9 +60,9 @@ export const PlayerShelfStory: Story = {
         customStyle={{
           backgroundColor: "black",
           width: "100vw",
-          height: "100vh",
           margin: 0,
           padding: 0,
+          overflow: "hidden",
         }}
       >
         <Player
@@ -70,10 +70,12 @@ export const PlayerShelfStory: Story = {
             artistName: "Lowko",
             websiteUrl: "https://lowko.tv",
             youtubeUrl: url,
+            isArtistNameUnderline: false,
           }}
           width={width}
           height={height}
         />
+
         <Label
           customStyle={{
             margin: 16,

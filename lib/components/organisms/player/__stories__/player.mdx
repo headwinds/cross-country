@@ -13,13 +13,74 @@ This Player wraps the [react-player](https://www.npmjs.com/package/react-player)
     artistName: "Brené Brown",
     websiteUrl: "https://brenebrown.com/",
     youtubeUrl: "https://youtu.be/iCvmsMzlF7o?si=a5Ez4-uI31vBDSZs",
+    isArtistNameUnderlined: true,
   }}
+  width={900}
+  height={500}
+  customStyle={{}}
 />
 ```
 
-### Story
+### Player Story
 
 <Canvas of={PlayerStories.PlayerStory} />
+
+### Player Shelf Story
+
+This is a prototype of a player that one would open in the browser beside your code editor. The idea is all about distraction-free watching, reducing the noise that surrounds the player when it is on Youtube or some other platform that tries to grab your attention.
+
+This setup would be perfect for watching a tutorial or a talk while coding, and would live on a page with a completely dark background.
+
+```jsx <Column
+<Column
+  id="playerContainer"
+  ref={containerRef}
+  customStyle={{
+    backgroundColor: "black",
+    width: "100vw",
+    margin: 0,
+    padding: 0,
+    overflow: "hidden",
+  }}
+>
+  <Player
+    artist={{
+      artistName: "Lowko",
+      websiteUrl: "https://lowko.tv",
+      youtubeUrl: url,
+    }}
+    width={width}
+    height={height}
+  />
+
+  <Label
+    customStyle={{
+      margin: 16,
+      marginBottom: 0,
+      padding: 0,
+      color: "#84c4c3",
+      opacity: 0.2,
+    }}
+  >
+    Paste in the Youtube URL with /watch?v=
+  </Label>
+  <Input
+    value={url}
+    onTextChange={(text: string) => setUrl(text)}
+    customStyle={{
+      margin: 16,
+      maxWidth: 600,
+      backgroundBlendMode: "darken",
+      opacity: 0.2,
+      backgroundColor: "#333",
+      color: "#84c4c3",
+      borderColor: "#84c4c3",
+    }}
+  />
+</Column>
+```
+
+<Canvas of={PlayerStories.PlayerShelfStory} />
 
 ### Prototypes
 

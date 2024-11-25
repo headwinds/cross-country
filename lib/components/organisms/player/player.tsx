@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 //import Image from "next/image";
-import { Image, Column } from "../../";
+import { Image, Column, Link } from "../../";
 import ReactPlayer from "react-player/youtube";
 import { background } from "storybook/internal/theming";
 import { use } from "chai";
@@ -19,6 +19,7 @@ type Artist = {
   facebookUrl?: string | null;
   twitterUrl?: string | null;
   sunAndBassUrl?: string | null;
+  isArtistNameUnderline?: boolean;
 };
 
 const getYoutubeThumbnail = (url: string): string => {
@@ -64,6 +65,22 @@ const Player = ({
       />
     );
   }, [artist.youtubeUrl, width, height, customStyle]);
+
+  if (artist.websiteUrl && artist.youtubeUrl) {
+    return (
+      <Column customStyle={{ padding: 0 }}>
+        {reactPlayer}
+        <Link
+          url={artist.websiteUrl}
+          text="Artist Website"
+          customStyle={{ margin: 8 }}
+          hasUnderline={artist.isArtistNameUnderline}
+        >
+          {artist.artistName}
+        </Link>
+      </Column>
+    );
+  }
 
   if (artist.youtubeUrl && isSelectedYoutube) {
     return reactPlayer;
