@@ -8,7 +8,7 @@ const defaultConfig = {
   text: { customClass: "", customStyle: {}, rest: {} },
 };
 
-type StaggerProps = {
+export interface StaggerProps {
   color?: string | string[];
   config?: {
     column?: {
@@ -25,7 +25,7 @@ type StaggerProps = {
   staggerText: string[];
   stagger?: { key: string; value: number };
   size?: "small" | "medium" | "large";
-};
+}
 
 const Stagger = ({
   color = "#000",

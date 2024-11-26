@@ -1,13 +1,4 @@
-import * as React from "react";
-import {
-  Headline,
-  Column,
-  Span,
-  Paragraph,
-  Image,
-  Stagger,
-  Link,
-} from "../../../";
+import { Column, Image, Link, Stagger } from "../../../";
 import facebookCanada from "./facebook-canadian-news-restrictions.png";
 
 const ListicleStory = () => {
@@ -22,7 +13,11 @@ const ListicleStory = () => {
         stagger={{ key: "marginLeft", value: 16 }}
         color={["#666", "#666", "#d9be2a"]}
       />
-      <Image url={facebookCanada} width={400} />
+      <Image
+        url={facebookCanada}
+        width={400}
+        a11y="Facebook Canadian News Restrictions"
+      />
 
       <Link url="https://www.cbc.ca/listen/live-radio/1-479-the-block/">
         CBC The Block

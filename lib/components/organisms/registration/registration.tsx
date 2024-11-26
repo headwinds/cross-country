@@ -11,7 +11,7 @@ const FieldRow = ({ children }) => {
   return <Row customClass={styles.fieldRow}>{children}</Row>;
 };
 
-interface RegistrationProps {
+export interface RegistrationProps {
   config: {
     text?: string;
     hasBackground?: boolean;

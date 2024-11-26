@@ -1,7 +1,4 @@
-import React from "react";
-import styles from "./footer.module.css";
-
-interface FooterProps {}
+export interface FooterProps {}
 
 const Footer = ({}: FooterProps) => <footer>footer</footer>;
 

@@ -9,6 +9,8 @@ Do I want a Netflix style where each rows is a carousel or a single carousel tha
 For starters, I only need one row that scrolls horizontally.
 */
 
+export interface CarouselProps {}
+
 const Carousel = ({}) => {
   return (
     <Column>

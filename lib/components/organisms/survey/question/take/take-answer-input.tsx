@@ -14,7 +14,7 @@ import {
 import { PencilSimple, CheckCircle } from "@phosphor-icons/react";
 import InputManager from "./inputs/input-manager";
 
-interface TakeAnswerInputProps {
+export interface TakeAnswerInputProps {
   data: any;
   onChange: (data: any) => void;
   customClass?: string;

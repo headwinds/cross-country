@@ -1,11 +1,15 @@
-import * as React from 'react';
-import { ErrorProps } from './error.types';
+import * as React from "react";
 
-import styles from './error.module.css';
+import styles from "./error.module.css";
+
+export interface ErrorProps {
+  message?: string;
+  customStyle?: any;
+}
 
 const Error = ({ message, customStyle }: ErrorProps) => (
   <div data-testid="error" className={styles.Error} style={customStyle}>
-    {message || 'sorry, something went wrong'}
+    {message || "sorry, something went wrong"}
   </div>
 );
 

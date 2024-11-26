@@ -10,6 +10,14 @@ import {
 import { Trash, CheckSquare, PencilSimple } from "@phosphor-icons/react";
 import Option from "./option";
 
+export interface OptionInputProps {
+  id: number;
+  updateOption: any;
+  value: string;
+  removeOption: any;
+  answer: string;
+}
+
 const OptionInput = ({
   id = 0,
   updateOption,

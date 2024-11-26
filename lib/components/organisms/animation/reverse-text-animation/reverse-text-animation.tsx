@@ -7,6 +7,13 @@ const defaultReverseConfig = {
   cursor: "_",
 };
 
+export interface ReverseTextAnimationProps {
+  color?: string;
+  titleOne?: string;
+  titleTwo?: string;
+  reverseConfig?: any;
+}
+
 const ReverseTextAnimation = ({
   color = "darkgrey",
   titleOne = "Learn React, D3, XState",

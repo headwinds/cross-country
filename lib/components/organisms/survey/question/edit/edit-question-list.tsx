@@ -1,14 +1,14 @@
 import React, { useMemo } from "react";
 import EditQuestion from "./edit-question";
 
-type EditQuestionListProps = {
-  questions: any[];
-  onChange: any;
-};
-
 /*
 When editting a question, we are using xstate
 */
+
+export interface EditQuestionListProps {
+  questions: any[];
+  onChange: any;
+}
 
 const EditQuestionList = ({ questions, onChange }: EditQuestionListProps) => {
   console.log("EditQuestionList questions: ", questions);

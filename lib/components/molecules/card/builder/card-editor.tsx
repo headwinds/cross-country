@@ -14,7 +14,7 @@ import {
   Label,
   Button,
   TextInput,
-  TextAnswerInput,
+  AnswerInput,
   Wisp,
   Stage,
 } from "../../../";
@@ -37,7 +37,7 @@ const UrlQuestion = ({ send }) => {
   };
 
   return (
-    <TextAnswerInput
+    <AnswerInput
       data={textAnswerInputData}
       onChange={onChange}
       hasSave={true}

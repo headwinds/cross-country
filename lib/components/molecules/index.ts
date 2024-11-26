@@ -1,11 +1,7 @@
-// Add more molecules as needed
 export * from "./autocomplete";
 export * from "./card";
 export * from "./carousel";
 export * from "./checkboxlabel";
-//export * from "./day-number";
-//export * from "./error";
-//export * from "./field";
 export * from "./footer";
 export * from "./gold-leaf";
 export * from "./header";
@@ -30,9 +26,9 @@ export * from "./time-progress";
 export * from "./user";
 export * from "./wallpaper";
 export * from "./wrapper";
-// export all the components in the molecules folder
-export { default as DayNumber } from "./day-number";
-export { default as Error } from "./error";
-export { default as VennDiagram } from "./venn-diagram";
-export { VennDiagramCircle } from "./venn-diagram";
-export { default as Field } from "./field";
+export * from "./day-number";
+export * from "./error";
+export * from "./venn-diagram";
+export * from "./field";
+export * from "./wrapper";
+export * from "./wallpaper";

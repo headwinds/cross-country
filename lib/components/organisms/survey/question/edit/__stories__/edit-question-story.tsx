@@ -1,8 +1,6 @@
-import * as React from "react";
-import { useState, useMemo } from "react";
-import Question from "../../take/question";
+import { useState } from "react";
+import { Paragraph } from "../../../../../";
 import EditQuestion from "../edit-question";
-import { Form, Row, Paragraph, TextInput, RadioGroup } from "../../../../../";
 
 const defaultQuesiton = {
   id: null,

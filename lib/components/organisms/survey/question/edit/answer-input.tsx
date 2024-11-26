@@ -19,6 +19,16 @@ import {
   XSquare,
 } from "@phosphor-icons/react";
 
+export interface AnswerInputProps {
+  data: any;
+  onChange: any;
+  customClass?: string;
+  helperText?: string;
+  hasActions?: boolean;
+  rows?: number;
+  cols?: number;
+}
+
 const AnswerInput = ({
   data,
   onChange,

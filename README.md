@@ -112,6 +112,7 @@ Run [changesets](https://github.com/changesets/changesets)
 ```
 npx changeset
 npx changeset version
+npm publish
 ```
 
 Need to run both commands `npx changeset` only creates the changeset while `npx changeset version` will then update the package.json
@@ -127,7 +128,7 @@ npm test
 ## Publish to NPM
 
 ```
-npx changeset publish
+npm publish
 ```
 
 ```

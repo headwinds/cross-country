@@ -34,6 +34,10 @@ const customParagraphStyle = {
   color: gold,
 };
 
+export interface HeadwindsProfileProps {
+  isAuthenticated?: boolean;
+}
+
 const HeadwindsProfile = ({ isAuthenticated }: HeadwindsProfile) => {
   return (
     <Column>

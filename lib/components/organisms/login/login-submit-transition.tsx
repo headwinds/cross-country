@@ -36,6 +36,7 @@ const LoginSubmitTransition = ({
       <Row>
         <Label>Remember me?</Label>
         <Checkbox
+          id="rememberMeCheckbox"
           handleChange={handleRememberMeClicked}
           isChecked={hasRememberMeChecked}
         />
@@ -48,13 +49,7 @@ const LoginSubmitTransition = ({
       <animated.div style={animatedStyles}>
         <Row customClass={styles.login__rowSend}>
           <RememberMe />
-          <Button
-            type="submit"
-            label="login"
-            customClass={styles.login__button}
-          >
-            Send
-          </Button>
+          <Button customClass={styles.login__button}>Send</Button>
         </Row>
       </animated.div>
     );
@@ -63,9 +58,7 @@ const LoginSubmitTransition = ({
   return (
     <Row customClass={styles.login__rowSend}>
       <RememberMe />
-      <Button type="submit" label="login" customClass={styles.login__button}>
-        Send
-      </Button>
+      <Button customClass={styles.login__button}>Send</Button>
     </Row>
   );
 };

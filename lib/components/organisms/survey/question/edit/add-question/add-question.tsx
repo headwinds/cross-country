@@ -45,6 +45,11 @@ const defaultState = {
   questionType: "text",
 };
 
+export interface AddQuestionProps {
+  data: any;
+  onChange: any;
+}
+
 const AddQuestion = () => {
   const [data, setData] = useState({ ...defaultQuesiton });
   const [selectedId, setSelectedId] = useState(null);

@@ -39,12 +39,12 @@ type Listicle = {
   updated_at: Date;
 };
 
-type ListicleProps = {
+export interface ListicleProps {
   data: {
     title: string;
     listicleItems: ListicleItem[];
   };
-};
+}
 
 const Listicle = ({ data }: ListicleProps) => {
   if (!data.listicleItems) {

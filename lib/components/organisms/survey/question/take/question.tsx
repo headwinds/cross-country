@@ -3,7 +3,7 @@ import { TextInput } from "../../../../";
 import MultipleChoice from "./multiple-choice";
 import TakeAnswerInput from "./take-answer-input";
 
-type QuestionProps = {
+export interface QuestionProps {
   [x: string]: any;
   onTextChange: any;
   value: any;
@@ -14,7 +14,7 @@ type QuestionProps = {
   isDisabled?: boolean;
   name?: any;
   register?: any;
-};
+}
 
 /*
 Take a question!

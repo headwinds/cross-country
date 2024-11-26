@@ -1,12 +1,14 @@
-import { forwardRef } from 'react';
+import { forwardRef } from "react";
 
-import InteractiveTile from './tile-interactive';
-import type { TileType, InteractiveTileType } from './types';
+import InteractiveTile from "./tile-interactive";
+import type { TileType, InteractiveTileType } from "./types";
 
-const Tile = forwardRef((props: TileType | InteractiveTileType, ref) => {
+export interface TileProps extends TileType, InteractiveTileType {}
+
+const Tile = forwardRef((props: TileProps, ref) => {
   const { type } = props;
   switch (type) {
-    case 'interactive':
+    case "interactive":
     default:
       return <InteractiveTile {...props} ref={ref} />;
   }

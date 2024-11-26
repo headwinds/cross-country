@@ -1,6 +1,6 @@
 import React from "react";
 
-interface CircleProps {
+export interface CircleProps {
   cx?: number;
   cy?: number;
   r?: number;

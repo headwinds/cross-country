@@ -28,13 +28,21 @@ const defaultModel = {
   variant: ANIMAL_VARIANTS.RABBIT,
 };
 
+export interface AnimalProps {
+  customClass?: string;
+  customSkinStyle?: any;
+  model?: any;
+  tileSize?: number;
+  children?: any;
+}
+
 const Animal = ({
   customClass = "",
   customSkinStyle = {},
   model = defaultModel,
   tileSize = 40,
   children,
-}) => (
+}: AnimalProps) => (
   <Actor
     type={model.type}
     config={model.config}

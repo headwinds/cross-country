@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./bold.module.css";
 import clsx from "clsx";
 
-interface BoldProps {
+export interface BoldProps {
   children: React.ReactNode;
   customClass?: string;
   customStyle?: React.CSSProperties;

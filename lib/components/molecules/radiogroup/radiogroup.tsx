@@ -8,7 +8,7 @@ import Label from "../../atoms/text/label";
 
 // register is an optional function if are using react-hook-form
 
-type RadioGroupProps = {
+export interface RadioGroupProps {
   data: {
     options: { id: string; value: string }[];
     question: string;
@@ -17,7 +17,7 @@ type RadioGroupProps = {
   onChange: (selectedId: string) => void;
   selectedId?: string;
   name?: string;
-};
+}
 
 const RadioGroup = ({
   onChange,

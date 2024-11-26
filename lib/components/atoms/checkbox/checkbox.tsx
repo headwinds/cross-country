@@ -1,8 +1,8 @@
-import React from 'react';
-import styles from './checkbox.module.css';
-import clsx from 'clsx';
+import React from "react";
+import styles from "./checkbox.module.css";
+import clsx from "clsx";
 
-type CheckboxProps = {
+export type CheckboxProps = {
   isChecked: boolean;
   id: string;
   handleChange: () => void;
@@ -10,9 +10,15 @@ type CheckboxProps = {
   customStyle?: React.CSSProperties;
 };
 
-const Checkbox = ({ isChecked = false, id, handleChange, customClassName = '', customStyle = {} }: CheckboxProps) => {
-  const classNameSelected = isChecked ? 'checkboxFormBefore' : null;
-  const addStyle = classNameSelected ? styles[classNameSelected] : '';
+const Checkbox = ({
+  isChecked = false,
+  id,
+  handleChange,
+  customClassName = "",
+  customStyle = {},
+}: CheckboxProps) => {
+  const classNameSelected = isChecked ? "checkboxFormBefore" : null;
+  const addStyle = classNameSelected ? styles[classNameSelected] : "";
 
   const className = `${styles.checkboxFunction} ${addStyle}`;
   return (

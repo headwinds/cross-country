@@ -28,7 +28,7 @@ const rgb = ColorUtil.hexToRgb("#67bd67");
 const darkenColor = -0.1; // 10% darker
 const shadedColor = ColorUtil.getShadedColor(rgb, darkenColor);
 
-interface TileGridProps {
+export interface TileGridProps {
   totalInRow?: number;
   gapSize?: number;
   models?: TileModelType[];
@@ -37,7 +37,7 @@ interface TileGridProps {
   tileConfig?: { size: number; fill: string; cornerColor: string };
   isIsometric?: boolean;
   customClass?: string | null;
-  tileRefs?: React.RefObject<HTMLDivElement[]>;
+  tileRefs?: React.MutableRefObject<unknown[]>;
 }
 
 const TileGrid = ({
@@ -51,7 +51,7 @@ const TileGrid = ({
   customClass = null,
   tileRefs,
 }: TileGridProps) => {
-  const [tileSeleted, setSelected] = useState(null);
+  const [tileSeleted, setSelected] = useState<TileModelType | null>(null);
 
   const size = Math.floor(width / totalInRow - gapSize);
   const totalTiles = models.length;
@@ -96,8 +96,11 @@ const TileGrid = ({
             }}
             setSelected={setSelected}
             isSelected={isSelected}
-            ref={(ref) => (tileRefs ? (tileRefs.current[count] = ref) : null)}
-            id={`tile${tileModel.id}`}
+            ref={(ref) => {
+              if (tileRefs && ref) {
+                tileRefs.current[count] = ref;
+              }
+            }}
           />
         );
       });
@@ -105,7 +108,7 @@ const TileGrid = ({
     const createRow = (columns, x) => {
       const row = createColumns(columns, x);
       return (
-        <Row style={styles.tileRow} key={x}>
+        <Row className={styles.tileRow} key={x}>
           {row}
         </Row>
       );

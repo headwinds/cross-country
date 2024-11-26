@@ -145,6 +145,15 @@ const loginReducer = (state, action) => {
   }
 };
 
+export interface LoginProps {
+  isAnimated?: boolean;
+  hasImage?: boolean;
+  hasBackground?: boolean;
+  imageUrl?: string;
+  onChange?: (user: any) => void;
+  onRegisterClick?: () => void;
+}
+
 const Login = ({
   isAnimated = false,
   hasImage = false, // true is busted!

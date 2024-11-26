@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, CSSProperties } from "react";
 import { Column, Image, SVG } from "../../../";
 import styles from "./actor.module.css";
 import clsx from "clsx";
@@ -56,6 +56,18 @@ const defaultCustomSkinStyle = {
   backgroundColor: "red",
 };
 
+export interface ActorProps {
+  position?: any;
+  customStyle?: CSSProperties;
+  customClass?: string;
+  customTileStyle?: any;
+  customSkinStyle?: any;
+  config?: any;
+  tileSize?: number;
+  children?: any;
+  type?: string;
+}
+
 const Actor = ({
   position = defaultPosition,
   customClass = "", // for the tile container
@@ -65,7 +77,7 @@ const Actor = ({
   tileSize = defaultTileSize,
   children = null,
   ...rest
-}) => {
+}: ActorProps) => {
   const columnCustomClass = clsx(styles.actor, customClass);
   const type = config?.type || null;
 

@@ -1,1 +1,2 @@
-export { default } from './cleric';
+export { default } from "./cleric";
+export type { ClericProps } from "./cleric";

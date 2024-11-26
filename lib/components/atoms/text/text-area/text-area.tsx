@@ -3,6 +3,19 @@ import styles from "./text-area.module.css";
 
 import clsx from "clsx";
 
+export interface TextAreaProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  onTextChange: (text: string) => void;
+  value?: string;
+  customClass?: string;
+  customStyle?: React.CSSProperties;
+  placeholder?: string;
+  type?: string;
+  rows?: number;
+  cols?: number;
+  isDraggable?: boolean;
+}
+
 const TextArea = ({
   onTextChange,
   value = "",

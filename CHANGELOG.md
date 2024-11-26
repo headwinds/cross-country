@@ -1,5 +1,17 @@
 # cross-country
 
+## 1.2.21
+
+### Patch Changes
+
+- fixed recursion issue in button
+
+## 1.2.20
+
+### Patch Changes
+
+- added more types and updated the player story"
+
 ## 1.2.19
 
 ### Patch Changes

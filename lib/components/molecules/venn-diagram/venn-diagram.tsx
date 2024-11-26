@@ -1,6 +1,6 @@
 import React from "react";
 import VennDiagramCircle from "./venn-diagram-circle";
-import { Column } from "@cross-country/components/atoms";
+import { Column } from "@cross-country/components/";
 import { VennDiagramProps } from "./venn-diagram.types";
 import VennDiagramIntersection from "./venn-diagram-intersection";
 import VennDiagraTwoIntersection from "./venn-diagram-two-intersection";
@@ -22,8 +22,6 @@ const VennDiagram = ({
   y = 50,
   dot = { cx: 250, cy: 175, r: 3 },
 }: VennDiagramProps) => {
-  console.log("VennDiagram circles", circles);
-
   if (!circles || circles.length === 0) {
     return null;
   }

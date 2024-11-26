@@ -1,4 +1,10 @@
-export { default as Paragraph } from "./paragraph";
-export { default as Number } from "./number";
-export { default as Headline } from "./headline";
-export { default as Bold } from "./bold";
+export * from "./animate-number";
+export * from "./bold";
+export * from "./headline";
+export * from "./hilight";
+export * from "./input";
+export * from "./label";
+export * from "./paragraph";
+export * from "./span";
+export * from "./subheadline";
+export * from "./text-area";

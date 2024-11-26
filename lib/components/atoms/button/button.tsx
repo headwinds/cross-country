@@ -1,15 +1,16 @@
 import React from "react";
-import clsx from "clsx";
 import styles from "./button.module.css";
+import clsx from "clsx";
 
-interface ButtonProps {
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text?: string;
   onClick?: () => void;
   customClass?: string;
   customStyle?: React.CSSProperties;
   children?: React.ReactNode;
-  type?: "button" | "submit" | "reset";
-  width?: number;
+  ariaLabel?: string;
+  isDisabled?: boolean;
 }
 
 const Button = ({
@@ -18,20 +19,22 @@ const Button = ({
   customClass = "",
   customStyle = {},
   children = null,
-  width = 100,
+  ariaLabel = "",
+  isDisabled = false,
   ...rest
-}: ButtonProps) => {
-  return (
-    <button
-      {...rest}
-      style={{ width, ...customStyle }}
-      className={clsx(styles.button, customClass)}
-      onClick={onClick}
-      onKeyDown={onClick}
-    >
-      {text || children}
-    </button>
-  );
-};
+}: ButtonProps) => (
+  <button
+    {...rest}
+    className={clsx(styles.button, styles.defaultButton, customClass, {
+      [styles.disabled]: isDisabled,
+    })}
+    onClick={onClick}
+    style={customStyle}
+    aria-label={ariaLabel}
+    disabled={isDisabled}
+  >
+    {text || children}
+  </button>
+);
 
 export default Button;

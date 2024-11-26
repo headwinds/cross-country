@@ -1,1 +1,2 @@
-export { default } from './cross-country-image';
+export { default } from "./image";
+export type { ImageProps } from "./image";

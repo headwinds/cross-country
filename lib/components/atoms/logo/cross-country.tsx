@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styles from "./logo.module.css";
 import cross_country from "./cross-country.svg";
 
-type CrossCountryLogoProps = {
+export type CrossCountryLogoProps = {
   width?: number;
 };
 

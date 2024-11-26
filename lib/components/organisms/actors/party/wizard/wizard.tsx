@@ -1,22 +1,27 @@
-import clsx from 'clsx';
-import Actor from '../../actor/';
+import clsx from "clsx";
+import Actor from "../../actor/";
 
 // pre-configured character
-const head = { color: 'gold' };
-const body = { color: 'grey' };
-const legs = { color: 'black' };
-const defaultConfig = { head, body, legs, type: 'humanoid' };
+const head = { color: "gold" };
+const body = { color: "grey" };
+const legs = { color: "black" };
+const defaultConfig = { head, body, legs, type: "humanoid" };
 
 const defaultModel = {
   id: 0,
-  type: 'humanoid',
+  type: "humanoid",
   position: { x: 0, y: 0, z: 0 },
-  customSkinStyle: { backgroundColor: 'rebeccapurple' },
+  customSkinStyle: { backgroundColor: "rebeccapurple" },
   config: defaultConfig,
-  customClass: '',
+  customClass: "",
 };
 
-const Wizard = ({ model = defaultModel, tileSize }) => {
+export interface WizardProps {
+  model?: any;
+  tileSize?: number;
+}
+
+const Wizard = ({ model = defaultModel, tileSize }: WizardProps) => {
   const { config, customClass, customSkinStyle = {}, position, type } = model;
 
   const validConfig = config ?? defaultConfig;

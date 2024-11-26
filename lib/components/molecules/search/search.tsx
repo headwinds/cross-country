@@ -8,8 +8,8 @@ Do I want a Netflix style where each rows is a carousel or a single carousel tha
 
 For starters, I only need one row that scrolls horizontally.
 */
-
-const Carousel = ({}) => {
+export interface SearchProps {}
+const Search: SearchProps = ({}) => {
   <Column>
     <Column>Head 1</Column>
     <Column>Head 2</Column>
@@ -17,4 +17,4 @@ const Carousel = ({}) => {
   </Column>;
 };
 
-export default Carousel;
+export default Search;

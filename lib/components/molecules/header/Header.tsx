@@ -1,13 +1,13 @@
 import React from "react";
 
-import PillButton from "../../atoms/button/pill-button";
+import { Button } from "@cross-country/components/";
 import styles from "./header.module.css";
 
 type User = {
   name: string;
 };
 
-interface HeaderProps {
+export interface HeaderProps {
   user?: User;
   onLogin: () => void;
   onLogout: () => void;
@@ -46,17 +46,12 @@ const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) => (
             <span className={styles.welcome}>
               Welcome, <b>{user.name}</b>!
             </span>
-            <PillButton size="small" onClick={onLogout} label="Log out" />
+            <Button onClick={onLogout}>Log out</Button>
           </>
         ) : (
           <>
-            <PillButton size="small" onClick={onLogin} label="Log in" />
-            <PillButton
-              primary
-              size="small"
-              onClick={onCreateAccount}
-              label="Sign up"
-            />
+            <Button onClick={onLogin} />
+            <Button onClick={onCreateAccount}>Sign up</Button>
           </>
         )}
       </div>

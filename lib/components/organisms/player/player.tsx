@@ -1,8 +1,9 @@
 import React, { useState, useMemo } from "react";
 //import Image from "next/image";
-import { Image, Column } from "../../";
+import { Image, Column, Link } from "../../";
 import ReactPlayer from "react-player/youtube";
 import { background } from "storybook/internal/theming";
+import { use } from "chai";
 
 type Artist = {
   artistName: string;
@@ -18,6 +19,7 @@ type Artist = {
   facebookUrl?: string | null;
   twitterUrl?: string | null;
   sunAndBassUrl?: string | null;
+  isArtistNameUnderline?: boolean;
 };
 
 const getYoutubeThumbnail = (url: string): string => {
@@ -30,45 +32,63 @@ const getYoutubeThumbnail = (url: string): string => {
   return thumbnailUrl;
 };
 
+export interface PlayerProps {
+  artist: Artist;
+  selectedArtistYoutube?: Artist | null;
+  onClick?: () => void;
+  onContributeClick?: () => void;
+  customStyle?: React.CSSProperties;
+  width?: number | string;
+  height?: number | string;
+}
+
 const Player = ({
   artist,
   selectedArtistYoutube = null,
   onClick,
   onContributeClick,
-}: {
-  artist: Artist;
-  selectedArtistYoutube?: Artist | null;
-  onClick?: () => void;
-  onContributeClick?: () => void;
-}) => {
+  customStyle,
+  width = 900,
+  height = 500,
+}: PlayerProps) => {
   const isSelectedYoutube =
     artist?.artistName === selectedArtistYoutube?.artistName;
 
-  if (artist.youtubeUrl && isSelectedYoutube) {
+  const reactPlayer = useMemo(() => {
     return (
-      <div className="aspect-w-16 aspect-h-9">
-        <ReactPlayer
-          url={artist.youtubeUrl}
-          width="100%"
-          height="100%"
-          controls={true}
-        />
-      </div>
+      <ReactPlayer
+        url={artist.youtubeUrl}
+        width={width}
+        height={height}
+        controls={true}
+        style={customStyle}
+      />
     );
+  }, [artist.youtubeUrl, width, height, customStyle]);
+
+  if (artist.websiteUrl && artist.youtubeUrl) {
+    return (
+      <Column customStyle={{ padding: 0 }}>
+        {reactPlayer}
+        <Link
+          url={artist.websiteUrl}
+          text="Artist Website"
+          customStyle={{ margin: 8 }}
+          hasUnderline={artist.isArtistNameUnderline}
+        >
+          {artist.artistName}
+        </Link>
+      </Column>
+    );
+  }
+
+  if (artist.youtubeUrl && isSelectedYoutube) {
+    return reactPlayer;
   }
 
   // single use case for youtube not in a gallery list
   if (artist.youtubeUrl && selectedArtistYoutube === null) {
-    return (
-      <div className="aspect-w-16 aspect-h-9">
-        <ReactPlayer
-          url={artist.youtubeUrl}
-          width="100%"
-          height="100%"
-          controls={true}
-        />
-      </div>
-    );
+    return reactPlayer;
   }
 
   if (artist.youtubeUrl && !isSelectedYoutube) {
@@ -101,16 +121,7 @@ const Player = ({
   }
 
   if (artist.soundcloudUrl) {
-    return (
-      <div className="aspect-w-16 aspect-h-9">
-        <ReactPlayer
-          url={artist.soundcloudUrl}
-          width="100%"
-          height="100%"
-          controls={true}
-        />
-      </div>
-    );
+    return reactPlayer;
   }
 
   if (artist.photoUrl) {

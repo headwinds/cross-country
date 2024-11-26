@@ -1,22 +1,23 @@
-import React from 'react';
-import {useMemo}  from 'react';  
+import React from "react";
+import { useMemo } from "react";
 // components
-import { Row, Column, AnimateNumber, Paragraph, PillButton } from '../..';
+import { Row, Column, AnimateNumber, Paragraph, Button } from "../..";
 import styles from "./metrics.module.css";
 
-const Metrics = ({keywords = []}) => {
+export interface MetricsProps {
+  keywords?: string[];
+}
 
-    const keywordsList = useMemo(() => {
-        return keywords.map((keyword, index) => {
-            return <PillButton key={index} label={keyword} />;
-        });
+const Metrics = ({ keywords = [] }) => {
+  const keywordsList = useMemo(() => {
+    return keywords.map((keyword, index) => {
+      return <Button key={index}>{keyword}</Button>;
+    });
+  }, [keywords]);
 
-    }, [keywords]);
-
-
-    return (
-        <Column customClass={styles.metricsContainer}>
-            {/*
+  return (
+    <Column customClass={styles.metricsContainer}>
+      {/*
             Phase 2 
             <Row>
                 <Column>
@@ -28,16 +29,14 @@ const Metrics = ({keywords = []}) => {
                 </Column>
             
             </Row>*/}
-            <Row>
-                <Paragraph>Keywords</Paragraph>
-                <Column>
-                <Row>
-                {keywordsList}
-                </Row>
-                </Column>
-            </Row>
+      <Row>
+        <Paragraph>Keywords</Paragraph>
+        <Column>
+          <Row>{keywordsList}</Row>
         </Column>
-    );
+      </Row>
+    </Column>
+  );
 };
 
 export default Metrics;
