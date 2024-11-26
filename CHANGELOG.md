@@ -1,5 +1,11 @@
 # cross-country
 
+## 1.2.21
+
+### Patch Changes
+
+- fixed recursion issue in button
+
 ## 1.2.20
 
 ### Patch Changes
