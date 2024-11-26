@@ -22,8 +22,6 @@ const VennDiagram = ({
   y = 50,
   dot = { cx: 250, cy: 175, r: 3 },
 }: VennDiagramProps) => {
-  console.log("VennDiagram circles", circles);
-
   if (!circles || circles.length === 0) {
     return null;
   }

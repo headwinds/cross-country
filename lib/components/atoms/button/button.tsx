@@ -1,10 +1,9 @@
-// TODO type check
-// @ts-nocheck
 import React from "react";
 import styles from "./button.module.css";
 import clsx from "clsx";
 
-export type ButtonProps = {
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text?: string;
   onClick?: () => void;
   customClass?: string;
@@ -12,7 +11,7 @@ export type ButtonProps = {
   children?: React.ReactNode;
   ariaLabel?: string;
   isDisabled?: boolean;
-};
+}
 
 const Button = ({
   text = "",
@@ -24,19 +23,18 @@ const Button = ({
   isDisabled = false,
   ...rest
 }: ButtonProps) => (
-  <Button
+  <button
     {...rest}
-    customClass={clsx(styles.button, styles.defaultButton, customClass, {
+    className={clsx(styles.button, styles.defaultButton, customClass, {
       [styles.disabled]: isDisabled,
     })}
-    text={text}
     onClick={onClick}
-    customStyle={customStyle}
+    style={customStyle}
     aria-label={ariaLabel}
     disabled={isDisabled}
   >
     {text || children}
-  </Button>
+  </button>
 );
 
 export default Button;

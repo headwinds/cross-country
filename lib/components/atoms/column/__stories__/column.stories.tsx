@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Link from "../../link/link";
 import Column from "../column";
 import Image from "../../image";
-import { Paragraph } from "@cross-country/components/atoms";
+import Paragraph from "@cross-country/components/atoms/text/paragraph";
 import pale from "./the_pale_beyond.jpg";
 import styles from "./story.module.css";
 

@@ -10,7 +10,5 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const ButtonStory: Story = {
-  args: {
-    text: "click me",
-  },
+  render: () => <Button>Click Me</Button>,
 };
