@@ -1,0 +1,20 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import * as BranchesStories from "./branches.stories";
+
+<Meta of={BranchesStories} />
+
+# Branches
+
+This is the RSS Feed Branches component that powers [golds](https://golds.vercel.app).
+
+```jsx
+const onLoadedCallback = (error) => {
+  console.log(error.message);
+};
+
+<Branches onLoadedCallback={onLoadedCallback} />;
+```
+
+### Story
+
+<Canvas of={BranchesStories.BranchesStory} />

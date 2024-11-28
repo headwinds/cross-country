@@ -1,12 +1,14 @@
-import * as React from 'react';
-import { useRef, useEffect, useState } from 'react';
-import { getWindow } from '../../../utils/server-side-util';
-import Branch from '../branch';
-import { Column, Row, List, ListItem } from '../../..';
-import { BranchListProps } from './branch-list.types';
-import styles from './branches.module.css';
+import { useEffect, useRef, useState } from "react";
+import { Column, List, ListItem, Row } from "../../..";
+import Branch from "../branch";
+import styles from "./branches.module.css";
+import PortholeBranchModel from "@cross-country/models/PortholeBranchModel";
 
 const cardWidth = 375; // smaller phones like iPhone have 375px width
+
+export interface BranchListProps {
+  branches: PortholeBranchModel[];
+}
 
 const BranchList = ({ branches }: BranchListProps) => {
   const ref = useRef(null);
@@ -18,20 +20,22 @@ const BranchList = ({ branches }: BranchListProps) => {
 
       const calcTotalColumns = Math.floor(width / cardWidth);
       const totalColumns = calcTotalColumns > 0 ? calcTotalColumns : 1;
-      //console.log('BranchList totalColumns: ', totalColumns);
-      //console.log('BranchList width: ', width);
       setTotalColumns(totalColumns);
     }
   }, []);
 
-  const getCards = cardBranches => {
+  const getCards = (cardBranches) => {
     if (cardBranches.length === 0) {
       return null;
     } else {
       return cardBranches.map((branch, idx) => {
-        if (branch && branch !== null && branch.text) {
+        if (branch) {
           return (
-            <ListItem className={styles.card__item} key={idx} customStyle={{ listStyle: 'none' }}>
+            <ListItem
+              className={styles.card__item}
+              key={idx}
+              customStyle={{ listStyle: "none" }}
+            >
               <Branch branch={branch} />
             </ListItem>
           );
@@ -49,11 +53,14 @@ const BranchList = ({ branches }: BranchListProps) => {
 
     const columnProps = {
       customClass: styles.column__item,
-      key: `col${columnCount}`,
     };
 
     const column = (
-      <Column {...columnProps} customClass={styles.card__column}>
+      <Column
+        {...columnProps}
+        customClass={styles.card__column}
+        key={`col${columnCount}`}
+      >
         <List customClass={styles.card__list}>{getCards(cardBranches)}</List>
       </Column>
     );
@@ -61,14 +68,14 @@ const BranchList = ({ branches }: BranchListProps) => {
     return column;
   };
 
-  const getColumns = branches => {
+  const getColumns = (branches) => {
     if (branches.length === 0) {
       return null;
     } else if (totalColumns) {
       const totalBranchesPerColumn = Math.floor(branches.length / totalColumns);
       const range = [...Array(totalColumns).keys()];
 
-      const list = range.map(columnCount => {
+      const list = range.map((columnCount) => {
         return getColumn(totalBranchesPerColumn, branches, columnCount);
       });
 

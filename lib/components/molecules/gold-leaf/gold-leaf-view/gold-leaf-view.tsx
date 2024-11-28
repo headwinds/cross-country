@@ -7,6 +7,7 @@ import GoldLeafEmailView from "./email/gold-leaf-email-view";
 import styles from "./gold-leaf-view.module.css";
 import type { GoldLeafViewProps } from "./gold-leaf-view.types";
 import GoldTitleImageCard from "./title-image/gold-title-image-card";
+import GoldTitleCard from "./title-image/gold-title-card";
 
 const defaultCustomStyle = {
   height: "auto",
@@ -56,6 +57,18 @@ const GoldLeafView = ({
       />
       {/*<GoldLeafViewControls goldLeafModel={goldLeafModel} dataTestId={`${dataTestId}-controls`} />*/}
     </Card>
-  ) : null;
+  ) : (
+    <Card
+      customClass={styles.GoldLeafView}
+      dataTestId={dataTestId}
+      customStyle={customStyle}
+    >
+      <GoldTitleCard
+        goldLeafModel={goldLeafModel}
+        onNoImageFoundCallback={onNoImageFoundCallback}
+      />
+      {/*<GoldLeafViewControls goldLeafModel={goldLeafModel} dataTestId={`${dataTestId}-controls`} />*/}
+    </Card>
+  );
 };
 export default GoldLeafView;
