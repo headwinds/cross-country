@@ -28,7 +28,7 @@
       "@cross-country/types/*": ["lib/types/*"],
       "@cross-country/utils/*": ["lib/utils/*"],
       "@cross-country/constants/*": ["lib/constants/*"]
-    }
+    },
 
     /* Linting 
     "strict": true,
@@ -36,10 +36,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
     */
+    "declaration": true,
+    "declarationDir": "./dist/types",
+    "outDir": "./dist"
   },
   "include": ["src", "lib"],
-  "references": [{ "path": "./tsconfig.node.json" }],
-  "declaration": true,
-  "declarationDir": "./dist/types",
-  "outDir": "./dist"
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

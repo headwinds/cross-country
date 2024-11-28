@@ -12,17 +12,27 @@ export interface BranchListProps {
 
 const BranchList = ({ branches }: BranchListProps) => {
   const ref = useRef(null);
-  const [totalColumns, setTotalColumns] = useState(null);
+  const [totalColumns, setTotalColumns] = useState(0);
+
+  const calcTotalColumns = (width: number) => {
+    const calcTotalColumns = Math.floor(width / cardWidth);
+    const totalColumns = calcTotalColumns > 0 ? calcTotalColumns : 1;
+    setTotalColumns(totalColumns);
+  };
 
   useEffect(() => {
-    if (ref?.current?.offsetWidth && totalColumns === null) {
-      const width = ref.current.offsetWidth;
+    const handleResize = () => {
+      if (ref?.current?.offsetWidth) {
+        const width = ref.current.offsetWidth;
+        calcTotalColumns(width);
+      }
+    };
 
-      const calcTotalColumns = Math.floor(width / cardWidth);
-      const totalColumns = calcTotalColumns > 0 ? calcTotalColumns : 1;
-      setTotalColumns(totalColumns);
-    }
-  }, []);
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Initial calculation
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [totalColumns]);
 
   const getCards = (cardBranches) => {
     if (cardBranches.length === 0) {
