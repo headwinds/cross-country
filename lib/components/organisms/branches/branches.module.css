@@ -39,6 +39,8 @@
   margin: 0px;
   padding: 0px;
   align-items: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .column__item {
@@ -89,6 +91,8 @@
   overflow: hidden;
   background: whitesmoke;
   width: auto;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .card__item {

@@ -20,7 +20,13 @@ export const GoldTitleImageCard = ({
     } else if (mode !== "view" && goldLeafModel) {
       return (
         <>
-          <Column customStyle={{ padding: 4 }}>
+          <Column
+            customStyle={{
+              padding: 4,
+              borderBottom: "1px dashed #ddd",
+              borderTop: "1px dashed #ddd",
+            }}
+          >
             <Link
               url={goldLeafModel.link}
               customClass={styles.GoldLeaf__titleLink}
