@@ -1,5 +1,13 @@
 # cross-country
 
+## 1.2.22
+
+### Patch Changes
+
+- branches update with resize
+- Updated dependencies
+  - cross-country@1.2.22
+
 ## 1.2.21
 
 ### Patch Changes
