@@ -3,7 +3,7 @@ import React from "react";
 import { Column, Tile, Paragraph, Row } from "../../../../../";
 import { getIsland, getMapNewGrid } from "./island-util";
 // utils
-import { ColourUtil } from "@cross-country/utils";
+import { ColourUtil } from "@/lib/utils";
 
 const palette = ColourUtil.getSplashPalette();
 

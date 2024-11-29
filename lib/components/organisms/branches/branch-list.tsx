@@ -42,7 +42,7 @@ const BranchList = ({ branches }: BranchListProps) => {
         if (branch) {
           return (
             <ListItem
-              className={styles.card__item}
+              customClass={styles.card__item}
               key={idx}
               customStyle={{ listStyle: "none" }}
             >

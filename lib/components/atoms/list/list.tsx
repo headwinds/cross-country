@@ -8,6 +8,7 @@ export interface ListProps {
   customStyle?: React.CSSProperties;
   menuId?: string;
   isOrdered?: boolean;
+  start?: string;
 }
 
 const List = ({
@@ -16,6 +17,7 @@ const List = ({
   customStyle = {},
   menuId = "menuID1",
   isOrdered = false,
+  start,
   ...rest
 }: ListProps) => {
   if (isOrdered) {
