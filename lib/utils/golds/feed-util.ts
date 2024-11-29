@@ -1,5 +1,9 @@
 import PortholeBranchModel from "../../models/PortholeBranchModel";
 import getImagesFromDescription from "./image-find-util";
+import type {
+  TreeModelType,
+  PortholeBranchModelType,
+} from "@cross-country/models";
 
 const defaultImageUrl = "./"; // need default images...
 const validateContent = (entry) => {
@@ -33,6 +37,7 @@ export const getRSSBranch = (candidateBranch, index, ix) => {
   const photoUrl = resultImageObj.useText
     ? resultImageObj.defaultImageUrl
     : resultImageObj.imageUrl;
+
   const photoLargeUrl =
     photoUrl.indexOf("500") > -1 ? photoUrl.replace("500", "1280") : photoUrl;
   const branchTitleUnescape = unescape(branch.title);
@@ -102,6 +107,11 @@ export const getRSSBranch = (candidateBranch, index, ix) => {
     bViewed: false,
     bTrashed: false,
     origin: "porthole",
+    publishedDate: branch.publishedDate ?? "",
+    feedLink: branch.feedLink ?? "",
+    feedTitle: branch.feedTitle ?? "",
+    about: branch.about ?? "",
+    text: branch.text ?? "",
   };
 
   const portholeBranch = new PortholeBranchModel(props);
@@ -124,7 +134,11 @@ export const convertToPortholeBranches = (branches) => {
   return portholeBranchesValid;
 };
 
-export function createAllPortholeTrees() {
+type TreeDic = {
+  [key: string]: TreeModelType;
+};
+
+export const createAllPortholeTrees = (): TreeDic => {
   // 1
   const cabinPornTreeObj = {
     _id: "1",
@@ -133,7 +147,7 @@ export function createAllPortholeTrees() {
     title: "Cabin Porn™",
     category: "architecture",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 2
   const coolHuntingTreeObj = {
     _id: "2",
@@ -142,7 +156,7 @@ export function createAllPortholeTrees() {
     title: "Cool Hunting",
     category: "design",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 3
   //const swissmissTreeObj = { _id : "54cb9435d1796e940600008b", xmlUrl : "http://feeds2.feedburner.com/Swissmiss", type : "rss", title : "Swiss Miss" };
   const designmilkTreeObj = {
@@ -152,7 +166,7 @@ export function createAllPortholeTrees() {
     title: "Design Milk",
     category: "design",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 4
   const wiredTreeObj = {
     _id: "4",
@@ -161,7 +175,7 @@ export function createAllPortholeTrees() {
     title: "WIRED",
     category: "technology",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 5
   const boingboingTreeObj = {
     _id: "5",
@@ -170,7 +184,7 @@ export function createAllPortholeTrees() {
     title: "Boing Boing",
     category: "technology",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 6
   const kotakuTreeObj = {
     _id: "6",
@@ -179,7 +193,7 @@ export function createAllPortholeTrees() {
     title: "Kotaku",
     category: "gaming",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 7
   const treeHuggerTreeObj = {
     _id: "7",
@@ -188,7 +202,7 @@ export function createAllPortholeTrees() {
     title: "Tree Hugger",
     category: "technology",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 8
   const nationalGeographicTreeObj = {
     _id: "8",
@@ -198,7 +212,7 @@ export function createAllPortholeTrees() {
     title: "National Geographic",
     category: "technology",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 9
   const dwellTreeObj = {
     _id: "9",
@@ -207,7 +221,7 @@ export function createAllPortholeTrees() {
     title: "Dwell",
     category: "architecture",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 10
   const colossalTreeObj = {
     _id: "10",
@@ -216,7 +230,7 @@ export function createAllPortholeTrees() {
     title: "Colossal",
     category: "design",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 11
   const polygonTreeObj = {
     _id: "11",
@@ -225,7 +239,7 @@ export function createAllPortholeTrees() {
     title: "Polygon",
     category: "gaming",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 12 - not working
   const architizerTreeObj = {
     _id: "12",
@@ -234,7 +248,7 @@ export function createAllPortholeTrees() {
     title: "Architizer",
     category: "architecture",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 13
   const harpersbazaarTreeObj = {
     _id: "13",
@@ -243,7 +257,7 @@ export function createAllPortholeTrees() {
     title: "Harpers Bazaar",
     category: "fashion",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 14
   const wTreeObj = {
     _id: "14",
@@ -252,7 +266,7 @@ export function createAllPortholeTrees() {
     title: "W",
     category: "fashion",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 15
   const booooooomTreeObj = {
     _id: "15",
@@ -261,7 +275,7 @@ export function createAllPortholeTrees() {
     title: "BOOOOOOOM!",
     category: "art",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 16
   const abduzeedoTreeObj = {
     _id: "16",
@@ -270,7 +284,7 @@ export function createAllPortholeTrees() {
     title: "Abduzeedo",
     category: "design",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 17
   const behanceTreeObj = {
     _id: "17",
@@ -279,7 +293,7 @@ export function createAllPortholeTrees() {
     title: "Behance",
     category: "art",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 18
   const bleacherReportTreeObj = {
     _id: "18",
@@ -288,7 +302,7 @@ export function createAllPortholeTrees() {
     title: "Bleacher Report",
     category: "sports",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 19
   const gamespotTreeObj = {
     _id: "19",
@@ -297,7 +311,7 @@ export function createAllPortholeTrees() {
     title: "GameSpot",
     category: "gaming",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 20
   const twitchfilmTreeObj = {
     _id: "20",
@@ -306,7 +320,7 @@ export function createAllPortholeTrees() {
     title: "TwitchFilm",
     category: "film",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 21
   const mmTreeObj = {
     _id: "21",
@@ -315,7 +329,7 @@ export function createAllPortholeTrees() {
     title: "50mm",
     category: "photography",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 22
   const stuckTreeObj = {
     _id: "22",
@@ -324,7 +338,7 @@ export function createAllPortholeTrees() {
     title: "Stuck in Customs",
     category: "photography",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 23
   const nmeTreeObj = {
     _id: "23",
@@ -333,7 +347,7 @@ export function createAllPortholeTrees() {
     title: "Nme",
     category: "music",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 24
   const pitchforkTreeObj = {
     _id: "24",
@@ -342,7 +356,7 @@ export function createAllPortholeTrees() {
     title: "Pitchfork",
     category: "music",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 25
   const boilerroomTreeObj = {
     _id: "25",
@@ -351,7 +365,7 @@ export function createAllPortholeTrees() {
     title: "Boiler Room",
     category: "music",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 26
   const ruinTreeObj = {
     _id: "26",
@@ -360,7 +374,7 @@ export function createAllPortholeTrees() {
     title: "Rackk and Ruin",
     category: "fashion",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 27
   const paperholmTreeObj = {
     _id: "27",
@@ -369,7 +383,7 @@ export function createAllPortholeTrees() {
     title: "Paperholm",
     category: "art",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 28
   //const fraserTreeObj = { _id : "28", xmlUrl : "https://fraserflowers.wordpress.com/feed/", type : "rss", title : "fraser", category: "photography", origin: "porthole" };
   // 29
@@ -380,7 +394,7 @@ export function createAllPortholeTrees() {
     title: "Cristian Ordóñez",
     category: "photography",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 30
   const headlandsTreeObj = {
     _id: "30",
@@ -389,7 +403,7 @@ export function createAllPortholeTrees() {
     title: "headlands",
     category: "photography",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 31
   const artnationTreeObj = {
     _id: "31",
@@ -398,7 +412,7 @@ export function createAllPortholeTrees() {
     title: "ArtStation",
     category: "art",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 32
   const nycscoutTreeObj = {
     _id: "32",
@@ -407,7 +421,7 @@ export function createAllPortholeTrees() {
     title: "Scouting NY",
     category: "photography",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 33
   const taviTreeObj = {
     _id: "33",
@@ -416,7 +430,7 @@ export function createAllPortholeTrees() {
     title: "tavi gevinson",
     category: "fashion",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 34
   const repellerTreeObj = {
     _id: "34",
@@ -425,7 +439,7 @@ export function createAllPortholeTrees() {
     title: "Man Repeller",
     category: "fashion",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 35
   const slashFilmTreeObj = {
     _id: "35",
@@ -434,7 +448,7 @@ export function createAllPortholeTrees() {
     title: "Slash",
     category: "film",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 36
   const guardianFilmTreeObj = {
     _id: "36",
@@ -443,7 +457,7 @@ export function createAllPortholeTrees() {
     title: "Guardian Film",
     category: "film",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 37
   const walkerFilmTreeObj = {
     _id: "37",
@@ -452,7 +466,7 @@ export function createAllPortholeTrees() {
     title: "Walker Film",
     category: "film",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 38
   const docFilmTreeObj = {
     _id: "38",
@@ -461,7 +475,7 @@ export function createAllPortholeTrees() {
     title: "Documentary",
     category: "film",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 39
   //const yahoosportsTreeObj = { _id : "39", xmlUrl : "https://ca.sports.yahoo.com/blogs/rss.xml", type : "rss", title : "Yahoo Sports", category: "sports", origin: "porthole" };
   // 40
@@ -472,7 +486,7 @@ export function createAllPortholeTrees() {
     title: "Venture Beat",
     category: "technology",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 41
   const killscreenTreeObj = {
     _id: "41",
@@ -481,7 +495,7 @@ export function createAllPortholeTrees() {
     title: "Killscreen",
     category: "gaming",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 42
   const inquisitrTreeObj = {
     _id: "42",
@@ -490,7 +504,7 @@ export function createAllPortholeTrees() {
     title: "The Inquisitr Sport",
     category: "sports",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 43
   const sbnationTreeObj = {
     _id: "43",
@@ -499,7 +513,7 @@ export function createAllPortholeTrees() {
     title: "SB Nation",
     category: "sports",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 44
   const dezeenTreeObj = {
     _id: "44",
@@ -508,7 +522,7 @@ export function createAllPortholeTrees() {
     title: "Dezeen",
     category: "architecture",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 45
   const contemporistTreeObj = {
     _id: "45",
@@ -517,7 +531,7 @@ export function createAllPortholeTrees() {
     title: "Contemporist",
     category: "architecture",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 46
   const eikongraphiaTreeObj = {
     _id: "46",
@@ -526,7 +540,7 @@ export function createAllPortholeTrees() {
     title: "Eikongraphia",
     category: "photography",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 47
   const unhappyTreeObj = {
     _id: "47",
@@ -535,7 +549,7 @@ export function createAllPortholeTrees() {
     title: "Unhappy Hipsters",
     category: "design",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 48
   const architectureTreeObj = {
     _id: "48",
@@ -544,7 +558,7 @@ export function createAllPortholeTrees() {
     title: "The Architecture Blog",
     category: "architecture",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 49
   const designboomTreeObj = {
     _id: "49",
@@ -553,7 +567,7 @@ export function createAllPortholeTrees() {
     title: "Design Boom",
     category: "design",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 50
   const nautilusTreeObj = {
     _id: "50",
@@ -562,7 +576,7 @@ export function createAllPortholeTrees() {
     title: "Nautilus",
     category: "technology",
     origin: "porthole",
-  };
+  } as TreeModelType;
   // 51
 
   /*
@@ -581,7 +595,7 @@ export function createAllPortholeTrees() {
     wired: wiredTreeObj,
     coolhunting: coolHuntingTreeObj,
     kotaku: kotakuTreeObj,
-    nationalgeographic: nationalGeographicTreeObj,
+    //nationalgeographic: nationalGeographicTreeObj,
     colossal: colossalTreeObj,
     dwell: dwellTreeObj,
     designmilk: designmilkTreeObj,
@@ -628,7 +642,7 @@ export function createAllPortholeTrees() {
     nautilus: nautilusTreeObj,
   };
   return allPortholeTrees;
-}
+};
 
 const allPortholeTrees = createAllPortholeTrees();
 

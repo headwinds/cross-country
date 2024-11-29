@@ -1,6 +1,6 @@
 /* general styles */
 .body {
-  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   background: whitesmoke;
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
@@ -39,6 +39,8 @@
   margin: 0px;
   padding: 0px;
   align-items: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .column__item {
@@ -88,11 +90,14 @@
   padding: 0px;
   overflow: hidden;
   background: whitesmoke;
-  width: 375px;
+  width: auto;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .card__item {
   background-color: whitesmoke;
   border-radius: 0.25rem;
   width: 98%;
+  margin: 0px;
 }

@@ -13,11 +13,19 @@ import { shuffle } from "../../../utils/fp-util";
 import { Loading } from "../../..";
 import BranchList from "./branch-list";
 import { mockResponse } from "./__mocks__/response";
+import PortholeBranchModel from "@/lib/models/PortholeBranchModel";
 
 export interface BranchesProps {
   isTesting?: boolean;
   onLoadedCallback: (error: any) => void;
 }
+
+type State = {
+  feeds: any;
+  branches: PortholeBranchModel[];
+  hasFetched: boolean;
+  allNewBranches: PortholeBranchModel[];
+};
 
 const Branches = ({ isTesting = false, onLoadedCallback }: BranchesProps) => {
   const [state, setState] = useState({

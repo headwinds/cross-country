@@ -6,7 +6,7 @@
 
 .GoldLeafView {
   display: block;
-  margin: 16px;
+  margin: 0px;
   padding: 0px;
 }
 
@@ -76,7 +76,7 @@
 }
 
 .GoldLeaf__title {
-  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   font-size: 20px;
   color: #888;
   width: 100%;

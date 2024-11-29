@@ -17,3 +17,4 @@ export * from "./TileModel";
 export * from "./UserModel";
 export * from "./WeaponModel";
 export * from "./WorldModel";
+export * from "./TreeModel";
