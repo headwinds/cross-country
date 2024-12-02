@@ -1,5 +1,13 @@
 # cross-country
 
+## 1.2.23
+
+### Patch Changes
+
+- type cleanup
+- Updated dependencies
+  - cross-country@1.2.23
+
 ## 1.2.22
 
 ### Patch Changes
