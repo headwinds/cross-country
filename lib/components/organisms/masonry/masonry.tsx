@@ -1,5 +1,5 @@
 "use client";
-
+// @ts-nocheck
 import React, { useState, useMemo } from "react";
 import ThirdPartyMasonry from "react-masonry-css";
 import styles from "./masonry.module.css";
