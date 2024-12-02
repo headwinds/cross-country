@@ -27,7 +27,7 @@ const getText = (branchObj) => {
   } else if (branchObj && branchObj.about) {
     return branchObj.about;
   } else if (branchObj && branchObj.text) {
-    return branch.text;
+    return branchObj.text;
   } else {
     return "";
   }
