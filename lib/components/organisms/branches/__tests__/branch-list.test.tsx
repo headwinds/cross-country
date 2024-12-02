@@ -9,7 +9,6 @@ import { getAllItemsFromStore } from "@cross-country/utils/golds/indexdb-util";
 import { differenceBy, shuffle } from "@cross-country/utils/fp-util";
 import PortholeBranchModel from "@cross-country/models/PortholeBranchModel";
 
-import { BranchType } from "@cross-country/types/branch.type";
 import { BranchListProps } from "../branch-list";
 import { response } from "../__mocks__/branches-mock";
 import BranchList from "../branch-list";

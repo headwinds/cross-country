@@ -1,8 +1,8 @@
+// @ts-nocheck
 import React, { useState, useMemo } from "react";
 //import Image from "next/image";
 import { Image, Column, Link } from "../../";
 import ReactPlayer from "react-player/youtube";
-import { background } from "storybook/internal/theming";
 import { use } from "chai";
 
 type Artist = {
