@@ -37,7 +37,7 @@
     "noFallthroughCasesInSwitch": true
     */
     "declaration": true,
-    "declarationDir": "./dist/types",
+    "declarationDir": "./dist/lib",
     "outDir": "./dist"
   },
   "include": ["src", "lib"],
