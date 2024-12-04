@@ -76,7 +76,7 @@ const BentoStory = ({
   gap = 2,
   isMainRight = false,
 }) => {
-  if (grid === "2x2") {
+  if (grid === "3") {
     return (
       <Bento
         grid={grid}
@@ -98,20 +98,20 @@ const BentoStory = ({
   );
 };
 
-export const BentoStory2x2: Story = {
+export const ThreeBoxBentoStory: Story = {
   render: () => (
-    <BentoStory grid="2x2" gap={2} borderRadius={0} isMainRight={true} />
+    <BentoStory grid="3" gap={2} borderRadius={0} isMainRight={true} />
   ),
 };
 
-export const BentoStory3x3: Story = {
-  render: () => <BentoStory grid="3x3" gap={5} borderRadius={20} />,
+export const SixBoxBentoStory: Story = {
+  render: () => <BentoStory grid="6" gap={5} borderRadius={20} />,
 };
 
-export const BentoStory4x4: Story = {
-  render: () => <BentoStory grid="4x4" gap={5} borderRadius={8} />,
+export const TenBoxBentoStory: Story = {
+  render: () => <BentoStory grid="10" gap={5} borderRadius={8} />,
 };
 
-export const BentoStory5x4: Story = {
-  render: () => <BentoStory grid="5x4" gap={5} borderRadius={0} />,
+export const ElevenBoxBentoStory: Story = {
+  render: () => <BentoStory grid="11" gap={5} borderRadius={0} />,
 };

@@ -13,25 +13,47 @@ There are 4 layouts that can be used: 2x2, 3x3, 4x4, 5x4.
 
 Only the 2x2 layout has a special prop `isMainRight` to reverse the position of the main component placing it on either the right or left side of the grid.
 
+To use the bento component, pass in a boxes configuration to be displayed in the grid slots by the `boxes` prop.
+
 ```jsx
-<Bento message="hello there " />
+// each DefaultContent should be the component that you wish to display in the grid
+const defaultComponentSlots = {
+  one: <DefaultContent num={1} />,
+  two: <DefaultContent num={2} />,
+  three: <DefaultContent num={3} />,
+  four: <DefaultContent num={4} />,
+  five: <DefaultContent num={5} />,
+  six: <DefaultContent num={6} />,
+  seven: <DefaultContent num={7} />,
+  eight: <DefaultContent num={8} />,
+  nine: <DefaultContent num={9} />,
+  ten: <DefaultContent num={10} />,
+};
+
+<Bento
+  boxes={defaultComponentSlots}
+  borderRadius={5}
+  gap={16}
+  entireBoxBackgroundColor={"transparent"}
+  grid={10}
+/>;
 ```
 
-### 2x2 Bento Story
+### 3 Box Bento Story
 
-<Canvas of={BentoStories.BentoStory2x2} />
+<Canvas of={BentoStories.ThreeBoxBentoStory} />
 
-### 3x3 Bento Story
+### 6 Box Bento Story
 
-<Canvas of={BentoStories.BentoStory3x3} />
+<Canvas of={BentoStories.SixBoxBentoStory} />
 
-### 4x4 Bento Story
+### 10 Box Bento Story
 
-<Canvas of={BentoStories.BentoStory4x4} />
+<Canvas of={BentoStories.TenBoxBentoStory} />
 
-### 5x4 Bento Story
+### 11 Box Bento Story
 
-<Canvas of={BentoStories.BentoStory5x4} />
+<Canvas of={BentoStories.ElevenBoxBentoStory} />
 
 - [bento design trend](https://bootcamp.uxdesign.cc/web-design-trend-bento-box-95814d99ac62)
 - [Bento Box Design: A Complete Guide On Improving Your Web Aesthetics](https://alphaefficiency.com/bento-box-design)

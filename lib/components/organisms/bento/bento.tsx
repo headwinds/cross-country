@@ -5,7 +5,7 @@ import BentoThreeByThree from "./layouts/three-by-three/bento-three-by-three";
 import BentoTwoByTwo from "./layouts/two-by-two/bento-two-by-two";
 
 export interface BentoProps {
-  grid: "2x2" | "3x3" | "4x4" | "5x4";
+  grid: "3" | "6" | "10" | "11";
   borderRadius?: number;
   entireBoxBackgroundColor?: string;
   // an object with any number of keys and values
@@ -22,13 +22,13 @@ const Bento: React.FC<BentoProps> = (props) => {
   const { grid } = props;
 
   switch (grid) {
-    case "2x2":
+    case "3":
       return <BentoTwoByTwo {...props} />;
-    case "3x3":
+    case "6":
       return <BentoThreeByThree {...props} />;
-    case "4x4":
+    case "10":
       return <BentoFourByFour {...props} />;
-    case "5x4":
+    case "11":
       return <BentoFiveByFour {...props} />;
     default:
       return <BentoTwoByTwo {...props} />;
