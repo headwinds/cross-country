@@ -23,6 +23,10 @@ Do you pour over your personal stats from Github, Strava or Spotify? Is your yea
 npm install cross-country
 ```
 
+### Types
+
+All types are included in the library.
+
 ### Use
 
 ```

@@ -1,6 +1,14 @@
-import React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 import Bento from "../bento";
-import { Card, Column, Paragraph } from "../../../";
+import { Card, Column, Paragraph } from "../../..";
+
+const meta: Meta<typeof Bento> = {
+  component: Bento,
+  title: "components/organisms/bento",
+} satisfies Meta<typeof Bento>;
+
+export default meta;
+type Story = StoryObj<typeof Bento>;
 
 const MainContent = () => {
   return (
@@ -90,4 +98,20 @@ const BentoStory = ({
   );
 };
 
-export default BentoStory;
+export const BentoStory2x2: Story = {
+  render: () => (
+    <BentoStory grid="2x2" gap={2} borderRadius={0} isMainRight={true} />
+  ),
+};
+
+export const BentoStory3x3: Story = {
+  render: () => <BentoStory grid="3x3" gap={5} borderRadius={20} />,
+};
+
+export const BentoStory4x4: Story = {
+  render: () => <BentoStory grid="4x4" gap={5} borderRadius={8} />,
+};
+
+export const BentoStory5x4: Story = {
+  render: () => <BentoStory grid="5x4" gap={5} borderRadius={0} />,
+};

@@ -62,74 +62,85 @@ const BentoFiveByFive = ({
 }: BentoFiveByFourProps) => {
   const { one, two, three, four, five, six, seven, eight, nine, ten, eleven } =
     boxes;
+
+  const customStyle = {
+    borderRadius,
+    padding: 0,
+  };
+
   return (
     <Column
       customClass={styles.bento}
-      customStyle={{ backgroundColor: entireBoxBackgroundColor, gap }}
+      customStyle={{
+        backgroundColor: entireBoxBackgroundColor,
+        gap,
+        padding: 0,
+        margin: 0,
+      }}
     >
       <Column
         customClass={clsx(styles.box, styles.firstBox)}
-        customStyle={{ borderRadius }}
+        customStyle={customStyle}
       >
         {one}
       </Column>
       <Column
         customClass={clsx(styles.box, styles.secondBox)}
-        customStyle={{ borderRadius }}
+        customStyle={customStyle}
       >
         {two}
       </Column>
       <Column
         customClass={clsx(styles.box, styles.thirdBox)}
-        customStyle={{ borderRadius }}
+        customStyle={customStyle}
       >
         {three}
       </Column>
       <Column
         customClass={clsx(styles.box, styles.fourthBox)}
-        customStyle={{ borderRadius }}
+        customStyle={customStyle}
       >
         {four}
       </Column>
       <Column
         customClass={clsx(styles.box, styles.fifthBox)}
-        customStyle={{ borderRadius }}
+        customStyle={customStyle}
       >
         {five}
       </Column>
       <Column
         customClass={clsx(styles.box, styles.sixthBox)}
-        customStyle={{ borderRadius }}
+        customStyle={customStyle}
       >
         {six}
       </Column>
       <Column
         customClass={clsx(styles.box, styles.seventhBox)}
-        customStyle={{ borderRadius }}
+        customStyle={customStyle}
       >
         {seven}
       </Column>
       <Column
         customClass={clsx(styles.box, styles.eighthBox)}
-        customStyle={{ borderRadius }}
+        customStyle={customStyle}
       >
         {eight}
       </Column>
       <Column
         customClass={clsx(styles.box, styles.ninthBox)}
-        customStyle={{ borderRadius }}
+        customStyle={customStyle}
       >
         {nine}
       </Column>
       <Column
         customClass={clsx(styles.box, styles.tenthBox)}
-        customStyle={{ borderRadius }}
+        customStyle={customStyle}
       >
         {ten}
       </Column>
       <Column
         customClass={clsx(styles.box, styles.eleventhBox)}
-        customStyle={{ borderRadius }}
+        customStyle={customStyle}
       >
         {eleven}
       </Column>
