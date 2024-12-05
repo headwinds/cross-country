@@ -49,7 +49,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 
 ### Tailwind CSS Support
 
-Each component provides a `customClass` propertity where you can supply your own tailwind css classes.
+Each component provides a `customClass` property where you can supply your own tailwind css classes.
 
 ### Example Page
 
