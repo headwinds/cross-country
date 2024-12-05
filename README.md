@@ -30,7 +30,7 @@ All types are included in the library.
 ### Use
 
 ```
-import { Column, Row, Paragraph, Table, Chart } from "cross-country"
+import { Column, Row, Paragraph, Table, Chart, Bento } from "cross-country"
 ```
 
 ### NextJS Support
