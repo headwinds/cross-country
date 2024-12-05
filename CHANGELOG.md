@@ -1,5 +1,13 @@
 # cross-country
 
+## 1.2.24
+
+### Patch Changes
+
+- types test
+- Updated dependencies
+  - cross-country@1.2.24
+
 ## 1.2.23
 
 ### Patch Changes

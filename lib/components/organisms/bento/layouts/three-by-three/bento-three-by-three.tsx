@@ -55,7 +55,11 @@ const BentoThreeByThree = ({
   return (
     <Column
       customClass={styles.bento}
-      customStyle={{ backgroundColor: entireBoxBackgroundColor, gap }}
+      customStyle={{
+        backgroundColor: entireBoxBackgroundColor,
+        gap,
+        padding: 0,
+      }}
     >
       <Column
         customClass={clsx(styles.box, styles.topLeft)}
