@@ -63,7 +63,7 @@ export const getIsland = (grid, palette): GridIsland => {
     // if out of bounds or already visited or water
     if (x < 0 || y < 0 || x >= ROWS || y >= COLS || grid[x][y] !== 1) return;
 
-    grid[x][y] = 2; // marks it visted replacing the value with 2
+    grid[x][y] = 2; // marks it visited replacing the value with 2
 
     markVisited(x + 1, y);
     markVisited(x, y + 1);
@@ -71,7 +71,16 @@ export const getIsland = (grid, palette): GridIsland => {
     markVisited(x, y - 1);
   };
 
-  return { islandCount };
+  for (let i = 0; i < ROWS; i++) {
+    for (let j = 0; j < COLS; j++) {
+      if (grid[i][j] === 1) {
+        islandCount++;
+        markVisited(i, j);
+      }
+    }
+  }
+
+  return { islandCount, gridTiles };
 };
 
 export const getLargestIsland = (grid) => {

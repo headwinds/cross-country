@@ -1,4 +1,14 @@
-# Generate Componet
+
+
+## Generate Stories
+
+```
+npm new:story --type organims --path world/carbon
+```
+
+## The following does not currently work!
+
+## Generate Component
 
 Only support one word components name like Box.
 
@@ -6,11 +16,11 @@ Only support one word components name like Box.
 npm new box moleculues
 ```
 
-It will take of properly captilizing the first letter in the component name.
+It will take of properly capitalizing the first letter in the component name.
 
 ## Multiple Word Components
 
-It also components with multiple words like GoldLeafEditor.
+It also creates components with multiple words like GoldLeafEditor.
 
 ```
 npm new gold-leaf-editor molecules
