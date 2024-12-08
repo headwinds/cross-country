@@ -18,7 +18,7 @@ Why didn't I just go:
 npm run new:story -- --path organisms/worlds/carbon
 ```
 
-Because I did not think of that until just now
+Because I did not think of that until just now. Actually there is a good reason to keep the type separate when creating the story path.
 
 
 ## The following does not currently work!

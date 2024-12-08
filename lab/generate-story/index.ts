@@ -11,7 +11,7 @@ interface StoryConfig {
   componentPath: string;
 }
 
-async function validatePath(path: string): Promise<boolean> {
+export async function validatePath(path: string): Promise<boolean> {
   try {
     await fs.access(path);
     return true;
@@ -20,7 +20,7 @@ async function validatePath(path: string): Promise<boolean> {
   }
 }
 
-async function loadTemplate(extension: str): Promise<string> {
+export async function loadTemplate(extension: str): Promise<string> {
   const templatePath = path.join(
     __dirname,
     "templates",
@@ -39,7 +39,7 @@ async function loadTemplate(extension: str): Promise<string> {
   }
 }
 
-async function generateStory({ type, componentPath }: StoryConfig) {
+export async function generateStory({ type, componentPath }: StoryConfig) {
   try {
     const basePath = path.resolve(__dirname, "../../lib/components");
     const componentName = path.basename(componentPath);
