@@ -3,8 +3,23 @@
 ## Generate Stories
 
 ```
-npm new:story --type organims --path world/carbon
+npm run new:story -- --type atomic --path path/here
 ```
+
+So If I want to create a story in the carbon folder within worlds which is in organisms.
+
+```
+npm run new:story -- --type organisms --path worlds/carbon
+```
+
+Why didn't I just go:
+
+```
+npm run new:story -- --path organisms/worlds/carbon
+```
+
+Because I did not think of that until just now
+
 
 ## The following does not currently work!
 
