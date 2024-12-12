@@ -83,7 +83,6 @@ export const Island = ({ grid, palette }) => {
 const IslandTileGridStory = () => {
   const island = getMapNewGrid(largerIslandMap);
   const { islandCount, gridTiles } = getIsland(island, islandPalette);
-  console.log("island", island);
 
   if (!island) {
     return null;

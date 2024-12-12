@@ -21,7 +21,8 @@
     "build-storybook": "storybook build",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "new": "node ./generate-component"
+    "new": "tsx ./lab/generate/generate-component",
+    "new:story": "tsx ./lab/generate/generate-story"
   },
   "peerDependencies": {
     "react": "^18.0.0",
@@ -61,6 +62,7 @@
     "react-dom": "^18.2.0",
     "rollup-plugin-dts": "^6.1.1",
     "storybook": "8.3.2",
+    "tsx": "^4.19.2",
     "typescript": "^5.2.2",
     "vite": "^5.0.0",
     "vite-plugin-dts": "^3.6.4",

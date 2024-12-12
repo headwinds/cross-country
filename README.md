@@ -75,6 +75,18 @@ Part of my [dogfooding](https://uxinsight.org/dogfooding-a-powerful-addition-to-
 
 Initially, I ran into a build error where I had to account for every `window` and `document` ensuring that they are not referenced until the UI hits the client. After hunting through my webpack build file, I was ble to eliminate them all, and it now works 100% server side!
 
+## Automated Component Creation
+
+```
+npm run new -- --type organisms --path component-name-here
+```
+or
+```
+npm run new -- --type molecules --path component-name-here/sub-component-name-her
+```
+
+This will automatically scaffold the component directory creating all the files you will need including the tests and stories folders. It saved you at least 5 minutes if not especially around configuring the story; no more frustrating CSF errors!
+
 ## Unsplash Config
 
 Before installing, create a cross-country-config-private.js file in your root directory by copying the cross-country-config.js and renaming it.

@@ -1,0 +1,22 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import * as LoginStories from "./login.stories";
+
+
+<Meta of={LoginStories} />
+
+# Login
+
+This is a login for creating a new story.
+
+```jsx
+<Login message="hello there " />
+```
+
+### Story
+
+<Canvas of={LoginStories.LoginStory} />
+
+
+### User Story
+
+<Canvas of={LoginStories.AnimatedLoginStory} />

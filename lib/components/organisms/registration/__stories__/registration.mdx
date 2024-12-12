@@ -1,0 +1,50 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import * as RegistrationStories from "./registration.stories";
+
+<Meta of={RegistrationStories} />
+
+# Registration
+
+This is the Registration component. The motivation is to leverage a social platform to authenticate a user so that we - the indie developer - can focus on the user experience and the product. 
+
+The user can then register with the platform. 
+
+The user can then login with the platform, and then we only need the user to supply their unique username for their adventure on this platform. 
+
+We can optionally pass in the `message` prop to explain why we only need the username as well as provide the opportunity to translate the message.
+
+If we don't supply onLoginClick, the login button will not be rendered and it will only show the feedback message.
+
+### What if I don't need a username?
+
+Your service may not need a username in which case you don't need this registration component at all! 
+In your system, you could use the email address as the unique identifier. Fans of Tron though may wish to continue the tradition of the username inspired by ham radio call signs.
+
+```jsx
+
+const onChange = (event: RegistrationEvent) => {
+    // event will include: username, email, and a generated strong password
+};
+
+<Registration
+    text="Sign Up" // defaults to Registration
+    socialUser={socialUser}
+    onChange={onChange}
+    onLoginClick={onLoginClick}
+    message="We only require that you create a unique username."
+    hasHorizontalLine={false}
+/>
+```
+
+### Story
+
+<Canvas of={RegistrationStories.RegistrationStory} />
+
+### Story without social platform 
+
+<Canvas of={RegistrationStories.RegistrationWithoutSocialStory} />
+
+* [basic form input example](https://xstate-catalogue.com/machines/form-input)
+* [Maher Alkendi](https://dev.to/ma7eer/basic-form-flow-using-xstate-and-react-4fgg)
+* [thewidlarzgroup](https://thewidlarzgroup.com/multistep-form-xstate-formik/)
+* [css-tricks](https://css-tricks.com/using-react-and-xstate-to-build-a-sign-in-form/)

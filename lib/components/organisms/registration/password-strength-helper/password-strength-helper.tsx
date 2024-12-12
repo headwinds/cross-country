@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
-import { Column, Paragraph } from "../../";
-import styles from "./registration.module.css";
+import { Column, Paragraph } from "@cross-country/components";
+import styles from "../registration.module.css";
 import {
   validatePasswordHasUpperCase,
   validatePasswordHasLowerCase,
   validatePasswordHasNumber,
   validatePasswordHasSpecialCharacter,
   validatePasswordMinimumLength,
-} from "./registration-util";
+} from "../registration-util";
 import { ShieldWarning, CheckCircle } from "@phosphor-icons/react";
 
 const passwordParagraphStyle = { margin: 0, padding: 0, fontSize: 12 };

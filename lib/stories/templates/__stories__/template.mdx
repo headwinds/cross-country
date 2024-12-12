@@ -1,6 +1,23 @@
 import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
 import * as TemplateStories from "./template.stories";
 
+
+# Automated 
+
+You can create an entire component story by running the following command:
+
+```
+npm run new -- --type organisms --path worlds/carbon
+```
+
+Sometimes we only need to create the story files. This is useful when we are creating a story for a component that already exists.
+
+```
+npm run new:story -- --type organisms --path worlds/carbon
+```
+
+# Manual Setup
+
 1. Copy and paste these 2 files into the folder of the component
 2. rename the title in the component.stories.tsx and start storybook
 3. make sure the stubbed in story appears in the sidebar
@@ -12,7 +29,7 @@ import * as TemplateStories from "./template.stories";
 
 I really wish it was easier to do this but I seem to run into so many configuration issues with CSF files!
 
-Also, I reeally need to fix the component generator in the lab to stamp and automate this process!!!
+Automation is the way to go!
 
 <Meta of={TemplateStories} />
 
