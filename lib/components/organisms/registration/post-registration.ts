@@ -7,7 +7,7 @@ type RegistrationInputType = {
   isPasswordStrong: boolean;
   isEmailValid: boolean;
   isUsernameValid: boolean;
-  domain: string;
+  domain?: string;
   successMessage: string;
   failedMessage: string;
   somethingWentWrongMessage: string;
@@ -17,9 +17,7 @@ type RegistrationInputType = {
 const successMessage = "Please check your email to verify.";
 
 const postRegistration = fromPromise<string[], RegistrationInputType>(
-  async ({ input }) => {
-    console.log("postRegistration", input);
-
+  async ({ input }: RegistrationInputType) => {
     // is everything valid?
     const {
       isEmailValid,

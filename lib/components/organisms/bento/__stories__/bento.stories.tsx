@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Bento from "../bento";
+import type { BentoProps } from "../bento";
 import { Card, Column, Paragraph } from "../../..";
 
 const meta: Meta<typeof Bento> = {
@@ -75,7 +76,7 @@ const BentoStory = ({
   borderRadius = 0,
   gap = 2,
   isMainRight = false,
-}) => {
+}: BentoProps) => {
   if (grid === "3") {
     return (
       <Bento
