@@ -14,11 +14,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
       "@/*": ["*"],
       "@cross-country/*": ["lib/*"],
-      "@cross-country/components": ["lib/components/*"],
+      "@cross-country/components": ["lib/components"],
       "@cross-country/hooks/*": ["lib/hooks/*"],
       "@cross-country/atoms/*": ["lib/components/atoms/*"],
       "@cross-country/molecules/*": ["lib/components/molecules/*"],

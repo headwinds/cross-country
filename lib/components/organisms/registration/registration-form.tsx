@@ -31,13 +31,13 @@ const FieldRow = ({
 };
 
 interface RegistrationFormProps {
-  state: any;
+  state: unknown;
   send: (event: RegistrationEvent) => void;
   handleFocusOnPassword: () => void;
   handleBlurOnPassword: () => void;
   toggleEye: () => void;
   onLoginClick: () => void;
-  onChange: (event: any) => RegistrationEvent;
+  onChange: (event: RegistrationEvent) => void;
   socialUser?: SocialUser;
   hasHorizontalLine?: boolean;
   message?: string;
