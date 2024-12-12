@@ -40,7 +40,7 @@ export async function loadTemplate(extension: str): Promise<string> {
 
 async function generateComponent({ type, componentPath }: ComponentConfig) {
   try {
-    const basePath = path.resolve(__dirname, "../../lib/components");
+    const basePath = path.resolve(__dirname, "../../../lib/components");
     const componentName = path.basename(componentPath);
     const componentDirectory = path.join(basePath, type, componentPath);
 

@@ -21,8 +21,8 @@
     "build-storybook": "storybook build",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "new": "tsx ./lab/generate-component",
-    "new:story": "tsx ./lab/generate-story"
+    "new": "tsx ./lab/generate/generate-component",
+    "new:story": "tsx ./lab/generate/generate-story"
   },
   "peerDependencies": {
     "react": "^18.0.0",

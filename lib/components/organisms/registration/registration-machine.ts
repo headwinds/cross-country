@@ -41,10 +41,17 @@ const machine = {
     hasSendBeenClicked: false,
     registrationResponse: null,
     isRegistrationSuccessful: false,
+    socialUser: null,
+    successMessage: "Success!",
+    failedMessage: "There was an error!",
+    somethingWentWrongMessage: "Network Error!",
   },
   states: {
     idle: {
       on: {
+        SET_SOCIAL_USER: {
+          actions: "setSocialUser",
+        },
         TOGGLE_EYE: {
           actions: "toggleEye",
         },
@@ -89,6 +96,37 @@ const machine = {
 
 const config = {
   actions: {
+    setTranslatedFeedbackText: assign({
+      somethingWentWrongMessage: ({ context, event }) => {
+        return event.value.somethingWentWrongMessage;
+      },
+      successMessage: ({ context, event }) => {
+        return event.value.successMessage;
+      },
+      failedMessage: ({ context, event }) => {
+        return event.value.failedMessage;
+      },
+    }),
+    setSocialUser: assign({
+      socialUser: ({ context, event }) => {
+        return event.value;
+      },
+      email: ({ context, event }) => {
+        return event.value.email;
+      },
+      password: ({ context, event }) => {
+        const randomPassword = Math.random().toString(36).slice(-8);
+        const generatedPassword = `${randomPassword}T@s1w!0S`;
+
+        return generatedPassword;
+      },
+      isPasswordStrong: ({ context, event }) => {
+        return true;
+      },
+      isEmailValid: ({ context, event }) => {
+        return true;
+      },
+    }),
     setFocussOnPassword: assign({
       isPasswordFocussed: () => {
         return true;

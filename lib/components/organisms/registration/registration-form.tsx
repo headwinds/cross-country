@@ -10,11 +10,11 @@ import {
   Paragraph,
   HorizontalLine,
 } from "@cross-country/components";
-
 import styles from "./registration.module.css";
-
 import { Eye, EyeSlash } from "@phosphor-icons/react";
 import RegistrationResponse from "./registration-response";
+import SocialEmail from "./social-email";
+import type { SocialUser, RegistrationEvent } from "./registration";
 
 const FieldRow = ({
   children,
@@ -30,6 +30,19 @@ const FieldRow = ({
   );
 };
 
+interface RegistrationFormProps {
+  state: any;
+  send: (event: RegistrationEvent) => void;
+  handleFocusOnPassword: () => void;
+  handleBlurOnPassword: () => void;
+  toggleEye: () => void;
+  onLoginClick: () => void;
+  onChange: (event: any) => RegistrationEvent;
+  socialUser?: SocialUser;
+  hasHorizontalLine?: boolean;
+  message?: string;
+}
+
 const RegistrationForm = ({
   state,
   send,
@@ -38,7 +51,10 @@ const RegistrationForm = ({
   toggleEye,
   onLoginClick,
   onChange,
-}) => {
+  socialUser,
+  hasHorizontalLine = true,
+  message,
+}: RegistrationFormProps) => {
   const {
     isPasswordPlainText,
     isPasswordFocussed,
@@ -84,22 +100,27 @@ const RegistrationForm = ({
     <Form>
       <Row customStyle={{ alignItems: "flex-start" }}>
         <Column customStyle={{ padding: 0 }}>
-          <FieldRow>
-            <Label>Email</Label>
-            <TextInput
-              onTextChange={(value) =>
-                send({
-                  type: "TYPING_EMAIL",
-                  value,
-                })
-              }
-              customStyle={{ ...getBorderColorStyle("email"), width: 240 }}
-              placeholder="Enter your email"
-            />
-          </FieldRow>
-          <FieldRow>
-            <HorizontalLine />
-          </FieldRow>
+          {!socialUser ? (
+            <FieldRow>
+              <Label>Email</Label>
+              <TextInput
+                onTextChange={(value) =>
+                  send({
+                    type: "TYPING_EMAIL",
+                    value,
+                  })
+                }
+                customStyle={{ ...getBorderColorStyle("email"), width: 240 }}
+                placeholder="Enter your email"
+              />
+            </FieldRow>
+          ) : null}
+          {hasHorizontalLine ? (
+            <FieldRow>
+              <HorizontalLine />
+            </FieldRow>
+          ) : null}
+          <SocialEmail socialUser={socialUser} message={message} />
           <FieldRow>
             <Label>Username</Label>
             <TextInput
@@ -114,22 +135,57 @@ const RegistrationForm = ({
             />
           </FieldRow>
 
-          <FieldRow>
-            <Label>Password</Label>
-            <TextInput
-              type={isPasswordPlainText ? "text" : "password"}
-              onTextChange={(value) =>
-                send({
-                  type: "TYPING_PASSWORD",
-                  value,
-                })
-              }
-              onFocus={handleFocusOnPassword}
-              onBlur={handleBlurOnPassword}
-              customStyle={{ ...getBorderColorStyle("password") }}
-              placeholder="Enter your password"
-            />
-          </FieldRow>
+          {!socialUser ? (
+            <FieldRow>
+              <Label>Password</Label>
+              <TextInput
+                type={isPasswordPlainText ? "text" : "password"}
+                onTextChange={(value) =>
+                  send({
+                    type: "TYPING_PASSWORD",
+                    value,
+                  })
+                }
+                onFocus={handleFocusOnPassword}
+                onBlur={handleBlurOnPassword}
+                customStyle={{ ...getBorderColorStyle("password") }}
+                placeholder="Enter your password"
+              />
+              <Button onClick={() => toggleEye()} customClass={styles.icon}>
+                {isPasswordPlainText ? (
+                  <EyeSlash size={20} />
+                ) : (
+                  <Eye size={20} />
+                )}
+              </Button>
+            </FieldRow>
+          ) : null}
+
+          {!socialUser ? (
+            <FieldRow>
+              <Label>Confirm</Label>
+              <TextInput
+                type={isPasswordPlainText ? "text" : "password"}
+                onTextChange={(value) =>
+                  send({
+                    type: "TYPING_CONFIRM_PASSWORD",
+                    value,
+                  })
+                }
+                onFocus={handleFocusOnPassword}
+                onBlur={handleBlurOnPassword}
+                customStyle={{ ...getBorderColorStyle("password") }}
+                placeholder="Enter your password"
+              />
+              <Button onClick={() => toggleEye()} customClass={styles.icon}>
+                {isPasswordPlainText ? (
+                  <EyeSlash size={20} />
+                ) : (
+                  <Eye size={20} />
+                )}
+              </Button>
+            </FieldRow>
+          ) : null}
 
           <FieldRow customClass={styles.send}>
             <Button
@@ -144,28 +200,11 @@ const RegistrationForm = ({
             </Button>
           </FieldRow>
         </Column>
-        <Column customStyle={{ padding: 0 }}>
-          {/* hack to get the password eye icon to appear on the right row  */}
-          <FieldRow></FieldRow>
-          <FieldRow></FieldRow>
-          <FieldRow></FieldRow>
-          <FieldRow>
-            <Button onClick={() => toggleEye()} customClass={styles.icon}>
-              {isPasswordPlainText ? <EyeSlash size={20} /> : <Eye size={20} />}
-            </Button>
-          </FieldRow>
-        </Column>
       </Row>
-      <Row>
-        {registrationResponse ? (
-          <FieldRow>
-            <RegistrationResponse
-              response={registrationResponse}
-              onLoginClick={onLoginClick}
-            />
-          </FieldRow>
-        ) : null}
-      </Row>
+      <RegistrationResponse
+        response={registrationResponse}
+        onLoginClick={onLoginClick}
+      />
     </Form>
   );
 };

@@ -41,7 +41,7 @@ export async function loadTemplate(extension: str): Promise<string> {
 
 export async function generateStory({ type, componentPath }: StoryConfig) {
   try {
-    const basePath = path.resolve(__dirname, "../../lib/components");
+    const basePath = path.resolve(__dirname, "../../../lib/components");
     const componentName = path.basename(componentPath);
     const fullPath = path.join(basePath, type, componentPath, "__stories__");
 
@@ -57,8 +57,13 @@ export async function generateStory({ type, componentPath }: StoryConfig) {
     // Replace placeholders
 
     // Generate story templates
-    const componentUpperCaseName =
-      componentName.charAt(0).toUpperCase() + componentName.slice(1);
+
+    // the component name may 1 word or more than 1 word
+    // so capitalize the first letter of the component name and make each character after the dash uppercase removing the dashes
+    const componentUpperCaseName = componentName
+      .split("-")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join("");
     const componentLowerCaseName = componentName.toLowerCase();
     const atomicTypeName = type.toLowerCase();
 

@@ -11,30 +11,48 @@ const FieldRow = ({ children }) => {
   return <Row customClass={styles.fieldRow}>{children}</Row>;
 };
 
+/*
+We want to encourage the user to first connect to social network that provides their email address
+so that we can leverage their social network to verify their identity and focus on building our indie product.
+
+For now, we will only support Google Auth but may add more in the future like Apple or Microsoft
+which should have a similar API and flow to Google Auth.
+*/
+
+export type RegistrationEvent = {
+  type: string;
+  value?: string;
+};
+
+export type SocialUser = {
+  platform: "google" | "apple" | "microsoft";
+  email: string;
+};
+
 export interface RegistrationProps {
-  config: {
-    text?: string;
-    hasBackground?: boolean;
-    width?: number;
-    isStrongPasswordEnforced?: boolean;
-    onLoginClick: () => void;
-    onChange: (event: any) => void;
-  };
+  text?: string;
+  message?: string;
+  hasBackground?: boolean;
+  width?: number;
+  isStrongPasswordEnforced?: boolean;
+  onLoginClick: () => void | undefined | null;
+  onChange: (event: any) => void;
+  socialUser?: SocialUser;
+  hasHorizontalLine?: boolean;
 }
 
 const Registration = ({
-  config: {
-    text,
-    hasBackground,
-    width = 600,
-    isStrongPasswordEnforced = true,
-    onLoginClick,
-    onChange,
-  },
+  text = "Registration",
+  message,
+  hasBackground = false,
+  width = 600,
+  isStrongPasswordEnforced = true,
+  onLoginClick,
+  onChange,
+  socialUser,
+  hasHorizontalLine = true,
 }) => {
   const [state, send] = useMachine(registrationMachine);
-
-  console.log("Registration state: ", state);
 
   const toggleEye = () => {
     send({
@@ -71,6 +89,15 @@ const Registration = ({
       type: "SET_DOMAIN",
       value: "http://localhost:5000",
     });
+  }, []);
+
+  useEffect(() => {
+    if (socialUser) {
+      send({
+        type: "SET_SOCIAL_USER",
+        value: socialUser,
+      });
+    }
   }, []);
 
   // broadcast the registration response to the parent component
@@ -133,6 +160,9 @@ const Registration = ({
         toggleEye={toggleEye}
         onLoginClick={onLoginClick}
         onChange={onChange}
+        socialUser={socialUser}
+        hasHorizontalLine={hasHorizontalLine}
+        message={message}
       />
     </Column>
   );

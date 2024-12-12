@@ -8,6 +8,9 @@ type RegistrationInputType = {
   isEmailValid: boolean;
   isUsernameValid: boolean;
   domain: string;
+  successMessage: string;
+  failedMessage: string;
+  somethingWentWrongMessage: string;
 };
 
 // TODO: don't hardcode this as it might change and will be different for other APIs
@@ -15,7 +18,7 @@ const successMessage = "Please check your email to verify.";
 
 const postRegistration = fromPromise<string[], RegistrationInputType>(
   async ({ input }) => {
-    const { domain } = input;
+    console.log("postRegistration", input);
 
     // is everything valid?
     const {
@@ -25,25 +28,26 @@ const postRegistration = fromPromise<string[], RegistrationInputType>(
       username,
       password,
       email,
+      successMessage,
+      failedMessage,
     } = input as RegistrationInputType;
 
     if (isEmailValid && isUsernameValid && isPasswordStrong) {
-      try {
-        const response = await fetch(`${domain}/api/signup`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ username, password, email }),
-        });
-        const json = await response.json();
-
-        return json;
-      } catch (error) {
-        console.error("Registration failed", error);
-        return { message: "Registration failed - Please try again later" };
-      }
+      return {
+        message: successMessage,
+        username,
+        password,
+        email,
+        hasError: false,
+      };
     } else {
-      console.error("Registration validation failed");
-      return { message: "Please fix any form errors" };
+      return {
+        message: failedMessage,
+        username,
+        password,
+        email,
+        hasError: true,
+      };
     }
   }
 );
@@ -53,7 +57,6 @@ const POSTING_REGISTRATION = {
     id: "postRegistration",
     src: postRegistration,
     input: ({ context }) => {
-      console.log("Machine POSTING_REGISTRATION");
       return {
         email: context.email,
         username: context.username,
@@ -62,17 +65,18 @@ const POSTING_REGISTRATION = {
         isEmailValid: context.isEmailValid,
         isUsernameValid: context.isUsernameValid,
         isPasswordStrong: context.isPasswordStrong,
+        successMessage: context.successMessage,
+        failedMessage: context.failedMessage,
+        somethingWentWrongMessage: context.somethingWentWrongMessage,
       };
     },
     onDone: {
       target: "idle",
       actions: assign({
         registrationResponse: ({ context, event }) => {
-          console.log("REGISTRATION respoonse", event.output);
           return event.output;
         },
         isRegistrationSuccessful: ({ context, event }) => {
-          console.log("REGISTRATION success", event.output);
           const isRegistrationSuccessful =
             event.output.message === successMessage;
           return isRegistrationSuccessful;
@@ -83,9 +87,7 @@ const POSTING_REGISTRATION = {
       target: "POSTING_REGISTRATION_ERROR",
       actions: assign({
         error: ({ context, event }) => {
-          console.log("Machine posting onError", event);
-          //const {context, event } = event;
-          return { message: "Something went wrong" };
+          return { message: context.somethingWentWrongMessage };
         },
       }),
     },
@@ -98,8 +100,7 @@ const POSTING_REGISTRATION_ERROR = {
     SET_ERROR: {
       actions: assign({
         error: ({ context, event }) => {
-          console.log("Machine SET_ERROR");
-          return { message: "Registration failed - Please try again later" };
+          return { message: context.failedMessage };
         },
       }),
     },
