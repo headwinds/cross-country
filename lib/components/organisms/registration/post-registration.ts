@@ -7,50 +7,55 @@ type RegistrationInputType = {
   isPasswordStrong: boolean;
   isEmailValid: boolean;
   isUsernameValid: boolean;
-  domain: string;
+  domain?: string;
   successMessage: string;
   failedMessage: string;
   somethingWentWrongMessage: string;
-};
+} & Record<string, unknown>;
 
 // TODO: don't hardcode this as it might change and will be different for other APIs
 const successMessage = "Please check your email to verify.";
 
-const postRegistration = fromPromise<string[], RegistrationInputType>(
-  async ({ input }) => {
-    console.log("postRegistration", input);
+type RegistrationReturnType = {
+  message: string;
+  username: string;
+  password: string;
+  email: string;
+  hasError: boolean;
+};
 
-    // is everything valid?
-    const {
-      isEmailValid,
-      isUsernameValid,
-      isPasswordStrong,
+const postRegistration = fromPromise<
+  RegistrationReturnType,
+  RegistrationInputType
+>(async ({ input }: { input: RegistrationInputType }) => {
+  const {
+    isEmailValid,
+    isUsernameValid,
+    isPasswordStrong,
+    username,
+    password,
+    email,
+    successMessage,
+    failedMessage,
+  } = input;
+  if (isEmailValid && isUsernameValid && isPasswordStrong) {
+    return {
+      message: successMessage,
       username,
       password,
       email,
-      successMessage,
-      failedMessage,
-    } = input as RegistrationInputType;
-
-    if (isEmailValid && isUsernameValid && isPasswordStrong) {
-      return {
-        message: successMessage,
-        username,
-        password,
-        email,
-        hasError: false,
-      };
-    } else {
-      return {
-        message: failedMessage,
-        username,
-        password,
-        email,
-        hasError: true,
-      };
-    }
+      hasError: false,
+    };
+  } else {
+    return {
+      message: failedMessage,
+      username,
+      password,
+      email,
+      hasError: true,
+    };
   }
-);
+});
 
 const POSTING_REGISTRATION = {
   invoke: {

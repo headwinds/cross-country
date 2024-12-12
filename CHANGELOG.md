@@ -1,5 +1,13 @@
 # cross-country
 
+## 1.2.25
+
+### Patch Changes
+
+- update to registration for social platform"
+- Updated dependencies
+  - cross-country@1.2.25
+
 ## 1.2.24
 
 ### Patch Changes

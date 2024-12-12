@@ -12,10 +12,15 @@ import { ShieldWarning, CheckCircle } from "@phosphor-icons/react";
 
 const passwordParagraphStyle = { margin: 0, padding: 0, fontSize: 12 };
 
+export interface PasswordStrengthHelperProps {
+  isPasswordFocussed?: boolean;
+  candidatePassword?: string;
+}
+
 const PasswordStrengthHelper = ({
   isPasswordFocussed,
   candidatePassword = "",
-}) => {
+}: PasswordStrengthHelperProps) => {
   const hasUpperCase = validatePasswordHasUpperCase(candidatePassword);
   const hasLowerCase = validatePasswordHasLowerCase(candidatePassword);
   const hasNumber = validatePasswordHasNumber(candidatePassword);

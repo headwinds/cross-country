@@ -10,6 +10,8 @@ export interface BentoProps {
   entireBoxBackgroundColor?: string;
   // an object with any number of keys and values
   boxes?: any;
+  gap?: number;
+  isMainRight?: boolean;
 }
 
 export interface BoxProps {

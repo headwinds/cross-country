@@ -1,7 +1,6 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import Registration from "../registration";
-import type { RegistrationEvent } from "../registration";
+import Registration, { RegistrationEvent } from "../registration";
 
 const meta: Meta<typeof Registration> = {
   component: Registration,
@@ -42,7 +41,9 @@ export const RegistrationStory: Story = {
 
 export const RegistrationWithoutSocialStory: Story = {
   render: () => {
-    const onChange = () => {};
+    const onChange = (event: RegistrationEvent) => {
+      console.log("RegistrationStory onChange event", event);
+    };
 
     return <Registration onChange={onChange} />;
   },

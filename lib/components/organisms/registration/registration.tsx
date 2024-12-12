@@ -25,7 +25,7 @@ export type RegistrationEvent = {
 };
 
 export type SocialUser = {
-  platform: "google" | "apple" | "microsoft";
+  platform: "google" | "apple" | "microsoft" | string;
   email: string;
 };
 
@@ -35,8 +35,8 @@ export interface RegistrationProps {
   hasBackground?: boolean;
   width?: number;
   isStrongPasswordEnforced?: boolean;
-  onLoginClick: () => void | undefined | null;
-  onChange: (event: any) => void;
+  onLoginClick?: () => void | undefined | null;
+  onChange: (event: RegistrationEvent) => void;
   socialUser?: SocialUser;
   hasHorizontalLine?: boolean;
 }
@@ -51,7 +51,7 @@ const Registration = ({
   onChange,
   socialUser,
   hasHorizontalLine = true,
-}) => {
+}: RegistrationProps) => {
   const [state, send] = useMachine(registrationMachine);
 
   const toggleEye = () => {

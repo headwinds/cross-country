@@ -1,6 +1,6 @@
 {
   "name": "cross-country",
-  "version": "1.2.24",
+  "version": "1.2.25",
   "description": "an atomic design system built for personal metrics & lonely forest bathers",
   "author": "headwinds",
   "license": "MIT",
@@ -82,7 +82,7 @@
     "@xstate/react": "4.1.0",
     "@xstate/store": "^2.4.0",
     "clsx": "^1.1.0",
-    "cross-country": "^1.2.24",
+    "cross-country": "^1.2.25",
     "d3": "^7.8.2",
     "d3-axis": "^3.0.0",
     "date-fns": "^3.6.0",
