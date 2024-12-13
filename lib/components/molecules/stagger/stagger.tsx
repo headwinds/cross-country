@@ -38,7 +38,7 @@ const Stagger = ({
     <SubHeadline
       color={Array.isArray(color) ? color[idx] : color}
       key={idx}
-      {...config.text.rest}
+      {...config?.text?.rest}
       size={size}
       customClass={clsx(styles.text, config?.text?.customClass)}
       customStyle={{
@@ -52,8 +52,8 @@ const Stagger = ({
   return (
     <Column
       customClass={clsx(styles.stagger, config.column.customClass)}
-      style={config.column.customStyle}
-      {...config.column.rest}
+      customStyle={config.column.customStyle}
+      {...config?.column?.rest}
     >
       {list}
     </Column>

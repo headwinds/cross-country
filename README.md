@@ -1,6 +1,6 @@
 # cross-country
 
-> an atomic react components for personal metrics and creating courses
+> an atomic react component library for personal metrics, simulations, and solo forest bathers
 
 [![NPM](https://img.shields.io/npm/v/cross-country.svg)](https://www.npmjs.com/package/cross-country) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -37,7 +37,21 @@ import { Column, Row, Paragraph, Table, Chart, Bento } from "cross-country"
 
 For this third-party library to work within NextJS, there is one change required to import it's single css bundle.
 
-Edit the \_app.js file to:
+#### New App Strategy
+
+Edit the app\layout.tsx file to:
+
+```
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import "cross-country/dist/bundle.css";
+import { ScoutProviders } from "./providers/providers";
+```
+
+#### Old Pages Strategy
+
+Edit the pages\_app.js file to:
 
 ```
 import type { Metadata } from "next";

@@ -2,15 +2,24 @@ import React, { useEffect } from "react";
 import { Paragraph, Row, Link } from "../../";
 import styles from "./registration.module.css";
 import { CheckCircle, WarningCircle } from "@phosphor-icons/react";
+import type { RegistrationResponse } from "./registration";
 
-const RegistrationResponse = ({ response, onLoginClick }) => {
+interface RegistrationResponseProps {
+  response: RegistrationResponse;
+  onLoginClick?: () => void;
+}
+
+const RegistrationResponse = ({
+  response,
+  onLoginClick,
+}: RegistrationResponseProps) => {
   if (!response) {
     return null;
   }
 
   return (
     <Row customStyle={{ justifyContent: "flex-end" }}>
-      {!onLoginClick && !response.hasError ? (
+      {onLoginClick && !response.hasError ? (
         <Link
           onClick={onLoginClick}
           customStyle={{ fontSize: 14, margin: 16, cursor: "pointer" }}

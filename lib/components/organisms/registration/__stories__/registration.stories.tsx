@@ -1,6 +1,9 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import Registration, { RegistrationEvent } from "../registration";
+import Registration, {
+  type RegistrationEvent,
+  type RegistrationResponse,
+} from "../registration";
 
 const meta: Meta<typeof Registration> = {
   component: Registration,

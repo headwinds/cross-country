@@ -18,6 +18,11 @@ For now, we will only support Google Auth but may add more in the future like Ap
 which should have a similar API and flow to Google Auth.
 */
 
+export type RegistrationResponse = {
+  hasError: boolean;
+  message: string;
+};
+
 export type RegistrationEvent = {
   type: string;
   value?: string;
@@ -38,6 +43,8 @@ export interface RegistrationProps {
   onChange: (event: RegistrationEvent) => void;
   socialUser?: SocialUser;
   hasHorizontalLine?: boolean;
+  isApiCallSuccessful?: boolean;
+  registrationResponse?: RegistrationResponse;
 }
 
 const Registration = ({
@@ -50,6 +57,8 @@ const Registration = ({
   onChange,
   socialUser,
   hasHorizontalLine = true,
+  isApiCallSuccessful,
+  registrationResponse,
 }: RegistrationProps) => {
   const [state, send] = useMachine(registrationMachine);
 
@@ -95,7 +104,7 @@ const Registration = ({
       const generatedPassword = `${randomPassword}T@s1w!0S`;
       send({
         type: "SET_SOCIAL_USER",
-        value: { socialUser, generatedPassword }
+        value: { socialUser, generatedPassword },
       });
     }
   }, []);
@@ -147,10 +156,12 @@ const Registration = ({
     >
       <SubHeadline text={text} />
 
-      {isStrongPasswordEnforced ? <PasswordStrengthHelper
-        isPasswordFocussed={isPasswordFocussed}
-        candidatePassword={password}
-      /> : null}
+      {isStrongPasswordEnforced ? (
+        <PasswordStrengthHelper
+          isPasswordFocussed={isPasswordFocussed}
+          candidatePassword={password}
+        />
+      ) : null}
 
       <RegistrationForm
         state={state}
@@ -163,6 +174,7 @@ const Registration = ({
         socialUser={socialUser}
         hasHorizontalLine={hasHorizontalLine}
         message={message}
+        registrationResponse={registrationResponse}
       />
     </Column>
   );
