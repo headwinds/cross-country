@@ -34,11 +34,12 @@ const postRegistration = fromPromise<
     isPasswordStrong,
     username,
     password,
+    confirmPassword,
     email,
     successMessage,
     failedMessage,
   } = input;
-  if (isEmailValid && isUsernameValid && isPasswordStrong) {
+  if (isEmailValid && isUsernameValid && isPasswordStrong && confirmPassword === password) {
     return {
       message: successMessage,
       username,
@@ -66,6 +67,7 @@ const POSTING_REGISTRATION = {
         email: context.email,
         username: context.username,
         password: context.password,
+        confirmPassword: context.confirmPassword,
         domain: context.domain,
         isEmailValid: context.isEmailValid,
         isUsernameValid: context.isUsernameValid,

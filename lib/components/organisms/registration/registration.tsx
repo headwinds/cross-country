@@ -5,7 +5,6 @@ import { registrationMachine } from "./registration-machine";
 import styles from "./registration.module.css";
 import PasswordStrengthHelper from "./password-strength-helper";
 import RegistrationForm from "./registration-form";
-import RegistrationResponse from "./registration-response";
 
 const FieldRow = ({ children }) => {
   return <Row customClass={styles.fieldRow}>{children}</Row>;
@@ -54,7 +53,8 @@ const Registration = ({
 }: RegistrationProps) => {
   const [state, send] = useMachine(registrationMachine);
 
-  const toggleEye = () => {
+  const handleToggleEye = (e) => {
+    e.preventDefault();
     send({
       type: "TOGGLE_EYE",
     });
@@ -73,7 +73,6 @@ const Registration = ({
   };
 
   const {
-    isPasswordPlainText,
     isPasswordFocussed,
     password,
     isPasswordStrong,
@@ -81,7 +80,6 @@ const Registration = ({
     isEmailValid,
     hasSendBeenClicked,
     registrationResponse,
-    isRegistrationSuccessful,
   } = state.context;
 
   useEffect(() => {
@@ -93,9 +91,11 @@ const Registration = ({
 
   useEffect(() => {
     if (socialUser) {
+      const randomPassword = Math.random().toString(36).slice(-8);
+      const generatedPassword = `${randomPassword}T@s1w!0S`;
       send({
         type: "SET_SOCIAL_USER",
-        value: socialUser,
+        value: { socialUser, generatedPassword }
       });
     }
   }, []);
@@ -147,17 +147,17 @@ const Registration = ({
     >
       <SubHeadline text={text} />
 
-      <PasswordStrengthHelper
+      {isStrongPasswordEnforced ? <PasswordStrengthHelper
         isPasswordFocussed={isPasswordFocussed}
         candidatePassword={password}
-      />
+      /> : null}
 
       <RegistrationForm
         state={state}
         send={send}
         handleFocusOnPassword={handleFocusOnPassword}
         handleBlurOnPassword={handleBlurOnPassword}
-        toggleEye={toggleEye}
+        handleToggleEye={handleToggleEye}
         onLoginClick={onLoginClick}
         onChange={onChange}
         socialUser={socialUser}
