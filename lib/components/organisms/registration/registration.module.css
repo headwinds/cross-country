@@ -26,6 +26,7 @@
 
 .passwordStrengthHelperContainer {
   position: absolute;
+  width: 116px;
   border: 1px solid #666;
   border-radius: 8px;
   border-radius: 8px;
@@ -34,8 +35,8 @@
   padding: 16px;
   margin: 0;
   padding: 16px;
-  top: 22px;
-  left: 150px;
+  top: 48px;
+  left: 370px;
   height: 117px;
 }
 

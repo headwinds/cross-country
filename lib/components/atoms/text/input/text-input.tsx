@@ -46,6 +46,8 @@ const TextInput = ({
           className={clsx(styles.textInput, customClass)}
           style={customStyle}
           placeholder={placeholder}
+          onFocus={onFocus}
+          onBlur={onBlur}
           {...register(data?.name)}
         />
       </>
@@ -64,6 +66,8 @@ const TextInput = ({
         } = event;
         return onTextChange(value);
       }}
+      onFocus={onFocus}
+      onBlur={onBlur}
       // conditionally add value if defaultValue is null
       {...(!defaultValue && { value })}
       style={customStyle}

@@ -30,6 +30,7 @@ const machine = {
     // lastName: "",
     username: "",
     password: "",
+    confirmPassword: "",
     email: "",
     isPasswordPlainText: false,
     isPasswordStrong: false,
@@ -76,6 +77,9 @@ const machine = {
         TYPING_PASSWORD: {
           actions: "typingPassword",
         },
+        TYPING_CONFIRM_PASSWORD: {
+          actions: "typingConfirmPassword",
+        },
         SET_DOMAIN: {
           actions: "settingDomain",
         },
@@ -109,16 +113,16 @@ const config = {
     }),
     setSocialUser: assign({
       socialUser: ({ context, event }) => {
-        return event.value;
+        return event.value.socialUser;
       },
       email: ({ context, event }) => {
-        return event.value.email;
+        return event.value.socialUser.email;
       },
       password: ({ context, event }) => {
-        const randomPassword = Math.random().toString(36).slice(-8);
-        const generatedPassword = `${randomPassword}T@s1w!0S`;
-
-        return generatedPassword;
+        return event.value.generatedPassword;
+      },
+      confirmPassword: ({ context, event }) => {
+        return event.value.generatedPassword;
       },
       isPasswordStrong: ({ context, event }) => {
         return true;
@@ -163,6 +167,15 @@ const config = {
       isPasswordStrong: ({ context, event }) => {
         const candidatePassword = event.value;
         return validatePassword(candidatePassword);
+      },
+    }),
+    typingConfirmPassword: assign({
+      confirmPassword: ({ context, event }) => {
+        return event.value;
+      },
+      isConfirmPasswordValid: ({ context, event }) => {
+        const candidateEmail = event.value;
+        return context.password === event.value;
       },
     }),
     typingEmail: assign({

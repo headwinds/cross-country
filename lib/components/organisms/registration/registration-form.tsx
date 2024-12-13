@@ -35,7 +35,7 @@ interface RegistrationFormProps {
   send: (event: RegistrationEvent) => void;
   handleFocusOnPassword: () => void;
   handleBlurOnPassword: () => void;
-  toggleEye: () => void;
+  handleToggleEye: (e:MouseEvent) => void;
   onLoginClick: () => void;
   onChange: (event: RegistrationEvent) => void;
   socialUser?: SocialUser;
@@ -48,7 +48,7 @@ const RegistrationForm = ({
   send,
   handleFocusOnPassword,
   handleBlurOnPassword,
-  toggleEye,
+  handleToggleEye,
   onLoginClick,
   onChange,
   socialUser,
@@ -62,6 +62,7 @@ const RegistrationForm = ({
     isPasswordStrong,
     isUsernameValid,
     isEmailValid,
+    isConfirmPasswordValid,
     hasSendBeenClicked,
     registrationResponse,
   } = state.context;
@@ -78,6 +79,9 @@ const RegistrationForm = ({
           break;
         case "password":
           borderColor = isPasswordStrong ? "green" : "red";
+          break;
+        case "confirmPassword":
+          borderColor = isConfirmPasswordValid ? "green" : "red";
           break;
         default:
           borderColor = "";
@@ -151,7 +155,7 @@ const RegistrationForm = ({
                 customStyle={{ ...getBorderColorStyle("password") }}
                 placeholder="Enter your password"
               />
-              <Button onClick={() => toggleEye()} customClass={styles.icon}>
+              <Button onClick={handleToggleEye} customClass={styles.icon}>
                 {isPasswordPlainText ? (
                   <EyeSlash size={20} />
                 ) : (
@@ -172,12 +176,10 @@ const RegistrationForm = ({
                     value,
                   })
                 }
-                onFocus={handleFocusOnPassword}
-                onBlur={handleBlurOnPassword}
-                customStyle={{ ...getBorderColorStyle("password") }}
+                customStyle={{ ...getBorderColorStyle("confirmPassword") }}
                 placeholder="Enter your password"
               />
-              <Button onClick={() => toggleEye()} customClass={styles.icon}>
+              <Button onClick={handleToggleEye} customClass={styles.icon}>
                 {isPasswordPlainText ? (
                   <EyeSlash size={20} />
                 ) : (
@@ -191,7 +193,6 @@ const RegistrationForm = ({
             <Button
               onClick={(e) => {
                 e.preventDefault();
-
                 send({ type: "SUBMIT" });
               }}
               customClass={styles.sendButton}

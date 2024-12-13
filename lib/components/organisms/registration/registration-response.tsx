@@ -10,7 +10,7 @@ const RegistrationResponse = ({ response, onLoginClick }) => {
 
   return (
     <Row customStyle={{ justifyContent: "flex-end" }}>
-      {!onLoginClick ? (
+      {!onLoginClick && !response.hasError ? (
         <Link
           onClick={onLoginClick}
           customStyle={{ fontSize: 14, margin: 16, cursor: "pointer" }}
