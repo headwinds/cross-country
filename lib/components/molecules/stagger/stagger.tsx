@@ -8,8 +8,17 @@ const defaultConfig = {
   text: { customClass: "", customStyle: {}, rest: {} },
 };
 
+type StaggerText = {
+  text: string;
+  textColor?: string;
+  fontSize?: string;
+  fontWeight?: string;
+  fontFamily: string;
+  staggerValue: number;
+};
+
 export interface StaggerProps {
-  color?: string | string[];
+  color?: string;
   config?: {
     column?: {
       customClass?: string;
@@ -22,33 +31,45 @@ export interface StaggerProps {
       rest?: React.HTMLAttributes<HTMLDivElement>;
     };
   };
-  staggerText: string[];
-  stagger?: { key: string; value: number };
+  staggerText: StaggerText[];
   size?: "small" | "medium" | "large";
+  hasCommonStagger?: boolean;
+  commonStaggerValue?: number;
 }
 
 const Stagger = ({
   color = "#000",
   config = defaultConfig,
   staggerText = [],
-  stagger = { key: "marginLeft", value: 26 },
+  commonStaggerValue = 26,
   size = "large",
+  hasCommonStagger = true,
 }: StaggerProps) => {
-  const list = staggerText.map((text, idx) => (
-    <SubHeadline
-      color={Array.isArray(color) ? color[idx] : color}
-      key={idx}
-      {...config?.text?.rest}
-      size={size}
-      customClass={clsx(styles.text, config?.text?.customClass)}
-      customStyle={{
-        ...config?.text?.customStyle,
-        [stagger.key]: stagger.value * idx,
-      }}
-    >
-      {text}
-    </SubHeadline>
-  ));
+  const list = staggerText.map(
+    (
+      { text, textColor, fontSize, fontWeight, fontFamily, staggerValue },
+      idx
+    ) => (
+      <SubHeadline
+        color={Array.isArray(textColor) ? textColor : color}
+        key={idx}
+        {...config?.text?.rest}
+        size={size}
+        customClass={clsx(styles.text, config?.text?.customClass)}
+        customStyle={{
+          ...config?.text?.customStyle,
+          ...(fontSize && { fontSize }),
+          ...(fontWeight && { fontWeight }),
+          ...(fontFamily && { fontFamily }),
+          marginLeft: hasCommonStagger
+            ? commonStaggerValue * idx
+            : staggerValue,
+        }}
+      >
+        {text}
+      </SubHeadline>
+    )
+  );
   return (
     <Column
       customClass={clsx(styles.stagger, config.column.customClass)}

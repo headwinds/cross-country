@@ -12,7 +12,7 @@ import {
 } from "@cross-country/components";
 import styles from "./registration.module.css";
 import { Eye, EyeSlash } from "@phosphor-icons/react";
-import RegistrationResponse from "./registration-response";
+import RegistrationFeedback from "./registration-feedback";
 import SocialEmail from "./social-email";
 import type {
   SocialUser,
@@ -207,7 +207,7 @@ const RegistrationForm = ({
           </FieldRow>
         </Column>
       </Row>
-      <RegistrationResponse
+      <RegistrationFeedback
         response={registrationResponse}
         onLoginClick={onLoginClick}
       />

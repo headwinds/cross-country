@@ -3,6 +3,7 @@ import React, { useState, useMemo } from "react";
 //import Image from "next/image";
 import { Image, Column, Link } from "../../";
 import ReactPlayer from "react-player/youtube";
+import ReactPlayerVimeo from "react-player/vimeo";
 import { use } from "chai";
 
 type Artist = {
@@ -55,6 +56,18 @@ const Player = ({
     artist?.artistName === selectedArtistYoutube?.artistName;
 
   const reactPlayer = useMemo(() => {
+    if (artist.youtubeUrl?.includes("vimeo")) {
+      return (
+        <ReactPlayerVimeo
+          url={artist.youtubeUrl}
+          width={width}
+          height={height}
+          controls={true}
+          style={customStyle}
+        />
+      );
+    }
+
     return (
       <ReactPlayer
         url={artist.youtubeUrl}
@@ -70,14 +83,14 @@ const Player = ({
     return (
       <Column customStyle={{ padding: 0 }}>
         {reactPlayer}
-        <Link
+        {/*<Link
           url={artist.websiteUrl}
           text="Artist Website"
           customStyle={{ margin: 8 }}
           hasUnderline={artist.isArtistNameUnderline}
         >
           {artist.artistName}
-        </Link>
+        </Link>*/}
       </Column>
     );
   }
@@ -139,7 +152,9 @@ const Player = ({
     <Column>
       <button onClick={() => onContributeClick?.()}>
         <div className="w-full h-full  flex items-center justify-center m-4">
-          <p className="text-gray-500 text-1xl">😔 Got a Youtube link?</p>
+          <p className="text-gray-500 text-1xl">
+            😔 Got a Youtube or Vimeo link?
+          </p>
         </div>
       </button>
     </Column>

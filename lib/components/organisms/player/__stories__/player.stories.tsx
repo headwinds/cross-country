@@ -4,6 +4,7 @@ import Player from "../player";
 import { Column, Row } from "../../../";
 import Input from "@cross-country/components/atoms/text/input";
 import Label from "@cross-country/components/atoms/text/label";
+import Button from "@cross-country/components/atoms/button/button";
 
 const meta: Meta<typeof Player> = {
   component: Player,
@@ -63,6 +64,7 @@ export const PlayerShelfStory: Story = {
           margin: 0,
           padding: 0,
           overflow: "hidden",
+          minHeight: "600px",
         }}
       >
         <Player
@@ -85,21 +87,30 @@ export const PlayerShelfStory: Story = {
             opacity: 0.2,
           }}
         >
-          Paste in the Youtube URL with /watch?v=
+          Paste in the Youtube URL (/watch?v=) or Vimeo
         </Label>
-        <Input
-          value={url}
-          onTextChange={(text: string) => setUrl(text)}
-          customStyle={{
-            margin: 16,
-            maxWidth: 600,
-            backgroundBlendMode: "darken",
-            opacity: 0.2,
-            backgroundColor: "#333",
-            color: "#84c4c3",
-            borderColor: "#84c4c3",
-          }}
-        />
+        <Row>
+          <Input
+            value={url}
+            onTextChange={(text: string) => setUrl(text)}
+            customStyle={{
+              margin: 16,
+              minWidth: 300,
+              maxWidth: 600,
+              backgroundBlendMode: "darken",
+              opacity: 0.2,
+              backgroundColor: "#333",
+              color: "#84c4c3",
+              borderColor: "#84c4c3",
+            }}
+          />
+          <Button
+            onClick={() => setUrl("")}
+            customStyle={{ width: 100, opacity: 0.2 }}
+          >
+            Clear
+          </Button>
+        </Row>
       </Column>
     );
   },

@@ -4,15 +4,15 @@ import styles from "./registration.module.css";
 import { CheckCircle, WarningCircle } from "@phosphor-icons/react";
 import type { RegistrationResponse } from "./registration";
 
-interface RegistrationResponseProps {
+interface RegistrationFeedbackProps {
   response: RegistrationResponse;
   onLoginClick?: () => void;
 }
 
-const RegistrationResponse = ({
+const RegistrationFeedback = ({
   response,
   onLoginClick,
-}: RegistrationResponseProps) => {
+}: RegistrationFeedbackProps) => {
   if (!response) {
     return null;
   }
@@ -39,4 +39,4 @@ const RegistrationResponse = ({
   );
 };
 
-export default RegistrationResponse;
+export default RegistrationFeedback;

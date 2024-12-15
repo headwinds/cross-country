@@ -88,7 +88,6 @@ const Registration = ({
     isUsernameValid,
     isEmailValid,
     hasSendBeenClicked,
-    registrationResponse,
   } = state.context;
 
   useEffect(() => {
