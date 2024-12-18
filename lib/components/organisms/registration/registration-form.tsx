@@ -12,9 +12,13 @@ import {
 } from "@cross-country/components";
 import styles from "./registration.module.css";
 import { Eye, EyeSlash } from "@phosphor-icons/react";
-import RegistrationResponse from "./registration-response";
+import RegistrationFeedback from "./registration-feedback";
 import SocialEmail from "./social-email";
-import type { SocialUser, RegistrationEvent } from "./registration";
+import type {
+  SocialUser,
+  RegistrationEvent,
+  RegistrationResponse,
+} from "./registration";
 
 const FieldRow = ({
   children,
@@ -35,12 +39,13 @@ interface RegistrationFormProps {
   send: (event: RegistrationEvent) => void;
   handleFocusOnPassword: () => void;
   handleBlurOnPassword: () => void;
-  handleToggleEye: (e:MouseEvent) => void;
+  handleToggleEye: (e: MouseEvent) => void;
   onLoginClick: () => void;
   onChange: (event: RegistrationEvent) => void;
   socialUser?: SocialUser;
   hasHorizontalLine?: boolean;
   message?: string;
+  registrationResponse: RegistrationResponse;
 }
 
 const RegistrationForm = ({
@@ -54,6 +59,7 @@ const RegistrationForm = ({
   socialUser,
   hasHorizontalLine = true,
   message,
+  registrationResponse,
 }: RegistrationFormProps) => {
   const {
     isPasswordPlainText,
@@ -64,7 +70,6 @@ const RegistrationForm = ({
     isEmailValid,
     isConfirmPasswordValid,
     hasSendBeenClicked,
-    registrationResponse,
   } = state.context;
 
   const getBorderColorStyle = (field) => {
@@ -202,7 +207,7 @@ const RegistrationForm = ({
           </FieldRow>
         </Column>
       </Row>
-      <RegistrationResponse
+      <RegistrationFeedback
         response={registrationResponse}
         onLoginClick={onLoginClick}
       />
