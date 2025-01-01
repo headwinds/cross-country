@@ -6,10 +6,19 @@ export interface ParagraphProps {
   children?: React.ReactNode;
   customClass?: string;
   customStyle?: React.CSSProperties;
+  maxWidth?: number;
 }
 
-const Paragraph = ({ children, customClass = "", customStyle = {} }) => (
-  <p className={clsx(styles.paragraph, customClass)} style={customStyle}>
+const Paragraph = ({
+  children,
+  customClass = "",
+  customStyle = {},
+  maxWidth = 600,
+}) => (
+  <p
+    className={clsx(styles.paragraph, customClass)}
+    style={{ maxWidth, ...customStyle }}
+  >
     {children}
   </p>
 );
