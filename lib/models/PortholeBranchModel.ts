@@ -1,60 +1,25 @@
-import { Record } from "immutable";
+export interface Image {
+  photo_thumbnail_url: string;
+  photo_large_urls: string[];
+  photo_default_url: string;
+}
 
-type Image = {
-  imageUrl: string;
-  useText: boolean;
-  defaultImageUrl?: string;
-  text?: string;
-  large?: boolean;
-};
+export interface Publisher {
+  author: string;
+  url: string;
+  company: string;
+}
 
-export type PortholeBranchModelType = {
+export type PortholeBranchModel = {
   id: string;
   tags: string[];
-  photoUrl: string;
-  photoLargeUrl: string;
-  images: string[] | Image[];
-  defaultImageUrl?: string;
-  link: string;
-  publishedDate: string;
+  url: string;
   title: string;
-  feedLink: string;
-  feedTitle: string;
-  about: string;
-  index: number;
-  text: string;
-  useText: boolean;
-  x: number;
-  y: number;
-  bViewed: boolean;
-  bTrashed: boolean;
-  origin: string;
+  summary: string;
+  published_date: string;
+  updated_date: string;
+  publisher: Publisher;
+  image: Image;
 };
 
-export default class PortholeBranchModel extends Record<PortholeBranchModelType>(
-  {
-    id: "",
-    tags: [],
-    photoUrl: "",
-    photoLargeUrl: "",
-    images: [],
-    link: "",
-    publishedDate: "",
-    title: "",
-    feedLink: "",
-    feedTitle: "",
-    about: "",
-    index: 0,
-    text: "",
-    useText: false,
-    x: 0,
-    y: 0,
-    bViewed: false,
-    bTrashed: false,
-    origin: "porthole",
-  }
-) {
-  constructor(props: PortholeBranchModelType) {
-    super(props);
-  }
-}
+//export default PortholeBranchModel;

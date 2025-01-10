@@ -1,8 +1,8 @@
-import PortholeBranchModel from "../../models/PortholeBranchModel";
+//import PortholeBranchModel from "@cross-country/models/PortholeBranchModel";
 import getImagesFromDescription from "./image-find-util";
 import type {
   TreeModelType,
-  PortholeBranchModelType,
+  PortholeBranchModel,
 } from "@cross-country/models";
 
 const defaultImageUrl = "./"; // need default images...
@@ -87,34 +87,27 @@ export const getRSSBranch = (candidateBranch, index, ix) => {
   const tags = branch?.tags ?? branch.categories ?? [];
   const id = `gold-leaf-${index}-${ix}`;
 
-  const props = {
+  const portholeBranch: PortholeBranchModel = {
     id,
     tags,
-    photoUrl,
-    photoLargeUrl,
-    images,
-    link: branch.link,
-    published: branch.published,
-    branchTitleUnescape,
-    metaLink: branch?.meta?.link ?? branch.link ?? "",
+    image: {
+      photo_thumbnail_url: photoUrl,
+      photo_large_urls: [photoLargeUrl],
+      photo_default_url: defaultImageUrl,
+    },
+    url: branch.link,
     title,
-    branchDescriptionUnescape,
-    index,
-    description: branchDescriptionUnescape,
-    useText: resultImageObj.useText,
-    x: 0,
-    y: 0,
-    bViewed: false,
-    bTrashed: false,
-    origin: "porthole",
-    publishedDate: branch.publishedDate ?? "",
-    feedLink: branch.feedLink ?? "",
-    feedTitle: branch.feedTitle ?? "",
-    about: branch.about ?? "",
-    text: branch.text ?? "",
+    summary: branchDescriptionUnescape,
+    published_date: branch.publishedDate ?? "",
+    updated_date: branch.updatedDate ?? "",
+    publisher: {
+      author: branch?.meta?.author ?? "",
+      url: branch?.meta?.link ?? branch.link ?? "",
+      company: branch?.meta?.company ?? "",
+    },
   };
 
-  const portholeBranch = new PortholeBranchModel(props);
+
 
   return portholeBranch;
 };

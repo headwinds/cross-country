@@ -11,6 +11,7 @@ export * from "./LevelModel";
 export * from "./NeutralModel";
 export * from "./NPCModel";
 export * from "./PortholeBranchModel";
+export * from "./EmailModel";
 export * from "./SettingsModel";
 export * from "./ShieldModel";
 export * from "./TileModel";
