@@ -85,6 +85,11 @@ or
 npm run new -- --type molecules --path component-name-here/sub-component-name-her
 ```
 
+You can also scaffold only a story:
+```
+npm run new:story -- --type molecules --path policies/privacy-policy
+```
+
 This will automatically scaffold the component directory creating all the files you will need including the tests and stories folders. It saved you at least 5 minutes if not especially around configuring the story; no more frustrating CSF errors!
 
 ## Unsplash Config
@@ -99,7 +104,7 @@ export const privateConfig = {
 
 ## Storybook
 
-While creating compoents, you can use Storybook
+While creating components, you can use Storybook
 
 ```
 npm run storybook

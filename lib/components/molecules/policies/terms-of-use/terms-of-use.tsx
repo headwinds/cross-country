@@ -8,8 +8,8 @@ export interface TermsOfUseProps {
 }
 
 const TermsOfUse = ({
-  appName,
-  companyName,
+  appName = "APP NAME HERE",
+  companyName = "COMPANY NAME HERE",
   hasTitle = true,
 }: TermsOfUseProps) => {
   return (

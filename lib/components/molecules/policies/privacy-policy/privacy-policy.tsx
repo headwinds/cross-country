@@ -3,13 +3,13 @@ import { SubHeadline, Paragraph, List, ListItem, Column } from "../../..";
 
 export interface PrivacyPolicyProps {
   companyName: string;
-  contactEmail: string;
+  contactInfo: string;
   hasTitle?: boolean;
 }
 
 const PrivacyPolicy = ({
-  companyName,
-  contactEmail,
+  companyName = "COMPANY NAME HERE",
+  contactInfo = "CONTACT INFO HERE",
   hasTitle = true,
 }: PrivacyPolicyProps) => {
   return (
@@ -130,7 +130,7 @@ const PrivacyPolicy = ({
         <ListItem>
           <Paragraph>
             Contact Us If you have any questions about this Privacy Policy or
-            our practices, please contact us at {contactEmail}.
+            our practices, please contact us at {contactInfo}.
           </Paragraph>
         </ListItem>
       </List>
