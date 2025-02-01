@@ -1,0 +1,17 @@
+
+.actorSpeech {
+  z-index: 2;
+  width: 400px;
+  height: auto;
+  border-radius: 8px;
+  background-color: white;
+  margin: 0px;
+  padding: 8px;
+}
+
+.actorParagraph {
+  margin: 0px;
+  padding: 8px;
+  font-size: 16px;
+  color: black;
+}

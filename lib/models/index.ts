@@ -1,6 +1,9 @@
 // models
-// export everything from this folder
-export * from "./ActorModel";
+//export * from "./ActorModel";
+
+export type { ActorModel } from "./ActorModel";
+
+/*
 export * from "./BookModel";
 export * from "./ChapterModel";
 export * from "./PlayerModel";
@@ -19,3 +22,4 @@ export * from "./UserModel";
 export * from "./WeaponModel";
 export * from "./WorldModel";
 export * from "./TreeModel";
+*/

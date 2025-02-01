@@ -65,9 +65,15 @@ async function generateComponent({ type, componentPath }: ComponentConfig) {
     // Replace placeholders
 
     // Generate story templates
-    const componentUpperCaseName =
-      componentName.charAt(0).toUpperCase() + componentName.slice(1);
+    // if the component name is more than 1 word, we need to capitalize the first letter of each word
+    // for instance, animated-column -> AnimatedColumn
+    const componentUpperCaseName = componentName
+      .split("-")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join("");
+
     const componentLowerCaseName = componentName.toLowerCase();
+
     const atomicTypeName = type.toLowerCase();
 
     const indexContent = indexTemplate

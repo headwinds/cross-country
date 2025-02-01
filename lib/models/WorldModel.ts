@@ -1,22 +1,21 @@
-import { Record } from "immutable";
-
-const WorldModel = Record({
-  playerSet: [],
-  itemSet: [],
-  enemySet: [],
-  neutralSet: [],
-  npcSet: [],
-  shieldSet: [],
-  weaponSet: [],
-  storySet: [],
-  type: "worldset",
-  name: "",
-  description: "",
-  population: 0,
-  skin: "",
-  created_on: "",
-  updated_on: "",
-  bookSet: [],
-});
+type WorldModel = {
+  playerSet: any[];
+  itemSet: any[];
+  enemySet: any[];
+  neutralSet: any[];
+  npcSet: any[];
+  shieldSet: any[];
+  weaponSet: any[];
+  storySet: any[];
+  type: string;
+  name: string;
+  description: string;
+  population: number;
+  skin: string;
+  created_on: string;
+  updated_on: string;
+  bookSet: any[];
+  year: number;
+};
 
 export default WorldModel;

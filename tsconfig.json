@@ -27,7 +27,8 @@
       "@cross-country/models/*": ["lib/models/*"],
       "@cross-country/types/*": ["lib/types/*"],
       "@cross-country/utils/*": ["lib/utils/*"],
-      "@cross-country/constants/*": ["lib/constants/*"]
+      "@cross-country/constants/*": ["lib/constants/*"],
+      "@cross-country/providers/*": ["lib/providers/*"]
     },
 
     /* Linting 

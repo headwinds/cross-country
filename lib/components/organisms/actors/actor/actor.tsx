@@ -1,8 +1,8 @@
 import React, { Component, CSSProperties } from "react";
-import { Column, Image, SVG } from "../../../";
+import { Column, Image, SVG } from "@cross-country/components";
 import styles from "./actor.module.css";
 import clsx from "clsx";
-import ActorModel from "../../../../models/ActorModel";
+import type { ActorModel } from "@cross-country/models";
 
 const defaultTileSize = 50;
 
@@ -10,12 +10,6 @@ const head = { color: "purple" };
 const body = { color: "green" };
 const legs = { color: "cornflowerblue" };
 const defaultConfig = { head, body, legs, type: "humanoid" };
-
-// should be taken from windsong!
-const actorModel = new ActorModel({ name: "Actor" }).toObject();
-//{ health: 100, speed: 1, attack: 1, defense: 1, isDead: false };
-
-// the actor should be relative to the tile size so that they're larger than the tile
 
 const renderHeadBodyFeet = (config, tileSize) => {
   const { head, body, legs } = config;
@@ -66,6 +60,7 @@ export interface ActorProps {
   tileSize?: number;
   children?: any;
   type?: string;
+  model?: ActorModel;
 }
 
 const Actor = ({

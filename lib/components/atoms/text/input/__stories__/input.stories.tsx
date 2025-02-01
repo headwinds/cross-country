@@ -1,10 +1,27 @@
+import React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+import Input from "../text-input";
 import TextInputStory from "./text-input-story";
 import TextInputDefaultValueStory from "./text-input-default-value-story";
 import StateMachineTextInputStory from "./state-machine-text-input-story";
 import StateMachineContentEditableStory from "./state-machine-content-editable-story";
 
-export default {
-  title: "components/atoms/text/text input",
+const meta: Meta<typeof Input> = {
+  component: Input,
+  title: "components/atoms/input",
+} satisfies Meta<typeof Input>;
+
+export default meta;
+type Story = StoryObj<typeof Input>;
+
+export const InputStory: Story = {
+  render: () => {
+    const onTextChange = (text: string) => {
+      console.log("Inut onTextChange text: ", text);
+    };
+
+    return <Input onTextChange={onTextChange} />;
+  },
 };
 
 export const Standard = {

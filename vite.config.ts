@@ -13,6 +13,7 @@ export default defineConfig({
     alias: {
       "@": resolve(__dirname, "./"),
       "@cross-country": resolve(__dirname, "./lib"),
+      "@cross-country/providers": resolve(__dirname, "./lib/providers"),
       "@cross-country/components": resolve(__dirname, "./lib/components"),
       "@cross-country/atoms": resolve(__dirname, "./lib/components/atoms"),
       "@cross-country/molecules": resolve(

@@ -6,7 +6,7 @@ import clsx from "clsx";
 export interface TextAreaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   onTextChange: (text: string) => void;
-  value?: string;
+  value: string;
   customClass?: string;
   customStyle?: React.CSSProperties;
   placeholder?: string;
@@ -21,13 +21,13 @@ const TextArea = ({
   value = "",
   customClass = "",
   customStyle = {},
-  placeholder = "enter your text",
+  placeholder = "What's on your mind?",
   type = "text-area",
   rows = 1,
   cols = 33,
   isDraggable = false,
   ...rest
-}) => {
+}: TextAreaProps) => {
   return (
     <textarea
       rows={rows}

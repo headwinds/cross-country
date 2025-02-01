@@ -4,6 +4,7 @@ import Hunter from "../actors/party/hunter";
 import Warrior from "../actors/party/warrior";
 import Wisp from "../actors/wisp";
 import styles from "./stage.module.css";
+import ActorSpeech from "../actors/actor-speech";
 
 type StageConfig = {
   customClass?: string;
@@ -34,10 +35,21 @@ export interface StageProps {
   actorModels: any[];
 }
 
+const defaultActorSpeech = [
+  {
+    messageId: "today",
+    values: { ts: Date.now() },
+    who: "hunter",
+  },
+];
+
 const Stage = ({
   config = defaultConfig,
   actorModels = [defaultActorModel],
+  actorSpeech = defaultActorSpeech,
 }: StageProps) => {
+  const hunterSpeech = actorSpeech.find((speech) => speech.who === "hunter");
+
   const getActor = (model) => {
     switch (model.variant) {
       case "wisp":
@@ -54,14 +66,13 @@ const Stage = ({
     return actorModels.map((model) => getActor(model));
   };
 
-  console.log("Stage config: ", config);
-
   return (
     <Column
       customClass={clsx(styles.stage, config?.customClass)}
       customStyle={config?.customStyle}
       {...config?.rest}
     >
+      <ActorSpeech speech={hunterSpeech} />
       {renderActors()}
     </Column>
   );

@@ -5,7 +5,63 @@ import * as ActorStories from "./actor.stories";
 
 # Actor
 
+We can model the actor after anyone at any point in time; past, present and future!
+
+<Canvas of={ActorStories.ActorStory} />
+
 ```jsx
+
+interface ActorModel {
+  id: number;
+  type: string;
+  alignment: string;
+  name: string;
+  health: number;
+  weapon: WeaponType;
+  shield: ShieldType;
+  speed: number;
+  accuracy: number;
+  skin: string;
+  spells: SpellModel[];
+  level: number;
+  tileSize?: number;
+  variant?: string;
+  position?: { x: number; y: number; z: number };
+  customStyle?: {
+    position: string;
+    zIndex: number;
+    left: number;
+    top: number;
+    backgroundColor: string;
+  };
+  metabolism: number;
+  hunger?: number;
+  currentCalories: number;
+  vice?: Vice;
+  world?: WorldModel;
+  ProfessionModel?: ProfessionModel;
+}
+
+```
+
+When I say anyone, there are some limitations so that we can progress but there should be enough hooks to create an interesting character for a scene.
+
+```jsx
+import { Actor } from "./actor";
+import type { ActoModel } from "@cross-country/models";
+
+const actor: ActorModel = {
+  position: {
+    x: 0,
+    y: 0,
+    z: 0,
+  },
+  customSkinStyle: {
+    backgroundColor: "grey",
+  },
+  model: true,
+};
+
 <Actor
   position={{
     x: 0,
@@ -15,6 +71,7 @@ import * as ActorStories from "./actor.stories";
   customSkinStyle={{
     backgroundColor: "grey",
   }}
+  model
 />
 ```
 
@@ -36,4 +93,7 @@ The NPC will have a state machine which will control its behaviors. It will have
 
 Partially inspired by the viral hit [Elf Yourself](https://www.marketingdive.com/news/office-depots-elf-yourself-lands-on-facebook-with-ar-filter/542413/); my own work in AI and [Habbo hotel](https://www.gameshub.com/news/opinions-analysis/habbo-hotel-origins-review-2642378/) fandom, I wanted to challenge to create NPC myself and think it would be fun for others to do the same so that we could create something like an [AI town](https://stack.convex.dev/building-ai-town-character-ids) together but based on us!
 
-<Canvas of={ActorStories.ActorStory} />
+## Actor Creator
+
+<Canvas of={ActorStories.ActorBuilderStory} />
+

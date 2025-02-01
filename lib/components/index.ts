@@ -151,8 +151,8 @@ export type { PrivacyPolicyProps } from "./molecules/policies/privacy-policy";
 export { default as TermsOfUse } from "./molecules/policies/terms-of-use";
 export type { TermsOfUseProps } from "./molecules/policies/terms-of-use";
 
-export { default as RadioGroup } from "./molecules/radiogroup/";
-export type { RadioGroupProps } from "./molecules/radiogroup/";
+export { default as RadioGroup } from "./molecules/radio-group/";
+export type { RadioGroupProps } from "./molecules/radio-group/";
 
 export { default as Carousel } from "./molecules/carousel";
 export type { CarouselProps } from "./molecules/carousel";

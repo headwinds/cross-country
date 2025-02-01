@@ -1,13 +1,22 @@
-import { Record } from 'immutable';
-
-const ShieldModel = Record({
-  id: 0,
-  name: 'generic item',
-  modifies: 'none',
-  by: 0,
-  type: 'shield',
-  protection: 10,
-  skin: '',
-});
+type ShieldModel = {
+  id: number;
+  name: string;
+  modifies: string;
+  by: number;
+  type: "shield";
+  protection: number;
+  skin: string;
+};
 
 export default ShieldModel;
+
+// You can create a default weapon if needed
+export const defaultShield: ShieldModel = {
+  id: 0,
+  name: "Basic Shield",
+  modifies: "defense",
+  by: 2,
+  type: "shield",
+  protection: 5,
+  skin: "default_shield",
+};

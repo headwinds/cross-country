@@ -15,7 +15,7 @@ export * from "./modal";
 export * from "./page";
 export * from "./policies";
 export * from "./page";
-export * from "./radiogroup";
+export * from "./radio-group";
 export * from "./related-articles";
 export * from "./screen";
 export * from "./stagger";
