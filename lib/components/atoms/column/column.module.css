@@ -2,9 +2,6 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  margin: 0px;
-  padding: 26px;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
+  margin: 8px 0px;
+  padding: 16px;
 }
