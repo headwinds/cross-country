@@ -15,3 +15,24 @@ Questons to ask myself before committing?
 This folder has a hidden .git folder so shift-command-. to reveal it
 
 - [Perplexity convo](https://www.perplexity.ai/search/i-want-to-a-write-custom-git-c-FYki.Te7Q0qi1j2noCOQ2g#0)
+
+### Freezer.sh
+
+- Jan 29/2025
+
+I had installed over 50 VS Code extensions and had lost track what they all do so decided to start fresh. So this script will uninstall all your extensionss. 
+
+Since I mainly mostly use Typescript and Python, those are the only extensions I've installed again starting with Prettier, Spellchecker and Todo Tree. Along with the "@builtin TypeScript and JavaScript Language Features", these catch the majority of the issues.
+
+Current VS Code Extensions
+- Todo Tree
+- Ruff (Python linter written in Rust)
+- Spell
+- Github Copilot & Github Copilot Chat
+- Code Spell Checker
+- Docker
+- Gitlens
+- MDX
+- Prettier
+- Pylance
+
