@@ -8,7 +8,7 @@ const defaultConfig = {
   text: { customClass: "", customStyle: {}, rest: {} },
 };
 
-type StaggerText = {
+export type StaggerText = {
   text: string;
   textColor?: string;
   fontSize?: string;

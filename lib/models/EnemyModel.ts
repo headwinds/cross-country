@@ -1,34 +1,25 @@
-import { WeaponType } from "./WeaponModel";
-import { ShieldType } from "./ShieldModel";
-import { Spell, Vice, Skill, Tool, Profession } from "./ActorModel";
+import { WeaponModel } from "./WeaponModel";
+import { ShieldModel } from "./ShieldModel";
+import { SpellModel } from "./SpellModel";
+import { ViceModel } from "./ViceModel";
+import { SkillModel } from "./SkillModel";
+import { ToolModel } from "./ToolModel";
+import { ProfessionModel } from "./ProfessionModel";
 
 export interface EnemyModel {
   id: number;
   type: string;
   name: string;
   health: number;
-  weapon: WeaponType;
-  shield: ShieldType;
+  weapon: WeaponModel;
+  shield: ShieldModel;
   speed: number;
   accuracy: number;
   skin: string;
-  spells: Spell[];
+  spells: SpellModel[];
   level: number;
+  profession: ProfessionModel;
+  tools: ToolModel[];
+  skills: SkillModel[];
+  vices: ViceModel[];
 }
-
-// Optional: You can create a default enemy factory function
-export const createDefaultEnemy = (): EnemyModel => ({
-  id: 0,
-  type: "enemy",
-  name: "",
-  health: 100,
-  weapon: { name: "fist", damage: 100, range: 1 },
-  shield: { name: "cloak", defense: 100 },
-  speed: 10,
-  accuracy: 10,
-  skin: "",
-  spells: [],
-  level: 1,
-});
-
-export { EnemyModel };

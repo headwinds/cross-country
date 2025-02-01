@@ -1,9 +1,11 @@
-type ProfessionModel = {
+import { SkillModel } from "./SkillModel";
+import { ToolModel } from "./ToolModel";
+import { SpellModel } from "./SpellModel";
+
+export type ProfessionModel = {
   name: string;
   description: string;
-  skills: Skill[];
-  tools: Tool[];
-  spells: Spell[];
+  skills: SkillModel[];
+  tools: ToolModel[];
+  spells: SpellModel[];
 };
-
-export default ProfessionModel;

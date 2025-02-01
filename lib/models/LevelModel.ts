@@ -1,14 +1,11 @@
-import { Record } from "immutable";
+export interface LevelModel {
+  id: number;
+  name?: string;
+  type?: string;
+}
 
-const LevelModel = Record({
+export const defaultLevel: LevelModel = {
   id: 0,
-  name: "Bellwoods",
-  exits: 5,
-  exitsComplete: 0,
-  questsComplete: 0,
-  type: "dungeon",
-});
-
-export type LevelModelType = typeof LevelModel;
-
-export default LevelModel;
+  name: "unknown",
+  type: "level",
+};

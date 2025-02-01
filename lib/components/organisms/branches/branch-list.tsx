@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Column, List, ListItem, Row } from "../../..";
 import Branch from "../branch";
 import styles from "./branches.module.css";
-import PortholeBranchModel from "@cross-country/models/PortholeBranchModel";
+import { PortholeBranchModel } from "@cross-country/models/PortholeBranchModel";
 
 const cardWidth = 375; // smaller phones like iPhone have 375px width
 

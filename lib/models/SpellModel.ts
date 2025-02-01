@@ -1,8 +1,5 @@
-// Models
-type SpellModel = {
+export type SpellModel = {
   name: string;
   power: number;
   cost: number;
 };
-
-export default SpellModel;

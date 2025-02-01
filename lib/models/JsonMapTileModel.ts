@@ -1,8 +1,8 @@
-import type { TileModelType } from "./TileModel";
+import type { TileModel } from "./TileModel";
 
 // TileModelType has number id!
 
-export interface JsonMapTileModelInterface extends Omit<TileModelType, "id"> {
+export interface JsonMapTileModelInterface extends Omit<TileModel, "id"> {
   id: string | number;
   x: number;
   y: number;

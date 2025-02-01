@@ -1,27 +1,32 @@
 import React from "react";
 import { render } from "@testing-library/react";
+import { useSpring } from "@react-spring/web";
+import { AnimatedColumnProps } from "../animated-column";
+import AnimatedColumn from "../animated-column";
 
-import AnimatedColumnProps from "../";
-import { AnimatedColumnProps } from "../AnimatedColumn";
+// Mock useSpring
+jest.mock("@react-spring/web", () => ({
+  useSpring: jest.fn(),
+  animated: {
+    div: "div",
+  },
+}));
 
-describe("<AnimatedColumnProps />", () => {
-  let props: AnimatedColumnProps;
-
+describe("AnimatedColumn", () => {
   beforeEach(() => {
-    props = {
-      foo: "bar"
-    };
+    (useSpring as jest.Mock).mockReturnValue({});
   });
 
-  const renderComponent = () => render(<AnimatedColumnProps {...props} />);
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
 
-  it("should render foo text correctly", () => {
-    props.foo = "cross country was here";
-    const { getByTestId } = renderComponent();
-
-    const component = getByTestId("AnimatedColumnProps");
-
-    expect(component).toHaveTextContent("cross country was here");
+  it("renders children correctly", () => {
+    const { getByText } = render(
+      <AnimatedColumn>
+        <div>Test Content</div>
+      </AnimatedColumn>
+    );
+    expect(getByText("Test Content")).toBeInTheDocument();
   });
 });
-

@@ -1,16 +1,12 @@
-import { Record } from 'immutable';
-
-const NeutralModel = Record({
-  id: 0,
-  type: 'neutral',
-  name: '',
-  health: 100,
-  weapon: '',
-  armour: '',
-  speed: 10,
-  accuracy: 10,
-  treaure: [],
-  skin: '',
-});
-
-export default NeutralModel;
+export interface NeutralModel {
+  id: number;
+  type: "neutral";
+  name: string;
+  health: number;
+  weapon: string;
+  armour: string;
+  speed: number;
+  accuracy: number;
+  treaure: any[]; // Note: you might want to specify the exact type here
+  skin: string;
+}

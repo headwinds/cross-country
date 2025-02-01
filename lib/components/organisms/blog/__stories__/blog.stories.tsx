@@ -12,5 +12,5 @@ export default meta;
 type Story = StoryObj<typeof Blog>;
 
 export const BlogStory: Story = {
-  render: () => <Blog />,
+  render: () => <Blog url={""} title={""} />,
 };

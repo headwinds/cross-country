@@ -8,12 +8,12 @@ import {
   deleteItemFromStore,
   updateItemInStore,
 } from "../../../utils/golds/indexdb-util";
-import { PortholeBranchModelType } from "@/lib/models";
+import { PortholeBranchModel } from "@/lib/models";
 
 const GOLD_COLOUR = "#E3D597";
 
 export interface BranchProps {
-  branch: PortholeBranchModelType;
+  branch: PortholeBranchModel;
 }
 
 const Branch = ({ branch }) => {

@@ -1,12 +1,20 @@
-type WorldModel = {
-  playerSet: any[];
-  itemSet: any[];
-  enemySet: any[];
+import { WeaponModel } from "@/lib/models/WeaponModel";
+import { ShieldModel } from "@/lib/models/ShieldModel";
+import { ItemModel } from "@/lib/models/ItemModel";
+import { EnemyModel } from "@/lib/models/EnemyModel";
+import { PlayerModel } from "@/lib/models/PlayerModel";
+import { BookModel } from "@/lib/models/BookModel";
+import { NPCModel } from "./NPCModel";
+import { NeutralModel } from "@/lib/models/NeutralModel";
+
+export type WorldModel = {
+  playerSet: PlayerModel[];
+  itemSet: ItemModel[];
+  enemySet: EnemyModel[];
   neutralSet: any[];
-  npcSet: any[];
-  shieldSet: any[];
-  weaponSet: any[];
-  storySet: any[];
+  npcSet: NPCModel[];
+  shieldSet: ShieldModel[];
+  weaponSet: WeaponModel[];
   type: string;
   name: string;
   description: string;
@@ -14,8 +22,6 @@ type WorldModel = {
   skin: string;
   created_on: string;
   updated_on: string;
-  bookSet: any[];
+  bookSet: BookModel[];
   year: number;
 };
-
-export default WorldModel;

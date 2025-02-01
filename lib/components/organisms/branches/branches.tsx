@@ -13,7 +13,7 @@ import { shuffle } from "../../../utils/fp-util";
 import { Loading } from "../../..";
 import BranchList from "./branch-list";
 import { mockResponse } from "./__mocks__/response";
-import PortholeBranchModel from "@/lib/models/PortholeBranchModel";
+import { PortholeBranchModel } from "@/lib/models/PortholeBranchModel";
 
 export interface BranchesProps {
   isTesting?: boolean;

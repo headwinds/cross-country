@@ -1,9 +1,17 @@
 import { FC } from "react";
-import { FormattedMessage, useIntlContext } from "react-intl";
+import { FormattedMessage } from "react-intl";
 import { Paragraph, Column } from "@cross-country/components";
 import styles from "./actor-speech.module.css";
+import { Actor } from "xstate";
+import { ActorModel } from "@cross-country/models";
 
-interface ActorSpeechProps {
+export type ActorSpeechModel = {
+  messageId: string;
+  values?: Record<string, string | number>;
+  who: ActorModel;
+};
+
+export interface ActorSpeechProps {
   speech: {
     messageId: string;
     values?: Record<string, string | number>;

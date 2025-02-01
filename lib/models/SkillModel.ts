@@ -1,4 +1,4 @@
-export type Skill = {
+export type SkillModel = {
   name: string;
   description: string;
   level: number;

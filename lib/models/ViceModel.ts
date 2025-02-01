@@ -1,4 +1,4 @@
-export type Vice = {
+export type ViceModel = {
   name: string;
   description: string;
   effect: string;

@@ -1,4 +1,4 @@
-type ShieldModel = {
+export type ShieldModel = {
   id: number;
   name: string;
   modifies: string;
@@ -8,9 +8,6 @@ type ShieldModel = {
   skin: string;
 };
 
-export default ShieldModel;
-
-// You can create a default weapon if needed
 export const defaultShield: ShieldModel = {
   id: 0,
   name: "Basic Shield",

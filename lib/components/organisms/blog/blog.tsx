@@ -48,7 +48,7 @@ const defaultBlogpostModel = {
 export interface BlogProps {
   url: string;
   title: string;
-  updated_at: string;
+  updated_at?: string;
 }
 
 const Blog = (props: BlogProps) => {

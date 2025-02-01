@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Row, Stagger } from "../../../";
+import { StaggerText } from "../../../molecules/stagger/stagger";
 
 const defaultReverseConfig = {
   startTask: "Learning",
@@ -76,11 +77,17 @@ const ReverseTextAnimation = ({
 
   const staggerColor = "hotpink"; //[color, 'hotpink'];
   const { word } = mlTask;
-  const staggerText = [titleOne, `${titleTwo} ${word}`];
+  const staggerText = [
+    { text: titleOne },
+    { text: `${titleTwo} ${word}` },
+  ] as StaggerText[];
 
   return (
     <Row ref={staggerRowRef}>
-      <Stagger color={staggerColor} staggerText={staggerText} />
+      <Stagger
+        color={staggerColor}
+        staggerText={staggerText as StaggerText[]}
+      />
     </Row>
   );
 };

@@ -1,4 +1,3 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import RadioGroup from "../radio-group";
 
@@ -11,5 +10,17 @@ export default meta;
 type Story = StoryObj<typeof RadioGroup>;
 
 export const RadioGroupStory: Story = {
-  render: () => <RadioGroup />,
+  render: () => (
+    <RadioGroup
+      data={{
+        options: [
+          { id: "1", value: "1" },
+          { id: "2", value: "2" },
+        ],
+        question: "Select an option",
+        answer: "1",
+      }}
+      onChange={(value) => console.log("Selected value:", value)}
+    />
+  ),
 };

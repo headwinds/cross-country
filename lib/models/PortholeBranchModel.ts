@@ -12,14 +12,12 @@ export interface Publisher {
 
 export type PortholeBranchModel = {
   id: string;
-  tags: string[];
+  tags?: string[];
   url: string;
   title: string;
-  summary: string;
-  published_date: string;
-  updated_date: string;
-  publisher: Publisher;
-  image: Image;
+  summary?: string;
+  published_date?: string;
+  updated_date?: string;
+  publisher?: Publisher;
+  image?: Image | null;
 };
-
-//export default PortholeBranchModel;

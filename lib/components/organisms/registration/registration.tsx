@@ -110,7 +110,7 @@ const Registration = ({
 
   // broadcast the registration response to the parent component
   useEffect(() => {
-    onChange(registrationResponse);
+    //onChange(registrationResponse);
   }, [registrationResponse]);
 
   const getBorderColorStyle = (field) => {

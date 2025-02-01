@@ -1,8 +1,10 @@
-import WeaponModel from "./WeaponModel";
-import ShieldModel from "./ShieldModel";
-import SpellModel from "./SpellModel";
-import WorldModel from "./WorldModel";
-import ProfessionModel from "./ProfessionModel";
+import { WeaponModel } from "./WeaponModel";
+import { ShieldModel } from "./ShieldModel";
+import { SpellModel } from "./SpellModel";
+import { WorldModel } from "./WorldModel";
+import { ProfessionModel } from "./ProfessionModel";
+import { ViceModel } from "./ViceModel";
+import { CharacterLevelModel } from "./CharacterLevelModel";
 
 const alignments = [
   "Lawful Good",
@@ -20,17 +22,19 @@ const alignments = [
 
 export interface ActorModel {
   id: number;
-  type: string;
-  alignment: string;
-  name: string;
-  health: number;
-  weapon: WeaponType;
-  shield: ShieldType;
-  speed: number;
-  accuracy: number;
-  skin: string;
-  spells: SpellModel[];
-  level: number;
+  status?: string;
+  type?: string;
+  alignment?: string;
+  name?: string;
+  health?: number;
+  weapon?: WeaponModel[];
+  shield?: ShieldModel[];
+  speed?: number;
+  accuracy?: number;
+  skin?: string;
+  spells?: SpellModel[];
+  mana?: number;
+  level?: CharacterLevelModel;
   tileSize?: number;
   variant?: string;
   position?: { x: number; y: number; z: number };
@@ -41,12 +45,10 @@ export interface ActorModel {
     top: number;
     backgroundColor: string;
   };
-  metabolism: number;
+  metabolism?: number;
   hunger?: number;
-  currentCalories: number;
-  vice?: Vice;
+  currentCalories?: number;
+  vice?: ViceModel[];
   world?: WorldModel;
   ProfessionModel?: ProfessionModel;
 }
-
-//export default ActorModel;

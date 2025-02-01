@@ -1,4 +1,4 @@
-type WeaponModel = {
+export type WeaponModel = {
   id: number;
   name: string;
   modifies: string;
@@ -7,8 +7,6 @@ type WeaponModel = {
   damage: number;
   skin: string;
 };
-
-export default WeaponModel;
 
 // You can create a default weapon if needed
 export const defaultWeapon: WeaponModel = {

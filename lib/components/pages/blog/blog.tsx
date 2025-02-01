@@ -1,49 +1,39 @@
-import React, { useState } from "react";
-import Blog from "../../organisms/blog";
-import {
-  Card,
-  Column,
-  Paragraph,
-  Login,
-  Registration,
-} from "@cross-country/components";
+import { useState } from "react";
+import Blog, { BlogProps } from "../../organisms/blog";
+import { Column, Login, Registration } from "@cross-country/components";
+import { RegistrationEvent } from "../../organisms/registration/registration";
 
 const BlogPage = () => {
-  const [isAuthenciated, setIsAuthenciated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [hasToRegister, setHasRegister] = useState(false);
 
   const onRegisterClick = () => {
-    // setIsAuthenciated(true);
     console.log("register clicked");
     setHasRegister(true);
   };
 
   const onLoginClick = () => {
-    // setIsAuthenciated(true);
     console.log("login clicked");
     setHasRegister(false);
   };
 
-  const onChange = (event) => {
+  const onChange = (event: RegistrationEvent) => {
     console.log("event: ", event);
 
-    if (event?.confirmed_on) {
-      setIsAuthenciated(true);
+    if ("confirmed_on" in event) {
+      setIsAuthenticated(true);
     }
   };
 
-  const LoginOrRegister = ({ hasToRegister }) => {
+  const LoginOrRegister = ({
+    hasToRegister,
+    onChange,
+  }: {
+    hasToRegister: boolean;
+    onChange: (event: RegistrationEvent) => void;
+  }) => {
     if (hasToRegister) {
-      return (
-        <Registration
-          config={{
-            text: "Registration",
-            hasBackground: false,
-            onLoginClick,
-            onChange,
-          }}
-        />
-      );
+      return <Registration onLoginClick={onLoginClick} onChange={onChange} />;
     } else {
       return <Login onRegisterClick={onRegisterClick} onChange={onChange} />;
     }
@@ -51,8 +41,12 @@ const BlogPage = () => {
 
   return (
     <Column>
-      {isAuthenciated && !hasToRegister ? (
-        <Blog />
+      {isAuthenticated ? (
+        <Blog
+          url="/api/blog"
+          title="My Blog"
+          updated_at={new Date().toISOString()}
+        />
       ) : (
         <LoginOrRegister hasToRegister={hasToRegister} onChange={onChange} />
       )}

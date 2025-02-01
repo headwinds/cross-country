@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Error, Paragraph, Row } from "../..";
 import { StringUtil } from "../../../utils";
 import styles from "./login.module.css";
-import { UserModelType } from "@cross-country/models/UserModel";
+import { UserModel } from "@cross-country/models/UserModel";
 
 type CommonError = {
   message?: string;
@@ -13,7 +13,7 @@ const Response = ({
   user,
   error,
 }: {
-  user?: UserModelType;
+  user?: UserModel;
   error?: CommonError;
 }) => {
   // Cannot read properties of undefined (reading 'json')

@@ -23,9 +23,6 @@ import { GoldLeafViewProps } from "../gold-leaf-view.types";
 
 const GOLD_COLOUR = "#E3D597";
 
-//TODO: repalce he
-//const he = require('he');
-
 const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({
   goldLeafModel = null,
   dataTestId = "golf-leaf-view",
@@ -36,7 +33,7 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({
     text: "",
     read: false,
     curScroll: 0,
-    trained: goldLeafModel?.bViewed ?? false,
+    trained: false,
     trashed: false,
   });
 
@@ -51,7 +48,7 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({
   const handleViewImages = () => {
     const { showImages } = state;
 
-    if (goldLeafModel.images.length < 2) return;
+    if (goldLeafModel.image.photo_large_urls.length < 2) return;
     const newShowImages = !showImages;
 
     setState({ ...state, showImages: newShowImages, showArticle: false });
@@ -151,34 +148,29 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({
   }
 
   const images =
-    goldLeafModel.images.map((imgObj, idx) => {
-      if (imgObj.useText) {
-        // return (<div dangerouslySetInnerHTML={{__html: clean}} style={{fontSize: 14, lineHeight: 1.2}} />)
+    goldLeafModel.image.photo_large_urls.map((imgObj, idx) => {
+      if (!imgObj) {
         return null;
       } else {
         if (idx !== 0)
           return (
             <div key={idx} className={styles.GoldLeaf__image}>
-              <img src={imgObj.imageUrl} alt={goldLeafModel.title} />
+              {/*<img src={Image} alt={goldLeafModel.title} />*/}
             </div>
           );
       }
     }) ?? null;
 
-  const image = goldLeafModel.useText ? null : (
+  const image = goldLeafModel.image ? null : (
     <img
-      src={
-        typeof goldLeafModel.images[0] === "string"
-          ? goldLeafModel.images[0]
-          : goldLeafModel.images[0].imageUrl
-      }
+      src={goldLeafModel.image.photo_large_urls[0]}
       alt={goldLeafModel.title}
     />
   );
   const totalGoldLeafes =
-    goldLeafModel.useText || goldLeafModel.images.length === 1
+    !goldLeafModel.image || goldLeafModel.image.photo_large_urls.length === 1
       ? null
-      : goldLeafModel.images.length;
+      : goldLeafModel.image.photo_large_urls.length;
 
   const goldLeafText = stripImagesFromText(goldLeafModel);
 
@@ -242,22 +234,3 @@ const GoldLeafViewControls: React.FC<GoldLeafViewProps> = ({
   );
 };
 export default GoldLeafViewControls;
-
-/*
-Offline refactor phase 2
-
-/*
-  getItemFromStore('porthole', goldLeafModel, 'link').then(response => {
-    if (response) {
-      // its present so update it
-      if (goldLeafModel.bViewed) {
-        //('porthole', { ...goldLeafModel, bViewed: false });
-      } else {
-        // updateItemInStore('porthole', { ...goldLeafModel, bViewed: true });
-      }
-    } else {
-      // its not present so add it as viewed
-      //addItemToStore('porthole', { ...goldLeafModel, bViewed: true });
-    }
-  });
-*/
