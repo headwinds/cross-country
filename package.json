@@ -7,7 +7,7 @@
   "repository": "headwinds/cross-country",
   "type": "module",
   "main": "dist/index.js",
-  "types": "dist/lib/components/index.d.ts",
+  "types": "dist/lib/index.d.ts",
   "files": [
     "dist"
   ],
