@@ -1,9 +1,6 @@
-import PortholeBranchModel from "../../models/PortholeBranchModel";
+//import PortholeBranchModel from "@cross-country/models/PortholeBranchModel";
 import getImagesFromDescription from "./image-find-util";
-import type {
-  TreeModelType,
-  PortholeBranchModelType,
-} from "@cross-country/models";
+import type { TreeModel, PortholeBranchModel } from "@cross-country/models";
 
 const defaultImageUrl = "./"; // need default images...
 const validateContent = (entry) => {
@@ -87,34 +84,25 @@ export const getRSSBranch = (candidateBranch, index, ix) => {
   const tags = branch?.tags ?? branch.categories ?? [];
   const id = `gold-leaf-${index}-${ix}`;
 
-  const props = {
+  const portholeBranch: PortholeBranchModel = {
     id,
     tags,
-    photoUrl,
-    photoLargeUrl,
-    images,
-    link: branch.link,
-    published: branch.published,
-    branchTitleUnescape,
-    metaLink: branch?.meta?.link ?? branch.link ?? "",
+    image: {
+      photo_thumbnail_url: photoUrl,
+      photo_large_urls: [photoLargeUrl],
+      photo_default_url: defaultImageUrl,
+    },
+    url: branch.link,
     title,
-    branchDescriptionUnescape,
-    index,
-    description: branchDescriptionUnescape,
-    useText: resultImageObj.useText,
-    x: 0,
-    y: 0,
-    bViewed: false,
-    bTrashed: false,
-    origin: "porthole",
-    publishedDate: branch.publishedDate ?? "",
-    feedLink: branch.feedLink ?? "",
-    feedTitle: branch.feedTitle ?? "",
-    about: branch.about ?? "",
-    text: branch.text ?? "",
+    summary: branchDescriptionUnescape,
+    published_date: branch.publishedDate ?? "",
+    updated_date: branch.updatedDate ?? "",
+    publisher: {
+      author: branch?.meta?.author ?? "",
+      url: branch?.meta?.link ?? branch.link ?? "",
+      company: branch?.meta?.company ?? "",
+    },
   };
-
-  const portholeBranch = new PortholeBranchModel(props);
 
   return portholeBranch;
 };
@@ -135,7 +123,7 @@ export const convertToPortholeBranches = (branches) => {
 };
 
 type TreeDic = {
-  [key: string]: TreeModelType;
+  [key: string]: TreeModel;
 };
 
 export const createAllPortholeTrees = (): TreeDic => {
@@ -147,7 +135,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Cabin Porn™",
     category: "architecture",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 2
   const coolHuntingTreeObj = {
     _id: "2",
@@ -156,7 +144,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Cool Hunting",
     category: "design",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 3
   //const swissmissTreeObj = { _id : "54cb9435d1796e940600008b", xmlUrl : "http://feeds2.feedburner.com/Swissmiss", type : "rss", title : "Swiss Miss" };
   const designmilkTreeObj = {
@@ -166,7 +154,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Design Milk",
     category: "design",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 4
   const wiredTreeObj = {
     _id: "4",
@@ -175,7 +163,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "WIRED",
     category: "technology",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 5
   const boingboingTreeObj = {
     _id: "5",
@@ -184,7 +172,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Boing Boing",
     category: "technology",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 6
   const kotakuTreeObj = {
     _id: "6",
@@ -193,7 +181,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Kotaku",
     category: "gaming",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 7
   const treeHuggerTreeObj = {
     _id: "7",
@@ -202,7 +190,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Tree Hugger",
     category: "technology",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 8
   const nationalGeographicTreeObj = {
     _id: "8",
@@ -212,7 +200,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "National Geographic",
     category: "technology",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 9
   const dwellTreeObj = {
     _id: "9",
@@ -221,7 +209,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Dwell",
     category: "architecture",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 10
   const colossalTreeObj = {
     _id: "10",
@@ -230,7 +218,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Colossal",
     category: "design",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 11
   const polygonTreeObj = {
     _id: "11",
@@ -239,7 +227,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Polygon",
     category: "gaming",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 12 - not working
   const architizerTreeObj = {
     _id: "12",
@@ -248,7 +236,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Architizer",
     category: "architecture",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 13
   const harpersbazaarTreeObj = {
     _id: "13",
@@ -257,7 +245,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Harpers Bazaar",
     category: "fashion",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 14
   const wTreeObj = {
     _id: "14",
@@ -266,7 +254,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "W",
     category: "fashion",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 15
   const booooooomTreeObj = {
     _id: "15",
@@ -275,7 +263,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "BOOOOOOOM!",
     category: "art",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 16
   const abduzeedoTreeObj = {
     _id: "16",
@@ -284,7 +272,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Abduzeedo",
     category: "design",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 17
   const behanceTreeObj = {
     _id: "17",
@@ -293,7 +281,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Behance",
     category: "art",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 18
   const bleacherReportTreeObj = {
     _id: "18",
@@ -302,7 +290,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Bleacher Report",
     category: "sports",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 19
   const gamespotTreeObj = {
     _id: "19",
@@ -311,7 +299,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "GameSpot",
     category: "gaming",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 20
   const twitchfilmTreeObj = {
     _id: "20",
@@ -320,7 +308,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "TwitchFilm",
     category: "film",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 21
   const mmTreeObj = {
     _id: "21",
@@ -329,7 +317,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "50mm",
     category: "photography",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 22
   const stuckTreeObj = {
     _id: "22",
@@ -338,7 +326,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Stuck in Customs",
     category: "photography",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 23
   const nmeTreeObj = {
     _id: "23",
@@ -347,7 +335,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Nme",
     category: "music",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 24
   const pitchforkTreeObj = {
     _id: "24",
@@ -356,7 +344,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Pitchfork",
     category: "music",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 25
   const boilerroomTreeObj = {
     _id: "25",
@@ -365,7 +353,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Boiler Room",
     category: "music",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 26
   const ruinTreeObj = {
     _id: "26",
@@ -374,7 +362,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Rackk and Ruin",
     category: "fashion",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 27
   const paperholmTreeObj = {
     _id: "27",
@@ -383,7 +371,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Paperholm",
     category: "art",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 28
   //const fraserTreeObj = { _id : "28", xmlUrl : "https://fraserflowers.wordpress.com/feed/", type : "rss", title : "fraser", category: "photography", origin: "porthole" };
   // 29
@@ -394,7 +382,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Cristian Ordóñez",
     category: "photography",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 30
   const headlandsTreeObj = {
     _id: "30",
@@ -403,7 +391,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "headlands",
     category: "photography",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 31
   const artnationTreeObj = {
     _id: "31",
@@ -412,7 +400,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "ArtStation",
     category: "art",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 32
   const nycscoutTreeObj = {
     _id: "32",
@@ -421,7 +409,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Scouting NY",
     category: "photography",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 33
   const taviTreeObj = {
     _id: "33",
@@ -430,7 +418,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "tavi gevinson",
     category: "fashion",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 34
   const repellerTreeObj = {
     _id: "34",
@@ -439,7 +427,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Man Repeller",
     category: "fashion",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 35
   const slashFilmTreeObj = {
     _id: "35",
@@ -448,7 +436,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Slash",
     category: "film",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 36
   const guardianFilmTreeObj = {
     _id: "36",
@@ -457,7 +445,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Guardian Film",
     category: "film",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 37
   const walkerFilmTreeObj = {
     _id: "37",
@@ -466,7 +454,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Walker Film",
     category: "film",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 38
   const docFilmTreeObj = {
     _id: "38",
@@ -475,7 +463,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Documentary",
     category: "film",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 39
   //const yahoosportsTreeObj = { _id : "39", xmlUrl : "https://ca.sports.yahoo.com/blogs/rss.xml", type : "rss", title : "Yahoo Sports", category: "sports", origin: "porthole" };
   // 40
@@ -486,7 +474,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Venture Beat",
     category: "technology",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 41
   const killscreenTreeObj = {
     _id: "41",
@@ -495,7 +483,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Killscreen",
     category: "gaming",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 42
   const inquisitrTreeObj = {
     _id: "42",
@@ -504,7 +492,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "The Inquisitr Sport",
     category: "sports",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 43
   const sbnationTreeObj = {
     _id: "43",
@@ -513,7 +501,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "SB Nation",
     category: "sports",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 44
   const dezeenTreeObj = {
     _id: "44",
@@ -522,7 +510,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Dezeen",
     category: "architecture",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 45
   const contemporistTreeObj = {
     _id: "45",
@@ -531,7 +519,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Contemporist",
     category: "architecture",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 46
   const eikongraphiaTreeObj = {
     _id: "46",
@@ -540,7 +528,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Eikongraphia",
     category: "photography",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 47
   const unhappyTreeObj = {
     _id: "47",
@@ -549,7 +537,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Unhappy Hipsters",
     category: "design",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 48
   const architectureTreeObj = {
     _id: "48",
@@ -558,7 +546,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "The Architecture Blog",
     category: "architecture",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 49
   const designboomTreeObj = {
     _id: "49",
@@ -567,7 +555,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Design Boom",
     category: "design",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 50
   const nautilusTreeObj = {
     _id: "50",
@@ -576,7 +564,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     title: "Nautilus",
     category: "technology",
     origin: "porthole",
-  } as TreeModelType;
+  } as TreeModel;
   // 51
 
   /*

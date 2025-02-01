@@ -1,0 +1,36 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import * as AnimatedColumnStories from "./animated-column.stories";
+
+<Meta of={AnimatedColumnStories} />
+
+# AnimatedColumn
+
+The AnimatedColumn component is a simple component that animates its children in a column layout.
+
+The default animation is a fade in, and we can configure other [react spring](https://react-spring.dev/) animations.
+
+### Default Fade In Story
+
+<Canvas of={AnimatedColumnStories.DefaultFadeInAnimationStory} />
+
+
+### Slide Story
+
+```jsx
+import { AnimatedColumn } from "./animated-column";
+
+ // slide from left to right
+const animation = {
+    from: { transform: "translateX(-100%)" },
+    to: { transform: "translateX(0)" },
+    config: {
+    mass: 1,
+    tension: 280,
+    friction: 60,
+    },
+};
+
+<AnimatedColumn animation={animation}>slide</AnimatedColumn>;
+```
+
+<Canvas of={AnimatedColumnStories.SlideAnimationStory} />

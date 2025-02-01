@@ -1,17 +1,18 @@
 import { Column, Image, Link, Stagger } from "../../../";
 import facebookCanada from "./facebook-canadian-news-restrictions.png";
+import { StaggerText } from "../../../molecules/stagger/stagger";
 
 const ListicleStory = () => {
   return (
     <Column>
       <Stagger
-        staggerText={[
-          "Meet CBC Radio Host",
-          "& National Treasure",
-          "Angeline Tetteh-Wayoe",
-        ]}
-        stagger={{ key: "marginLeft", value: 16 }}
-        color={["#666", "#666", "#d9be2a"]}
+        staggerText={
+          [
+            { text: "Meet CBC Radio Host", textColor: "#666" },
+            { text: "& National Treasure", textColor: "#666" },
+            { text: "Angeline Tetteh-Wayoe", textColor: "#d9be2a" },
+          ] as StaggerText[]
+        }
       />
       <Image
         url={facebookCanada}

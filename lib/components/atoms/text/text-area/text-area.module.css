@@ -1,5 +1,17 @@
 .textInput {
-  padding: 8px;
+  padding: 12px;
   margin: 4px;
-  resize: none;
+  resize: vertical;
+  min-height: 120px; /* Approximately 5 rows of text */
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: border-color 0.2s ease-in-out;
+  max-width: 700px;
+}
+
+.textInput:focus {
+  outline: none;
 }

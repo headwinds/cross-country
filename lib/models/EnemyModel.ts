@@ -1,30 +1,25 @@
-import {Record} from "immutable";
+import { WeaponModel } from "./WeaponModel";
+import { ShieldModel } from "./ShieldModel";
+import { SpellModel } from "./SpellModel";
+import { ViceModel } from "./ViceModel";
+import { SkillModel } from "./SkillModel";
+import { ToolModel } from "./ToolModel";
+import { ProfessionModel } from "./ProfessionModel";
 
-/*
-https://twitter.com/kurtruslfanclub/status/1088023995612520449
-👻 Desired Player Behaviour
-🦇 Appearance Rule
-👾 Surprise Structure
-🐺 Defeat Requirements
-👽 Alert Rules
-👹 When to fight / to take flight
-*/
-
-import WeaponModel from "./WeaponModel";
-import ShieldModel from "./ShieldModel";
-
-const EnemyModel = Record({
-    id: 0,
-    type: "enemy",
-    name: "",
-    health: 100,
-    weapon: WeaponModel({name: "fist", damage: 100}),
-	shield: ShieldModel({name: "cloak", protection: 100}),
-    speed: 10,
-    accuracy: 10,
-    skin: '',
-    spells: [],
-    level: 1
-});
-
-export default EnemyModel;
+export interface EnemyModel {
+  id: number;
+  type: string;
+  name: string;
+  health: number;
+  weapon: WeaponModel;
+  shield: ShieldModel;
+  speed: number;
+  accuracy: number;
+  skin: string;
+  spells: SpellModel[];
+  level: number;
+  profession: ProfessionModel;
+  tools: ToolModel[];
+  skills: SkillModel[];
+  vices: ViceModel[];
+}

@@ -1,13 +1,19 @@
-import { Record } from 'immutable';
+export type ShieldModel = {
+  id: number;
+  name: string;
+  modifies: string;
+  by: number;
+  type: "shield";
+  protection: number;
+  skin: string;
+};
 
-const ShieldModel = Record({
+export const defaultShield: ShieldModel = {
   id: 0,
-  name: 'generic item',
-  modifies: 'none',
-  by: 0,
-  type: 'shield',
-  protection: 10,
-  skin: '',
-});
-
-export default ShieldModel;
+  name: "Basic Shield",
+  modifies: "defense",
+  by: 2,
+  type: "shield",
+  protection: 5,
+  skin: "default_shield",
+};

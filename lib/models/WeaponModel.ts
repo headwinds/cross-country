@@ -1,13 +1,20 @@
-import { Record } from 'immutable';
+export type WeaponModel = {
+  id: number;
+  name: string;
+  modifies: string;
+  by: number;
+  type: string;
+  damage: number;
+  skin: string;
+};
 
-const WeaponModel = Record({
+// You can create a default weapon if needed
+export const defaultWeapon: WeaponModel = {
   id: 0,
-  name: 'generic item',
-  modifies: 'none',
+  name: "generic item",
+  modifies: "none",
   by: 0,
-  type: 'weapon',
+  type: "weapon",
   damage: 10,
-  skin: '',
-});
-
-export default WeaponModel;
+  skin: "",
+};

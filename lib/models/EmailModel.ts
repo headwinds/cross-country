@@ -1,16 +1,6 @@
-import { Record } from "immutable";
-import { PortholeBranchModelType } from "./PortholeBranchModel";
+import { PortholeBranchModel } from "./PortholeBranchModel";
 
-const EmailModel = Record({
-  email_id: "",
-  to: "",
-  from: "",
-  subject: "",
-  body: "",
-  date: "",
-});
-
-export type EmailModelType = PortholeBranchModelType & {
+export type EmailModel = PortholeBranchModel & {
   email_id: string;
   to: string;
   from: string;
@@ -19,4 +9,3 @@ export type EmailModelType = PortholeBranchModelType & {
   date: string;
 };
 
-export default EmailModel;

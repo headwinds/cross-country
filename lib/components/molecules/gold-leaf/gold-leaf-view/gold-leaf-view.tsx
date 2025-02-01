@@ -1,6 +1,6 @@
 "use client";
 
-import { EmailModelType } from "@cross-country/models/EmailModel";
+import { EmailModel } from "@cross-country/models/EmailModel";
 import { useState } from "react";
 import { Card } from "../../..";
 import GoldLeafEmailView from "./email/gold-leaf-email-view";
@@ -38,9 +38,7 @@ const GoldLeafView = ({
         dataTestId={dataTestId}
         customStyle={customStyle}
       >
-        <GoldLeafEmailView
-          goldLeafEmailModel={goldLeafModel as EmailModelType}
-        />
+        <GoldLeafEmailView goldLeafEmailModel={goldLeafModel as EmailModel} />
       </Card>
     );
   }

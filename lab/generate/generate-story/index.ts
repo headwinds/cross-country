@@ -2,6 +2,7 @@
 import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
+import chalk from "chalk";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -88,7 +89,7 @@ export async function generateStory({ type, componentPath }: StoryConfig) {
       ),
     ]);
 
-    console.log(`Successfully created story files in ${fullPath}`);
+    console.log(chalk.blue(`Successfully created story files in ${fullPath}`));
   } catch (error) {
     console.error("Error in generateStory:", error);
     throw error;

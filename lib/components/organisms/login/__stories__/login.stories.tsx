@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Column, Paragraph } from "@cross-country/components";
 import Login from "../login";
-import type { UserModelType } from "@cross-country/models";
+import type { UserModel } from "@cross-country/models";
 
 const meta: Meta<typeof Login> = {
   component: Login,
@@ -16,7 +16,7 @@ export const LoginStory: Story = {
   render: () => {
     const [user, setUser] = useState(null);
 
-    const onChange = (user: UserModelType) => {
+    const onChange = (user: UserModel) => {
       // handle the authenitcated user event here and
       // present a profile or switch routes; whatever you want to do
       if (user) {
@@ -38,7 +38,7 @@ export const AnimatedLoginStory: Story = {
   render: () => {
     const [user, setUser] = useState(null);
 
-    const onChange = (user: UserModelType) => {
+    const onChange = (user: UserModel) => {
       // handle the authenitcated user event here and
       // present a profile or switch routes; whatever you want to do
       if (user) {

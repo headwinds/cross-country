@@ -6,7 +6,7 @@ import LoginView from "./login-view";
 // utils
 import { postLoginUser } from "@cross-country/services/login-service";
 import useLoginLocalStorage from "@cross-country/hooks/useLoginLocalStorage";
-import type { UserModelType } from "@cross-country/models/UserModel";
+import type { UserModel } from "@cross-country/models/UserModel";
 
 /*
 Authenticate the user with a JWT token and set access token in a secure cookie 
@@ -291,7 +291,7 @@ const Login = ({
             console.log("login json: ", json);
             if (isAuthenticated) {
               const { isAuthenticated, access_token, refresh_token } = json;
-              const user: UserModelType = {
+              const user: UserModel = {
                 ...json.user_account,
                 access_token,
                 refresh_token,

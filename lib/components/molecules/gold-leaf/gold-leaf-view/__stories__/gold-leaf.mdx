@@ -1,0 +1,25 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import * as GoldLeafViewStories from "./gold-leaf.stories";
+
+<Meta of={GoldLeafViewStories} />
+
+# GoldLeafView
+
+<Subtitle>a feed card</Subtitle>
+
+A Gold Leaf can display either an RSS post or an email which is an article that we have emailed ourselves to read later.
+
+```jsx
+
+const goldLeafModel = PortholeBranchModel | EmailModel;
+
+<GoldLeafView variant="email|article" goldLeafModel={goldLeafModel} />
+```
+
+### Article Leaf
+
+<Canvas of={GoldLeafViewStories.ArticleLeaf} />
+
+### Email Leaf
+
+<Canvas of={GoldLeafViewStories.EmailLeaf} />

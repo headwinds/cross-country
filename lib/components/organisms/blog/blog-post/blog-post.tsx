@@ -1,11 +1,10 @@
 import * as React from "react";
 import { useState } from "react";
 import styles from "./blog-post.module.css";
-import PostModel from "../../../../models/PostModel";
 import { Card, TextArea, Button, Form, Column, Paragraph } from "../../..";
 import { BlogPostProps } from "./blog-post.types";
 import blogPostMachine from "./blog-post-machine";
-import type { PostModelType } from "../../../../models/PostModel";
+import type { PostModel } from "../../../../models/PostModel";
 
 const initialState = {
   text: "",
@@ -34,7 +33,7 @@ const BlogPost = ({
     }
     const url = `http://127.0.0.1:5000/api/blog`;
 
-    const newBlog = new PostModel({
+    const postModel: PostModel = {
       title: "Hello",
       description: "description here",
       content: text,
@@ -42,9 +41,7 @@ const BlogPost = ({
       slug: "french",
       user_account_id: id,
       status: "draft",
-    });
-
-    const postModel: PostModelType = newBlog.toObject();
+    };
 
     console.log("sending postModel: ", postModel);
 

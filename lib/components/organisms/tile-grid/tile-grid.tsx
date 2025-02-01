@@ -4,9 +4,9 @@ import { Tile, Column, Row } from "../..";
 import styles from "./tile-grid.module.css";
 import ColorUtil from "../../../utils/colour-util";
 import clsx from "clsx";
-import { TileModelType } from "@cross-country/models/TileModel";
+import { TileModel } from "@cross-country/models/TileModel";
 
-const defaultTile: TileModelType = {
+const defaultTile: TileModel = {
   id: "0",
   name: "snowbank",
   label: "",
@@ -31,7 +31,7 @@ const shadedColor = ColorUtil.getShadedColor(rgb, darkenColor);
 export interface TileGridProps {
   totalInRow?: number;
   gapSize?: number;
-  models?: TileModelType[];
+  models?: TileModel[];
   isDemo?: boolean;
   width?: number;
   tileConfig?: { size: number; fill: string; cornerColor: string };
@@ -51,7 +51,7 @@ const TileGrid = ({
   customClass = null,
   tileRefs,
 }: TileGridProps) => {
-  const [tileSeleted, setSelected] = useState<TileModelType | null>(null);
+  const [tileSeleted, setSelected] = useState<TileModel | null>(null);
 
   const size = Math.floor(width / totalInRow - gapSize);
   const totalTiles = models.length;

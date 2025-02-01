@@ -1,17 +1,10 @@
-import { Record } from "immutable";
-
-/*
-https://twitter.com/kurtruslfanclub/status/1088023995612520449
-👻 Desired Player Behaviour
-🦇 Appearance Rule
-👾 Surprise Structure
-🐺 Defeat Requirements
-👽 Alert Rules
-👹 When to fight / to take flight
-*/
-
-import WeaponModel from "./WeaponModel";
-import ShieldModel from "./ShieldModel";
+import { WeaponModel } from "./WeaponModel";
+import { ShieldModel } from "./ShieldModel";
+import { SpellModel } from "./SpellModel";
+import { WorldModel } from "./WorldModel";
+import { ProfessionModel } from "./ProfessionModel";
+import { ViceModel } from "./ViceModel";
+import { CharacterLevelModel } from "./CharacterLevelModel";
 
 const alignments = [
   "Lawful Good",
@@ -25,72 +18,23 @@ const alignments = [
   "Chaotic Evil",
 ];
 
-// http://easydamus.com/alignment.html#theninealignments
+// 2025 vs 3450
 
-const ActorModel = Record({
-  id: 0,
-  type: "actor",
-  alignment: "neutral good",
-  name: "",
-  health: 100,
-  weapon: WeaponModel({ name: "fist", damage: 100 }),
-  shield: ShieldModel({ name: "cloak", protection: 100 }),
-  speed: 10,
-  accuracy: 10,
-  skin: "",
-  spells: [],
-  level: 1,
-});
-
-type SpellType = {
-  name: string;
-  damage: number;
-  accuracy: number;
-  speed: number;
-  type: string;
-  description: string;
-};
-
-type WeaponType = {
-  name: string;
-  damage: number;
-  accuracy: number;
-  speed: number;
-  type: string;
-  description: string;
-};
-
-type ShieldType = {
-  name: string;
-  protection: number;
-  accuracy: number;
-  speed: number;
-  type: string;
-  description: string;
-};
-
-export type Vice = {
-  name: string;
-  description: string;
-  effect: string;
-  duration: number;
-  tolerance: number;
-  denial: number;
-};
-
-export type ActorType = {
+export interface ActorModel {
   id: number;
+  status?: string;
   type?: string;
   alignment?: string;
   name?: string;
   health?: number;
-  weapon?: WeaponType;
-  shield?: ShieldType;
+  weapon?: WeaponModel[];
+  shield?: ShieldModel[];
   speed?: number;
   accuracy?: number;
   skin?: string;
-  spells?: Array<SpellType>;
-  level?: number;
+  spells?: SpellModel[];
+  mana?: number;
+  level?: CharacterLevelModel;
   tileSize?: number;
   variant?: string;
   position?: { x: number; y: number; z: number };
@@ -101,10 +45,10 @@ export type ActorType = {
     top: number;
     backgroundColor: string;
   };
-  metabolism: number;
+  metabolism?: number;
   hunger?: number;
-  currentCalories: number;
-  vice?: Vice;
-};
-
-export default ActorModel;
+  currentCalories?: number;
+  vice?: ViceModel[];
+  world?: WorldModel;
+  ProfessionModel?: ProfessionModel;
+}

@@ -1,19 +1,18 @@
 import { Column, Image, Stagger } from "../../../";
 import andor from "./andor.png";
+import { StaggerText } from "../../../molecules/stagger/stagger";
+
+const staggerText = [
+  { text: "Experience the rise", textColor: "#666" },
+  { text: "of the rebellion with", textColor: "#666" },
+  { text: "Star Wars: Andor", textColor: "#ff0000" },
+] as StaggerText[];
 
 const AndorStory = () => {
   return (
     <Column>
-      <Stagger
-        staggerText={[
-          "Meet CBC Radio Host",
-          "& National Treasure",
-          "Angeline Tetteh-Wayoe",
-        ]}
-        stagger={{ key: "marginLeft", value: 16 }}
-        color={["#666", "#666", "#d9be2a"]}
-      />
-      <Image url={andor} width={400} a11y="Andor image" />
+      <Stagger staggerText={staggerText} />
+      <Image url={andor} width={400} a11y="Andor series promotional image" />
     </Column>
   );
 };
