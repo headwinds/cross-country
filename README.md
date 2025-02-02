@@ -96,7 +96,7 @@ pnpm new -- --type organisms --path component-name-here
 ```
 or
 ```
-pnpm new -- --type molecules --path component-name-here/sub-component-name-her
+pnpm new -- --type molecules --path component-name-here/sub-component-name-here
 ```
 
 You can also scaffold only a story:
