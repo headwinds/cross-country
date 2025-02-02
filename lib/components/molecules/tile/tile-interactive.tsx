@@ -16,7 +16,7 @@ const Actor = ({ value = "Farmer" }) => {
   return <Paragraph>{value}</Paragraph>;
 };
 
-const InteractiveTile = forwardRef(
+const InteractiveTile = forwardRef<HTMLDivElement, InteractiveTileType>(
   (
     {
       isSelected = false,

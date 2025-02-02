@@ -9,6 +9,9 @@ build
 dist
 .rpt2_cache
 
+# test application
+world/node_modules
+
 cross-country-config-private.js
 
 # misc

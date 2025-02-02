@@ -1,14 +1,5 @@
-import React, { useState } from "react";
-import {
-  Column,
-  Row,
-  Radio,
-  Label,
-  TextInput,
-  Paragraph,
-} from "../../../../../";
+import { Column, Paragraph } from "@headwinds/cross-country";
 import EditOptionList from "./edit-option-list";
-import { PlusSquare } from "@phosphor-icons/react";
 
 const AddMedia = () => {
   const data = { options: [] };

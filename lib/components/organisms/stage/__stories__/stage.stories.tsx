@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Stage from "../stage";
 import styles from "../stage.module.css";
 import { actors } from "./actors-dataset";
-import CrossCountryProvider from "@cross-country/providers/cross-country-provider";
+import CrossCountryProvider from "@headwinds/cross-country/providers/cross-country-provider";
 
 const meta: Meta<typeof Stage> = {
   component: Stage,

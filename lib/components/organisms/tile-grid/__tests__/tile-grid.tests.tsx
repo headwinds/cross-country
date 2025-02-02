@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import TileGrid from "../tile-grid";
-import { TileModel } from "@cross-country/models/TileModel";
+import { TileModel } from "@headwinds/cross-country/models/TileModel";
 
 describe("TileGrid component", () => {
   const mockTiles: TileModel[] = [

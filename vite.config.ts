@@ -4,27 +4,44 @@ import { fileURLToPath } from "node:url";
 import { glob } from "glob";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
-//import { libInjectCss } from 'vite-plugin-lib-inject-css'
-//import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 import css from "rollup-plugin-css-only";
 
 export default defineConfig({
   resolve: {
     alias: {
       "@": resolve(__dirname, "./"),
-      "@cross-country": resolve(__dirname, "./lib"),
-      "@cross-country/providers": resolve(__dirname, "./lib/providers"),
-      "@cross-country/components": resolve(__dirname, "./lib/components"),
-      "@cross-country/atoms": resolve(__dirname, "./lib/components/atoms"),
-      "@cross-country/molecules": resolve(
+      "@headwinds/cross-country": resolve(__dirname, "./lib"),
+      "@headwinds/cross-country/components": resolve(
+        __dirname,
+        "./lib/components"
+      ),
+      "@headwinds/cross-country/atoms": resolve(
+        __dirname,
+        "./lib/components/atoms"
+      ),
+      "@headwinds/cross-country/molecules": resolve(
         __dirname,
         "./lib/components/molecules"
       ),
-      "@cross-country/organisms": resolve(
+      "@headwinds/cross-country/organisms": resolve(
         __dirname,
         "./lib/components/organisms"
       ),
-      "@cross-country/services": resolve(__dirname, "./lib/services"),
+      "@headwinds/cross-country/services": resolve(__dirname, "./lib/services"),
+      "@headwinds/cross-country/providers": resolve(
+        __dirname,
+        "./lib/providers"
+      ),
+      "@headwinds/cross-country/styles": resolve(__dirname, "./lib/styles"),
+      "@headwinds/cross-country/constants": resolve(
+        __dirname,
+        "./lib/constants"
+      ),
+      "@headwinds/cross-country/templates": resolve(
+        __dirname,
+        "./lib/templates"
+      ),
+      "@headwinds/cross-country/test/setup": resolve(__dirname, "./lib/test"),
     },
   },
   plugins: [react(), css({ output: "bundle.css" }), dts({ include: ["lib"] })],
@@ -57,11 +74,5 @@ export default defineConfig({
         entryFileNames: "[name].js",
       },
     },
-  },
-  test: {
-    environment: "jsdom",
-    setupFiles: ["./lib/setupTests.js"],
-    globals: true,
-    include: ["./lib/**/*.test.{ts,js,jsx,tsx}"],
   },
 });

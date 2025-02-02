@@ -1,4 +1,4 @@
-import { Row, Tile } from "../../../";
+import { Row, Tile } from "@headwinds/cross-country";
 
 export const GridRow = ({ tiles, id, styles }) => {
   return (

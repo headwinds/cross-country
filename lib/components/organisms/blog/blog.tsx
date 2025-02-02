@@ -3,14 +3,9 @@ import {
   Wallpaper,
   Wrapper,
   Column,
-  TextInput,
   SubHeadline,
-  Link,
-  List,
-  ListItem,
   Row,
-  Paragraph,
-} from "../../../";
+} from "@headwinds/cross-country";
 import BlogPostList from "./blog-post-list";
 import { BlogPostProps } from "./blog-post/blog-post.types";
 

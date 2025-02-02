@@ -2,8 +2,8 @@
 // @ts-nocheck
 import React from "react";
 import { useState } from "react";
-import { EmailModelType } from "@cross-country/models/EmailModel";
-import { Column, Row, Checkbox } from "@cross-country/components";
+import { EmailModelType } from "@headwinds/cross-country/models/EmailModel";
+import { Column, Row, Checkbox } from "@headwinds/cross-country/components";
 import parse from "html-react-parser";
 import goldLeaf from "../..";
 import { Trash } from "@phosphor-icons/react";

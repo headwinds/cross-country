@@ -1,6 +1,6 @@
 "use client";
 
-import { EmailModel } from "@cross-country/models/EmailModel";
+import { EmailModel } from "@headwinds/cross-country/models/EmailModel";
 import { useState } from "react";
 import { Card } from "../../..";
 import GoldLeafEmailView from "./email/gold-leaf-email-view";

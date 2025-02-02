@@ -7,7 +7,7 @@ import {
   Label,
   Paragraph,
   HorizontalLine,
-} from "@cross-country/components";
+} from "@headwinds/cross-country/components";
 import type { SocialUser } from "./registration";
 
 interface SocialEmailProps {

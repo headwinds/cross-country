@@ -8,7 +8,7 @@ import {
   RelatedArticles,
   Image,
   Column,
-} from "@cross-country/components";
+} from "@headwinds/cross-country/components";
 import IslandStory from "./island-story";
 
 <Meta title="components/organisms/worlds/island" />

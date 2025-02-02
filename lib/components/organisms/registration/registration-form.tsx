@@ -9,7 +9,7 @@ import {
   Label,
   Paragraph,
   HorizontalLine,
-} from "@cross-country/components";
+} from "@headwinds/cross-country/components";
 import styles from "./registration.module.css";
 import { Eye, EyeSlash } from "@phosphor-icons/react";
 import RegistrationFeedback from "./registration-feedback";

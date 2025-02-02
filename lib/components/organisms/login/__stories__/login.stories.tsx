@@ -1,8 +1,8 @@
 import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Column, Paragraph } from "@cross-country/components";
+import { Column, Paragraph } from "@headwinds/cross-country/components";
 import Login from "../login";
-import type { UserModel } from "@cross-country/models";
+import type { UserModel } from "@headwinds/cross-country/models";
 
 const meta: Meta<typeof Login> = {
   component: Login,

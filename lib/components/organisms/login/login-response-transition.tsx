@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Error, Paragraph, Row } from "../..";
 import { StringUtil } from "../../../utils";
 import styles from "./login.module.css";
-import { UserModel } from "@cross-country/models/UserModel";
+import { UserModel } from "@headwinds/cross-country/models/UserModel";
 
 type CommonError = {
   message?: string;

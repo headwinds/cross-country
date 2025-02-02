@@ -4,9 +4,9 @@ import React, { useReducer, useEffect, useCallback } from "react";
 import LoginView from "./login-view";
 
 // utils
-import { postLoginUser } from "@cross-country/services/login-service";
-import useLoginLocalStorage from "@cross-country/hooks/useLoginLocalStorage";
-import type { UserModel } from "@cross-country/models/UserModel";
+import { postLoginUser } from "@headwinds/cross-country/services/login-service";
+import useLoginLocalStorage from "@headwinds/cross-country/hooks/useLoginLocalStorage";
+import type { UserModel } from "@headwinds/cross-country/models/UserModel";
 
 /*
 Authenticate the user with a JWT token and set access token in a secure cookie 

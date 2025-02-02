@@ -2,9 +2,9 @@ import React, { useRef, useEffect } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Player from "../player";
 import { Column, Row } from "../../../";
-import Input from "@cross-country/components/atoms/text/input";
-import Label from "@cross-country/components/atoms/text/label";
-import Button from "@cross-country/components/atoms/button/button";
+import Input from "@headwinds/cross-country/components/atoms/text/input";
+import Label from "@headwinds/cross-country/components/atoms/text/label";
+import Button from "@headwinds/cross-country/components/atoms/button/button";
 
 const meta: Meta<typeof Player> = {
   component: Player,

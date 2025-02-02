@@ -1,22 +1,27 @@
-import React from 'react';
-import Column from '../../atoms/column/column';
-import Row from '../../atoms/row/row';
-import styles from './tile.module.css';
-import clsx from 'clsx';
+import React from "react";
+import Column from "../../atoms/column/column";
+import Row from "../../atoms/row/row";
+import styles from "./tile.module.css";
+import clsx from "clsx";
 
 const ColorTile = ({
   isSelected = false,
   isInteractive = false,
   customClass,
   size = 100,
-  fill = '#eee',
+  fill = "#eee",
   customStyle = {},
   type,
   model = {},
-  sample = 'shallow-water',
+  sample = "shallow-water",
   ...rest
 }) => {
-  const finalCustomStyle = { ...customStyle, width: size, height: size, backgroundColor: fill };
+  const finalCustomStyle = {
+    ...customStyle,
+    width: size,
+    height: size,
+    backgroundColor: fill,
+  };
 
   return (
     <Column
@@ -24,7 +29,9 @@ const ColorTile = ({
       hasChildrenCentered
       customStyle={{ ...finalCustomStyle, width: size - 4, height: size - 4 }}
       {...rest}
-    ></Column>
+    >
+      add child component here
+    </Column>
   );
 };
 

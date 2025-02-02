@@ -1,4 +1,7 @@
-import type { PortholeBranchModel, EmailModel } from "@cross-country/models";
+import type {
+  PortholeBranchModel,
+  EmailModel,
+} from "@headwinds/cross-country/models";
 
 export interface GoldLeafViewProps {
   goldLeafModel?: PortholeBranchModel | EmailModel;

@@ -1,5 +1,13 @@
 # cross-country
 
+## 1.2.27
+
+### Patch Changes
+
+- revert path change
+- Updated dependencies
+  - cross-country@1.2.27
+
 ## 1.2.26
 
 ### Patch Changes

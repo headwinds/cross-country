@@ -5,7 +5,7 @@ import Warrior from "../actors/party/warrior";
 import Wisp from "../actors/wisp";
 import styles from "./stage.module.css";
 import ActorSpeech from "../actors/actor-speech";
-import { ActorModel } from "@cross-country/models/ActorModel";
+import { ActorModel } from "@headwinds/cross-country/models/ActorModel";
 import { ActorSpeechModel } from "../actors/actor-speech/actor-speech";
 import { CharacterLevelModel } from "@/lib/models";
 

@@ -17,18 +17,23 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["*"],
-      "@cross-country/*": ["lib/*"],
-      "@cross-country/components": ["lib/components"],
-      "@cross-country/hooks/*": ["lib/hooks/*"],
-      "@cross-country/atoms/*": ["lib/components/atoms/*"],
-      "@cross-country/molecules/*": ["lib/components/molecules/*"],
-      "@cross-country/organisms/*": ["lib/components/organisms/*"],
-      "@cross-country/services/*": ["lib/services/*"],
-      "@cross-country/models/*": ["lib/models/*"],
-      "@cross-country/types/*": ["lib/types/*"],
-      "@cross-country/utils/*": ["lib/utils/*"],
-      "@cross-country/constants/*": ["lib/constants/*"],
-      "@cross-country/providers/*": ["lib/providers/*"]
+      "@headwinds/cross-country": ["./lib"],
+      "@headwinds/cross-country/*": ["lib/*"],
+      "@headwinds/cross-country/components": ["lib/components"],
+      "@headwinds/cross-country/hooks/*": ["lib/hooks/*"],
+      "@headwinds/cross-country/atoms/*": ["lib/components/atoms/*"],
+      "@headwinds/cross-country/molecules/*": ["lib/components/molecules/*"],
+      "@headwinds/cross-country/organisms/*": ["lib/components/organisms/*"],
+      "@headwinds/cross-country/templates/*": ["lib/components/templates/*"],
+      "@headwinds/cross-country/pages/*": ["lib/components/pages/*"],
+      "@headwinds/cross-country/services/*": ["lib/services/*"],
+      "@headwinds/cross-country/models/*": ["lib/models/*"],
+      "@headwinds/cross-country/types/*": ["lib/types/*"],
+      "@headwinds/cross-country/utils/*": ["lib/utils/*"],
+      "@headwinds/cross-country/constants/*": ["lib/constants/*"],
+      "@headwinds/cross-country/styles/*": ["lib/styles/*"],
+      "@headwinds/cross-country/providers/*": ["lib/providers/*"],
+      "@headwinds/cross-country/test/*": ["lib/test/*"]
     },
 
     /* Linting 
@@ -38,9 +43,9 @@
     "noFallthroughCasesInSwitch": true
     */
     "declaration": true,
-    "declarationDir": "./dist/lib",
+    "declarationDir": "./dist",
     "outDir": "./dist"
   },
-  "include": ["src", "lib"],
+  "include": ["lib"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

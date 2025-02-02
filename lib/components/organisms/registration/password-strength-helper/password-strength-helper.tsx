@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Column, Paragraph } from "@cross-country/components";
+import { Column, Paragraph } from "@headwinds/cross-country/components";
 import styles from "../registration.module.css";
 import {
   validatePasswordHasUpperCase,

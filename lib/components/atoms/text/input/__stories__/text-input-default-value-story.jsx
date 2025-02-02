@@ -1,6 +1,12 @@
 import { useState } from "react";
 import TextInput from "../text-input";
-import { SubHeadline, Paragraph, Column, Span, Form } from "../../../../../";
+import {
+  SubHeadline,
+  Paragraph,
+  Column,
+  Span,
+  Form,
+} from "@headwinds/cross-country";
 
 function TextInputDefaultValueStory() {
   const [username, setUsernameText] = useState("");

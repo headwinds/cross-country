@@ -10,7 +10,7 @@ import {
   Button,
   Cleric,
   Wisp,
-} from "../../../../../";
+} from "@headwinds/cross-country";
 import { useMachine } from "@xstate/react";
 import { dragonsMachine } from "./state-machine-fetch-dragons";
 

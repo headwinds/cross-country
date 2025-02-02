@@ -1,7 +1,12 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import AnimatedColumn from "../animated-column";
-import { Cleric, Wizard, Warrior, Hunter } from "@cross-country/components";
+import {
+  Cleric,
+  Wizard,
+  Warrior,
+  Hunter,
+} from "@headwinds/cross-country/components";
 
 const meta: Meta<typeof AnimatedColumn> = {
   component: AnimatedColumn,

@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 // components
-import type { JsonMapTileModelInterface } from "@cross-country/models/JsonMapTileModel";
-import ColorUtil from "@cross-country/utils/colour-util";
+import type { JsonMapTileModelInterface } from "@headwinds/cross-country/models/JsonMapTileModel";
+import ColorUtil from "@headwinds/cross-country/utils/colour-util";
 import clsx from "clsx";
 import { Column, Tile } from "../..";
 import styles from "./json-map-tile-grid.module.css";

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Actor from "../actor";
 import ActorBuilder from "../actor-builder";
-import CrossCountryProvider from "@cross-country/providers/cross-country-provider";
+import CrossCountryProvider from "@headwinds/cross-country/providers/cross-country-provider";
 
 const meta: Meta<typeof Actor> = {
   component: Actor,
