@@ -1,5 +1,13 @@
 # cross-country
 
+## 1.2.34
+
+### Patch Changes
+
+- added missing css export
+- Updated dependencies
+  - cross-country@1.2.34
+
 ## 1.2.27
 
 ### Patch Changes
