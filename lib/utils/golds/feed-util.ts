@@ -1,6 +1,9 @@
-//import PortholeBranchModel from "@cross-country/models/PortholeBranchModel";
+//import PortholeBranchModel from "@headwinds/cross-country/models/PortholeBranchModel";
 import getImagesFromDescription from "./image-find-util";
-import type { TreeModel, PortholeBranchModel } from "@cross-country/models";
+import type {
+  TreeModel,
+  PortholeBranchModel,
+} from "@headwinds/cross-country/models";
 
 const defaultImageUrl = "./"; // need default images...
 const validateContent = (entry) => {

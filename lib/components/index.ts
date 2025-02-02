@@ -32,8 +32,8 @@ export type { HorizontalLineProps } from "./atoms/horizontal-line";
 export { default as Headline } from "./atoms/text/headline/headline";
 export type { HeadlineProps } from "./atoms/text/headline/headline";
 
-export { default as SubHeadline } from "./atoms/text/subheadline/subheadline";
-export type { SubHeadlineProps } from "./atoms/text/subheadline/subheadline";
+export { default as SubHeadline } from "./atoms/text/sub-headline/sub-headline";
+export type { SubHeadlineProps } from "./atoms/text/sub-headline/sub-headline";
 
 export { default as Paragraph } from "./atoms/text/paragraph/paragraph";
 export type { ParagraphProps } from "./atoms/text/paragraph/paragraph";
@@ -100,6 +100,9 @@ export { default as Group } from "./atoms/group";
 export type { GroupProps } from "./atoms/group";
 
 // molecules
+export { default as AnimatedColumn } from "./molecules/animated/animated-column";
+export type { AnimatedColumnProps } from "./molecules/animated/animated-column";
+
 export { default as CheckboxLabel } from "./molecules/checkboxlabel";
 export type { CheckboxLabelProps } from "./molecules/checkboxlabel";
 

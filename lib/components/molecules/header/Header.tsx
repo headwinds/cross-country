@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button } from "@cross-country/components/";
+import { Button } from "@headwinds/cross-country/components/";
 import styles from "./header.module.css";
 
 type User = {

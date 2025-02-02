@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import TakeAnswerInput from "../take-answer-input";
-import { Column, Paragraph, RadioGroup, Link } from "@cross-country";
+import { Column, Paragraph, RadioGroup, Link } from "@headwinds/cross-country";
 
 // phase 2
 const DefaultHtmlQuesiton = () => (

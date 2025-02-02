@@ -1,5 +1,5 @@
 import React from "react";
-//import { Column, Tile, Paragraph, Row } from "@cross-country/components";
+//import { Column, Tile, Paragraph, Row } from "@headwinds/cross-country/components";
 import { Column, Tile, Paragraph, Row } from "../../../../../";
 import { getIsland, getMapNewGrid } from "./island-util";
 // utils

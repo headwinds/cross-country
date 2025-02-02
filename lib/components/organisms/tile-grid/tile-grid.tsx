@@ -4,7 +4,7 @@ import { Tile, Column, Row } from "../..";
 import styles from "./tile-grid.module.css";
 import ColorUtil from "../../../utils/colour-util";
 import clsx from "clsx";
-import { TileModel } from "@cross-country/models/TileModel";
+import { TileModel } from "@headwinds/cross-country/models/TileModel";
 
 const defaultTile: TileModel = {
   id: "0",

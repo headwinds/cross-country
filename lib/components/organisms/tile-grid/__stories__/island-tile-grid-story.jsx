@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from "react";
-import { Column, Paragraph, Tile } from "../../../../";
+import { Column, Paragraph, Tile } from "@headwinds/cross-country";
 import { GridRow } from "../grid-row";
 import { getIsland, getMapNewGrid } from "./island-util";
 import IslandTileGrid from "../island-tile-grid";

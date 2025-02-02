@@ -4,7 +4,7 @@
 import { createMachine, assign, interpret } from "xstate";
 
 //import PusherService from '../../../../../../services/pusher-service';
-import { getDocument } from "@cross-country/utils/server-side-util";
+import { getDocument } from "@headwinds/cross-country/utils/server-side-util";
 
 const localUrl = "http://127.0.0.1:5000";
 const remoteUrl = "https://scout.vercel.app";

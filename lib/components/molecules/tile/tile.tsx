@@ -5,7 +5,7 @@ import type { TileType, InteractiveTileType } from "./types";
 
 export interface TileProps extends TileType, InteractiveTileType {}
 
-const Tile = forwardRef((props: TileProps, ref) => {
+const Tile = forwardRef<HTMLDivElement, TileProps>((props, ref) => {
   const { type } = props;
   switch (type) {
     case "interactive":

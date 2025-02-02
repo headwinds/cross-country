@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { FormattedMessage } from "react-intl";
-import { Paragraph, Column } from "@cross-country/components";
+import { Paragraph, Column } from "@headwinds/cross-country/components";
 import styles from "./actor-speech.module.css";
 import { Actor } from "xstate";
-import { ActorModel } from "@cross-country/models";
+import { ActorModel } from "@headwinds/cross-country/models";
 
 export type ActorSpeechModel = {
   messageId: string;

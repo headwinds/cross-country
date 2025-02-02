@@ -1,5 +1,5 @@
 import React from "react";
-import { Column, Row } from "../../..";
+import { Column, Row } from "@headwinds/cross-country";
 
 /*
 A Grid based carousel that allows for the selection of items.

@@ -6,5 +6,5 @@ export * from "./input";
 export * from "./label";
 export * from "./paragraph";
 export * from "./span";
-export * from "./subheadline";
+export * from "./sub-headline";
 export * from "./text-area";

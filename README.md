@@ -20,7 +20,7 @@ Do you pour over your personal stats from Github, Strava or Spotify? Is your yea
 ### Install
 
 ```
-npm install cross-country
+pnpm i cross-country
 ```
 
 ### Types
@@ -92,16 +92,16 @@ Initially, I ran into a build error where I had to account for every `window` an
 ## Automated Component Creation
 
 ```
-npm run new -- --type organisms --path component-name-here
+pnpm new -- --type organisms --path component-name-here
 ```
 or
 ```
-npm run new -- --type molecules --path component-name-here/sub-component-name-her
+pnpm new -- --type molecules --path component-name-here/sub-component-name-her
 ```
 
 You can also scaffold only a story:
 ```
-npm run new:story -- --type molecules --path policies/privacy-policy
+pnpm new:story -- --type molecules --path policies/privacy-policy
 ```
 
 This will automatically scaffold the component directory creating all the files you will need including the tests and stories folders. It saved you at least 5 minutes if not especially around configuring the story; no more frustrating CSF errors!
@@ -121,7 +121,7 @@ export const privateConfig = {
 While creating components, you can use Storybook
 
 ```
-npm run storybook
+pnpm storybook
 ```
 
 Open your browser to http://localhost:6006/
@@ -147,7 +147,7 @@ Run [changesets](https://github.com/changesets/changesets)
 ```
 npx changeset
 npx changeset version
-npm publish
+pnpm publish
 ```
 
 Need to run both commands `npx changeset` only creates the changeset while `npx changeset version` will then update the package.json
@@ -157,27 +157,27 @@ Need to run both commands `npx changeset` only creates the changeset while `npx 
 This library uses Jest & React Testing Library for unit tests.
 
 ```
-npm test
+pnpm test
 ```
 
 ## Publish to NPM
 
 ```
-npm publish
+pnpm publish
 ```
 
 ```
-npm login
+pnpm login
 your-username-not-your-email
 your-password
 now-your-email
-npm publish
+pnpm publish
 ```
 
 ## Deploy to Vercel
 
 ```
-npm run build-storybook
+pnpm build-storybook
 cd storybook-static
 vercel --prod
 ```

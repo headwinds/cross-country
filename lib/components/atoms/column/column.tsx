@@ -12,7 +12,7 @@ export interface ColumnProps extends React.HTMLAttributes<HTMLHRElement> {
   customClass?: string;
 }
 
-const Column = forwardRef(
+const Column = forwardRef<HTMLDivElement, ColumnProps>(
   (
     {
       children,
@@ -23,7 +23,7 @@ const Column = forwardRef(
       customStyle = null,
       customClass = "",
       ...rest
-    }: any,
+    }: ColumnProps,
     ref
   ) => {
     return (
@@ -46,5 +46,7 @@ const Column = forwardRef(
     );
   }
 );
+
+Column.displayName = "Column";
 
 export default Column;

@@ -1,6 +1,10 @@
 import { useState } from "react";
 import Blog, { BlogProps } from "../../organisms/blog";
-import { Column, Login, Registration } from "@cross-country/components";
+import {
+  Column,
+  Login,
+  Registration,
+} from "@headwinds/cross-country/components";
 import { RegistrationEvent } from "../../organisms/registration/registration";
 
 const BlogPage = () => {

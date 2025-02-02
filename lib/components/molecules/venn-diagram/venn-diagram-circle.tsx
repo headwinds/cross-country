@@ -1,5 +1,5 @@
 import React from "react";
-import { Circle, Group } from "@cross-country/components/";
+import { Circle, Group } from "@headwinds/cross-country/components/";
 import { VennDiagramCircleProps } from "./venn-diagram.types";
 import { YoutubeLogo } from "@phosphor-icons/react/dist/ssr";
 

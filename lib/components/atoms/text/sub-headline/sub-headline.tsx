@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./subheadline.module.css";
+import styles from "./sub-headline.module.css";
 import clsx from "clsx";
 
 export interface SubHeadlineProps

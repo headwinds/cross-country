@@ -4,10 +4,10 @@ import {
   createAllPortholeTrees,
   getRSSBranch,
   convertToPortholeBranches,
-} from "@cross-country/utils/golds/feed-util";
-import { getAllItemsFromStore } from "@cross-country/utils/golds/indexdb-util";
-import { differenceBy, shuffle } from "@cross-country/utils/fp-util";
-import { PortholeBranchModel } from "@cross-country/models/PortholeBranchModel";
+} from "@headwinds/cross-country/utils/golds/feed-util";
+import { getAllItemsFromStore } from "@headwinds/cross-country/utils/golds/indexdb-util";
+import { differenceBy, shuffle } from "@headwinds/cross-country/utils/fp-util";
+import { PortholeBranchModel } from "@headwinds/cross-country/models/PortholeBranchModel";
 
 import { BranchListProps } from "../branch-list";
 import { response } from "../__mocks__/branches-mock";

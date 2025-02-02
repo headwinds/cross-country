@@ -30,11 +30,23 @@ const config = [
       alias({
         entries: [
           {
-            find: /^@cross-country\/components/,
+            find: /^@headwinds/cross-country\/components/,
             replacement: path.resolve(__dirname, "lib/components/index.ts"),
           },
           {
-            find: /^@cross-country\/(.*)/,
+            find: /^@headwinds/cross-country\/providers/,
+            replacement: path.resolve(__dirname, "lib/providers/index.ts"),
+          },
+          {
+            find: /^@headwinds/cross-country\/constants/,
+            replacement: path.resolve(__dirname, "lib/constants/index.ts"),
+          },
+          {
+            find: /^@headwinds/cross-country\/models/,
+            replacement: path.resolve(__dirname, "lib/models/index.ts"),
+          },
+          {
+            find: /^@headwinds/cross-country\/(.*)/,
             replacement: path.resolve(__dirname, "lib/$1"),
           },
         ],
@@ -57,11 +69,23 @@ const config = [
       alias({
         entries: [
           {
-            find: "@cross-country/components",
+            find: "@headwinds/cross-country/components",
             replacement: path.resolve(__dirname, "lib/components"),
           },
           {
-            find: "@cross-country",
+            find: "@headwinds/cross-country/constants",
+            replacement: path.resolve(__dirname, "lib/constants"),
+          },
+          {
+            find: "@headwinds/cross-country/providers",
+            replacement: path.resolve(__dirname, "lib/providers"),
+          },
+          {
+            find: "@headwinds/cross-country/models",
+            replacement: path.resolve(__dirname, "lib/models"),
+          },
+          {
+            find: "@headwinds/cross-country",
             replacement: path.resolve(__dirname, "lib"),
           },
         ],

@@ -1,8 +1,8 @@
 import React, { Component, CSSProperties } from "react";
-import { Column, Image, SVG } from "@cross-country/components";
+import { Column, Image, SVG } from "@headwinds/cross-country/components";
 import styles from "./actor.module.css";
 import clsx from "clsx";
-import type { ActorModel } from "@cross-country/models";
+import type { ActorModel } from "@headwinds/cross-country/models";
 
 const defaultTileSize = 50;
 
@@ -96,13 +96,11 @@ const Actor = ({
         ...customTileStyle,
         transform: `translate3d(${x}px, ${y}px, ${z}px)`,
       }}
-      name="actor tile"
       {...rest}
     >
       <Column
         customClass={columnCustomClass}
         customStyle={{ ...defaultCustomSkinStyle, ...customSkinStyle }}
-        name="actor skin"
       >
         {type ? renderSubType() : children}
       </Column>
