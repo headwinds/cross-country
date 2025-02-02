@@ -1,6 +1,6 @@
 {
   "name": "cross-country",
-  "version": "1.2.33",
+  "version": "1.2.34",
   "description": "an atomic design system built for personal metrics & lonely forest bathers",
   "author": "headwinds",
   "license": "MIT",
@@ -13,7 +13,8 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "default": "./dist/index.js"
-    }
+    },
+    "./dist/bundle.css": "./dist/bundle.css"
   },
   "files": [
     "dist"
@@ -94,7 +95,7 @@
     "@xstate/react": "4.1.0",
     "@xstate/store": "^2.4.0",
     "clsx": "^1.1.0",
-    "cross-country": "^1.2.26",
+    "cross-country": "^1.2.34",
     "d3": "^7.8.2",
     "d3-axis": "^3.0.0",
     "date-fns": "^3.6.0",
