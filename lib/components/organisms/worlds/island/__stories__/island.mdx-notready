@@ -205,6 +205,17 @@ be able to cast an AOE spell that could push (a nod to{' '}
       id: 39,
       title: 'A million little players",
       url: "https://www.youtube.com/watch?v=Nnx33ctSmRA"
+    },
+    {
+      id: 40,
+      title: "Building from the Ground Up in Mapbox Studio",
+      url: "https://leemartin.dev/building-from-the-ground-up-in-mapbox-studio-86f361be609d"
+    },
+    {
+      id: 41,
+      title: "Rent an island",
+      url: "https://www.cabinporn.com/p/for-rent-an-entire-island"
     }
+
   ]}
 />

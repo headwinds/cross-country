@@ -16,12 +16,6 @@ A Button needs to be able to render the following states:
 - active
 - disabled
 
-For convenience, it should also be able to render the following sizes:
-
-- small
-- medium
-- large
-
 And for accessibility, it should be able to render the following types:
 
 - primary
@@ -29,12 +23,32 @@ And for accessibility, it should be able to render the following types:
 
 We need to be able to distinguish between primary and secondary buttons for users who are color blind.
 
-And for extra flare and to attract attention, we can consider animation and sound effects.
+And for extra flare and to attract attention, we can consider animation and sound effects (thanks to [use-sound](https://www.joshwcomeau.com/react/announcing-use-sound-react-hook/) )
 
 ```jsx
-<Button>click me</Button>
+
+import retro from '@/assets/sounds/retro.mp3'; // .wav, .mp3, .ogg, etc
+
+const onClick = () => {
+  console.log('clicked');
+}
+
+
+<Button onClick={onClick} sound={retro}>click me</Button>
 ```
 
 ### Story
 
 <Canvas of={ButtonStories.ButtonStory} />
+
+### secondary
+
+<Canvas of={ButtonStories.Secondary} />
+
+### Outlined
+
+<Canvas of={ButtonStories.Outlined} />
+
+### Disabled
+
+<Canvas of={ButtonStories.Disabled} />

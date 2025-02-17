@@ -9,21 +9,51 @@
   height: 34px;
   font-family: var(--font);
   font-weight: 400;
+  padding: 4px 16px;
+}
+
+.button:hover:not(:disabled) {
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.button:disabled {
+  background-color: rgb(200, 200, 200);
+  color: rgb(100, 100, 100);
+  cursor: not-allowed;
+}
+
+.outlined {
+  background-color: transparent !important;
+  border: 1px solid #9b9b9b !important;
+  color: #9b9b9b !important;
+}
+
+.outlined:hover:not(:disabled) {
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 .defaultButton {
-  background-color: var(--primary);
-  padding: 8px;
   border: none;
-  border-radius: 4px;
   color: rgb(254, 255, 255);
   font-weight: 400;
+}
+
+.primary {
+  background-color: var(--primary);
+}
+
+.secondary {
+  background-color: var(--secondary);
+}
+
+.tertiary {
+  background-color: var(--tertiary);
 }
 
 .storyButton {
   background-color: var(--secondary);
   border: none;
-  border-radius: 4px;
   color: rgb(254, 255, 255);
   font-weight: 700;
   font-size: 24px;

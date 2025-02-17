@@ -2,19 +2,18 @@
 
 import * as React from "react";
 import { AnimateNumber, Column, Paragraph, Row, Span } from "../../";
-import { KeyValuePairsProps } from "./key-value-pairs.types";
+import {
+  type KeyValuePairsProps,
+  type KeyValue,
+  VALUE_TYPE,
+} from "./key-value-pairs.types";
 
-export const VALUE_TYPE = {
-  TEXT: "text",
-  ANIMATE_NUMBER: "animate-number",
-};
-
-const KeyValuePairs: React.FC<KeyValuePairsProps> = ({
+const KeyValuePairs = ({
   dataTestId = "key-value-pairs",
-  keyValues = [],
+  keyValues = [], // defaults to an empty array
   keyStyle = {},
   valueStyle = {},
-}) => {
+}: KeyValuePairsProps) => {
   const list = keyValues.map((keyValue, index) => {
     const { id, key, value, type } = keyValues[index];
 

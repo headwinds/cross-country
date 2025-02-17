@@ -1,2 +1,2 @@
 export { default } from "./key-value-pairs";
-export type { KeyValuePairsProps } from "./key-value-pairs.types";
+export type { KeyValuePairsProps, KeyValue } from "./key-value-pairs.types";
