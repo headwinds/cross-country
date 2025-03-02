@@ -1,5 +1,5 @@
 import { Column, Paragraph } from "@headwinds/cross-country";
-import EditOptionList from "./edit-option-list";
+import EditOptionList from "../../edit-option-list";
 
 const AddMedia = () => {
   const data = { options: [] };

@@ -1,3 +1,30 @@
+import React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+import AnswerInput from "../answer-input";
+
+const meta: Meta<typeof AnswerInput> = {
+  component: AnswerInput,
+  title: "components/organisms/survey/edit/answer input",
+} satisfies Meta<typeof AnswerInput>;
+
+export default meta;
+type Story = StoryObj<typeof AnswerInput>;
+
+export const AnswerInputStory: Story = {
+  render: () => (
+    <AnswerInput
+      //hasActions={false}
+      //helperText={""}
+      data={{
+        question: "Who lead the creation of Rez?",
+        answer: "Tetsuya Mizuguchi",
+        isRequired: false,
+      }}
+    />
+  ),
+};
+
+/*
 import {
   Column,
   SubHeadline,
@@ -64,3 +91,5 @@ export const TextInputMultiRow = {
 
   name: "text input multi row",
 };
+
+*/

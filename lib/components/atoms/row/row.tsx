@@ -29,6 +29,7 @@ const Row = forwardRef<HTMLDivElement, RowProps>(
         className={clsx(styles.row, customClass)}
         style={customStyle}
         ref={ref}
+        data-testid={"row"}
       >
         {children}
       </div>

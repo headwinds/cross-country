@@ -1,0 +1,24 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import * as SurveyStories from "./survey.stories";
+
+<Meta of={SurveyStories} />
+
+# Survey
+
+Forms were one of the first interactive elements on the web; a cornerstone of data collection. 
+
+With validation, accessibility, and user experience improvements, forms have come a long way since those early days.
+
+This `Survey` component attempts to further elevate form design and offers the opportunity to build your own.
+
+### Props
+
+| Prop | Type | Required | Description |
+|------|------|----------|-------------|
+| `data` | `any` | Yes | The data object containing form values |
+| `submitForm` | `(data: any) => void` | No | Callback function triggered when the form is submitted |
+| `onStateChange` | `(data: any) => void` | No | Callback function triggered when form state changes |
+
+### Story
+
+<Canvas of={SurveyStories.SurveyStory} />

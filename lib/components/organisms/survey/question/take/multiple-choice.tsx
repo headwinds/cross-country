@@ -11,12 +11,14 @@ const DefaultHtmlQuesiton = () => (
 );
 // {htmlQuestion ? data.question : <DefaultHtmlQuesiton />}
 
+export type MultipleChoiceData = {
+  question: string;
+  options: { id: string; value: string }[];
+  answer: string;
+};
+
 export interface MultipleChoiceProps {
-  data: {
-    options: { id: string; value: string }[];
-    question: string;
-    answer: string;
-  };
+  data: MultipleChoiceData;
   onChange: (selectedId: string) => void;
   selectedId?: string;
 }
@@ -31,13 +33,15 @@ const MultipleChoice = ({
   };
 
   return (
-    <Column>
+    <Column customStyle={{ padding: 0, margin: 0 }}>
       <Paragraph>{data.question}</Paragraph>
-      <RadioGroup
-        data={data}
-        onChange={onRadioChange}
-        selectedId={selectedId}
-      />
+      <Column customStyle={{ padding: "0px 8px", margin: 0 }}>
+        <RadioGroup
+          data={data}
+          onChange={onRadioChange}
+          selectedId={selectedId}
+        />
+      </Column>
     </Column>
   );
 };

@@ -14,8 +14,8 @@ import {
 import { Trash, CheckSquare } from "@phosphor-icons/react";
 
 export interface AnswerInputProps {
-  data: any;
-  register: any;
+  data?: any;
+  register?: any;
   customClass?: string;
   onChange?: any;
 }
@@ -25,7 +25,7 @@ const AnswerInput = ({
   register,
   customClass = "border-2 border-gray-200 rounded-sm m-2", // to support Tailwind CSS or any css class
   onChange = null,
-}) => {
+}: AnswerInputProps) => {
   const { question, answer, name, isRequired } = data;
 
   return (
