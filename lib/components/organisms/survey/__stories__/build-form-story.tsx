@@ -1,8 +1,8 @@
 import * as React from "react";
 import { useState } from "react";
-import BuildForm from "../build-form";
+import BuildForm from "../survey-builder";
 import { Button, Wrapper, Headline, Paragraph, Wallpaper } from "../../../";
-import FinalForm from "../final-form";
+import FinalForm from "../survey";
 
 /*
 Goal: the atoms should be compatible with react-hook-form support its register function.

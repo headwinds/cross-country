@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo } from "react";
 import { useForm } from "react-hook-form";
+import SurveyBuilder from "./survey-builder";
 
 interface Inputs {
   [key: string]: any; // This is a temporary solution - ideally define specific field types
@@ -37,9 +38,15 @@ export interface SurveyProps {
   submitForm?: (data: any) => void;
   onStateChange?: (data: any) => void;
   data: any;
+  state?: "create" | "edit" | "take";
 }
 
-const Survey = ({ submitForm = defaultSubmit, onStateChange = null, data }) => {
+const Survey = ({
+  submitForm = defaultSubmit,
+  onStateChange = null,
+  data,
+  state = "take",
+}) => {
   //const [state, send] = useMachine(buildFormMachine);
 
   const {
@@ -59,6 +66,26 @@ const Survey = ({ submitForm = defaultSubmit, onStateChange = null, data }) => {
   const onTextChange = (newText) => {
     console.log("FinalForm onTextChange newText: ", newText);
   };
+
+  if (state === "create") {
+    return (
+      <SurveyBuilder
+        submitForm={submitForm}
+        onStateChange={onStateChange}
+        headlineText="Build your Form"
+      />
+    );
+  }
+
+  if (state === "edit") {
+    return (
+      <SurveyBuilder
+        submitForm={submitForm}
+        onStateChange={onStateChange}
+        headlineText="Edit your Form"
+      />
+    );
+  }
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>

@@ -28,7 +28,7 @@ TODO:
 needs local storage backup
 */
 
-const BuildForm = ({
+const SurveyBuilder = ({
   submitForm = defaultSubmit,
   headlineText = "Build your Form",
   onStateChange = null,
@@ -99,4 +99,4 @@ const BuildForm = ({
   );
 };
 
-export default BuildForm;
+export default SurveyBuilder;
