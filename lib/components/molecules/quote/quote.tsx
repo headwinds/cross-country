@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import styles from "./quote.module.css";
 import clsx from "clsx";
 import { Column, Paragraph, Link } from "../..";
-import { i } from "vitest/dist/reporters-yx5ZTtEV.js";
 
 export interface QuoteProps {
   source: string;
