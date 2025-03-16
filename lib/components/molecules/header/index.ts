@@ -1,2 +1,2 @@
-export { default } from "./header";
-export type { HeaderProps } from "./header";
+export { default } from "./cc-header";
+export type { HeaderProps } from "./cc-header";

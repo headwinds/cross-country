@@ -1,5 +1,13 @@
 # cross-country
 
+## 1.2.35
+
+### Patch Changes
+
+- update key value pairs design
+- Updated dependencies
+  - cross-country@1.2.35
+
 ## 1.2.34
 
 ### Patch Changes
