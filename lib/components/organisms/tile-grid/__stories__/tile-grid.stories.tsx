@@ -5,7 +5,7 @@ import IslandStory from "./island-tile-grid-story";
 
 const meta: Meta<typeof TileGrid> = {
   component: TileGrid,
-  title: "components/organisms/tile grid",
+  title: "components/organisms/tiles/tile grid",
 } satisfies Meta<typeof TileGrid>;
 
 export default meta;

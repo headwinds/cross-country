@@ -7,7 +7,7 @@ const Template = ({ message }: TemplateProps) => <p>{message}</p>;
 
 const meta: Meta<typeof Template> = {
   component: Template,
-  title: "storybook/templates",
+  title: "tools/generate",
 } satisfies Meta<typeof Template>;
 
 export default meta;

@@ -8,7 +8,9 @@ import { ActorModel } from "@headwinds/cross-country/models";
 export type ActorSpeechModel = {
   messageId: string;
   values?: Record<string, string | number>;
-  who: ActorModel;
+  actorModel: ActorModel;
+  name: string;
+  text: string;
 };
 
 export interface ActorSpeechProps {

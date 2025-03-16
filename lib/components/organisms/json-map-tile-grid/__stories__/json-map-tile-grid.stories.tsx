@@ -15,7 +15,7 @@ type Tile = {
 
 const meta: Meta<typeof JsonMapTileGrid> = {
   component: JsonMapTileGrid,
-  title: "components/organisms/json map tile grid",
+  title: "components/organisms/tiles/json map tile grid",
 } satisfies Meta<typeof JsonMapTileGrid>;
 
 export default meta;
