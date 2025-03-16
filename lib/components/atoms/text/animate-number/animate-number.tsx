@@ -10,7 +10,7 @@ import styles from "./animate-number.module.css";
 export interface AnimateNumberProps {
   from: number;
   to: SpringValue<number>;
-  delay: number;
+  delay?: number;
   customStyle?: React.CSSProperties;
   locale?: string;
 }

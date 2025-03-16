@@ -29,7 +29,7 @@ const defaultLevel: CharacterLevelModel = {
   type: "character",
 };
 
-const defaultActorModel: ActorModel = {
+export const defaultActorModel: ActorModel = {
   id: 0,
   type: "player",
   alignment: "friendly",
@@ -53,13 +53,16 @@ export interface StageProps {
   config?: StageConfig;
   actorModels?: ActorModel[];
   actorSpeech?: ActorSpeechModel[];
+  currentSpeaker?: string;
 }
 
 const defaultActorSpeech = [
   {
     messageId: "today",
     values: { ts: Date.now() },
-    who: defaultActorModel,
+    actorModel: defaultActorModel,
+    name: "hunter",
+    text: "Today is a good day to hunt.",
   },
 ] as ActorSpeechModel[];
 
@@ -67,6 +70,7 @@ const Stage = ({
   config = defaultConfig,
   actorModels = [defaultActorModel],
   actorSpeech = defaultActorSpeech,
+  currentSpeaker = "hunter",
 }: StageProps) => {
   const getActor = (model) => {
     switch (model.variant) {
@@ -85,8 +89,12 @@ const Stage = ({
   };
 
   // find the hunter model
-  const hunterModel = actorModels.find((model) => model.variant === "hunter");
-  const hunterSpeech = actorSpeech.find((speech) => speech.who === hunterModel);
+  const actorModel = actorModels.find(
+    (model) => model.variant === currentSpeaker
+  );
+  const currentSpeech = actorSpeech.find(
+    (speech) => speech.name === currentSpeaker
+  );
 
   return (
     <Column
@@ -94,7 +102,7 @@ const Stage = ({
       customStyle={config?.customStyle}
       {...config?.rest}
     >
-      <ActorSpeech speech={hunterSpeech} />
+      <ActorSpeech speech={currentSpeech} />
       {renderActors()}
     </Column>
   );

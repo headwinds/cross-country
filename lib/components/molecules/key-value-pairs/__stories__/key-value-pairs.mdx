@@ -1,0 +1,23 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import * as KeyValuePairsStories from "./key-value-pairs.stories";
+
+<Meta of={KeyValuePairsStories} />
+
+# KeyValuePairs
+
+The `KeyValuePairs` component takes a list of key and value pairs and combining Span and Paragraph components
+
+It has 100% width so it will take up the full width of its container so it's usually found within a parent that defines the width.
+
+### Props
+
+| Prop | Type | Required | Description |
+|------|------|----------|-------------|
+| keyValues | KeyValue[] | Yes | Array of key-value pairs to display |
+| dataTestId | string | No | Data test ID for testing purposes |
+| keyStyle | any | No | Custom styling for the key elements |
+| valueStyle | any | No | Custom styling for the value elements |
+
+### Story
+
+<Canvas of={KeyValuePairsStories.KeyValuePairsStory} />

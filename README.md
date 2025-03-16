@@ -37,7 +37,7 @@ import { Column, Row, Paragraph, Table, Chart, Bento } from "cross-country"
 
 For this third-party library to work within NextJS, there is one change required to import it's single css bundle.
 
-#### New App Strategy
+#### Import Styles - New App Strategy
 
 Edit the app\layout.tsx file to:
 
@@ -49,7 +49,7 @@ import "cross-country/dist/bundle.css";
 import { ScoutProviders } from "./providers/providers";
 ```
 
-#### Old Pages Strategy
+#### Import Styles - Old Pages Strategy
 
 Edit the pages\_app.js file to:
 
@@ -60,6 +60,18 @@ import "./globals.css";
 import "cross-country/dist/bundle.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 ```
+
+### Import Styles - Storybook Support
+
+If you use this library in your Storybook, update the .storybook/preview.tsx file 
+
+```
+import type { Preview } from "@storybook/react";
+import { initialize, mswLoader } from "msw-storybook-addon";
+import "cross-country/dist/bundle.css";
+```
+
+I also recommend the [mock service mocker addon](https://github.com/mswjs/msw-storybook-addon) to simulate data fetching in storybook which works very well with React hooks; similar to how we can intercept and mock response data with jest or vitest. 
 
 ### Tailwind CSS Support
 

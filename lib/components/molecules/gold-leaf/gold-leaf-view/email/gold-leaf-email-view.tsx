@@ -38,7 +38,7 @@ export const GoldLeafEmailView = ({
       <Column
         customStyle={{ height: 200, overflow: "hidden", overflowY: "auto" }}
       >
-        {sanitizedHtml}
+        <div dangerouslySetInnerHTML={{ __html: sanitizedHtml }} />
       </Column>
       <Row customStyle={{ backgroundColor: "white", padding: 8 }}>
         <Checkbox id={"0"} isChecked={isChecked} handleChange={handleChange} />

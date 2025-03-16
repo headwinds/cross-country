@@ -1,16 +1,5 @@
-// TODO: explore why I disabled typecheck on this file!
-// @ts-nocheck
-// npm run build
-
-import React, { useState } from "react";
-import {
-  Column,
-  SubHeadline,
-  Paragraph,
-  TextInput,
-  Button,
-  Row,
-} from "../../../../";
+import { useState } from "react";
+import { Column, Paragraph, Button } from "../../../../";
 import { PencilSimple, CheckCircle } from "@phosphor-icons/react";
 import InputManager from "./inputs/input-manager";
 
@@ -19,7 +8,7 @@ export interface TakeAnswerInputProps {
   onChange: (data: any) => void;
   customClass?: string;
   hasSave?: boolean;
-  variant?: "text" | "date-time";
+  variant?: "text" | "date-time" | "multiple-choice";
   placeholder?: string;
   selectedId?: string;
 }
@@ -34,7 +23,7 @@ const TakeAnswerInput = ({
   selectedId,
 }: TakeAnswerInputProps) => {
   const [saveAnswer, setSaveAnswer] = useState<string | null>(
-    selectedId | null
+    selectedId ?? null
   );
   const [isSaved, toggleIsSaved] = useState(false);
 
@@ -70,10 +59,7 @@ const TakeAnswerInput = ({
         }}
       >
         <Paragraph customClass="m-2">{saveAnswer}</Paragraph>
-        <Button
-          onClick={(data) => onEditClick(data)}
-          customStyle={{ width: 50 }}
-        >
+        <Button onClick={() => onEditClick()} customStyle={{ width: 50 }}>
           <PencilSimple size={20} />
         </Button>
       </Column>
@@ -89,21 +75,18 @@ const TakeAnswerInput = ({
         padding: 16,
       }}
     >
-      <Paragraph customClass="m-2">{question}</Paragraph>
       <InputManager
-        variant={variant}
+        question={question}
         data={data}
+        variant={variant}
         placeholder={placeholder}
         customClass={customClass}
         customStyle={{ width: "95%" }}
-        onTextChange={(text) => setSaveAnswer(text)}
-        defaultValue={saveAnswer}
+        onChange={(text) => setSaveAnswer(text)}
+        //defaultValue={saveAnswer}
       />
       {hasSave ? (
-        <Button
-          onClick={(data) => onSaveClick(data)}
-          customStyle={{ width: 50 }}
-        >
+        <Button onClick={() => onSaveClick()} customStyle={{ width: 50 }}>
           <CheckCircle size={20} />
         </Button>
       ) : null}
