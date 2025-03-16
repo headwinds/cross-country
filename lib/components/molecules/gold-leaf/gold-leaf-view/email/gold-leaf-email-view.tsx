@@ -27,6 +27,9 @@ export const GoldLeafEmailView = ({
     setChecked(!isChecked);
   };
 
+  // see image-find-util.ts for the implementation of Parser
+  // parser(sanitizedHtml)
+
   return (
     <Column customStyle={{ padding: 0, margin: 0 }}>
       <Row customStyle={{ backgroundColor: "white", padding: 8 }}>
