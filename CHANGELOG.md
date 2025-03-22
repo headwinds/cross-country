@@ -1,5 +1,24 @@
 # cross-country
 
+## 1.3.1
+
+### Patch Changes
+
+- export scrambled text"
+- Updated dependencies
+  - cross-country@1.3.1
+
+## 1.3.0
+
+### Minor Changes
+
+- new text scramble component
+
+### Patch Changes
+
+- Updated dependencies
+  - cross-country@1.3.0
+
 ## 1.2.35
 
 ### Patch Changes
