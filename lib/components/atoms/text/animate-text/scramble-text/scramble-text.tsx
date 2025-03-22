@@ -3,7 +3,7 @@ import { useSpring, animated, config } from "@react-spring/web";
 import { Span } from "@headwinds/cross-country/components";
 import clsx from "clsx";
 
-interface TextScrambleProps {
+export interface ScrambleTextProps {
   text: string;
   className?: string;
   duration?: number;
@@ -17,7 +17,7 @@ interface TextScrambleProps {
 const CHARS =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
 
-const TextScramble: React.FC<TextScrambleProps> = ({
+const ScrambleText: React.FC<ScrambleTextProps> = ({
   text,
   className,
   duration = 2000,
@@ -154,4 +154,4 @@ const TextScramble: React.FC<TextScrambleProps> = ({
   );
 };
 
-export default TextScramble;
+export default ScrambleText;

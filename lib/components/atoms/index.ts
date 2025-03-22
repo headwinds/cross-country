@@ -74,6 +74,9 @@ export type { ListItemProps } from "./list/list-item/list-item";
 export { default as AnimateNumber } from "./text/animate-number/animate-number";
 export type { AnimateNumberProps } from "./text/animate-number/animate-number";
 
+export { default as ScrambleText } from "./text/animate-text/scramble-text";
+export type { ScrambleTextProps } from "./text/animate-text/scramble-text";
+
 export { default as Table } from "./table";
 export type { TableProps } from "./table";
 
