@@ -1,0 +1,24 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import * as ScrambleTextStories from "./scramble-text.stories";
+
+<Meta of={ScrambleTextStories} />
+
+# ScrambleText
+
+The `ScrambleText` component is a text animation that scrambles the text before displaying it.
+
+### Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| text | string | required | The text to be scrambled and displayed |
+| className | string | undefined | Additional CSS class names to apply to the component |
+| duration | number | 2000 | Total duration of the animation in milliseconds |
+| scrambleDuration | number | 100 | Duration between scramble effects in milliseconds |
+| autoPlay | boolean | true | Whether to start the animation automatically |
+| customClass | string | undefined | Custom CSS class for additional styling |
+| customStyle | React.CSSProperties | undefined | Inline styles to apply to the component |
+
+### Story
+
+<Canvas of={ScrambleTextStories.ScrambleTextStory} />
