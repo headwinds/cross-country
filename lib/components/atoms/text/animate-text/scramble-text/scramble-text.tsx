@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useSpring, animated, config } from "@react-spring/web";
-import { Span } from "@headwinds/cross-country/components";
 import clsx from "clsx";
 
 export interface ScrambleTextProps {
@@ -146,11 +145,11 @@ const ScrambleText: React.FC<ScrambleTextProps> = ({
   }, [cleanup]);
 
   return (
-    <animated.div style={springProps} className={clsx("relative", className)}>
-      <Span customClass={customClass} customStyle={customStyle}>
+    <animated.span style={springProps} className={clsx("relative", className)}>
+      <span className={customClass} style={customStyle}>
         {displayText || text}
-      </Span>
-    </animated.div>
+      </span>
+    </animated.span>
   );
 };
 
