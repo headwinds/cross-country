@@ -1,4 +1,5 @@
 export * from "./animate-number";
+export * from "./animate-text";
 export * from "./bold";
 export * from "./headline";
 export * from "./hilight";
