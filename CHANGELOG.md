@@ -1,5 +1,13 @@
 # cross-country
 
+## 1.3.1
+
+### Patch Changes
+
+- export scrambled text"
+- Updated dependencies
+  - cross-country@1.3.1
+
 ## 1.3.0
 
 ### Minor Changes
