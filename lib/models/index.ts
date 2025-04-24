@@ -1,7 +1,7 @@
 // models
 //export * from "./ActorModel";
 
-export type { ActorModel } from "./ActorModel";
+export type { ActorModel, ActorType } from "./ActorModel";
 export type { BookModel } from "./BookModel";
 export type { ChapterModel } from "./ChapterModel";
 export type { PlayerModel } from "./PlayerModel";

@@ -20,11 +20,15 @@ export interface BranchesProps {
   onLoadedCallback: (error: any) => void;
 }
 
+const defaultRemoteUrl =
+  "https://scout-summarize.vercel.app/api/porthole/feeds";
+
 type State = {
   feeds: any;
   branches: PortholeBranchModel[];
   hasFetched: boolean;
   allNewBranches: PortholeBranchModel[];
+  remoteUrl: string;
 };
 
 const Branches = ({ isTesting = false, onLoadedCallback }: BranchesProps) => {
@@ -33,8 +37,9 @@ const Branches = ({ isTesting = false, onLoadedCallback }: BranchesProps) => {
     branches: [],
     hasFetched: false,
     allNewBranches: [],
+    remoteUrl: defaultRemoteUrl,
   });
-  const { hasFetched, allNewBranches, branches } = state;
+  const { hasFetched, allNewBranches, branches, remoteUrl } = state;
 
   // BFF approach where I provide a new microservice that will handle the RSS feed and return exactly what I need
   const getCabinQuestFeedFromScoutSummarizeService = async (data) => {
@@ -48,7 +53,6 @@ const Branches = ({ isTesting = false, onLoadedCallback }: BranchesProps) => {
     try {
       // be careful - we don't want to use localhost on another site we should config this route
       // const localUrl = 'http://localhost:5004/api/porthole/feeds';
-      const remoteUrl = "https://scout-summarize.vercel.app/api/porthole/feeds";
 
       const response = await fetchRetry(remoteUrl, options);
       const json = await response.json();

@@ -8,6 +8,7 @@ export interface RowProps extends React.HTMLAttributes<HTMLHRElement> {
   hasChildrenCentered?: boolean;
   customStyle?: React.CSSProperties;
   customClass?: string;
+  dataTestId?: string;
 }
 
 const Row = forwardRef<HTMLDivElement, RowProps>(
@@ -18,6 +19,7 @@ const Row = forwardRef<HTMLDivElement, RowProps>(
       hasChildrenCentered = true,
       customClass = "",
       customStyle = {},
+      dataTestId = "row",
       ...rest
     }: RowProps,
     ref
@@ -29,7 +31,7 @@ const Row = forwardRef<HTMLDivElement, RowProps>(
         className={clsx(styles.row, customClass)}
         style={customStyle}
         ref={ref}
-        data-testid={"row"}
+        data-testid={dataTestId}
       >
         {children}
       </div>

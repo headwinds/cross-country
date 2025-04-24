@@ -6,6 +6,14 @@ import { ProfessionModel } from "./ProfessionModel";
 import { ViceModel } from "./ViceModel";
 import { CharacterLevelModel } from "./CharacterLevelModel";
 
+export type ActorType = {
+  id: number;
+  tileSize: number;
+  variant: string;
+  position: { x: number; y: number; z: number };
+  customStyle: { [key: string]: string };
+};
+
 const alignments = [
   "Lawful Good",
   "Neutral Good",

@@ -27,6 +27,7 @@ export { default as ReverseTextAnimation } from "./animation/reverse-text-animat
 export type { ReverseTextAnimationProps } from "./animation/reverse-text-animation";
 
 // organisms / collection / survey
+/*
 export { default as EditTitleInput } from "./survey/question/edit/edit-title-input";
 export type { EditTitleInputProps } from "./survey/question/edit/edit-title-input";
 
@@ -44,6 +45,7 @@ export type { AnswerInputProps } from "./survey/question/edit/answer-input";
 
 export { default as Question } from "./survey/question/take/question";
 export type { QuestionProps } from "./survey/question/take/question";
+*/
 
 // organisms / gaming
 export { default as Actor } from "./actors/actor";

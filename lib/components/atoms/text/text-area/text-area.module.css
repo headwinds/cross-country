@@ -1,8 +1,7 @@
-.textInput {
+.textArea {
   padding: 12px;
   margin: 4px;
   resize: vertical;
-  min-height: 120px; /* Approximately 5 rows of text */
   width: 100%;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -12,6 +11,6 @@
   max-width: 700px;
 }
 
-.textInput:focus {
+.textArea:focus {
   outline: none;
 }

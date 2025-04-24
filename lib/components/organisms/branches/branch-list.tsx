@@ -4,7 +4,7 @@ import Branch from "../branch";
 import styles from "./branches.module.css";
 import { PortholeBranchModel } from "@headwinds/cross-country/models/PortholeBranchModel";
 
-const cardWidth = 375; // smaller phones like iPhone have 375px width
+const cardWidth = 400; // smaller phones like iPhone have 375px width
 
 export interface BranchListProps {
   branches: PortholeBranchModel[];
@@ -94,7 +94,7 @@ const BranchList = ({ branches }: BranchListProps) => {
   };
 
   return (
-    <Row data-testid="branch-list" customClass={styles.column__list} ref={ref}>
+    <Row dataTestId="branch-list" customClass={styles.column__list} ref={ref}>
       {getColumns(branches)}
     </Row>
   );

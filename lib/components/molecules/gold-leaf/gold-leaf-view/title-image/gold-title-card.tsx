@@ -20,16 +20,9 @@ export const GoldTitleCard = ({
     } else if (mode !== "view" && goldLeafModel) {
       return (
         <>
-          <Column
-            customStyle={{
-              padding: 4,
-              margin: 0,
-              borderBottom: "1px dashed #ddd",
-              borderTop: "1px dashed #ddd",
-            }}
-          >
+          <Column>
             <Link
-              url={goldLeafModel.link}
+              url={goldLeafModel.url}
               customClass={styles.GoldLeaf__titleLink}
               customStyle={{
                 borderBottom: "none",

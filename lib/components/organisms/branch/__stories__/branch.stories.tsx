@@ -1,16 +1,20 @@
-import { Meta, Canvas, Story, Subtitle } from '@storybook/addon-docs';
-import { Paragraph, SubHeadline } from '../../../';
-import BranchStory from './branch-story';
+import React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+import Branch from "./branch-story";
 
-<Meta title="components/organisms/branch" />
+const meta: Meta<typeof Branch> = {
+  component: Branch,
+  title: "components/organisms/branch",
+} satisfies Meta<typeof Branch>;
 
-<Subtitle>a branch of gold leaves</Subtitle>
+export default meta;
+type Story = StoryObj<typeof Branch>;
 
-<Paragraph>
-  When considering tree traversal, the leaf node is the final node. It is an end. Leaves cannot have more leaves nor
-  branhes.
-</Paragraph>
-<Paragraph>A branch is a node that has more than one leaf. It must "branch" at least once.</Paragraph>
+export const BranchStory: Story = {
+  render: () => <Branch />,
+};
+
+/*
 
 <Canvas>
   <Story name="one image">
@@ -34,5 +38,4 @@ import BranchStory from './branch-story';
     </Column>
   </Story>
 </Canvas>
-
-- https://feedly.com/i/all
+*/

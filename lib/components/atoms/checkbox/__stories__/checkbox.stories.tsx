@@ -16,7 +16,6 @@ export const Default: Story = {
       const [isChecked, setChecked] = useState(false);
 
       const handleChange = () => {
-        console.log("CheckboxStory handleChange");
         setChecked(!isChecked);
       };
 

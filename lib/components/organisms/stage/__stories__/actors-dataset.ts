@@ -1,5 +1,8 @@
 //@ts-nocheck
-import { ActorType } from "../../../../models/ActorModel";
+import { ActorType } from "@/models/ActorModel";
+import { ActorSpeechModel } from "@/models/ActorSpeechModel";
+
+// each actor should have their own speech
 
 const hunterActorModel: ActorType = {
   id: 0,

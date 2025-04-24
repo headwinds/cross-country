@@ -32,7 +32,7 @@ const TextArea = ({
     <textarea
       rows={rows}
       cols={cols}
-      className={clsx(styles.textInput, customClass)}
+      className={clsx(styles.textArea, customClass)}
       onChange={(event) => {
         event.preventDefault();
         const {
