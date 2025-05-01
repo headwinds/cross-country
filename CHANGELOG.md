@@ -1,5 +1,13 @@
 # cross-country
 
+## 1.3.2
+
+### Patch Changes
+
+- branches update
+- Updated dependencies
+  - cross-country@1.3.2
+
 ## 1.3.1
 
 ### Patch Changes

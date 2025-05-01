@@ -22,3 +22,7 @@ export type { UserModel } from "./UserModel";
 export type { WeaponModel } from "./WeaponModel";
 export type { WorldModel } from "./WorldModel";
 export type { TreeModel } from "./TreeModel";
+export type { QuestModel } from "./QuestModel";
+export type { QuestStepModel } from "./QuestStepModel";
+export type { PageModel } from "./PageModel";
+export type { SceneModel } from "./SceneModel";

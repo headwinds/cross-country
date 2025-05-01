@@ -1,6 +1,19 @@
-import { Record } from "immutable";
+export interface QuestModel {
+  id: number;
+  title: string;
+  description: string;
+  reward: any[];
+  giver: string;
+  receiver: string;
+  relatedTo: any[];
+  started_at: Date;
+  completed_at: Date;
+  status: string;
+  progress: number;
+  steps: number;
+}
 
-const QuestModel = Record({
+export const defaultQuestModel: QuestModel = {
   id: 0,
   title: "generic item",
   description: "health",
@@ -13,8 +26,4 @@ const QuestModel = Record({
   status: "none",
   progress: 0,
   steps: 1,
-});
-
-export type QuestModelType = typeof QuestModel;
-
-export default QuestModel;
+};

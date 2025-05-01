@@ -5,13 +5,13 @@ import { EnemyModel } from "@/lib/models/EnemyModel";
 import { PlayerModel } from "@/lib/models/PlayerModel";
 import { BookModel } from "@/lib/models/BookModel";
 import { NPCModel } from "./NPCModel";
-import { NeutralModel } from "@/lib/models/NeutralModel";
+import { NeutralModel } from "./NeutralModel";
 
 export type WorldModel = {
   playerSet: PlayerModel[];
   itemSet: ItemModel[];
   enemySet: EnemyModel[];
-  neutralSet: any[];
+  neutralSet: NeutralModel[];
   npcSet: NPCModel[];
   shieldSet: ShieldModel[];
   weaponSet: WeaponModel[];

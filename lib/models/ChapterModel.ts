@@ -1,4 +1,5 @@
 export type ChapterModel = {
+  id: number;
   title: string;
   actorSet: any[];
   playerSet: any[];
