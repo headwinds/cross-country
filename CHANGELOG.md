@@ -1,5 +1,13 @@
 # cross-country
 
+## 1.3.3
+
+### Patch Changes
+
+- fixed column spacing and ghost branches
+- Updated dependencies
+  - cross-country@1.3.3
+
 ## 1.3.2
 
 ### Patch Changes

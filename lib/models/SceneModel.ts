@@ -1,4 +1,3 @@
-
 /*
 0. We find a spot, drink our favorite potion and dream up a focal point for our scene. 
 1. We are prompted to create a scene and set the grid size. It defaults to a chessboard grid of 8x8 tiles.
@@ -28,7 +27,7 @@ export interface SceneModel {
   updatedAt: Date;
   author: UserModel;
   players: PlayerModel[];
-  items: ItemModel[]; // items are objects that can be picked up and used by the player
+  items: ItemModel<unknown>[]; // items are objects that can be picked up and used by the player
   gridSize: number;
   stage: number;
   fringe: number;
