@@ -25,7 +25,7 @@
 
 .column__list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
   grid-gap: 8px;
   align-items: start;
   overflow: hidden;
@@ -35,11 +35,10 @@
 }
 
 .card__column {
-  padding: 16px;
-  align-items: center;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding: 0px;
+  margin: 0px;
   overflow: hidden;
+  width: 300px
 }
 
 .column__item {
@@ -47,7 +46,6 @@
   background-color: transparent;
   padding: 0px;
   margin: 0px;
-  align-items: center;
   display: flex;
 }
 

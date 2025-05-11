@@ -15,18 +15,21 @@ export interface ListItemProps {
   customClass?: string;
   customStyle?: React.CSSProperties;
   role?: string;
+  id?: string;
 }
 
 const ListItem = ({
   children,
   customClass = "",
   customStyle = {},
+  id,
   ...rest
 }: ListItemProps) => (
   <li
     {...rest}
     className={clsx(styles.listItem, customClass)}
     style={customStyle}
+    id={id}
   >
     {children}
   </li>

@@ -12,7 +12,7 @@ import GoldLeafNotFound from "../gold-leaf-not-found";
 
 const defaultCustomStyle = {
   height: "auto",
-  width: 370,
+  width: 300,
 };
 
 const GoldLeafView = ({
@@ -28,8 +28,6 @@ const GoldLeafView = ({
   const [hasImage, setHasImage] = useState(true);
 
   const onNoImageFoundCallback = () => {
-    // should check I setting if we want to show the image or not
-    // if I only want to see cards with images, we should drop the card without an image
     setHasImage(false);
   };
 
@@ -45,7 +43,11 @@ const GoldLeafView = ({
     );
   }
 
-  return hasImage ? (
+  if (!hasImage) {
+    return null;
+  }
+
+  return (
     <Card
       customClass={styles.GoldLeafView}
       dataTestId={dataTestId}
@@ -55,9 +57,8 @@ const GoldLeafView = ({
         goldLeafModel={goldLeafModel}
         onNoImageFoundCallback={onNoImageFoundCallback}
       />
-      {/*<GoldLeafViewControls goldLeafModel={goldLeafModel} dataTestId={`${dataTestId}-controls`} />*/}
     </Card>
-  ) : null;
+  );
 };
 export default GoldLeafView;
 

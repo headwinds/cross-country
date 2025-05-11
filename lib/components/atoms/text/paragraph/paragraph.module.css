@@ -1,5 +1,4 @@
 .paragraph {
-  margin: 4px 0px;
   padding: 4px;
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -7,4 +6,5 @@
   text-align: left;
   font-weight: 300;
   color: #333;
+  margin: 4px 0px !important;
 }

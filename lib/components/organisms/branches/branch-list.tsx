@@ -4,7 +4,7 @@ import Branch from "../branch";
 import styles from "./branches.module.css";
 import { PortholeBranchModel } from "@headwinds/cross-country/models/PortholeBranchModel";
 
-const cardWidth = 400; // smaller phones like iPhone have 375px width
+const cardWidth = 280; // smaller phones like iPhone have 375px width
 
 export interface BranchListProps {
   branches: PortholeBranchModel[];
@@ -32,65 +32,74 @@ const BranchList = ({ branches }: BranchListProps) => {
     handleResize(); // Initial calculation
 
     return () => window.removeEventListener("resize", handleResize);
-  }, [totalColumns]);
+  }, []);
 
   const getCards = (cardBranches) => {
-    if (cardBranches.length === 0) {
+    if (!cardBranches || cardBranches.length === 0) {
       return null;
-    } else {
-      return cardBranches.map((branch, idx) => {
-        if (branch) {
-          return (
-            <ListItem
-              customClass={styles.card__item}
-              key={idx}
-              customStyle={{ listStyle: "none" }}
-            >
-              <Branch branch={branch} />
-            </ListItem>
-          );
-        } else {
-          return null;
-        }
-      });
     }
+
+    // Filter out any null or undefined branches first
+    const validBranches = cardBranches.filter((branch) => {
+      return branch && Object.keys(branch).length > 0;
+    });
+
+    // If no valid branches after filtering, return null
+    if (validBranches.length === 0) {
+      return null;
+    }
+
+    // Create and filter the list items in a single pass
+    const items = validBranches
+      .map((branch, idx) => {
+        const branchContent = <Branch branch={branch} />;
+        if (!branchContent) return null;
+
+        return (
+          <ListItem
+            customClass={styles.card__item}
+            key={`${branch.id}-${idx}`}
+            customStyle={{ listStyle: "none" }}
+            id={`${branch.id}`}
+          >
+            {branchContent}
+          </ListItem>
+        );
+      })
+      .filter(Boolean);
+
+    return items.length > 0 ? items : null;
   };
 
   const getColumn = (totalBranchesPerColumn, branches, columnCount) => {
     const startIndex = columnCount * totalBranchesPerColumn;
-    const endIndex = totalBranchesPerColumn * (columnCount + 1) - 1;
+    const endIndex = totalBranchesPerColumn * (columnCount + 1);
     const cardBranches = branches.slice(startIndex, endIndex);
 
-    const columnProps = {
-      customClass: styles.column__item,
-    };
+    const cards = getCards(cardBranches);
+    if (!cards) return null;
 
-    const column = (
+    return (
       <Column
-        {...columnProps}
-        customClass={styles.card__column}
+        customClass={`${styles.card__column} ${styles.column__item}`}
         key={`col${columnCount}`}
       >
-        <List customClass={styles.card__list}>{getCards(cardBranches)}</List>
+        <List customClass={styles.card__list}>{cards}</List>
       </Column>
     );
-
-    return column;
   };
 
   const getColumns = (branches) => {
-    if (branches.length === 0) {
+    if (!branches?.length || !totalColumns) {
       return null;
-    } else if (totalColumns) {
-      const totalBranchesPerColumn = Math.floor(branches.length / totalColumns);
-      const range = [...Array(totalColumns).keys()];
-
-      const list = range.map((columnCount) => {
-        return getColumn(totalBranchesPerColumn, branches, columnCount);
-      });
-
-      return list;
     }
+
+    const totalBranchesPerColumn = Math.ceil(branches.length / totalColumns);
+    const columns = Array.from({ length: totalColumns }, (_, i) =>
+      getColumn(totalBranchesPerColumn, branches, i)
+    ).filter(Boolean);
+
+    return columns.length > 0 ? columns : null;
   };
 
   return (
