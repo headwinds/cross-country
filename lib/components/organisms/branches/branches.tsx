@@ -6,18 +6,17 @@ import {
   createAllPortholeTrees,
   getRSSBranch,
   convertToPortholeBranches,
-} from "../../../utils/golds/feed-util";
-import { getAllItemsFromStore } from "../../../utils/golds/indexdb-util";
-import { fetchRetry } from "../../../utils/fetch-util";
-import { shuffle } from "../../../utils/fp-util";
-import { Loading } from "../../..";
+} from "@/lib/utils/golds/feed-util";
+import { fetchRetry } from "@/lib/utils/fetch-util";
+import { shuffle } from "@/lib/utils/fp-util";
+import Loading from "@/lib/components/molecules/loading";
 import BranchList from "./branch-list";
 import { mockResponse } from "./__mocks__/response";
 import { PortholeBranchModel } from "@/lib/models/PortholeBranchModel";
 
 export interface BranchesProps {
   isTesting?: boolean;
-  onLoadedCallback: (error: any) => void;
+  onLoadedCallback?: (error: any) => void;
 }
 
 const defaultRemoteUrl =
