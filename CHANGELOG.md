@@ -1,5 +1,13 @@
 # cross-country
 
+## 1.3.4
+
+### Patch Changes
+
+- tweaking branches padding
+- Updated dependencies
+  - cross-country@1.3.4
+
 ## 1.3.3
 
 ### Patch Changes
