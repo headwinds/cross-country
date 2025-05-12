@@ -3,8 +3,9 @@ import { Column, List, ListItem, Row } from "../../..";
 import Branch from "../branch";
 import styles from "./branches.module.css";
 import { PortholeBranchModel } from "@headwinds/cross-country/models/PortholeBranchModel";
+import { GOLD_LEAF_WIDTH } from "../../molecules/gold-leaf/gold-leaf-view/gold-leaf-view";
 
-const cardWidth = 280; // smaller phones like iPhone have 375px width
+const cardWidth = GOLD_LEAF_WIDTH;
 
 export interface BranchListProps {
   branches: PortholeBranchModel[];

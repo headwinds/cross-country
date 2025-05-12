@@ -10,9 +10,11 @@ import GoldTitleImageCard from "./title-image/gold-title-image-card";
 import GoldTitleCard from "./title-image/gold-title-card";
 import GoldLeafNotFound from "../gold-leaf-not-found";
 
+export const GOLD_LEAF_WIDTH = 280;
+
 const defaultCustomStyle = {
   height: "auto",
-  width: 300,
+  //width: GOLD_LEAF_WIDTH,
 };
 
 const GoldLeafView = ({

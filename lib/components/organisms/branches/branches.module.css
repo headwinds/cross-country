@@ -25,7 +25,8 @@
 
 .column__list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   grid-gap: 8px;
   align-items: start;
   overflow: hidden;
@@ -38,7 +39,6 @@
   padding: 0px;
   margin: 0px;
   overflow: hidden;
-  width: 300px
 }
 
 .column__item {
