@@ -17,7 +17,10 @@ import { PortholeBranchModel } from "@/lib/models/PortholeBranchModel";
 export interface BranchesProps {
   isTesting?: boolean;
   onLoadedCallback?: (error: any) => void;
+  feedUrl?: string;
 }
+
+// https://scout-222670816692.northamerica-northeast1.run.app/api/porthole/trees/branches
 
 const defaultRemoteUrl =
   "https://scout-summarize.vercel.app/api/porthole/feeds";
@@ -27,16 +30,20 @@ type State = {
   branches: PortholeBranchModel[];
   hasFetched: boolean;
   allNewBranches: PortholeBranchModel[];
-  remoteUrl: string;
+  feedUrl: string;
 };
 
-const Branches = ({ isTesting = false, onLoadedCallback }: BranchesProps) => {
+const Branches = ({
+  isTesting = false,
+  onLoadedCallback,
+  feedUrl,
+}: BranchesProps) => {
   const [state, setState] = useState({
     feeds: createAllPortholeTrees(),
     branches: [],
     hasFetched: false,
     allNewBranches: [],
-    remoteUrl: defaultRemoteUrl,
+    remoteUrl: feedUrl || defaultRemoteUrl,
   });
   const { hasFetched, allNewBranches, branches, remoteUrl } = state;
 
@@ -77,10 +84,15 @@ const Branches = ({ isTesting = false, onLoadedCallback }: BranchesProps) => {
     async function fetchData() {
       const portholeBranches = createAllPortholeTrees();
       const arr = Object.values(portholeBranches);
-      const rssUrls = arr.map(({ xmlUrl }) => xmlUrl);
+      //const rssUrls = arr.map(({ xmlUrl }) => xmlUrl);
+
+      const rss_list = arr.map(({ xmlUrl }) => ({
+        rss_url: xmlUrl,
+        company: "unknown",
+      }));
 
       const jsonData = {
-        rssUrls,
+        rss_list: rss_list,
       };
       const json = isTesting
         ? await getMockDataAsync()

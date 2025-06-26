@@ -630,7 +630,7 @@ export const createAllPortholeTrees = (): TreeDic => {
     //"unhappy" : unhappyTreeObj, // not working
     //architecture: architectureTreeObj,
     designboom: designboomTreeObj,
-    nautilus: nautilusTreeObj,
+    //nautilus: nautilusTreeObj,
   };
   return allPortholeTrees;
 };

@@ -9,7 +9,23 @@ const meta: Meta<typeof Branches> = {
 export default meta;
 type Story = StoryObj<typeof Branches>;
 
-export const BranchesStory: Story = {
+const remoteUrl =
+  "https://scout-222670816692.northamerica-northeast1.run.app/api/porthole/trees";
+
+const localUrl = "http://localhost:5000/api/porthole/trees";
+
+export const BranchesStoryWithRemoteUrl: Story = {
+  render: () => {
+    const onLoadedCallback = (error) => {
+      console.log;
+    };
+    const is_production = false;
+    const feedUrl = is_production ? remoteUrl : localUrl;
+    return <Branches onLoadedCallback={onLoadedCallback} feedUrl={feedUrl} />;
+  },
+};
+
+export const BranchesStoryWithLocalUrl: Story = {
   render: () => {
     const onLoadedCallback = (error) => {
       console.log;
