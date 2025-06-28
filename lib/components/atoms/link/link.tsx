@@ -9,6 +9,8 @@ export type LinkProps = {
   target?: string;
   customClass?: string;
   customStyle?: {};
+  hasUnderline?: boolean;
+  onClick?: () => void;
 };
 
 const Link = ({
@@ -19,8 +21,9 @@ const Link = ({
   customClass = "",
   customStyle = {},
   hasUnderline = true,
+  onClick = () => {},
   ...rest
-}) => {
+}: LinkProps) => {
   return (
     <a
       {...rest}
