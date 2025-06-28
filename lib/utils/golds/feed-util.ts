@@ -95,7 +95,7 @@ export const getRSSBranch = (candidateBranch, index, ix) => {
       photo_large_urls: [photoLargeUrl],
       photo_default_url: defaultImageUrl,
     },
-    url: branch.link,
+    url: branch.link ?? branch.url ?? "",
     title,
     summary: branchDescriptionUnescape,
     published_date: branch.publishedDate ?? "",

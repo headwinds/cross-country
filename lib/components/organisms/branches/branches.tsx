@@ -14,10 +14,14 @@ import BranchList from "./branch-list";
 import { mockResponse } from "./__mocks__/response";
 import { PortholeBranchModel } from "@/lib/models/PortholeBranchModel";
 
+const portholeBranches = createAllPortholeTrees();
+const defaultUrls = Object.values(portholeBranches).map(({ xmlUrl }) => xmlUrl);
+
 export interface BranchesProps {
   isTesting?: boolean;
   onLoadedCallback?: (error: any) => void;
   feedUrl?: string;
+  urls?: string[];
 }
 
 // https://scout-222670816692.northamerica-northeast1.run.app/api/porthole/trees/branches
@@ -37,9 +41,10 @@ const Branches = ({
   isTesting = false,
   onLoadedCallback,
   feedUrl,
+  urls,
 }: BranchesProps) => {
   const [state, setState] = useState({
-    feeds: createAllPortholeTrees(),
+    //feeds: urls || defaultUrls,
     branches: [],
     hasFetched: false,
     allNewBranches: [],
@@ -82,12 +87,14 @@ const Branches = ({
 
   useEffect(() => {
     async function fetchData() {
-      const portholeBranches = createAllPortholeTrees();
-      const arr = Object.values(portholeBranches);
+      //const portholeBranches = createAllPortholeTrees();
+      //const arr = Object.values(portholeBranches);
       //const rssUrls = arr.map(({ xmlUrl }) => xmlUrl);
 
-      const rss_list = arr.map(({ xmlUrl }) => ({
-        rss_url: xmlUrl,
+      const validUrls: string[] = urls || defaultUrls;
+
+      const rss_list = validUrls.map((url) => ({
+        rss_url: url,
         company: "unknown",
       }));
 

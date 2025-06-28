@@ -2,8 +2,8 @@ import React from "react";
 import styles from "./link.module.css";
 import clsx from "clsx";
 
-type LinkProps = {
-  url: string;
+export type LinkProps = {
+  url?: string;
   children: React.ReactNode;
   size?: string;
   target?: string;

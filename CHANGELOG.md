@@ -1,5 +1,13 @@
 # cross-country
 
+## 1.3.6
+
+### Patch Changes
+
+- pass urls for the feed
+- Updated dependencies
+  - cross-country@1.3.6
+
 ## 1.3.4
 
 ### Patch Changes

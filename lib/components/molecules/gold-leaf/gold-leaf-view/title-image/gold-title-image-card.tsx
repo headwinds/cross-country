@@ -18,6 +18,8 @@ export const GoldTitleImageCard = ({
   mode = "unknown",
   onNoImageFoundCallback,
 }: GoldLeafProps) => {
+  console.log("GoldTitleImageCard goldLeafModel", goldLeafModel);
+
   return (
     <>
       <Link

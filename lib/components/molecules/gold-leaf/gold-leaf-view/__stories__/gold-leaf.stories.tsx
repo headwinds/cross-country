@@ -17,8 +17,11 @@ const storyGoldLeafModel: PortholeBranchModel = {
     company: "",
   },
   image: {
-    photo_thumbnail_url: "https://mir-s3-cdn-cf.behance.net/projects/404/825cab157958935.Y3JvcCwzMDAwLDIzNDYsMCwyNTk.jpg",
-    photo_large_urls: ["https://mir-s3-cdn-cf.behance.net/projects/404/825cab157958935.Y3JvcCwzMDAwLDIzNDYsMCwyNTk.jpg"],
+    photo_thumbnail_url:
+      "https://mir-s3-cdn-cf.behance.net/projects/404/825cab157958935.Y3JvcCwzMDAwLDIzNDYsMCwyNTk.jpg",
+    photo_large_urls: [
+      "https://mir-s3-cdn-cf.behance.net/projects/404/825cab157958935.Y3JvcCwzMDAwLDIzNDYsMCwyNTk.jpg",
+    ],
     photo_default_url: "img/loaders/defaultbackground.png",
   },
 };
@@ -36,6 +39,18 @@ export const ArticleLeaf: Story = {
     variant: "article",
     goldLeafModel: storyGoldLeafModel as PortholeBranchModel,
   },
+};
+
+export const ArticleLeafMaxWidth: Story = {
+  args: {
+    variant: "article",
+    goldLeafModel: storyGoldLeafModel as PortholeBranchModel,
+  },
+  render: (args) => (
+    <div style={{ maxWidth: "400px" }}>
+      <GoldLeafView {...args} />
+    </div>
+  ),
 };
 
 export const EmailLeaf: Story = {

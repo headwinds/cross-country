@@ -12,12 +12,14 @@ const onLoadedCallback = (error) => {
   console.log(error.message);
 };
 
-<Branches onLoadedCallback={onLoadedCallback} />;
+const feedUrl = "http://localhost:5000/api/porthole/trees";
+
+<Branches onLoadedCallback={onLoadedCallback} feedUrl={feedUrl} />;
 ```
 
 ### Story
 
-<Canvas of={BranchesStories.BranchesStory} />
+<Canvas of={BranchesStories.BranchesStoryWithLocalUrl} />
 
 ### Digital Garden
 

@@ -19,9 +19,23 @@ export const BranchesStoryWithRemoteUrl: Story = {
     const onLoadedCallback = (error) => {
       console.log;
     };
-    const is_production = false;
+    const is_production = true;
     const feedUrl = is_production ? remoteUrl : localUrl;
-    return <Branches onLoadedCallback={onLoadedCallback} feedUrl={feedUrl} />;
+
+    const sampleUrls = [
+      "https://coolhunting.com/feed/",
+      "http://kotaku.com/rss/vip",
+      "http://feeds.feedburner.com/colossal",
+      "http://feeds.feedburner.com/design-milk",
+    ];
+
+    return (
+      <Branches
+        onLoadedCallback={onLoadedCallback}
+        feedUrl={feedUrl}
+        urls={sampleUrls}
+      />
+    );
   },
 };
 
