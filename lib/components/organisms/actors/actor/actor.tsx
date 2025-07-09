@@ -47,7 +47,7 @@ const defaultCustomTileStyle = {
 
 // skin
 const defaultCustomSkinStyle = {
-  backgroundColor: "red",
+  backgroundColor: "whitesmoke",
 };
 
 export interface ActorProps {

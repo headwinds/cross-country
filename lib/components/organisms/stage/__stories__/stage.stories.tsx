@@ -12,7 +12,7 @@ const meta: Meta<typeof Stage> = {
 export default meta;
 type Story = StoryObj<typeof Stage>;
 
-export const StageStory: Story = {
+export const SingleActorOnStage: Story = {
   render: () => (
     <CrossCountryProvider>
       <Stage
@@ -22,7 +22,26 @@ export const StageStory: Story = {
             display: "flex",
             width: 600,
             height: 300,
-            backgroundColor: "pink",
+            backgroundColor: "white",
+            position: "relative",
+          },
+        }}
+      />
+    </CrossCountryProvider>
+  ),
+};
+
+export const MultipleActorsOnStage: Story = {
+  render: () => (
+    <CrossCountryProvider>
+      <Stage
+        actorModels={actors}
+        config={{
+          customStyle: {
+            display: "flex",
+            width: 600,
+            height: 300,
+            backgroundColor: "white",
             position: "relative",
           },
         }}

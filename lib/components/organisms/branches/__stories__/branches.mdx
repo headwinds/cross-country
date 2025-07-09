@@ -14,7 +14,14 @@ const onLoadedCallback = (error) => {
 
 const feedUrl = "http://localhost:5000/api/porthole/trees";
 
-<Branches onLoadedCallback={onLoadedCallback} feedUrl={feedUrl} />;
+const sampleUrls = [
+  "https://coolhunting.com/feed/",
+  "http://kotaku.com/rss/vip",
+  "http://feeds.feedburner.com/colossal",
+  "http://feeds.feedburner.com/design-milk",
+];  
+
+<Branches onLoadedCallback={onLoadedCallback} feedUrl={feedUrl} urls={sampleUrls} />;
 ```
 
 ### Story

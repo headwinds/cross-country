@@ -30,6 +30,7 @@ const shadedColor = ColorUtil.getShadedColor(rgb, darkenColor);
 
 export interface TileGridProps {
   totalInRow?: number;
+  //totalInColumn?: number;
   gapSize?: number;
   models?: TileModel[];
   isDemo?: boolean;
@@ -42,6 +43,7 @@ export interface TileGridProps {
 
 const TileGrid = ({
   totalInRow = 4,
+  //totalInColumn = 4,
   gapSize = 0,
   models = [defaultTile],
   isDemo = false,
@@ -121,7 +123,17 @@ const TileGrid = ({
   const tileGridClass = isIsometric ? styles.tileGridIso : styles.tileGrid;
   const columnCustomClass = clsx(tileGridClass, customClass);
 
-  return <Column customClass={columnCustomClass}>{tiles}</Column>;
+  return (
+    <Column
+      customClass={columnCustomClass}
+      customStyle={{
+        padding: 0,
+        margin: 0,
+      }}
+    >
+      {tiles}
+    </Column>
+  );
 };
 
 export default TileGrid;

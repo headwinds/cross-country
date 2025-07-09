@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { useRef } from "react";
 import { Column } from "../../";
 import Hunter from "../actors/party/hunter";
 import Warrior from "../actors/party/warrior";
@@ -8,6 +9,8 @@ import ActorSpeech from "../actors/actor-speech";
 import { ActorModel } from "@headwinds/cross-country/models/ActorModel";
 import { ActorSpeechModel } from "../actors/actor-speech/actor-speech";
 import { CharacterLevelModel } from "@/lib/models";
+import TileGrid from "../tile-grid";
+import { createDemoModels } from "@/lib/utils/tile-util";
 
 type StageConfig = {
   customClass?: string;
@@ -83,6 +86,9 @@ const Stage = ({
         return <Hunter model={model} key={model.id} />;
     }
   };
+  const totalTileModels = 9;
+  const tileModels = createDemoModels(totalTileModels);
+  const tileRefs = useRef([]);
 
   const renderActors = () => {
     return actorModels.map((model) => getActor(model));
@@ -96,14 +102,17 @@ const Stage = ({
     (speech) => speech.name === currentSpeaker
   );
 
+  const demoModels = createDemoModels();
+
   return (
     <Column
       customClass={clsx(styles.stage, config?.customClass)}
-      customStyle={config?.customStyle}
+      customStyle={{ ...config?.customStyle, padding: 0, margin: 0 }}
       {...config?.rest}
     >
-      <ActorSpeech speech={currentSpeech} />
+      <TileGrid models={demoModels} totalInRow={3} tileRefs={tileRefs} />
       {renderActors()}
+      <ActorSpeech speech={currentSpeech} />
     </Column>
   );
 };
