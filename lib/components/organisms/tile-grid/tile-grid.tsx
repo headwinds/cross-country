@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useMemo, useCallback } from "react";
 // components
 import { Tile, Column, Row } from "../..";
 import styles from "./tile-grid.module.css";
@@ -39,6 +39,12 @@ export interface TileGridProps {
   isIsometric?: boolean;
   customClass?: string | null;
   tileRefs?: React.MutableRefObject<unknown[]>;
+  onGridConfigChange?: (config: {
+    tileSize: number;
+    gapSize: number;
+    totalInRow: number;
+    width: number;
+  }) => void;
 }
 
 const TileGrid = ({
@@ -52,30 +58,46 @@ const TileGrid = ({
   isIsometric = false,
   customClass = null,
   tileRefs,
+  onGridConfigChange,
 }: TileGridProps) => {
   const [tileSeleted, setSelected] = useState<TileModel | null>(null);
+
+  // Memoize the setSelected callback to prevent unnecessary re-renders
+  const memoizedSetSelected = useCallback((selectedTile: TileModel | null) => {
+    setSelected(selectedTile);
+  }, []);
 
   const size = Math.floor(width / totalInRow - gapSize);
   const totalTiles = models.length;
 
-  const createGrid = () => {
-    const grid = [];
-    // credit https://stackoverflow.com/questions/22464605/convert-a-1d-array-to-2d-array
-    // but be careful here since splice is destructive - make sure you don't destroy the original array!!!
-    // important lesson for xstate that you don't mutate the original array!!!
-    const cloneModels = [...models];
-    // vs const cloneModels = models;
-    while (cloneModels.length) grid.push(cloneModels.splice(0, totalInRow));
-    return grid;
-  };
+  // Notify parent component of grid configuration
+  React.useEffect(() => {
+    if (onGridConfigChange) {
+      onGridConfigChange({
+        tileSize: size,
+        gapSize,
+        totalInRow,
+        width,
+      });
+    }
+  }, [size, gapSize, totalInRow, width, onGridConfigChange]);
 
-  const initialModelGrid = createGrid();
-  const renderGrid = (grid) => {
+  const createGrid = useMemo(() => {
+    const grid = [];
+    // Create a 2D grid from the 1D models array without mutating the original
+    const modelsCopy = [...models];
+    for (let i = 0; i < modelsCopy.length; i += totalInRow) {
+      grid.push(modelsCopy.slice(i, i + totalInRow));
+    }
+    return grid;
+  }, [models, totalInRow]);
+
+  const tiles = useMemo(() => {
     let count = -1;
 
     const createColumns = (columns, x) => {
       return columns.map((cell, y) => {
-        const tileModel = grid[x][y];
+        const tileModel = columns[y];
         if (count < totalTiles - 1) {
           count++;
         }
@@ -96,7 +118,7 @@ const TileGrid = ({
               width: size,
               height: size,
             }}
-            setSelected={setSelected}
+            setSelected={memoizedSetSelected}
             isSelected={isSelected}
             ref={(ref) => {
               if (tileRefs && ref) {
@@ -107,6 +129,7 @@ const TileGrid = ({
         );
       });
     };
+
     const createRow = (columns, x) => {
       const row = createColumns(columns, x);
       return (
@@ -115,10 +138,18 @@ const TileGrid = ({
         </Row>
       );
     };
-    return grid.map((columns, x) => createRow(columns, x));
-  };
 
-  const tiles = renderGrid(initialModelGrid);
+    return createGrid.map((columns, x) => createRow(columns, x));
+  }, [
+    createGrid,
+    tileConfig,
+    gapSize,
+    size,
+    tileSeleted,
+    memoizedSetSelected,
+    totalTiles,
+    tileRefs,
+  ]);
 
   const tileGridClass = isIsometric ? styles.tileGridIso : styles.tileGrid;
   const columnCustomClass = clsx(tileGridClass, customClass);

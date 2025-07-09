@@ -1,5 +1,7 @@
 import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
 import * as StageStories from "./stage.stories";
+import StageGridExample from "./stage-grid-example";
+import StageSpeechStory from "./stage-speech-story";
 
 <Meta of={StageStories} />
 
@@ -77,3 +79,12 @@ const actors = [hunterActorModel, warriorActorModel, wispActorModel];
 ### Story
 
 <Canvas of={StageStories.MultipleActorsOnStage} />
+
+### Positioning Demo
+
+<StageGridExample />
+
+### Speech Demo
+
+<StageSpeechStory />
+

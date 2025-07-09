@@ -60,12 +60,12 @@ const InteractiveTile = forwardRef<HTMLDivElement, InteractiveTileType>(
     const colorProps = useSpring(springModel);
 
     const onMouseEnter = () => {
-      console.log("Tile onMouseEnter");
+      // console.log("Tile onMouseEnter");
       toggleHovered(true);
     };
 
     const onMouseLeave = () => {
-      console.log("Tile onMouseLeave");
+      // console.log("Tile onMouseLeave");
       toggleHovered(false);
     };
 
@@ -74,7 +74,7 @@ const InteractiveTile = forwardRef<HTMLDivElement, InteractiveTileType>(
       { id: 1, key: "movement cost", value: "3" },
     ];
 
-    console.log("InteractiveTile", { model, customStyle });
+    // console.log("InteractiveTile", { model, customStyle });
 
     return (
       <Column

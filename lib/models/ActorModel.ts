@@ -5,6 +5,7 @@ import { WorldModel } from "./WorldModel";
 import { ProfessionModel } from "./ProfessionModel";
 import { ViceModel } from "./ViceModel";
 import { CharacterLevelModel } from "./CharacterLevelModel";
+import { GridPosition } from "../utils/grid-position-util";
 
 export type ActorType = {
   id: number;
@@ -46,6 +47,7 @@ export interface ActorModel {
   tileSize?: number;
   variant?: string;
   position?: { x: number; y: number; z: number };
+  gridPosition?: GridPosition; // New grid-based positioning
   customStyle?: {
     position: string;
     zIndex: number;
