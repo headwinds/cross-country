@@ -1,11 +1,5 @@
 import React, { useState, useEffect, createRef, useRef } from "react";
-import {
-  Hunter,
-  Warrior,
-  TileGrid,
-  Stage,
-  Tile,
-} from "../../../lib/components";
+import { Hunter, Warrior, TileGrid, Stage, Tile } from "../..";
 
 const FrozenLakeBoard = ({
   tileModels,
