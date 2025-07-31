@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Column, Paragraph } from "@headwinds/cross-country/components";
 import Login from "../login";
 import type { UserModel } from "@headwinds/cross-country/models";

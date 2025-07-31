@@ -3,18 +3,12 @@ import type { StorybookConfig } from "@storybook/react-vite";
 const config: StorybookConfig = {
   stories: ["../lib/**/*.mdx", "../lib/**/*.stories.@(ts|tsx|mdx)"],
 
-  addons: [
-    "@storybook/addon-links",
-    {
-      name: "@storybook/addon-docs",
-      options: {
-        configureJSX: true,
-      },
+  addons: ["@storybook/addon-links", {
+    name: "@storybook/addon-docs",
+    options: {
+      configureJSX: true,
     },
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
-    "@storybook/addon-mdx-gfm",
-  ],
+  }],
 
   framework: {
     name: "@storybook/react-vite",

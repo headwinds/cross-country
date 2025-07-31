@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import Actor from "../../actor";
+import { ActorModel } from "@/lib/models";
 
 // pre-configured character
 const head = { color: "gold" };
@@ -17,7 +18,7 @@ const defaultModel = {
 };
 
 export interface HunterProps {
-  model?: any;
+  model?: ActorModel;
   tileSize?: number;
 }
 

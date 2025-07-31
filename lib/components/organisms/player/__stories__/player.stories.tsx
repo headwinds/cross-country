@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import Player from "../player";
 import { Column, Row } from "../../../";
 import Input from "@headwinds/cross-country/components/atoms/text/input";

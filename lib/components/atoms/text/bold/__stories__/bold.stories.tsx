@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import Bold from "../bold";
 import Paragraph from "../../paragraph";
 import styles from "../bold.module.css";

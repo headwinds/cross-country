@@ -1,3 +1,21 @@
+export type TileImageConfig = {
+  url: string;
+  type: "jpg" | "png" | "svg" | "webp";
+  fit?: "cover" | "contain" | "fill" | "scale-down" | "none";
+  position?:
+    | "center"
+    | "top"
+    | "bottom"
+    | "left"
+    | "right"
+    | "top-left"
+    | "top-right"
+    | "bottom-left"
+    | "bottom-right";
+  opacity?: number;
+  repeat?: "no-repeat" | "repeat" | "repeat-x" | "repeat-y";
+};
+
 export type TileModel = {
   id: string;
   name: string;
@@ -14,6 +32,9 @@ export type TileModel = {
   fill: string;
   elevation: number;
   age: number;
+  // New image asset properties for modding support
+  image?: TileImageConfig;
+  backgroundImage?: TileImageConfig; // Alternative background image
 };
 
 export const defaultTileModel: TileModel = {

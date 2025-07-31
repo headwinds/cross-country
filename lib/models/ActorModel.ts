@@ -61,4 +61,12 @@ export interface ActorModel {
   vice?: ViceModel[];
   world?: WorldModel;
   ProfessionModel?: ProfessionModel;
+  config?: {
+    head: { color: string };
+    body: { color: string };
+    legs: { color: string };
+    type: string;
+  };
+  customClass?: string;
+  customSkinStyle?: { [key: string]: string };
 }

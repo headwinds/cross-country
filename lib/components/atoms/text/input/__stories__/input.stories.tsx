@@ -1,5 +1,5 @@
 import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import Input from "../text-input";
 import TextInputStory from "./text-input-story";
 import TextInputDefaultValueStory from "./text-input-default-value-story";

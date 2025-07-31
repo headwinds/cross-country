@@ -10,22 +10,40 @@ import { ActorModel } from "@headwinds/cross-country/models/ActorModel";
 import { ActorSpeechModel } from "../actors/actor-speech/actor-speech";
 import { CharacterLevelModel } from "@/lib/models";
 import TileGrid from "../tile-grid";
-import { createDemoModels } from "@/lib/utils/tile-util";
+import { createDemoModels, scenarioTileSets } from "@/lib/utils/tile-util";
 import {
   gridToPixelPosition,
+  gridToActorPosition,
   GridConfig,
+  ActorPositioningConfig,
 } from "@/lib/utils/grid-position-util";
 
 type StageConfig = {
   customClass?: string;
   customStyle?: any;
   rest?: any;
+  // Tile configuration moved here
+  useImageTiles?: boolean;
+  tileTheme?:
+    | keyof typeof import("@/lib/utils/tile-util").scenarioTileSets
+    | "mixed";
+  customTileModels?: import("@headwinds/cross-country/models/TileModel").TileModel[];
+  totalTiles?: number;
+  // Actor positioning configuration
+  actorPositioning?: ActorPositioningConfig;
 };
 
-const defaultConfig: StageConfig = {
+const defaultStageConfig: StageConfig = {
   customClass: "",
   customStyle: {},
   rest: {},
+  useImageTiles: false,
+  tileTheme: "mixed",
+  totalTiles: 9,
+  actorPositioning: {
+    actorHeight: 80,
+    bottomMargin: 20,
+  },
 };
 
 const defaultLevel: CharacterLevelModel = {
@@ -57,16 +75,16 @@ export const defaultActorModel: ActorModel = {
 };
 
 export interface StageProps {
-  config?: StageConfig;
-  actorModels?: ActorModel[];
   actorSpeech?: ActorSpeechModel[];
-  currentSpeaker?: string;
+  actorModels?: ActorModel[];
   gridConfig?: GridConfig; // Grid configuration for positioning
+  stageConfig?: StageConfig; // All stage configuration including tiles
+  currentGameState?: string; // Game state ID for story position recovery
 }
 
 const defaultActorSpeech = [
   {
-    messageId: "today",
+    messageId: "initial",
     values: { ts: Date.now() },
     actorModel: defaultActorModel,
     name: "hunter",
@@ -75,11 +93,11 @@ const defaultActorSpeech = [
 ] as ActorSpeechModel[];
 
 const Stage = ({
-  config = defaultConfig,
-  actorModels = [defaultActorModel],
   actorSpeech = defaultActorSpeech,
-  currentSpeaker = "hunter",
+  actorModels = [defaultActorModel],
   gridConfig,
+  stageConfig = defaultStageConfig,
+  currentGameState = "initial",
 }: StageProps) => {
   // Default grid configuration
   const defaultGridConfig: GridConfig = {
@@ -95,15 +113,27 @@ const Stage = ({
 
   const finalGridConfig = gridConfig || currentGridConfig;
 
+  const tileRefs = useRef([]);
+
+  // Extract tile configuration from stageConfig
+  const {
+    useImageTiles = false,
+    tileTheme = "mixed",
+    customTileModels,
+    totalTiles = 9,
+    actorPositioning = defaultStageConfig.actorPositioning!,
+  } = stageConfig;
+
   const getActor = useCallback(
     (model) => {
       // Convert grid position to pixel position if gridPosition is provided
       let finalModel = { ...model };
 
       if (model.gridPosition && finalGridConfig) {
-        const pixelPosition = gridToPixelPosition(
+        const pixelPosition = gridToActorPosition(
           model.gridPosition,
-          finalGridConfig
+          finalGridConfig,
+          actorPositioning
         );
         finalModel = {
           ...model,
@@ -121,26 +151,56 @@ const Stage = ({
           return <Hunter model={finalModel} key={model.id} />;
       }
     },
-    [finalGridConfig]
+    [finalGridConfig, actorPositioning]
   );
 
-  const totalTileModels = 9;
-  const tileModels = createDemoModels(totalTileModels);
-  const tileRefs = useRef([]);
+  // Create tile models based on configuration
+  const tileModels = useMemo(() => {
+    // Use custom tile models if provided
+    if (customTileModels && customTileModels.length > 0) {
+      return customTileModels;
+    }
+
+    // Check if a specific theme is requested
+    if (tileTheme !== "mixed" && tileTheme in scenarioTileSets) {
+      // Use a specific predefined theme (works with both color and image tiles)
+      const themeModels = scenarioTileSets[tileTheme];
+      // Repeat the theme models to fill the grid if needed
+      const repeatedModels = [];
+      for (let i = 0; i < totalTiles; i++) {
+        repeatedModels.push(themeModels[i % themeModels.length]);
+      }
+      return repeatedModels;
+    }
+
+    // Otherwise create based on image preference
+    if (useImageTiles) {
+      // Use mixed image tiles
+      return createDemoModels(totalTiles, true);
+    } else {
+      // Use traditional color-based tiles
+      return createDemoModels(totalTiles, false);
+    }
+  }, [useImageTiles, tileTheme, customTileModels, totalTiles]);
 
   const renderActors = useMemo(() => {
+    if (!actorModels || actorModels.length === 0 || !Array.isArray(actorModels))
+      return null;
+
     return actorModels.map((model) => getActor(model));
   }, [actorModels, getActor]);
 
-  // find the hunter model
-  const actorModel = actorModels.find(
-    (model) => model.variant === currentSpeaker
-  );
+  // Find current speech based on game state
   const currentSpeech = actorSpeech.find(
-    (speech) => speech.name === currentSpeaker
+    (speech) => speech.messageId === currentGameState
   );
 
-  const demoModels = useMemo(() => createDemoModels(), []);
+  // Find the actor model for the current speaker
+  const currentSpeakerName = currentSpeech?.name;
+  const actorModel =
+    Array.isArray(actorModels) && currentSpeakerName
+      ? actorModels?.find((model) => model.variant === currentSpeakerName)
+      : null;
 
   const handleGridConfigChange = useCallback((newConfig: GridConfig) => {
     setCurrentGridConfig(newConfig);
@@ -148,12 +208,12 @@ const Stage = ({
 
   return (
     <Column
-      customClass={clsx(styles.stage, config?.customClass)}
-      customStyle={{ ...config?.customStyle, padding: 0, margin: 0 }}
-      {...config?.rest}
+      customClass={clsx(styles.stage, stageConfig?.customClass)}
+      customStyle={{ ...stageConfig?.customStyle, padding: 0, margin: 0 }}
+      {...stageConfig?.rest}
     >
       <TileGrid
-        models={demoModels}
+        models={tileModels}
         totalInRow={3}
         tileRefs={tileRefs}
         onGridConfigChange={handleGridConfigChange}

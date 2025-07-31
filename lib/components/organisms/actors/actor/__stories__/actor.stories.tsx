@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import Actor from "../actor";
 import ActorBuilder from "../actor-builder";
 import CrossCountryProvider from "@headwinds/cross-country/providers/cross-country-provider";

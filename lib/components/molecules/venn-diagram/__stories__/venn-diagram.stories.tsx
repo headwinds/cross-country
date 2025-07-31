@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Column } from "../../..";
 import VennDiagram from "../venn-diagram";
 import { defaultCircles, twoCircles } from "../venn-diagram-default-circles";
