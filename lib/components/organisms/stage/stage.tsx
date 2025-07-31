@@ -188,6 +188,10 @@ const Stage = ({
     return actorModels.map((model) => getActor(model));
   }, [actorModels, getActor]);
 
+  const Actors = () => {
+    return renderActors;
+  };
+
   // Find current speech based on game state
   const currentSpeech = actorSpeech.find(
     (speech) => speech.messageId === currentGameState
@@ -204,9 +208,66 @@ const Stage = ({
     setCurrentGridConfig(newConfig);
   }, []);
 
-  const currentSpeechX = actorModel?.gridPosition.col * 100 + 100;
-  const currentSpeechY = actorModel?.gridPosition.row * 100 - 100;
+  /*
+  let's consider a 3x3 grid
 
+  we typically position the speech to the top right of the actor but on certain positions we need to adjust the position
+
+  we need to ensure the speech is visible 
+  - if the actor is in the 0,0 position, we need to move the speech down
+  - if the actor is in the 0,2 position, we need to move the speech to the left
+  - if the actor is in the 2,0 position, no change
+  - if the actor is in the 2,2 position, we need to move the speech to the left
+
+  */
+
+  const getSpeechPosition = (
+    actorModel: ActorModel,
+    row: number,
+    col: number,
+    totalInCol: number,
+    totalInRow: number
+  ) => {
+    if (row === 0 && col === 0) {
+      return {
+        x: actorModel?.gridPosition.col * 100 + 100,
+        y: actorModel?.gridPosition.row * 100 - 100,
+      };
+    }
+
+    const lastCol = totalInCol - 1;
+
+    if (row === 0 && col === lastCol) {
+      return {
+        x: actorModel?.gridPosition.col * 100 - 100,
+        y: actorModel?.gridPosition.row * 100 - 100,
+      };
+    }
+
+    const lastRow = totalInRow - 1;
+
+    if (row === lastRow && col === 0) {
+      return {
+        x: actorModel?.gridPosition.col * 100 + 100,
+        y: actorModel?.gridPosition.row * 100 - 100,
+      };
+    }
+
+    // finally
+
+    const currentSpeechX = actorModel?.gridPosition.col * 100 + 80;
+    const currentSpeechY = actorModel?.gridPosition.row * 100 - 60;
+
+    return { x: currentSpeechX, y: currentSpeechY };
+  };
+
+  const currentSpeechPosition = getSpeechPosition(
+    actorModel,
+    actorModel?.gridPosition.row,
+    actorModel?.gridPosition.col,
+    finalGridConfig.totalInCol,
+    finalGridConfig.totalInRow
+  );
   return (
     <Column
       customClass={clsx(styles.stage, stageConfig?.customClass)}
@@ -226,10 +287,13 @@ const Stage = ({
         tileRefs={tileRefs}
         onGridConfigChange={handleGridConfigChange}
       />
-      {renderActors}
+      <Actors />
       <ActorSpeech
         speech={currentSpeech}
-        position={{ x: currentSpeechX, y: currentSpeechY }}
+        position={{
+          x: currentSpeechPosition.x,
+          y: currentSpeechPosition.y,
+        }}
         isVisible={true}
       />
     </Column>

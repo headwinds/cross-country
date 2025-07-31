@@ -4,7 +4,7 @@ import styles from "./actor.module.css";
 import clsx from "clsx";
 import type { ActorModel } from "@headwinds/cross-country/models";
 
-const defaultTileSize = 50;
+const defaultTileSize = 100;
 
 const head = { color: "purple" };
 const body = { color: "green" };
@@ -33,7 +33,7 @@ const defaultPosition = { x: 0, y: 0, z: 0 };
 
 const defaultCustomTileStyle = {
   opacity: 1,
-  width: defaultTileSize,
+  width: 80,
   height: 80,
   alignItems: "center",
 };
@@ -82,12 +82,17 @@ const Actor = ({
 
   const { x, y, z } = position;
 
+  // TODO this is a magic number, we need to find a better way to do this
+  // need to consider tile width and actor width to calculate the correct position
+  // and center the actor in the tile
+  const xMod = 40;
+
   return (
     <Column
       customClass={styles.actor}
       customStyle={{
         ...customTileStyle,
-        transform: `translate3d(${x}px, ${y}px, ${z}px)`,
+        transform: `translate3d(${x - xMod}px, ${y}px, ${z}px)`,
       }}
       {...rest}
     >

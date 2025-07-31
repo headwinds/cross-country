@@ -13,14 +13,13 @@ const TILE_SIZE = 100;
 const actorWispModel: ActorModel = {
   id: 0,
   type: "wisp",
-  //position: { x: 0, y: 0, z: 0 },
-  gridPosition: { row: 1, col: 1 }, // Top-left tile
+  gridPosition: { row: 1, col: 0 },
   status: "idle",
   customStyle: {
     position: "absolute",
     zIndex: 0,
-    left: 20,
-    top: 120,
+    left: 0,
+    top: 0,
     backgroundColor: "green",
   },
   customSkinStyle: {
