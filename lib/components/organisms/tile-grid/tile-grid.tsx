@@ -30,11 +30,10 @@ const shadedColor = ColorUtil.getShadedColor(rgb, darkenColor);
 
 export interface TileGridProps {
   totalInRow?: number;
-  //totalInColumn?: number;
+  totalInCol?: number;
   gapSize?: number;
   models?: TileModel[];
   isDemo?: boolean;
-  width?: number;
   tileConfig?: { size: number; fill: string; cornerColor: string };
   isIsometric?: boolean;
   customClass?: string | null;
@@ -43,17 +42,16 @@ export interface TileGridProps {
     tileSize: number;
     gapSize: number;
     totalInRow: number;
-    width: number;
+    totalInCol: number;
   }) => void;
 }
 
 const TileGrid = ({
   totalInRow = 4,
-  //totalInColumn = 4,
+  totalInCol = 4,
   gapSize = 0,
   models = [defaultTile],
   isDemo = false,
-  width = 400,
   tileConfig = { size: 100, fill: "#67bd67", cornerColor: shadedColor },
   isIsometric = false,
   customClass = null,
@@ -67,30 +65,48 @@ const TileGrid = ({
     setSelected(selectedTile);
   }, []);
 
-  const size = Math.floor(width / totalInRow - gapSize);
-  const totalTiles = models.length;
+  // Use the tile size from config
+  const tileSize = tileConfig.size;
+  const totalTiles = totalInRow * totalInCol;
 
   // Notify parent component of grid configuration
   React.useEffect(() => {
     if (onGridConfigChange) {
       onGridConfigChange({
-        tileSize: size,
+        tileSize,
         gapSize,
         totalInRow,
-        width,
+        totalInCol,
       });
     }
-  }, [size, gapSize, totalInRow, width, onGridConfigChange]);
+  }, [tileSize, gapSize, totalInRow, totalInCol, onGridConfigChange]);
 
   const createGrid = useMemo(() => {
     const grid = [];
-    // Create a 2D grid from the 1D models array without mutating the original
+    // Create a proper 2D grid with totalInRow rows and totalInCol columns
     const modelsCopy = [...models];
-    for (let i = 0; i < modelsCopy.length; i += totalInRow) {
-      grid.push(modelsCopy.slice(i, i + totalInRow));
+
+    // Ensure we have enough models to fill the grid
+    while (modelsCopy.length < totalTiles) {
+      modelsCopy.push(...models);
+    }
+
+    // Create grid: totalInRow rows, each with totalInCol columns
+    for (let row = 0; row < totalInRow; row++) {
+      const rowTiles = [];
+      for (let col = 0; col < totalInCol; col++) {
+        const index = row * totalInCol + col;
+        if (index < modelsCopy.length) {
+          rowTiles.push(modelsCopy[index]);
+        } else {
+          // Use the default tile if we run out of models
+          rowTiles.push(defaultTile);
+        }
+      }
+      grid.push(rowTiles);
     }
     return grid;
-  }, [models, totalInRow]);
+  }, [models, totalInRow, totalInCol, totalTiles]);
 
   const tiles = useMemo(() => {
     let count = -1;
@@ -115,8 +131,8 @@ const TileGrid = ({
             customStyle={{
               margin: gapSize,
               backgroundColor: tileModel?.fill ?? "pink", //tileModel.color,
-              width: size,
-              height: size,
+              width: tileSize,
+              height: tileSize,
             }}
             setSelected={memoizedSetSelected}
             isSelected={isSelected}
@@ -144,7 +160,7 @@ const TileGrid = ({
     createGrid,
     tileConfig,
     gapSize,
-    size,
+    tileSize,
     tileSeleted,
     memoizedSetSelected,
     totalTiles,

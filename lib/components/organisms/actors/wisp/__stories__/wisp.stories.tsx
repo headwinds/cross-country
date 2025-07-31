@@ -2,18 +2,19 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import Wisp from "@/lib/components/organisms/actors/wisp";
 import { ActorModel } from "@/lib/models";
 import { ActorSpeechModel } from "@/lib/components/organisms/actors/actor-speech";
-import Tile from "@/lib/components/molecules/tile";
 import Stage from "@/lib/components/organisms/stage";
 
 interface TemplateProps {
   message: string;
 }
 
+const TILE_SIZE = 100;
+
 const actorWispModel: ActorModel = {
   id: 0,
   type: "wisp",
   //position: { x: 0, y: 0, z: 0 },
-  gridPosition: { row: 2, col: 1 }, // Top-left tile
+  gridPosition: { row: 1, col: 1 }, // Top-left tile
   status: "idle",
   customStyle: {
     position: "absolute",
@@ -26,10 +27,10 @@ const actorWispModel: ActorModel = {
     backgroundColor: "#e8e8e8",
   },
   customClass: "wisp",
-  tileSize: 40,
+  tileSize: TILE_SIZE,
   variant: "wisp",
   alignment: "friendly",
-  name: "Wisp of the Forest",
+  name: "elevin",
   health: 100,
   mana: 100,
   level: {
@@ -66,23 +67,7 @@ const meta: Meta<typeof Template> = {
 export default meta;
 type Story = StoryObj<typeof Template>;
 
-export const WispStory: Story = {
-  args: {
-    message: "hello world",
-  },
-};
-
-/*
-A Stage requires:
-
-export interface StageProps {
-  actorSpeech?: ActorSpeechModel[];
-  actorModels?: ActorModel[];
-  gridConfig?: GridConfig; // Grid configuration for positioning
-  stageConfig?: StageConfig; // All stage configuration including tiles
-  currentGameState?: string; // Game state ID for story position recovery
-}
-*/
+export const WispStory: Story = {};
 
 export const WispTileStage: Story = {
   render: () => {
@@ -92,31 +77,26 @@ export const WispTileStage: Story = {
         messageId: "initial",
         values: { ts: Date.now() },
         actorModel: actorWispModel,
-        name: "wisp",
-        text: "hello world",
+        text: "there's rumour of a faerie house nearby...",
       },
     ];
     const gridConfig = {
-      rows: 10,
-      columns: 10,
-      tileSize: 40,
+      tileSize: TILE_SIZE,
       gapSize: 10,
-      totalInRow: 10,
-      width: 1000,
-      height: 1000,
+      totalInRow: 3,
+      totalInCol: 3,
     };
     const stageConfig = {
-      tileSize: 40,
+      tileSize: TILE_SIZE,
       gapSize: 10,
-      totalInRow: 10,
-      width: 200,
-      height: 200,
+      width: TILE_SIZE * 3,
+      height: TILE_SIZE * 3,
       customClass: "wisp-stage",
       customStyle: {
         position: "absolute",
         zIndex: 0,
         left: 20,
-        top: 120,
+        top: 20,
         backgroundColor: "white",
       },
     };

@@ -8,7 +8,6 @@ export type ActorSpeechModel = {
   messageId: string;
   values?: Record<string, string | number>;
   actorModel: ActorModel;
-  name: string;
   text: string;
 };
 
@@ -27,7 +26,7 @@ export const ActorSpeech: FC<ActorSpeechProps> = ({
     return null;
   }
 
-  const { messageId, values, text, name } = speech;
+  const { messageId, values, text } = speech;
 
   return (
     <Column
@@ -47,7 +46,7 @@ export const ActorSpeech: FC<ActorSpeechProps> = ({
       }}
     >
       <div style={{ fontSize: "10px", opacity: 0.8, marginBottom: "4px" }}>
-        {name}
+        {speech?.actorModel?.name ?? ""}
       </div>
       <Paragraph customClass={styles.actorParagraph}>
         <span style={{ color: "white" }}>

@@ -14,22 +14,15 @@ const defaultConfig = { head, body, legs, type: "humanoid" };
 const renderHeadBodyFeet = (config, tileSize) => {
   const { head, body, legs } = config;
 
-  const third = Math.floor(tileSize / 3) - 4;
-  const validThird = String(third) === "NaN" ? 0 : third;
-
   return (
     <div>
-      <div
-        style={{ backgroundColor: head.color, width: 40, height: validThird }}
-      ></div>
-      <div
-        style={{ backgroundColor: body.color, width: 40, height: validThird }}
-      ></div>
+      <div style={{ backgroundColor: head.color, width: 40, height: 40 }}></div>
+      <div style={{ backgroundColor: body.color, width: 40, height: 20 }}></div>
       <div
         style={{
           backgroundColor: legs.color,
           width: 40,
-          height: validThird - 10,
+          height: 20,
         }}
       ></div>
     </div>

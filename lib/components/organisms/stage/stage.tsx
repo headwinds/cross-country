@@ -12,10 +12,9 @@ import { CharacterLevelModel } from "@/lib/models";
 import TileGrid from "../tile-grid";
 import { createDemoModels, scenarioTileSets } from "@/lib/utils/tile-util";
 import {
-  gridToPixelPosition,
   gridToActorPosition,
-  GridConfig,
-  ActorPositioningConfig,
+  type GridConfig,
+  type ActorPositioningConfig,
 } from "@/lib/utils/grid-position-util";
 
 type StageConfig = {
@@ -87,10 +86,17 @@ const defaultActorSpeech = [
     messageId: "initial",
     values: { ts: Date.now() },
     actorModel: defaultActorModel,
-    name: "hunter",
     text: "Today is a good day to hunt.",
   },
 ] as ActorSpeechModel[];
+
+// Default grid configuration
+const defaultGridConfig: GridConfig = {
+  tileSize: 100,
+  gapSize: 0,
+  totalInRow: 3,
+  totalInCol: 3,
+};
 
 const Stage = ({
   actorSpeech = defaultActorSpeech,
@@ -99,14 +105,6 @@ const Stage = ({
   stageConfig = defaultStageConfig,
   currentGameState = "initial",
 }: StageProps) => {
-  // Default grid configuration
-  const defaultGridConfig: GridConfig = {
-    tileSize: 100,
-    gapSize: 0,
-    totalInRow: 3,
-    width: 400,
-  };
-
   const [currentGridConfig, setCurrentGridConfig] = React.useState<GridConfig>(
     gridConfig || defaultGridConfig
   );
@@ -120,7 +118,7 @@ const Stage = ({
     useImageTiles = false,
     tileTheme = "mixed",
     customTileModels,
-    totalTiles = 9,
+    totalTiles = finalGridConfig.totalInCol * finalGridConfig.totalInRow,
     actorPositioning = defaultStageConfig.actorPositioning!,
   } = stageConfig;
 
@@ -196,7 +194,7 @@ const Stage = ({
   );
 
   // Find the actor model for the current speaker
-  const currentSpeakerName = currentSpeech?.name;
+  const currentSpeakerName = currentSpeech?.actorModel?.variant;
   const actorModel =
     Array.isArray(actorModels) && currentSpeakerName
       ? actorModels?.find((model) => model.variant === currentSpeakerName)
@@ -206,6 +204,9 @@ const Stage = ({
     setCurrentGridConfig(newConfig);
   }, []);
 
+  const currentSpeechX = actorModel?.gridPosition.col * 100 + 100;
+  const currentSpeechY = actorModel?.gridPosition.row * 100 - 100;
+
   return (
     <Column
       customClass={clsx(styles.stage, stageConfig?.customClass)}
@@ -214,12 +215,23 @@ const Stage = ({
     >
       <TileGrid
         models={tileModels}
-        totalInRow={3}
+        totalInRow={finalGridConfig.totalInRow}
+        totalInCol={finalGridConfig.totalInCol}
+        gapSize={finalGridConfig.gapSize}
+        tileConfig={{
+          size: finalGridConfig.tileSize,
+          fill: "#67bd67",
+          cornerColor: "#5aa85a",
+        }}
         tileRefs={tileRefs}
         onGridConfigChange={handleGridConfigChange}
       />
       {renderActors}
-      <ActorSpeech speech={currentSpeech} />
+      <ActorSpeech
+        speech={currentSpeech}
+        position={{ x: currentSpeechX, y: currentSpeechY }}
+        isVisible={true}
+      />
     </Column>
   );
 };

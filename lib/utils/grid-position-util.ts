@@ -8,12 +8,12 @@ export interface PixelPosition {
   y: number;
   z: number;
 }
-
+// a tile is always a square
 export interface GridConfig {
   tileSize: number;
   gapSize: number;
   totalInRow: number;
-  width: number;
+  totalInCol: number;
 }
 
 export interface ActorPositioningConfig {
@@ -31,10 +31,10 @@ export const gridToPixelPosition = (
   gridPos: GridPosition,
   config: GridConfig
 ): PixelPosition => {
-  const { tileSize, gapSize, totalInRow, width } = config;
+  const { tileSize, gapSize } = config;
 
-  // Calculate the actual tile size based on width and total tiles per row
-  const actualTileSize = Math.floor(width / totalInRow - gapSize);
+  // Use the tile size directly from config
+  const actualTileSize = tileSize;
 
   // Calculate pixel position for the top-left corner of the tile
   const tileX = gridPos.col * (actualTileSize + gapSize);
@@ -64,11 +64,11 @@ export const gridToActorPosition = (
   config: GridConfig,
   actorConfig: ActorPositioningConfig = {}
 ): PixelPosition => {
-  const { tileSize, gapSize, totalInRow, width } = config;
+  const { tileSize, gapSize } = config;
   const { actorHeight = 80, bottomMargin = 20 } = actorConfig;
 
-  // Calculate the actual tile size based on width and total tiles per row
-  const actualTileSize = Math.floor(width / totalInRow - gapSize);
+  // Use the tile size directly from config
+  const actualTileSize = tileSize;
 
   // Calculate pixel position for the top-left corner of the tile
   const tileX = gridPos.col * (actualTileSize + gapSize);
@@ -100,10 +100,10 @@ export const pixelToGridPosition = (
   pixelPos: PixelPosition,
   config: GridConfig
 ): GridPosition => {
-  const { tileSize, gapSize, totalInRow, width } = config;
+  const { tileSize, gapSize } = config;
 
-  // Calculate the actual tile size based on width and total tiles per row
-  const actualTileSize = Math.floor(width / totalInRow - gapSize);
+  // Use the tile size directly from config
+  const actualTileSize = tileSize;
 
   // Calculate grid position
   const col = Math.floor(pixelPos.x / (actualTileSize + gapSize));
