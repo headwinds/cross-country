@@ -14,6 +14,7 @@ export interface GridConfig {
   gapSize: number;
   totalInRow: number;
   totalInCol: number;
+  tiles: number[][]; // id for each tile type like 0 = grass, 1 = water, 2 = tree, etc.
 }
 
 export interface ActorPositioningConfig {

@@ -54,6 +54,7 @@ export interface ActorProps {
   children?: any;
   type?: string;
   model?: ActorModel;
+  image?: string;
 }
 
 const Actor = ({
@@ -64,6 +65,7 @@ const Actor = ({
   config = defaultConfig,
   tileSize = defaultTileSize,
   children = null,
+  image = null,
   ...rest
 }: ActorProps) => {
   const columnCustomClass = clsx(styles.actor, customClass);
@@ -87,11 +89,18 @@ const Actor = ({
   // and center the actor in the tile
   const xMod = 40;
 
+  // Create dynamic tile style based on tileSize prop
+  const dynamicTileStyle = {
+    ...customTileStyle,
+    width: tileSize || customTileStyle.width,
+    height: tileSize || customTileStyle.height,
+  };
+
   return (
     <Column
       customClass={styles.actor}
       customStyle={{
-        ...customTileStyle,
+        ...dynamicTileStyle,
         transform: `translate3d(${x - xMod}px, ${y}px, ${z}px)`,
       }}
       {...rest}

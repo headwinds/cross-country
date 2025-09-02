@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import Actor from "../actor";
 import ActorBuilder from "../actor-builder";
 import CrossCountryProvider from "@headwinds/cross-country/providers/cross-country-provider";
+import giant from "./giant.png";
 
 const meta: Meta<typeof Actor> = {
   component: Actor,
@@ -28,6 +29,30 @@ export const ActorStory: Story = {
             backgroundColor: "grey",
           }}
         />
+      </div>
+    </CrossCountryProvider>
+  ),
+};
+
+export const ActorCosplayStory: Story = {
+  render: () => (
+    <CrossCountryProvider>
+      <div style={{ height: 300, width: 300 }}>
+        <Actor
+          position={{
+            x: 100,
+            y: 100,
+            z: 0,
+          }}
+          config={null}
+          customSkinStyle={{
+            backgroundColor: "transparent",
+            width: 300,
+            height: 300,
+          }}
+        >
+          <img src={giant} alt="giant" width={300} />
+        </Actor>
       </div>
     </CrossCountryProvider>
   ),

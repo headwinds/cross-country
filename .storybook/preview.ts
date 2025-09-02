@@ -18,6 +18,11 @@ const preview: Preview = {
         ],
       },
     },
+    docs: {
+      canvas: {
+        height: 500,
+      },
+    },
   },
 };
 

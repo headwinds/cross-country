@@ -13,13 +13,13 @@ const defaultTile: TileModel = {
   description: "",
   material: "snow",
   movement_cost: 0,
-  color: "#67bd67",
+  color: "white",
   type: "tile",
   skin: "",
   damage: 0,
   is_obstacle: true,
   obstacle_remover: "shovel",
-  fill: "#67bd67",
+  fill: "white",
   elevation: 0,
   age: -1, // doesn't age
 };
@@ -130,7 +130,7 @@ const TileGrid = ({
             {...tileConfig}
             customStyle={{
               margin: gapSize,
-              backgroundColor: tileModel?.fill ?? "pink", //tileModel.color,
+              backgroundColor: "orange", //tileModel?.fill ?? "pink", //tileModel.color,
               width: tileSize,
               height: tileSize,
             }}

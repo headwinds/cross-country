@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import Actor from "../../actor/";
+import Actor, { ActorProps } from "../../actor/";
 
 // pre-configured character
 const head = { color: "gold" };
@@ -16,13 +16,14 @@ const defaultModel = {
   customClass: "",
 };
 
-export interface ClericProps {
+export interface ClericProps extends ActorProps {
   model?: any;
   tileSize?: number;
 }
 
 // TODO: add a actor type - use generics! Actor<Cleric>
 const Cleric = ({ model = defaultModel, tileSize }: ClericProps) => {
+  console.log("Cleric model", model);
   const {
     config,
     customClass,
@@ -30,9 +31,53 @@ const Cleric = ({ model = defaultModel, tileSize }: ClericProps) => {
     customTileStyle,
     position,
     type,
+    image,
   } = model;
 
   const validConfig = config ?? defaultConfig;
+
+  const newCustomSkinStyle = image
+    ? null
+    : {
+        ...defaultModel.customSkinStyle,
+        ...customSkinStyle,
+      };
+
+  if (image) {
+    return (
+      <Actor
+        type={image ? null : type}
+        config={image ? null : validConfig}
+        position={position}
+        customClass={image ? null : customClass}
+        customTileStyle={image ? null : customTileStyle}
+        customSkinStyle={newCustomSkinStyle}
+        tileSize={tileSize}
+      >
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <img
+            src={image}
+            alt="Cleric"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "contain",
+              maxWidth: tileSize || 80,
+              maxHeight: tileSize || 80,
+            }}
+          />
+        </div>
+      </Actor>
+    );
+  }
 
   return (
     <Actor

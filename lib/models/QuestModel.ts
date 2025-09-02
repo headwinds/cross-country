@@ -1,8 +1,10 @@
+import { RewardModel } from "./GameModel";
+
 export interface QuestModel {
   id: number;
   title: string;
   description: string;
-  reward: any[];
+  reward: RewardModel[];
   giver: string;
   receiver: string;
   relatedTo: any[];
@@ -11,6 +13,12 @@ export interface QuestModel {
   status: string;
   progress: number;
   steps: number;
+
+  // New fields to integrate with encounter system
+  encounter_id?: string; // Links to specific encounter
+  grid_id?: number; // Which grid this quest belongs to
+  problems_completed?: string[]; // Track which problems are completed
+  total_problems?: number; // Total problems in the encounter
 }
 
 export const defaultQuestModel: QuestModel = {
@@ -26,4 +34,8 @@ export const defaultQuestModel: QuestModel = {
   status: "none",
   progress: 0,
   steps: 1,
+  encounter_id: undefined,
+  grid_id: undefined,
+  problems_completed: [],
+  total_problems: 0,
 };

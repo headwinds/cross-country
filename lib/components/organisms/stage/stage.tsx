@@ -2,6 +2,8 @@ import clsx from "clsx";
 import React, { useRef, useCallback, useMemo } from "react";
 import { Column } from "../../";
 import Hunter from "../actors/party/hunter";
+import Cleric from "../actors/party/cleric";
+import Wizard from "../actors/party/wizard";
 import Warrior from "../actors/party/warrior";
 import Wisp from "../actors/wisp";
 import styles from "./stage.module.css";
@@ -71,6 +73,7 @@ export const defaultActorModel: ActorModel = {
     top: 120,
     backgroundColor: "green",
   },
+  image: null,
 };
 
 export interface StageProps {
@@ -96,6 +99,7 @@ const defaultGridConfig: GridConfig = {
   gapSize: 0,
   totalInRow: 3,
   totalInCol: 3,
+  tiles: [],
 };
 
 const Stage = ({
@@ -140,13 +144,43 @@ const Stage = ({
       }
 
       switch (model.variant) {
+        case "cleric":
+          return (
+            <Cleric
+              model={finalModel}
+              tileSize={model.tileSize}
+              key={model.id}
+            />
+          );
+        case "wizard":
+          return (
+            <Wizard
+              model={finalModel}
+              tileSize={model.tileSize}
+              key={model.id}
+            />
+          );
         case "wisp":
-          return <Wisp model={finalModel} key={model.id} />;
+          return (
+            <Wisp model={finalModel} tileSize={model.tileSize} key={model.id} />
+          );
         case "warrior":
-          return <Warrior model={finalModel} key={model.id} />;
+          return (
+            <Warrior
+              model={finalModel}
+              tileSize={model.tileSize}
+              key={model.id}
+            />
+          );
         case "hunter":
         default:
-          return <Hunter model={finalModel} key={model.id} />;
+          return (
+            <Hunter
+              model={finalModel}
+              tileSize={model.tileSize}
+              key={model.id}
+            />
+          );
       }
     },
     [finalGridConfig, actorPositioning]
@@ -261,13 +295,16 @@ const Stage = ({
     return { x: currentSpeechX, y: currentSpeechY };
   };
 
-  const currentSpeechPosition = getSpeechPosition(
-    actorModel,
-    actorModel?.gridPosition.row,
-    actorModel?.gridPosition.col,
-    finalGridConfig.totalInCol,
-    finalGridConfig.totalInRow
-  );
+  // Only calculate speech position if we have a valid actor model with grid position
+  const currentSpeechPosition = actorModel?.gridPosition
+    ? getSpeechPosition(
+        actorModel,
+        actorModel.gridPosition.row,
+        actorModel.gridPosition.col,
+        finalGridConfig.totalInCol,
+        finalGridConfig.totalInRow
+      )
+    : { x: 0, y: 0 };
   return (
     <Column
       customClass={clsx(styles.stage, stageConfig?.customClass)}
@@ -288,14 +325,16 @@ const Stage = ({
         onGridConfigChange={handleGridConfigChange}
       />
       <Actors />
-      <ActorSpeech
-        speech={currentSpeech}
-        position={{
-          x: currentSpeechPosition.x,
-          y: currentSpeechPosition.y,
-        }}
-        isVisible={true}
-      />
+      {currentSpeech && (
+        <ActorSpeech
+          speech={currentSpeech}
+          position={{
+            x: currentSpeechPosition.x,
+            y: currentSpeechPosition.y,
+          }}
+          isVisible={true}
+        />
+      )}
     </Column>
   );
 };

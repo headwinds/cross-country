@@ -1,5 +1,5 @@
 import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import __COMPONENT_UPPERCASE_NAME__ from "../__COMPONENT_LOWERCASE_NAME__";
 
 const meta: Meta<typeof __COMPONENT_UPPERCASE_NAME__> = {

@@ -20,3 +20,8 @@ Electrolize
   --font: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
   'Segoe UI Symbol';
 }
+
+.docs-story > div {
+  height: 500px;
+  min-height: 500px;
+}

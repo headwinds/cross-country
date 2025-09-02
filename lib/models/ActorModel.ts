@@ -69,4 +69,5 @@ export interface ActorModel {
   };
   customClass?: string;
   customSkinStyle?: { [key: string]: string };
+  image?: string;
 }
