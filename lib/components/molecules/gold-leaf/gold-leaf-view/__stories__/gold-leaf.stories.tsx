@@ -53,6 +53,21 @@ export const ArticleLeafMaxWidth: Story = {
   ),
 };
 
+/*
+sample email
+
+  {
+    body: "https://visualgo.net/en\r\n",
+    date: "Fri, 13 Sep 2024 06:31:57 -0400",
+    email_id: ["191eaf0b32470066"],
+    from: "Brandon Flowers <brandonflowers@gmail.com>",
+    subject:
+      "visualising data structures and algorithms through animation - VisuAlgo",
+    to: "brandonflowers@gmail.com",
+  },
+
+*/
+
 export const EmailLeaf: Story = {
   args: {
     variant: "email",

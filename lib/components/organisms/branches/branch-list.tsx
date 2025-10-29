@@ -9,9 +9,10 @@ const cardWidth = GOLD_LEAF_WIDTH;
 
 export interface BranchListProps {
   branches: PortholeBranchModel[];
+  variant?: "rss" | "email";
 }
 
-const BranchList = ({ branches }: BranchListProps) => {
+const BranchList = ({ branches, variant }: BranchListProps) => {
   const ref = useRef(null);
   const [totalColumns, setTotalColumns] = useState(0);
 
@@ -53,7 +54,7 @@ const BranchList = ({ branches }: BranchListProps) => {
     // Create and filter the list items in a single pass
     const items = validBranches
       .map((branch, idx) => {
-        const branchContent = <Branch branch={branch} />;
+        const branchContent = <Branch branch={branch} variant={variant} />;
         if (!branchContent) return null;
 
         return (

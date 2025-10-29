@@ -1,11 +1,25 @@
-import * as React from 'react';
-import GoldLeafView from './gold-leaf-view/gold-leaf-view';
-import { GoldLeafProps } from './gold-leaf.types';
+import * as React from "react";
+import GoldLeafView from "./gold-leaf-view/gold-leaf-view";
+import { GoldLeafProps } from "./gold-leaf.types";
 
-const GoldLeaf = ({ goldLeafModel = null, dataTestId = 'golf-leaf-view', mode = 'view', customClass, customStyle }: GoldLeafProps) => {
+const GoldLeaf = ({
+  goldLeafModel = null,
+  dataTestId = "golf-leaf-view",
+  mode = "view",
+  customClass,
+  customStyle,
+  variant,
+}: GoldLeafProps) => {
   switch (mode) {
-    case 'view':
-      return <GoldLeafView goldLeafModel={goldLeafModel} customClass={customClass} customStyle={customStyle} />;
+    case "view":
+      return (
+        <GoldLeafView
+          goldLeafModel={goldLeafModel}
+          customClass={customClass}
+          customStyle={customStyle}
+          variant={variant}
+        />
+      );
     default:
       return null;
   }

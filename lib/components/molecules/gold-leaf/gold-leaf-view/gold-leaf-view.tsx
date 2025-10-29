@@ -21,7 +21,7 @@ const GoldLeafView = ({
   goldLeafModel,
   dataTestId = "golf-leaf-view",
   customStyle = defaultCustomStyle,
-  variant = "article",
+  variant = "rss",
 }: GoldLeafViewProps) => {
   if (!goldLeafModel) {
     return <GoldLeafNotFound />;

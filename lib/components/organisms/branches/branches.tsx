@@ -12,16 +12,25 @@ import { shuffle } from "@/lib/utils/fp-util";
 import Loading from "@/lib/components/molecules/loading";
 import BranchList from "./branch-list";
 import { mockResponse } from "./__mocks__/response";
-import { PortholeBranchModel } from "@/lib/models/PortholeBranchModel";
+import type { PortholeBranchModel, EmailModel } from "@/lib/models";
+import { set } from "react-hook-form";
 
 const portholeBranches = createAllPortholeTrees();
 const defaultUrls = Object.values(portholeBranches).map(({ xmlUrl }) => xmlUrl);
 
-export interface BranchesProps {
+export type GenericFetch = <T>() => Promise<T>;
+
+export interface Service<T> {
+  fetchData: () => Promise<T>;
+}
+
+export interface BranchesProps<T> {
   isTesting?: boolean;
   onLoadedCallback?: (error: any) => void;
   feedUrl?: string;
   urls?: string[];
+  service?: Service<T> | null;
+  variant?: "email" | "rss";
 }
 
 // https://scout-222670816692.northamerica-northeast1.run.app/api/porthole/trees/branches
@@ -29,12 +38,12 @@ export interface BranchesProps {
 const defaultRemoteUrl =
   "https://scout-summarize.vercel.app/api/porthole/feeds";
 
-type State = {
+type BranchesState = {
   feeds: any;
-  branches: PortholeBranchModel[];
+  branches: PortholeBranchModel[] | EmailModel[];
   hasFetched: boolean;
   allNewBranches: PortholeBranchModel[];
-  feedUrl: string;
+  remoteUrl: string;
 };
 
 const Branches = ({
@@ -42,9 +51,11 @@ const Branches = ({
   onLoadedCallback,
   feedUrl,
   urls,
-}: BranchesProps) => {
-  const [state, setState] = useState({
-    //feeds: urls || defaultUrls,
+  service = null,
+  variant = "rss",
+}: BranchesProps<GenericFetch>) => {
+  const [state, setState] = useState<BranchesState>({
+    feeds: urls || defaultUrls,
     branches: [],
     hasFetched: false,
     allNewBranches: [],
@@ -52,7 +63,6 @@ const Branches = ({
   });
   const { hasFetched, allNewBranches, branches, remoteUrl } = state;
 
-  // BFF approach where I provide a new microservice that will handle the RSS feed and return exactly what I need
   const getCabinQuestFeedFromScoutSummarizeService = async (data) => {
     const options = {
       method: "POST",
@@ -85,33 +95,57 @@ const Branches = ({
     });
   };
 
+  const fetchRSSData = async () => {
+    const validUrls: string[] = urls || defaultUrls;
+
+    const rss_list = validUrls.map((url) => ({
+      rss_url: url,
+      company: "unknown",
+    }));
+
+    const jsonData = {
+      rss_list: rss_list,
+    };
+
+    const json = isTesting
+      ? await getMockDataAsync()
+      : await getCabinQuestFeedFromScoutSummarizeService(jsonData);
+    //const json = await getCabinQuestFeedFromScoutSummarizeService(jsonData);
+
+    const allNewBranches = convertToPortholeBranches(json.feed_responses);
+    const shuffledBranches = shuffle(allNewBranches);
+
+    // ensure all branches are unique
+    const uniqueBranches = [...new Set(shuffledBranches)];
+    setState({
+      ...state,
+      branches: uniqueBranches as unknown as PortholeBranchModel[],
+      hasFetched: true,
+      allNewBranches: uniqueBranches as unknown as PortholeBranchModel[],
+    });
+  };
+
+  const fetchDataWithService = async () => {
+    const data = await service?.fetchData();
+    if (variant === "email") {
+      const emailBranches = data as unknown as EmailModel[];
+      setState({
+        ...state,
+        branches: emailBranches as unknown as EmailModel[],
+        hasFetched: true,
+      });
+    } else {
+      console.warn("No service fetch implemented for this variant");
+    }
+  };
+
   useEffect(() => {
     async function fetchData() {
-      //const portholeBranches = createAllPortholeTrees();
-      //const arr = Object.values(portholeBranches);
-      //const rssUrls = arr.map(({ xmlUrl }) => xmlUrl);
-
-      const validUrls: string[] = urls || defaultUrls;
-
-      const rss_list = validUrls.map((url) => ({
-        rss_url: url,
-        company: "unknown",
-      }));
-
-      const jsonData = {
-        rss_list: rss_list,
-      };
-      const json = isTesting
-        ? await getMockDataAsync()
-        : await getCabinQuestFeedFromScoutSummarizeService(jsonData);
-      //const json = await getCabinQuestFeedFromScoutSummarizeService(jsonData);
-
-      const allNewBranches = convertToPortholeBranches(json.feed_responses);
-      const shuffledBranches = shuffle(allNewBranches);
-
-      // ensure all branches are unique
-      const uniqueBranches = [...new Set(shuffledBranches)];
-      setState({ ...state, branches: uniqueBranches });
+      if (variant === "email" && service) {
+        await fetchDataWithService();
+      } else {
+        await fetchRSSData();
+      }
     }
     fetchData();
   }, []);
@@ -119,7 +153,7 @@ const Branches = ({
   return branches.length === 0 ? (
     <Loading />
   ) : (
-    <BranchList branches={branches} />
+    <BranchList branches={branches} variant={variant} />
   );
 };
 

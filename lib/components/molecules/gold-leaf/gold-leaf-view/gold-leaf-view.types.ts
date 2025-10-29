@@ -10,5 +10,5 @@ export interface GoldLeafViewProps {
   children?: React.ReactNode | React.ReactNode[];
   customClass?: string;
   customStyle?: React.CSSProperties;
-  variant?: "article" | "email";
+  variant?: "rss" | "email";
 }
