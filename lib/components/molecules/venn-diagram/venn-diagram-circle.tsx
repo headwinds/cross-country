@@ -36,7 +36,7 @@ const VennDiagramCircle: React.FC<VennDiagramCircleProps> = ({
       <text
         x={x}
         y={y}
-        textAnchor={textAnchor}
+        textAnchor={textAnchor as "start" | "middle" | "end" | "inherit"}
         fill={labelFill}
         fontSize={fontSize}
         fontWeight={fontWeight}

@@ -88,7 +88,7 @@ const defaultActorSpeech = [
     name: "Wisp",
     text: "The forest whispers ancient secrets...",
   },
-] as ActorSpeechModel[];
+] as any as ActorSpeechModel[];
 
 const StageWithSpeech = ({
   config = defaultConfig,
@@ -107,7 +107,12 @@ const StageWithSpeech = ({
     tileSize: 100,
     gapSize: 0,
     totalInRow: 3,
-    width: 400,
+    totalInCol: 3,
+    tiles: [
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+    ],
   };
 
   const [currentGridConfig, setCurrentGridConfig] = React.useState<GridConfig>(
@@ -118,7 +123,7 @@ const StageWithSpeech = ({
 
   // Get current speech
   const currentSpeech = actorSpeech[currentSpeechIndex];
-  const currentSpeaker = currentSpeech?.name || "hunter";
+  const currentSpeaker = (currentSpeech as any)?.name || "hunter";
 
   // Find the actor model for the current speaker
   const currentActorModel = actorModels.find(

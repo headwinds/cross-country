@@ -9,7 +9,7 @@ import { NeutralModel } from "./NeutralModel";
 
 export type WorldModel = {
   playerSet: PlayerModel[];
-  itemSet: ItemModel<unknown>[];
+  itemSet: ItemModel[];
   enemySet: EnemyModel[];
   neutralSet: NeutralModel[];
   npcSet: NPCModel[];

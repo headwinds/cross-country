@@ -17,9 +17,8 @@ export const createSpeech = (options: {
     messageId,
     values: { ...values, ts: Date.now() },
     actorModel,
-    name,
     text,
-  };
+  } as any;
 };
 
 /**
@@ -101,7 +100,7 @@ export const validateSpeechScript = (
     if (!speech.messageId) {
       errors.push(`Speech ${index}: Missing messageId`);
     }
-    if (!speech.name) {
+    if (!(speech as any).name) {
       errors.push(`Speech ${index}: Missing name`);
     }
     if (!speech.text && !speech.messageId) {

@@ -27,7 +27,7 @@ export interface SceneModel {
   updatedAt: Date;
   author: UserModel;
   players: PlayerModel[];
-  items: ItemModel<unknown>[]; // items are objects that can be picked up and used by the player
+  items: ItemModel[]; // items are objects that can be picked up and used by the player
   gridSize: number;
   stage: number;
   fringe: number;
