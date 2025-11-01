@@ -140,3 +140,24 @@ export const TikTokPlayerStory: Story = {
     );
   },
 };
+
+export const XPlayerStory: Story = {
+  render: () => {
+    const { width, height } = usePlayerDimensions();
+
+    return (
+      <Column>
+        <Player
+          artist={{
+            artistName: "Rauchg",
+            websiteUrl: "https://rauchg.com/",
+            xId: "1901357103731847605",
+            isArtistNameUnderline: false,
+          }}
+          width={width}
+          height={height}
+        />
+      </Column>
+    );
+  },
+};
