@@ -5,6 +5,7 @@ import { Image, Column, Link } from "../../";
 import ReactPlayer from "react-player/youtube";
 import ReactPlayerVimeo from "react-player/vimeo";
 import { use } from "chai";
+import TikTokPlayer from "./tiktok-player";
 
 type Artist = {
   artistName: string;
@@ -56,6 +57,10 @@ const Player = ({
     artist?.artistName === selectedArtistYoutube?.artistName;
 
   const reactPlayer = useMemo(() => {
+    if (artist?.tiktokUrl) {
+      return <TikTokPlayer url={artist.tiktokUrl} />;
+    }
+
     if (artist.youtubeUrl?.includes("vimeo")) {
       return (
         <ReactPlayerVimeo
@@ -79,7 +84,7 @@ const Player = ({
     );
   }, [artist.youtubeUrl, width, height, customStyle]);
 
-  if (artist.websiteUrl && artist.youtubeUrl) {
+  if ((artist.websiteUrl && artist.youtubeUrl) || artist.tiktokUrl) {
     return (
       <Column customStyle={{ padding: 0 }}>
         {reactPlayer}

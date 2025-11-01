@@ -14,6 +14,29 @@ const meta: Meta<typeof Player> = {
 export default meta;
 type Story = StoryObj<typeof Player>;
 
+const usePlayerDimensions = () => {
+  const [containerWidth, setContainerWidth] = React.useState(900);
+
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (container) {
+      const { width } = container.getBoundingClientRect();
+      setContainerWidth(width);
+    }
+  }, [containerRef]);
+
+  const getAspectRatioByContainerWidth = () => {
+    const width = containerWidth;
+    const height = width * (9 / 16);
+
+    return { width, height, containerRef };
+  };
+
+  return getAspectRatioByContainerWidth();
+};
+
 export const PlayerStory: Story = {
   render: () => (
     <Column>
@@ -33,27 +56,7 @@ export const PlayerShelfStory: Story = {
     const [url, setUrl] = React.useState(
       "https://www.youtube.com/watch?v=zUNHDeebFK0"
     );
-    const [containerWidth, setContainerWidth] = React.useState(900);
-
-    const containerRef = useRef(null);
-
-    useEffect(() => {
-      const container = containerRef.current;
-      if (container) {
-        const { width } = container.getBoundingClientRect();
-        setContainerWidth(width);
-      }
-    }, [containerRef]);
-
-    const getAspectRatioByContainerWidth = () => {
-      const width = containerWidth;
-      const height = width * (9 / 16);
-
-      return { width, height };
-    };
-
-    const { width, height } = getAspectRatioByContainerWidth();
-
+    const { width, height, containerRef } = usePlayerDimensions();
     return (
       <Column
         id="playerContainer"
@@ -111,6 +114,28 @@ export const PlayerShelfStory: Story = {
             Clear
           </Button>
         </Row>
+      </Column>
+    );
+  },
+};
+
+export const TikTokPlayerStory: Story = {
+  render: () => {
+    const { width, height } = usePlayerDimensions();
+
+    return (
+      <Column>
+        <Player
+          artist={{
+            artistName: "cocos.code",
+            websiteUrl: "https://www.tiktok.com/@cocos.code",
+            tiktokUrl:
+              "https://www.tiktok.com/@cocos.code/video/7564928761850809630",
+            isArtistNameUnderline: false,
+          }}
+          width={width}
+          height={height}
+        />
       </Column>
     );
   },
