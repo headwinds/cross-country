@@ -78,3 +78,6 @@ export type { JsonMapTileGridProps } from "./json-map-tile-grid";
 
 export { default as Masonry } from "./masonry";
 export type { MasonryProps } from "./masonry";
+
+export { default as Player } from "./player/player";
+export type { PlayerProps } from "./player/player";
