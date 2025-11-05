@@ -66,7 +66,24 @@ export default defineConfig({
       formats: ["es"],
     },
     rollupOptions: {
-      external: ["react", "react/jsx-runtime"], // externalize react to avoid bundling it
+      external: [
+        "react",
+        "react/jsx-runtime",
+        "react-dom",
+        /^@react-spring\//,
+        "react-spring",
+        /^@xstate\//,
+        "xstate",
+        "zustand",
+        "howler",
+        "d3-axis",
+        "d3-scale",
+        "react-color-extractor",
+        "react-day-picker",
+        "react-masonry-css",
+        "react-social-media-embed",
+        "clsx",
+      ], // externalize react and dependencies to avoid bundling
       input: Object.fromEntries(
         glob
           .sync("lib/**/*.{ts,tsx}", {
