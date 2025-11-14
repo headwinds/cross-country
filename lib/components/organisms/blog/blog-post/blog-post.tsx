@@ -10,7 +10,7 @@ const initialState = {
   text: "",
 };
 
-const BlogPost = ({
+const Blog = ({
   goldLeafModel = null,
   dataTestId = "blogPost",
   user,
@@ -93,7 +93,7 @@ const BlogPost = ({
   };
 
   const onSaveClick = () => {
-    console.log("BlogPost about to save...", state);
+    console.log("Blog about to save...", state);
     const { text } = state;
     const { id } = { id: "1" };
     postBlog(text, id);
@@ -128,4 +128,4 @@ const BlogPost = ({
     </Form>
   );
 };
-export default BlogPost;
+export default Blog;

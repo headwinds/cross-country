@@ -39,8 +39,8 @@ export type { MultipleChoiceProps } from "./survey/question/take/multiple-choice
 export { default as TakeAnswerInput } from "./survey/question/take/take-answer-input";
 export type { TakeAnswerInputProps } from "./survey/question/take/take-answer-input";
 
-export { default as AnswerInput } from "./survey/question/edit/answer-input";
-export type { AnswerInputProps } from "./survey/question/edit/answer-input";
+export { default as AnswerInput } from "./survey/question/edit/answer-input/index";
+export type { AnswerInputProps } from "./survey/question/edit/answer-input/index";
 
 export { default as Question } from "./survey/question/take/question";
 export type { QuestionProps } from "./survey/question/take/question";

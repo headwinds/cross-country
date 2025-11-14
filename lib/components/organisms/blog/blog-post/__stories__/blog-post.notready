@@ -8,7 +8,7 @@ import * as BlogPostStories from './blog-post.stories';
 
 At anytime (and from anywhere) I should be able to write a new post.
 
-The `BlogPost` component can be the size of a card. The card design make its mobile-first, and can be placed anywhere on the page.
+The `Blog` component can be the size of a card. The card design make its mobile-first, and can be placed anywhere on the page.
 
 # Flow
 
@@ -24,8 +24,8 @@ When I return, my most recent draft should be loaded.
 
 At any time, if inspiration strikes, a user should be able to make a new post.
 
-The `BlogPost` component can be the size of a card, and can be placed anywhere on the page.
+The `Blog` component can be the size of a card, and can be placed anywhere on the page.
 
 <Canvas>
-  <Story of={BlogPostStories.BlogPost} />
+  <Story of={BlogPostStories.Blog} />
 </Canvas>

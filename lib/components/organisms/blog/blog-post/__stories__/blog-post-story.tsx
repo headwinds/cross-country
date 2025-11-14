@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useState } from "react";
 import { Column, Login } from "../../../../";
-import BlogPost from "../blog-post";
+import Blog from "../blog-post";
 
 const BlogPostStory = () => {
   const [user, setUser] = useState(null);
@@ -18,7 +18,7 @@ const BlogPostStory = () => {
   return (
     <Column customStyle={{ width: 280 }}>
       <Login isAnimated onChange={onLoginChange} />
-      {user ? <BlogPost user={user} /> : null}
+      {user ? <Blog user={user} /> : null}
     </Column>
   );
 };

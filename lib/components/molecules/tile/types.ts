@@ -1,12 +1,12 @@
 export type TileType = {
   isSelected?: boolean;
-  setSelected?: (model: any) => void;
+  setSelected?: (model: unknown) => void;
   customClass?: string;
   size?: number;
   cornerColor?: string;
   customStyle?: any;
   type?: string;
-  model?: any;
+  model?: unknown;
   borderRadius?: number;
   children?: React.ReactElement | React.ReactElement[];
 };
