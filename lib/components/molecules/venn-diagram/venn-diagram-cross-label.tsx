@@ -45,7 +45,7 @@ const VennDiagramCrossLabel = ({
     <text
       x={indent}
       y={textY}
-      textAnchor={textAnchor}
+      textAnchor={textAnchor as "start" | "middle" | "end" | "inherit"}
       fill={fill}
       fontSize={fontSize}
       fontWeight={fontWeight}

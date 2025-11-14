@@ -1,4 +1,4 @@
-import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import { Meta, Canvas, Story, Subtitle } from "@storybook/addon-docs/blocks";
 import * as TileGridStories from "./tile-grid.stories";
 
 <Meta of={TileGridStories} />
@@ -20,7 +20,14 @@ I think the game might have been [Pool of Radiance](https://en.wikipedia.org/wik
 
 This is package was basically the only co-operative experience I had with games otherwise I played everything (Ultima, Might & Magic, Sierra) basically alone. I have no memories of discussing RPGs with friends except for Michael Barenburg who introduced me to Mech and Matzo ball soup. And lox! We also earned our winter camping badge together in Scouts. I considered him "rich" because they had a massive house on many acres of woodlands which was a pretty safe place to camp in 4 feet of snow.
 
-```jsx
+## Usage
+
+`totalInRow` is the number of tiles in a row.
+
+To achieve a 3x3 grid, you would set `totalInRow` to 3 and then create 9 models.
+
+
+```tsx
 const tile = {
   label: "",
   description: "",
@@ -33,9 +40,11 @@ const tile = {
   age: -1, // doesn't age
 };
 
+const totalModels = 9;
+
 const createDemoModels = () => {
   //const range = [...Array(64).keys()]; // chess!
-  const range = [...Array(12).keys()];
+  const range = [...Array(totalModels).keys()];
   return range.map((index) => {
     return { id: index, ...tile };
   });

@@ -1,5 +1,5 @@
 import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { VennDiagram } from "@headwinds/cross-country/components/";
 import { defaultCircles } from "@headwinds/cross-country/components/molecules/venn-diagram/venn-diagram-default-circles";
 

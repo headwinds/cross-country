@@ -1,4 +1,5 @@
 export type BookModel = {
+  id: number;
   title: string;
   synopsis: string;
   started_at: Date;

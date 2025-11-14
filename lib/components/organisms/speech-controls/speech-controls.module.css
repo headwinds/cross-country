@@ -1,0 +1,36 @@
+.speechControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 8px 0;
+}
+
+.controlButton {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.controlButton:hover:not(:disabled) {
+  background-color: #e0e0e0;
+  transform: translateY(-1px);
+}
+
+.controlButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.speechCounter {
+  font-size: 12px;
+  color: #666;
+  margin-left: auto;
+  font-weight: 500;
+} 

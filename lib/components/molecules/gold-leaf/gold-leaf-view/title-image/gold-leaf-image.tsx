@@ -1,34 +1,9 @@
 // TODO type check
 // @ts-nocheck
 import * as React from "react";
-import { Column, Image } from "../../../../";
-import type { PortholeBranchModel } from "@/models/PortholeBranchModel";
+import { Column, Image } from "@headwinds/cross-country/components";
+import type { PortholeBranchModel } from "@headwinds/cross-country/models/PortholeBranchModel";
 import styles from "../gold-leaf-view.module.css";
-
-/*
-export interface Image {
-  photo_thumbnail_url: string;
-  photo_large_urls: string[];
-  photo_default_url: string;
-}
-
-export interface Publisher {
-  author: string;
-  url: string;
-  company: string;
-}
-
-
-  id: string;
-  tags: string[];
-  url: string;
-  title: string;
-  summary: string;
-  published_date: string;
-  updated_date: string;
-  publisher: Publisher;
-  image: Image;
-*/
 
 interface GoldLeafImageProps {
   children?: React.ReactNode;

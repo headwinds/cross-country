@@ -1,7 +1,7 @@
 // models
 //export * from "./ActorModel";
 
-export type { ActorModel } from "./ActorModel";
+export type { ActorModel, ActorType } from "./ActorModel";
 export type { BookModel } from "./BookModel";
 export type { ChapterModel } from "./ChapterModel";
 export type { PlayerModel } from "./PlayerModel";
@@ -22,3 +22,22 @@ export type { UserModel } from "./UserModel";
 export type { WeaponModel } from "./WeaponModel";
 export type { WorldModel } from "./WorldModel";
 export type { TreeModel } from "./TreeModel";
+export type { QuestModel } from "./QuestModel";
+export type { QuestStepModel } from "./QuestStepModel";
+export type { PageModel } from "./PageModel";
+export type { SceneModel } from "./SceneModel";
+// export all the models from the GameModel.ts file
+export type { RewardModel } from "./GameModel";
+export type { MonsterModel } from "./GameModel";
+export type { BattleModel } from "./GameModel";
+export type { DecisionModel } from "./GameModel";
+export type { ProblemModel } from "./GameModel";
+export type { EncounterModel } from "./GameModel";
+export type { GridModel } from "./GameModel";
+export type { StoryModel } from "./GameModel";
+export type { BattleTurnModel } from "./GameModel";
+export type { BattleStateModel } from "./GameModel";
+export type { DecisionChoiceModel } from "./GameModel";
+export type { DecisionStateModel } from "./GameModel";
+export type { PlayerSkillModel } from "./GameModel";
+export type { GameStateModel } from "./GameModel";

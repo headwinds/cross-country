@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useMemo, useCallback } from "react";
 // components
 import { Tile, Column, Row } from "../..";
 import styles from "./tile-grid.module.css";
@@ -13,13 +13,13 @@ const defaultTile: TileModel = {
   description: "",
   material: "snow",
   movement_cost: 0,
-  color: "#67bd67",
+  color: "white",
   type: "tile",
   skin: "",
   damage: 0,
   is_obstacle: true,
   obstacle_remover: "shovel",
-  fill: "#67bd67",
+  fill: "white",
   elevation: 0,
   age: -1, // doesn't age
 };
@@ -30,50 +30,90 @@ const shadedColor = ColorUtil.getShadedColor(rgb, darkenColor);
 
 export interface TileGridProps {
   totalInRow?: number;
+  totalInCol?: number;
   gapSize?: number;
   models?: TileModel[];
   isDemo?: boolean;
-  width?: number;
   tileConfig?: { size: number; fill: string; cornerColor: string };
   isIsometric?: boolean;
   customClass?: string | null;
   tileRefs?: React.MutableRefObject<unknown[]>;
+  onGridConfigChange?: (config: {
+    tileSize: number;
+    gapSize: number;
+    totalInRow: number;
+    totalInCol: number;
+  }) => void;
 }
 
 const TileGrid = ({
   totalInRow = 4,
+  totalInCol = 4,
   gapSize = 0,
   models = [defaultTile],
   isDemo = false,
-  width = 400,
   tileConfig = { size: 100, fill: "#67bd67", cornerColor: shadedColor },
   isIsometric = false,
   customClass = null,
   tileRefs,
+  onGridConfigChange,
 }: TileGridProps) => {
   const [tileSeleted, setSelected] = useState<TileModel | null>(null);
 
-  const size = Math.floor(width / totalInRow - gapSize);
-  const totalTiles = models.length;
+  // Memoize the setSelected callback to prevent unnecessary re-renders
+  const memoizedSetSelected = useCallback((selectedTile: TileModel | null) => {
+    setSelected(selectedTile);
+  }, []);
 
-  const createGrid = () => {
+  // Use the tile size from config
+  const tileSize = tileConfig.size;
+  const totalTiles = totalInRow * totalInCol;
+
+  // Notify parent component of grid configuration
+  React.useEffect(() => {
+    if (onGridConfigChange) {
+      onGridConfigChange({
+        tileSize,
+        gapSize,
+        totalInRow,
+        totalInCol,
+      });
+    }
+  }, [tileSize, gapSize, totalInRow, totalInCol, onGridConfigChange]);
+
+  const createGrid = useMemo(() => {
     const grid = [];
-    // credit https://stackoverflow.com/questions/22464605/convert-a-1d-array-to-2d-array
-    // but be careful here since splice is destructive - make sure you don't destroy the original array!!!
-    // important lesson for xstate that you don't mutate the original array!!!
-    const cloneModels = [...models];
-    // vs const cloneModels = models;
-    while (cloneModels.length) grid.push(cloneModels.splice(0, totalInRow));
-    return grid;
-  };
+    // Create a proper 2D grid with totalInRow rows and totalInCol columns
+    const modelsCopy = [...models];
 
-  const initialModelGrid = createGrid();
-  const renderGrid = (grid) => {
+    // Ensure we have enough models to fill the grid
+    while (modelsCopy.length < totalTiles) {
+      modelsCopy.push(...models);
+    }
+
+    // Create grid: totalInRow rows, each with totalInCol columns
+    for (let row = 0; row < totalInRow; row++) {
+      const rowTiles = [];
+      for (let col = 0; col < totalInCol; col++) {
+        const index = row * totalInCol + col;
+        if (index < modelsCopy.length) {
+          rowTiles.push(modelsCopy[index]);
+        } else {
+          // Use the default tile if we run out of models
+          rowTiles.push(defaultTile);
+        }
+      }
+      grid.push(rowTiles);
+    }
+    return grid;
+  }, [models, totalInRow, totalInCol, totalTiles]);
+
+  const tiles = useMemo(() => {
     let count = -1;
 
     const createColumns = (columns, x) => {
       return columns.map((cell, y) => {
-        const tileModel = grid[x][y];
+        const tileModel = columns[y];
         if (count < totalTiles - 1) {
           count++;
         }
@@ -90,11 +130,11 @@ const TileGrid = ({
             {...tileConfig}
             customStyle={{
               margin: gapSize,
-              backgroundColor: tileModel?.fill ?? "pink", //tileModel.color,
-              width: size,
-              height: size,
+              backgroundColor: "orange", //tileModel?.fill ?? "pink", //tileModel.color,
+              width: tileSize,
+              height: tileSize,
             }}
-            setSelected={setSelected}
+            setSelected={memoizedSetSelected}
             isSelected={isSelected}
             ref={(ref) => {
               if (tileRefs && ref) {
@@ -105,6 +145,7 @@ const TileGrid = ({
         );
       });
     };
+
     const createRow = (columns, x) => {
       const row = createColumns(columns, x);
       return (
@@ -113,15 +154,33 @@ const TileGrid = ({
         </Row>
       );
     };
-    return grid.map((columns, x) => createRow(columns, x));
-  };
 
-  const tiles = renderGrid(initialModelGrid);
+    return createGrid.map((columns, x) => createRow(columns, x));
+  }, [
+    createGrid,
+    tileConfig,
+    gapSize,
+    tileSize,
+    tileSeleted,
+    memoizedSetSelected,
+    totalTiles,
+    tileRefs,
+  ]);
 
   const tileGridClass = isIsometric ? styles.tileGridIso : styles.tileGrid;
   const columnCustomClass = clsx(tileGridClass, customClass);
 
-  return <Column customClass={columnCustomClass}>{tiles}</Column>;
+  return (
+    <Column
+      customClass={columnCustomClass}
+      customStyle={{
+        padding: 0,
+        margin: 0,
+      }}
+    >
+      {tiles}
+    </Column>
+  );
 };
 
 export default TileGrid;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import Checkbox from "../checkbox";
 
 const meta: Meta<typeof Checkbox> = {
@@ -16,7 +16,6 @@ export const Default: Story = {
       const [isChecked, setChecked] = useState(false);
 
       const handleChange = () => {
-        console.log("CheckboxStory handleChange");
         setChecked(!isChecked);
       };
 

@@ -1,9 +1,13 @@
 // TODO type check
 // @ts-nocheck
 import * as React from "react";
-import GoldLeafView from "../";
-import { Card, Column, Link, SubHeadline } from "../../../../";
-import GoldLeafNotFound from "../../gold-leaf-not-found";
+
+import {
+  Card,
+  Column,
+  Link,
+  SubHeadline,
+} from "@headwinds/cross-country/components";
 
 import styles from "../gold-leaf-view.module.css";
 import GoldLeafImage from "./gold-leaf-image";
@@ -14,48 +18,38 @@ export const GoldTitleImageCard = ({
   mode = "unknown",
   onNoImageFoundCallback,
 }: GoldLeafProps) => {
-  const render = () => {
-    if (mode === "view" && goldLeafModel) {
-      return <GoldLeafView goldLeafModel={goldLeafModel} />;
-    } else if (mode !== "view" && goldLeafModel) {
-      return (
-        <>
-          <Column
+  return (
+    <>
+      <Link
+        url={goldLeafModel.url}
+        customClass={styles.GoldLeaf__titleLink}
+        customStyle={{ borderBottom: "none", boxShadow: "none" }}
+      >
+        <Column
+          customStyle={{
+            padding: 0,
+            margin: 0,
+          }}
+        >
+          <SubHeadline
+            text={goldLeafModel.title}
+            customClass={styles.GoldLeaf__title}
             customStyle={{
-              padding: 4,
-              borderBottom: "1px dashed #ddd",
-              borderTop: "1px dashed #ddd",
+              fontWeight: 700,
+              padding: 8,
+              margin: 0,
+              marginBottom: 0,
+              lineHeight: "24px",
             }}
-          >
-            <Link
-              url={goldLeafModel.link}
-              customClass={styles.GoldLeaf__titleLink}
-              customStyle={{ borderBottom: "none", boxShadow: "none" }}
-            >
-              <SubHeadline
-                text={goldLeafModel.title}
-                customClass={styles.GoldLeaf__title}
-                customStyle={{
-                  fontWeight: 700,
-                  padding: 8,
-                  marginBottom: 0,
-                  lineHeight: "24px",
-                }}
-              />
-            </Link>
-          </Column>
-          <GoldLeafImage
-            goldLeafModel={goldLeafModel}
-            onNoImageFoundCallback={onNoImageFoundCallback}
           />
-        </>
-      );
-    } else {
-      return <GoldLeafNotFound />;
-    }
-  };
-
-  return render();
+        </Column>{" "}
+        <GoldLeafImage
+          goldLeafModel={goldLeafModel}
+          onNoImageFoundCallback={onNoImageFoundCallback}
+        />
+      </Link>
+    </>
+  );
 };
 
 export default GoldTitleImageCard;

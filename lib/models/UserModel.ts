@@ -1,6 +1,6 @@
 export type UserModel = {
-  id: string;
-  isAuthenticated: string;
+  id: string; // UUID
+  isAuthenticated: boolean;
   access_token: string;
   refresh_token: string;
   admin: boolean;
@@ -13,7 +13,7 @@ export type UserModel = {
 // Default values for UserModel
 export const defaultUserModel: UserModel = {
   id: "",
-  isAuthenticated: "",
+  isAuthenticated: false,
   access_token: "",
   refresh_token: "",
   admin: false,

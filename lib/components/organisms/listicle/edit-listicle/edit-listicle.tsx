@@ -14,10 +14,8 @@ import {
   Label,
   Error,
   Loading,
-  Listicle,
   HeadwindsLogo,
   HorizontalLine,
-  EditTitleInput,
   Row,
   User,
   TextInput,
@@ -28,6 +26,13 @@ import { PlusSquare } from "@phosphor-icons/react";
 import { editListicleItemListMachine } from "./edit-listicle-item-list-machine";
 import EditListicleItemList from "../edit-listicle-item-list";
 import { useMachine } from "@xstate/react";
+
+import Listicle from "../listicle";
+//import EditTitleInput from "./edit-title-input";
+
+const EditTitleInput = ({ onChange }) => {
+  return <div>EditTitleInput</div>;
+};
 
 const EditListicle = ({ data, onChange }) => {
   const onTitleChange = (changeEvent) => {};

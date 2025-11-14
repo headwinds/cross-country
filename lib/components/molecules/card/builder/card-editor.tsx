@@ -14,10 +14,13 @@ import {
   Label,
   Button,
   TextInput,
-  AnswerInput,
   Wisp,
   Stage,
 } from "../../../";
+
+const AnswerInput = ({ send }) => {
+  return <div>AnswerInput</div>;
+};
 
 // 1. What is the platform/domain based on the pasted in URL?
 const UrlQuestion = ({ send }) => {

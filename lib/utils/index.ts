@@ -12,3 +12,6 @@ export { default as FpUtil } from "./fp-util";
 
 // colour & palettes
 export { default as StringUtil } from "./string-util";
+
+// date
+export { default as dateUtil } from "./date-util";

@@ -1,4 +1,4 @@
-import type { Preview } from "@storybook/react";
+import type { Preview } from "@storybook/react-vite";
 
 const preview: Preview = {
   parameters: {
@@ -16,6 +16,11 @@ const preview: Preview = {
           "components",
           ["atoms", "molecules", "organisms", "templates", "pages"],
         ],
+      },
+    },
+    docs: {
+      canvas: {
+        height: 500,
       },
     },
   },

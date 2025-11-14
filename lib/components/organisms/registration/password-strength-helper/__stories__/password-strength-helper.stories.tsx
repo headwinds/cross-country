@@ -1,5 +1,5 @@
 import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import PasswordStrengthHelper from "../password-strength-helper";
 
 const meta: Meta<typeof PasswordStrengthHelper> = {

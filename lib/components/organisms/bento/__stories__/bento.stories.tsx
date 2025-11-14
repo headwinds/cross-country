@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import Bento from "../bento";
 import type { BentoProps } from "../bento";
 import { Card, Column, Paragraph } from "../../..";

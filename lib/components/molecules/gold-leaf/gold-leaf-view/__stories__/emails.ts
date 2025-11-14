@@ -1,4 +1,4 @@
-const emails = [
+export const emails = [
   {
     body: "https://visualgo.net/en\r\n",
     date: "Fri, 13 Sep 2024 06:31:57 -0400",

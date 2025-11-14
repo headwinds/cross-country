@@ -9,4 +9,5 @@ export interface GoldLeafProps {
   customClass?: string;
   customStyle?: any;
   onNoImageFoundCallback?: () => void;
+  variant?: "rss" | "email";
 }

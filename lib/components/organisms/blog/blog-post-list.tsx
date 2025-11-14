@@ -12,7 +12,7 @@ const BlogpostListItem = ({ postModel = defaultBlogpostModel }) => {
   return (
     <ListItem>
       <Row>
-        <Link href={url}>{title}</Link>
+        <Link url={url}>{title}</Link>
         <Paragraph customStyle={{ marginLeft: 8, fontSize: 12 }}>
           {updated_at}
         </Paragraph>

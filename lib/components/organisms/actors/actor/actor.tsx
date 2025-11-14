@@ -4,7 +4,7 @@ import styles from "./actor.module.css";
 import clsx from "clsx";
 import type { ActorModel } from "@headwinds/cross-country/models";
 
-const defaultTileSize = 50;
+const defaultTileSize = 100;
 
 const head = { color: "purple" };
 const body = { color: "green" };
@@ -14,22 +14,15 @@ const defaultConfig = { head, body, legs, type: "humanoid" };
 const renderHeadBodyFeet = (config, tileSize) => {
   const { head, body, legs } = config;
 
-  const third = Math.floor(tileSize / 3) - 4;
-  const validThird = String(third) === "NaN" ? 0 : third;
-
   return (
     <div>
-      <div
-        style={{ backgroundColor: head.color, width: 40, height: validThird }}
-      ></div>
-      <div
-        style={{ backgroundColor: body.color, width: 40, height: validThird }}
-      ></div>
+      <div style={{ backgroundColor: head.color, width: 40, height: 40 }}></div>
+      <div style={{ backgroundColor: body.color, width: 40, height: 20 }}></div>
       <div
         style={{
           backgroundColor: legs.color,
           width: 40,
-          height: validThird - 10,
+          height: 20,
         }}
       ></div>
     </div>
@@ -40,14 +33,14 @@ const defaultPosition = { x: 0, y: 0, z: 0 };
 
 const defaultCustomTileStyle = {
   opacity: 1,
-  width: defaultTileSize,
+  width: 80,
   height: 80,
   alignItems: "center",
 };
 
 // skin
 const defaultCustomSkinStyle = {
-  backgroundColor: "red",
+  backgroundColor: "whitesmoke",
 };
 
 export interface ActorProps {
@@ -61,6 +54,7 @@ export interface ActorProps {
   children?: any;
   type?: string;
   model?: ActorModel;
+  image?: string;
 }
 
 const Actor = ({
@@ -71,6 +65,7 @@ const Actor = ({
   config = defaultConfig,
   tileSize = defaultTileSize,
   children = null,
+  image = null,
   ...rest
 }: ActorProps) => {
   const columnCustomClass = clsx(styles.actor, customClass);
@@ -89,12 +84,24 @@ const Actor = ({
 
   const { x, y, z } = position;
 
+  // TODO this is a magic number, we need to find a better way to do this
+  // need to consider tile width and actor width to calculate the correct position
+  // and center the actor in the tile
+  const xMod = 40;
+
+  // Create dynamic tile style based on tileSize prop
+  const dynamicTileStyle = {
+    ...customTileStyle,
+    width: tileSize || customTileStyle.width,
+    height: tileSize || customTileStyle.height,
+  };
+
   return (
     <Column
       customClass={styles.actor}
       customStyle={{
-        ...customTileStyle,
-        transform: `translate3d(${x}px, ${y}px, ${z}px)`,
+        ...dynamicTileStyle,
+        transform: `translate3d(${x - xMod}px, ${y}px, ${z}px)`,
       }}
       {...rest}
     >

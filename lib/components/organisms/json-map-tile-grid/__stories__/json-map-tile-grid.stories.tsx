@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import React, { useRef } from "react";
 import JsonMapTileGrid from "../json-map-tile-grid";
 import Column from "../../../atoms/column/column";

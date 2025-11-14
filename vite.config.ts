@@ -44,7 +44,20 @@ export default defineConfig({
       "@headwinds/cross-country/test/setup": resolve(__dirname, "./lib/test"),
     },
   },
-  plugins: [react(), css({ output: "bundle.css" }), dts({ include: ["lib"] })],
+  plugins: [
+    react(),
+    css({ output: "bundle.css" }),
+    dts({
+      include: ["lib"],
+      exclude: [
+        "**/__stories__/**",
+        "**/__tests__/**",
+        "**/*.stories.*",
+        "**/*.test.*",
+        "**/*.spec.*",
+      ],
+    }),
+  ],
   build: {
     cssCodeSplit: false,
     copyPublicDir: false,
@@ -53,10 +66,38 @@ export default defineConfig({
       formats: ["es"],
     },
     rollupOptions: {
-      external: ["react", "react/jsx-runtime"], // externalize react to avoid bundling it
+      external: [
+        "react",
+        "react/jsx-runtime",
+        "react-dom",
+        /^@react-spring\//,
+        "react-spring",
+        /^@xstate\//,
+        "xstate",
+        "zustand",
+        "howler",
+        "d3-axis",
+        "d3-scale",
+        "react-color-extractor",
+        "react-day-picker",
+        "react-masonry-css",
+        "react-social-media-embed",
+        "clsx",
+      ], // externalize react and dependencies to avoid bundling
       input: Object.fromEntries(
         glob
-          .sync("lib/**/*.{ts,tsx}", { ignore: "lib/**/*.stories.tsx" })
+          .sync("lib/**/*.{ts,tsx}", {
+            ignore: [
+              "lib/**/*.stories.tsx",
+              "lib/**/*.stories.ts",
+              "lib/**/*.test.tsx",
+              "lib/**/*.test.ts",
+              "lib/**/*.spec.tsx",
+              "lib/**/*.spec.ts",
+              "lib/**/__stories__/**",
+              "lib/**/__tests__/**",
+            ],
+          })
           .map((file) => [
             // The name of the entry point
             // lib/nested/foo.ts becomes nested/foo

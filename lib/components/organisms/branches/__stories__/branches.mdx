@@ -1,4 +1,4 @@
-import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import { Meta, Canvas, Story, Subtitle } from "@storybook/addon-docs/blocks";
 import * as BranchesStories from "./branches.stories";
 
 <Meta of={BranchesStories} />
@@ -12,9 +12,23 @@ const onLoadedCallback = (error) => {
   console.log(error.message);
 };
 
-<Branches onLoadedCallback={onLoadedCallback} />;
+const feedUrl = "http://localhost:5000/api/porthole/trees";
+
+const sampleUrls = [
+  "https://coolhunting.com/feed/",
+  "http://kotaku.com/rss/vip",
+  "http://feeds.feedburner.com/colossal",
+  "http://feeds.feedburner.com/design-milk",
+];  
+
+<Branches onLoadedCallback={onLoadedCallback} feedUrl={feedUrl} urls={sampleUrls} />;
 ```
 
 ### Story
 
-<Canvas of={BranchesStories.BranchesStory} />
+<Canvas of={BranchesStories.BranchesStoryWithLocalUrl} />
+
+### Digital Garden
+
+- [Brad Woods](https://garden.bradwoods.io/)
+- [paperarrow](https://paperarrow.com/notes/knowledge-garden)

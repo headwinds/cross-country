@@ -1,9 +1,11 @@
-import { Record } from 'immutable';
+export interface QuestStepModel {
+  instruction: string;
+  action: string;
+  complete: boolean;
+}
 
-const QuestStepModel = Record({
+export const defaultQuestStepModel: QuestStepModel = {
   instruction: '',
   action: '',
   complete: false,
-});
-
-export default QuestStepModel;
+};

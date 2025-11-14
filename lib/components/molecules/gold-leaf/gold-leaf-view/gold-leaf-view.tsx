@@ -8,26 +8,28 @@ import styles from "./gold-leaf-view.module.css";
 import type { GoldLeafViewProps } from "./gold-leaf-view.types";
 import GoldTitleImageCard from "./title-image/gold-title-image-card";
 import GoldTitleCard from "./title-image/gold-title-card";
+import GoldLeafNotFound from "../gold-leaf-not-found";
+
+export const GOLD_LEAF_WIDTH = 280;
 
 const defaultCustomStyle = {
   height: "auto",
-  width: 370,
-  background: "whitesmoke",
+  //width: GOLD_LEAF_WIDTH,
 };
 
 const GoldLeafView = ({
   goldLeafModel,
   dataTestId = "golf-leaf-view",
   customStyle = defaultCustomStyle,
-  variant = "article",
+  variant = "rss",
 }: GoldLeafViewProps) => {
+  if (!goldLeafModel) {
+    return <GoldLeafNotFound />;
+  }
+
   const [hasImage, setHasImage] = useState(true);
 
-  console.log("GoldLeafView: ", { goldLeafModel, variant });
-
   const onNoImageFoundCallback = () => {
-    // should check I setting if we want to show the image or not
-    // if I only want to see cards with images, we should drop the card without an image
     setHasImage(false);
   };
 
@@ -43,7 +45,11 @@ const GoldLeafView = ({
     );
   }
 
-  return hasImage ? (
+  if (!hasImage) {
+    return null;
+  }
+
+  return (
     <Card
       customClass={styles.GoldLeafView}
       dataTestId={dataTestId}
@@ -53,10 +59,14 @@ const GoldLeafView = ({
         goldLeafModel={goldLeafModel}
         onNoImageFoundCallback={onNoImageFoundCallback}
       />
-      {/*<GoldLeafViewControls goldLeafModel={goldLeafModel} dataTestId={`${dataTestId}-controls`} />*/}
     </Card>
-  ) : (
-    <Card
+  );
+};
+export default GoldLeafView;
+
+/*
+Only Ttile
+<Card
       customClass={styles.GoldLeafView}
       dataTestId={dataTestId}
       customStyle={customStyle}
@@ -64,9 +74,6 @@ const GoldLeafView = ({
       <GoldTitleCard
         goldLeafModel={goldLeafModel}
         onNoImageFoundCallback={onNoImageFoundCallback}
-      />
-      {/*<GoldLeafViewControls goldLeafModel={goldLeafModel} dataTestId={`${dataTestId}-controls`} />*/}
-    </Card>
-  );
-};
-export default GoldLeafView;
+      /z
+</Card> 
+*/

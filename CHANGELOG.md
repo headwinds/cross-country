@@ -1,5 +1,40 @@
 # cross-country
 
+<<<<<<< HEAD
+## 1.3.6
+
+### Patch Changes
+
+- pass urls for the feed
+- Updated dependencies
+  - cross-country@1.3.6
+
+## 1.3.4
+
+### Patch Changes
+
+- tweaking branches padding
+- Updated dependencies
+  - cross-country@1.3.4
+
+## 1.3.3
+
+### Patch Changes
+
+- fixed column spacing and ghost branches
+- Updated dependencies
+  - cross-country@1.3.3
+
+## 1.3.2
+
+### Patch Changes
+
+- branches update
+- Updated dependencies
+  - cross-country@1.3.2
+
+=======
+>>>>>>> trunk
 ## 1.3.1
 
 ### Patch Changes

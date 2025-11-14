@@ -13,15 +13,21 @@ import {
   Label,
   Error,
   Loading,
-  Listicle,
   HeadwindsLogo,
   HorizontalLine,
-  EditTitleInput,
   Row,
   User,
   TextInput,
   Paragraph,
 } from "../..";
+
+import Listicle from "./listicle";
+//import EditTitleInput from "./edit-title-input";
+
+const EditTitleInput = ({ onChange }) => {
+  return <div>EditTitleInput</div>;
+};
+
 // add listicle items
 import EditListicleItemList from "./edit-listicle-item-list";
 // state machine

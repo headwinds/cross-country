@@ -10,6 +10,15 @@
   padding: 0px;
 }
 
+/* Add this class to handle empty list items */
+.GoldLeafView:empty {
+  display: none;
+  margin: 0;
+  padding: 0;
+  height: 0;
+  min-height: 0;
+}
+
 .GoldLeaf__controls {
   display: grid;
   grid-template-columns: repeat(6, 1fr);

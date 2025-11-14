@@ -5,6 +5,15 @@ import { WorldModel } from "./WorldModel";
 import { ProfessionModel } from "./ProfessionModel";
 import { ViceModel } from "./ViceModel";
 import { CharacterLevelModel } from "./CharacterLevelModel";
+import { GridPosition } from "../utils/grid-position-util";
+
+export type ActorType = {
+  id: number;
+  tileSize: number;
+  variant: string;
+  position: { x: number; y: number; z: number };
+  customStyle: { [key: string]: string };
+};
 
 const alignments = [
   "Lawful Good",
@@ -38,6 +47,7 @@ export interface ActorModel {
   tileSize?: number;
   variant?: string;
   position?: { x: number; y: number; z: number };
+  gridPosition?: GridPosition; // New grid-based positioning
   customStyle?: {
     position: string;
     zIndex: number;
@@ -51,4 +61,13 @@ export interface ActorModel {
   vice?: ViceModel[];
   world?: WorldModel;
   ProfessionModel?: ProfessionModel;
+  config?: {
+    head: { color: string };
+    body: { color: string };
+    legs: { color: string };
+    type: string;
+  };
+  customClass?: string;
+  customSkinStyle?: { [key: string]: string };
+  image?: string;
 }

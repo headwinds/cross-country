@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import GoldLeafView from "../gold-leaf-view";
 import type { GoldLeafViewProps } from "../gold-leaf-view.types";
 import type { PortholeBranchModel, EmailModel } from "@/lib/models";
@@ -17,8 +17,11 @@ const storyGoldLeafModel: PortholeBranchModel = {
     company: "",
   },
   image: {
-    photo_thumbnail_url: "https://mir-s3-cdn-cf.behance.net/projects/404/825cab157958935.Y3JvcCwzMDAwLDIzNDYsMCwyNTk.jpg",
-    photo_large_urls: ["https://mir-s3-cdn-cf.behance.net/projects/404/825cab157958935.Y3JvcCwzMDAwLDIzNDYsMCwyNTk.jpg"],
+    photo_thumbnail_url:
+      "https://mir-s3-cdn-cf.behance.net/projects/404/825cab157958935.Y3JvcCwzMDAwLDIzNDYsMCwyNTk.jpg",
+    photo_large_urls: [
+      "https://mir-s3-cdn-cf.behance.net/projects/404/825cab157958935.Y3JvcCwzMDAwLDIzNDYsMCwyNTk.jpg",
+    ],
     photo_default_url: "img/loaders/defaultbackground.png",
   },
 };
@@ -37,6 +40,33 @@ export const ArticleLeaf: Story = {
     goldLeafModel: storyGoldLeafModel as PortholeBranchModel,
   },
 };
+
+export const ArticleLeafMaxWidth: Story = {
+  args: {
+    variant: "article",
+    goldLeafModel: storyGoldLeafModel as PortholeBranchModel,
+  },
+  render: (args) => (
+    <div style={{ maxWidth: "400px" }}>
+      <GoldLeafView {...args} />
+    </div>
+  ),
+};
+
+/*
+sample email
+
+  {
+    body: "https://visualgo.net/en\r\n",
+    date: "Fri, 13 Sep 2024 06:31:57 -0400",
+    email_id: ["191eaf0b32470066"],
+    from: "Brandon Flowers <brandonflowers@gmail.com>",
+    subject:
+      "visualising data structures and algorithms through animation - VisuAlgo",
+    to: "brandonflowers@gmail.com",
+  },
+
+*/
 
 export const EmailLeaf: Story = {
   args: {

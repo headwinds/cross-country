@@ -5,9 +5,13 @@ import { Image, Column, Link } from "../../";
 import ReactPlayer from "react-player/youtube";
 import ReactPlayerVimeo from "react-player/vimeo";
 import { use } from "chai";
+import TikTokPlayer from "./tiktok-player";
+import XPlayer from "./x-player";
 
 type Artist = {
   artistName: string;
+  xUrl?: string | null;
+  xId?: string | null;
   linktreeUrl?: string | null;
   youtubeUrl?: string | null;
   websiteUrl?: string | null;
@@ -56,6 +60,20 @@ const Player = ({
     artist?.artistName === selectedArtistYoutube?.artistName;
 
   const reactPlayer = useMemo(() => {
+    if (artist?.xUrl) {
+      return <XPlayer xUrl={artist.xUrl} />;
+    }
+
+    console.log("artist.xId", artist);
+    if (artist?.xId) {
+      console.log("rendering XPlayer with xId:", artist.xId);
+      return <XPlayer xId={artist.xId} />;
+    }
+
+    if (artist?.tiktokUrl) {
+      return <TikTokPlayer url={artist.tiktokUrl} />;
+    }
+
     if (artist.youtubeUrl?.includes("vimeo")) {
       return (
         <ReactPlayerVimeo
@@ -79,7 +97,12 @@ const Player = ({
     );
   }, [artist.youtubeUrl, width, height, customStyle]);
 
-  if (artist.websiteUrl && artist.youtubeUrl) {
+  if (
+    (artist.websiteUrl && artist.youtubeUrl) ||
+    artist.tiktokUrl ||
+    artist.xId ||
+    artist.xUrl
+  ) {
     return (
       <Column customStyle={{ padding: 0 }}>
         {reactPlayer}

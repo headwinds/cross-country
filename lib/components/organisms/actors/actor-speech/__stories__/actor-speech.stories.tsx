@@ -1,5 +1,5 @@
 import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import ActorSpeech from "../actor-speech";
 import { ActorSpeechModel } from "../../../actors/actor-speech/actor-speech";
 import { defaultActorModel } from "../../../stage/stage";

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import Wallpaper from "../wallpaper";
 
 const meta: Meta<typeof Wallpaper> = {

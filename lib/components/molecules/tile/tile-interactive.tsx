@@ -6,10 +6,32 @@ import styles from "./tile.module.css";
 import clsx from "clsx";
 
 import type { InteractiveTileType } from "./types";
+import type { TileImageConfig } from "@headwinds/cross-country/models/TileModel";
 
 const defaultModel = { fill: "#eee", value: 0, id: 0 };
 
 const SUBSTRACT_SIZE_MODIFIER = 5;
+
+// Helper function to generate background image styles
+const generateImageStyles = (
+  imageConfig: TileImageConfig
+): React.CSSProperties => {
+  const {
+    url,
+    fit = "cover",
+    position = "center",
+    opacity = 1,
+    repeat = "no-repeat",
+  } = imageConfig;
+
+  return {
+    backgroundImage: `url(${url})`,
+    backgroundSize: fit,
+    backgroundPosition: position,
+    backgroundRepeat: repeat,
+    opacity,
+  };
+};
 
 // a tile should be empty and we should nest the Actor
 const Actor = ({ value = "Farmer" }) => {
@@ -37,13 +59,23 @@ const InteractiveTile = forwardRef<HTMLDivElement, InteractiveTileType>(
     ref
   ) => {
     const [isHovered, toggleHovered] = useState(false);
-    const { fill, id } = model;
+    const { fill, id, image, backgroundImage } = model;
+
+    // Generate image styles if available
+    const imageStyles = image ? generateImageStyles(image) : {};
+    const backgroundImageStyles = backgroundImage
+      ? generateImageStyles(backgroundImage)
+      : {};
+
     const finalCustomStyle = {
       ...customStyle,
       width: size,
       height: size,
       backgroundColor: fill,
       padding: 0,
+      // Apply image styles, with image taking precedence over backgroundImage
+      ...backgroundImageStyles,
+      ...imageStyles,
     };
     const { value } = model;
     const handleTileSelected = () => {
@@ -60,12 +92,12 @@ const InteractiveTile = forwardRef<HTMLDivElement, InteractiveTileType>(
     const colorProps = useSpring(springModel);
 
     const onMouseEnter = () => {
-      console.log("Tile onMouseEnter");
+      // console.log("Tile onMouseEnter");
       toggleHovered(true);
     };
 
     const onMouseLeave = () => {
-      console.log("Tile onMouseLeave");
+      // console.log("Tile onMouseLeave");
       toggleHovered(false);
     };
 
@@ -74,7 +106,7 @@ const InteractiveTile = forwardRef<HTMLDivElement, InteractiveTileType>(
       { id: 1, key: "movement cost", value: "3" },
     ];
 
-    console.log("InteractiveTile", { model, customStyle });
+    // console.log("InteractiveTile", { model, customStyle });
 
     return (
       <Column
@@ -116,7 +148,10 @@ const InteractiveTile = forwardRef<HTMLDivElement, InteractiveTileType>(
               width: size - SUBSTRACT_SIZE_MODIFIER,
               height: size - SUBSTRACT_SIZE_MODIFIER,
               borderRadius,
-              backgroundColor: fill,
+              backgroundColor: image ? "transparent" : fill, // Use transparent background if image is provided
+              // Apply image styles to inner tile as well
+              ...backgroundImageStyles,
+              ...imageStyles,
             }}
           >
             {children}

@@ -1,12 +1,20 @@
 import Actor from "../actor/";
+import { ActorModel } from "@/lib/models";
 
-const defaultModel = {
+const defaultModel: ActorModel = {
   id: 0,
-  type: "one",
+  type: "wisp",
   position: { x: 0, y: 0, z: 0 },
   customSkinStyle: { backgroundColor: "#e8e8e8" },
   config: null,
   customClass: "",
+  customStyle: {
+    position: "absolute",
+    zIndex: 0,
+    left: 20,
+    top: 120,
+    backgroundColor: "green",
+  },
 };
 
 export interface WispProps {

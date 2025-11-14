@@ -2,13 +2,15 @@ import React from "react";
 import styles from "./link.module.css";
 import clsx from "clsx";
 
-type LinkProps = {
-  url: string;
+export type LinkProps = {
+  url?: string;
   children: React.ReactNode;
   size?: string;
   target?: string;
   customClass?: string;
   customStyle?: {};
+  hasUnderline?: boolean;
+  onClick?: () => void;
 };
 
 const Link = ({
@@ -19,8 +21,9 @@ const Link = ({
   customClass = "",
   customStyle = {},
   hasUnderline = true,
+  onClick = () => {},
   ...rest
-}) => {
+}: LinkProps) => {
   return (
     <a
       {...rest}
