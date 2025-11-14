@@ -29,8 +29,8 @@ const ScrambleText: React.FC<ScrambleTextProps> = ({
   const [isAnimating, setIsAnimating] = useState(false);
   const unscrambledPositions = useRef(new Set<number>());
   const positionsToUnscramble = useRef<number[]>([]);
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const timeoutsRef = useRef<ReturnType<typeof setTimeout>[]>([]);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutsRef = useRef<NodeJS.Timeout[]>([]);
 
   // Animation for the component appearance
   const springProps = useSpring({

@@ -1,5 +1,6 @@
 # cross-country
 
+<<<<<<< HEAD
 ## 1.3.6
 
 ### Patch Changes
@@ -32,6 +33,8 @@
 - Updated dependencies
   - cross-country@1.3.2
 
+=======
+>>>>>>> trunk
 ## 1.3.1
 
 ### Patch Changes

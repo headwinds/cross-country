@@ -1,0 +1,64 @@
+import { Meta, Canvas, Story } from '@storybook/blocks';
+import FrozenLake from '../frozen-lake';
+
+import * as FrokenLakesStories from "./frozen-lake.stories";
+
+<Meta of={FrokenLakesStories} />
+
+# Frozen Lake
+
+### exploring tile based games with a recommendation engine
+
+<Canvas>
+  <Story name="Default">
+    <FrozenLake config={{ text: 'frozen lake', hasBackground: false }} isFullscreen={false} />
+  </Story>
+</Canvas>
+
+When I discovered [Frozen Lake](https://gym.openai.com/envs/FrozenLake-v0/), a [toy text environment](https://gym.openai.com/envs/#toy_text) by the open ai team, I knew that I had to try to re-create it as tile-based [diorama.](https://twitter.com/LootBndt/status/1406551232861413376) I wanted to turn it into a remote service so that UI could talk to it and get updated on each turn.
+
+I used the provided Python source from their Github repo to build the service using Flask. I created a project folder and setup a virtual environment for the Python app.
+
+As mentioned in the [gym examples](https://github.com/openai/gym#examples), we need to create the interface for agent. In this case, we'll use React and D3.
+
+In order for the agent to move through our environment, we need to implement:
+
+- **reset()** Reset the environment's state.
+- **step(ACTION)** Step the environment by one timestep by passing an ACTION which is constant either LEFT, RIGHT, UP, or DOWN. Returns observation, reward, done, info.
+- **render()** Render one frame of the environment.
+
+Along with learning for free, open source is awesome because it means we can change whatever we like. Instead of a tile named F for frozen, I'd like to rename it I for ice and introduce a new tile S for Snow. The ice tiles will have an slippery effect applied while the snow tiles will not.
+
+We can still see the effect of a slippery tile when we print the result of a step.
+
+With a snow tile, the agent has 100% chance of advancing to the next tile that it selected, however, with the ice tile, there is 33% change of slipping off and landing on undesired tile.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `gridSize` | number \| [number, number] | 4 | Size of the grid (either single number for square or [width, height]) |
+| `renderMode` | "2D" \| "3D" | "2D" | Visual rendering style |
+| `map` | string[] | null | Custom map definition as string array |
+| `slippery` | boolean | true | Whether ice tiles should be slippery |
+| `showProbabilities` | boolean | false | Display movement probability indicators |
+| `speed` | number | 1 | Animation speed multiplier |
+| `autoPlay` | boolean | false | Automatically play with a simple agent |
+| `onStateChange` | function | undefined | Callback fired when environment state changes |
+
+## Map Legend
+
+- `S`: Starting point
+- `G`: Goal (win condition)
+- `H`: Hole (lose condition)
+- `I`: Ice (slippery surface)
+- `F`: Snow (non-slippery surface)
+
+
+I'd like to share a link with my daughter for her access on her iPad. The link would launch an editor and lead her through the process of selecting and laying out buildings in grid. 
+
+Once the layout is complete, the layout could be exported.
+
+While playing Roblox with my daughters, I noticed that they spend a lot of time working with clunky 2D UI to select costumes and update the look of their characters. This type of play could also be handled completely within a web editor.
+
+Ultimately, it would be amazing to be able to leverage the Roblox API; import this layout; and have it build the world in 3D! If not Roblox, could it imported another platform like the Sims?!

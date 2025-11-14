@@ -1,5 +1,5 @@
 import React from "react";
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { Meta, StoryObj } from "@storybook/react";
 import ScrambleText from "../scramble-text";
 
 const meta: Meta<typeof ScrambleText> = {

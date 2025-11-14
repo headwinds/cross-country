@@ -1,6 +1,10 @@
 {
   "name": "cross-country",
+<<<<<<< HEAD
   "version": "1.4.2",
+=======
+  "version": "1.3.1",
+>>>>>>> trunk
   "description": "an atomic design system built for personal metrics & lonely forest bathers",
   "author": "headwinds",
   "license": "MIT",
@@ -89,7 +93,11 @@
     "@xstate/store": "^2.4.0",
     "chalk": "^5.4.1",
     "clsx": "^1.1.0",
+<<<<<<< HEAD
     "cross-country": "^1.3.6",
+=======
+    "cross-country": "^1.3.1",
+>>>>>>> trunk
     "d3": "^7.8.2",
     "d3-axis": "^3.0.0",
     "date-fns": "^3.6.0",
