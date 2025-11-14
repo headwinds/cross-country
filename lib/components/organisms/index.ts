@@ -27,25 +27,8 @@ export { default as ReverseTextAnimation } from "./animation/reverse-text-animat
 export type { ReverseTextAnimationProps } from "./animation/reverse-text-animation";
 
 // organisms / collection / survey
-/*
-export { default as EditTitleInput } from "./survey/question/edit/edit-title-input";
-export type { EditTitleInputProps } from "./survey/question/edit/edit-title-input";
-
-export { default as EditQuestion } from "./survey/question/edit/edit-question";
-export type { EditQuestionProps } from "./survey/question/edit/edit-question";
-
-export { default as MultipleChoice } from "./survey/question/take/multiple-choice";
-export type { MultipleChoiceProps } from "./survey/question/take/multiple-choice";
-
-export { default as TakeAnswerInput } from "./survey/question/take/take-answer-input";
-export type { TakeAnswerInputProps } from "./survey/question/take/take-answer-input";
-
-export { default as AnswerInput } from "./survey/question/edit/answer-input";
-export type { AnswerInputProps } from "./survey/question/edit/answer-input";
-
-export { default as Question } from "./survey/question/take/question";
-export type { QuestionProps } from "./survey/question/take/question";
-*/
+// survey related components have been moved
+// since a survey can be composed of many different types of cross-country components
 
 // organisms / gaming
 export { default as Actor } from "./actors/actor";
