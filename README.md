@@ -9,7 +9,7 @@ Core Tech
 - React (18.02), react-spring & react-hook-form
 - CSS modules & Tailwind CSS compatible
 - D3
-- Storybook 8
+- Storybook 10
 - Typescript 5
 - Vite
 

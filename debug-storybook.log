@@ -1,0 +1,20 @@
+[09:07:23.233] [INFO] storybook v10.1.0
+[09:07:23.950] [DEBUG] Getting package.json info for /Users/brandonflowers/cross-country/package.json...
+[09:07:24.650] [INFO] Starting...
+[09:07:25.751] [DEBUG] Starting preview..
+[09:07:27.766] [DEBUG] Using tsconfig paths for react-docgen
+[09:07:32.970] [ERROR] Failed to build the preview
+[09:07:32.974] [ERROR] [38;2;241;97;97mError: Missing "./dist/mdx-react-shim" specifier in "@storybook/addon-docs" package[39m
+    at e (file://./node_modules/.pnpm/vite@5.4.14/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:46042:25)
+    at n (file://./node_modules/.pnpm/vite@5.4.14/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:46042:627)
+    at o (file://./node_modules/.pnpm/vite@5.4.14/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:46042:1297)
+    at resolveExportsOrImports (file://./node_modules/.pnpm/vite@5.4.14/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:46663:18)
+    at resolveDeepImport (file://./node_modules/.pnpm/vite@5.4.14/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:46686:25)
+    at tryNodeResolve (file://./node_modules/.pnpm/vite@5.4.14/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:46451:16)
+    at ResolveIdContext.resolveId (file://./node_modules/.pnpm/vite@5.4.14/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:46201:19)
+    at PluginContainer.resolveId (file://./node_modules/.pnpm/vite@5.4.14/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49017:17)
+    at ResolveIdContext.resolve (file://./node_modules/.pnpm/vite@5.4.14/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49177:37)
+    at ResolveIdContext.resolveId (file://./node_modules/.pnpm/vite@5.4.14/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:235:25)
+[09:07:32.976] [WARN] Broken build, fix the error above.
+You may need to refresh the browser.
+[09:07:55.844] [PROMPT] Would you like to send anonymous crash reports to improve Storybook and fix bugs faster? {"choice":true}
