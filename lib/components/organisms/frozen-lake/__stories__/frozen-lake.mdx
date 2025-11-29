@@ -15,9 +15,11 @@ import * as FrokenLakesStories from "./frozen-lake.stories";
   </Story>
 </Canvas>
 
-When I discovered [Frozen Lake](https://gym.openai.com/envs/FrozenLake-v0/), a [toy text environment](https://gym.openai.com/envs/#toy_text) by the open ai team, I knew that I had to try to re-create it as tile-based [diorama.](https://twitter.com/LootBndt/status/1406551232861413376) I wanted to turn it into a remote service so that UI could talk to it and get updated on each turn.
+When I discovered [Frozen Lake](https://gym.openai.com/envs/FrozenLake-v0/), a [toy text environment](https://gym.openai.com/envs/#toy_text) by the OpenAI team, I knew that I had to try to re-create it as a tile-based [diorama.](https://twitter.com/LootBndt/status/1406551232861413376). 
 
-I used the provided Python source from their Github repo to build the service using Flask. I created a project folder and setup a virtual environment for the Python app.
+I wanted to turn it into a remote service so that the server could check the results and update the UI.
+
+I used the provided Python source from their Github repo to build the service using Flask.
 
 As mentioned in the [gym examples](https://github.com/openai/gym#examples), we need to create the interface for agent. In this case, we'll use React and D3.
 
@@ -27,9 +29,9 @@ In order for the agent to move through our environment, we need to implement:
 - **step(ACTION)** Step the environment by one timestep by passing an ACTION which is constant either LEFT, RIGHT, UP, or DOWN. Returns observation, reward, done, info.
 - **render()** Render one frame of the environment.
 
-Along with learning for free, open source is awesome because it means we can change whatever we like. Instead of a tile named F for frozen, I'd like to rename it I for ice and introduce a new tile S for Snow. The ice tiles will have an slippery effect applied while the snow tiles will not.
+Along with learning for free, open source means we can change whatever we like. Instead of a tile named F for frozen, I'd like to rename it I for ice and introduce a new tile S for Snow. 
 
-We can still see the effect of a slippery tile when we print the result of a step.
+As the name suggests, the ice tiles will have a slippery effect.
 
 With a snow tile, the agent has 100% chance of advancing to the next tile that it selected, however, with the ice tile, there is 33% change of slipping off and landing on undesired tile.
 
@@ -55,10 +57,6 @@ With a snow tile, the agent has 100% chance of advancing to the next tile that i
 - `F`: Snow (non-slippery surface)
 
 
-I'd like to share a link with my daughter for her access on her iPad. The link would launch an editor and lead her through the process of selecting and laying out buildings in grid. 
-
-Once the layout is complete, the layout could be exported.
-
-While playing Roblox with my daughters, I noticed that they spend a lot of time working with clunky 2D UI to select costumes and update the look of their characters. This type of play could also be handled completely within a web editor.
+While playing Roblox with my daughters, I noticed that they spend a lot of time working with clunky 2D UI to select costumes and update the look of their characters. This type of play could also be handled completely within a web editor. 
 
 Ultimately, it would be amazing to be able to leverage the Roblox API; import this layout; and have it build the world in 3D! If not Roblox, could it imported another platform like the Sims?!

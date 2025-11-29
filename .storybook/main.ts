@@ -44,8 +44,8 @@ const config: StorybookConfig = {
         alias: {
           ...config.resolve?.alias,
           // Fix pnpm + Storybook 10 MDX resolution issue
-          '@storybook/addon-docs/mdx-react-shim': '@mdx-js/react',
-          '@storybook/blocks': '@storybook/addon-docs/blocks',
+          "@storybook/addon-docs/mdx-react-shim": "@mdx-js/react",
+          "@storybook/blocks": "@storybook/addon-docs/blocks",
         },
       },
       optimizeDeps: {
