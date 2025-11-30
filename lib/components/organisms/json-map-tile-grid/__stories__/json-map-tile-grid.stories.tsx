@@ -4,6 +4,7 @@ import JsonMapTileGrid from "../json-map-tile-grid";
 import Column from "../../../atoms/column/column";
 import humberMapData from "./humber_map_data.json";
 import map from "./solo_scout_map_data.json"; // El Hierro map data
+import type { ColorThemeType } from "../color-map.util";
 
 type Tile = {
   x: number;
@@ -55,9 +56,18 @@ export const ElHierroGridStory: Story = {
       })
     );
 
+    const simplifyColorsParams = {
+      models: models,
+      totalColors: 8,
+      colorGeneratorType: "similar" as ColorThemeType,
+    };
+
     return (
       <Column customStyle={{ height: 400 }}>
-        <JsonMapTileGrid models={models} />
+        <JsonMapTileGrid
+          models={models}
+          simplifyColorsParams={simplifyColorsParams}
+        />
       </Column>
     );
   },
@@ -97,9 +107,18 @@ export const HumberGridStory: Story = {
       })
     );
 
+    const simplifyColorsParams = {
+      models: models,
+      totalColors: 4,
+      colorGeneratorType: "similar" as ColorThemeType,
+    };
+
     return (
       <Column customStyle={{ height: 400 }}>
-        <JsonMapTileGrid models={models} />
+        <JsonMapTileGrid
+          models={models}
+          simplifyColorsParams={simplifyColorsParams}
+        />
       </Column>
     );
   },

@@ -5,11 +5,19 @@ import ColorUtil from "@headwinds/cross-country/utils/colour-util";
 import clsx from "clsx";
 import { Column, Tile } from "../..";
 import styles from "./json-map-tile-grid.module.css";
+import { simplifyColors, type SimplifyColorsParams } from "./color-map.util";
+
+const defaultSimplifyColorsParams: SimplifyColorsParams = {
+  models: [],
+  totalColors: 10,
+  colorGeneratorType: "similar",
+};
 
 export interface JsonMapTileGridProps {
   models: JsonMapTileModelInterface[];
   isIsometric?: boolean;
   customClass?: string;
+  simplifyColorsParams?: SimplifyColorsParams;
 }
 
 const shadedColor = ColorUtil.hexToRgb("#67bd67");
@@ -18,13 +26,22 @@ const JsonMapTileGrid = ({
   models,
   isIsometric = false,
   customClass = "",
+  simplifyColorsParams = defaultSimplifyColorsParams,
 }: JsonMapTileGridProps) => {
   const [tileSelected, setSelected] =
     useState<JsonMapTileModelInterface | null>(null);
   const tileRefs = useRef<(HTMLDivElement | null)[]>([]);
   const totalTiles = models.length;
 
-  const modelsWithIds = models.map((model) => ({
+  const simplifyParams = {
+    ...simplifyColorsParams,
+    models,
+  };
+
+  // simplify colors
+  const { newArray: simplifiedModels } = simplifyColors(simplifyParams);
+
+  const modelsWithIds = simplifiedModels.map((model) => ({
     ...model,
     id: `tile_${model.x}_${model.y}`,
     fill: model.color ?? "#67bd67",
