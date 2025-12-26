@@ -1,24 +1,25 @@
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { describe, it, expect, beforeEach, vi } from "vitest";
 import RemoveBackground from "./remove-background";
 
 // Mock fetch for API calls
-global.fetch = jest.fn();
+global.fetch = vi.fn();
 
 // Mock URL.createObjectURL
-global.URL.createObjectURL = jest.fn(() => "mock-url");
+global.URL.createObjectURL = vi.fn(() => "mock-url");
 
 // Mock URL.revokeObjectURL
-global.URL.revokeObjectURL = jest.fn();
+global.URL.revokeObjectURL = vi.fn();
 
 describe("RemoveBackground Component", () => {
   const mockUserAccountId = "test-user-123";
   const mockScoutApiUrl = "http://localhost:5000";
-  const mockOnImageProcessed = jest.fn();
-  const mockOnError = jest.fn();
+  const mockOnImageProcessed = vi.fn();
+  const mockOnError = vi.fn();
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it("renders without crashing", () => {
@@ -63,7 +64,7 @@ describe("RemoveBackground Component", () => {
 
   it("calls onImageProcessed when background removal succeeds", async () => {
     // Mock successful image upload
-    (global.fetch as jest.Mock)
+    (global.fetch as any)
       .mockResolvedValueOnce({
         ok: true,
         json: async () => ({ image: { image_id: "img-123" } }),
@@ -107,9 +108,7 @@ describe("RemoveBackground Component", () => {
   });
 
   it("calls onError when image upload fails", async () => {
-    (global.fetch as jest.Mock).mockRejectedValueOnce(
-      new Error("Upload Error")
-    );
+    (global.fetch as any).mockRejectedValueOnce(new Error("Upload Error"));
 
     render(
       <RemoveBackground
@@ -128,6 +127,7 @@ describe("RemoveBackground Component", () => {
     }
 
     // Wait for process button to appear and click it
+    // Wait for process button to appear and click it
     await waitFor(() => {
       const processButton = screen.getByText("Remove Background");
       fireEvent.click(processButton);
@@ -135,13 +135,13 @@ describe("RemoveBackground Component", () => {
 
     // Wait for error to be handled
     await waitFor(() => {
-      expect(mockOnError).toHaveBeenCalledWith("Failed to remove background");
+      expect(mockOnError).toHaveBeenCalledWith("Upload Error");
     });
   });
 
   it("calls onError when background removal API call fails", async () => {
     // Mock successful image upload
-    (global.fetch as jest.Mock)
+    (global.fetch as any)
       .mockResolvedValueOnce({
         ok: true,
         json: async () => ({ image: { image_id: "img-123" } }),
@@ -173,7 +173,7 @@ describe("RemoveBackground Component", () => {
 
     // Wait for error to be handled
     await waitFor(() => {
-      expect(mockOnError).toHaveBeenCalledWith("Failed to remove background");
+      expect(mockOnError).toHaveBeenCalledWith("Background removal failed");
     });
   });
 

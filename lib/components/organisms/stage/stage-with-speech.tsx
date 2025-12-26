@@ -9,13 +9,13 @@ import ActorSpeech from "../actors/actor-speech";
 import SpeechControls from "../speech-controls/speech-controls";
 import { ActorModel } from "@headwinds/cross-country/models/ActorModel";
 import { ActorSpeechModel } from "../actors/actor-speech/actor-speech";
-import { CharacterLevelModel } from "@/lib/models";
+import { CharacterLevelModel } from "@/models";
 import TileGrid from "../tile-grid";
-import { createDemoModels } from "@/lib/utils/tile-util";
+import { createDemoModels } from "@/utils/tile-util";
 import {
   gridToPixelPosition,
   GridConfig,
-} from "@/lib/utils/grid-position-util";
+} from "@/utils/grid-position-util";
 
 type StageConfig = {
   customClass?: string;

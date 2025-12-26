@@ -1,5 +1,5 @@
 import Actor from "../actor/";
-import { ActorModel } from "@/lib/models";
+import { ActorModel } from "@/models";
 
 const defaultModel: ActorModel = {
   id: 0,

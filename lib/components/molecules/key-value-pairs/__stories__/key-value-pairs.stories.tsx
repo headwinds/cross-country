@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import KeyValuePairs from "../key-value-pairs";
-import { Column } from "@/lib/components";
+import { Column } from "@/components";
 
 const meta: Meta<typeof KeyValuePairs> = {
   component: KeyValuePairs,

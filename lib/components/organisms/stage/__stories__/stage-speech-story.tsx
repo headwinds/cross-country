@@ -3,7 +3,7 @@ import StageWithSpeech from "../stage-with-speech";
 import {
   createActorWithGridPosition,
   createActorsWithGridPositions,
-} from "@/lib/utils/actor-util";
+} from "@/utils/actor-util";
 import { ActorSpeechModel } from "../actors/actor-speech/actor-speech";
 import CrossCountryProvider from "@headwinds/cross-country/providers/cross-country-provider";
 

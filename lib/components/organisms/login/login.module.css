@@ -28,14 +28,7 @@
 }
 
 .login__input {
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid #666;
-  border-style: dashed;
-  border-top-style: none;
-  border-left-style: none;
-  border-right-style: none;
+
   color: #000;
   font-family: var(--font);
 }

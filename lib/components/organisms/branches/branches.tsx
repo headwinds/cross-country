@@ -6,13 +6,13 @@ import {
   createAllPortholeTrees,
   getRSSBranch,
   convertToPortholeBranches,
-} from "@/lib/utils/golds/feed-util";
-import { fetchRetry } from "@/lib/utils/fetch-util";
-import { shuffle } from "@/lib/utils/fp-util";
-import Loading from "@/lib/components/molecules/loading";
+} from "@/utils/golds/feed-util";
+import { fetchRetry } from "@/utils/fetch-util";
+import { shuffle } from "@/utils/fp-util";
+import Loading from "@/components/molecules/loading";
 import BranchList from "./branch-list";
 import { mockResponse } from "./__mocks__/response";
-import type { PortholeBranchModel, EmailModel } from "@/lib/models";
+import type { PortholeBranchModel, EmailModel } from "@/models";
 import { set } from "react-hook-form";
 
 const portholeBranches = createAllPortholeTrees();

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import Branches from "../branches";
 import { emails } from "../../../molecules/gold-leaf/gold-leaf-view/__stories__/emails";
 import type { GenericFetch, Service } from "../branches";
-import type { PortholeBranchModel, EmailModel } from "@/lib/models";
+import type { PortholeBranchModel, EmailModel } from "@/models";
 
 const meta: Meta<typeof Branches> = {
   component: Branches,

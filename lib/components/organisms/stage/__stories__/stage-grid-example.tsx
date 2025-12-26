@@ -3,8 +3,8 @@ import Stage from "../stage";
 import {
   createActorWithGridPosition,
   createActorsWithGridPositions,
-} from "@/lib/utils/actor-util";
-import { GridPosition } from "@/lib/utils/grid-position-util";
+} from "@/utils/actor-util";
+import { GridPosition } from "@/utils/grid-position-util";
 import CrossCountryProvider from "@headwinds/cross-country/providers/cross-country-provider";
 
 /**

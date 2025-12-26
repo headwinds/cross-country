@@ -17,7 +17,7 @@ export const TextAreaStory: Story = {
       console.log("TextArea onTextChange text: ", text);
       setValue(text);
     };
-    const userPrompt = "What's on your mind?";
+    const userPrompt = "";
     return (
       <TextArea
         value={value}
