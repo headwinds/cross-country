@@ -18,20 +18,23 @@ export type TileImageConfig = {
 
 export type TileModel = {
   id: string;
-  name: string;
-  label: string;
-  description: string;
-  material: string;
-  movement_cost: number;
-  color: string;
-  type: string;
-  skin: string;
-  damage: number;
-  is_obstacle: boolean;
-  obstacle_remover: string;
+  name?: string;
+  label?: string;
+  description?: string;
+  material?: string;
+  movement_cost?: number;
+  color?: string; // TODO do I need both color and fill?
+  type?: string;
+  skin?: string;
+  damage?: number;
+  is_obstacle?: boolean;
+  obstacle_remover?: string;
   fill: string;
-  elevation: number;
-  age: number;
+  fillCorner?: string; // optionally separate corner fill color
+  fillBorder?: string;
+  fillBackground?: string;
+  elevation?: number;
+  age?: number;
   // New image asset properties for modding support
   image?: TileImageConfig;
   backgroundImage?: TileImageConfig; // Alternative background image

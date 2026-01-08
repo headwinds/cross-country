@@ -16,7 +16,7 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["*"],
+      "@/*": ["lib/*"],
       "@headwinds/cross-country": ["./lib"],
       "@headwinds/cross-country/*": ["lib/*"],
       "@headwinds/cross-country/components": ["lib/components"],

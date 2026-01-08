@@ -1,6 +1,6 @@
-import React, { forwardRef, useCallback, useState } from "react";
+import React, { forwardRef, useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
-import { Column, Row, Button, Paragraph, KeyValuePairs } from "../../..";
+import { Column, Paragraph } from "../../..";
 import Corners from "./corners";
 import styles from "./tile.module.css";
 import clsx from "clsx";
@@ -8,9 +8,9 @@ import clsx from "clsx";
 import type { InteractiveTileType } from "./types";
 import type { TileImageConfig } from "@headwinds/cross-country/models/TileModel";
 
-const defaultModel = { fill: "#eee", value: 0, id: 0 };
+const defaultModel = { fill: "#eee", value: 0, id: "0" };
 
-const SUBSTRACT_SIZE_MODIFIER = 5;
+const SUBTRACT_SIZE_MODIFIER = 5;
 
 // Helper function to generate background image styles
 const generateImageStyles = (
@@ -47,7 +47,10 @@ const InteractiveTile = forwardRef<HTMLDivElement, InteractiveTileType>(
       customClass,
       size = 100,
       cornerColor = "#ddd",
-      customStyle = {},
+      customStyle = {
+        borderRadius: 8,
+        margin: 2,
+      },
       type,
       model = defaultModel,
       springModel = null,
@@ -59,7 +62,7 @@ const InteractiveTile = forwardRef<HTMLDivElement, InteractiveTileType>(
     ref
   ) => {
     const [isHovered, toggleHovered] = useState(false);
-    const { fill, id, image, backgroundImage } = model;
+    const { id, image, backgroundImage } = model;
 
     // Generate image styles if available
     const imageStyles = image ? generateImageStyles(image) : {};
@@ -71,13 +74,13 @@ const InteractiveTile = forwardRef<HTMLDivElement, InteractiveTileType>(
       ...customStyle,
       width: size,
       height: size,
-      backgroundColor: fill,
+      backgroundColor: model?.fillBackground ?? model.fill,
       padding: 0,
       // Apply image styles, with image taking precedence over backgroundImage
       ...backgroundImageStyles,
       ...imageStyles,
     };
-    const { value } = model;
+
     const handleTileSelected = () => {
       if (!setSelected) {
         return null;
@@ -119,10 +122,9 @@ const InteractiveTile = forwardRef<HTMLDivElement, InteractiveTileType>(
         hasChildrenCentered
         customStyle={{
           ...finalCustomStyle,
-          backgroundColor: fill,
-          borderRadius: 8,
-          margin: 2,
-          borderColor: fill,
+          backgroundColor: model?.fillBackground ?? model.fill,
+
+          borderColor: model?.fillBorder ?? model.fill,
         }}
         onClick={handleTileSelected}
         onMouseEnter={onMouseEnter}
@@ -135,8 +137,8 @@ const InteractiveTile = forwardRef<HTMLDivElement, InteractiveTileType>(
             style={{
               ...finalCustomStyle,
               backgroundColor: colorProps.backgroundColor.to((value) => value),
-              width: size - SUBSTRACT_SIZE_MODIFIER,
-              height: size - SUBSTRACT_SIZE_MODIFIER,
+              width: size - SUBTRACT_SIZE_MODIFIER,
+              height: size - SUBTRACT_SIZE_MODIFIER,
             }}
           />
         ) : (
@@ -145,10 +147,10 @@ const InteractiveTile = forwardRef<HTMLDivElement, InteractiveTileType>(
             hasChildrenCentered
             customStyle={{
               ...finalCustomStyle,
-              width: size - SUBSTRACT_SIZE_MODIFIER,
-              height: size - SUBSTRACT_SIZE_MODIFIER,
+              width: size - SUBTRACT_SIZE_MODIFIER,
+              height: size - SUBTRACT_SIZE_MODIFIER,
               borderRadius,
-              backgroundColor: image ? "transparent" : fill, // Use transparent background if image is provided
+              backgroundColor: image ? "transparent" : model.fillBackground, // Use transparent background if image is provided
               // Apply image styles to inner tile as well
               ...backgroundImageStyles,
               ...imageStyles,
@@ -159,7 +161,11 @@ const InteractiveTile = forwardRef<HTMLDivElement, InteractiveTileType>(
         )}
 
         {/* CORNERS */}
-        <Corners size={100} isHovered={isHovered} cornerColor={model.fill} />
+        <Corners
+          size={100}
+          isHovered={isHovered}
+          cornerColor={model.fillCorner ?? model.fill}
+        />
         {/*
         <Column>
           <KeyValuePairs keyValues={keyValues} />

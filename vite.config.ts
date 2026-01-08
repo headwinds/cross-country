@@ -9,7 +9,7 @@ import css from "rollup-plugin-css-only";
 export default defineConfig({
   resolve: {
     alias: {
-      "@": resolve(__dirname, "./"),
+      "@": resolve(__dirname, "./lib"),
       "@headwinds/cross-country": resolve(__dirname, "./lib"),
       "@headwinds/cross-country/components": resolve(
         __dirname,
