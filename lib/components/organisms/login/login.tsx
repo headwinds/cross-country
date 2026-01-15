@@ -160,7 +160,7 @@ const Login = ({
   hasBackground = false,
   imageUrl = null,
   onChange = (user: any) => {},
-  onRegisterClick = () => {},
+  onRegisterClick,
 }) => {
   // remember me & local storage
   const [localStorageState, toggleRememberMe] = useLoginLocalStorage(

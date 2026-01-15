@@ -1,4 +1,4 @@
-import { Meta, Canvas, Story, Subtitle } from "@storybook/addon-docs/blocks";
+import { Meta, Canvas } from "@storybook/blocks";
 import * as __COMPONENT_UPPERCASE_NAME__Stories from "./__COMPONENT_LOWERCASE_NAME__.stories";
 
 <Meta of={__COMPONENT_UPPERCASE_NAME__Stories} />

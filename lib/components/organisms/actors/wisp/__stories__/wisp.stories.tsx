@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import Wisp from "@/lib/components/organisms/actors/wisp";
-import { ActorModel } from "@/lib/models";
-import { ActorSpeechModel } from "@/lib/components/organisms/actors/actor-speech";
-import Stage from "@/lib/components/organisms/stage";
+import Wisp from "@/components/organisms/actors/wisp";
+import { ActorModel } from "@/models";
+import { ActorSpeechModel } from "@/components/organisms/actors/actor-speech";
+import Stage from "@/components/organisms/stage";
 
 interface TemplateProps {
   message: string;

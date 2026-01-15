@@ -1,27 +1,25 @@
 import React from "react";
 import { render } from "@testing-library/react";
+import { describe, it, expect, beforeEach } from "vitest";
+import RemoveBackground from "../";
+import { RemoveBackgroundProps } from "../";
 
-import RemoveBackgroundProps from "../";
-import { RemoveBackgroundProps } from "../RemoveBackground";
-
-describe("<RemoveBackgroundProps />", () => {
+describe("<RemoveBackground />", () => {
   let props: RemoveBackgroundProps;
 
   beforeEach(() => {
     props = {
-      foo: "bar"
+      userAccountId: "test-user",
     };
   });
 
-  const renderComponent = () => render(<RemoveBackgroundProps {...props} />);
+  const renderComponent = () => render(<RemoveBackground {...props} />);
 
-  it("should render foo text correctly", () => {
-    props.foo = "cross country was here";
+  it("should render component correctly", () => {
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId("RemoveBackgroundProps");
+    const component = getByTestId("RemoveBackground");
 
-    expect(component).toHaveTextContent("cross country was here");
+    expect(component).toBeInTheDocument();
   });
 });
-

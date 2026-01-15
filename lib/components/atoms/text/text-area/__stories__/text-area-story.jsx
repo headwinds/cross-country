@@ -5,7 +5,7 @@ import Column from "../../../column";
 import Span from "../../span";
 import Form from "../../../form";
 
-const userPrompt = "What's on your mind?";
+const userPrompt = "";
 
 function TextInputStory() {
   const [story, setStory] = useState("");

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import GoldLeafView from "../gold-leaf-view";
 import type { GoldLeafViewProps } from "../gold-leaf-view.types";
-import type { PortholeBranchModel, EmailModel } from "@/lib/models";
+import type { PortholeBranchModel, EmailModel } from "@/models";
 
 const storyGoldLeafModel: PortholeBranchModel = {
   id: "gold-leaf-0-6",

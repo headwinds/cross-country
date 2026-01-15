@@ -3,6 +3,19 @@ import TileStory from "./tile-story";
 import AnimatedTileStory from "./tile-animated-story";
 import { Column } from "../../../";
 import Tile from "../tile";
+import type { TileModel } from "../../../../models/TileModel";
+
+const waterTileModel: TileModel = {
+  id: "0",
+  fill: "lightblue",
+  is_obstacle: false,
+  obstacle_remover: "",
+  elevation: 0,
+  age: 0,
+  name: "water",
+  color: "lightblue",
+  type: "tile",
+};
 
 interface TileProps {
   message: string;
@@ -24,23 +37,31 @@ export const ConcreteTileStory: Story = {
 };
 
 export const WaterTile = {
-  render: () => (
-    <Column>
-      <TileStory
-        model={{
-          id: 0,
-          fill: "lightblue",
-        }}
-      />
-    </Column>
-  ),
-
-  name: "water tile",
+  render: () => <TileStory model={waterTileModel} />,
 };
 
-/*
-export const AnimateTileColor = {
-  render: () => <AnimatedTileStory />,
-  name: "animate tile color",
+export const SelectedWaterTile = {
+  args: {
+    model: {
+      ...waterTileModel,
+      fillBorder: "yellow",
+      fillBackground: "blue",
+      fillCorner: "cyan",
+    },
+  },
 };
-*/
+
+export const SquareWaterTile = {
+  args: {
+    model: {
+      ...waterTileModel,
+      fillBorder: "yellow",
+      fillBackground: "blue",
+      fillCorner: "cyan",
+    },
+    customStyle: {
+      borderRadius: 0,
+      margin: 0,
+    },
+  },
+};

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import Circle from "../circle";
-import SVG from "@/lib/components/atoms/svg";
+import SVG from "@/components/atoms/svg";
 import AnimatedCirclesStory from "./animated-circles-story";
 
 const meta: Meta<typeof Circle> = {

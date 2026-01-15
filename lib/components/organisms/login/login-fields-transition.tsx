@@ -65,7 +65,7 @@ const LoginFieldsTransition = ({
   };
   const [usernameStyles, usernameApi] = useSpring(() => usernameStart);
 
-  // passowrd animations
+  // password animations
   const playAnimation = (api, config) => {
     api.start(config);
   };

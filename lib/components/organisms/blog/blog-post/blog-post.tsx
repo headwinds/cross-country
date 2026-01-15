@@ -115,7 +115,7 @@ const BlogPost = ({
         <TextArea
           onTextChange={onTextChange}
           value={state.text}
-          placeholder="What's on your mind?"
+          placeholder=""
         />
         <Button onClick={onSaveClick}>Save</Button>
       </Card>

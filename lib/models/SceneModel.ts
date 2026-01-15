@@ -8,16 +8,16 @@
 6. Once content, we can either share the scene and/or move on to the next adventure.
 */
 
-import { ActorModel } from "@/lib/models/ActorModel";
-import { PlayerModel } from "@/lib/models/PlayerModel";
-import { UserModel } from "@/lib/models/UserModel";
-import { ItemModel } from "@/lib/models/ItemModel";
-import { EnemyModel } from "@/lib/models/EnemyModel";
-import { NeutralModel } from "@/lib/models/NeutralModel";
-import { NPCModel } from "@/lib/models/NPCModel";
-import { ShieldModel } from "@/lib/models/ShieldModel";
-import { WeaponModel } from "@/lib/models/WeaponModel";
-import { QuestModel } from "@/lib/models/QuestModel";
+import { ActorModel } from "@/models/ActorModel";
+import { PlayerModel } from "@/models/PlayerModel";
+import { UserModel } from "@/models/UserModel";
+import { ItemModel } from "@/models/ItemModel";
+import { EnemyModel } from "@/models/EnemyModel";
+import { NeutralModel } from "@/models/NeutralModel";
+import { NPCModel } from "@/models/NPCModel";
+import { ShieldModel } from "@/models/ShieldModel";
+import { WeaponModel } from "@/models/WeaponModel";
+import { QuestModel } from "@/models/QuestModel";
 
 export interface SceneModel {
   id: number;

@@ -1,3 +1,5 @@
+import type { TileModel } from "../../../models/TileModel";
+
 export type TileType = {
   isSelected?: boolean;
   setSelected?: (model: any) => void;
@@ -5,8 +7,8 @@ export type TileType = {
   size?: number;
   cornerColor?: string;
   customStyle?: any;
-  type?: string;
-  model?: any;
+  type?: "interactive" | string;
+  model?: TileModel;
   borderRadius?: number;
   children?: React.ReactElement | React.ReactElement[];
 };

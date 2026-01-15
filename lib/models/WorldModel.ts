@@ -1,9 +1,9 @@
-import { WeaponModel } from "@/lib/models/WeaponModel";
-import { ShieldModel } from "@/lib/models/ShieldModel";
-import { ItemModel } from "@/lib/models/ItemModel";
-import { EnemyModel } from "@/lib/models/EnemyModel";
-import { PlayerModel } from "@/lib/models/PlayerModel";
-import { BookModel } from "@/lib/models/BookModel";
+import { WeaponModel } from "@/models/WeaponModel";
+import { ShieldModel } from "@/models/ShieldModel";
+import { ItemModel } from "@/models/ItemModel";
+import { EnemyModel } from "@/models/EnemyModel";
+import { PlayerModel } from "@/models/PlayerModel";
+import { BookModel } from "@/models/BookModel";
 import { NPCModel } from "./NPCModel";
 import { NeutralModel } from "./NeutralModel";
 

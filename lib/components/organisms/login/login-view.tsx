@@ -28,9 +28,9 @@ const LoginView = ({
   hasTitle = true,
   hasRememberMeChecked,
   handleRememberMeClicked,
-  customStyle = { padding: 0, width: 280 },
+  customStyle = { padding: 0, width: 320 },
   error,
-  onRegisterClick = () => {},
+  onRegisterClick,
 }) => {
   const isAuthenticated = user ? true : false;
 
@@ -71,12 +71,14 @@ const LoginView = ({
         ) : null}
       </Form>
       <LoginFetching isAnimated={isAnimated} isFetching={isFetching} />
-      <Link
-        onClick={onRegisterClick}
-        customStyle={{ fontSize: 14, margin: 16, cursor: "pointer" }}
-      >
-        Register
-      </Link>
+      {onRegisterClick ? (
+        <Link
+          onClick={onRegisterClick}
+          customStyle={{ fontSize: 14, margin: 16, cursor: "pointer" }}
+        >
+          Register
+        </Link>
+      ) : null}
     </Column>
   );
 };

@@ -67,7 +67,7 @@ const StateMachineContentEditableStory = () => {
         <TextInput
           actorOptions={{ context: { searchInput: "hello" } }}
           onTextChange={onTextChange}
-          placeholder="What's on your mind?"
+          placeholder=""
           onDebouncedQueryChange={onDebouncedQueryChange}
           value={state.context.query}
           isContentEditable={true}

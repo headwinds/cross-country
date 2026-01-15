@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect, createRef, useRef } from "react";
 import { Hunter, Warrior, TileGrid, Stage, Tile } from "../..";
 

@@ -1,4 +1,4 @@
-import { SceneModel } from "@/lib/models/SceneModel";
+import { SceneModel } from "@/models/SceneModel";
 
 export interface PageModel {
   id: number;

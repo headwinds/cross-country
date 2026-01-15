@@ -2,10 +2,10 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import Cleric from "../cleric";
 import Stage from "../../../../stage";
-import { ActorType } from "@/lib/models/ActorModel";
+import { ActorType } from "@/models/ActorModel";
 import { ActorModel } from "@headwinds/cross-country/models/ActorModel";
 import { ActorSpeechModel } from "../../../actor-speech/actor-speech";
-import { GridConfig } from "@/lib/utils/grid-position-util";
+import { GridConfig } from "@/utils/grid-position-util";
 
 import cleric from "./cleric.png";
 

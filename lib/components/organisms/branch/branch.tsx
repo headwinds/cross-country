@@ -8,7 +8,7 @@ import {
   deleteItemFromStore,
   updateItemInStore,
 } from "../../../utils/golds/indexdb-util";
-import { PortholeBranchModel } from "@/lib/models";
+import { PortholeBranchModel } from "@/models";
 
 const GOLD_COLOUR = "#E3D597";
 

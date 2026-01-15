@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import Actor from "../../actor";
-import { ActorModel } from "@/lib/models";
+import { ActorModel } from "@/models";
 
 // pre-configured character
 const head = { color: "gold" };

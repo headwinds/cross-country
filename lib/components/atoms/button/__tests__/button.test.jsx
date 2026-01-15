@@ -1,8 +1,8 @@
-import React from 'react';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { describe, expect, beforeEach, it } from 'vitest';
-import Button from '../button-themed';
-import { vi } from 'vitest';
+import React from "react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { describe, expect, beforeEach, it } from "vitest";
+import Button from "../button";
+import { vi } from "vitest";
 
 /*
 I had to add config to reset the handleclick function each time
@@ -13,9 +13,11 @@ https://stackoverflow.com/questions/47812801/how-to-reset-jest-mock-functions-ca
 
 const handleClick = vi.fn();
 
-describe('<Button />', () => {
-  test('renders', () => {
-    const { container } = render(<Button text="hello" handleClick={handleClick} />);
+describe("<Button />", () => {
+  test("renders", () => {
+    const { container } = render(
+      <Button text="hello" handleClick={handleClick} />
+    );
     expect(container).toBeTruthy();
   });
   /*

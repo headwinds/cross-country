@@ -15,6 +15,7 @@
 - https://www.polygon.com/2021/3/26/22352414/field-guide-to-memory-keepsake-game-impressions-interview
 - https://quirkybirdgames.itch.io/game-publishing-a-micro-rpg
 - https://obie.medium.com/my-kids-and-i-just-played-d-d-with-chatgpt4-as-the-dm-43258e72b2c6
+- https://medium.com/theuglymonster/how-i-kickstarted-my-mothership-adventure-e486685907fa
 
 #### Machine Learning
 

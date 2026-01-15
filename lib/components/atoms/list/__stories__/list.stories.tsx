@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import List from "../list";
-import ListItem from "@/lib/components/atoms/list/list-item/list-item";
+import ListItem from "@/components/atoms/list/list-item/list-item";
 
 const meta: Meta<typeof List> = {
   component: List,

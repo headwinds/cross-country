@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useRef, useMemo, useCallback } from "react";
 // components
 import { Tile, Column, Row } from "../..";

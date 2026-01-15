@@ -10,14 +10,14 @@ import styles from "./stage.module.css";
 import ActorSpeech from "../actors/actor-speech";
 import { ActorModel } from "@headwinds/cross-country/models/ActorModel";
 import { ActorSpeechModel } from "../actors/actor-speech/actor-speech";
-import { CharacterLevelModel } from "@/lib/models";
+import { CharacterLevelModel } from "@/models";
 import TileGrid from "../tile-grid";
-import { createDemoModels, scenarioTileSets } from "@/lib/utils/tile-util";
+import { createDemoModels, scenarioTileSets } from "@/utils/tile-util";
 import {
   gridToActorPosition,
   type GridConfig,
   type ActorPositioningConfig,
-} from "@/lib/utils/grid-position-util";
+} from "@/utils/grid-position-util";
 
 type StageConfig = {
   customClass?: string;
@@ -26,7 +26,7 @@ type StageConfig = {
   // Tile configuration moved here
   useImageTiles?: boolean;
   tileTheme?:
-    | keyof typeof import("@/lib/utils/tile-util").scenarioTileSets
+    | keyof typeof import("@/utils/tile-util").scenarioTileSets
     | "mixed";
   customTileModels?: import("@headwinds/cross-country/models/TileModel").TileModel[];
   totalTiles?: number;

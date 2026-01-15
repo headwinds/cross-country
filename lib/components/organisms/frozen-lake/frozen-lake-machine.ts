@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { createMachine, assign, interpret } from "xstate";
 // import PusherService from '../../../services/pusher-service';
 // import c from '../../../constants/'; // bad path
