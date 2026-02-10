@@ -33,12 +33,12 @@ const generateImageStyles = (
   };
 };
 
-// a tile should be empty and we should nest the Actor
-const Actor = ({ value = "Farmer" }) => {
-  return <Paragraph>{value}</Paragraph>;
-};
+interface TileInteractiveProps extends InteractiveTileType {
+  // Add any additional props if needed
+}
 
-const InteractiveTile = forwardRef<HTMLDivElement, InteractiveTileType>(
+
+const InteractiveTile = forwardRef<HTMLDivElement, TileInteractiveProps>(
   (
     {
       isSelected = false,
