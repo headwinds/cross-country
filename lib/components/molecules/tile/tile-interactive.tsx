@@ -38,6 +38,7 @@ interface TileInteractiveProps extends InteractiveTileType {
 }
 
 
+
 const InteractiveTile = forwardRef<HTMLDivElement, TileInteractiveProps>(
   (
     {
@@ -70,11 +71,24 @@ const InteractiveTile = forwardRef<HTMLDivElement, TileInteractiveProps>(
       ? generateImageStyles(backgroundImage)
       : {};
 
+    const getColor = () => {
+      if (model.color) {
+        return model.color;
+      }
+      if (model.fill) {
+        return model.fill;
+      }
+      if (model.fillBackground) {
+        return model.fillBackground;
+      }
+      return "#eee"; // default color
+    };
+
     const finalCustomStyle = {
       ...customStyle,
       width: size,
       height: size,
-      backgroundColor: model?.fillBackground ?? model.fill,
+      backgroundColor: getColor(),
       padding: 0,
       // Apply image styles, with image taking precedence over backgroundImage
       ...backgroundImageStyles,

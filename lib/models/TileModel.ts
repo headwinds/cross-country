@@ -23,7 +23,7 @@ export type TileModel = {
   description?: string;
   material?: string;
   movement_cost?: number;
-  color?: string; // TODO do I need both color and fill?
+  color?: string; // should be the same as fill
   type?: string;
   skin?: string;
   damage?: number;
