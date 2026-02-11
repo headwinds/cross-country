@@ -135,10 +135,10 @@ const InteractiveTile = forwardRef<HTMLDivElement, TileInteractiveProps>(
         {springModel ? (
           <animated.div
             style={{
-              ...finalCustomStyle,
-              backgroundColor: colorProps.backgroundColor.to((value) => value),
               width: size - SUBTRACT_SIZE_MODIFIER,
               height: size - SUBTRACT_SIZE_MODIFIER,
+              borderRadius,
+              ...colorProps,
             }}
           />
         ) : (
