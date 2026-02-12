@@ -33,12 +33,13 @@ const generateImageStyles = (
   };
 };
 
-// a tile should be empty and we should nest the Actor
-const Actor = ({ value = "Farmer" }) => {
-  return <Paragraph>{value}</Paragraph>;
-};
+interface TileInteractiveProps extends InteractiveTileType {
+  // Add any additional props if needed
+}
 
-const InteractiveTile = forwardRef<HTMLDivElement, InteractiveTileType>(
+
+
+const InteractiveTile = forwardRef<HTMLDivElement, TileInteractiveProps>(
   (
     {
       isSelected = false,
@@ -70,11 +71,24 @@ const InteractiveTile = forwardRef<HTMLDivElement, InteractiveTileType>(
       ? generateImageStyles(backgroundImage)
       : {};
 
+    const getColor = () => {
+      if (model.color) {
+        return model.color;
+      }
+      if (model.fill) {
+        return model.fill;
+      }
+      if (model.fillBackground) {
+        return model.fillBackground;
+      }
+      return "#eee"; // default color
+    };
+
     const finalCustomStyle = {
       ...customStyle,
       width: size,
       height: size,
-      backgroundColor: model?.fillBackground ?? model.fill,
+      backgroundColor: getColor(),
       padding: 0,
       // Apply image styles, with image taking precedence over backgroundImage
       ...backgroundImageStyles,
@@ -135,10 +149,10 @@ const InteractiveTile = forwardRef<HTMLDivElement, InteractiveTileType>(
         {springModel ? (
           <animated.div
             style={{
-              ...finalCustomStyle,
-              backgroundColor: colorProps.backgroundColor.to((value) => value),
               width: size - SUBTRACT_SIZE_MODIFIER,
               height: size - SUBTRACT_SIZE_MODIFIER,
+              borderRadius,
+              ...colorProps,
             }}
           />
         ) : (

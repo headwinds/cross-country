@@ -11,6 +11,10 @@ const config: StorybookConfig = {
         mdxPluginOptions: {
           mdxCompileOptions: {
             providerImportSource: "@mdx-js/react",
+            remarkPlugins: [
+              // @ts-ignore
+              (await import('remark-gfm')).default,
+            ],
           },
         },
       },

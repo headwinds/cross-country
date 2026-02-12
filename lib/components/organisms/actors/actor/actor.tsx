@@ -50,11 +50,14 @@ export interface ActorProps {
   customTileStyle?: any;
   customSkinStyle?: any;
   config?: any;
+  type?: string; // Added to fix TypeScript errors
   tileSize?: number;
   children?: any;
-  type?: string;
   model?: ActorModel;
   image?: string;
+  transformX?: number;
+  transformY?: number;
+  transformZ?: number;
 }
 
 const Actor = ({
@@ -65,6 +68,7 @@ const Actor = ({
   config = defaultConfig,
   tileSize = defaultTileSize,
   children = null,
+  model = null,
   image = null,
   ...rest
 }: ActorProps) => {
@@ -84,10 +88,6 @@ const Actor = ({
 
   const { x, y, z } = position;
 
-  // TODO this is a magic number, we need to find a better way to do this
-  // need to consider tile width and actor width to calculate the correct position
-  // and center the actor in the tile
-  const xMod = 40;
 
   // Create dynamic tile style based on tileSize prop
   const dynamicTileStyle = {
@@ -101,7 +101,7 @@ const Actor = ({
       customClass={styles.actor}
       customStyle={{
         ...dynamicTileStyle,
-        transform: `translate3d(${x - xMod}px, ${y}px, ${z}px)`,
+        transform: `translate3d(${x}px, ${y}px, ${z}px)`,
       }}
       {...rest}
     >

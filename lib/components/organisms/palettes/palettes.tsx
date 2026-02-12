@@ -17,7 +17,7 @@ const Palettes = ({ total = 1, index = 1 }) => {
         <Tile
           key={index}
           customClass={styles.PaletteTile}
-          model={{ fill: color }}
+          model={{ id: `${paletteIndex}-${index}`, fill: color }}
         />
       );
     });

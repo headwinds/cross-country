@@ -141,6 +141,28 @@ export const TikTokPlayerStory: Story = {
   },
 };
 
+export const ReasonantArcTikTokPlayerStory: Story = {
+  render: () => {
+    const { width, height } = usePlayerDimensions();
+
+    return (
+      <Column>
+        <Player
+          artist={{
+            artistName: "Resonant Arc",
+            websiteUrl: "https://www.resonantarc.com/",
+            tiktokUrl:
+              "https://www.tiktok.com/@resonantarc/video/7447249092012428586",
+        
+          }}
+          width={width}
+          height={height}
+        />
+      </Column>
+    );
+  },
+};
+
 export const XPlayerStory: Story = {
   render: () => {
     const { width, height } = usePlayerDimensions();

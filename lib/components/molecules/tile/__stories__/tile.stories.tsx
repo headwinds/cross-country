@@ -65,3 +65,20 @@ export const SquareWaterTile = {
     },
   },
 };
+
+export const SquareGreenTile = {
+  args: {
+    model: {
+      ...waterTileModel,
+      fillBorder: "yellow",
+      fillBackground: "blue",
+      fillCorner: "cyan",
+      fill: "green",
+    },
+    customStyle: {
+      borderRadius: 0,
+      margin: 0,
+    },
+  },
+};
+
