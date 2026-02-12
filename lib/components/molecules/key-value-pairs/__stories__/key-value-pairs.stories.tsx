@@ -23,7 +23,7 @@ export const KeyValuePairsTextStory: Story = {
     const valueStyle = { color: "#333", fontSize: 16, fontWeight: "600" };
     const keyValues: KeyValue[] = [
       { id: 0, key: "name", value: "Matthew Pocock", type: VALUE_TYPE.TEXT as keyof typeof VALUE_TYPE },
-      { id: 1, key: "profession", value: "Typescript Wizard", type: VALUE_TYPE.TEXT as keyof typeof VALUE_TYPE },
+      { id: 1, key: "profession", value: "Wizard", type: VALUE_TYPE.TEXT as keyof typeof VALUE_TYPE },
     ];
     return (
       <Column customStyle={{ width: 280 }}>
@@ -44,15 +44,15 @@ export const KeyValuePairsInputTextStory: Story = {
       {
         id: 0,
         key: "name",
-        value: "Matthew Pocock",
-        defaultValue: "Matthew Pocock",
+        value: "",
+        defaultValue: "",
         type: VALUE_TYPE.INPUT_TEXT as keyof typeof VALUE_TYPE,
       },
       {
         id: 1,
         key: "profession",
-        value: "Typescript Wizard",
-        defaultValue: "Typescript Wizard",
+        value: "",
+        defaultValue: "",
         type: VALUE_TYPE.INPUT_TEXT as keyof typeof VALUE_TYPE,
       },
     ];
@@ -65,7 +65,7 @@ export const KeyValuePairsInputTextStory: Story = {
     const valueStyle = { color: "#333", fontSize: 16, fontWeight: "600" };
 
     const onChange = (type: string, payload: {id: number, newValue: string, newPairs: KeyValue[]}) => {
-      console.log(`KeyValue with id ${payload.id} changed to: ${payload.newValue}`);
+      console.log("Updated key-value pairs:", payload.newPairs);
     };
     
     return (

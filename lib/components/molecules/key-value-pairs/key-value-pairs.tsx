@@ -21,15 +21,17 @@ const KeyValuePairs = ({
     const [pairs, setPairs] = React.useState<KeyValue[]>([]);
       
     const onInputTextChange = (id: number, newValue: string) => {
-      
-      const newPairs = pairs.map((pair) =>
-        pair.id === id ? { ...pair, value: newValue } : pair
-      );
-      setPairs(newPairs);
+      setPairs(prevPairs => {
+        const newPairs = prevPairs.map((pair) =>
+          pair.id === id ? { ...pair, value: newValue } : pair
+        );
 
-      if (onChange) {
-        onChange(KEY_VALUE_EVENTS.PAIRS_CHANGE, {id, newValue, newPairs});
-      }
+        if (onChange) {
+          onChange(KEY_VALUE_EVENTS.PAIRS_CHANGE, {id, newValue, newPairs});
+        }
+
+        return newPairs;
+      });
     };
 
     useEffect(() => {
@@ -52,6 +54,8 @@ const KeyValuePairs = ({
 
 
 
+  const firstInputIndex = pairs.findIndex(pair => pair.type === VALUE_TYPE.INPUT_TEXT);
+
   const list = pairs.map((keyValue, index) => {
     const { id, key, value, type } = pairs[index];
 
@@ -61,6 +65,7 @@ const KeyValuePairs = ({
         data={keyValue}
         keyStyle={keyStyle}
         valueStyle={valueStyle}
+        autoFocus={index === firstInputIndex && firstInputIndex !== -1}
       />
     );
   });
