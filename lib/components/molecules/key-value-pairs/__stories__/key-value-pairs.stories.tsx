@@ -64,8 +64,8 @@ export const KeyValuePairsInputTextStory: Story = {
     };
     const valueStyle = { color: "#333", fontSize: 16, fontWeight: "600" };
 
-    const onChange = (id: number, newValue: string) => {
-      console.log(`KeyValue with id ${id} changed to: ${newValue}`);
+    const onChange = (type: string, payload: {id: number, newValue: string, newPairs: KeyValue[]}) => {
+      console.log(`KeyValue with id ${payload.id} changed to: ${payload.newValue}`);
     };
     
     return (

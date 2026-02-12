@@ -4,6 +4,10 @@ export const VALUE_TYPE = {
   INPUT_TEXT: "input-text",
 };
 
+export const KEY_VALUE_EVENTS = {
+  PAIRS_CHANGE: "PAIRS_CHANGE",
+}
+
 export type KeyValue = {
   id: number;
   key: string;
@@ -18,4 +22,5 @@ export interface KeyValuePairsProps {
   keyValues: KeyValue[];
   keyStyle?: any;
   valueStyle?: any;
+  onChange?: (type: string, payload: {id: number, newValue: string, newPairs: KeyValue[]} ) => void;
 }

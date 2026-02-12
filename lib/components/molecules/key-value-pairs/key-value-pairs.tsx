@@ -7,6 +7,8 @@ import {
   VALUE_TYPE,
 } from "./key-value-pairs.types";
 import KeyValuePair from "./key-value-pair";
+import { KEY_VALUE_EVENTS } from "./key-value-pairs.types";
+
 
 const KeyValuePairs = ({
   dataTestId = "key-value-pairs",
@@ -19,13 +21,14 @@ const KeyValuePairs = ({
     const [pairs, setPairs] = React.useState<KeyValue[]>([]);
       
     const onInputTextChange = (id: number, newValue: string) => {
-      setPairs((prevPairs) =>
-        prevPairs.map((pair) =>
-          pair.id === id ? { ...pair, value: newValue } : pair
-        )
+      
+      const newPairs = pairs.map((pair) =>
+        pair.id === id ? { ...pair, value: newValue } : pair
       );
+      setPairs(newPairs);
+
       if (onChange) {
-        onChange(id, newValue);
+        onChange(KEY_VALUE_EVENTS.PAIRS_CHANGE, {id, newValue, newPairs});
       }
     };
 
