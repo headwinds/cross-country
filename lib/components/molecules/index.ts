@@ -36,7 +36,8 @@ export { default as User } from "./user";
 export type { UserProps } from "./user";
 
 export { default as KeyValuePairs } from "./key-value-pairs";
-export type { KeyValuePairsProps } from "./key-value-pairs";
+export type { KeyValuePairsProps, KeyValue } from "./key-value-pairs";
+export { VALUE_TYPE, KEY_VALUE_EVENTS } from "./key-value-pairs";
 
 export { default as Loading } from "./loading";
 export type { LoadingProps } from "./loading";
