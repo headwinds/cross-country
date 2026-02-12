@@ -50,6 +50,7 @@ export interface ActorProps {
   customTileStyle?: any;
   customSkinStyle?: any;
   config?: any;
+  type?: string; // Added to fix TypeScript errors
   tileSize?: number;
   children?: any;
   model?: ActorModel;
