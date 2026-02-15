@@ -37,8 +37,6 @@ interface TileInteractiveProps extends InteractiveTileType {
   // Add any additional props if needed
 }
 
-
-
 const InteractiveTile = forwardRef<HTMLDivElement, TileInteractiveProps>(
   (
     {
@@ -106,7 +104,14 @@ const InteractiveTile = forwardRef<HTMLDivElement, TileInteractiveProps>(
       return setSelected(model);
     };
 
-    const colorProps = useSpring(springModel);
+    // Only use spring animation if springModel is provided
+    // Provide a type-safe default to prevent animation type mismatches
+    const defaultSpringConfig = {
+      from: { opacity: 1 },
+      to: { opacity: 1 },
+    };
+    
+    const colorProps = useSpring(springModel || defaultSpringConfig);
 
     const onMouseEnter = () => {
       // console.log("Tile onMouseEnter");

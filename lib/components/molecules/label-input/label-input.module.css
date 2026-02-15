@@ -1,0 +1,16 @@
+.labelInputList {
+  width: 100%;
+}
+
+.labelInputItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.label {
+  min-width: 120px;
+  text-align: right;
+  flex-shrink: 0;
+}
