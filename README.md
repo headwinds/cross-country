@@ -1,4 +1,4 @@
-# cross-country
+# Cross Country
 
 > an atomic react component library for personal metrics, simulations, and solo forest bathers
 
@@ -32,7 +32,7 @@ All types are included in the library.
 ### Use
 
 ```
-import { Column, Row, Paragraph, Table, Chart, Bento } from "cross-country"
+import { Column, Row, Paragraph, Table, Chart, Bento } from "@headwinds/cross-country"
 ```
 
 ### NextJS Support
@@ -47,7 +47,7 @@ Edit the app\layout.tsx file to:
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import "cross-country/dist/bundle.css";
+import "@headwinds/cross-country/dist/bundle.css";
 import { ScoutProviders } from "./providers/providers";
 ```
 
@@ -59,7 +59,7 @@ Edit the pages\_app.js file to:
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import "cross-country/dist/bundle.css";
+import "@headwinds/dist/bundle.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 ```
 
@@ -70,7 +70,7 @@ If you use this library in your Storybook, update the .storybook/preview.tsx fil
 ```
 import type { Preview } from "@storybook/react";
 import { initialize, mswLoader } from "msw-storybook-addon";
-import "cross-country/dist/bundle.css";
+import "@headwindscross-country/dist/bundle.css";
 ```
 
 I also recommend the [mock service mocker addon](https://github.com/mswjs/msw-storybook-addon) to simulate data fetching in storybook which works very well with React hooks; similar to how we can intercept and mock response data with jest or vitest. 
