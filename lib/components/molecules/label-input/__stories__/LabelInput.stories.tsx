@@ -17,12 +17,6 @@ export const SinglePair: Story = {
       { id: "name", label: "Name", value: "", placeholder: "Enter your name" },
     ]);
 
-    const handleTextChange = (id: string, value: string) => {
-      setPairs((prev) =>
-        prev.map((pair) => (pair.id === id ? { ...pair, value } : pair))
-      );
-    };
-
     return <LabelInput pairs={pairs} onChange={setPairs} />;
   },
 };
@@ -51,11 +45,34 @@ export const MultiplePairs: Story = {
       },
     ]);
 
-    const handleTextChange = (id: string, value: string) => {
-      setPairs((prev) =>
-        prev.map((pair) => (pair.id === id ? { ...pair, value } : pair))
-      );
-    };
+
+    return <LabelInput pairs={pairs} onChange={setPairs} />;
+  },
+};
+
+export const WithTextArea: Story = {
+  render: () => {
+    const [pairs, setPairs] = React.useState<LabelInputPair[]>([
+      {
+        id: "title",
+        label: "Title",
+        value: "",
+        placeholder: "Enter title",
+      },
+      {
+        id: "description",
+        label: "Description",
+        value: "",
+        placeholder: "Enter description",
+        inputType: "textarea",
+      },
+      {
+        id: "tags",
+        label: "Tags",
+        value: "",
+        placeholder: "Enter tags",
+      },
+    ]);
 
     return <LabelInput pairs={pairs} onChange={setPairs} />;
   },

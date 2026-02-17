@@ -1,6 +1,7 @@
 import React from "react";
 import Label from "../../atoms/text/label";
 import TextInput from "../../atoms/text/input";
+import TextArea from "../../atoms/text/textarea";
 import List from "../../atoms/list";
 import ListItem from "../../atoms/list/list-item";
 import styles from "./label-input.module.css";
@@ -11,6 +12,7 @@ export interface LabelInputPair {
   value: string;
   placeholder?: string;
   type?: string;
+  inputType?: "input" | "textarea";
 }
 
 export interface LabelInputProps {
@@ -23,6 +25,7 @@ const DEFAULT_PAIR: LabelInputPair = {
   label: "Label",
   value: "",
   placeholder: "Enter text",
+  inputType: "input",
 };
 
 const onTextChange = (onChange: (pairs: LabelInputPair[]) => void, pairs: LabelInputPair[], id: string, value: string) => {
@@ -37,20 +40,36 @@ const LabelInput = ({
 }: LabelInputProps) => {
   return (
     <List customClass={styles.labelInputList}>
-      {pairs.map((pair) => (
-        <ListItem key={pair.id} customClass={styles.labelInputItem}>
-          <Label forId={pair.id} customClass={styles.label} customStyle={{marginRight: "0px"}}>
-            {pair.label}
-          </Label>
-          <TextInput
-            id={pair.id}
-            value={pair.value}
-            placeholder={pair.placeholder}
-            type={pair.type}
-            onTextChange={(text) => onTextChange(onChange, pairs, pair.id, text)}
-          />
-        </ListItem>
-      ))}
+      {pairs.map((pair) => {
+        const isTextArea = pair.inputType === "textarea";
+        const itemClass = isTextArea 
+          ? `${styles.labelInputItem} ${styles.labelInputItemTextArea}`
+          : styles.labelInputItem;
+        
+        return (
+          <ListItem key={pair.id} customClass={itemClass}>
+            <Label forId={pair.id} customClass={styles.label} customStyle={{marginRight: "0px"}}>
+              {pair.label}
+            </Label>
+            {isTextArea ? (
+              <TextArea
+                id={pair.id}
+                value={pair.value}
+                placeholder={pair.placeholder}
+                onTextChange={(text) => onTextChange(onChange, pairs, pair.id, text)}
+              />
+            ) : (
+              <TextInput
+                id={pair.id}
+                value={pair.value}
+                placeholder={pair.placeholder}
+                type={pair.type}
+                onTextChange={(text) => onTextChange(onChange, pairs, pair.id, text)}
+              />
+            )}
+          </ListItem>
+        );
+      })}
     </List>
   );
 };

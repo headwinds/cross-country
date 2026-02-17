@@ -9,6 +9,14 @@
   margin-bottom: 8px;
 }
 
+.labelInputItemTextArea {
+  align-items: flex-start;
+}
+
+.labelInputItemTextArea .label {
+  padding-top: 8px;
+}
+
 .label {
   min-width: 120px;
   text-align: right;
