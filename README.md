@@ -2,7 +2,9 @@
 
 > an atomic react component library for personal metrics, simulations, and solo forest bathers
 
-[![NPM](https://img.shields.io/npm/v/cross-country.svg)](https://www.npmjs.com/package/cross-country) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/@headwinds/cross-country.svg)](https://www.npmjs.com/package/@headwinds/cross-country) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+**Note:** This package has been renamed to `@headwinds/cross-country`. Please update your dependencies.
 
 Core Tech
 
@@ -20,7 +22,7 @@ Do you pour over your personal stats from Github, Strava or Spotify? Is your yea
 ### Install
 
 ```
-pnpm i cross-country
+pnpm i @headwinds/cross-country
 ```
 
 ### Types
