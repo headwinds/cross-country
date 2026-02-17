@@ -1,6 +1,6 @@
 export type TileImageConfig = {
   url: string;
-  type: "jpg" | "png" | "svg" | "webp";
+  type?: "jpg" | "png" | "svg" | "webp";
   fit?: "cover" | "contain" | "fill" | "scale-down" | "none";
   position?:
     | "center"
@@ -26,7 +26,8 @@ export type TileModel = {
   color?: string; // should be the same as fill
   type?: string;
   skin?: string;
-  damage?: number;
+  damage?: number; // damage counter
+  damage_max?: number; // max damage before becoming an obstacle or changing state
   is_obstacle?: boolean;
   obstacle_remover?: string;
   fill: string;

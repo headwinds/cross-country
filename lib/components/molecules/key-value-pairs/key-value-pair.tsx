@@ -8,12 +8,14 @@ interface KeyValuePairProps {
   data: KeyValue;
   keyStyle?: React.CSSProperties;
   valueStyle?: React.CSSProperties;
+  autoFocus?: boolean;
 }
 
 const KeyValuePair = ({
   data,
   keyStyle = { fontSize: 12, color: "grey", fontFamily: "Helvetica" },
   valueStyle = { fontSize: 14, color: "black", fontFamily: "Helvetica" },
+  autoFocus = false,
 }: KeyValuePairProps) => {
   const { id, key, value, type } = data;
 
@@ -37,6 +39,7 @@ const KeyValuePair = ({
             placeholder=""
             defaultValue={data.defaultValue || ""}
             onTextChange={(text) => onInputTextChange(id, text)}
+            autoFocus={autoFocus}
             customStyle={{padding: 0, margin: -2, border: "none", borderRadius: 0, paddingLeft: 4, textAlign: "right", ...valueStyle}}
           />
         );  
