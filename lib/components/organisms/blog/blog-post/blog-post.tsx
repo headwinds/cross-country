@@ -37,6 +37,8 @@ const BlogPost = ({
       title: "Hello",
       description: "description here",
       content: text,
+      post_type: "blog",
+      markup_type: "text",
       blogpost_type: "common",
       slug: "french",
       user_account_id: id,
