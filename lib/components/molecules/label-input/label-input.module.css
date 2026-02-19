@@ -22,3 +22,8 @@
   text-align: right;
   flex-shrink: 0;
 }
+
+.labelInputItemVertical {
+  flex-direction: column;
+  align-items: flex-start;
+}

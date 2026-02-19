@@ -18,6 +18,8 @@ export type { EmailModel } from "./EmailModel";
 export type { SettingsModel } from "./SettingsModel";
 export type { ShieldModel } from "./ShieldModel";
 export type { TileModel } from "./TileModel";
+export type { PostModel, CommentModel } from "./PostModel";
+export type { ThreadModel, ThreadWithMessages, ThreadParticipant } from "./ThreadModel";
 export type { UserModel } from "./UserModel";
 export type { WeaponModel } from "./WeaponModel";
 export type { WorldModel } from "./WorldModel";

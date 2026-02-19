@@ -18,6 +18,7 @@ export interface LabelInputPair {
 export interface LabelInputProps {
   pairs: LabelInputPair[];
   onChange: (pairs: LabelInputPair[]) => void;
+  isVertical?: boolean;
 }
 
 const DEFAULT_PAIR: LabelInputPair = {
@@ -37,18 +38,25 @@ const onTextChange = (onChange: (pairs: LabelInputPair[]) => void, pairs: LabelI
 const LabelInput = ({
   pairs = [DEFAULT_PAIR],
   onChange,
+  isVertical = false,
 }: LabelInputProps) => {
   return (
     <List customClass={styles.labelInputList}>
       {pairs.map((pair) => {
         const isTextArea = pair.inputType === "textarea";
-        const itemClass = isTextArea 
-          ? `${styles.labelInputItem} ${styles.labelInputItemTextArea}`
-          : styles.labelInputItem;
+        const itemClass = [
+          styles.labelInputItem,
+          isTextArea && styles.labelInputItemTextArea,
+          isVertical && styles.labelInputItemVertical
+        ].filter(Boolean).join(" ");
+        
+        const labelStyle = isVertical 
+          ? { marginRight: "0px", marginBottom: "8px", textAlign: "left" as const }
+          : { marginRight: "0px" };
         
         return (
           <ListItem key={pair.id} customClass={itemClass}>
-            <Label forId={pair.id} customClass={styles.label} customStyle={{marginRight: "0px"}}>
+            <Label forId={pair.id} customClass={styles.label} customStyle={labelStyle}>
               {pair.label}
             </Label>
             {isTextArea ? (
