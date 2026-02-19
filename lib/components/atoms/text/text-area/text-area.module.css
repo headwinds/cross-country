@@ -1,6 +1,5 @@
 .textArea {
   padding: 12px;
-  margin: 4px;
   resize: vertical;
   width: 100%;
   border: 1px solid #ccc;
@@ -8,7 +7,7 @@
   font-size: 14px;
   line-height: 1.5;
   transition: border-color 0.2s ease-in-out;
-  max-width: 700px;
+  max-width: 600px;
 }
 
 .textArea:focus {

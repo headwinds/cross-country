@@ -51,7 +51,7 @@ const LabelInput = ({
         ].filter(Boolean).join(" ");
         
         const labelStyle = isVertical 
-          ? { marginRight: "0px", marginBottom: "8px", textAlign: "left" as const }
+          ? { marginRight: "0px", marginBottom: "0px", marginLeft: "-1px", textAlign: "left" as const }
           : { marginRight: "0px" };
         
         return (

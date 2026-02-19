@@ -23,7 +23,7 @@ const TextArea = ({
   customStyle = {},
   placeholder = "",
   type = "text-area",
-  rows = 1,
+  rows = 2,
   cols = 33,
   isDraggable = false,
   ...rest

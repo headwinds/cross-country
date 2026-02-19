@@ -77,3 +77,28 @@ export const WithTextArea: Story = {
     return <LabelInput pairs={pairs} onChange={setPairs} />;
   },
 };
+
+export const Vertical: Story = {
+  render: () => {
+    const [pairs, setPairs] = React.useState<LabelInputPair[]>([
+      { id: "name", label: "Name", value: "", placeholder: "Enter name" },
+      { id: "email", label: "Email", value: "", placeholder: "Enter email", type: "email" },
+      { id: "bio", label: "Bio", value: "", placeholder: "Tell us about yourself", inputType: "textarea" },
+    ]);
+
+    return <LabelInput pairs={pairs} onChange={setPairs} isVertical={true} />;
+  },
+};
+
+export const VerticalWithMixedInputs: Story = {
+  render: () => {
+    const [pairs, setPairs] = React.useState<LabelInputPair[]>([
+      { id: "username", label: "Username", value: "", placeholder: "Choose a username" },
+      { id: "password", label: "Password", value: "", placeholder: "Enter password", type: "password" },
+      { id: "about", label: "About", value: "", placeholder: "Tell us about yourself", inputType: "textarea" },
+      { id: "website", label: "Website", value: "", placeholder: "https://example.com", type: "url" },
+    ]);
+
+    return <LabelInput pairs={pairs} onChange={setPairs} isVertical={true} />;
+  },
+};
