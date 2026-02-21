@@ -33,8 +33,6 @@ const onTextChange = (onChange: (pairs: LabelInputPair[]) => void, pairs: LabelI
   onChange(pairs.map((p) => p.id === id ? { ...p, value } : p));
 };
 
-
-
 const LabelInput = ({
   pairs = [DEFAULT_PAIR],
   onChange,

@@ -52,15 +52,20 @@ const RadioGroup = ({
   const [selected, setSelected] = useState(selectedId);
 
   // check the list and find the selected item
-  const getSelected = (id) => (id === selectedId ? true : false);
-  const getTabIndex = (id) => (id === selectedId ? 0 : 1);
+  const getSelected = (id) => (id === selected ? true : false);
+  const getTabIndex = (id) => (id === selected ? 0 : 1);
+
+  const handleChange = (id: string) => {
+    setSelected(id);
+    onChange(id);
+  };
 
   const radiobuttons = data.options.map(({ id, value }) => (
     <Row key={id}>
       <Radio
         key={id}
         id={id}
-        onChange={() => onChange(id)}
+        onChange={() => handleChange(id)}
         isSelected={getSelected(id)}
         tabIndex={getTabIndex(id)}
       />

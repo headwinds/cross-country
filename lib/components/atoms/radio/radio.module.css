@@ -31,8 +31,9 @@
   content: "";
   display: block;
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: black;
   width: 10px;
   height: 10px;
@@ -72,8 +73,9 @@
   content: "";
   display: block;
   position: absolute;
-  top: 13px;
-  left: 13px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: blue;
   width: 25px;
   height: 25px;
