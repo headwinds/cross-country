@@ -42,6 +42,7 @@ export interface ActorModel {
   alignment?: string;
   name?: string;
   skin?: string;
+  color?: string;
   profession?: string; // Simplified from ProfessionModel
   level?: number; // Simplified from CharacterLevelModel
   experience?: number;
