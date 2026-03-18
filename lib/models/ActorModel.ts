@@ -38,7 +38,7 @@ Actor Model - Simplified & Synced with Backend
 export interface ActorModel {
   id: number;
   status?: string;
-  type?: string;
+  type?: "fantasy" | "reality";
   alignment?: string;
   name?: string;
   skin?: string;
@@ -70,7 +70,7 @@ export interface ActorModel {
   accuracy?: number;
   
   // Positioning
-  tileSize?: number;
+  tileSize?: number | { width: number; height: number };
   variant?: string;
   position?: { x: number; y: number; z: number };
   gridPosition?: GridPosition;
@@ -80,6 +80,9 @@ export interface ActorModel {
     left: number;
     top: number;
     backgroundColor: string;
+    height: number;
+    width: number;
+    [key: string]: string | number;
   };
   
   // Survival & world
@@ -98,5 +101,6 @@ export interface ActorModel {
   };
   customClass?: string;
   customSkinStyle?: { [key: string]: string };
-  image?: string;
+  image?: string;        // display URL (resolved from GCS)
+  image_id?: string;     // UUID FK → images table in scout DB
 }

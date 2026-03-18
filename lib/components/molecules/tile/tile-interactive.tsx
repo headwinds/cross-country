@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from "react";
+import React, { forwardRef, useState, useEffect } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { Column, Paragraph } from "../../..";
 import Corners from "./corners";
@@ -63,6 +63,25 @@ const InteractiveTile = forwardRef<HTMLDivElement, TileInteractiveProps>(
     const [isHovered, toggleHovered] = useState(false);
     const { id, image, backgroundImage } = model;
 
+    // Track whether the tile's image has finished loading so we can avoid
+    // flashing the fallback background colour while the image is in-flight.
+    const imageUrl = image?.url ?? "";
+    const [imageLoadState, setImageLoadState] = useState<"loading" | "loaded" | "error">(
+      imageUrl ? "loading" : "loaded"
+    );
+
+    useEffect(() => {
+      if (!imageUrl) {
+        setImageLoadState("loaded");
+        return;
+      }
+      setImageLoadState("loading");
+      const img = new window.Image();
+      img.onload = () => setImageLoadState("loaded");
+      img.onerror = () => setImageLoadState("error");
+      img.src = imageUrl;
+    }, [imageUrl]);
+
     // Generate image styles if available
     const imageStyles = image ? generateImageStyles(image) : {};
     const backgroundImageStyles = backgroundImage
@@ -82,11 +101,16 @@ const InteractiveTile = forwardRef<HTMLDivElement, TileInteractiveProps>(
       return "#eee"; // default color
     };
 
+    // While the image is still loading use a transparent background so the
+    // fallback colour never flashes. The fallback appears only on error.
+    const effectiveBgColor =
+      imageUrl && imageLoadState === "loading" ? "transparent" : getColor();
+
     const finalCustomStyle = {
       ...customStyle,
       width: size,
       height: size,
-      backgroundColor: getColor(),
+      backgroundColor: effectiveBgColor,
       padding: 0,
       // Apply image styles, with image taking precedence over backgroundImage
       ...backgroundImageStyles,
@@ -141,8 +165,8 @@ const InteractiveTile = forwardRef<HTMLDivElement, TileInteractiveProps>(
         hasChildrenCentered
         customStyle={{
           ...finalCustomStyle,
-          backgroundColor: model?.fillBackground ?? model.fill,
-
+          // Use the load-state-aware colour so the fallback never flashes
+          backgroundColor: model?.fillBackground ?? effectiveBgColor,
           borderColor: model?.fillBorder ?? model.fill,
         }}
         onClick={handleTileSelected}
@@ -169,7 +193,12 @@ const InteractiveTile = forwardRef<HTMLDivElement, TileInteractiveProps>(
               width: size - SUBTRACT_SIZE_MODIFIER,
               height: size - SUBTRACT_SIZE_MODIFIER,
               borderRadius,
-              backgroundColor: image ? "transparent" : model.fillBackground, // Use transparent background if image is provided
+              // Transparent while loaded; fallback colour only surfaces on error
+              backgroundColor: imageUrl
+                ? imageLoadState === "error"
+                  ? effectiveBgColor
+                  : "transparent"
+                : model.fillBackground,
               // Apply image styles to inner tile as well
               ...backgroundImageStyles,
               ...imageStyles,
