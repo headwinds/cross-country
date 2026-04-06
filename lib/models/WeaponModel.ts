@@ -1,20 +1,28 @@
-export type WeaponModel = {
-  id: number;
-  name: string;
+import { ItemModel } from "./ItemModel";
+
+export interface WeaponModel extends ItemModel {
   modifies: string;
   by: number;
-  type: string;
+  type: "weapon";
   damage: number;
   skin: string;
-};
+}
 
-// You can create a default weapon if needed
 export const defaultWeapon: WeaponModel = {
-  id: 0,
-  name: "generic item",
+  item_id: "",
+  name: "Generic Weapon",
+  description: "A basic weapon.",
+  type: "weapon",
+  rarity: "common",
+  value: 10,
+  weight: 3,
+  stackable: false,
+  max_stack: 1,
+  consumable: false,
+  author_id: "",
+  created_at: new Date().toISOString(),
   modifies: "none",
   by: 0,
-  type: "weapon",
   damage: 10,
   skin: "",
 };

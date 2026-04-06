@@ -7,6 +7,8 @@ export type { ChapterModel } from "./ChapterModel";
 export type { PlayerModel } from "./PlayerModel";
 export type { EnemyModel } from "./EnemyModel";
 export type { ItemModel } from "./ItemModel";
+export type { ItemType, ItemRarity, ItemEffect, ItemRequirement } from "./ItemModel";
+export { defaultItemModel } from "./ItemModel";
 export type { LeafModel } from "./LeafModel";
 export type { LevelModel } from "./LevelModel";
 export type { CharacterLevelModel } from "./CharacterLevelModel";
@@ -17,12 +19,27 @@ export type { PortholeBranchModel } from "./PortholeBranchModel";
 export type { EmailModel } from "./EmailModel";
 export type { SettingsModel } from "./SettingsModel";
 export type { ShieldModel } from "./ShieldModel";
+export { defaultShield } from "./ShieldModel";
 export type { TileModel } from "./TileModel";
 export type { PostModel, CommentModel } from "./PostModel";
 export type { ThreadModel, ThreadWithMessages, ThreadParticipant } from "./ThreadModel";
 export type { UserModel } from "./UserModel";
 export type { WeaponModel } from "./WeaponModel";
+export { defaultWeapon } from "./WeaponModel";
 export type { WorldModel } from "./WorldModel";
+export type { SpellModel } from "./SpellModel";
+export { defaultSpell } from "./SpellModel";
+export type { ToolModel } from "./ToolModel";
+export { defaultTool } from "./ToolModel";
+export type { ViceModel } from "./ViceModel";
+export { defaultVice } from "./ViceModel";
+export type {
+  ConnectionModel,
+  ConnectionType,
+  ConnectionStatus,
+  ConnectionStatusResult,
+  ConnectionCounts,
+} from "./ConnectionModel";
 export type { TreeModel } from "./TreeModel";
 export type { QuestModel } from "./QuestModel";
 export type { QuestStepModel } from "./QuestStepModel";

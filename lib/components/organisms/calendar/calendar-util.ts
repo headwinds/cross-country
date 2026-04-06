@@ -32,9 +32,10 @@ export const getDaysFromNextMonth = (
   daysFromPreviousMonth,
   daysInCurrentMonth
 ) => {
-  const totalCells = 7 * 6; // Assuming a 6-row grid
-  const emptyCells =
-    totalCells - (daysFromPreviousMonth.length + daysInCurrentMonth);
+  const usedCells = daysFromPreviousMonth.length + daysInCurrentMonth;
+  const totalRows = Math.ceil(usedCells / 7);
+  const totalCells = totalRows * 7;
+  const emptyCells = totalCells - usedCells;
 
   const daysFromNextMonth = [];
   for (let i = 1; i <= emptyCells; i++) {

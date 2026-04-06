@@ -1,0 +1,24 @@
+import { Meta, Canvas, Story, Subtitle } from "@storybook/blocks";
+import * as CalendarStories from "./calendar.stories";
+
+<Meta of={CalendarStories} />
+
+# Calendar
+
+This is a calendar component that can be used to display 
+a calendar view of a month. It can be used to display 
+events, appointments, or any other type of information 
+that can be associated with a date.
+
+### Story
+
+#### No days selected
+
+<Canvas of={CalendarStories.CalendarStory} />
+
+#### Today selected
+
+<Canvas of={CalendarStories.CalendarStory} />
+
+##### Fill Grid with previous and next month days
+<Canvas of={CalendarStories.CalendarFullGrid} />

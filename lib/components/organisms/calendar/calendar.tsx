@@ -17,9 +17,9 @@ const AbbrDay = ({ day, key }) => {
   );
 };
 
-const Day = ({ day, key }) => {
+const Day = ({ day, isSelected, isOutsideMonth }: { day: number; isSelected?: boolean; isOutsideMonth?: boolean; key?: React.Key }) => {
   return (
-    <div key={key} className={styles.calendarDay}>
+    <div className={clsx(styles.calendarDay, isSelected && styles.selected, isOutsideMonth && styles.outsideMonth)}>
       {day}
     </div>
   );
@@ -27,10 +27,14 @@ const Day = ({ day, key }) => {
 
 export interface CalendarProps {
   isFullGrid?: boolean;
+  selectedDate?: Date | null;  
 }
 
-const Calendar = ({ isFullGrid = false }) => {
-  const currentDate = new Date();
+const Calendar = ({ isFullGrid = false, selectedDate = new Date() }: CalendarProps) => {
+  const currentDate = selectedDate || new Date();
+  const selectedDay = selectedDate ? selectedDate.getDate() : null;
+  const selectedMonth = selectedDate ? selectedDate.getMonth() : null;
+  const selectedYear = selectedDate ? selectedDate.getFullYear() : null;
   const currentMonthName = months[currentDate.getMonth()];
 
   const currentMonth = currentDate.getMonth();
@@ -74,11 +78,27 @@ const Calendar = ({ isFullGrid = false }) => {
       ...daysFromNextMonth,
     ];
 
+    const prevCount = daysFromPreviousMonth.length;
+    const currentCount = daysInCurrentMonth;
+
     return (
       <Column customClass={styles.calendarGrid}>
-        {calendarDays.map((day, index) => (
-          <Day key={index} day={day} />
-        ))}
+        {calendarDays.map((day, index) => {
+          const isOutside = index < prevCount || index >= prevCount + currentCount;
+          return (
+            <Day
+              key={index}
+              day={day}
+              isOutsideMonth={isOutside}
+              isSelected={
+                !isOutside &&
+                day === selectedDay &&
+                currentMonth === selectedMonth &&
+                currentYear === selectedYear
+              }
+            />
+          );
+        })}
       </Column>
     );
   }
@@ -95,7 +115,7 @@ const Calendar = ({ isFullGrid = false }) => {
       );
     }
     for (let i = 1; i <= daysInMonth; i++) {
-      days.push(<Day key={i} day={i} />);
+      days.push(<Day key={i} day={i} isSelected={i === selectedDay} />);
     }
 
     return <Column customClass={styles.calendarGrid}>{days}</Column>;

@@ -13,9 +13,11 @@
   grid-gap: 10px; /* Space between grid items */
   padding: 10px;
   width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .calendarAbbrDay {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f0f0f0; /* Light grey background for day cells */
   text-align: center;
   padding: 8px 0; /* Vertical padding */
@@ -23,6 +25,7 @@
 }
 
 .calendarDay {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f0f0f0; /* Light grey background for day cells */
   text-align: center;
   padding: 20px 0; /* Vertical padding */
@@ -31,4 +34,16 @@
 
 .empty {
   background-color: transparent; /* Empty cells have no background */
+}
+
+.selected {
+  background-color: #3b82f6;
+  color: #fff;
+  font-weight: 600;
+}
+
+.outsideMonth {
+  background-color: transparent;
+  border: 2px dashed #d1d5db;
+  color: #9ca3af;
 }

@@ -38,7 +38,7 @@ Actor Model - Simplified & Synced with Backend
 export interface ActorModel {
   id: number;
   status?: string;
-  type?: "fantasy" | "reality";
+  type?: string;
   alignment?: string;
   name?: string;
   skin?: string;
@@ -80,9 +80,9 @@ export interface ActorModel {
     left: number;
     top: number;
     backgroundColor: string;
-    height: number;
-    width: number;
-    [key: string]: string | number;
+    height?: number;
+    width?: number;
+    [key: string]: string | number | undefined;
   };
   
   // Survival & world

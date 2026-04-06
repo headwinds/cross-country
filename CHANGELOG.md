@@ -1,5 +1,20 @@
 # cross-country
 
+## 1.5.0
+
+### Minor Changes
+
+- **BREAKING**: ShieldModel, WeaponModel, SpellModel, ToolModel, ViceModel now extend ItemModel
+  - All equipment models inherit `value`, `weight`, `rarity`, `item_id`, and other ItemModel fields
+  - `id: number` replaced by `item_id: string` on ShieldModel and WeaponModel
+  - Enables pricing/shop systems via the `value` property
+- Expanded `ItemType` union: added `"weapon"`, `"shield"`, `"spell"`, `"vice"`, `"potion"`
+- Added missing exports: `SpellModel`, `ToolModel`, `ViceModel` from models/index.ts
+- Added default exports: `defaultSpell`, `defaultTool`, `defaultVice`, `defaultShield`, `defaultWeapon`
+- Exported `ItemType`, `ItemRarity`, `ItemEffect`, `ItemRequirement`, `defaultItemModel` from models/index.ts
+- Updated dependencies
+  - cross-country@1.5.0
+
 <<<<<<< HEAD
 ## 1.3.6
 

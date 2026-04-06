@@ -7,12 +7,12 @@
   justify-content: space-between;
 }
 
-svg {
+.header svg {
   display: inline-block;
   vertical-align: top;
 }
 
-h1 {
+.header h1 {
   font-weight: 900;
   font-size: 20px;
   line-height: 1;
@@ -21,7 +21,7 @@ h1 {
   vertical-align: top;
 }
 
-button + button {
+.header button + button {
   margin-left: 10px;
 }
 

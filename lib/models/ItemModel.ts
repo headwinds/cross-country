@@ -30,7 +30,12 @@ export type ItemType =
   | "decoration" // Decorative items
   | "special" // Special/unique items
   | "consumable" // One-time use items
-  | "equipment"; // Equipment for player
+  | "equipment" // Equipment for player
+  | "weapon" // Weapons
+  | "shield" // Shields and armor
+  | "spell" // Spells and magic
+  | "vice" // Vices and addictions
+  | "potion"; // Potions and elixirs
 
 export type ItemRarity =
   | "common" // Basic items
