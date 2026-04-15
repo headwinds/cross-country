@@ -44,7 +44,25 @@ export type { TreeModel } from "./TreeModel";
 export type { QuestModel } from "./QuestModel";
 export type { QuestStepModel } from "./QuestStepModel";
 export type { PageModel } from "./PageModel";
-export type { SceneModel } from "./SceneModel";
+export type {
+  SceneModel,
+  SceneDialogueModel,
+  SceneActionModel,
+  SceneTurnModel,
+  SceneStoryModel,
+  ScenePlacedActor,
+  ScenePlacedTile,
+  SceneGridModel,
+  SceneStageModel,
+  SceneRulesModel,
+} from "./SceneModel";
+export {
+  defaultSceneStory,
+  defaultSceneGrid,
+  defaultSceneStage,
+  defaultSceneRules,
+  defaultSceneModel,
+} from "./SceneModel";
 // export all the models from the GameModel.ts file
 export type { RewardModel } from "./GameModel";
 export type { MonsterModel } from "./GameModel";
