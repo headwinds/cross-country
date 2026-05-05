@@ -53,6 +53,31 @@ export const ArticleLeafMaxWidth: Story = {
   ),
 };
 
+/**
+ * When the article's image fails to load (CORP / hotlink protection / 404),
+ * the card falls back to a title-only treatment instead of disappearing.
+ * This story uses an intentionally broken image URL to trigger the fallback.
+ */
+export const ArticleLeafNoImage: Story = {
+  args: {
+    variant: "article",
+    goldLeafModel: {
+      ...storyGoldLeafModel,
+      image: {
+        photo_thumbnail_url:
+          "https://example.invalid/this-image-will-404.jpg",
+        photo_large_urls: ["https://example.invalid/this-image-will-404.jpg"],
+        photo_default_url: "img/loaders/defaultbackground.png",
+      },
+    } as PortholeBranchModel,
+  },
+  render: (args) => (
+    <div style={{ maxWidth: "400px" }}>
+      <GoldLeafView {...args} />
+    </div>
+  ),
+};
+
 /*
 sample email
 

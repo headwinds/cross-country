@@ -46,7 +46,18 @@ const GoldLeafView = ({
   }
 
   if (!hasImage) {
-    return null;
+    // Image failed to load (CORP / hotlink protection / 404). Fall back to a
+    // title-only card so the user still sees something useful instead of the
+    // card silently disappearing.
+    return (
+      <Card
+        customClass={styles.GoldLeafView}
+        dataTestId={`${dataTestId}-no-image`}
+        customStyle={customStyle}
+      >
+        <GoldTitleCard goldLeafModel={goldLeafModel} mode="title-only" />
+      </Card>
+    );
   }
 
   return (
