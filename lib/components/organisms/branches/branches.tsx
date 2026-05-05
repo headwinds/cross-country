@@ -11,6 +11,7 @@ import { fetchRetry } from "@/utils/fetch-util";
 import { shuffle } from "@/utils/fp-util";
 import Loading from "@/components/molecules/loading";
 import BranchList from "./branch-list";
+import BranchesEmpty from "./branches-empty";
 import { mockResponse } from "./__mocks__/response";
 import type { PortholeBranchModel, EmailModel } from "@/models";
 import { set } from "react-hook-form";
@@ -151,7 +152,11 @@ const Branches = ({
   }, []);
 
   return branches.length === 0 ? (
-    <Loading />
+    hasFetched ? (
+      <BranchesEmpty />
+    ) : (
+      <Loading />
+    )
   ) : (
     <BranchList branches={branches} variant={variant} />
   );
