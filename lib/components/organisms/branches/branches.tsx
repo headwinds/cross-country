@@ -34,10 +34,8 @@ export interface BranchesProps<T> {
   variant?: "email" | "rss";
 }
 
-// https://scout-222670816692.northamerica-northeast1.run.app/api/porthole/trees/branches
-
 const defaultRemoteUrl =
-  "https://scout-summarize.vercel.app/api/porthole/feeds";
+  "https://scout-222670816692.northamerica-northeast1.run.app/api/soloscout/trees";
 
 type BranchesState = {
   feeds: any;

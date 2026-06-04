@@ -44,6 +44,7 @@ export interface ActorModel {
   skin?: string;
   color?: string;
   profession?: string; // Simplified from ProfessionModel
+  relationship?: string;
   level?: number; // Simplified from CharacterLevelModel
   experience?: number;
   age?: number;
