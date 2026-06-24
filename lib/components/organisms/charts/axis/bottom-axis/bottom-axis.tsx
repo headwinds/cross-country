@@ -1,5 +1,7 @@
 import React, { useRef, useEffect } from 'react';
-import * as d3 from 'd3';
+import { select } from 'd3-selection';
+import { scaleTime } from 'd3-scale';
+import { axisBottom } from 'd3-axis';
 import styles from './bottom-axis.module.css';
 
 interface BottomAxisProps {
@@ -18,16 +20,15 @@ const BottomAxis = ({ width = 600, height = 10, dateConfig = defaultDateConfig, 
     const endDate = new Date(dateConfig.endDate);
 
     const drawAxis = () => {
-        const svg = d3.select(axisRef.current);
+        const svg = select(axisRef.current);
 
         // Set up scales
-        const xScale = d3
-            .scaleTime()
+        const xScale = scaleTime()
             .domain([startDate, endDate])
             .range([0, width]);
 
         // Set up axis generator
-        const xAxis = d3.axisBottom(xScale);
+        const xAxis = axisBottom(xScale);
         xAxis.tickSize(1); 
 
         // Draw axis

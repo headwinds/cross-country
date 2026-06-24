@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import * as d3 from 'd3';
+import { select } from 'd3-selection';
+import { scaleTime, scaleLinear } from 'd3-scale';
+import { min, max } from 'd3-array';
 import type { ChartProps } from '../chart-types';
 
 interface ScatterplotProps extends ChartProps {}
@@ -9,17 +11,15 @@ const Scatterplot = ({ data, width = 600, height = 300, fill = "gold", onClick }
 
     useEffect(() => {
         if (svgRef.current) {
-            const svg = d3.select(svgRef.current);
+            const svg = select(svgRef.current);
 
             // Set up scales 
-            const xScale = d3
-                .scaleTime()
-                .domain([d3.min(data, (d) => new Date(d.x))!, d3.max(data, (d) => new Date(d.x))!])
+            const xScale = scaleTime()
+                .domain([min(data, (d) => new Date(d.x))!, max(data, (d) => new Date(d.x))!])
                 .range([0, width]);
 
-            const yScale = d3
-                .scaleLinear()
-                .domain([0, d3.max(data, (d) => d.y)!])
+            const yScale = scaleLinear()
+                .domain([0, max(data, (d) => d.y)!])
                 .range([height, 0]);
 
             // Create group element
@@ -46,11 +46,11 @@ const Scatterplot = ({ data, width = 600, height = 300, fill = "gold", onClick }
                 .data(data)
                 .enter()
                 .append('circle')
-                .attr('cx', (d) => xScale(new Date(d.x)))
-                .attr('cy', (d) => yScale(d.y))
-                .attr('r', (d) => getRadius(d))
-                .attr('fill', (d) => getFill(d))
-                .on('click', (event, d) => {
+                .attr('cx', (d: any) => xScale(new Date(d.x)))
+                .attr('cy', (d: any) => yScale(d.y))
+                .attr('r', (d: any) => getRadius(d))
+                .attr('fill', (d: any) => getFill(d))
+                .on('click', (event, d: any) => {
                     onClick({ pointEvent: event, model: d, x: event.x, y: event.y});
                 });
       

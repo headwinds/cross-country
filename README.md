@@ -19,6 +19,13 @@ Do you pour over your personal stats from Github, Strava or Spotify? Is your yea
 
 [storybook](https://cross-country-guide.vercel.app/)
 
+### LLM Discoverability
+
+To improve AI-assisted code navigation and component discovery:
+
+- `llms.txt` provides a root index for LLMs.
+- `docs/llm/COMPONENT_CATALOG.md` provides a curated export map and doc pointers.
+
 ### Install
 
 ```

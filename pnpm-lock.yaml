@@ -18,6 +18,9 @@ overrides:
   min-document: '>=2.19.1'
 
 dependencies:
+  '@headwinds/cross-country':
+    specifier: ^1.3.6
+    version: 1.5.6(@types/react@18.3.18)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.2)(ws@8.18.1)
   '@mdx-js/react':
     specifier: ^3.0.1
     version: 3.1.0(@types/react@18.3.18)(react@18.3.1)
@@ -51,9 +54,6 @@ dependencies:
   clsx:
     specifier: ^1.1.0
     version: 1.2.1
-  cross-country:
-    specifier: ^1.3.6
-    version: 1.4.1(@types/react@18.3.18)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.2)(ws@8.18.1)
   d3:
     specifier: ^7.8.2
     version: 7.9.0
@@ -1513,6 +1513,55 @@ packages:
     dependencies:
       '@hapi/hoek': 9.3.0
     dev: true
+
+  /@headwinds/cross-country@1.5.6(@types/react@18.3.18)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.2)(ws@8.18.1):
+    resolution: {integrity: sha512-66+DH6gP2eVX+8jTexJ6OO9LkAS13ehjeUUgxgCStYMlHM2nsYVFRkzs40lx3itJn2+PbX3z+eFpXJSe6ok2fQ==}
+    peerDependencies:
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    dependencies:
+      '@mdx-js/react': 3.1.0(@types/react@18.3.18)(react@18.3.1)
+      '@phosphor-icons/react': 2.1.7(react-dom@18.3.1)(react@18.3.1)
+      '@react-spring/web': 9.7.5(react-dom@18.3.1)(react@18.3.1)
+      '@statelyai/inspect': 0.2.5(ws@8.18.1)(xstate@5.9.0)
+      '@tanstack/react-query': 5.67.2(react@18.3.1)
+      '@testing-library/jest-dom': 6.6.3
+      '@testing-library/react': 14.3.1(@types/react@18.3.18)(react-dom@18.3.1)(react@18.3.1)
+      '@xstate/react': 4.1.0(@types/react@18.3.18)(react@18.3.1)(xstate@5.9.0)
+      '@xstate/store': 2.6.2(react@18.3.1)
+      chalk: 5.4.1
+      clsx: 1.2.1
+      d3: 7.9.0
+      d3-axis: 3.0.0
+      date-fns: 3.6.0
+      debounce: 2.2.0
+      dompurify: 3.2.4
+      he: 1.2.0
+      htmlparser2: 9.1.0
+      idb: 7.1.1
+      immutable: 4.1.0
+      nice-color-palettes: 2.0.0
+      react: 18.3.1
+      react-day-picker: 8.10.1(date-fns@3.6.0)(react@18.3.1)
+      react-dom: 18.3.1(react@18.3.1)
+      react-error-boundary: 4.1.2(react@18.3.1)
+      react-hook-form: 7.54.2(react@18.3.1)
+      react-intl: 7.1.6(react@18.3.1)(typescript@5.8.2)
+      react-masonry-css: 1.0.16(react@18.3.1)
+      react-player: 2.16.0(react@18.3.1)
+      react-social-media-embed: 2.5.18(react-dom@18.3.1)(react@18.3.1)
+      unsplash-js: 7.0.19
+      use-sound: 4.0.4(react@18.3.1)
+      uuid: 8.3.2
+      xstate: 5.9.0
+      zod: 3.24.2
+    transitivePeerDependencies:
+      - '@types/react'
+      - solid-js
+      - supports-color
+      - typescript
+      - ws
+    dev: false
 
   /@humanwhocodes/config-array@0.13.0:
     resolution: {integrity: sha512-DZLEEqFWQFiyK6h5YIeynKx7JlvCYWL0cImfSRXZ9l4Sg2efkFGTuFf6vzXjK1cq6IYkU+Eg/JizXw+TD2vRNw==}
@@ -4638,55 +4687,6 @@ packages:
       - supports-color
       - ts-node
     dev: true
-
-  /cross-country@1.4.1(@types/react@18.3.18)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.2)(ws@8.18.1):
-    resolution: {integrity: sha512-oHD1Pt+cGORllmsLqcM3WthgrLiseCfOBw06nRPRbEpXm9xDI77lVxo29yycuFAImyabBK8nT/gHLt8esMUErA==}
-    peerDependencies:
-      react: ^18.0.0 || ^19.0.0
-      react-dom: ^18.0.0 || ^19.0.0
-    dependencies:
-      '@mdx-js/react': 3.1.0(@types/react@18.3.18)(react@18.3.1)
-      '@phosphor-icons/react': 2.1.7(react-dom@18.3.1)(react@18.3.1)
-      '@react-spring/web': 9.7.5(react-dom@18.3.1)(react@18.3.1)
-      '@statelyai/inspect': 0.2.5(ws@8.18.1)(xstate@5.9.0)
-      '@tanstack/react-query': 5.67.2(react@18.3.1)
-      '@testing-library/jest-dom': 6.6.3
-      '@testing-library/react': 14.3.1(@types/react@18.3.18)(react-dom@18.3.1)(react@18.3.1)
-      '@xstate/react': 4.1.0(@types/react@18.3.18)(react@18.3.1)(xstate@5.9.0)
-      '@xstate/store': 2.6.2(react@18.3.1)
-      chalk: 5.4.1
-      clsx: 1.2.1
-      d3: 7.9.0
-      d3-axis: 3.0.0
-      date-fns: 3.6.0
-      debounce: 2.2.0
-      dompurify: 3.2.4
-      he: 1.2.0
-      htmlparser2: 9.1.0
-      idb: 7.1.1
-      immutable: 4.1.0
-      nice-color-palettes: 2.0.0
-      react: 18.3.1
-      react-day-picker: 8.10.1(date-fns@3.6.0)(react@18.3.1)
-      react-dom: 18.3.1(react@18.3.1)
-      react-error-boundary: 4.1.2(react@18.3.1)
-      react-hook-form: 7.54.2(react@18.3.1)
-      react-intl: 7.1.6(react@18.3.1)(typescript@5.8.2)
-      react-masonry-css: 1.0.16(react@18.3.1)
-      react-player: 2.16.0(react@18.3.1)
-      react-social-media-embed: 2.5.18(react-dom@18.3.1)(react@18.3.1)
-      unsplash-js: 7.0.19
-      use-sound: 4.0.4(react@18.3.1)
-      uuid: 8.3.2
-      xstate: 5.9.0
-      zod: 3.24.2
-    transitivePeerDependencies:
-      - '@types/react'
-      - solid-js
-      - supports-color
-      - typescript
-      - ws
-    dev: false
 
   /cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
