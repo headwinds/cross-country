@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { select } from 'd3-selection';
-import { scaleTime, scaleLinear, min, max } from 'd3-scale';
+import { scaleTime, scaleLinear } from 'd3-scale';
+import { min, max } from 'd3-array';
 import type { ChartProps } from '../chart-types';
 
 interface ScatterplotProps extends ChartProps {}

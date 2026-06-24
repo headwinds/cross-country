@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { select } from 'd3-selection';
-import { scaleLinear, max } from 'd3-scale';
+import { scaleLinear } from 'd3-scale';
+import { max } from 'd3-array';
 import { line, curveBasis } from 'd3-shape';
 import type { ChartProps } from '../chart-types';
 
