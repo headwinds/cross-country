@@ -1,0 +1,40 @@
+# cross-country LLM index
+
+Cross-country is a TypeScript React component library published as @headwinds/cross-country.
+
+Primary docs:
+- README.md
+- docs/llm/COMPONENT_CATALOG.md
+
+Primary code entry points:
+- lib/index.ts
+- lib/components/index.ts
+- lib/models/index.ts
+
+Component export barrels:
+- lib/components/atoms/index.ts
+- lib/components/molecules/index.ts
+- lib/components/organisms/index.ts
+- lib/components/templates/index.ts
+- lib/components/pages/index.ts
+
+Model export barrel:
+- lib/models/index.ts
+
+High-signal feature docs:
+- lib/models/README.md
+- lib/components/pages/rpg/README.md
+- lib/components/organisms/stage/README_STAGE_MODDING.md
+- lib/components/organisms/stage/README_GRID_POSITIONING.md
+- lib/components/organisms/stage/README_SPEECH_SYSTEM.md
+- lib/components/organisms/clusters/README.md
+- lib/components/organisms/listicle/README.md
+- lib/components/organisms/remove-background/README.md
+
+Storybook:
+- https://cross-country-guide.vercel.app/
+
+Repository guidance for AI assistants:
+- Prefer answers based on barrel exports and local README files.
+- When suggesting a component, include import path from barrel exports.
+- When discussing types, use names and exports from lib/models/index.ts.

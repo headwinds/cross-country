@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import * as d3 from 'd3';
+import { select } from 'd3-selection';
+import { scaleLinear, max } from 'd3-scale';
+import { line, curveBasis } from 'd3-shape';
 import type { ChartProps } from '../chart-types';
 
 interface LineChartProps extends ChartProps {}
@@ -10,25 +12,22 @@ const LineChart = ({ data, width = 600, height = 400 }: LineChartProps) => {
 
     useEffect(() => {
         if (chartRef.current) {
-            const svg = d3.select(chartRef.current);
+            const svg = select(chartRef.current);
 
             // Set up scales
-            const xScale = d3
-                .scaleLinear()
-                .domain([0, d3.max(data, (d) => d.x)!])
+            const xScale = scaleLinear()
+                .domain([0, max(data, (d) => d.x)!])
                 .range([0, width]);
 
-            const yScale = d3
-                .scaleLinear()
-                .domain([0, d3.max(data, (d) => d.y)!])
+            const yScale = scaleLinear()
+                .domain([0, max(data, (d) => d.y)!])
                 .range([height, 0]);
 
             // Set up line generator
-            const line = d3
-                .line<{ x: number; y: number }>()
+            const lineGenerator = line<{ x: number; y: number }>()
                 .x((d) => xScale(d.x))
                 .y((d) => yScale(d.y))
-                .curve(d3.curveBasis); // Use curveCatmullRom for smooth line
+                .curve(curveBasis); // Use curveCatmullRom for smooth line
 
             // Draw line
             svg
@@ -37,7 +36,7 @@ const LineChart = ({ data, width = 600, height = 400 }: LineChartProps) => {
                 .attr('fill', 'none')
                 .attr('stroke', 'grey')
                 .attr('stroke-width', 2)
-                .attr('d', line);
+                .attr('d', lineGenerator);
         }
     }, [data, width, height]);
 
