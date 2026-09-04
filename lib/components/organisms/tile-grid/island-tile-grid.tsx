@@ -1,6 +1,6 @@
 // @ts-nocheck
-import { Tile, Column } from "@headwinds/cross-country";
-import { ColourUtil } from "@headwinds/cross-country/utils";
+import { Tile, Column } from "../../";
+import { ColourUtil } from "../../../utils";
 import styles from "./island-tile-grid.module.css";
 import { GridRow } from "./grid-row";
 
