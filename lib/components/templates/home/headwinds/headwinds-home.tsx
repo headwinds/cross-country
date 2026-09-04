@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Grid, Column, Row } from "@headwinds/cross-country";
+import { Grid, Column, Row } from "../../..";
 import { HeadwindsHomeProps } from "./headwinds-home.types";
 import clsx from "clsx";
 import styles from "./headwinds-home.module.css";

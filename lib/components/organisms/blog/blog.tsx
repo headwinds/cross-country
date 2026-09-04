@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Wallpaper,
-  Wrapper,
-  Column,
-  SubHeadline,
-  Row,
-} from "@headwinds/cross-country";
+import { Wallpaper, Wrapper, Column, SubHeadline, Row } from "../../";
 import BlogPostList from "./blog-post-list";
 import { BlogPostProps } from "./blog-post/blog-post.types";
 
